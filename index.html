@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Miroza — News, features and short articles</title>
+    <meta name="description" content="Miroza: curated news and concise mini-articles about India and Tamil Nadu. Read daily updates, local stories, and short guides.">
+    <link rel="canonical" href="https://example.com/">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Miroza — News, features and short articles">
+    <meta property="og:description" content="Curated news and mini-articles about India & Tamil Nadu.">
+    <meta property="og:image" content="assets/og-default.jpg">
+
+    <!-- Twitter card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Miroza — News, features and short articles">
+    <meta name="twitter:description" content="Curated news and mini-articles about India & Tamil Nadu.">
+
+    <link rel="stylesheet" href="assets/styles.css">
+    <script defer src="assets/script.js"></script>
+
+    <!-- JSON-LD: Site basic structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "NewsMediaOrganization",
+      "name": "Miroza",
+      "url": "https://example.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://example.com/assets/og-default.jpg"
+      }
+    }
+    </script>
+
+    <style>/* Minimal fallback for no-CSS environment */
+      html{visibility:hidden} /* hide until CSS loads to avoid FOUC */
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" role="banner">
+      <div class="container header-inner">
+        <a class="brand" href="/">Miroza</a>
+        <nav class="main-nav" role="navigation" aria-label="Main">
+          <button id="btn-search" aria-label="Open search">Search</button>
+          <a href="#latest">Latest</a>
+          <a href="#articles">Articles</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" class="container" role="main">
+      <section class="hero">
+        <h1>Miroza</h1>
+        <p class="tagline">Curated news and concise articles about India and Tamil Nadu — fast, readable, and SEO-friendly.</p>
+      </section>
+
+      <section id="latest" aria-labelledby="latest-heading">
+        <h2 id="latest-heading">Latest News</h2>
+        <div id="latest-grid" class="grid" aria-live="polite">
+          <!-- Latest news cards (copy/paste article template below to add items) -->
+          <article class="card fade-in" data-slug="india-economy-update" itemscope itemtype="https://schema.org/Article" data-author="Miroza News" data-date="2025-11-17">
+            <img loading="lazy" src="https://picsum.photos/seed/news1/800/600" alt="India economy snapshot" class="card-image" itemprop="image">
+            <div class="card-body">
+              <h3 class="card-title" itemprop="headline">India GDP growth shows steady recovery</h3>
+              <p class="card-excerpt" itemprop="description">Recent data shows continued recovery in retail and manufacturing sectors across India.</p>
+              <a class="card-link" href="#article=india-economy-update" data-slug="india-economy-update">Read</a>
+              <meta itemprop="author" content="Miroza News">
+              <meta itemprop="datePublished" content="2025-11-17">
+            </div>
+          </article>
+
+          <article class="card fade-in" data-slug="tamilnadu-assembly-session" itemscope itemtype="https://schema.org/Article" data-author="Miroza Local" data-date="2025-11-16">
+            <img loading="lazy" src="https://picsum.photos/seed/news2/800/600" alt="Tamil Nadu assembly" class="card-image" itemprop="image">
+            <div class="card-body">
+              <h3 class="card-title" itemprop="headline">Tamil Nadu assembly discusses rural development package</h3>
+              <p class="card-excerpt" itemprop="description">State legislators reviewed new proposals aimed at improving rural infrastructure and livelihoods.</p>
+              <a class="card-link" href="#article=tamilnadu-assembly-session" data-slug="tamilnadu-assembly-session">Read</a>
+              <meta itemprop="author" content="Miroza Local">
+              <meta itemprop="datePublished" content="2025-11-16">
+            </div>
+          </article>
+
+          <article class="card fade-in" data-slug="chennai-transport-update" itemscope itemtype="https://schema.org/Article" data-author="City Desk" data-date="2025-11-15">
+            <img loading="lazy" src="https://picsum.photos/seed/news3/800/600" alt="Chennai transport" class="card-image" itemprop="image">
+            <div class="card-body">
+              <h3 class="card-title" itemprop="headline">Chennai introduces new bus routes to reduce congestion</h3>
+              <p class="card-excerpt" itemprop="description">The transport department said new corridor routes will connect suburbs to the central business district.</p>
+              <a class="card-link" href="#article=chennai-transport-update" data-slug="chennai-transport-update">Read</a>
+              <meta itemprop="author" content="City Desk">
+              <meta itemprop="datePublished" content="2025-11-15">
+            </div>
+          </article>
+
+          <article class="card fade-in" data-slug="startup-funding-surge" itemscope itemtype="https://schema.org/Article" data-author="Tech Brief" data-date="2025-11-14">
+            <img loading="lazy" src="https://picsum.photos/seed/news4/800/600" alt="startup funding" class="card-image" itemprop="image">
+            <div class="card-body">
+              <h3 class="card-title" itemprop="headline">Funding surge for local startups in tier-2 cities</h3>
+              <p class="card-excerpt" itemprop="description">Investors are increasingly backing tech and climate-focused startups outside major metros.</p>
+              <a class="card-link" href="#article=startup-funding-surge" data-slug="startup-funding-surge">Read</a>
+              <meta itemprop="author" content="Tech Brief">
+              <meta itemprop="datePublished" content="2025-11-14">
+            </div>
+          </article>
+
+          <article class="card fade-in" data-slug="monsoon-impact-fisheries" itemscope itemtype="https://schema.org/Article" data-author="Coastal Watch" data-date="2025-11-13">
+            <img loading="lazy" src="https://picsum.photos/seed/news5/800/600" alt="coastal fisheries" class="card-image" itemprop="image">
+            <div class="card-body">
+              <h3 class="card-title" itemprop="headline">Monsoon patterns and their impact on coastal fisheries</h3>
+              <p class="card-excerpt" itemprop="description">Researchers highlight adaptive practices for sustainable fishing in coastal Tamil Nadu.</p>
+              <a class="card-link" href="#article=monsoon-impact-fisheries" data-slug="monsoon-impact-fisheries">Read</a>
+              <meta itemprop="author" content="Coastal Watch">
+              <meta itemprop="datePublished" content="2025-11-13">
+            </div>
+          </article>
+
+          <article class="card fade-in" data-slug="education-initiative" itemscope itemtype="https://schema.org/Article" data-author="Education Now" data-date="2025-11-12">
+            <img loading="lazy" src="https://picsum.photos/seed/news6/800/600" alt="education initiative" class="card-image" itemprop="image">
+            <div class="card-body">
+              <h3 class="card-title" itemprop="headline">New initiative aims to close learning gaps in rural schools</h3>
+              <p class="card-excerpt" itemprop="description">NGOs and government partners will pilot remedial programs in select districts.</p>
+              <a class="card-link" href="#article=education-initiative" data-slug="education-initiative">Read</a>
+              <meta itemprop="author" content="Education Now">
+              <meta itemprop="datePublished" content="2025-11-12">
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="articles" aria-labelledby="articles-heading">
+        <h2 id="articles-heading">Mini Articles</h2>
+        <div id="articles-grid" class="grid">
+          <!-- Mini-article cards (short, copy/paste friendly) -->
+          <article class="card fade-in" data-slug="welcome-miroza" itemscope itemtype="https://schema.org/Article" data-author="Miroza Editors" data-date="2025-11-17">
+            <img loading="lazy" src="https://picsum.photos/seed/art1/800/600" alt="Intro" class="card-image" itemprop="image">
+            <div class="card-body">
+              <h3 class="card-title" itemprop="headline">Welcome to Miroza</h3>
+              <p class="card-excerpt" itemprop="description">Miroza is a hub for concise articles and curated news from India and Tamil Nadu.</p>
+              <a class="card-link" href="#article=welcome-miroza" data-slug="welcome-miroza">Read</a>
+              <meta itemprop="author" content="Miroza Editors">
+              <meta itemprop="datePublished" content="2025-11-17">
+            </div>
+          </article>
+
+          <article class="card fade-in" data-slug="daily-reading-habits" itemscope itemtype="https://schema.org/Article" data-author="Lifestyle" data-date="2025-10-30">
+            <img loading="lazy" src="https://picsum.photos/seed/art2/800/600" alt="Reading habits" class="card-image" itemprop="image">
+            <div class="card-body">
+              <h3 class="card-title" itemprop="headline">Daily reading habits to stay informed</h3>
+              <p class="card-excerpt" itemprop="description">Simple steps to build a 15-minute daily reading practice that sticks.</p>
+              <a class="card-link" href="#article=daily-reading-habits" data-slug="daily-reading-habits">Read</a>
+              <meta itemprop="author" content="Lifestyle">
+              <meta itemprop="datePublished" content="2025-10-30">
+            </div>
+          </article>
+
+          <article class="card fade-in" data-slug="food-culture-tamil-nadu" itemscope itemtype="https://schema.org/Article" data-author="Culture" data-date="2025-09-21">
+            <img loading="lazy" src="https://picsum.photos/seed/art3/800/600" alt="Tamil Nadu food" class="card-image" itemprop="image">
+            <div class="card-body">
+              <h3 class="card-title" itemprop="headline">Food culture in Tamil Nadu: A short guide</h3>
+              <p class="card-excerpt" itemprop="description">Explore iconic dishes and the traditions behind them.</p>
+              <a class="card-link" href="#article=food-culture-tamil-nadu" data-slug="food-culture-tamil-nadu">Read</a>
+              <meta itemprop="author" content="Culture">
+              <meta itemprop="datePublished" content="2025-09-21">
+            </div>
+          </article>
+
+          <article class="card fade-in" data-slug="tech-meetups-chennai" itemscope itemtype="https://schema.org/Article" data-author="Events" data-date="2025-08-05">
+            <img loading="lazy" src="https://picsum.photos/seed/art4/800/600" alt="Tech meetups" class="card-image" itemprop="image">
+            <div class="card-body">
+              <h3 class="card-title" itemprop="headline">Where to find tech meetups in Chennai</h3>
+              <p class="card-excerpt" itemprop="description">Community groups, college events, and meetup hubs to follow.</p>
+              <a class="card-link" href="#article=tech-meetups-chennai" data-slug="tech-meetups-chennai">Read</a>
+              <meta itemprop="author" content="Events">
+              <meta itemprop="datePublished" content="2025-08-05">
+            </div>
+          </article>
+
+          <article class="card fade-in" data-slug="weekend-trips-tamil-nadu" itemscope itemtype="https://schema.org/Article" data-author="Travel" data-date="2025-07-12">
+            <img loading="lazy" src="https://picsum.photos/seed/art5/800/600" alt="Weekend trips" class="card-image" itemprop="image">
+            <div class="card-body">
+              <h3 class="card-title" itemprop="headline">Weekend trips around Tamil Nadu</h3>
+              <p class="card-excerpt" itemprop="description">Short getaway ideas including hill stations and coastal towns.</p>
+              <a class="card-link" href="#article=weekend-trips-tamil-nadu" data-slug="weekend-trips-tamil-nadu">Read</a>
+              <meta itemprop="author" content="Travel">
+              <meta itemprop="datePublished" content="2025-07-12">
+            </div>
+          </article>
+
+          <article class="card fade-in" data-slug="quick-fitness-routines" itemscope itemtype="https://schema.org/Article" data-author="Health" data-date="2025-06-02">
+            <img loading="lazy" src="https://picsum.photos/seed/art6/800/600" alt="Fitness" class="card-image" itemprop="image">
+            <div class="card-body">
+              <h3 class="card-title" itemprop="headline">Quick 5-minute fitness routines</h3>
+              <p class="card-excerpt" itemprop="description">Small exercises to boost energy and productivity every morning.</p>
+              <a class="card-link" href="#article=quick-fitness-routines" data-slug="quick-fitness-routines">Read</a>
+              <meta itemprop="author" content="Health">
+              <meta itemprop="datePublished" content="2025-06-02">
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- Full-article panel (client-side routing) -->
+      <aside id="reader-panel" class="reader-panel" aria-hidden="true"></aside>
+
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+      <div class="container">
+        <small>© <span id="year"></span> Miroza — Curated content. Built with a static HTML/CSS/JS template.</small>
+      </div>
+    </footer>
+
+    <!-- Article template used by the small JS router to render full article view -->
+    <template id="article-template">
+      <article class="reader-article" itemscope itemtype="https://schema.org/Article">
+        <header>
+          <h1 itemprop="headline"></h1>
+          <p class="meta">By <span itemprop="author"></span> • <time itemprop="datePublished" datetime=""></time></p>
+        </header>
+        <figure><img src="" alt="" itemprop="image"></figure>
+        <div class="reader-body" itemprop="articleBody"></div>
+      </article>
+    </template>
+
+    <noscript>
+      <style>html{visibility:visible}</style>
+      <div class="noscript-warning">This site works best with JavaScript enabled. Search and reader features require JS.</div>
+    </noscript>
+
+  </body>
+</html>
