@@ -1,0 +1,702 @@
+[
+  {
+    "title": "Welcome to Miroza: A brief introduction",
+    "slug": "welcome-miroza",
+    "excerpt": "Miroza is a blogging and news site focused on India and Tamil Nadu.",
+    "content": "This is a sample article to introduce the site.",
+    "image": "https://picsum.photos/seed/1/800/600"
+  },
+  {
+    "title": "How to stay updated with local news",
+    "slug": "stay-updated-local-news",
+    "excerpt": "Tips to follow local news sources and updates in Tamil Nadu.",
+    "content": "Short guide on sources.",
+    "image": "https://picsum.photos/seed/2/800/600"
+  },
+  {
+    "title": "Mini Article #3: Daily reading habits",
+    "slug": "mini-article-3-daily-reading-habits",
+    "excerpt": "Small tips to build a daily reading habit.",
+    "content": "Read for 15 minutes daily to keep up with trends.",
+    "image": "https://picsum.photos/seed/3/800/600"
+  },
+  {
+    "title": "Mini Article #4: Food culture in Tamil Nadu",
+    "slug": "mini-article-4-food-culture-tamil-nadu",
+    "excerpt": "An overview of popular dishes and eating traditions.",
+    "content": "Tamil Nadu has a rich food heritage including dosa, idli and regional sweets.",
+    "image": "https://picsum.photos/seed/4/800/600"
+  },
+  {
+    "title": "Mini Article #5: Local festivals to watch",
+    "slug": "mini-article-5-local-festivals",
+    "excerpt": "Key festivals in Tamil Nadu and India to add to your calendar.",
+    "content": "Pongal, Tamil New Year, and temple festivals are major events.",
+    "image": "https://picsum.photos/seed/5/800/600"
+  },
+  {
+    "title": "Mini Article #6: Tech meetups in Chennai",
+    "slug": "mini-article-6-tech-meetups-chennai",
+    "excerpt": "Where to find developer meetups and communities in Chennai.",
+    "content": "Look for local meetup groups on Meetup.com and local college events.",
+    "image": "https://picsum.photos/seed/6/800/600"
+  },
+  {
+    "title": "Mini Article #7: Quick photography tips",
+    "slug": "mini-article-7-photography-tips",
+    "excerpt": "Improve your phone photography with simple tricks.",
+    "content": "Use natural light, steady your hands, and compose using the rule of thirds.",
+    "image": "https://picsum.photos/seed/7/800/600"
+  },
+  {
+    "title": "Mini Article #8: How to follow state politics",
+    "slug": "mini-article-8-follow-state-politics",
+    "excerpt": "Practical ways to follow Tamil Nadu state politics responsibly.",
+    "content": "Follow reputable local newspapers, official press releases, and legislative summaries.",
+    "image": "https://picsum.photos/seed/8/800/600"
+  },
+  {
+    "title": "Mini Article #9: Weekend trips around Tamil Nadu",
+    "slug": "mini-article-9-weekend-trips-tamil-nadu",
+    "excerpt": "Short list of nearby getaways for weekends.",
+    "content": "Kodaikanal, Yercaud, Mahabalipuram, and Pondicherry are popular short-trip spots.",
+    "image": "https://picsum.photos/seed/9/800/600"
+  },
+  {
+    "title": "Mini Article #10: Beginner's guide to investing",
+    "slug": "mini-article-10-beginners-investing",
+    "excerpt": "A very short primer on starting investments in India.",
+    "content": "Start with an emergency fund, learn about SIPs and diversification.",
+    "image": "https://picsum.photos/seed/10/800/600"
+  },
+  {
+    "title": "Mini Article #11: Local startups to watch",
+    "slug": "mini-article-11-local-startups",
+    "excerpt": "A snapshot of emerging startups in Tamil Nadu.",
+    "content": "Tamil Nadu has a growing startup ecosystem particularly in Chennai and Coimbatore.",
+    "image": "https://picsum.photos/seed/11/800/600"
+  },
+  {
+    "title": "Mini Article #12: Healthy morning routines",
+    "slug": "mini-article-12-healthy-morning-routines",
+    "excerpt": "Simple morning steps for better energy and focus.",
+    "content": "Hydrate, stretch, and spend 10 minutes planning your day.",
+    "image": "https://picsum.photos/seed/12/800/600"
+  },
+  {
+    "title": "Mini Article #13: Eco-friendly habits",
+    "slug": "mini-article-13-eco-friendly-habits",
+    "excerpt": "Small behavior changes that help the environment.",
+    "content": "Reduce single-use plastic, compost, and support local sustainable brands.",
+    "image": "https://picsum.photos/seed/13/800/600"
+  },
+  {
+    "title": "Mini Article #14: Street food safety tips",
+    "slug": "mini-article-14-street-food-safety",
+    "excerpt": "How to enjoy street food safely while traveling in India.",
+    "content": "Choose busy stalls, look for cooked-to-order items, and avoid dairy-based items from unhygienic vendors.",
+    "image": "https://picsum.photos/seed/14/800/600"
+  },
+  {
+    "title": "Mini Article #15: Using public transport efficiently",
+    "slug": "mini-article-15-public-transport-efficiency",
+    "excerpt": "Tips for using buses and trains smoothly in Tamil Nadu cities.",
+    "content": "Plan your route in advance and carry a digital pass where available.",
+    "image": "https://picsum.photos/seed/15/800/600"
+  },
+  {
+    "title": "Mini Article #16: Learning basic Tamil phrases",
+    "slug": "mini-article-16-basic-tamil-phrases",
+    "excerpt": "First phrases to know when visiting Tamil Nadu.",
+    "content": "Greetings, thank you, and simple directions are useful to learn.",
+    "image": "https://picsum.photos/seed/16/800/600"
+  },
+  {
+    "title": "Mini Article #17: Cultivating a reading list",
+    "slug": "mini-article-17-cultivating-reading-list",
+    "excerpt": "How to build a short, effective reading list for any topic.",
+    "content": "Pick 3 books per topic: overview, deep dive, and a practical guide.",
+    "image": "https://picsum.photos/seed/17/800/600"
+  },
+  {
+    "title": "Mini Article #18: Affordable learning resources",
+    "slug": "mini-article-18-affordable-learning-resources",
+    "excerpt": "Low-cost or free ways to learn new skills online.",
+    "content": "MOOCs, local library resources, and community workshops are great starts.",
+    "image": "https://picsum.photos/seed/18/800/600"
+  },
+  {
+    "title": "Mini Article #19: Traditional arts of Tamil Nadu",
+    "slug": "mini-article-19-traditional-arts-tamil-nadu",
+    "excerpt": "A short overview of Bharatanatyam, Tanjore painting, and more.",
+    "content": "Preserving traditional arts requires supporting local artists and schools.",
+    "image": "https://picsum.photos/seed/19/800/600"
+  },
+  {
+    "title": "Mini Article #20: Quick fitness routines",
+    "slug": "mini-article-20-quick-fitness-routines",
+    "excerpt": "5-minute exercises you can do at home.",
+    "content": "Include squats, planks, and short cardio bursts to start your day.",
+    "image": "https://picsum.photos/seed/20/800/600"
+  },
+  {
+    "title": "Mini Article #21: Local NGOs doing good work",
+    "slug": "mini-article-21-local-ngos",
+    "excerpt": "Small list of NGOs working in education and health in Tamil Nadu.",
+    "content": "Consider volunteering or donating to verified, transparent groups.",
+    "image": "https://picsum.photos/seed/21/800/600"
+  },
+  {
+    "title": "Mini Article #22: Gardening in small spaces",
+    "slug": "mini-article-22-gardening-small-spaces",
+    "excerpt": "Tips for container gardening on balconies.",
+    "content": "Choose native plants, compost, and use vertical planters to save space.",
+    "image": "https://picsum.photos/seed/22/800/600"
+  },
+  {
+    "title": "Mini Article #23: Handling monsoon rains",
+    "slug": "mini-article-23-handling-monsoon-rains",
+    "excerpt": "Precautions and tips for the monsoon season in Tamil Nadu.",
+    "content": "Drainage checks, safe travel habits, and emergency contacts are key.",
+    "image": "https://picsum.photos/seed/23/800/600"
+  },
+  {
+    "title": "Mini Article #24: Affordable eating out",
+    "slug": "mini-article-24-affordable-eating-out",
+    "excerpt": "Find tasty but affordable restaurants in mid-sized cities.",
+    "content": "Look for local favorite spots rather than tourist traps.",
+    "image": "https://picsum.photos/seed/24/800/600"
+  },
+  {
+    "title": "Mini Article #25: Mindfulness in daily life",
+    "slug": "mini-article-25-mindfulness-daily-life",
+    "excerpt": "A two-minute mindfulness practice to reduce stress.",
+    "content": "Breathe slowly for two minutes and focus on sensations to ground yourself.",
+    "image": "https://picsum.photos/seed/25/800/600"
+  },
+  {
+    "title": "Mini Article #26: Simple budgeting tips",
+    "slug": "mini-article-26-simple-budgeting",
+    "excerpt": "Three rules for straightforward household budgeting.",
+    "content": "Track expenses, set a savings goal, and automate small transfers.",
+    "image": "https://picsum.photos/seed/26/800/600"
+  },
+  {
+    "title": "Mini Article #27: Local craft markets",
+    "slug": "mini-article-27-local-craft-markets",
+    "excerpt": "Where to find handicrafts and local artisans in Tamil Nadu.",
+    "content": "Support local craft markets for unique gifts and preservation of crafts.",
+    "image": "https://picsum.photos/seed/27/800/600"
+  },
+  {
+    "title": "Mini Article #28: Staying safe online",
+    "slug": "mini-article-28-staying-safe-online",
+    "excerpt": "Basic online security tips for everyday users.",
+    "content": "Use strong passwords, enable two-factor auth, and watch out for phishing.",
+    "image": "https://picsum.photos/seed/28/800/600"
+  },
+  {
+    "title": "Mini Article #29: Coffee culture in India",
+    "slug": "mini-article-29-coffee-culture-india",
+    "excerpt": "A short history of coffee and popular places in South India.",
+    "content": "South India has deep coffee traditions with filter coffee and cafes.",
+    "image": "https://picsum.photos/seed/29/800/600"
+  },
+  {
+    "title": "Mini Article #30: Preparing for competitive exams",
+    "slug": "mini-article-30-preparing-competitive-exams",
+    "excerpt": "Study schedule tips and resource suggestions.",
+    "content": "Balance practice tests with conceptual study and rest days.",
+    "image": "https://picsum.photos/seed/30/800/600"
+  },
+  {
+    "title": "Mini Article #31: Short history of Chennai",
+    "slug": "mini-article-31-short-history-chennai",
+    "excerpt": "A concise introduction to Chennai's past and growth.",
+    "content": "Chennai evolved from Madras, a colonial port, to a major metropolis.",
+    "image": "https://picsum.photos/seed/31/800/600"
+  },
+  {
+    "title": "Mini Article #32: Local language media outlets",
+    "slug": "mini-article-32-local-language-media",
+    "excerpt": "Tamil and English outlets to follow for local reporting.",
+    "content": "Newspapers, online portals, and community radio are valuable sources.",
+    "image": "https://picsum.photos/seed/32/800/600"
+  },
+  {
+    "title": "Mini Article #33: Making chai like a local",
+    "slug": "mini-article-33-making-chai",
+    "excerpt": "A brief recipe for South Indian-style chai.",
+    "content": "Boil tea leaves with milk, sugar, and spices for a rich cup.",
+    "image": "https://picsum.photos/seed/33/800/600"
+  },
+  {
+    "title": "Mini Article #34: Volunteering opportunities",
+    "slug": "mini-article-34-volunteering-opportunities",
+    "excerpt": "Places to volunteer locally for community impact.",
+    "content": "Look for local NGOs and community centers that accept volunteers.",
+    "image": "https://picsum.photos/seed/34/800/600"
+  },
+  {
+    "title": "Mini Article #35: Beginner's yoga sequence",
+    "slug": "mini-article-35-beginners-yoga-sequence",
+    "excerpt": "Short sequence to start your day with energy.",
+    "content": "Include sun salutations, gentle twists, and breathing exercises.",
+    "image": "https://picsum.photos/seed/35/800/600"
+  },
+  {
+    "title": "Mini Article #36: Budget travel tips",
+    "slug": "mini-article-36-budget-travel-tips",
+    "excerpt": "How to travel affordably across India.",
+    "content": "Book trains in advance, use local buses, and eat street food safely.",
+    "image": "https://picsum.photos/seed/36/800/600"
+  },
+  {
+    "title": "Mini Article #37: Learning to code — first steps",
+    "slug": "mini-article-37-learning-to-code-first-steps",
+    "excerpt": "Start with HTML, CSS, and JavaScript for web basics.",
+    "content": "Build small projects and share them on GitHub to learn faster.",
+    "image": "https://picsum.photos/seed/37/800/600"
+  },
+  {
+    "title": "Mini Article #38: Local theatre and performances",
+    "slug": "mini-article-38-local-theatre",
+    "excerpt": "Where to watch plays and cultural performances.",
+    "content": "Small theatre groups and cultural centers host regular shows.",
+    "image": "https://picsum.photos/seed/38/800/600"
+  },
+  {
+    "title": "Mini Article #39: How to support local journalism",
+    "slug": "mini-article-39-support-local-journalism",
+    "excerpt": "Ways to help sustain quality local reporting.",
+    "content": "Subscribe, donate, and share verified articles from trustworthy outlets.",
+    "image": "https://picsum.photos/seed/39/800/600"
+  },
+  {
+    "title": "Mini Article #40: Weekend coding exercises",
+    "slug": "mini-article-40-weekend-coding-exercises",
+    "excerpt": "Small projects to build in a weekend for learning.",
+    "content": "Build a to-do app, a simple blog, or a weather widget.",
+    "image": "https://picsum.photos/seed/40/800/600"
+  },
+  {
+    "title": "Mini Article #41: Street art and murals",
+    "slug": "mini-article-41-street-art-murals",
+    "excerpt": "Where to find notable murals and public art.",
+    "content": "Street art scenes are growing in major Tamil Nadu towns.",
+    "image": "https://picsum.photos/seed/41/800/600"
+  },
+  {
+    "title": "Mini Article #42: Local podcast recommendations",
+    "slug": "mini-article-42-local-podcast-recommendations",
+    "excerpt": "Podcasts covering Tamil Nadu news, culture, and tech.",
+    "content": "Discover local voices discussing regional topics and stories.",
+    "image": "https://picsum.photos/seed/42/800/600"
+  },
+  {
+    "title": "Mini Article #43: Best parks and public spaces",
+    "slug": "mini-article-43-best-parks-public-spaces",
+    "excerpt": "Public spaces for relaxation and exercise.",
+    "content": "Parks provide peaceful spots for morning walks and family time.",
+    "image": "https://picsum.photos/seed/43/800/600"
+  },
+  {
+    "title": "Mini Article #44: Quick home repairs",
+    "slug": "mini-article-44-quick-home-repairs",
+    "excerpt": "Simple fixes that save time and money.",
+    "content": "Learn to fix minor leaks, replace switches, and unclog drains safely.",
+    "image": "https://picsum.photos/seed/44/800/600"
+  },
+  {
+    "title": "Mini Article #45: Cultural etiquette tips",
+    "slug": "mini-article-45-cultural-etiquette",
+    "excerpt": "Respectful behavior when visiting temples and local homes.",
+    "content": "Dress modestly at religious places and remove shoes where required.",
+    "image": "https://picsum.photos/seed/45/800/600"
+  },
+  {
+    "title": "Mini Article #46: Photography spots in Tamil Nadu",
+    "slug": "mini-article-46-photography-spots",
+    "excerpt": "Scenic locations for photo enthusiasts.",
+    "content": "Coastal stretches, hill stations, and temple architecture offer great opportunities.",
+    "image": "https://picsum.photos/seed/46/800/600"
+  },
+  {
+    "title": "Mini Article #47: How to organize events",
+    "slug": "mini-article-47-organize-events",
+    "excerpt": "Checklist for small community events and meetups.",
+    "content": "Plan guests, venue, schedule, and promotion ahead of time.",
+    "image": "https://picsum.photos/seed/47/800/600"
+  },
+  {
+    "title": "Mini Article #48: Simple recipe — sambar",
+    "slug": "mini-article-48-simple-recipe-sambar",
+    "excerpt": "A short recipe to make sambar at home.",
+    "content": "Use toor dal, seasonal vegetables, and sambar powder for flavor.",
+    "image": "https://picsum.photos/seed/48/800/600"
+  },
+  {
+    "title": "Mini Article #49: Managing time with a side project",
+    "slug": "mini-article-49-managing-time-side-project",
+    "excerpt": "How to allocate time effectively for side projects.",
+    "content": "Set small, achievable milestones and block calendar time.",
+    "image": "https://picsum.photos/seed/49/800/600"
+  },
+  {
+    "title": "Mini Article #50: Local sports and clubs",
+    "slug": "mini-article-50-local-sports-clubs",
+    "excerpt": "Where to join local sports teams and fitness clubs.",
+    "content": "Community clubs and college teams often welcome new members.",
+    "image": "https://picsum.photos/seed/50/800/600"
+  },
+  {
+    "title": "Mini Article #51: Simple web performance tips",
+    "slug": "mini-article-51-web-performance-tips",
+    "excerpt": "Optimizations for faster website load times.",
+    "content": "Compress images, use cache headers, and minimize blocking scripts.",
+    "image": "https://picsum.photos/seed/51/800/600"
+  },
+  {
+    "title": "Mini Article #52: How to pick a laptop",
+    "slug": "mini-article-52-how-to-pick-laptop",
+    "excerpt": "Key specs to consider when buying a laptop.",
+    "content": "Balance CPU, RAM, storage, and battery life for your use case.",
+    "image": "https://picsum.photos/seed/52/800/600"
+  },
+  {
+    "title": "Mini Article #53: Cooking with seasonal produce",
+    "slug": "mini-article-53-cooking-seasonal-produce",
+    "excerpt": "Benefits of choosing seasonal fruits and vegetables.",
+    "content": "Seasonal produce is fresher, cheaper, and more nutritious.",
+    "image": "https://picsum.photos/seed/53/800/600"
+  },
+  {
+    "title": "Mini Article #54: Local commuting apps and tips",
+    "slug": "mini-article-54-commuting-apps-tips",
+    "excerpt": "Rideshare, bus tracker, and navigation tips.",
+    "content": "Use official transit apps and rideshare safety tips to commute smartly.",
+    "image": "https://picsum.photos/seed/54/800/600"
+  },
+  {
+    "title": "Mini Article #55: Quick UI/UX principles",
+    "slug": "mini-article-55-quick-ui-ux-principles",
+    "excerpt": "Design rules for usable interfaces.",
+    "content": "Consistency, feedback, and accessible color contrast improve UX.",
+    "image": "https://picsum.photos/seed/55/800/600"
+  },
+  {
+    "title": "Mini Article #56: Interviews and oral histories",
+    "slug": "mini-article-56-interviews-oral-histories",
+    "excerpt": "Collecting local stories through interviews.",
+    "content": "Prepare questions, record with permission, and preserve context.",
+    "image": "https://picsum.photos/seed/56/800/600"
+  },
+  {
+    "title": "Mini Article #57: Simple data visualization tools",
+    "slug": "mini-article-57-simple-data-visualization-tools",
+    "excerpt": "Tools to visualize small datasets quickly.",
+    "content": "Use Google Sheets charts, D3 for custom visuals, and charting libraries.",
+    "image": "https://picsum.photos/seed/57/800/600"
+  },
+  {
+    "title": "Mini Article #58: Local food delivery services",
+    "slug": "mini-article-58-local-food-delivery-services",
+    "excerpt": "Comparing apps and local tiffin services.",
+    "content": "Tiffin services offer home-cooked meals and can be cost-effective.",
+    "image": "https://picsum.photos/seed/58/800/600"
+  },
+  {
+    "title": "Mini Article #59: Maintaining work-life balance",
+    "slug": "mini-article-59-maintaining-work-life-balance",
+    "excerpt": "Simple boundaries and time management strategies.",
+    "content": "Create defined work hours and prioritize tasks to reduce burnout.",
+    "image": "https://picsum.photos/seed/59/800/600"
+  },
+  {
+    "title": "Mini Article #60: Local healthcare contacts",
+    "slug": "mini-article-60-local-healthcare-contacts",
+    "excerpt": "How to quickly find nearby clinics and emergency contacts.",
+    "content": "Keep a list of 24/7 hospitals and ambulance numbers for your area.",
+    "image": "https://picsum.photos/seed/60/800/600"
+  },
+  {
+    "title": "Mini Article #61: Making study groups effective",
+    "slug": "mini-article-61-making-study-groups-effective",
+    "excerpt": "Rules for productive study groups and peer learning.",
+    "content": "Share tasks, set clear goals, and rotate discussion leaders.",
+    "image": "https://picsum.photos/seed/61/800/600"
+  },
+  {
+    "title": "Mini Article #62: Protecting personal data",
+    "slug": "mini-article-62-protecting-personal-data",
+    "excerpt": "Practical steps to protect sensitive information.",
+    "content": "Limit data shared online and review app permissions regularly.",
+    "image": "https://picsum.photos/seed/62/800/600"
+  },
+  {
+    "title": "Mini Article #63: Short profile — a local artist",
+    "slug": "mini-article-63-short-profile-local-artist",
+    "excerpt": "Highlighting a Tamil Nadu artisan and their craft.",
+    "content": "Profiles help connect readers with creators and sustain crafts.",
+    "image": "https://picsum.photos/seed/63/800/600"
+  },
+  {
+    "title": "Mini Article #64: Simple email newsletter tips",
+    "slug": "mini-article-64-email-newsletter-tips",
+    "excerpt": "How to start and maintain a short newsletter.",
+    "content": "Send concise, valuable updates and keep a regular schedule.",
+    "image": "https://picsum.photos/seed/64/800/600"
+  },
+  {
+    "title": "Mini Article #65: Backyard composting basics",
+    "slug": "mini-article-65-backyard-composting-basics",
+    "excerpt": "Start composting kitchen waste with simple steps.",
+    "content": "Separate wet and dry waste and maintain moisture for decomposition.",
+    "image": "https://picsum.photos/seed/65/800/600"
+  },
+  {
+    "title": "Mini Article #66: How to cite news sources",
+    "slug": "mini-article-66-how-to-cite-news",
+    "excerpt": "Best practices for attributing journalism in your posts.",
+    "content": "Link to original reporting, mention author, and provide context.",
+    "image": "https://picsum.photos/seed/66/800/600"
+  },
+  {
+    "title": "Mini Article #67: Using public libraries",
+    "slug": "mini-article-67-using-public-libraries",
+    "excerpt": "Benefits and services offered by local libraries.",
+    "content": "Libraries often provide free internet, books, and community programs.",
+    "image": "https://picsum.photos/seed/67/800/600"
+  },
+  {
+    "title": "Mini Article #68: Small business marketing basics",
+    "slug": "mini-article-68-small-business-marketing-basics",
+    "excerpt": "Marketing starter tips for small local businesses.",
+    "content": "Use social media consistently, gather customer reviews, and network locally.",
+    "image": "https://picsum.photos/seed/68/800/600"
+  },
+  {
+    "title": "Mini Article #69: Local volunteering for students",
+    "slug": "mini-article-69-local-volunteering-students",
+    "excerpt": "How students can find meaningful volunteer work.",
+    "content": "Partner with NGOs for credit projects, internships, or community service hours.",
+    "image": "https://picsum.photos/seed/69/800/600"
+  },
+  {
+    "title": "Mini Article #70: Sustainable fashion choices",
+    "slug": "mini-article-70-sustainable-fashion-choices",
+    "excerpt": "Make clothing choices that reduce environmental impact.",
+    "content": "Buy second-hand, choose natural fibers, and care for garments well.",
+    "image": "https://picsum.photos/seed/70/800/600"
+  },
+  {
+    "title": "Mini Article #71: Local small-scale entrepreneurs",
+    "slug": "mini-article-71-local-entrepreneurs",
+    "excerpt": "Stories of micro-businesses in small towns.",
+    "content": "Highlight practical challenges and successes from local entrepreneurs.",
+    "image": "https://picsum.photos/seed/71/800/600"
+  },
+  {
+    "title": "Mini Article #72: Beginner's guide to podcasts",
+    "slug": "mini-article-72-beginners-podcasts",
+    "excerpt": "How to start listening and choose good shows.",
+    "content": "Pick shows that match your interests and listen during commutes.",
+    "image": "https://picsum.photos/seed/72/800/600"
+  },
+  {
+    "title": "Mini Article #73: Preparing for a job interview",
+    "slug": "mini-article-73-preparing-job-interview",
+    "excerpt": "Short checklist to prepare before interviews.",
+    "content": "Research the company, practice common questions, and prepare questions.",
+    "image": "https://picsum.photos/seed/73/800/600"
+  },
+  {
+    "title": "Mini Article #74: Coastal conservation awareness",
+    "slug": "mini-article-74-coastal-conservation-awareness",
+    "excerpt": "Why coastal conservation matters in Tamil Nadu.",
+    "content": "Protect mangroves, reduce plastic waste, and support conservation groups.",
+    "image": "https://picsum.photos/seed/74/800/600"
+  },
+  {
+    "title": "Mini Article #75: Quick home workouts without equipment",
+    "slug": "mini-article-75-home-workouts-no-equipment",
+    "excerpt": "Bodyweight routines to keep fit at home.",
+    "content": "Jumping jacks, push-ups, lunges, and planks form an effective routine.",
+    "image": "https://picsum.photos/seed/75/800/600"
+  },
+  {
+    "title": "Mini Article #76: Local crafts as souvenirs",
+    "slug": "mini-article-76-local-crafts-souvenirs",
+    "excerpt": "Choose meaningful souvenirs that support local artisans.",
+    "content": "Look for handcrafted items with provenance rather than mass-produced goods.",
+    "image": "https://picsum.photos/seed/76/800/600"
+  },
+  {
+    "title": "Mini Article #77: Handling power outages",
+    "slug": "mini-article-77-handling-power-outages",
+    "excerpt": "Practical steps to stay safe during blackouts.",
+    "content": "Keep torches, charge devices, and know your local utility emergency number.",
+    "image": "https://picsum.photos/seed/77/800/600"
+  },
+  {
+    "title": "Mini Article #78: Short guide to local markets",
+    "slug": "mini-article-78-short-guide-local-markets",
+    "excerpt": "Tips for bargaining and finding fresh produce.",
+    "content": "Go early for fresh picks and compare prices across stalls.",
+    "image": "https://picsum.photos/seed/78/800/600"
+  },
+  {
+    "title": "Mini Article #79: Writing short-form content",
+    "slug": "mini-article-79-writing-short-form-content",
+    "excerpt": "How to write concise, engaging mini-articles.",
+    "content": "Lead with the key point, use active voice, and close with a practical takeaway.",
+    "image": "https://picsum.photos/seed/79/800/600"
+  },
+  {
+    "title": "Mini Article #80: Simple podcast production basics",
+    "slug": "mini-article-80-podcast-production-basics",
+    "excerpt": "How to record and publish a short podcast episode.",
+    "content": "Use a quiet room, a decent microphone, and free hosting platforms to start.",
+    "image": "https://picsum.photos/seed/80/800/600"
+  },
+  {
+    "title": "Mini Article #81: Local birdwatching spots",
+    "slug": "mini-article-81-local-birdwatching-spots",
+    "excerpt": "Where to observe common and migratory birds in Tamil Nadu.",
+    "content": "Coastal wetlands and protected areas attract diverse birdlife.",
+    "image": "https://picsum.photos/seed/81/800/600"
+  },
+  {
+    "title": "Mini Article #82: Beginner photography — composition",
+    "slug": "mini-article-82-photography-composition",
+    "excerpt": "Compose photos with simple framing techniques.",
+    "content": "Look for leading lines, symmetry, and depth to improve images.",
+    "image": "https://picsum.photos/seed/82/800/600"
+  },
+  {
+    "title": "Mini Article #83: Cooking with local spices",
+    "slug": "mini-article-83-cooking-local-spices",
+    "excerpt": "How to use regional spices to enrich dishes.",
+    "content": "Experiment with tempering (tadka) and freshly ground spice blends.",
+    "image": "https://picsum.photos/seed/83/800/600"
+  },
+  {
+    "title": "Mini Article #84: Quick note-taking techniques",
+    "slug": "mini-article-84-quick-note-taking",
+    "excerpt": "Capture ideas quickly and organize them later.",
+    "content": "Use bullets, tags, and timestamps to keep notes searchable.",
+    "image": "https://picsum.photos/seed/84/800/600"
+  },
+  {
+    "title": "Mini Article #85: Short history of local temples",
+    "slug": "mini-article-85-short-history-local-temples",
+    "excerpt": "A brief look at notable temple architecture and history.",
+    "content": "Temples often reflect regional art, inscriptions, and dynastic histories.",
+    "image": "https://picsum.photos/seed/85/800/600"
+  },
+  {
+    "title": "Mini Article #86: Budget-friendly gifts",
+    "slug": "mini-article-86-budget-friendly-gifts",
+    "excerpt": "Thoughtful gift ideas that are easy on the wallet.",
+    "content": "Handmade items, local foods, or curated small bundles make great gifts.",
+    "image": "https://picsum.photos/seed/86/800/600"
+  },
+  {
+    "title": "Mini Article #87: Local cycling routes",
+    "slug": "mini-article-87-local-cycling-routes",
+    "excerpt": "Safe and scenic cycling paths to explore.",
+    "content": "Plan routes avoiding heavy traffic and enjoy early morning rides.",
+    "image": "https://picsum.photos/seed/87/800/600"
+  },
+  {
+    "title": "Mini Article #88: Quick gardening — herbs",
+    "slug": "mini-article-88-gardening-herbs",
+    "excerpt": "Grow fresh herbs in small pots at home.",
+    "content": "Basil, coriander, and curry leaves grow well in containers.",
+    "image": "https://picsum.photos/seed/88/800/600"
+  },
+  {
+    "title": "Mini Article #89: Local art exhibitions",
+    "slug": "mini-article-89-local-art-exhibitions",
+    "excerpt": "Where to catch contemporary and traditional exhibitions.",
+    "content": "Galleries and cultural centers often list upcoming shows online.",
+    "image": "https://picsum.photos/seed/89/800/600"
+  },
+  {
+    "title": "Mini Article #90: Healthy snack swaps",
+    "slug": "mini-article-90-healthy-snack-swaps",
+    "excerpt": "Swap common snacks for healthier alternatives.",
+    "content": "Choose roasted nuts, fruit, and yogurt instead of deep-fried snacks.",
+    "image": "https://picsum.photos/seed/90/800/600"
+  },
+  {
+    "title": "Mini Article #91: Local volunteering for elders",
+    "slug": "mini-article-91-volunteering-elders",
+    "excerpt": "Programs that support senior citizens in communities.",
+    "content": "Volunteer to run activities, provide companionship, and help with chores.",
+    "image": "https://picsum.photos/seed/91/800/600"
+  },
+  {
+    "title": "Mini Article #92: Short profile — young innovator",
+    "slug": "mini-article-92-short-profile-innovator",
+    "excerpt": "Interview-style piece about a student innovator.",
+    "content": "Highlight their project, motivation, and next steps.",
+    "image": "https://picsum.photos/seed/92/800/600"
+  },
+  {
+    "title": "Mini Article #93: Quick tips for public speaking",
+    "slug": "mini-article-93-public-speaking-tips",
+    "excerpt": "Short actions to improve presentations.",
+    "content": "Practice, focus on clear messaging, and use simple slides.",
+    "image": "https://picsum.photos/seed/93/800/600"
+  },
+  {
+    "title": "Mini Article #94: Local music scenes",
+    "slug": "mini-article-94-local-music-scenes",
+    "excerpt": "Discovering bands and traditional music in the region.",
+    "content": "Attend small gigs and support local musicians.",
+    "image": "https://picsum.photos/seed/94/800/600"
+  },
+  {
+    "title": "Mini Article #95: Quick digital declutter",
+    "slug": "mini-article-95-digital-declutter",
+    "excerpt": "Reduce digital noise with practical cleanup steps.",
+    "content": "Unsubscribe, archive, and organize folders to reduce distractions.",
+    "image": "https://picsum.photos/seed/95/800/600"
+  },
+  {
+    "title": "Mini Article #96: Short gardening — fruit trees",
+    "slug": "mini-article-96-gardening-fruit-trees",
+    "excerpt": "Best practices for small fruit tree care.",
+    "content": "Choose dwarf varieties and prune regularly for yield.",
+    "image": "https://picsum.photos/seed/96/800/600"
+  },
+  {
+    "title": "Mini Article #97: How to scan documents with your phone",
+    "slug": "mini-article-97-scan-documents-phone",
+    "excerpt": "Use free apps to digitize documents quickly.",
+    "content": "Ensure flat lighting, crop edges, and save PDFs for records.",
+    "image": "https://picsum.photos/seed/97/800/600"
+  },
+  {
+    "title": "Mini Article #98: Short guide to local museums",
+    "slug": "mini-article-98-short-guide-museums",
+    "excerpt": "Notable museums and what to expect when visiting.",
+    "content": "Check opening hours and special exhibits before you go.",
+    "image": "https://picsum.photos/seed/98/800/600"
+  },
+  {
+    "title": "Mini Article #99: Quick disaster preparedness",
+    "slug": "mini-article-99-disaster-preparedness",
+    "excerpt": "Basic emergency kit items and planning advice.",
+    "content": "Keep water, first-aid, flashlights, and essential documents ready.",
+    "image": "https://picsum.photos/seed/99/800/600"
+  },
+  {
+    "title": "Mini Article #100: How to stay curious",
+    "slug": "mini-article-100-stay-curious",
+    "excerpt": "Simple habits to keep learning and exploring.",
+    "content": "Ask questions, explore new topics, and share what you learn.",
+    "image": "https://picsum.photos/seed/100/800/600"
+  }
+]
