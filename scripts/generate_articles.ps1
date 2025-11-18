@@ -18,41 +18,43 @@ function Repeat-String([string]$s, [int]$n){
 }
 
 Write-Output "Generating $count articles into $artDir ..."
+
+$articleTemplate = @'
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>{0} - Miroza</title>
+  <meta name="description" content="{1}" />
+  <link rel="stylesheet" href="/assets/styles.css">
+  <link rel="canonical" href="{2}" />
+</head>
+<body>
+  <header class="site-header"><div class="wrap"><a href="/">Miroza</a></div></header>
+  <main class="article-body">
+    <h1>{0}</h1>
+    <div class="article-meta">{3} · {4}</div>
+    <img class="feature" src="{5}" alt="{0}">
+    <p>{6}</p>
+    <p><a href="/">← Back to home</a></p>
+  </main>
+  <footer class="site-footer"><div class="wrap">© {7} Miroza</div></footer>
+</body>
+</html>
+'@
+
 for($i=1; $i -le $count; $i++){
     $slug = "article-$i"
     $topic = $topics[(Get-Random -Minimum 0 -Maximum $topics.Count)]
-    $title = "Latest $topic update — $i"
+    $title = "Latest $topic update - $i"
     $excerpt = "A short update about $topic."
     $date = (Get-Date).AddDays(- (Get-Random -Minimum 0 -Maximum 365)).ToString('yyyy-MM-dd')
     $image = "https://picsum.photos/seed/$slug/1200/628"
     $body = Repeat-String $excerpt 6
     $url = $baseUrl.TrimEnd('/') + "/articles/$slug.html"
 
-    $content = @"
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>$title — Miroza</title>
-  <meta name="description" content="$excerpt" />
-  <link rel="stylesheet" href="/assets/styles.css">
-  <link rel="canonical" href="$url" />
-</head>
-<body>
-  <header class="site-header"><div class="wrap"><a href="/">Miroza</a></div></header>
-  <main class="article-body">
-    <h1>$title</h1>
-    <div class="article-meta">$date · $topic</div>
-    <img class="feature" src="$image" alt="$title">
-    <p>$body</p>
-    <p><a href="/">← Back to home</a></p>
-  </main>
-  <footer class="site-footer"><div class="wrap">© $((Get-Date).Year) Miroza</div></footer>
-</body>
-</html>
-"@
-
+    $content = $articleTemplate -f $title, $excerpt, $url, $date, $topic, $image, $body, (Get-Date).Year
     $outPath = Join-Path $artDir ("$slug.html")
     $content | Set-Content -Path $outPath -Encoding UTF8
     if($i % 100 -eq 0){ Write-Output "  created $i articles" }
@@ -62,19 +64,21 @@ for($i=1; $i -le $count; $i++){
 $perPage = 20
 $pages = [math]::Ceiling($count / $perPage)
 
+$indexItemTemplate = "<article class=\"post\">`n  <div class=\"thumb\"><img src=\"{0}\" alt=\"{1}\"></div>`n  <div class=\"content\">`n    <h2><a href=\"{2}\">{1}</a></h2>`n    <p class=\"meta\">{3} · {4}</p>`n    <p>{5}</p>`n  </div>`n</article>`n"
+
 for($p=1; $p -le $pages; $p++){
     $start = ($p - 1) * $perPage + 1
     $end = [math]::Min($p * $perPage, $count)
     $itemsHtml = ''
     for($j=$start; $j -le $end; $j++){
         $slug = "article-$j"
-        $title = "Latest $($topics[(Get-Random -Minimum 0 -Maximum $topics.Count)]) update — $j"
+        $title = "Latest $($topics[(Get-Random -Minimum 0 -Maximum $topics.Count)]) update - $j"
         $date = (Get-Date).AddDays(- (Get-Random -Minimum 0 -Maximum 365)).ToString('yyyy-MM-dd')
         $category = $topics[(Get-Random -Minimum 0 -Maximum $topics.Count)]
         $image = "https://picsum.photos/seed/$slug/400/240"
         $path = "articles/$slug.html"
         $excerpt = "A short update about $category."
-        $itemsHtml += "<article class=\"post\">`n  <div class=\"thumb\"><img src=\"$image\" alt=\"$title\"></div>`n  <div class=\"content\">`n    <h2><a href=\"$path\">$title</a></h2>`n    <p class=\"meta\">$date · $category</p>`n    <p>$excerpt</p>`n  </div>`n</article>`n`n"
+        $itemsHtml += $indexItemTemplate -f $image, $title, $path, $date, $category, $excerpt
     }
 
     # navigation
