@@ -29,3 +29,15 @@ Deploying
 If you want, I can now:
 - generate more posts automatically and add them here (note: committing thousands of files will increase repo size), or
 - add a small generator that reads markdown from `content/` and builds `articles/` and paginated indexes.
+
+Generator script
+- `scripts/generate_articles.py` — a Python script to generate many placeholder articles and a sitemap. It uses placeholder images from `picsum.photos` so you don't need to commit binary images.
+
+Example: generate 1000 articles locally
+```powershell
+python .\scripts\generate_articles.py --count 1000 --base-url https://example.com
+```
+
+Notes
+- The generator creates/overwrites files in `articles/`, `index.html`, `page-*.html`, and `sitemap.xml` in the repo root. Review generated content before committing large numbers of files.
+- If you'd prefer I generate the 1000 files here and commit them for you, confirm and I'll proceed (warning: large commit). Otherwise run the script locally and push when you're ready.
