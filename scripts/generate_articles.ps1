@@ -64,7 +64,16 @@ for($i=1; $i -le $count; $i++){
 $perPage = 20
 $pages = [math]::Ceiling($count / $perPage)
 
-$indexItemTemplate = "<article class=\"post\">`n  <div class=\"thumb\"><img src=\"{0}\" alt=\"{1}\"></div>`n  <div class=\"content\">`n    <h2><a href=\"{2}\">{1}</a></h2>`n    <p class=\"meta\">{3} · {4}</p>`n    <p>{5}</p>`n  </div>`n</article>`n"
+$indexItemTemplate = @'
+<article class="post">
+  <div class="thumb"><img src="{0}" alt="{1}"></div>
+  <div class="content">
+    <h2><a href="{2}">{1}</a></h2>
+    <p class="meta">{3} · {4}</p>
+    <p>{5}</p>
+  </div>
+</article>
+'@
 
 for($p=1; $p -le $pages; $p++){
     $start = ($p - 1) * $perPage + 1
@@ -84,16 +93,16 @@ for($p=1; $p -le $pages; $p++){
     # navigation
     $nav = ''
     if($p -gt 1){
-        $prev = if($p -eq 2){ 'index.html' } else { "page-$($p - 1).html" }
-        $nav += "<a class=\"prev\" href=\"/$prev\">&larr; Newer</a>"
+      $prev = if($p -eq 2){ 'index.html' } else { "page-$($p - 1).html" }
+      $nav += '<a class="prev" href="/' + $prev + '">&larr; Newer</a>'
     } else {
-        $nav += "<a class=\"prev disabled\">&larr; Newer</a>"
+      $nav += '<a class="prev disabled">&larr; Newer</a>'
     }
     if($p -lt $pages){
-        $next = "page-$($p + 1).html"
-        $nav += "`n      <a class=\"next\" href=\"/$next\">Older posts &rarr;</a>"
+      $next = "page-$($p + 1).html"
+      $nav += "`n      " + '<a class="next" href="/' + $next + '">Older posts &rarr;</a>'
     } else {
-        $nav += "`n      <a class=\"next disabled\">Older &rarr;</a>"
+      $nav += "`n      " + '<a class="next disabled">Older &rarr;</a>'
     }
 
     $pageHtml = @"
