@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>{{title}} — Miroza</title>
+    <meta name="description" content="{{excerpt}}">
+    <link rel="canonical" href="{{canonical}}">
+    <meta property="og:title" content="{{title}}">
+    <meta property="og:description" content="{{excerpt}}">
+    <meta property="og:image" content="{{image}}">
+    <link rel="stylesheet" href="{{baseUrl}}/assets/styles.css">
+  </head>
+  <body>
+    <header class="site-header"><div class="container"><a class="brand" href="{{baseUrl}}/">Miroza</a></div></header>
+    <main class="container">
+      <article itemscope itemtype="https://schema.org/Article">
+        <header>
+          <h1 itemprop="headline">{{title}}</h1>
+          <p class="meta">By <span itemprop="author">{{author}}</span> • <time itemprop="datePublished" datetime="{{date}}">{{date}}</time></p>
+        </header>
+        <figure><img src="{{image}}" alt="{{title}}"></figure>
+        <div class="content">{{content}}</div>
+      </article>
+      <p><a href="{{baseUrl}}/">← Back to home</a></p>
+    </main>
+    <footer class="site-footer"><div class="container">© <span id="year"></span> Miroza</div></footer>
+    <script>document.getElementById('year') && (document.getElementById('year').textContent = new Date().getFullYear())</script>
+  </body>
+  </html>

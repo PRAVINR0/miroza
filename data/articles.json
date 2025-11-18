@@ -1,0 +1,29 @@
+[
+  {
+    "title": "Welcome to Miroza: A brief introduction",
+    "slug": "welcome-miroza",
+    "excerpt": "Miroza is a hub for concise articles and curated news from India and Tamil Nadu.",
+    "content": "<p>This is a sample article — replace with your own rich HTML content.</p>",
+    "author": "Miroza Editors",
+    "date": "2025-11-17",
+    "image": "https://picsum.photos/seed/s1/1200/800"
+  },
+  {
+    "title": "Daily reading habits to stay informed",
+    "slug": "daily-reading-habits",
+    "excerpt": "Simple steps to build a 15-minute daily reading practice that sticks.",
+    "content": "<p>Read for 15 minutes each day. Choose variety. Keep notes.</p>",
+    "author": "Lifestyle",
+    "date": "2025-10-30",
+    "image": "https://picsum.photos/seed/s2/1200/800"
+  },
+  {
+    "title": "Food culture in Tamil Nadu: A short guide",
+    "slug": "food-culture-tamil-nadu",
+    "excerpt": "Explore iconic dishes and the traditions behind them.",
+    "content": "<p>Dosa, idli, sambar — brief intro.</p>",
+    "author": "Culture",
+    "date": "2025-09-21",
+    "image": "https://picsum.photos/seed/s3/1200/800"
+  }
+]

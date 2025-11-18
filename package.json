@@ -1,0 +1,11 @@
+{
+  "name": "miroza-static-site",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "generate": "node scripts/generate.js",
+    "generate:1000": "node scripts/generate.js --count=1000",
+    "clean": "node scripts/clean.js",
+    "serve": "npx http-server dist -c-1"
+  }
+}
