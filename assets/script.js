@@ -21,19 +21,33 @@
     var btn = document.createElement('button');
     btn.className = 'theme-toggle';
     btn.title = 'Toggle light / dark theme';
-    btn.innerText = '🌓';
+    function updateIcon(){
+      var cur = document.documentElement.getAttribute('data-theme');
+      if(cur === 'dark') btn.innerText = '☀️'; else btn.innerText = '🌙';
+    }
     btn.addEventListener('click', function(){
       var cur = document.documentElement.getAttribute('data-theme');
-      if(cur === 'dark'){ document.documentElement.removeAttribute('data-theme'); localStorage.removeItem('theme'); }
-      else{ document.documentElement.setAttribute('data-theme','dark'); localStorage.setItem('theme','dark'); }
+      if(cur === 'dark'){
+        document.documentElement.setAttribute('data-theme','light');
+        localStorage.setItem('theme','light');
+      } else {
+        document.documentElement.setAttribute('data-theme','dark');
+        localStorage.setItem('theme','dark');
+      }
+      updateIcon();
     });
     document.body.appendChild(btn);
+    updateIcon();
   }
 
   // Apply saved theme on load
   try{
     var saved = localStorage.getItem('theme');
-    if(saved === 'dark') document.documentElement.setAttribute('data-theme','dark');
+    if(saved === 'dark' || saved === 'light') document.documentElement.setAttribute('data-theme', saved);
+    else {
+      // respect system preference if no saved choice
+      try{ if(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) document.documentElement.setAttribute('data-theme','dark'); }catch(e){}
+    }
   }catch(e){}
   createThemeToggle();
 
