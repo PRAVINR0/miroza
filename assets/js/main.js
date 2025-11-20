@@ -41,37 +41,38 @@
 /* Dynamic data loader: inject articles or news when containers exist */
 (function(){
   function createArticleCard(item){
-    var div = document.createElement('article');
-    div.className = 'data-card reveal-on-scroll';
-    var head = document.createElement('div'); head.className = 'card-head';
-    var title = document.createElement('h3'); title.className = 'card-title';
-    var a = document.createElement('a'); a.href = item.path || ('articles/article-' + (item.id||'') + '.html');
-    a.textContent = item.title;
-    title.appendChild(a);
-    var meta = document.createElement('div'); meta.className = 'card-meta'; meta.textContent = item.date || '';
-    head.appendChild(title);
-    if(item.category){
-      var cat = document.createElement('span'); cat.className='card-cat'; cat.textContent = item.category; head.appendChild(cat);
+    // Render a full article section (not a link to a separate file)
+    var el = document.createElement('article');
+    el.className = 'article-item reveal-on-scroll';
+    var h = document.createElement('h2'); h.className='article-title'; h.textContent = item.title;
+    var meta = document.createElement('div'); meta.className='article-meta'; meta.textContent = (item.category?item.category+' · ':'') + (item.date||'');
+    el.appendChild(h);
+    el.appendChild(meta);
+    if(item.image){
+      var img = document.createElement('img'); img.className='feature'; img.src = item.image; img.alt = item.title;
+      el.appendChild(img);
     }
-    head.appendChild(meta);
-    var desc = document.createElement('p'); desc.className='card-desc'; desc.textContent = item.description || '';
-    div.appendChild(head);
-    div.appendChild(desc);
-    return div;
+    var p = document.createElement('div'); p.className='article-content';
+    // allow simple HTML in content if provided
+    p.innerHTML = item.content ? item.content : (item.description || '');
+    el.appendChild(p);
+    return el;
   }
 
   function createNewsCard(item){
-    var div = document.createElement('article');
-    div.className = 'data-card reveal-on-scroll';
-    var head = document.createElement('div'); head.className = 'card-head';
-    var title = document.createElement('h3'); title.className = 'card-title';
-    var a = document.createElement('a'); a.href = item.path || '#'; a.textContent = item.title;
-    title.appendChild(a);
-    var meta = document.createElement('div'); meta.className = 'card-meta'; meta.textContent = item.date || '';
-    head.appendChild(title); head.appendChild(meta);
-    var desc = document.createElement('p'); desc.className='card-desc'; desc.textContent = item.description || '';
-    div.appendChild(head); div.appendChild(desc);
-    return div;
+    var el = document.createElement('article');
+    el.className = 'news-item reveal-on-scroll';
+    var h = document.createElement('h3'); h.className='news-title'; h.textContent = item.title;
+    var meta = document.createElement('div'); meta.className='article-meta'; meta.textContent = item.date || '';
+    el.appendChild(h); el.appendChild(meta);
+    if(item.image){
+      var img = document.createElement('img'); img.className='feature'; img.src = item.image; img.alt = item.title;
+      el.appendChild(img);
+    }
+    var p = document.createElement('div'); p.className='article-content';
+    p.innerHTML = item.content ? item.content : (item.description || '');
+    el.appendChild(p);
+    return el;
   }
 
   // articles
@@ -80,11 +81,11 @@
       .then(function(res){ if(!res.ok) throw new Error('Network response not ok'); return res.json(); })
       .then(function(data){
         var container = document.getElementById('articles-container');
+        // Render each article as a full entry inside articles.html
         data.forEach(function(item){
-          var card = createArticleCard(item);
-          container.appendChild(card);
+          var articleEl = createArticleCard(item);
+          container.appendChild(articleEl);
         });
-        // initialize reveal observer for new elements if animations script is present
         if(window.IntersectionObserver){
           var els = container.querySelectorAll('.reveal-on-scroll');
           els.forEach(function(el){ el.classList.add('revealed'); });
@@ -100,8 +101,8 @@
       .then(function(data){
         var container = document.getElementById('news-container');
         data.forEach(function(item){
-          var card = createNewsCard(item);
-          container.appendChild(card);
+          var newsEl = createNewsCard(item);
+          container.appendChild(newsEl);
         });
         if(window.IntersectionObserver){
           var els = container.querySelectorAll('.reveal-on-scroll');

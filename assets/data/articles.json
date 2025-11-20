@@ -4,20 +4,26 @@
     "title": "Sample Article Title",
     "description": "Short summary of the article.",
     "date": "2025-01-01",
-    "category": "General"
+    "category": "General",
+    "image": "https://picsum.photos/seed/article-1/1200/628",
+    "content": "Detailed coverage: this article demonstrates how to embed full article content inside `articles.html`. Use the JSON `content` field for paragraphs."
   },
   {
     "id": 2,
     "title": "Agritech innovations help small farms",
     "description": "Local startups bring low-cost sensors and advisory services to smallholders.",
     "date": "2025-02-10",
-    "category": "Business"
+    "category": "Business",
+    "image": "https://picsum.photos/seed/article-2/1200/628",
+    "content": "Local agritech startups are building low-cost sensors and advisory services to help smallholders increase yields and reduce waste. The pilot programs show promise in several regions."
   },
   {
     "id": 3,
     "title": "Education: digital classrooms expand",
     "description": "A short look at digital adoption in remote districts.",
     "date": "2025-03-05",
-    "category": "Education"
+    "category": "Education",
+    "image": "https://picsum.photos/seed/article-3/1200/628",
+    "content": "Schools in remote districts adopt low-bandwidth video and offline content distribution, enabling more consistent learning outcomes for students with intermittent connectivity."
   }
 ]
