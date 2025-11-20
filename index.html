@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Miroza — News & Articles</title>
+  <meta name="description" content="Miroza — clean, fast and modern news & blog website." />
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/dark-theme.css">
+</head>
+<body>
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+      <a href="./" class="logo-link" aria-label="Miroza Home">
+        <img src="assets/images/logo.svg" alt="Miroza logo" class="logo">
+        <span class="brand">Miroza</span>
+      </a>
+
+      <nav class="nav" role="navigation" aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="#home" class="nav-link">Home</a></li>
+          <li><a href="#articles" class="nav-link">Articles</a></li>
+          <li><a href="#stories" class="nav-link">Stories</a></li>
+          <li><a href="#news" class="nav-link">News</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button id="themeToggle" class="btn btn-ghost" aria-label="Toggle theme">🌙</button>
+        <button id="menuToggle" class="btn btn-ghost mobile-only" aria-label="Open menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="home" class="hero reveal-on-scroll">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <h1 class="hero-title">Miroza — Clear, concise coverage</h1>
+          <p class="hero-sub">Fast, readable reporting across tech, science, health and business. Built for clarity.</p>
+          <p><a class="btn btn-primary" href="#articles">Read Latest</a></p>
+        </div>
+        <div class="hero-media">
+          <div class="hero-card reveal-on-scroll">
+            <h3>Featured — Nobel latest</h3>
+            <p>Highlights from recent awards and the research behind them.</p>
+            <a class="btn btn-outline" href="#news">Explore</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="articles" class="container section">
+      <h2 class="section-title">Latest Articles</h2>
+      <div class="grid" id="articlesGrid">
+        <article class="card reveal-on-scroll">
+          <img class="card-thumb" src="https://picsum.photos/seed/a1/800/500" alt="thumb">
+          <div class="card-body">
+            <h3 class="card-title"><a href="articles/article-1.html">SpaceX launches new mission to Mars orbit</a></h3>
+            <p class="card-meta">Space · Nov 2025</p>
+            <p class="card-excerpt">A short summary about the mission and its objectives.</p>
+          </div>
+        </article>
+
+        <article class="card reveal-on-scroll">
+          <img class="card-thumb" src="https://picsum.photos/seed/a2/800/500" alt="thumb">
+          <div class="card-body">
+            <h3 class="card-title"><a href="articles/article-2.html">Breakthrough in vaccine delivery</a></h3>
+            <p class="card-meta">Health · Nov 2025</p>
+            <p class="card-excerpt">New delivery methods reduce cold-chain dependence.</p>
+          </div>
+        </article>
+
+        <article class="card reveal-on-scroll">
+          <img class="card-thumb" src="https://picsum.photos/seed/a3/800/500" alt="thumb">
+          <div class="card-body">
+            <h3 class="card-title"><a href="articles/article-3.html">EV makers announce long-range model</a></h3>
+            <p class="card-meta">Automotive · Nov 2025</p>
+            <p class="card-excerpt">A preview of the upcoming electric vehicle with industry comments.</p>
+          </div>
+        </article>
+
+        <article class="card reveal-on-scroll">
+          <img class="card-thumb" src="https://picsum.photos/seed/a4/800/500" alt="thumb">
+          <div class="card-body">
+            <h3 class="card-title"><a href="articles/article-4.html">Local startups scale agritech solutions</a></h3>
+            <p class="card-meta">Business · Nov 2025</p>
+            <p class="card-excerpt">Small teams bring IoT and analytics to farms.</p>
+          </div>
+        </article>
+
+        <article class="card reveal-on-scroll">
+          <img class="card-thumb" src="https://picsum.photos/seed/a5/800/500" alt="thumb">
+          <div class="card-body">
+            <h3 class="card-title"><a href="articles/article-5.html">City transit plans get funding boost</a></h3>
+            <p class="card-meta">Transport · Nov 2025</p>
+            <p class="card-excerpt">New funds accelerate metro projects and last-mile links.</p>
+          </div>
+        </article>
+
+        <article class="card reveal-on-scroll">
+          <img class="card-thumb" src="https://picsum.photos/seed/a6/800/500" alt="thumb">
+          <div class="card-body">
+            <h3 class="card-title"><a href="articles/article-6.html">Cultural festivals return this winter</a></h3>
+            <p class="card-meta">Culture · Nov 2025</p>
+            <p class="card-excerpt">A look at district-level events and safety guidelines.</p>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <section id="stories" class="container section">
+      <h2 class="section-title">Stories</h2>
+      <p class="muted">Longform pieces and features will appear here.</p>
+    </section>
+
+    <section id="news" class="container section">
+      <h2 class="section-title">News</h2>
+      <p class="muted">Daily updates and breaking headlines.</p>
+    </section>
+
+    <section id="about" class="container section">
+      <h2 class="section-title">About Miroza</h2>
+      <p class="muted">Miroza is a lightweight news and blog site focused on clarity and readability.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© 2025 Miroza — Built for clarity and speed.</p>
+      <nav class="footer-nav">
+        <a href="#about">About</a>
+        <a href="#news">Contact</a>
+        <a href="sitemap.xml">Sitemap</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="assets/js/animations.js"></script>
+  <script src="assets/js/theme-toggle.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
