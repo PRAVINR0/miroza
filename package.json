@@ -1,0 +1,10 @@
+{
+  "name": "miroza-site-tools",
+  "version": "1.0.0",
+  "description": "Site generation tools for Miroza (sitemap, RSS, search-index, tags)",
+  "main": "scripts/generate_site.js",
+  "scripts": {
+    "generate": "node scripts/generate_site.js"
+  },
+  "engines": { "node": ">=16" }
+}

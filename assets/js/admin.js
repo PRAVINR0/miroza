@@ -26,7 +26,8 @@
     });
   });
 
-  function slugify(s){ return s.toLowerCase().trim().replace(/[^a-z0-9]+/g,'-').replace(/(^-|-$)/g,''); }
+  // Use shared slugify from utilities when available
+  function slugify(s){ return (window.utils && window.utils.slugify) ? window.utils.slugify(s) : String(s||'').toLowerCase().trim().replace(/[^a-z0-9]+/g,'-').replace(/(^-|-$)/g,''); }
 
   // Generate snippet and JSON
   document.getElementById('generate-html').addEventListener('click', ()=>{
@@ -38,18 +39,37 @@
   document.getElementById('save-post').addEventListener('click', (e)=>{
     e.preventDefault();
     const data = gatherForm();
-    // Download JSON for the content type to be merged manually or via GitHub API
-    const filename = `${data.type}.json`;
-    const blob = new Blob([JSON.stringify([data],null,2)],{type:'application/json'});
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a'); a.href = url; a.download = `new-${data.type}-${data.slug}.json`; document.body.appendChild(a); a.click(); a.remove();
-    URL.revokeObjectURL(url);
+    // Try to fetch existing file and create a merged download ready to commit.
+    const targetPath = `/assets/data/${data.type}.json`;
+    fetch(targetPath, { cache: 'no-store' }).then(res=>{
+      if(!res.ok) throw new Error('no-file');
+      return res.json();
+    }).then(existing=>{
+      if(!Array.isArray(existing)) existing = [];
+      // ensure id uniqueness (if existing ids are numeric or string)
+      existing.unshift(data);
+      const mergedName = `${data.type}-merged-${data.slug}.json`;
+      if(window.utils && window.utils.downloadJSON){ window.utils.downloadJSON(existing, mergedName); }
+      else {
+        const blob = new Blob([JSON.stringify(existing,null,2)],{type:'application/json'});
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a'); a.href = url; a.download = mergedName; document.body.appendChild(a); a.click(); a.remove();
+        URL.revokeObjectURL(url);
+      }
+      alert('Merged JSON prepared for commit: ' + mergedName);
+    }).catch(()=>{
+      // fallback: download single-item JSON
+      const fname = `new-${data.type}-${data.slug}.json`;
+      if(window.utils && window.utils.downloadJSON){ window.utils.downloadJSON([data], fname); }
+      else { const blob = new Blob([JSON.stringify([data],null,2)],{type:'application/json'}); const url = URL.createObjectURL(blob); const a = document.createElement('a'); a.href = url; a.download = fname; document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url); }
+      alert('Could not fetch existing file; downloaded single-item JSON: ' + fname);
+    });
     // Also save to localStorage for quick retrieval
     const storeKey = `miroza-admin-${data.type}`;
     let existing = JSON.parse(localStorage.getItem(storeKey) || '[]');
     existing.unshift(data);
     localStorage.setItem(storeKey, JSON.stringify(existing));
-    alert('JSON prepared and saved to localStorage. Downloaded new-*.json with the new post.');
+    alert('Saved to localStorage. Use the downloaded merged JSON to commit to the repo.');
   });
 
   document.getElementById('clear-form').addEventListener('click', ()=>{ document.getElementById('post-form').reset(); document.getElementById('snippet').textContent=''; });
@@ -64,17 +84,15 @@
     const description = document.getElementById('description').value || '';
     const content = document.getElementById('content').value || '';
     const date = new Date().toISOString().slice(0,10);
-    const data = { id: Date.now(), slug, title, category, tags, image, description, content, date, type, views:0, clicks:0 };
+    const data = { id: (window.utils && window.utils.uid) ? window.utils.uid() : Date.now(), slug, title, category, tags, image, description, content, date, type, views:0, clicks:0 };
     return data;
   }
 
   function renderHtmlSnippet(it){
     // returns a card HTML matching site structure with data attributes
     const img = it.image ? `<div class="thumb" style="background-image:url('${it.image}')"></div>` : '';
-    return `<!-- Paste into the corresponding list page or merge into JSON -->\n<a href="/detail.html?type=${it.type}&id=${it.id}" class="card-link">\n  <article class="card" data-title="${escapeHtml(it.title)}" data-category="${escapeHtml(it.category)}" data-tags="${escapeHtml(it.tags.join(','))}" data-description="${escapeHtml(it.description)}" data-views="${it.views}" data-date="${it.date}" data-id="${it.id}">\n    ${img}\n    <h3>${escapeHtml(it.title)}</h3>\n    <p>${escapeHtml(it.description)}</p>\n    <div class="meta muted">${it.date} • ${it.category}</div>\n  </article>\n</a>`;
-  }
-
-  function escapeHtml(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+    const esc = (window.utils && window.utils.escapeHtml) ? window.utils.escapeHtml : (s)=>String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+    return `<!-- Paste into the corresponding list page or merge into JSON -->\n<a href="${(window.utils && window.utils.buildDetailUrl) ? window.utils.buildDetailUrl(it.type,it.id,it.slug) : '/detail.html?type='+encodeURIComponent(it.type)+'&id='+encodeURIComponent(it.id)}" class="card-link">\n  <article class="card" data-title="${esc(it.title)}" data-category="${esc(it.category)}" data-tags="${esc(it.tags.join(','))}" data-description="${esc(it.description)}" data-views="${it.views}" data-date="${it.date}" data-id="${it.id}">\n    ${img}\n    <h3>${esc(it.title)}</h3>\n    <p>${esc(it.description)}</p>\n    <div class="meta muted">${it.date} • ${it.category}</div>\n  </article>\n</a>`;
 
   // support image file upload by converting to object URL and placing value into image field
   document.getElementById('image-file').addEventListener('change', (e)=>{
@@ -97,9 +115,11 @@
   // Simple upload support (user can upload a full JSON to merge)
   document.getElementById('upload-json').addEventListener('change', (e)=>{
     const f = e.target.files[0]; if(!f) return;
-    const reader = new FileReader(); reader.onload = ()=>{
-      try{ const obj = JSON.parse(reader.result); console.log(obj); alert('File loaded. Check console for structure.'); }catch(err){ alert('Invalid JSON'); }
-    }; reader.readAsText(f);
+    if(window.utils && window.utils.readJSONFile){
+      window.utils.readJSONFile(f, (err, obj)=>{ if(err){ alert('Invalid JSON'); } else { console.log(obj); alert('File loaded. Check console for structure.'); } });
+    }else{
+      const reader = new FileReader(); reader.onload = ()=>{ try{ const obj = JSON.parse(reader.result); console.log(obj); alert('File loaded. Check console for structure.'); }catch(err){ alert('Invalid JSON'); } }; reader.readAsText(f);
+    }
   });
 
 })();
