@@ -102,6 +102,44 @@
     adjustBodyForFab();
   }
 
+  function initMenuDropdown(){
+    // add a dropdown menu near the 3-dot button for desktop; mobile uses mobile-drawer
+    const header = document.querySelector('.site-header');
+    if(!header) return;
+    // create dropdown if not exists
+    if(document.querySelector('.menu-dropdown')) return;
+    const dropdown = document.createElement('div'); dropdown.className = 'menu-dropdown';
+    dropdown.innerHTML = `
+      <a href="/news.html" class="link-neon">News</a>
+      <a href="/articles.html" class="link-neon">Articles</a>
+      <a href="/blogs.html" class="link-neon">Blogs</a>
+      <a href="/stories.html" class="link-neon">Stories</a>
+      <a href="/info.html" class="link-neon">Info</a>
+    `;
+    header.appendChild(dropdown);
+
+    const btn = document.getElementById('mobile-menu');
+    if(!btn) return;
+    btn.classList.add('btn-premium');
+    // toggle behavior
+    btn.addEventListener('click', (e)=>{
+      e.stopPropagation();
+      const isMobile = window.innerWidth <= 700;
+      if(isMobile){
+        // mobile drawer existing function handles open
+        const ev = new Event('click'); btn.dispatchEvent(ev);
+        return;
+      }
+      dropdown.classList.toggle('show');
+    });
+
+    // close when clicking outside
+    document.addEventListener('click', (e)=>{
+      if(!dropdown.classList.contains('show')) return;
+      if(!dropdown.contains(e.target) && e.target !== btn) dropdown.classList.remove('show');
+    });
+  }
+
   function initMobileNav(){
     // create drawer overlay and wire to #mobile-menu button
     if(document.querySelector('.mobile-drawer')) return;
@@ -141,6 +179,12 @@
     });
   }
 
+  function applyPremiumButtonClasses(){
+    const ids = ['theme-toggle','mobile-menu','back-btn','search-clear'];
+    ids.forEach(id=>{const el=document.getElementById(id); if(el) el.classList.add('btn-premium','ripple-effect');});
+    document.querySelectorAll('button.btn, button.icon-btn').forEach(b=>{b.classList.add('btn-premium');});
+  }
+
   onReady(()=>{
     initLogoLinks();
     addRipple();
@@ -149,6 +193,9 @@
     setYear();
     initFAB();
     enhanceImages();
+    applyPremiumButtonClasses();
+    initMobileNav();
+    initMenuDropdown();
   });
   // expose minimal
   window.ui = {initLogoLinks};

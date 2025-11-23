@@ -1,10 +1,24 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120">
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="48" viewBox="0 0 400 120" role="img" aria-label="MIROZA">
+  <!-- Premium serif emblem: stylized M and wordmark -->
   <defs>
-    <linearGradient id="g" x1="0" x2="1">
-      <stop offset="0" stop-color="#375a7f"/>
-      <stop offset="1" stop-color="#5aa3ff"/>
+    <linearGradient id="lg" x1="0" x2="1">
+      <stop offset="0" stop-color="#9be8ff"/>
+      <stop offset="1" stop-color="#7bf5c6"/>
     </linearGradient>
+    <filter id="emboss" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="1" result="b"/>
+      <feOffset in="b" dx="0" dy="1" result="o"/>
+      <feComposite in="o" in2="SourceAlpha" operator="out" result="c"/>
+      <feBlend in="SourceGraphic" in2="c" mode="normal"/>
+    </filter>
   </defs>
-  <rect width="120" height="120" rx="18" fill="url(#g)" />
-  <text x="50%" y="54%" font-family="sans-serif" font-size="48" fill="#fff" text-anchor="middle" alignment-baseline="middle" font-weight="700">M</text>
+  <rect width="100%" height="100%" fill="transparent"/>
+  <!-- Stylized M glyph -->
+  <g transform="translate(20,12)">
+    <text x="0" y="72" font-family="Georgia, 'Times New Roman', Times, serif" font-size="82" font-weight="700" fill="url(#lg)" filter="url(#emboss)">M</text>
+  </g>
+  <!-- Wordmark -->
+  <g transform="translate(110,78)">
+    <text x="0" y="-8" font-family="Georgia, 'Times New Roman', Times, serif" font-size="34" font-weight="700" fill="currentColor" style="letter-spacing:2px">MIROZA</text>
+  </g>
 </svg>

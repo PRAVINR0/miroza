@@ -9,6 +9,26 @@
   <link rel="stylesheet" href="/assets/css/theme.css">
 </head>
 <body>
+  <header class="site-header sticky">
+    <div class="header-inner">
+      <a class="brand" href="/index.html" aria-label="MIROZA home">
+          <img src="/assets/images/logo.svg" alt="MIROZA logo" width="48" height="48">
+          <span class="brand-title">MIROZA</span>
+      </a>
+
+      <div class="header-center">
+        <div class="search-wrap">
+          <input id="global-search" type="search" placeholder="Search MIROZA — press /" aria-label="Search" />
+          <button id="search-clear" class="icon-btn" aria-hidden="true">×</button>
+        </div>
+      </div>
+
+      <div class="header-actions">
+        <button id="theme-toggle" class="icon-btn btn-premium ripple-effect" aria-label="Toggle theme">🌓</button>
+        <button id="mobile-menu" class="icon-btn mobile-only btn-premium ripple-effect" aria-label="Menu">⋮</button>
+      </div>
+    </div>
+  </header>
   <main class="container">
     <h1 class="page-title">Search Results</h1>
     <div id="search-results" class="grid"></div>
