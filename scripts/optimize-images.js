@@ -8,12 +8,12 @@ const fetch = require('node-fetch');
 const sharp = require('sharp');
 
 const ROOT = path.resolve(__dirname, '..');
-// Use `data/` at project root for JSON sources in this repository
-const DATA_DIR = path.join(ROOT, 'data');
+// Use `assets/data` for JSON sources in this repository
+const DATA_DIR = path.join(ROOT, 'assets', 'data');
 const ORIG_DIR = path.join(ROOT, 'assets', 'images', 'originals');
 const OPT_DIR = path.join(ROOT, 'assets', 'images', 'optimized');
 const PLC_DIR = path.join(ROOT, 'assets', 'images', 'placeholders');
-const OUT_MAP = path.join(ROOT, 'data', 'image-placeholders.json');
+const OUT_MAP = path.join(DATA_DIR, 'image-placeholders.json');
 
 async function ensureDir(d){ await fs.mkdir(d, { recursive: true }); }
 

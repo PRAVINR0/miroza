@@ -15,12 +15,12 @@ const fs = require('fs').promises;
 const path = require('path');
 
 const ROOT = path.resolve(__dirname, '..');
-// Data lives at project root `data/` in this repo — adjust paths accordingly
-const DATA_DIR = path.join(ROOT, 'data');
+// Data lives in `assets/data` in this repo — use that path
+const DATA_DIR = path.join(ROOT, 'assets', 'data');
 const OUT_SITEMAP = path.join(ROOT, 'sitemap.xml');
 const OUT_FEED_NEWS = path.join(ROOT, 'feed-news.xml');
 const OUT_FEED = path.join(ROOT, 'feed.xml');
-const OUT_SEARCH = path.join(ROOT, 'data', 'search-index.json');
+const OUT_SEARCH = path.join(DATA_DIR, 'search-index.json');
 const TAGS_DIR = path.join(ROOT, 'tags');
 const CATS_DIR = path.join(ROOT, 'categories');
 
