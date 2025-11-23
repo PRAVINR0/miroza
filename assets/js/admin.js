@@ -125,75 +125,18 @@
   // GitHub publish flow (optional)
   function toBase64(str){ try { return btoa(unescape(encodeURIComponent(str))); } catch(e){ return btoa(str); } }
 
+  // publishToGitHub disabled in static-only mode
   async function publishToGitHub(pat, owner, repo, type, newItem){
     const statusEl = document.getElementById('github-status');
-    function setStatus(s){ if(statusEl) statusEl.textContent = s; }
-    try{
-      setStatus('Starting publish...');
-      const headers = { 'Authorization': 'Bearer ' + pat, 'Accept': 'application/vnd.github+json', 'Content-Type':'application/json' };
-
-      // 1) get main ref sha
-      setStatus('Fetching main branch info...');
-      const refRes = await fetch(`https://api.github.com/repos/${owner}/${repo}/git/ref/heads/main`, { headers });
-      if(!refRes.ok) throw new Error('Failed to get main ref: ' + refRes.status);
-      const refJson = await refRes.json();
-      const mainSha = refJson.object && refJson.object.sha;
-      if(!mainSha) throw new Error('Could not determine main branch SHA');
-
-      // 2) create a new branch
-      const branch = 'ai/publish-' + Date.now().toString(36);
-      setStatus('Creating branch ' + branch + '...');
-      await fetch(`https://api.github.com/repos/${owner}/${repo}/git/refs`, { method: 'POST', headers, body: JSON.stringify({ ref: 'refs/heads/' + branch, sha: mainSha }) });
-
-      // 3) fetch existing file on main (if any)
-      setStatus('Fetching existing data file...');
-      let existing = [];
-      const filePath = `assets/data/${type}.json`;
-      const contentRes = await fetch(`https://api.github.com/repos/${owner}/${repo}/contents/${filePath}?ref=main`, { headers });
-      if(contentRes.ok){
-        const contentJson = await contentRes.json();
-        if(contentJson.content){
-          const raw = atob(contentJson.content.replace(/\n/g,''));
-          try{ existing = JSON.parse(raw); if(!Array.isArray(existing)) existing = []; }catch(e){ existing = []; }
-        }
-      }
-
-      // prepend new item (ensure id uniqueness by timestamp if needed)
-      existing.unshift(newItem);
-      const newContent = JSON.stringify(existing, null, 2);
-
-      // 4) put file on new branch
-      setStatus('Uploading merged file to branch...');
-      const putBody = { message: `chore: add post ${newItem.slug || newItem.title}`, content: toBase64(newContent), branch };
-      const putRes = await fetch(`https://api.github.com/repos/${owner}/${repo}/contents/${filePath}`, { method: 'PUT', headers, body: JSON.stringify(putBody) });
-      if(!putRes.ok){ const txt = await putRes.text(); throw new Error('Failed to upload file: ' + putRes.status + ' ' + txt); }
-
-      // 5) open PR
-      setStatus('Creating pull request...');
-      const prBody = { title: `Add post: ${newItem.title}`, head: branch, base: 'main', body: `Automated post by admin panel: ${newItem.title}` };
-      const prRes = await fetch(`https://api.github.com/repos/${owner}/${repo}/pulls`, { method: 'POST', headers, body: JSON.stringify(prBody) });
-      if(!prRes.ok){ const txt = await prRes.text(); throw new Error('Failed to create PR: ' + prRes.status + ' ' + txt); }
-      const prJson = await prRes.json();
-      setStatus('Pull request created: ' + prJson.html_url);
-      return prJson.html_url;
-    }catch(err){
-      const message = err && err.message ? err.message : String(err);
-      if(document.getElementById('github-status')) document.getElementById('github-status').textContent = 'Publish failed: ' + message;
-      throw err;
-    }
+    if(statusEl) statusEl.textContent = 'Publish disabled: repository is in static-only mode. See /backup/old_unused/ for original scripts.';
+    // Provide a clear rejection so callers know publishing is disabled
+    throw new Error('Publish disabled: static-only repository');
   }
 
-  document.getElementById('github-publish').addEventListener('click', async ()=>{
-    const pat = document.getElementById('github-pat').value.trim();
-    const owner = document.getElementById('github-owner').value.trim() || 'PRAVINR0';
-    const repo = document.getElementById('github-repo').value.trim() || 'miroza';
-    if(!pat){ alert('Paste a GitHub Personal Access Token (PAT) with repo scope to publish.'); return; }
-    try{
-      const data = gatherForm();
-      document.getElementById('github-status').textContent = 'Preparing post...';
-      const prUrl = await publishToGitHub(pat, owner, repo, data.type, data);
-      alert('Published: PR created\n' + prUrl);
-    }catch(err){ console.error(err); alert('Publish failed: ' + (err.message||err)); }
+  // Publishing via the admin panel is disabled in static-only mode to avoid exposing tokens or making network commits.
+  document.getElementById('github-publish').addEventListener('click', ()=>{
+    alert('Publishing is disabled in this static-only repository. To publish, use the original scripts in /backup/old_unused/ on a trusted machine.');
+    const statusEl = document.getElementById('github-status'); if(statusEl) statusEl.textContent = 'Publish disabled: static-only mode.';
   });
 
   document.getElementById('github-clear').addEventListener('click', ()=>{ document.getElementById('github-pat').value = ''; if(document.getElementById('github-status')) document.getElementById('github-status').textContent = ''; alert('PAT cleared from the form.'); });

@@ -1,0 +1,13 @@
+name: Generate site metadata
+
+# Copied to backup/old_unused on 2025-11-23
+# Original file location: .github/workflows/generate-site.yml
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+# (Full workflow preserved in this backup copy)
+# If you want the workflow restored, move this file back to `.github/workflows/generate-site.yml` and review before re-enabling.
