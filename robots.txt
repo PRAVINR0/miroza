@@ -1,7 +1,0 @@
-# robots.txt — update the Sitemap line with your actual GitHub Pages domain
-User-agent: *
-Allow: /
-
-# Replace YOUR-DOMAIN-NAME with your site domain, e.g.
-# Sitemap: https://pravinr0.github.io/miroza/sitemap.xml
-Sitemap: https://YOUR-DOMAIN-NAME/sitemap.xml
