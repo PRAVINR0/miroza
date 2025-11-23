@@ -9,7 +9,7 @@
   <!-- Demo CSP: allows inline scripts for theme init. Replace with nonce/hash in production. -->
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self';">
   <script> (function(){try{var t=localStorage.getItem('miroza_theme');if(!t){var p=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches;t=p?'dark':'light';}if(t==='dark')document.documentElement.classList.add('theme-dark');}catch(e){}})();</script>
-  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/styles/styles.css">
 </head>
 <body>
   <header class="site-header container"><div class="brand"><a href="/index.html">MIROZA</a></div></header>
@@ -25,7 +25,8 @@
       <p><a href="/index.html">← Back to Home</a></p>
     </article>
   </main>
-  <script src="/app.js" defer></script>
+  <script src="/scripts/vendor.js" defer></script>
+  <script src="/scripts/app.js" defer></script>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"NewsArticle","headline":"City Council Approves New Transit Plan","image":["/assets/images/img-1.svg"],"datePublished":"2025-11-20T09:00:00Z","author":{"@type":"Person","name":"Ravi Kumar"},"publisher":{"@type":"Organization","name":"MIROZA","logo":{"@type":"ImageObject","url":"/assets/hero-1.svg"}}}
   </script>
