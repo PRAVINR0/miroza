@@ -29,7 +29,7 @@
       // if no url, try detail link pattern
       if(!url && type){
         const id = card.getAttribute('data-id') || card.getAttribute('data-id') || '';
-        url = `detail.html?type=${encodeURIComponent(type)}&id=${encodeURIComponent(id)}`;
+        url = `/detail.html?type=${encodeURIComponent(type)}&id=${encodeURIComponent(id)}`;
       }
       if(title) index.push({title, description: desc, type, url});
     });
@@ -39,7 +39,7 @@
       try{
         const items = await fetch(`assets/data/${t}.json`).then(r=>r.json());
         items.forEach(it=>{
-          const url = `detail.html?type=${encodeURIComponent(t)}&id=${encodeURIComponent(it.id)}`;
+          const url = `/detail.html?type=${encodeURIComponent(t)}&id=${encodeURIComponent(it.id)}`;
           // avoid duplicates by url
           if(!index.find(e=>e.url===url)){
             index.push({title: it.title||'', description: it.description||'', type: t, url});

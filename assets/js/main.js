@@ -17,7 +17,7 @@ function injectHeader(){
   header.innerHTML = `
     <header class="site-header">
       <div class="brand">
-        <a class="logo" href="index.html">Miroza</a>
+        <a class="logo" href="/index.html">Miroza</a>
       </div>
       <div id="site-search" class="site-search">
         <span class="search-icon" aria-hidden>🔍</span>
@@ -25,22 +25,22 @@ function injectHeader(){
         <div id="search-suggestions" class="search-suggestions" role="listbox" aria-label="Search suggestions"></div>
       </div>
       <nav class="nav" aria-label="Main navigation">
-        <a href="index.html">Home</a>
-        <a href="news.html">News</a>
-        <a href="blog.html">Blogs</a>
-        <a href="articles.html">Articles</a>
-        <a href="stories.html">Stories</a>
-        <a href="info.html">Info</a>
+        <a href="/index.html">Home</a>
+        <a href="/news.html">News</a>
+        <a href="/blog.html">Blogs</a>
+        <a href="/articles.html">Articles</a>
+        <a href="/stories.html">Stories</a>
+        <a href="/info.html">Info</a>
       </nav>
       <div class="header-right">
         <div class="more-menu">
           <button class="icon-btn" id="more-btn" aria-expanded="false" aria-controls="more-panel">⋯</button>
           <div class="more-panel" id="more-panel" role="menu">
-            <a href="news.html">News</a>
-            <a href="blog.html">Blogs</a>
-            <a href="articles.html">Articles</a>
-            <a href="stories.html">Stories</a>
-            <a href="info.html">Info</a>
+            <a href="/news.html">News</a>
+            <a href="/blog.html">Blogs</a>
+            <a href="/articles.html">Articles</a>
+            <a href="/stories.html">Stories</a>
+            <a href="/info.html">Info</a>
           </div>
         </div>
         <button class="icon-btn" id="theme-toggle" aria-pressed="false" aria-label="Toggle theme">🌓</button>
@@ -120,7 +120,7 @@ function renderCards(container, items, large = false, typeOverride){
     const cardLink = document.createElement('a');
     const itemType = typeOverride || it.type || '';
     const id = it.id != null ? it.id : idx + 1;
-    cardLink.href = `detail.html?type=${encodeURIComponent(itemType)}&id=${encodeURIComponent(id)}`;
+    cardLink.href = `/detail.html?type=${encodeURIComponent(itemType)}&id=${encodeURIComponent(id)}`;
     cardLink.style.textDecoration = 'none'; cardLink.style.color = 'inherit';
 
     const card = document.createElement('article'); card.className = 'card fade-in'; if(large) card.style.minHeight = '180px';
@@ -151,7 +151,7 @@ async function loadDetail(){
     if(!item){ container.innerHTML = '<p class="muted">Item not found.</p>'; return; }
 
     container.innerHTML = '';
-    const backLink = document.createElement('a'); backLink.href = (type === 'articles' ? 'articles.html' : type + '.html') || 'index.html'; backLink.textContent = `← Back to ${capitalize(type || 'Home')}`; backLink.className = 'muted'; backLink.style.display='inline-block'; backLink.style.marginBottom='12px';
+    const backLink = document.createElement('a'); backLink.href = (type === 'articles' ? '/articles.html' : '/' + type + '.html') || '/index.html'; backLink.textContent = `← Back to ${capitalize(type || 'Home')}`; backLink.className = 'muted'; backLink.style.display='inline-block'; backLink.style.marginBottom='12px';
     const title = document.createElement('h1'); title.textContent = item.title;
     const img = document.createElement('img'); img.className = 'thumb'; img.style.height = '360px'; img.loading='lazy'; img.decoding='async'; img.alt = item.title || ''; if(item.image) img.src = item.image;
     const meta = document.createElement('div'); meta.className='meta muted'; meta.textContent = `${item.date || ''}${item.category ? ' • ' + item.category : ''}`;

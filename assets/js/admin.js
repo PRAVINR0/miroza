@@ -71,7 +71,7 @@
   function renderHtmlSnippet(it){
     // returns a card HTML matching site structure with data attributes
     const img = it.image ? `<div class="thumb" style="background-image:url('${it.image}')"></div>` : '';
-    return `<!-- Paste into the corresponding list page or merge into JSON -->\n<a href="detail.html?type=${it.type}&id=${it.id}" class="card-link">\n  <article class="card" data-title="${escapeHtml(it.title)}" data-category="${escapeHtml(it.category)}" data-tags="${escapeHtml(it.tags.join(','))}" data-description="${escapeHtml(it.description)}" data-views="${it.views}" data-date="${it.date}" data-id="${it.id}">\n    ${img}\n    <h3>${escapeHtml(it.title)}</h3>\n    <p>${escapeHtml(it.description)}</p>\n    <div class="meta muted">${it.date} • ${it.category}</div>\n  </article>\n</a>`;
+    return `<!-- Paste into the corresponding list page or merge into JSON -->\n<a href="/detail.html?type=${it.type}&id=${it.id}" class="card-link">\n  <article class="card" data-title="${escapeHtml(it.title)}" data-category="${escapeHtml(it.category)}" data-tags="${escapeHtml(it.tags.join(','))}" data-description="${escapeHtml(it.description)}" data-views="${it.views}" data-date="${it.date}" data-id="${it.id}">\n    ${img}\n    <h3>${escapeHtml(it.title)}</h3>\n    <p>${escapeHtml(it.description)}</p>\n    <div class="meta muted">${it.date} • ${it.category}</div>\n  </article>\n</a>`;
   }
 
   function escapeHtml(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
