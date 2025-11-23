@@ -65,7 +65,7 @@ body{
 .grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
 .card{background:var(--card);border-radius:12px;padding:12px;box-shadow:0 6px 18px rgba(16,24,40,0.08);overflow:hidden;transition:transform .28s, box-shadow .28s, opacity .3s;backdrop-filter: blur(6px);border:1px solid var(--glass-border)}
 .card:hover{transform:translateY(-8px);box-shadow:0 12px 30px rgba(16,24,40,0.18)}
-.card .thumb{height:140px;border-radius:8px;background-size:cover;background-position:center;margin-bottom:10px}
+.card .thumb{height:140px;border-radius:8px;object-fit:cover;width:100%;display:block;margin-bottom:10px}
 .card h3{margin:0 0 8px 0;font-size:1.05rem}
 .card p{margin:0 0 8px 0;color:var(--muted);font-size:0.95rem}
 .card .meta{font-size:0.8rem;color:var(--muted)}
