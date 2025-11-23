@@ -1,0 +1,26 @@
+{
+  "name": "miroza-site-tools",
+  "version": "1.0.0",
+  "description": "Site generation tools for Miroza (sitemap, RSS, search-index, tags)",
+  "main": "scripts/generate_site.js",
+  "scripts": {
+    "generate": "node scripts/generate_site.js && node scripts/generate_meta.js && node scripts/generate_prerender_meta.js",
+    "optimize-images": "node scripts/optimize-images.js",
+    "wire-ui": "node scripts/wire_site_ui.js",
+    "coverage": "node scripts/collect_coverage.js",
+    "start": "node server.js",
+    "serve": "node server.js",
+    "build": "node scripts/build.js",
+    "deploy": "npm run generate && gh-pages -d . -b gh-pages"
+  },
+  "engines": { "node": ">=16" },
+  "dependencies": {
+    "express": "^4.18.2",
+    "compression": "^1.7.4",
+    "gh-pages": "^5.0.0",
+    "terser": "^5.18.0",
+    "clean-css": "^5.3.2",
+    "sharp": "^0.32.0",
+    "node-fetch": "^2.6.7"
+  }
+}
