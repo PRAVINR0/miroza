@@ -63,6 +63,12 @@
     </section>
 
     <section id="home-grid" class="grid"></section>
+
+    <!-- Latest news strip (homepage) -->
+    <section id="home-news" class="news-strip container" style="margin-top:24px;">
+      <h2>Latest News</h2>
+      <div id="home-news-grid" class="grid"></div>
+    </section>
   </main>
 
   <script src="assets/js/main.js"></script>
@@ -93,6 +99,18 @@
       renderCards(document.getElementById('home-grid'), latestItems, true);
     }
     loadHome();
+    // Also load latest 5 news items for the homepage news strip
+    (async function loadHomeNews(){
+      try{
+        const items = await fetchJSON('assets/data/news.json');
+        if(Array.isArray(items) && items.length){
+          // sort by date desc and take 5
+          items.sort((a,b)=> new Date(b.date) - new Date(a.date));
+          const latest = items.slice(0,5).map(it=> Object.assign({type:'news'}, it));
+          renderCards(document.getElementById('home-news-grid'), latest, false, 'news');
+        }
+      }catch(e){ console.warn('Home news load failed', e); }
+    })();
   </script>
     <!-- Service worker registration moved to assets/js/main.js for consistent registration across pages -->
 </body>

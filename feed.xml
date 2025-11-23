@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Miroza — Feed</title>
+    <link>https://YOUR-DOMAIN/</link>
+    <description>Main feed for Miroza (news)</description>
+    <language>en-US</language>
+    <lastBuildDate>Sun, 23 Nov 2025 00:00:00 +0000</lastBuildDate>
+
+    <!-- Points to the same news items; clients may subscribe to feed-news.xml instead -->
+    <item>
+      <title>ISRO Successfully Launches GSAT-24 Communication Satellite</title>
+      <link>https://YOUR-DOMAIN/detail.html?type=news&amp;id=2&amp;slug=isro-successfully-launches-gsat-24</link>
+      <description><![CDATA[India's space agency deploys GSAT-24 to strengthen regional communications and broadcasting services.]]></description>
+      <pubDate>Sun, 23 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>https://YOUR-DOMAIN/detail.html?type=news&amp;id=2</guid>
+    </item>
+
+    <!-- Additional items omitted for brevity; feed-news.xml contains the full set -->
+
+  </channel>
+</rss>

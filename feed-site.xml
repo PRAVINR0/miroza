@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Miroza — Site Feed</title>
+    <link>https://YOUR-DOMAIN/</link>
+    <description>All recent content on Miroza</description>
+    <language>en-US</language>
+    <lastBuildDate>Sun, 23 Nov 2025 00:00:00 +0000</lastBuildDate>
+
+    <!-- Re-using the same news items for the site-level feed -->
+    <item>
+      <title>ISRO Successfully Launches GSAT-24 Communication Satellite</title>
+      <link>https://YOUR-DOMAIN/detail.html?type=news&amp;id=2&amp;slug=isro-successfully-launches-gsat-24</link>
+      <description><![CDATA[India's space agency deploys GSAT-24 to strengthen regional communications and broadcasting services.]]></description>
+      <pubDate>Sun, 23 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>https://YOUR-DOMAIN/detail.html?type=news&amp;id=2</guid>
+    </item>
+
+    <item>
+      <title>New AI Model Exceeds GPT-5 Benchmarks in Reasoning Tests</title>
+      <link>https://YOUR-DOMAIN/detail.html?type=news&amp;id=3&amp;slug=new-ai-model-exceeds-gpt-5-benchmarks</link>
+      <description><![CDATA[A research team publishes an AI that outperforms current benchmarks on complex reasoning tasks.]]></description>
+      <pubDate>Sun, 23 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>https://YOUR-DOMAIN/detail.html?type=news&amp;id=3</guid>
+    </item>
+
+    <item>
+      <title>Apple Announces Vision Pro 2 With Major Upgrades</title>
+      <link>https://YOUR-DOMAIN/detail.html?type=news&amp;id=4&amp;slug=apple-announces-vision-pro-2-with-major-upgrades</link>
+      <description><![CDATA[Apple unveils the Vision Pro 2 featuring improved optics, battery life and collaborative spatial features.]]></description>
+      <pubDate>Sun, 23 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>https://YOUR-DOMAIN/detail.html?type=news&amp;id=4</guid>
+    </item>
+
+    <item>
+      <title>India Records Highest Solar Power Production in History</title>
+      <link>https://YOUR-DOMAIN/detail.html?type=news&amp;id=5&amp;slug=india-records-highest-solar-power-production-in-history</link>
+      <description><![CDATA[Nation-wide solar output peaks, reflecting rapid capacity growth and favourable weather conditions.]]></description>
+      <pubDate>Sun, 23 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>https://YOUR-DOMAIN/detail.html?type=news&amp;id=5</guid>
+    </item>
+
+    <item>
+      <title>Tesla Unveils New Electric Bike Concept in Berlin</title>
+      <link>https://YOUR-DOMAIN/detail.html?type=news&amp;id=6&amp;slug=tesla-unveils-new-electric-bike-concept-in-berlin</link>
+      <description><![CDATA[Tesla reveals an urban electric bike prototype blending the company's EV design language with lightweight e-mobility.]]></description>
+      <pubDate>Sun, 23 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>https://YOUR-DOMAIN/detail.html?type=news&amp;id=6</guid>
+    </item>
+
+    <item>
+      <title>Google Adds Hindi &amp; Tamil Support to Gemini Live AI</title>
+      <link>https://YOUR-DOMAIN/detail.html?type=news&amp;id=7&amp;slug=google-adds-hindi-tamil-support-to-gemini-live-ai</link>
+      <description><![CDATA[Real-time spoken and written support for Hindi and Tamil expands Gemini Live's reach across South Asia.]]></description>
+      <pubDate>Sun, 23 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>https://YOUR-DOMAIN/detail.html?type=news&amp;id=7</guid>
+    </item>
+
+    <item>
+      <title>Scientists Discover Earth-Like Planet in TRAPPIST-1 System</title>
+      <link>https://YOUR-DOMAIN/detail.html?type=news&amp;id=8&amp;slug=scientists-discover-earth-like-planet-in-trappist-1-system</link>
+      <description><![CDATA[A newly characterised planet in the TRAPPIST-1 system shows signs of temperate conditions and a rocky surface.]]></description>
+      <pubDate>Sun, 23 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>https://YOUR-DOMAIN/detail.html?type=news&amp;id=8</guid>
+    </item>
+
+    <item>
+      <title>Meta Introduces Ultra-Realistic Avatars for VR Meetings</title>
+      <link>https://YOUR-DOMAIN/detail.html?type=news&amp;id=9&amp;slug=meta-introduces-ultra-realistic-avatars-for-vr-meetings</link>
+      <description><![CDATA[Meta showcases avatars with detailed facial expressions and natural motion to improve virtual collaboration.]]></description>
+      <pubDate>Sun, 23 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>https://YOUR-DOMAIN/detail.html?type=news&amp;id=9</guid>
+    </item>
+
+    <item>
+      <title>WHO Releases Updated Report on Global Nutrition 2025</title>
+      <link>https://YOUR-DOMAIN/detail.html?type=news&amp;id=10&amp;slug=who-releases-updated-report-on-global-nutrition-2025</link>
+      <description><![CDATA[The WHO publishes a comprehensive report highlighting global nutrition trends, challenges and recommendations for 2025.]]></description>
+      <pubDate>Sun, 23 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>https://YOUR-DOMAIN/detail.html?type=news&amp;id=10</guid>
+    </item>
+
+    <item>
+      <title>Amazon Launches Drone Delivery Service in Bengaluru</title>
+      <link>https://YOUR-DOMAIN/detail.html?type=news&amp;id=11&amp;slug=amazon-launches-drone-delivery-service-in-bengaluru</link>
+      <description><![CDATA[Amazon launches a pilot drone delivery service in Bengaluru to speed up small-package logistics in select neighbourhoods.]]></description>
+      <pubDate>Sun, 23 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>https://YOUR-DOMAIN/detail.html?type=news&amp;id=11</guid>
+    </item>
+
+  </channel>
+</rss>

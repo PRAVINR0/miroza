@@ -26,4 +26,36 @@
     <loc>https://YOUR-DOMAIN/info.html</loc>
   </url>
 
+  <!-- Detail pages for newly added news items -->
+  <url>
+    <loc>https://YOUR-DOMAIN/detail.html?type=news&amp;id=2&amp;slug=isro-successfully-launches-gsat-24</loc>
+  </url>
+  <url>
+    <loc>https://YOUR-DOMAIN/detail.html?type=news&amp;id=3&amp;slug=new-ai-model-exceeds-gpt-5-benchmarks</loc>
+  </url>
+  <url>
+    <loc>https://YOUR-DOMAIN/detail.html?type=news&amp;id=4&amp;slug=apple-announces-vision-pro-2-with-major-upgrades</loc>
+  </url>
+  <url>
+    <loc>https://YOUR-DOMAIN/detail.html?type=news&amp;id=5&amp;slug=india-records-highest-solar-power-production-in-history</loc>
+  </url>
+  <url>
+    <loc>https://YOUR-DOMAIN/detail.html?type=news&amp;id=6&amp;slug=tesla-unveils-new-electric-bike-concept-in-berlin</loc>
+  </url>
+  <url>
+    <loc>https://YOUR-DOMAIN/detail.html?type=news&amp;id=7&amp;slug=google-adds-hindi-tamil-support-to-gemini-live-ai</loc>
+  </url>
+  <url>
+    <loc>https://YOUR-DOMAIN/detail.html?type=news&amp;id=8&amp;slug=scientists-discover-earth-like-planet-in-trappist-1-system</loc>
+  </url>
+  <url>
+    <loc>https://YOUR-DOMAIN/detail.html?type=news&amp;id=9&amp;slug=meta-introduces-ultra-realistic-avatars-for-vr-meetings</loc>
+  </url>
+  <url>
+    <loc>https://YOUR-DOMAIN/detail.html?type=news&amp;id=10&amp;slug=who-releases-updated-report-on-global-nutrition-2025</loc>
+  </url>
+  <url>
+    <loc>https://YOUR-DOMAIN/detail.html?type=news&amp;id=11&amp;slug=amazon-launches-drone-delivery-service-in-bengaluru</loc>
+  </url>
+
 </urlset>
