@@ -21,3 +21,17 @@
 /* button hover glow */
 .btn-glow{transition:box-shadow .3s ease,transform .2s ease}
 .btn-glow:hover{box-shadow:0 8px 30px rgba(84,240,255,0.08);transform:translateY(-3px)}
+
+/* Reveal and slide-up */
+@keyframes slideUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.slide-up{animation:slideUp .56s cubic-bezier(.2,.9,.2,1) both}
+
+/* soft tilt effect */
+.tilt-interact{transition:transform .36s ease}
+.tilt-interact:hover{transform:perspective(600px) rotateX(2deg) rotateY(-2deg)}
+
+/* link hover underline neon */
+a.link-neon{position:relative;color:inherit;transition:color .28s ease,transform .28s}
+a.link-neon::after{content:'';position:absolute;left:0;right:0;bottom:-4px;height:2px;background:transparent;transition:all .28s}
+a.link-neon:hover{color:var(--neon-color);transform:translateY(-1px)}
+a.link-neon:hover::after{background:linear-gradient(90deg,var(--neon-color),transparent);box-shadow:0 0 12px var(--neon-glow)}

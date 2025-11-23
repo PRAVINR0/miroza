@@ -34,3 +34,25 @@ body{background:var(--bg);color:var(--text);transition:background var(--transiti
 
 /* Neon accent helper */
 .neon{box-shadow:0 0 18px rgba(84,240,255,0.08), inset 0 0 6px rgba(84,240,255,0.02)}
+
+/* Additional premium variables */
+:root{
+	--neon-color: rgba(84,240,255,1);
+	--neon-glow: rgba(84,240,255,0.12);
+	--glass-bg-light: rgba(255,255,255,0.06);
+	--glass-bg-dark: rgba(0,0,0,0.18);
+	--blur-strong: 20px;
+	--card-radius: 14px;
+	--trans-fast: 260ms;
+}
+
+/* helpers for glass surfaces */
+.glass{
+	background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+	border: 1px solid rgba(255,255,255,0.04);
+	backdrop-filter: blur(var(--blur-strong)) saturate(180%);
+}
+.dark .glass{
+	background: linear-gradient(180deg, rgba(0,0,0,0.18), rgba(0,0,0,0.12));
+	border: 1px solid rgba(255,255,255,0.04);
+}

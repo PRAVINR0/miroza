@@ -93,6 +93,13 @@
       if(act==='search'){ const q = prompt('Search MIROZA'); if(q) window.location.href=`/search.html?q=${encodeURIComponent(q)}` }
       if(act==='theme'){ if(window.theme && window.theme.toggle) window.theme.toggle(); }
     });
+    // ensure FAB doesn't overlap important content: add bottom padding to body on small screens
+    function adjustBodyForFab(){
+      const pad = 96; // enough for expanded FAB
+      if(window.innerWidth < 700){ document.documentElement.style.setProperty('--fab-bottom-space', pad + 'px'); document.body.style.paddingBottom = pad + 'px'; }
+    }
+    window.addEventListener('resize', adjustBodyForFab);
+    adjustBodyForFab();
   }
 
   function initMobileNav(){
