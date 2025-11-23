@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Miroza — Home</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <!-- Header will be injected by assets/js/main.js -->
+  <div id="site-header"></div>
+
+  <main class="container">
+    <section class="page-intro">
+      <h1>Welcome to Miroza</h1>
+      <p class="lead">A calm place for Daily News, Blogs, Articles, Stories, and Informational content.</p>
+    </section>
+
+    <section id="home-grid" class="grid"></section>
+  </main>
+
+  <script src="assets/js/main.js"></script>
+  <script>
+    // Initialize header, theme and home content
+    injectHeader();
+    initTheme();
+    initMenus();
+    // Load latest item from each data file, then shuffle display
+    async function loadHome() {
+      const types = ['articles','blogs','news','stories','info'];
+      const latestItems = [];
+      for (const t of types) {
+        try {
+          const items = await fetchJSON(`assets/data/${t}.json`);
+          if (items && items.length) {
+            // find latest by date
+            items.sort((a,b)=> new Date(b.date) - new Date(a.date));
+            const item = Object.assign({type: t}, items[0]);
+            latestItems.push(item);
+          }
+        } catch(e) { console.warn('Home load error', e); }
+      }
+      // Shuffle
+      shuffleArray(latestItems);
+      renderCards(document.getElementById('home-grid'), latestItems, true);
+    }
+    loadHome();
+  </script>
+</body>
+</html>

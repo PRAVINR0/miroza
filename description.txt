@@ -1,0 +1,51 @@
+Miroza — Static Website
+
+Overview:
+- This repository is a small static website named "Miroza" that aggregates content: Daily News, Blogs, Articles, Stories, and Informational pages.
+
+Files and purpose:
+- `index.html` — Home page. Loads the latest item from each content type (articles, blogs, news, stories, info), shuffles them and displays them on the landing page.
+- `articles.html`, `blog.html`, `news.html`, `stories.html`, `info.html` — Individual pages for each content type. Each page loads its corresponding JSON file from `assets/data/` and renders cards in a responsive grid.
+- `assets/css/style.css` — Central stylesheet. Defines color variables for light and dark themes, responsive grid layout, glass-morphism cards, and animations.
+- `assets/js/main.js` — Site-wide JavaScript. Responsibilities:
+  - `injectHeader()` inserts a common header into every page.
+  - `initTheme()` initializes theme from `localStorage` or system preference.
+  - `initMenus()` wires the 3-dot (more) menu and theme toggle.
+  - `fetchJSON(path)` fetches JSON files.
+  - `renderCards(container, items)` renders content cards into a grid container.
+  - `shuffleArray(array)` shuffles arrays (used on the homepage).
+
+- `assets/data/*.json` — JSON data files for each content type. Each file is an array of objects with the following shape:
+  {
+    "title": "...",
+    "description": "...",
+    "date": "YYYY-MM-DD",
+    "image": "https://..."
+  }
+
+How pages are connected:
+- Every HTML page includes `assets/js/main.js` and calls `injectHeader()` so the same header is used across pages. Navigation links are standard `<a>` links between pages.
+
+How JSON data works:
+- Each content page calls `fetchJSON('assets/data/<type>.json')` and passes the returned array to `renderCards()` which creates the card layout.
+- To add new content, open the appropriate file in `assets/data/` (for example `articles.json`) and append another object following the same shape. New items with newer `date` values will appear first on list pages and the latest item will be selected on the homepage.
+
+Dark / Light Mode:
+- Theme is persisted in `localStorage` under the key `miroza-theme` with values `dark` or `light`.
+- The theme toggle updates `document.documentElement` with `data-theme='dark'` for dark mode; the CSS reads that attribute to switch variables.
+
+Header import across pages:
+- The header is not duplicated in HTML files; instead `injectHeader()` writes the header markup into the element with id `site-header`. This keeps the header consistent across pages.
+
+Hosting with GitHub Pages:
+- This is a static site and can be published by pushing the repository to GitHub and enabling GitHub Pages (commonly from the `main` branch or `gh-pages` branch). Ensure that the `CNAME` (if present) points to the intended custom domain and DO NOT modify DNS without verification.
+
+Adding content checklist:
+1. Edit `assets/data/<type>.json` and add a new JSON object to the array.
+2. Use a valid `date` field (`YYYY-MM-DD`) — newest dates determine ordering.
+3. Provide an absolute URL for `image` or a relative path inside `assets/`.
+4. Visit the site pages — the content will be loaded client-side.
+
+Notes and next steps:
+- This project uses vanilla HTML/CSS/JS for portability.
+- If you want me to scaffold a GitHub Actions workflow for automatic builds (not needed for pure static pages) or add a simple search/filter feature, I can implement that next.
