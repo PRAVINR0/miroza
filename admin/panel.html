@@ -59,6 +59,21 @@
           </div>
         </form>
         <pre id="snippet" style="white-space:pre-wrap;margin-top:12px"></pre>
+        <section class="card-form" style="margin-top:18px">
+          <h3>Publish to GitHub (optional)</h3>
+          <p class="muted">Provide a temporary Personal Access Token (PAT) with <code>repo</code> scope to publish directly. The token is used only for this session and is not stored.</p>
+          <label>GitHub Owner</label>
+          <input id="github-owner" value="PRAVINR0">
+          <label>Repository</label>
+          <input id="github-repo" value="miroza">
+          <label>Personal Access Token (PAT)</label>
+          <input id="github-pat" type="password" placeholder="Paste PAT here (will not be saved)">
+          <div class="actions">
+            <button id="github-publish" type="button">Publish (create branch & PR)</button>
+            <button id="github-clear" type="button">Clear PAT</button>
+          </div>
+          <div id="github-status" style="margin-top:8px;color:var(--muted)"></div>
+        </section>
       </div>
     </div>
   </main>

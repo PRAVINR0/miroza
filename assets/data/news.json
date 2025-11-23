@@ -1,142 +1,192 @@
-[
-  {
-    "id": 1,
-    "title": "City Park Reopens After Renovation",
-    "description": "The central city park reopened with new accessible paths and native plantings.",
-    "content": "After a year-long community-led renovation the city park reopens with wider paths, native plant gardens, and new lighting. The project prioritized accessibility and biodiversity.",
-    "date": "2025-08-20",
-    "image": "/assets/images/example1.jpg",
-    "category": "Local"
-  }
-  ,
-  {
-    "id": 2,
-    "title": "ISRO Successfully Launches GSAT-24 Communication Satellite",
-    "description": "India's space agency deploys GSAT-24 to strengthen regional communications and broadcasting services.",
-    "content": "The Indian Space Research Organisation (ISRO) announced the successful launch of GSAT-24 today, a high-throughput communication satellite designed to expand broadcasting and digital connectivity across the region. The mission marks another milestone in ISRO's growing suite of communication satellites and follows rigorous ground testing and integration work.",
-    "date": "2025-11-23",
-    "image": "https://source.unsplash.com/1600x900/?satellite,space",
-    "category": "News",
-    "tags": ["ISRO","space","satellite","connectivity"],
-    "slug": "isro-successfully-launches-gsat-24",
-    "views": 0,
-    "og_image": "https://source.unsplash.com/1200x630/?satellite,space"
-  },
-  {
-    "id": 3,
-    "title": "New AI Model Exceeds GPT-5 Benchmarks in Reasoning Tests",
-    "description": "A research team publishes an AI that outperforms current benchmarks on complex reasoning tasks.",
-    "content": "A newly released AI model has demonstrated performance beyond existing benchmarks in a series of independent reasoning evaluations. The model, developed by a consortium of academic and industry researchers, showed marked improvements in multi-step reasoning, mathematical problem solving, and logical inference tasks.",
-    "date": "2025-11-23",
-    "image": "https://source.unsplash.com/1600x900/?artificial-intelligence,ai",
-    "category": "News",
-    "tags": ["AI","research","benchmarks","machine-learning"],
-    "slug": "new-ai-model-exceeds-gpt-5-benchmarks",
-    "views": 0,
-    "og_image": "https://source.unsplash.com/1200x630/?artificial-intelligence,ai"
-  },
-  {
-    "id": 4,
-    "title": "Apple Announces Vision Pro 2 With Major Upgrades",
-    "description": "Apple unveils the Vision Pro 2 featuring improved optics, battery life and collaborative spatial features.",
-    "content": "At a special event, Apple introduced the Vision Pro 2, the next iteration of its mixed-reality headset. The new model brings enhanced display optics, extended battery life, and hardware improvements that make long-form productivity and entertainment sessions more comfortable.",
-    "date": "2025-11-23",
-    "image": "https://source.unsplash.com/1600x900/?virtual-reality,headset",
-    "category": "News",
-    "tags": ["Apple","Vision Pro","VR","hardware"],
-    "slug": "apple-announces-vision-pro-2-with-major-upgrades",
-    "views": 0,
-    "og_image": "https://source.unsplash.com/1200x630/?virtual-reality,headset"
-  },
-  {
-    "id": 5,
-    "title": "India Records Highest Solar Power Production in History",
-    "description": "Nation-wide solar output peaks, reflecting rapid capacity growth and favourable weather conditions.",
-    "content": "India recorded its highest daily solar power production on record as new utility-scale projects and rooftop installations came online across multiple states. Grid operators noted a sustained period of strong solar generation, helping to reduce fossil fuel dependence during peak daylight hours.",
-    "date": "2025-11-23",
-    "image": "https://source.unsplash.com/1600x900/?solar,power,panels",
-    "category": "News",
-    "tags": ["solar","renewables","energy","India"],
-    "slug": "india-records-highest-solar-power-production-in-history",
-    "views": 0,
-    "og_image": "https://source.unsplash.com/1200x630/?solar,power,panels"
-  },
-  {
-    "id": 6,
-    "title": "Tesla Unveils New Electric Bike Concept in Berlin",
-    "description": "Tesla reveals an urban electric bike prototype blending the company's EV design language with lightweight e-mobility.",
-    "content": "Tesla showcased a new electric bike concept at a Berlin event, positioning the vehicle as a compact urban mobility solution. The prototype focuses on range efficiency, modular battery packs, and a simplified user interface that mirrors Tesla's EV ecosystem.",
-    "date": "2025-11-23",
-    "image": "https://source.unsplash.com/1600x900/?electric-bike,bike",
-    "category": "News",
-    "tags": ["Tesla","e-bike","mobility","Berlin"],
-    "slug": "tesla-unveils-new-electric-bike-concept-in-berlin",
-    "views": 0,
-    "og_image": "https://source.unsplash.com/1200x630/?electric-bike,bike"
-  },
-  {
-    "id": 7,
-    "title": "Google Adds Hindi & Tamil Support to Gemini Live AI",
-    "description": "Real-time spoken and written support for Hindi and Tamil expands Gemini Live's reach across South Asia.",
-    "content": "Google announced that Gemini Live now includes native support for Hindi and Tamil, offering both text and speech capabilities for real-time translation and conversational AI. The update is intended to make live interactions and accessibility easier across multilingual regions.",
-    "date": "2025-11-23",
-    "image": "https://source.unsplash.com/1600x900/?google,ai,languages",
-    "category": "News",
-    "tags": ["Google","Gemini Live","languages","Hindi","Tamil"],
-    "slug": "google-adds-hindi-tamil-support-to-gemini-live-ai",
-    "views": 0,
-    "og_image": "https://source.unsplash.com/1200x630/?google,ai,languages"
-  },
-  {
-    "id": 8,
-    "title": "Scientists Discover Earth-Like Planet in TRAPPIST-1 System",
-    "description": "A newly characterised planet in the TRAPPIST-1 system shows signs of temperate conditions and a rocky surface.",
-    "content": "Astronomers studying the TRAPPIST-1 system have confirmed an additional planet with Earth-like characteristics, including a size and estimated temperature range consistent with temperate surface conditions. The discovery was made using a combination of transit photometry and follow-up spectroscopy.",
-    "date": "2025-11-23",
-    "image": "https://source.unsplash.com/1600x900/?exoplanet,space,star",
-    "category": "News",
-    "tags": ["astronomy","TRAPPIST-1","exoplanet","space"],
-    "slug": "scientists-discover-earth-like-planet-in-trappist-1-system",
-    "views": 0,
-    "og_image": "https://source.unsplash.com/1200x630/?exoplanet,space,star"
-  },
-  {
-    "id": 9,
-    "title": "Meta Introduces Ultra-Realistic Avatars for VR Meetings",
-    "description": "Meta showcases avatars with detailed facial expressions and natural motion to improve virtual collaboration.",
-    "content": "Meta has released a new generation of VR avatars that capture ultra-realistic facial expressions and smoother body motion, aimed at making remote meetings feel more natural. The update uses improved capture algorithms and on-device synthesis to preserve privacy while enhancing presence.",
-    "date": "2025-11-23",
-    "image": "https://source.unsplash.com/1600x900/?virtual-reality,avatar,metaverse",
-    "category": "News",
-    "tags": ["Meta","VR","avatars","meetings"],
-    "slug": "meta-introduces-ultra-realistic-avatars-for-vr-meetings",
-    "views": 0,
-    "og_image": "https://source.unsplash.com/1200x630/?virtual-reality,avatar,metaverse"
-  },
-  {
-    "id": 10,
-    "title": "WHO Releases Updated Report on Global Nutrition 2025",
-    "description": "The WHO publishes a comprehensive report highlighting global nutrition trends, challenges and recommendations for 2025.",
-    "content": "The World Health Organization released its 2025 Global Nutrition Report today, presenting updated data on malnutrition, obesity, and micronutrient deficiencies. The report emphasizes policy interventions, community nutrition programs, and international cooperation to address growing disparities.",
-    "date": "2025-11-23",
-    "image": "https://source.unsplash.com/1600x900/?nutrition,health,food",
-    "category": "News",
-    "tags": ["WHO","health","nutrition","report"],
-    "slug": "who-releases-updated-report-on-global-nutrition-2025",
-    "views": 0,
-    "og_image": "https://source.unsplash.com/1200x630/?nutrition,health,food"
-  },
-  {
-    "id": 11,
-    "title": "Amazon Launches Drone Delivery Service in Bengaluru",
-    "description": "Amazon begins a pilot drone delivery service in Bengaluru to speed up small-package logistics in select neighbourhoods.",
-    "content": "Amazon today started a pilot program for drone deliveries in Bengaluru, offering same-day transport for small packages over short distances. The initiative uses automated route planning and designated landing pads to ensure safe operations in urban environments.",
-    "date": "2025-11-23",
-    "image": "https://source.unsplash.com/1600x900/?drone,delivery,city",
-    "category": "News",
-    "tags": ["Amazon","drone","delivery","Bengaluru"],
-    "slug": "amazon-launches-drone-delivery-service-in-bengaluru",
-    "views": 0,
-    "og_image": "https://source.unsplash.com/1200x630/?drone,delivery,city"
-  }
+﻿[
+    {
+        "id":  1,
+        "title":  "City Park Reopens After Renovation",
+        "description":  "The central city park reopened with new accessible paths and native plantings.",
+        "content":  "After a year-long community-led renovation the city park reopens with wider paths, native plant gardens, and new lighting. The project prioritized accessibility and biodiversity.",
+        "date":  "2025-08-20",
+        "image":  "/assets/images/example1.jpg",
+        "category":  "Local"
+    },
+    {
+        "id":  2,
+        "title":  "ISRO Successfully Launches GSAT-24 Communication Satellite",
+        "description":  "India\u0027s space agency deploys GSAT-24 to strengthen regional communications and broadcasting services.",
+        "content":  "The Indian Space Research Organisation (ISRO) announced the successful launch of GSAT-24 today, a high-throughput communication satellite designed to expand broadcasting and digital connectivity across the region. The mission marks another milestone in ISRO\u0027s growing suite of communication satellites and follows rigorous ground testing and integration work.",
+        "date":  "2025-11-23",
+        "image":  "https://source.unsplash.com/1600x900/?satellite,space",
+        "category":  "News",
+        "tags":  [
+                     "ISRO",
+                     "space",
+                     "satellite",
+                     "connectivity"
+                 ],
+        "slug":  "isro-successfully-launches-gsat-24",
+        "views":  0,
+        "og_image":  "https://source.unsplash.com/1200x630/?satellite,space"
+    },
+    {
+        "id":  3,
+        "title":  "New AI Model Exceeds GPT-5 Benchmarks in Reasoning Tests",
+        "description":  "A research team publishes an AI that outperforms current benchmarks on complex reasoning tasks.",
+        "content":  "A newly released AI model has demonstrated performance beyond existing benchmarks in a series of independent reasoning evaluations. The model, developed by a consortium of academic and industry researchers, showed marked improvements in multi-step reasoning, mathematical problem solving, and logical inference tasks.",
+        "date":  "2025-11-23",
+        "image":  "https://source.unsplash.com/1600x900/?artificial-intelligence,ai",
+        "category":  "News",
+        "tags":  [
+                     "AI",
+                     "research",
+                     "benchmarks",
+                     "machine-learning"
+                 ],
+        "slug":  "new-ai-model-exceeds-gpt-5-benchmarks",
+        "views":  0,
+        "og_image":  "https://source.unsplash.com/1200x630/?artificial-intelligence,ai"
+    },
+    {
+        "id":  4,
+        "title":  "Apple Announces Vision Pro 2 With Major Upgrades",
+        "description":  "Apple unveils the Vision Pro 2 featuring improved optics, battery life and collaborative spatial features.",
+        "content":  "At a special event, Apple introduced the Vision Pro 2, the next iteration of its mixed-reality headset. The new model brings enhanced display optics, extended battery life, and hardware improvements that make long-form productivity and entertainment sessions more comfortable.",
+        "date":  "2025-11-23",
+        "image":  "https://source.unsplash.com/1600x900/?virtual-reality,headset",
+        "category":  "News",
+        "tags":  [
+                     "Apple",
+                     "Vision Pro",
+                     "VR",
+                     "hardware"
+                 ],
+        "slug":  "apple-announces-vision-pro-2-with-major-upgrades",
+        "views":  0,
+        "og_image":  "https://source.unsplash.com/1200x630/?virtual-reality,headset"
+    },
+    {
+        "id":  5,
+        "title":  "India Records Highest Solar Power Production in History",
+        "description":  "Nation-wide solar output peaks, reflecting rapid capacity growth and favourable weather conditions.",
+        "content":  "India recorded its highest daily solar power production on record as new utility-scale projects and rooftop installations came online across multiple states. Grid operators noted a sustained period of strong solar generation, helping to reduce fossil fuel dependence during peak daylight hours.",
+        "date":  "2025-11-23",
+        "image":  "https://source.unsplash.com/1600x900/?solar,power,panels",
+        "category":  "News",
+        "tags":  [
+                     "solar",
+                     "renewables",
+                     "energy",
+                     "India"
+                 ],
+        "slug":  "india-records-highest-solar-power-production-in-history",
+        "views":  0,
+        "og_image":  "https://source.unsplash.com/1200x630/?solar,power,panels"
+    },
+    {
+        "id":  6,
+        "title":  "Tesla Unveils New Electric Bike Concept in Berlin",
+        "description":  "Tesla reveals an urban electric bike prototype blending the company\u0027s EV design language with lightweight e-mobility.",
+        "content":  "Tesla showcased a new electric bike concept at a Berlin event, positioning the vehicle as a compact urban mobility solution. The prototype focuses on range efficiency, modular battery packs, and a simplified user interface that mirrors Tesla\u0027s EV ecosystem.",
+        "date":  "2025-11-23",
+        "image":  "https://source.unsplash.com/1600x900/?electric-bike,bike",
+        "category":  "News",
+        "tags":  [
+                     "Tesla",
+                     "e-bike",
+                     "mobility",
+                     "Berlin"
+                 ],
+        "slug":  "tesla-unveils-new-electric-bike-concept-in-berlin",
+        "views":  0,
+        "og_image":  "https://source.unsplash.com/1200x630/?electric-bike,bike"
+    },
+    {
+        "id":  7,
+        "title":  "Google Adds Hindi \u0026 Tamil Support to Gemini Live AI",
+        "description":  "Real-time spoken and written support for Hindi and Tamil expands Gemini Live\u0027s reach across South Asia.",
+        "content":  "Google announced that Gemini Live now includes native support for Hindi and Tamil, offering both text and speech capabilities for real-time translation and conversational AI. The update is intended to make live interactions and accessibility easier across multilingual regions.",
+        "date":  "2025-11-23",
+        "image":  "https://source.unsplash.com/1600x900/?google,ai,languages",
+        "category":  "News",
+        "tags":  [
+                     "Google",
+                     "Gemini Live",
+                     "languages",
+                     "Hindi",
+                     "Tamil"
+                 ],
+        "slug":  "google-adds-hindi-tamil-support-to-gemini-live-ai",
+        "views":  0,
+        "og_image":  "https://source.unsplash.com/1200x630/?google,ai,languages"
+    },
+    {
+        "id":  8,
+        "title":  "Scientists Discover Earth-Like Planet in TRAPPIST-1 System",
+        "description":  "A newly characterised planet in the TRAPPIST-1 system shows signs of temperate conditions and a rocky surface.",
+        "content":  "Astronomers studying the TRAPPIST-1 system have confirmed an additional planet with Earth-like characteristics, including a size and estimated temperature range consistent with temperate surface conditions. The discovery was made using a combination of transit photometry and follow-up spectroscopy.",
+        "date":  "2025-11-23",
+        "image":  "https://source.unsplash.com/1600x900/?exoplanet,space,star",
+        "category":  "News",
+        "tags":  [
+                     "astronomy",
+                     "TRAPPIST-1",
+                     "exoplanet",
+                     "space"
+                 ],
+        "slug":  "scientists-discover-earth-like-planet-in-trappist-1-system",
+        "views":  0,
+        "og_image":  "https://source.unsplash.com/1200x630/?exoplanet,space,star"
+    },
+    {
+        "id":  9,
+        "title":  "Meta Introduces Ultra-Realistic Avatars for VR Meetings",
+        "description":  "Meta showcases avatars with detailed facial expressions and natural motion to improve virtual collaboration.",
+        "content":  "Meta has released a new generation of VR avatars that capture ultra-realistic facial expressions and smoother body motion, aimed at making remote meetings feel more natural. The update uses improved capture algorithms and on-device synthesis to preserve privacy while enhancing presence.",
+        "date":  "2025-11-23",
+        "image":  "https://source.unsplash.com/1600x900/?virtual-reality,avatar,metaverse",
+        "category":  "News",
+        "tags":  [
+                     "Meta",
+                     "VR",
+                     "avatars",
+                     "meetings"
+                 ],
+        "slug":  "meta-introduces-ultra-realistic-avatars-for-vr-meetings",
+        "views":  0,
+        "og_image":  "https://source.unsplash.com/1200x630/?virtual-reality,avatar,metaverse"
+    },
+    {
+        "id":  10,
+        "title":  "WHO Releases Updated Report on Global Nutrition 2025",
+        "description":  "The WHO publishes a comprehensive report highlighting global nutrition trends, challenges and recommendations for 2025.",
+        "content":  "The World Health Organization released its 2025 Global Nutrition Report today, presenting updated data on malnutrition, obesity, and micronutrient deficiencies. The report emphasizes policy interventions, community nutrition programs, and international cooperation to address growing disparities.",
+        "date":  "2025-11-23",
+        "image":  "https://source.unsplash.com/1600x900/?nutrition,health,food",
+        "category":  "News",
+        "tags":  [
+                     "WHO",
+                     "health",
+                     "nutrition",
+                     "report"
+                 ],
+        "slug":  "who-releases-updated-report-on-global-nutrition-2025",
+        "views":  0,
+        "og_image":  "https://source.unsplash.com/1200x630/?nutrition,health,food"
+    },
+    {
+        "id":  11,
+        "title":  "Amazon Launches Drone Delivery Service in Bengaluru",
+        "description":  "Amazon begins a pilot drone delivery service in Bengaluru to speed up small-package logistics in select neighbourhoods.",
+        "content":  "Amazon today started a pilot program for drone deliveries in Bengaluru, offering same-day transport for small packages over short distances. The initiative uses automated route planning and designated landing pads to ensure safe operations in urban environments.",
+        "date":  "2025-11-23",
+        "image":  "https://source.unsplash.com/1600x900/?drone,delivery,city",
+        "category":  "News",
+        "tags":  [
+                     "Amazon",
+                     "drone",
+                     "delivery",
+                     "Bengaluru"
+                 ],
+        "slug":  "amazon-launches-drone-delivery-service-in-bengaluru",
+        "views":  0,
+        "og_image":  "https://source.unsplash.com/1200x630/?drone,delivery,city"
+    }
 ]

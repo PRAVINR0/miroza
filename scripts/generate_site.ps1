@@ -64,7 +64,20 @@ $items = $items | Sort-Object -Property @{Expression={ $_.date -as [string] }} -
 $newsItems = $newsItems | Sort-Object -Property @{Expression={ $_.date -as [string] }} -Descending
 
 # write search-index
-$searchIndex = $items | ForEach-Object { [PSCustomObject]@{ id = $_.id; title = $_.title; slug = $_.slug; type = $_.type; tags = @($_.tags); category = $_.category; date = $_.date; description = $_.description } }
+$searchIndex = $items | ForEach-Object {
+  $s = $_.slug -as [string]
+  if(-not $s){ $s = Safe-Slug $_.title }
+  [PSCustomObject]@{
+    id = $_.id
+    title = $_.title
+    slug = $s
+    type = $_.type
+    tags = @($_.tags)
+    category = $_.category
+    date = $_.date
+    description = $_.description
+  }
+}
 ($searchIndex | ConvertTo-Json -Depth 5) | Out-File -FilePath $OutSearch -Encoding UTF8
 
 # sitemap
@@ -78,7 +91,12 @@ $urls = @(
   @{ loc = '/info.html'; priority = '0.8' },
   @{ loc = '/search.html'; priority = '0.5' }
 )
-foreach($it in $items){ $slug = ($it.slug -as [string]) -or (Safe-Slug $it.title); $loc = "/detail.html?type=$($it.type)&id=$($it.id)&slug=$slug"; $urls += @{ loc = $loc; lastmod = $it.date; priority = '0.6' } }
+foreach($it in $items){
+  $slug = $it.slug -as [string]
+  if(-not $slug){ $slug = Safe-Slug $it.title }
+  $loc = "/detail.html?type=$($it.type)&id=$($it.id)&slug=$([uri]::EscapeDataString($slug))"
+  $urls += @{ loc = $loc; lastmod = $it.date; priority = '0.6' }
+}
 
 $sitemap = "<?xml version=`"1.0`" encoding=`"UTF-8`"?>`n<urlset xmlns=`"http://www.sitemaps.org/schemas/sitemap/0.9`">`n"
 foreach($u in $urls){ $sitemap += "  <url>`n    <loc>$(Escape-Xml $u.loc)</loc>"; if($u.lastmod){ $sitemap += "`n    <lastmod>$(Escape-Xml $u.lastmod)</lastmod>" }; $sitemap += "`n    <priority>$($u.priority)</priority>`n  </url>`n" }
@@ -88,7 +106,9 @@ $sitemap | Out-File -FilePath $OutSitemap -Encoding UTF8
 # RSS builder
 function Build-ItemXml($it){
   $title = Escape-Xml $it.title
-  $link = Escape-Xml ("/detail.html?type=$($it.type)&id=$($it.id)&slug=$($it.slug)")
+  $s = $it.slug -as [string]
+  if(-not $s){ $s = Safe-Slug $it.title }
+  $link = Escape-Xml ("/detail.html?type=$($it.type)&id=$($it.id)&slug=$([uri]::EscapeDataString($s))")
   if($it.date){ $pubDate = (Get-Date $it.date).ToUniversalTime().ToString('R') } else { $pubDate = (Get-Date).ToUniversalTime().ToString('R') }
   $desc = Escape-Xml ($it.description -or $it.content -or '')
   $xml = "  <item>`n"

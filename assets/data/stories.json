@@ -1,11 +1,9 @@
-[
-  {
-    "id": 1,
-    "title": "The Lantern by the Sea",
-    "description": "A short tale about a lighthouse keeper and an unexpected guest.",
-    "content": "When the winter fog rolled in, the keeper waited for a knock that never came. One night the lantern revealed more than light — it revealed a story of lost letters and gentle forgiveness.",
-    "date": "2024-12-05",
-    "image": "/assets/images/example2.jpg",
-    "category": "Fiction"
-  }
-]
+﻿{
+    "id":  1,
+    "title":  "The Lantern by the Sea",
+    "description":  "A short tale about a lighthouse keeper and an unexpected guest.",
+    "content":  "When the winter fog rolled in, the keeper waited for a knock that never came. One night the lantern revealed more than light â€” it revealed a story of lost letters and gentle forgiveness.",
+    "date":  "2024-12-05",
+    "image":  "/assets/images/example2.jpg",
+    "category":  "Fiction"
+}
