@@ -26,11 +26,12 @@ async function collectUrls(){
     if(!f.endsWith('.json')) continue;
     const p = path.join(DATA_DIR,f);
     try{
-      const txt = await fs.readFile(p,'utf8');
-      const arr = JSON.parse(txt);
-      if(Array.isArray(arr)){
-        arr.forEach(it=>{ if(it && it.image) urls.add(it.image); });
-      }
+      let txt = await fs.readFile(p,'utf8');
+      txt = txt.replace(/^\uFEFF/, '');
+      txt = txt.replace(/\/\/.*$/gm, '').replace(/\/\*[\s\S]*?\*\//g, '');
+      const parsed = JSON.parse(txt);
+      const arr = Array.isArray(parsed) ? parsed : [parsed];
+      arr.forEach(it=>{ if(it && it.image) urls.add(it.image); });
     }catch(e){ console.warn('skip',f,e.message); }
   }
   return Array.from(urls);

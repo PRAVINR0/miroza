@@ -34,8 +34,22 @@ async function readJsonFiles(){
     if(!f.endsWith('.json')) continue;
     const p = path.join(DATA_DIR,f);
     try{
-      const txt = await fs.readFile(p,'utf8');
-      objs[f] = JSON.parse(txt);
+      let txt = await fs.readFile(p,'utf8');
+      // strip BOM
+      txt = txt.replace(/^\uFEFF/, '');
+      // remove JS-style comments (// and /* */)
+      txt = txt.replace(/\/\/.*$/gm, '').replace(/\/\*[\s\S]*?\*\//g, '');
+      let parsed;
+      try{
+        parsed = JSON.parse(txt);
+      }catch(parseErr){
+        // fallback: replace control characters (except allowed whitespace) and retry
+        const cleaned = txt.replace(/[\x00-\x08\x0B\x0C\x0E-\x1F]/g, ' ');
+        try{ parsed = JSON.parse(cleaned); console.warn('Auto-cleaned control chars in', p); }
+        catch(e2){ throw parseErr }
+      }
+      // normalize: ensure we always return an array for ease of processing
+      objs[f] = Array.isArray(parsed) ? parsed : [parsed];
     }catch(err){ console.warn('Failed to read',p,err.message); objs[f] = []; }
   }
   return objs;

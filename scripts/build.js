@@ -20,7 +20,13 @@ async function minifyCss(file){
 async function minifyJs(file){
   try{
     const src = await fs.readFile(file,'utf8');
-    const res = await Terser.minify(src, {format:{comments:false}});
+    const res = await Terser.minify(src, {
+      ecma: 2020,
+      compress: true,
+      mangle: true,
+      format: { comments: false }
+    });
+    if(res.error) throw res.error;
     if(res.code){ await fs.writeFile(file, res.code, 'utf8'); console.log('Minified JS:', path.basename(file)); }
   }catch(e){ console.warn('JS minify failed', file, e.message); }
 }

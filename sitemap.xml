@@ -32,4 +32,34 @@
     <loc>/search.html</loc>
     <priority>0.5</priority>
   </url>
+  <url>
+    <loc>/detail.html?type=blogs&amp;id=1&amp;slug=reflections-on-slow-living</loc>
+    <lastmod>2025-06-15</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>/detail.html?type=search-index&amp;id=1&amp;slug=reflections-on-slow-living</loc>
+    <lastmod>2025-06-15</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>/detail.html?type=articles&amp;id=1&amp;slug=the-science-of-clouds</loc>
+    <lastmod>2025-01-01</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>/detail.html?type=search-index&amp;id=1&amp;slug=the-science-of-clouds</loc>
+    <lastmod>2025-01-01</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>/detail.html?type=info&amp;id=1&amp;slug=photosynthesis-basics</loc>
+    <lastmod>2023-09-10</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>/detail.html?type=search-index&amp;id=1&amp;slug=photosynthesis-basics</loc>
+    <lastmod>2023-09-10</lastmod>
+    <priority>0.6</priority>
+  </url>
 </urlset>
