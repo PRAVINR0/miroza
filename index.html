@@ -8,7 +8,7 @@
   <meta name="robots" content="index, follow">
     <!-- Content Security Policy: this example allows inline scripts/styles for the demo only. For production,
       replace 'unsafe-inline' with a strict policy using nonces or hashes and configure via server headers. -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self';">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self';">
   <link rel="canonical" href="/index.html" />
   <link rel="alternate" hreflang="en" href="/index.html" />
   <!-- Open Graph / Twitter -->
@@ -19,19 +19,8 @@
   <meta property="og:image" content="/assets/hero-1.svg" />
   <meta name="twitter:card" content="summary_large_image" />
 
-  <!-- Minimal critical inline script to apply theme early and avoid FOUC. This only sets a class based on localStorage or prefers-color-scheme. Keep this small and safe. -->
-  <script>
-    (function(){
-      try{
-        var t = localStorage.getItem('miroza_theme');
-        if(!t){
-          var prefers = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-          t = prefers ? 'dark' : 'light';
-        }
-        if(t === 'dark') document.documentElement.classList.add('theme-dark');
-      }catch(e){/* ignore */}
-    })();
-  </script>
+  <!-- Theme initialization (moved to external file to allow stricter CSP and avoid inline scripts) -->
+  <script src="/scripts/theme-init.js"></script>
 
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="dns-prefetch" href="https://fonts.gstatic.com">
@@ -95,7 +84,7 @@
       <div id="heroSkeleton" class="skeleton hero-skeleton"></div>
       <div id="heroContent" class="hero-content" hidden>
         <article class="hero-feature" data-article-id="">
-          <img data-src="assets/hero-1.svg" alt="Feature image" class="lazy" />
+          <img data-src="assets/hero-1.svg" alt="Feature image" class="lazy" loading="lazy" />
           <div class="feature-meta">
             <span class="kicker">Feature</span>
             <h1 id="heroTitle">Loading…</h1>
@@ -177,10 +166,9 @@
   </footer>
 
   <!-- Core scripts: vendor then app (defer). For production use app.min.js and styles.min.css -->
+  <script src="/scripts/inline-handlers.js" defer></script>
   <script src="/scripts/vendor.js" defer></script>
   <script src="/scripts/app.js" defer></script>
-  <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"WebSite","name":"MIROZA","url":"/","potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"/search?q={search_term_string}"},"query-input":"required name=search_term_string"}}
-  </script>
+  <script type="application/ld+json" src="/data/ld/website.json"></script>
 </body>
 </html>

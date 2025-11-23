@@ -1,0 +1,23 @@
+{
+  "name": "miroza-e2e",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "http-server -p 8000",
+    "test:e2e": "playwright test"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1",
+    "playwright": "^1.36.0",
+    "@axe-core/playwright": "^4.0.0"
+  },
+  "scripts": {
+    "start": "http-server -p 8000",
+    "test:e2e": "playwright test",
+    "build": "npm run build:css && npm run build:js",
+    "build:css": "postcss styles/styles.css -o styles/styles.min.css",
+    "build:js": "rollup -c"
+  },
+  "engines": { "node": ">=16" },
+  "postinstall": "npx playwright install --with-deps"
+}

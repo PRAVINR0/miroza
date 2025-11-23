@@ -7,7 +7,8 @@
 	<meta name="description" content="Category page listing for MIROZA." />
 	<link rel="stylesheet" href="/styles/styles.css">
 	<link rel="manifest" href="manifest.json">
-	<script> (function(){try{var t=localStorage.getItem('miroza_theme');if(!t){var p=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches;t=p?'dark':'light';}if(t==='dark')document.documentElement.classList.add('theme-dark');}catch(e){}})();</script>
+	<!-- External theme init to avoid inline scripts (prevents FOUC) -->
+	<script src="/scripts/theme-init.js"></script>
 </head>
 <body>
 	<a class="skip-link" href="#main">Skip to content</a>
@@ -22,11 +23,11 @@
 		<h1>Category</h1>
 		<p class="muted" id="categoryDescription">Browse articles by category.</p>
 
-		<div id="categoryList" class="grid" style="margin-top:12px">
+		<div id="categoryList" class="grid mt-12">
 			<!-- Cards rendered by MIROZA.renderCategory -->
 		</div>
 
-		<nav class="pagination" style="margin-top:12px">
+		<nav class="pagination mt-12">
 			<a href="#">◀ Prev</a> <span class="muted">Page 1</span> <a href="#">Next ▶</a>
 		</nav>
 	</main>

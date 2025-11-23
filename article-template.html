@@ -8,12 +8,10 @@
   <meta name="robots" content="index, follow">
   <link rel="stylesheet" href="/styles/styles.css">
   <link rel="manifest" href="/manifest.json">
-  <script>
-    // Apply saved theme early to avoid FOUC
-    (function(){try{var t=localStorage.getItem('miroza_theme');if(!t){var p=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches;t=p?'dark':'light';}if(t==='dark')document.documentElement.classList.add('theme-dark');}catch(e){}})();
-  </script>
+  <!-- Theme init moved to external file to enable stricter CSP and avoid inline JS -->
+  <script src="/scripts/theme-init.js"></script>
   <!-- Demo Content Security Policy: See .htaccess.example for production headers. -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self';">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self';">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -57,19 +55,10 @@
     <div class="copyright">© 2025 MIROZA Media Network</div>
   </footer>
 
+  <script src="/scripts/inline-handlers.js" defer></script>
   <script src="/scripts/vendor.js" defer></script>
   <script src="/scripts/app.js" defer></script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "NewsArticle",
-    "headline": "Sample article title",
-    "image": ["/assets/hero-1.svg"],
-    "datePublished": "2025-11-23T08:00:00Z",
-    "author": {"@type":"Person","name":"Author Name"},
-    "publisher": {"@type":"Organization","name":"MIROZA","logo":{"@type":"ImageObject","url":"/assets/hero-1.svg"}}
-  }
-  </script>
+  <script type="application/ld+json" src="/data/ld/article-template.json"></script>
 </body>
 </html>
 

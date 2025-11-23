@@ -35,7 +35,22 @@
   MIROZA.shuffle = function(arr){const a=arr.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
 
   // Render helpers
-  MIROZA.renderCard = function(post){const article=document.createElement('article');article.className='card';const pic=document.createElement('img');pic.setAttribute('data-src',post.image);pic.alt=post.title;pic.loading='lazy';pic.className='lazy';article.appendChild(pic);const body=document.createElement('div');body.className='card-body';const h3=document.createElement('h3');const a=document.createElement('a');a.href='/articles/'+post.slug+'.html';a.textContent=post.title;a.setAttribute('rel','noopener noreferrer');h3.appendChild(a);const meta=document.createElement('p');meta.className='muted';meta.textContent=post.author+' • '+new Date(post.date).toLocaleDateString();const ex=document.createElement('p');ex.className='excerpt';ex.textContent=post.excerpt;body.appendChild(h3);body.appendChild(meta);body.appendChild(ex);article.appendChild(body);return article};
+  MIROZA.renderCard = function(post){
+    const article=document.createElement('article');article.className='card';
+    const pic=document.createElement('img');
+    pic.setAttribute('data-src',post.image);
+    pic.alt=post.title;
+    pic.loading='lazy';
+    pic.className='lazy';
+    // provide a conservative srcset placeholder (replace with generated responsive assets in production)
+    pic.setAttribute('srcset', post.image);
+    article.appendChild(pic);
+    const body=document.createElement('div');body.className='card-body';
+    const h3=document.createElement('h3');
+    const a=document.createElement('a');a.href='/articles/'+post.slug+'.html';a.textContent=post.title;a.setAttribute('rel','noopener noreferrer');h3.appendChild(a);
+    const meta=document.createElement('p');meta.className='muted';meta.textContent=post.author+' • '+new Date(post.date).toLocaleDateString();
+    const ex=document.createElement('p');ex.className='excerpt';ex.textContent=post.excerpt;body.appendChild(h3);body.appendChild(meta);body.appendChild(ex);article.appendChild(body);return article
+  };
 
   MIROZA.renderCards = function(container, posts){container.innerHTML='';posts.forEach(p=>container.appendChild(MIROZA.renderCard(p)));MIROZA.lazyLoadImages();};
 
@@ -91,7 +106,38 @@
     // Live region for announcements
     if(!document.getElementById('liveRegion')){const lr=document.createElement('div');lr.id='liveRegion';lr.setAttribute('aria-live','polite');lr.style.position='absolute';lr.style.left='-9999px';document.body.appendChild(lr)}
     // register SW
-    if('serviceWorker' in navigator){navigator.serviceWorker.register(MIROZA.config.swPath).catch(e=>console.warn('SW',e))}
+      if('serviceWorker' in navigator){
+        navigator.serviceWorker.register(MIROZA.config.swPath).then(reg=>{
+          // listen for updates
+          if(reg.waiting){
+            MIROZA._swWaiting = reg.waiting; MIROZA._showUpdateBanner();
+          }
+          reg.addEventListener('updatefound', ()=>{
+            const nw = reg.installing; nw && nw.addEventListener('statechange', ()=>{
+              if(nw.state==='installed' && navigator.serviceWorker.controller){ MIROZA._swWaiting = reg.waiting; MIROZA._showUpdateBanner(); }
+            });
+          });
+
+          navigator.serviceWorker.addEventListener('controllerchange', ()=>{
+            // page will be controlled by new SW — reload to get fresh content
+            window.location.reload();
+          });
+
+        }).catch(e=>console.warn('SW',e));
+        navigator.serviceWorker.addEventListener('message', (evt)=>{
+          if(evt.data && evt.data.type==='SW_ACTIVATED'){ console.log('Service worker active, version', evt.data.version); }
+        });
+      }
+
+      // update banner helper
+      MIROZA._showUpdateBanner = function(){
+        if(document.getElementById('swUpdate')) return;
+        const b = document.createElement('div'); b.id='swUpdate'; b.className='sw-update'; b.innerHTML = '<div class="container">New version available — <button id="reloadNow">Reload</button></div>';
+        document.body.appendChild(b);
+        document.getElementById('reloadNow').addEventListener('click', ()=>{
+          if(MIROZA._swWaiting){ MIROZA._swWaiting.postMessage({type:'SKIP_WAITING'}); }
+        });
+      };
   };
 
   // Perf logging (LCP observer)

@@ -45,6 +45,10 @@ body{margin:0;font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, '
 .card{background:var(--card);border-radius:6px;overflow:hidden;margin-bottom:12px;box-shadow:var(--shadow);transition:transform var(--transition),opacity var(--transition)}
 .card img{width:100%;height:180px;object-fit:cover}
 
+/* Card hover: use transform for GPU-accelerated motion */
+.card:hover{transform:translateY(-6px) scale(1.01);box-shadow:0 18px 40px rgba(16,24,40,0.08)}
+.card:focus-within{outline:2px solid rgba(66,153,225,0.12)}
+
 /* responsive grid */
 @media(min-width:700px){.main-nav{display:block}.hamburger{display:none}.hero{display:grid;grid-template-columns:2fr 1fr;gap:12px}.hero-feature img{height:420px}.main-grid{display:grid;grid-template-columns:1fr 1fr 320px;gap:12px}.category-grid{grid-template-columns:repeat(4,1fr)}.footer-grid{grid-template-columns:repeat(4,1fr)}}
 
@@ -60,10 +64,31 @@ body{margin:0;font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, '
 .back-to-top{position:fixed;right:18px;bottom:18px;background:var(--accent);color:var(--accent-contrast);border:0;padding:10px;border-radius:999px;display:none}
 .back-to-top.show{display:block}
 
+/* Spacing utilities */
+.mt-12{margin-top:12px}
+
+/* Article helpers */
+.article-hero-img{width:100%;height:360px;object-fit:cover;border-radius:6px;margin:12px 0}
+.form-input--small{width:30%;padding:8px;margin-bottom:8px;display:block}
+.form-textarea{width:100%;height:90px;padding:8px;margin-bottom:8px}
+
 /* Page transitions helper */
 .is-transitioning main{opacity:0;transform:translateY(6px);transition:opacity .22s ease, transform .22s ease}
 
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}} 
+
+/* Header shadow when scrolled */
+.site-header.scrolled{box-shadow:0 8px 24px rgba(0,0,0,0.08)}
+
+/* Skeleton shimmer animation (subtle) */
+.skeleton{position:relative;overflow:hidden}
+.skeleton::after{content:'';position:absolute;top:0;left:-150px;height:100%;width:150px;background:linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,0.04), rgba(255,255,255,0));animation:skew 1.2s infinite}
+@keyframes skew{100%{left:100%}}
+
+/* Service worker update banner */
+.sw-update{position:fixed;left:0;right:0;bottom:18px;background:var(--card);border:1px solid var(--border);padding:12px;border-radius:8px;box-shadow:var(--shadow);z-index:120}
+.sw-update .container{display:flex;align-items:center;justify-content:center;gap:12px}
+.sw-update button{background:var(--accent);color:var(--accent-contrast);border:0;padding:8px 12px;border-radius:6px}
 
 /* Add more rules as needed — this is the authoritative stylesheet used by all pages */

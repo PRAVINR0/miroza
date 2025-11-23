@@ -1,5 +1,7 @@
 # MIROZA — News Template
 
+![Playwright Tests](https://github.com/PRAVINR0/miroza/actions/workflows/playwright.yml/badge.svg)
+
 This repository contains a production-ready front-end news template (HTML, CSS, JavaScript).
 
 Structure
@@ -41,5 +43,29 @@ Accessibility
 Notes
 - This template uses only original code and placeholder content. Replace sample images and text with your own.
 - For sanitizing rich HTML (if you allow HTML in articles), use a sanitizer like DOMPurify and configure CSP accordingly.
+
+Deployment & Security Notes
+- Use server-set HTTP headers for CSP rather than meta tags; this enables nonces per-request and stronger policies.
+- After removing inline styles/scripts, set headers like:
+
+	Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'
+
+- If you need inline scripts for templates, prefer nonces or compute SHA-256 hashes for small inline blocks (e.g., critical JSON-LD) and add them to `script-src`.
+- Service Worker: serve the site on `https` or `http://localhost` to enable SW. Update `sw.js` cache version when you change assets.
+- Images: for production, generate multiple sizes and WebP/AVIF fallbacks; update `srcset` attributes or use a responsive image generator.
+
+Build & CI
+- Install dev dependencies and build assets locally:
+
+	```powershell
+	npm install
+	npm run build
+	```
+
+- `npm run build` will produce `styles/styles.min.css` and `scripts/app.min.js` using PostCSS (cssnano) and Rollup + terser.
+- The GitHub Actions workflow runs Playwright E2E tests and uploads HTML/JUnit reports as artifacts.
+
+Service worker updates
+- When a new SW is available the site shows a small update banner; clicking "Reload" will activate the new service worker and reload the page.
 
 Enjoy building MIROZA!

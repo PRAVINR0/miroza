@@ -1,0 +1,1 @@
+{"@context":"https://schema.org","@type":"NewsArticle","headline":"Sample article title","image":["/assets/hero-1.svg"],"datePublished":"2025-11-23T08:00:00Z","author":{"@type":"Person","name":"Author Name"},"publisher":{"@type":"Organization","name":"MIROZA","logo":{"@type":"ImageObject","url":"/assets/hero-1.svg"}}}
