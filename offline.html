@@ -8,26 +8,21 @@
   <meta http-equiv="Referrer-Policy" content="no-referrer-when-downgrade">
   <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()">
   <meta name="theme-color" content="#ffffff">
-  <title>Miroza — News</title>
+  <title>Offline — Miroza</title>
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
   <div id="site-header"></div>
-
-  <main class="container">
-    <h2>News</h2>
-    <div id="news-grid" class="grid"></div>
+  <main class="container" style="text-align:center;padding:80px 16px">
+    <h1>You're offline</h1>
+    <p class="lead">You're offline. Please reconnect to view content.</p>
+    <p>
+      <a href="index.html" class="card" style="display:inline-block;padding:12px 18px;border-radius:10px;background:var(--card);">Return Home</a>
+    </p>
   </main>
-
   <script src="assets/js/main.js"></script>
-  <script>
-    injectHeader(); initTheme(); initMenus();
-    (async ()=>{
-      const items = await fetchJSON('assets/data/news.json');
-      renderCards(document.getElementById('news-grid'), items, false, 'news');
-    })();
-  </script>
+  <script>injectHeader(); initTheme(); initMenus();</script>
 </body>
 </html>

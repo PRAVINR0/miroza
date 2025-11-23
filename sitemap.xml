@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Replace YOUR-DOMAIN with your published GitHub Pages domain -->
+  <url>
+    <loc>https://YOUR-DOMAIN/index.html</loc>
+  </url>
+
+  <url>
+    <loc>https://YOUR-DOMAIN/articles.html</loc>
+  </url>
+
+  <url>
+    <loc>https://YOUR-DOMAIN/blog.html</loc>
+  </url>
+
+  <url>
+    <loc>https://YOUR-DOMAIN/news.html</loc>
+  </url>
+
+  <url>
+    <loc>https://YOUR-DOMAIN/stories.html</loc>
+  </url>
+
+  <url>
+    <loc>https://YOUR-DOMAIN/info.html</loc>
+  </url>
+
+</urlset>
