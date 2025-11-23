@@ -34,15 +34,17 @@ async function readJsonFiles(){
     if(!f.endsWith('.json')) continue;
     const p = path.join(DATA_DIR,f);
     try{
-      let txt = await fs.readFile(p,'utf8');
-      // strip BOM
-      txt = txt.replace(/^\uFEFF/, '');
-      // remove JS-style comments (// and /* */)
-      txt = txt.replace(/\/\/.*$/gm, '').replace(/\/\*[\s\S]*?\*\//g, '');
+      // read raw and strip UTF-8 BOM bytes reliably
+      const buf = await fs.readFile(p);
+      let txt = (buf.length >= 3 && buf[0]===0xEF && buf[1]===0xBB && buf[2]===0xBF) ? buf.slice(3).toString('utf8') : buf.toString('utf8');
+      console.log('Reading', f, 'len', txt.length, 'starts:', JSON.stringify(txt.slice(0,40)));
+        // remove block comments only (Safer than removing '//' which appears in URLs)
+        txt = txt.replace(/\/\*[\s\S]*?\*\//g, '');
       let parsed;
       try{
         parsed = JSON.parse(txt);
       }catch(parseErr){
+        console.warn('Initial parse failed for', f, 'err:', parseErr.message);
         // fallback: replace control characters (except allowed whitespace) and retry
         let cleaned = txt.replace(/[\x00-\x08\x0B\x0C\x0E-\x1F]/g, ' ');
         // also remove Unicode line/paragraph separators which can break JSON parsing

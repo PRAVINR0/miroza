@@ -1,8 +1,505 @@
 [
   {
+    "id": 2,
+    "title": "ISRO Successfully Launches GSAT-24 Communication Satellite",
+    "slug": "isro-successfully-launches-gsat-24",
+    "type": "news",
+    "tags": [
+      "ISRO",
+      "space",
+      "satellite",
+      "connectivity"
+    ],
+    "category": "News",
+    "date": "2025-11-23",
+    "description": "India's space agency deploys GSAT-24 to strengthen regional communications and broadcasting services."
+  },
+  {
+    "id": 3,
+    "title": "New AI Model Exceeds GPT-5 Benchmarks in Reasoning Tests",
+    "slug": "new-ai-model-exceeds-gpt-5-benchmarks",
+    "type": "news",
+    "tags": [
+      "AI",
+      "research",
+      "benchmarks",
+      "machine-learning"
+    ],
+    "category": "News",
+    "date": "2025-11-23",
+    "description": "A research team publishes an AI that outperforms current benchmarks on complex reasoning tasks."
+  },
+  {
+    "id": 4,
+    "title": "Apple Announces Vision Pro 2 With Major Upgrades",
+    "slug": "apple-announces-vision-pro-2-with-major-upgrades",
+    "type": "news",
+    "tags": [
+      "Apple",
+      "Vision Pro",
+      "VR",
+      "hardware"
+    ],
+    "category": "News",
+    "date": "2025-11-23",
+    "description": "Apple unveils the Vision Pro 2 featuring improved optics, battery life and collaborative spatial features."
+  },
+  {
+    "id": 5,
+    "title": "India Records Highest Solar Power Production in History",
+    "slug": "india-records-highest-solar-power-production-in-history",
+    "type": "news",
+    "tags": [
+      "solar",
+      "renewables",
+      "energy",
+      "India"
+    ],
+    "category": "News",
+    "date": "2025-11-23",
+    "description": "Nation-wide solar output peaks, reflecting rapid capacity growth and favourable weather conditions."
+  },
+  {
+    "id": 6,
+    "title": "Tesla Unveils New Electric Bike Concept in Berlin",
+    "slug": "tesla-unveils-new-electric-bike-concept-in-berlin",
+    "type": "news",
+    "tags": [
+      "Tesla",
+      "e-bike",
+      "mobility",
+      "Berlin"
+    ],
+    "category": "News",
+    "date": "2025-11-23",
+    "description": "Tesla reveals an urban electric bike prototype blending the company's EV design language with lightweight e-mobility."
+  },
+  {
+    "id": 7,
+    "title": "Google Adds Hindi & Tamil Support to Gemini Live AI",
+    "slug": "google-adds-hindi-tamil-support-to-gemini-live-ai",
+    "type": "news",
+    "tags": [
+      "Google",
+      "Gemini Live",
+      "languages",
+      "Hindi",
+      "Tamil"
+    ],
+    "category": "News",
+    "date": "2025-11-23",
+    "description": "Real-time spoken and written support for Hindi and Tamil expands Gemini Live's reach across South Asia."
+  },
+  {
+    "id": 8,
+    "title": "Scientists Discover Earth-Like Planet in TRAPPIST-1 System",
+    "slug": "scientists-discover-earth-like-planet-in-trappist-1-system",
+    "type": "news",
+    "tags": [
+      "astronomy",
+      "TRAPPIST-1",
+      "exoplanet",
+      "space"
+    ],
+    "category": "News",
+    "date": "2025-11-23",
+    "description": "A newly characterised planet in the TRAPPIST-1 system shows signs of temperate conditions and a rocky surface."
+  },
+  {
+    "id": 9,
+    "title": "Meta Introduces Ultra-Realistic Avatars for VR Meetings",
+    "slug": "meta-introduces-ultra-realistic-avatars-for-vr-meetings",
+    "type": "news",
+    "tags": [
+      "Meta",
+      "VR",
+      "avatars",
+      "meetings"
+    ],
+    "category": "News",
+    "date": "2025-11-23",
+    "description": "Meta showcases avatars with detailed facial expressions and natural motion to improve virtual collaboration."
+  },
+  {
+    "id": 10,
+    "title": "WHO Releases Updated Report on Global Nutrition 2025",
+    "slug": "who-releases-updated-report-on-global-nutrition-2025",
+    "type": "news",
+    "tags": [
+      "WHO",
+      "health",
+      "nutrition",
+      "report"
+    ],
+    "category": "News",
+    "date": "2025-11-23",
+    "description": "The WHO publishes a comprehensive report highlighting global nutrition trends, challenges and recommendations for 2025."
+  },
+  {
+    "id": 11,
+    "title": "Amazon Launches Drone Delivery Service in Bengaluru",
+    "slug": "amazon-launches-drone-delivery-service-in-bengaluru",
+    "type": "news",
+    "tags": [
+      "Amazon",
+      "drone",
+      "delivery",
+      "Bengaluru"
+    ],
+    "category": "News",
+    "date": "2025-11-23",
+    "description": "Amazon begins a pilot drone delivery service in Bengaluru to speed up small-package logistics in select neighbourhoods."
+  },
+  {
+    "id": 12,
+    "title": "Japan Hit by 6.8-Magnitude Earthquake, Tsunami Warning Issued",
+    "slug": "japan-hit-by-6-8-magnitude-earthquake-tsunami-warning-issued",
+    "type": "news",
+    "tags": [
+      "japan",
+      "earthquake",
+      "tsunami",
+      "asia",
+      "natural disasters"
+    ],
+    "category": "World News",
+    "date": "2025-11-23",
+    "description": "A strong 6.8 earthquake struck Japan’s northeast region early today, prompting emergency tsunami alerts and widespread transportation disruption."
+  },
+  {
+    "id": 13,
+    "title": "UN Chief Warns Climate Change Is “Accelerating Beyond Predictions”",
+    "slug": "un-chief-warns-climate-change-is-accelerating-beyond-predictions",
+    "type": "news",
+    "tags": [
+      "climate change",
+      "UN",
+      "global warming",
+      "environment"
+    ],
+    "category": "World News",
+    "date": "2025-11-23",
+    "description": "The UN has issued a severe climate warning, stating that global warming is advancing faster than scientific models expected."
+  },
+  {
+    "id": 14,
+    "title": "Apple Introduces Next-Gen AI Assistant for iPhone",
+    "slug": "apple-introduces-next-gen-ai-assistant-for-iphone",
+    "type": "news",
+    "tags": [
+      "apple",
+      "ai",
+      "technology",
+      "iphone"
+    ],
+    "category": "World News",
+    "date": "2025-11-23",
+    "description": "Apple unveiled a revolutionary AI assistant for iPhones, offering real-time reasoning, personalization, and offline intelligence."
+  },
+  {
+    "id": 15,
+    "title": "India & China Hold High-Level Peace Talks After Border Tension",
+    "slug": "india-and-china-hold-high-level-peace-talks-after-border-tension",
+    "type": "news",
+    "tags": [
+      "india",
+      "china",
+      "ladakh",
+      "border",
+      "diplomacy"
+    ],
+    "category": "World News",
+    "date": "2025-11-23",
+    "description": "India and China conducted high-level military talks addressing ongoing border frictions in Ladakh."
+  },
+  {
+    "id": 16,
+    "title": "NASA Confirms Water Ice in Lunar South Pole Region",
+    "slug": "nasa-confirms-water-ice-in-lunar-south-pole-region",
+    "type": "news",
+    "tags": [
+      "nasa",
+      "moon",
+      "space",
+      "science",
+      "artemis"
+    ],
+    "category": "World News",
+    "date": "2025-11-23",
+    "description": "NASA scientists confirmed significant water-ice deposits in the Moon’s south pole, a breakthrough for future lunar missions."
+  },
+  {
+    "id": 17,
+    "title": "Global Stock Markets Dip After Latest US Inflation Figures",
+    "slug": "global-stock-markets-dip-after-latest-us-inflation-figures",
+    "type": "news",
+    "tags": [
+      "markets",
+      "finance",
+      "inflation",
+      "economy"
+    ],
+    "category": "World News",
+    "date": "2025-11-23",
+    "description": "World markets fell after US inflation rose unexpectedly, raising fears that interest-rate cuts may be delayed."
+  },
+  {
+    "id": 18,
+    "title": "UK Unveils New AI Safety Regulations for Tech Companies",
+    "slug": "uk-unveils-new-ai-safety-regulations-for-tech-companies",
+    "type": "news",
+    "tags": [
+      "ai",
+      "uk",
+      "regulation",
+      "technology"
+    ],
+    "category": "World News",
+    "date": "2025-11-23",
+    "description": "The UK announced strict new AI safety regulations to govern deployment of advanced AI systems."
+  },
+  {
+    "id": 19,
+    "title": "Saudi Arabia Announces New Futuristic Smart Mega-City",
+    "slug": "saudi-arabia-announces-new-futuristic-smart-mega-city",
+    "type": "news",
+    "tags": [
+      "saudi arabia",
+      "smart city",
+      "technology",
+      "middle east"
+    ],
+    "category": "World News",
+    "date": "2025-11-23",
+    "description": "Saudi Arabia revealed a massive next-generation smart city project powered by AI and renewable energy."
+  },
+  {
+    "id": 20,
+    "title": "WHO Reports Major Decline in Global COVID-19 Cases",
+    "slug": "who-reports-major-decline-in-global-covid-19-cases",
+    "type": "news",
+    "tags": [
+      "covid19",
+      "health",
+      "who",
+      "global health"
+    ],
+    "category": "World News",
+    "date": "2025-11-23",
+    "description": "The WHO announced a worldwide drop in COVID-19 infections and hospitalizations."
+  },
+  {
+    "id": 21,
+    "title": "Global Electric Vehicle Sales Hit Record High in 2025",
+    "slug": "global-electric-vehicle-sales-hit-record-high-in-2025",
+    "type": "news",
+    "tags": [
+      "ev",
+      "electric vehicles",
+      "energy",
+      "automobiles"
+    ],
+    "category": "World News",
+    "date": "2025-11-23",
+    "description": "EV sales worldwide reached record highs driven by cheaper batteries and expanded charging networks."
+  },
+  {
+    "id": 2,
+    "title": "The Thunder Boy: Rise of Aayden Storm",
+    "slug": "the-thunder-boy-rise-of-aayden-storm",
+    "type": "stories",
+    "tags": [
+      "superhero",
+      "lightning",
+      "young hero",
+      "fantasy",
+      "adventure"
+    ],
+    "category": "Comic Stories",
+    "date": "2025-11-23",
+    "description": "Aayden discovers he can summon lightning after a mysterious storm hits his village."
+  },
+  {
+    "id": 3,
+    "title": "ShadowGirl: The Night She Learned to Disappear",
+    "slug": "shadowgirl-the-night-she-learned-to-disappear",
+    "type": "stories",
+    "tags": [
+      "shadow powers",
+      "teen hero",
+      "dark magic",
+      "supernatural"
+    ],
+    "category": "Comic Stories",
+    "date": "2025-11-23",
+    "description": "A shy schoolgirl gains the power to vanish into shadows."
+  },
+  {
+    "id": 4,
+    "title": "Robot Brothers: Operation Steel Hearts",
+    "slug": "robot-brothers-operation-steel-hearts",
+    "type": "stories",
+    "tags": [
+      "robotics",
+      "ai",
+      "humor",
+      "adventure",
+      "teens"
+    ],
+    "category": "Comic Stories",
+    "date": "2025-11-23",
+    "description": "Two teen inventors accidentally create sentient robot brothers."
+  },
+  {
+    "id": 5,
+    "title": "Luna Wolf: Guardian of the Moon Temple",
+    "slug": "luna-wolf-guardian-of-the-moon-temple",
+    "type": "stories",
+    "tags": [
+      "wolves",
+      "moon powers",
+      "guardian",
+      "mythology"
+    ],
+    "category": "Comic Stories",
+    "date": "2025-11-23",
+    "description": "A girl raised by wolves is chosen by a Moon Temple to become the next guardian."
+  },
+  {
+    "id": 6,
+    "title": "Captain Neon: The Boy Made of Light",
+    "slug": "captain-neon-the-boy-made-of-light",
+    "type": "stories",
+    "tags": [
+      "neon energy",
+      "cosmic powers",
+      "superheroes"
+    ],
+    "category": "Comic Stories",
+    "date": "2025-11-23",
+    "description": "A boy gains neon-energy powers after touching a cosmic crystal."
+  },
+  {
+    "id": 7,
+    "title": "The Time-Traveling Cycle",
+    "slug": "the-time-traveling-cycle",
+    "type": "stories",
+    "tags": [
+      "time travel",
+      "adventure",
+      "destiny",
+      "cycle"
+    ],
+    "category": "Comic Stories",
+    "date": "2025-11-23",
+    "description": "A magical bicycle lets a boy travel through time and destiny."
+  },
+  {
+    "id": 8,
+    "title": "The Crystal Dragons of Arkanos",
+    "slug": "the-crystal-dragons-of-arkanos",
+    "type": "stories",
+    "tags": [
+      "dragons",
+      "fantasy",
+      "elemental powers"
+    ],
+    "category": "Comic Stories",
+    "date": "2025-11-23",
+    "description": "Three siblings awaken legendary elemental dragons beneath the earth."
+  },
+  {
+    "id": 9,
+    "title": "Zero Gravity Girl",
+    "slug": "zero-gravity-girl",
+    "type": "stories",
+    "tags": [
+      "gravity powers",
+      "space",
+      "adventure"
+    ],
+    "category": "Comic Stories",
+    "date": "2025-11-23",
+    "description": "A girl gains anti-gravity powers after a lab accident in space."
+  },
+  {
+    "id": 10,
+    "title": "The Phantom Painter",
+    "slug": "the-phantom-painter",
+    "type": "stories",
+    "tags": [
+      "magic",
+      "art powers",
+      "imagination",
+      "heroes"
+    ],
+    "category": "Comic Stories",
+    "date": "2025-11-23",
+    "description": "A boy can bring paintings to life — but so can the villain chasing him."
+  },
+  {
+    "id": 11,
+    "title": "Planet Zygor: The Last Star Rangers",
+    "slug": "planet-zygor-the-last-star-rangers",
+    "type": "stories",
+    "tags": [
+      "space heroes",
+      "cosmic battles",
+      "sci-fi adventure"
+    ],
+    "category": "Comic Stories",
+    "date": "2025-11-23",
+    "description": "Five teens are chosen to defend an alien world from cosmic invaders."
+  },
+  {
+    "id": 1,
+    "title": "City Park Reopens After Renovation",
+    "type": "news",
+    "tags": [],
+    "category": "Local",
+    "date": "2025-08-20",
+    "description": "The central city park reopened with new accessible paths and native plantings."
+  },
+  {
     "id": 1,
     "title": "Reflections on Slow Living",
     "type": "blogs",
+    "tags": [],
+    "category": "Lifestyle",
+    "date": "2025-06-15",
+    "description": "Notes on why slowing down helps creativity and focus."
+  },
+  {
+    "id": 1,
+    "title": "Reflections on Slow Living",
+    "type": "search-index",
+    "tags": [],
+    "category": "Lifestyle",
+    "date": "2025-06-15",
+    "description": "Notes on why slowing down helps creativity and focus."
+  },
+  {
+    "id": 1,
+    "title": "Reflections on Slow Living",
+    "type": "search-index",
+    "tags": [],
+    "category": "Lifestyle",
+    "date": "2025-06-15",
+    "description": "Notes on why slowing down helps creativity and focus."
+  },
+  {
+    "id": 1,
+    "title": "Reflections on Slow Living",
+    "type": "search-index",
+    "tags": [],
+    "category": "Lifestyle",
+    "date": "2025-06-15",
+    "description": "Notes on why slowing down helps creativity and focus."
+  },
+  {
+    "id": 1,
+    "title": "Reflections on Slow Living",
+    "type": "search-index",
     "tags": [],
     "category": "Lifestyle",
     "date": "2025-06-15",
@@ -91,8 +588,90 @@
   },
   {
     "id": 1,
+    "title": "The Science of Clouds",
+    "type": "search-index",
+    "tags": [],
+    "category": "Science",
+    "date": "2025-01-01",
+    "description": "Understanding the formation of clouds in the atmosphere."
+  },
+  {
+    "id": 1,
+    "title": "The Science of Clouds",
+    "type": "search-index",
+    "tags": [],
+    "category": "Science",
+    "date": "2025-01-01",
+    "description": "Understanding the formation of clouds in the atmosphere."
+  },
+  {
+    "id": 1,
+    "title": "The Science of Clouds",
+    "type": "search-index",
+    "tags": [],
+    "category": "Science",
+    "date": "2025-01-01",
+    "description": "Understanding the formation of clouds in the atmosphere."
+  },
+  {
+    "id": 1,
+    "title": "The Science of Clouds",
+    "type": "search-index",
+    "tags": [],
+    "category": "Science",
+    "date": "2025-01-01",
+    "description": "Understanding the formation of clouds in the atmosphere."
+  },
+  {
+    "id": 1,
+    "title": "The Lantern by the Sea",
+    "slug": "the-lantern-by-the-sea",
+    "type": "stories",
+    "tags": [],
+    "category": "Fiction",
+    "date": "2024-12-05",
+    "description": "A short tale about a lighthouse keeper and an unexpected guest."
+  },
+  {
+    "id": 1,
     "title": "Photosynthesis Basics",
     "type": "info",
+    "tags": [],
+    "category": "Biology",
+    "date": "2023-09-10",
+    "description": "An overview of how plants convert light into chemical energy."
+  },
+  {
+    "id": 1,
+    "title": "Photosynthesis Basics",
+    "type": "search-index",
+    "tags": [],
+    "category": "Biology",
+    "date": "2023-09-10",
+    "description": "An overview of how plants convert light into chemical energy."
+  },
+  {
+    "id": 1,
+    "title": "Photosynthesis Basics",
+    "type": "search-index",
+    "tags": [],
+    "category": "Biology",
+    "date": "2023-09-10",
+    "description": "An overview of how plants convert light into chemical energy."
+  },
+  {
+    "id": 1,
+    "title": "Photosynthesis Basics",
+    "type": "search-index",
+    "tags": [],
+    "category": "Biology",
+    "date": "2023-09-10",
+    "description": "An overview of how plants convert light into chemical energy."
+  },
+  {
+    "id": 1,
+    "title": "Photosynthesis Basics",
+    "type": "search-index",
     "tags": [],
     "category": "Biology",
     "date": "2023-09-10",

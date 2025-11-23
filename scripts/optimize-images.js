@@ -28,7 +28,8 @@ async function collectUrls(){
     try{
       let txt = await fs.readFile(p,'utf8');
       txt = txt.replace(/^\uFEFF/, '');
-      txt = txt.replace(/\/\/.*$/gm, '').replace(/\/\*[\s\S]*?\*\//g, '');
+      // remove block comments only; avoid removing '//' which appears in URLs
+      txt = txt.replace(/\/\*[\s\S]*?\*\//g, '');
       const parsed = JSON.parse(txt);
       const arr = Array.isArray(parsed) ? parsed : [parsed];
       arr.forEach(it=>{ if(it && it.image) urls.add(it.image); });

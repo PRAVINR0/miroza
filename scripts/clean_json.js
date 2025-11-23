@@ -24,15 +24,23 @@ async function run(){
   const files = await fs.readdir(DATA_DIR);
   for(const f of files){
     if(!f.endsWith('.json')) continue;
-    const p = path.join(DATA_DIR, f);
+    const p = path.join(DATA_DIR,f);
     try{
-      const txt = await fs.readFile(p, 'utf8');
+      // read raw buffer to detect BOM bytes reliably
+      const buf = await fs.readFile(p);
+      let txt;
+      if(buf.length >= 3 && buf[0]===0xEF && buf[1]===0xBB && buf[2]===0xBF){
+        // remove UTF-8 BOM
+        txt = buf.slice(3).toString('utf8');
+      } else {
+        txt = buf.toString('utf8');
+      }
       try{ JSON.parse(txt); console.log('OK:', f); continue; }catch(e){ /* fallthrough */ }
       console.log('Attempting to clean:', f);
-      const cleaned = sanitizeText(await fs.readFile(p,'utf8'));
+      const cleaned = sanitizeText(txt);
       // try parse cleaned
       JSON.parse(cleaned);
-      // backup original
+      // backup original (raw)
       await fs.copyFile(p, path.join(BACKUP_DIR, f + '.orig'));
       await fs.writeFile(p, cleaned, 'utf8');
       console.log('Cleaned and backed up:', f);
