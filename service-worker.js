@@ -17,6 +17,8 @@ const CORE_ASSETS = [
   '/offline.html',
   '/assets/css/style.css',
   '/assets/js/main.js',
+  '/assets/js/search.js',
+  '/search.html',
   '/assets/icons/icon-192.png',
   '/assets/icons/icon-512.png'
 ];

@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Search results on Miroza">
+  <title>Search Results — Miroza</title>
+  <link rel="icon" href="/favicon.ico">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script defer data-domain="miroza.in.net" src="https://plausible.io/js/script.js"></script>
+</head>
+<body>
+  <div id="site-header"></div>
+  <main class="container">
+    <h2>Search Results</h2>
+    <div id="search-results" class="grid"></div>
+  </main>
+
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/search.js"></script>
+  <script>
+    injectHeader(); initTheme(); initMenus(); initPWA();
+    // Read query param q and render results
+    function getQ(){ const p = new URLSearchParams(location.search); return p.get('q') || ''; }
+    const q = getQ();
+    const container = document.getElementById('search-results');
+    if(q){ window.mirozaSearch.renderFullResults(q, container); }
+    else container.innerHTML = '<p class="muted">No query provided.</p>';
+  </script>
+</body>
+</html>

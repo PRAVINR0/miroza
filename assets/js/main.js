@@ -17,6 +17,13 @@ function injectHeader(){
       <div class="brand">
         <a class="logo" href="index.html">Miroza</a>
       </div>
+      <!-- Search centered in header -->
+      <div id="site-search" class="site-search">
+        <span class="search-icon">🔍</span>
+        <input id="site-search-input" type="search" placeholder="Search Miroza..." aria-label="Search Miroza" />
+        <div id="search-suggestions" class="search-suggestions" role="listbox" aria-label="Search suggestions"></div>
+      </div>
+      <!-- main navigation moved to right side to preserve layout -->
       <nav class="nav" aria-label="Main navigation">
         <a href="index.html">Home</a>
         <a href="news.html">News</a>
@@ -38,6 +45,7 @@ function injectHeader(){
         </div>
         <button class="icon-btn" id="theme-toggle" aria-pressed="false">🌓</button>
         <button class="icon-btn" id="pwa-install" title="Install Miroza" style="display:none">⬇️</button>
+        <button class="icon-btn" id="mobile-search-btn" title="Search">🔎</button>
       </div>
     </header>
   `;
@@ -171,6 +179,11 @@ function renderCards(container, items, large=false, typeOverride){
     const meta = document.createElement('div'); meta.className='meta muted';
     meta.textContent = `${it.date || ''} ${itemType ? ' • '+capitalize(itemType) : ''}`;
     card.appendChild(img); card.appendChild(h3); card.appendChild(p); card.appendChild(meta);
+    // add data attributes for search indexing and deep-linking
+    card.setAttribute('data-title', it.title || '');
+    card.setAttribute('data-type', itemType || '');
+    card.setAttribute('data-description', it.description || '');
+    card.setAttribute('data-id', id);
     cardLink.appendChild(card);
     container.appendChild(cardLink);
   });
