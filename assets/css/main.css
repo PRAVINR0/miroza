@@ -1,0 +1,8 @@
+/* Canonical main stylesheet for Miroza
+   Imports existing site styles so HTML can reference a single canonical file.
+   This is non-destructive: it imports the original `style.css` and `ui.css`.
+*/
+@import url('style.css');
+@import url('ui.css');
+
+/* If you want to split into smaller files later, update HTML to reference those files directly. */

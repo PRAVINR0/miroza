@@ -1,7 +1,0 @@
-{
-  "name": "miroza-site-tools-disabled",
-  "version": "0.0.0",
-  "description": "Automation disabled. Original package.json moved to /backup/old_unused/package.json",
-  "private": true,
-  "scripts": {}
-}
