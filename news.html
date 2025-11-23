@@ -19,7 +19,7 @@
     injectHeader(); initTheme(); initMenus();
     (async ()=>{
       const items = await fetchJSON('assets/data/news.json');
-      renderCards(document.getElementById('news-grid'), items);
+      renderCards(document.getElementById('news-grid'), items, false, 'news');
     })();
   </script>
 </body>

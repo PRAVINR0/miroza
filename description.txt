@@ -1,51 +1,73 @@
 Miroza — Static Website
 
 Overview:
-- This repository is a small static website named "Miroza" that aggregates content: Daily News, Blogs, Articles, Stories, and Informational pages.
+- This repository is a static website named "Miroza" that aggregates content: Daily News, Blogs, Articles, Stories, and Informational pages.
 
 Files and purpose:
-- `index.html` — Home page. Loads the latest item from each content type (articles, blogs, news, stories, info), shuffles them and displays them on the landing page.
-- `articles.html`, `blog.html`, `news.html`, `stories.html`, `info.html` — Individual pages for each content type. Each page loads its corresponding JSON file from `assets/data/` and renders cards in a responsive grid.
+- `index.html` — Home page. Loads recent items from each content type, mixes them in a shuffled layout and displays clickable cards linking to `detail.html`.
+- `articles.html`, `blog.html`, `news.html`, `stories.html`, `info.html` — List pages for each content type. Each page fetches `assets/data/<type>.json` and renders the content grid. Cards link to `detail.html?type=<type>&id=<id>`.
+- `detail.html` — A single detail page used by all content types. It reads the URL query parameters `type` and `id`, loads the correct JSON file, finds the item by `id`, and renders title, large image, date, category, and full `content`.
 - `assets/css/style.css` — Central stylesheet. Defines color variables for light and dark themes, responsive grid layout, glass-morphism cards, and animations.
 - `assets/js/main.js` — Site-wide JavaScript. Responsibilities:
-  - `injectHeader()` inserts a common header into every page.
+  - `injectHeader()` inserts a common header and footer into every page and sets the copyright year.
   - `initTheme()` initializes theme from `localStorage` or system preference.
   - `initMenus()` wires the 3-dot (more) menu and theme toggle.
   - `fetchJSON(path)` fetches JSON files.
-  - `renderCards(container, items)` renders content cards into a grid container.
+  - `renderCards(container, items, large=false, typeOverride)` renders clickable content cards into a grid container; cards link to `detail.html?type=...&id=...`.
   - `shuffleArray(array)` shuffles arrays (used on the homepage).
+  - `getQueryParams()` parses URL query parameters.
+  - `loadDetail()` loads and renders the detail view on `detail.html`.
 
-- `assets/data/*.json` — JSON data files for each content type. Each file is an array of objects with the following shape:
+JSON data format:
+- `assets/data/*.json` — Each file is a JSON array of objects. Each object must include the fields below (example):
   {
-    "title": "...",
-    "description": "...",
-    "date": "YYYY-MM-DD",
-    "image": "https://..."
+    "id": 1,
+    "title": "Example Title",
+    "description": "Short summary.",
+    "content": "Long detailed content for the detail page.",
+    "date": "2025-01-01",
+    "image": "https://images.unsplash.com/photo-example",
+    "category": "General"
   }
 
+Important notes about JSON:
+- `id` must be a unique number for each item in its file. Links to details use this `id`.
+- The `type` used in URLs matches the JSON filename (e.g., `type=articles` maps to `assets/data/articles.json`).
+
 How pages are connected:
-- Every HTML page includes `assets/js/main.js` and calls `injectHeader()` so the same header is used across pages. Navigation links are standard `<a>` links between pages.
+- Every HTML page includes `assets/js/main.js`. `injectHeader()` writes the header (and footer) into the page, keeping navigation consistent.
+- `renderCards()` wraps each card in an anchor to `detail.html?type=<type>&id=<id>`. Clicking a card loads the detail page with the correct query parameters.
 
-How JSON data works:
-- Each content page calls `fetchJSON('assets/data/<type>.json')` and passes the returned array to `renderCards()` which creates the card layout.
-- To add new content, open the appropriate file in `assets/data/` (for example `articles.json`) and append another object following the same shape. New items with newer `date` values will appear first on list pages and the latest item will be selected on the homepage.
+Detail page behavior:
+- `detail.html` calls `loadDetail()` which:
+  1. Reads `type` and `id` from the URL query string.
+  2. Loads `assets/data/<type>.json`.
+  3. Finds the item where numeric `id` matches.
+  4. Renders title, a large hero image, date, category and the full `content` text.
+  5. Shows a back link (“← Back to {pageType}”) that points back to the type's list page.
 
-Dark / Light Mode:
+How to add new content:
+1. Open `assets/data/<type>.json` (e.g., `assets/data/articles.json`).
+2. Add a new object with a unique numeric `id` and the fields shown above.
+3. Save and open the site — the client-side JS will load and display the new item automatically.
+
+Theme (Dark / Light Mode):
 - Theme is persisted in `localStorage` under the key `miroza-theme` with values `dark` or `light`.
-- The theme toggle updates `document.documentElement` with `data-theme='dark'` for dark mode; the CSS reads that attribute to switch variables.
+- `initTheme()` applies the saved theme or uses the system `prefers-color-scheme` if no saved preference exists.
 
-Header import across pages:
-- The header is not duplicated in HTML files; instead `injectHeader()` writes the header markup into the element with id `site-header`. This keeps the header consistent across pages.
+Footer and copyright:
+- The footer is injected by `injectHeader()` and includes the copyright line:
+  `© Miroza <span id="year"></span>. All Rights Reserved.`
+- The script sets `document.getElementById('year').textContent = new Date().getFullYear()` automatically.
 
 Hosting with GitHub Pages:
-- This is a static site and can be published by pushing the repository to GitHub and enabling GitHub Pages (commonly from the `main` branch or `gh-pages` branch). Ensure that the `CNAME` (if present) points to the intended custom domain and DO NOT modify DNS without verification.
+- This is a purely static site and can be hosted via GitHub Pages. Publish the repository and enable Pages (from `main` or `gh-pages`). Because navigation uses plain links and query parameters, no server-side routing is required.
+- If a custom domain is used, ensure the `CNAME` file is correct and DNS is configured by the site owner.
 
-Adding content checklist:
-1. Edit `assets/data/<type>.json` and add a new JSON object to the array.
-2. Use a valid `date` field (`YYYY-MM-DD`) — newest dates determine ordering.
-3. Provide an absolute URL for `image` or a relative path inside `assets/`.
-4. Visit the site pages — the content will be loaded client-side.
+Developer notes & next steps:
+- All UI is written in vanilla HTML/CSS/JS for portability and ease of hosting.
+- If you'd like, I can add:
+  - A GitHub Actions workflow to run basic link checks on push.
+  - Search, filtering, or pagination features for long lists.
+  - Per-item dedicated HTML pages (instead of `detail.html`) if you prefer static pre-rendered pages.
 
-Notes and next steps:
-- This project uses vanilla HTML/CSS/JS for portability.
-- If you want me to scaffold a GitHub Actions workflow for automatic builds (not needed for pure static pages) or add a simple search/filter feature, I can implement that next.

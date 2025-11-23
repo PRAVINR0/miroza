@@ -1,8 +1,11 @@
 [
   {
+    "id": 1,
     "title": "City Park Reopens After Renovation",
     "description": "The central city park reopened with new accessible paths and native plantings.",
+    "content": "After a year-long community-led renovation the city park reopens with wider paths, native plant gardens, and new lighting. The project prioritized accessibility and biodiversity.",
     "date": "2025-08-20",
-    "image": "https://images.unsplash.com/photo-1499346030926-9a72daac6c63"
+    "image": "https://images.unsplash.com/photo-1499346030926-9a72daac6c63",
+    "category": "Local"
   }
 ]

@@ -19,7 +19,7 @@
     injectHeader(); initTheme(); initMenus();
     (async ()=>{
       const items = await fetchJSON('assets/data/stories.json');
-      renderCards(document.getElementById('stories-grid'), items);
+      renderCards(document.getElementById('stories-grid'), items, false, 'stories');
     })();
   </script>
 </body>

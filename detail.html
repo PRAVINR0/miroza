@@ -3,24 +3,22 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Miroza — Info</title>
+  <title>Miroza — Detail</title>
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
   <div id="site-header"></div>
 
   <main class="container">
-    <h2>Informational Content</h2>
-    <div id="info-grid" class="grid"></div>
+    <div id="detail-container" class="fade-in"></div>
   </main>
 
   <script src="assets/js/main.js"></script>
   <script>
+    // Initialize common UI
     injectHeader(); initTheme(); initMenus();
-    (async ()=>{
-      const items = await fetchJSON('assets/data/info.json');
-      renderCards(document.getElementById('info-grid'), items, false, 'info');
-    })();
+    // Load the detail view based on URL params
+    loadDetail();
   </script>
 </body>
 </html>
