@@ -93,8 +93,20 @@ function initPWA(){
 /* Theme init */
 function initTheme(){
   const saved = localStorage.getItem('miroza-theme');
-  if(saved){ if(saved === 'dark') document.documentElement.setAttribute('data-theme','dark'); else document.documentElement.removeAttribute('data-theme'); }
-  else if(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) document.documentElement.setAttribute('data-theme','dark');
+  let applied = 'light';
+  if(saved){
+    applied = saved === 'dark' ? 'dark' : 'light';
+    if(applied === 'dark') document.documentElement.setAttribute('data-theme','dark'); else document.documentElement.removeAttribute('data-theme');
+  } else if(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches){
+    applied = 'dark';
+    document.documentElement.setAttribute('data-theme','dark');
+  } else {
+    document.documentElement.removeAttribute('data-theme');
+  }
+
+  // Ensure header toggle reflects current theme state
+  const themeToggle = document.getElementById('theme-toggle');
+  if(themeToggle){ themeToggle.setAttribute('aria-pressed', applied === 'dark'); }
 }
 
 /* Robust fetch with timeout and retries */
