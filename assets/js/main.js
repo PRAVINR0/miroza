@@ -2,7 +2,7 @@
  - Modernized main script for Miroza
  - Features:
    - Header/footer injection
-   - Theme handling
+  /* Menu and small UI interactions */
    - Robust JSON fetching with timeout/retries
    - Accessible card rendering with lazy-loaded images
    - Detail page rendering with input validation
@@ -30,75 +30,14 @@ function injectHeader(){
         <a href="/blog.html">Blogs</a>
         <a href="/articles.html">Articles</a>
         <a href="/stories.html">Stories</a>
-        <a href="/info.html">Info</a>
-      </nav>
-      <div class="header-right">
-        <div class="more-menu">
-          <button class="icon-btn" id="more-btn" aria-expanded="false" aria-controls="more-panel">⋯</button>
-          <div class="more-panel" id="more-panel" role="menu">
-            <a href="/news.html">News</a>
-            <a href="/blog.html">Blogs</a>
-            <a href="/articles.html">Articles</a>
-            <a href="/stories.html">Stories</a>
-            <a href="/info.html">Info</a>
-          </div>
-        </div>
-        <button class="icon-btn" id="font-dec" aria-label="Decrease font">A−</button>
-        <button class="icon-btn" id="font-inc" aria-label="Increase font">A+</button>
-        <button class="icon-btn" id="theme-toggle" aria-pressed="false" aria-label="Toggle theme">🌓</button>
-        <button class="icon-btn" id="pwa-install" title="Install Miroza" style="display:none">⬇️</button>
-        <button class="icon-btn" id="mobile-search-btn" title="Search">🔎</button>
-      </div>
-    </header>`;
-
+  // Theme handled in assets/js/theme.js (initTheme)
   // Footer (single injection)
-  if(!document.getElementById('site-footer')){
-    const footer = document.createElement('footer');
-    footer.id = 'site-footer';
-    footer.innerHTML = `<div class="container" style="padding:24px 16px;text-align:center;color:var(--muted)"><small>© Miroza <span id="year"></span>. All Rights Reserved.</small></div>`;
-    document.body.appendChild(footer);
-    const yearEl = document.getElementById('year'); if(yearEl) yearEl.textContent = new Date().getFullYear();
-  }
-}
-
-/* Menu, theme and small UI interactions */
-function initMenus(){
-  const moreBtn = document.getElementById('more-btn');
-  const morePanel = document.getElementById('more-panel');
-  if(moreBtn && morePanel){
+  // fetchJSON is provided by utilities.js
     moreBtn.addEventListener('click', ()=>{ const open = morePanel.classList.toggle('open'); moreBtn.setAttribute('aria-expanded', open ? 'true' : 'false'); });
     document.addEventListener('click', (e)=>{ if(!morePanel.contains(e.target) && e.target !== moreBtn){ morePanel.classList.remove('open'); moreBtn.setAttribute('aria-expanded','false'); } });
-  }
+  /* Query helper moved to router.js */
 
-  const themeToggle = document.getElementById('theme-toggle');
-  if(themeToggle){
-    themeToggle.addEventListener('click', ()=>{
-      const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-      const next = isDark ? 'light' : 'dark';
-      if(next === 'dark') document.documentElement.setAttribute('data-theme','dark'); else document.documentElement.removeAttribute('data-theme');
-      localStorage.setItem('miroza-theme', next);
-      themeToggle.setAttribute('aria-pressed', next === 'dark');
-    });
-  }
-
-  // Font size controls wired to centralized UI helpers
-  const fontInc = document.getElementById('font-inc');
-  const fontDec = document.getElementById('font-dec');
-  if(fontInc && fontDec){
-    fontInc.addEventListener('click', ()=>{ if(window.adjustFontScale) window.adjustFontScale(0.05); });
-    fontDec.addEventListener('click', ()=>{ if(window.adjustFontScale) window.adjustFontScale(-0.05); });
-  }
-
-  const pwaBtn = document.getElementById('pwa-install');
-  if(pwaBtn){ pwaBtn.addEventListener('click', async ()=>{ if(window.deferredPrompt){ await window.deferredPrompt.prompt(); window.deferredPrompt = null; pwaBtn.style.display = 'none'; } }); }
-}
-
-/* PWA registration */
-function initPWA(){
-  if('serviceWorker' in navigator){ navigator.serviceWorker.register('/service-worker.js').catch(err=>console.warn('SW register failed',err)); }
-  window.addEventListener('beforeinstallprompt', e=>{ e.preventDefault(); window.deferredPrompt = e; const btn = document.getElementById('pwa-install'); if(btn) btn.style.display='inline-block'; });
-  window.addEventListener('appinstalled', ()=>{ const btn = document.getElementById('pwa-install'); if(btn) btn.style.display='none'; });
-}
+  /* Detail loader moved to router.js */
 
 /* Theme init */
 function initTheme(){
@@ -120,6 +59,19 @@ function initTheme(){
 
   // Apply any saved font scale from UI settings (if available)
   if(window.applyFontScale) try{ window.applyFontScale(); }catch(e){}
+}
+
+/* Safe PWA initializer
+   - Registers the current `/service-worker.js` if available
+   - Uses try/catch and graceful failure so pages can call `initPWA()` safely
+   - Keeps registration minimal; the service worker in root is a safe non-caching stub
+*/
+function initPWA(){
+  if(typeof window === 'undefined') return;
+  if(!('serviceWorker' in navigator)) return;
+  try{
+    navigator.serviceWorker.register('/service-worker.js').catch(()=>{/* ignore registration errors */});
+  }catch(e){ /* ignore */ }
 }
 
 /* Robust fetch with timeout and retries */

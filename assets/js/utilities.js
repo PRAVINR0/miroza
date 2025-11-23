@@ -75,6 +75,22 @@
     return `/detail.html?${q}`;
   }
 
+  async function fetchJSON(path, { timeout = 8000, retries = 1 } = {}){
+    const controller = new AbortController();
+    const timer = setTimeout(()=>controller.abort(), timeout);
+    try{
+      const res = await fetch(path, { cache: 'no-store', signal: controller.signal });
+      clearTimeout(timer);
+      if(!res.ok) throw new Error(`Failed to load ${path} (${res.status})`);
+      return await res.json();
+    }catch(err){
+      if(retries > 0) return fetchJSON(path, { timeout, retries: retries - 1 });
+      throw err;
+    }
+  }
+
   window.utils = window.utils || {};
   Object.assign(window.utils, { slugify, uid, todayISO, escapeHtml, capitalize, createCardElement, downloadJSON, readJSONFile, buildDetailUrl });
+  // Expose a lightweight fetch helper globally for legacy code that expects `fetchJSON`.
+  window.fetchJSON = fetchJSON;
 })();

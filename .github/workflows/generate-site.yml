@@ -1,5 +1,5 @@
-name: Generate site metadata (disabled)
+name: generate-site (moved-to-backup)
 
-# This workflow has been disabled by repository cleanup performed on 2025-11-23.
-# The original workflow was copied to `/backup/old_unused/generate-site.yml`.
-# To restore automation, move the backup file back to `.github/workflows/` and review.
+# This workflow was intentionally disabled and moved to `/backup/old_unused/generate-site.yml`
+# on 2025-11-23 as part of a conservative cleanup. The original full workflow is preserved
+# in the backup folder. To restore, move the file back and review carefully before re-enabling.
