@@ -4,7 +4,7 @@
    - Keeps cache versioned and removes old caches on activate
 */
 
-const CACHE_VERSION = 'v3';
+const CACHE_VERSION = 'v4';
 const PRECACHE = `miroza-precache-${CACHE_VERSION}`;
 const RUNTIME = `miroza-runtime-${CACHE_VERSION}`;
 
@@ -16,6 +16,8 @@ const PRECACHE_URLS = [
   '/assets/css/ui.css',
   '/assets/js/main.js',
   '/assets/js/search.js',
+  '/assets/data/news.json',
+  '/assets/data/search-index.json',
   '/assets/js/ui.js',
   '/assets/js/utilities.js',
   '/assets/js/images.js'

@@ -88,5 +88,84 @@
       <guid>https://YOUR-DOMAIN/detail.html?type=news&amp;id=11</guid>
     </item>
 
+    <item>
+      <title>Japan Hit by 6.8-Magnitude Earthquake, Tsunami Warning Issued</title>
+      <link>https://YOUR-DOMAIN/detail.html?type=news&amp;id=12&amp;slug=japan-hit-by-6-8-magnitude-earthquake-tsunami-warning-issued</link>
+      <description><![CDATA[A strong 6.8 earthquake struck Japan’s northeast region early today, prompting emergency tsunami alerts and widespread transportation disruption.]]></description>
+      <pubDate>Sun, 23 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>https://YOUR-DOMAIN/detail.html?type=news&amp;id=12</guid>
+    </item>
+
+    <item>
+      <title>UN Chief Warns Climate Change Is "Accelerating Beyond Predictions"</title>
+      <link>https://YOUR-DOMAIN/detail.html?type=news&amp;id=13&amp;slug=un-chief-warns-climate-change-is-accelerating-beyond-predictions</link>
+      <description><![CDATA[The UN has issued a severe climate warning, stating that global warming is advancing faster than scientific models expected.]]></description>
+      <pubDate>Sun, 23 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>https://YOUR-DOMAIN/detail.html?type=news&amp;id=13</guid>
+    </item>
+
+    <item>
+      <title>Apple Introduces Next-Gen AI Assistant for iPhone</title>
+      <link>https://YOUR-DOMAIN/detail.html?type=news&amp;id=14&amp;slug=apple-introduces-next-gen-ai-assistant-for-iphone</link>
+      <description><![CDATA[Apple unveiled a next-generation AI assistant capable of on-device reasoning and new productivity features.]]></description>
+      <pubDate>Sun, 23 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>https://YOUR-DOMAIN/detail.html?type=news&amp;id=14</guid>
+    </item>
+
+    <item>
+      <title>India &amp; China Hold High-Level Peace Talks After Border Tension</title>
+      <link>https://YOUR-DOMAIN/detail.html?type=news&amp;id=15&amp;slug=india-and-china-hold-high-level-peace-talks-after-border-tension</link>
+      <description><![CDATA[India and China held talks focused on de-escalation and disengagement along the LAC.]]></description>
+      <pubDate>Sun, 23 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>https://YOUR-DOMAIN/detail.html?type=news&amp;id=15</guid>
+    </item>
+
+    <item>
+      <title>NASA Confirms Water Ice in Lunar South Pole Region</title>
+      <link>https://YOUR-DOMAIN/detail.html?type=news&amp;id=16&amp;slug=nasa-confirms-water-ice-in-lunar-south-pole-region</link>
+      <description><![CDATA[NASA's Lunar Reconnaissance Orbiter detected water ice in permanently shadowed lunar craters near the south pole.]]></description>
+      <pubDate>Sun, 23 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>https://YOUR-DOMAIN/detail.html?type=news&amp;id=16</guid>
+    </item>
+
+    <item>
+      <title>Global Stock Markets Dip After Latest US Inflation Figures</title>
+      <link>https://YOUR-DOMAIN/detail.html?type=news&amp;id=17&amp;slug=global-stock-markets-dip-after-latest-us-inflation-figures</link>
+      <description><![CDATA[Markets reacted to stronger-than-expected US inflation, increasing uncertainty about interest-rate paths.]]></description>
+      <pubDate>Sun, 23 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>https://YOUR-DOMAIN/detail.html?type=news&amp;id=17</guid>
+    </item>
+
+    <item>
+      <title>UK Unveils New AI Safety Regulations for Tech Companies</title>
+      <link>https://YOUR-DOMAIN/detail.html?type=news&amp;id=18&amp;slug=uk-unveils-new-ai-safety-regulations-for-tech-companies</link>
+      <description><![CDATA[The UK published an AI Safety Act that introduces audits and mandatory safety evaluations for high-risk systems.]]></description>
+      <pubDate>Sun, 23 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>https://YOUR-DOMAIN/detail.html?type=news&amp;id=18</guid>
+    </item>
+
+    <item>
+      <title>Saudi Arabia Announces New Futuristic Smart Mega-City</title>
+      <link>https://YOUR-DOMAIN/detail.html?type=news&amp;id=19&amp;slug=saudi-arabia-announces-new-futuristic-smart-mega-city</link>
+      <description><![CDATA[A new Vision 2030 smart city will integrate AI, renewables and autonomous transport to attract global investment.]]></description>
+      <pubDate>Sun, 23 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>https://YOUR-DOMAIN/detail.html?type=news&amp;id=19</guid>
+    </item>
+
+    <item>
+      <title>WHO Reports Major Decline in Global COVID-19 Cases</title>
+      <link>https://YOUR-DOMAIN/detail.html?type=news&amp;id=20&amp;slug=who-reports-major-decline-in-global-covid-19-cases</link>
+      <description><![CDATA[WHO reports a substantial drop in infections and hospitalizations, citing vaccination and immunity trends.]]></description>
+      <pubDate>Sun, 23 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>https://YOUR-DOMAIN/detail.html?type=news&amp;id=20</guid>
+    </item>
+
+    <item>
+      <title>Global Electric Vehicle Sales Hit Record High in 2025</title>
+      <link>https://YOUR-DOMAIN/detail.html?type=news&amp;id=21&amp;slug=global-electric-vehicle-sales-hit-record-high-in-2025</link>
+      <description><![CDATA[IEA reports record EV sales in 2025, driven by cheaper batteries, charging networks and incentives.]]></description>
+      <pubDate>Sun, 23 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>https://YOUR-DOMAIN/detail.html?type=news&amp;id=21</guid>
+    </item>
   </channel>
 </rss>

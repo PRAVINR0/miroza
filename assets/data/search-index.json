@@ -754,4 +754,105 @@
         "date":  "2025-11-23",
         "description":  "Real-time spoken and written support for Hindi and Tamil expands Gemini Live\u0027s reach across South Asia."
     }
+    ,
+    {
+        "id": 12,
+        "title": "Japan Hit by 6.8-Magnitude Earthquake, Tsunami Warning Issued",
+        "slug": "japan-hit-by-6-8-magnitude-earthquake-tsunami-warning-issued",
+        "type": "news",
+        "tags": ["japan","earthquake","tsunami","asia","natural disasters"],
+        "category": "World News",
+        "date": "2025-11-23",
+        "description": "A strong 6.8 earthquake struck Japan’s northeast region early today, prompting emergency tsunami alerts and widespread transportation disruption."
+    },
+    {
+        "id": 13,
+        "title": "UN Chief Warns Climate Change Is \u201cAccelerating Beyond Predictions\u201d",
+        "slug": "un-chief-warns-climate-change-is-accelerating-beyond-predictions",
+        "type": "news",
+        "tags": ["climate change","UN","global warming","environment"],
+        "category": "World News",
+        "date": "2025-11-23",
+        "description": "The UN has issued a severe climate warning, stating that global warming is advancing faster than scientific models expected."
+    },
+    {
+        "id": 14,
+        "title": "Apple Introduces Next-Gen AI Assistant for iPhone",
+        "slug": "apple-introduces-next-gen-ai-assistant-for-iphone",
+        "type": "news",
+        "tags": ["apple","ai","technology","iphone"],
+        "category": "World News",
+        "date": "2025-11-23",
+        "description": "Apple unveiled a revolutionary AI assistant for iPhones, offering real-time reasoning, personalization, and offline intelligence."
+    },
+    {
+        "id": 15,
+        "title": "India & China Hold High-Level Peace Talks After Border Tension",
+        "slug": "india-and-china-hold-high-level-peace-talks-after-border-tension",
+        "type": "news",
+        "tags": ["india","china","ladakh","border","diplomacy"],
+        "category": "World News",
+        "date": "2025-11-23",
+        "description": "India and China conducted high-level military talks addressing ongoing border frictions in Ladakh."
+    },
+    {
+        "id": 16,
+        "title": "NASA Confirms Water Ice in Lunar South Pole Region",
+        "slug": "nasa-confirms-water-ice-in-lunar-south-pole-region",
+        "type": "news",
+        "tags": ["nasa","moon","space","science","artemis"],
+        "category": "World News",
+        "date": "2025-11-23",
+        "description": "NASA scientists confirmed significant water-ice deposits in the Moon’s south pole, a breakthrough for future lunar missions."
+    },
+    {
+        "id": 17,
+        "title": "Global Stock Markets Dip After Latest US Inflation Figures",
+        "slug": "global-stock-markets-dip-after-latest-us-inflation-figures",
+        "type": "news",
+        "tags": ["markets","finance","inflation","economy"],
+        "category": "World News",
+        "date": "2025-11-23",
+        "description": "World markets fell after US inflation rose unexpectedly, raising fears that interest-rate cuts may be delayed."
+    },
+    {
+        "id": 18,
+        "title": "UK Unveils New AI Safety Regulations for Tech Companies",
+        "slug": "uk-unveils-new-ai-safety-regulations-for-tech-companies",
+        "type": "news",
+        "tags": ["ai","uk","regulation","technology"],
+        "category": "World News",
+        "date": "2025-11-23",
+        "description": "The UK announced strict new AI safety regulations to govern deployment of advanced AI systems."
+    },
+    {
+        "id": 19,
+        "title": "Saudi Arabia Announces New Futuristic Smart Mega-City",
+        "slug": "saudi-arabia-announces-new-futuristic-smart-mega-city",
+        "type": "news",
+        "tags": ["saudi arabia","smart city","technology","middle east"],
+        "category": "World News",
+        "date": "2025-11-23",
+        "description": "Saudi Arabia revealed a massive next-generation smart city project powered by AI and renewable energy."
+    },
+    {
+        "id": 20,
+        "title": "WHO Reports Major Decline in Global COVID-19 Cases",
+        "slug": "who-reports-major-decline-in-global-covid-19-cases",
+        "type": "news",
+        "tags": ["covid19","health","who","global health"],
+        "category": "World News",
+        "date": "2025-11-23",
+        "description": "The WHO announced a worldwide drop in COVID-19 infections and hospitalizations."
+    },
+    {
+        "id": 21,
+        "title": "Global Electric Vehicle Sales Hit Record High in 2025",
+        "slug": "global-electric-vehicle-sales-hit-record-high-in-2025",
+        "type": "news",
+        "tags": ["ev","electric vehicles","energy","automobiles"],
+        "category": "World News",
+        "date": "2025-11-23",
+        "description": "EV sales worldwide reached record highs driven by cheaper batteries and expanded charging networks."
+    }
 ]
