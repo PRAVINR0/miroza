@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title id="page-title">MIROZA — Detail</title>
+  <meta name="description" id="meta-desc" content="Detail page">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/theme.css">
+  <link rel="stylesheet" href="/assets/css/responsive.css">
+</head>
+<body>
+  <main class="container detail-container">
+    <button id="back-btn" class="btn">Back to category</button>
+    <article id="detail" class="detail">
+      <!-- populated by JS -->
+    </article>
+  </main>
+
+  <script src="/assets/js/utils.js" defer></script>
+  <script src="/assets/js/datastore.js" defer></script>
+  <script src="/assets/js/router.js" defer></script>
+  <script>
+  document.addEventListener('DOMContentLoaded', async ()=>{
+    const params = router.getQuery();
+    const type = params.type || 'stories';
+    const id = params.id;
+    const detailEl = document.getElementById('detail');
+    const pageTitle = document.getElementById('page-title');
+    const metaDesc = document.getElementById('meta-desc');
+
+    if(!id){ detailEl.innerHTML = '<p>Missing id</p>'; return; }
+    const item = await datastore.getById(type, id);
+    if(!item){ detailEl.innerHTML = '<p>Not found</p>'; return; }
+
+    pageTitle.textContent = `MIROZA — ${item.title}`;
+    metaDesc.setAttribute('content', item.description);
+
+    document.getElementById('back-btn').addEventListener('click', ()=>{
+      window.location.href = `/${type}.html`;
+    });
+
+    detailEl.innerHTML = `
+      <header class="detail-header">
+        <h1>${item.title}</h1>
+        <div class="meta">
+          <time datetime="${item.date}">${utils.formatDate(item.date)}</time>
+          <div class="tags">${item.tags.map(t=>`<span class="tag">${t}</span>`).join('')}</div>
+        </div>
+      </header>
+      <figure class="detail-media"><img loading="lazy" src="${item.image}" alt="${item.title}"></figure>
+      <div class="detail-content">${item.content}</div>
+    `;
+  });
+  </script>
+</body>
+</html>

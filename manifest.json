@@ -1,0 +1,11 @@
+{
+  "name": "MIROZA",
+  "short_name": "MIROZA",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#f6f8fb",
+  "theme_color": "#375a7f",
+  "icons": [
+    { "src": "/assets/images/logo.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}

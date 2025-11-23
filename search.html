@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>MIROZA — Search</title>
+  <meta name="description" content="Search MIROZA content." />
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/theme.css">
+</head>
+<body>
+  <main class="container">
+    <h1 class="page-title">Search Results</h1>
+    <div id="search-results" class="grid"></div>
+  </main>
+
+  <script src="/assets/js/utils.js" defer></script>
+  <script src="/assets/js/datastore.js" defer></script>
+  <script src="/assets/js/search.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', ()=>{
+      const q = new URLSearchParams(location.search).get('q') || '';
+      if(q) search.performSearch(q, document.getElementById('search-results'));
+    });
+  </script>
+</body>
+</html>

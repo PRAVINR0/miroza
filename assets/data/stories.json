@@ -1,0 +1,11 @@
+[
+  {
+    "id":"stories001",
+    "title":"The Lightkeeper's Letter",
+    "description":"A short story about memory, tides, and the small kindnesses that change lives.",
+    "content":"He left the lamp lit for strangers and for himself—a small ritual against the forgetting of days. The sea kept its own counsel, but letters arrived, soft as shells, carrying a quiet revolution.",
+    "image":"https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1200&q=80",
+    "tags":["fiction","short","literature"],
+    "date":"2025-11-16"
+  }
+]

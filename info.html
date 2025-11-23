@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>MIROZA — Info</title>
+  <meta name="description" content="Info — MIROZA helpful guides and resources." />
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/theme.css">
+  <link rel="stylesheet" href="/assets/css/responsive.css">
+</head>
+<body>
+  <main class="container">
+    <h1 class="page-title">Info</h1>
+    <section id="category-list" class="grid"></section>
+  </main>
+
+  <script src="/assets/js/utils.js" defer></script>
+  <script src="/assets/js/datastore.js" defer></script>
+  <script>
+  document.addEventListener('DOMContentLoaded', async ()=>{
+    const list = document.getElementById('category-list');
+    const items = await datastore.fetchAll('info');
+    items.forEach(it=>{
+      const el = document.createElement('article');
+      el.className = 'card';
+      el.innerHTML = `<a href="/detail.html?type=info&id=${it.id}" aria-label="${it.title}">
+        <div class="card-media"><img loading="lazy" src="${it.image}" alt="${it.title}"></div>
+        <div class="card-body"><div class="badge">Info</div><h3>${it.title}</h3><p>${it.description}</p></div>
+      </a>`;
+      list.appendChild(el);
+    });
+  });
+  </script>
+</body>
+</html>

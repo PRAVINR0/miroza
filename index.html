@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="referrer" content="no-referrer-when-downgrade" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' https://images.unsplash.com https://images.pexels.com data:; style-src 'self' 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com; script-src 'self';" />
+  <meta name="permissions-policy" content="geolocation=(), microphone=(), camera=()" />
+
+  <link rel="manifest" href="/manifest.json">
+  <link rel="icon" href="/assets/images/logo.svg" />
+  <link rel="preload" href="/assets/css/main.css" as="style">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/theme.css">
+  <link rel="stylesheet" href="/assets/css/animations.css">
+  <link rel="stylesheet" href="/assets/css/responsive.css">
+
+  <title>MIROZA — Home</title>
+  <meta name="description" content="MIROZA — curated news, articles, blogs, stories and info. Fast, responsive, and privacy-first." />
+  <link rel="canonical" href="/index.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:site_name" content="MIROZA">
+  <meta property="og:title" content="MIROZA — Home">
+  <meta property="og:description" content="Curated news, articles, blogs and stories.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="/index.html">
+  <meta property="og:image" content="/assets/images/placeholders/home-og.jpg">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "MIROZA",
+    "url": "/"
+  }
+  </script>
+</head>
+<body>
+  <div id="app" class="app-root">
+    <header class="site-header sticky">
+      <div class="header-inner">
+        <a class="brand" href="/">
+          <img src="/assets/images/logo.svg" alt="MIROZA logo" width="42" height="42">
+          <span class="brand-title">MIROZA</span>
+        </a>
+
+        <div class="header-center">
+          <div class="search-wrap">
+            <input id="global-search" type="search" placeholder="Search MIROZA — press /" aria-label="Search" />
+            <button id="search-clear" class="icon-btn" aria-hidden="true">×</button>
+          </div>
+        </div>
+
+        <div class="header-actions">
+          <button id="theme-toggle" class="icon-btn" aria-label="Toggle theme">🌓</button>
+          <button id="mobile-menu" class="icon-btn mobile-only" aria-label="Menu">⋮</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="hero">
+        <h1 class="hero-title">MIROZA — Curated stories &amp; insight</h1>
+        <p class="hero-sub">Latest News, Articles, Blogs, Stories and Info — fast, accessible, and beautiful.</p>
+      </section>
+
+      <section id="feed" class="grid feed-grid" aria-live="polite">
+        <!-- JS renders mixed feed here -->
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div>© <span id="year"></span> MIROZA</div>
+        <nav class="footer-links">
+          <a href="/news.html">News</a>
+          <a href="/articles.html">Articles</a>
+          <a href="/blogs.html">Blogs</a>
+          <a href="/stories.html">Stories</a>
+          <a href="/info.html">Info</a>
+        </nav>
+      </div>
+    </footer>
+  </div>
+
+  <script src="/assets/js/utils.js" defer></script>
+  <script src="/assets/js/datastore.js" defer></script>
+  <script src="/assets/js/theme.js" defer></script>
+  <script src="/assets/js/router.js" defer></script>
+  <script src="/assets/js/search.js" defer></script>
+  <script src="/assets/js/main.js" defer></script>
+</body>
+</html>

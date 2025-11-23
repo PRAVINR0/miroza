@@ -1,0 +1,4 @@
+/* Simple animation utilities */
+@keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.fade-in{animation:fadeIn .5s ease both}
+.card:hover{transform:translateY(-6px);box-shadow:0 12px 30px rgba(20,30,50,0.12)}
