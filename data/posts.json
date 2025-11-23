@@ -1,0 +1,21 @@
+{
+  "posts": [
+    {"id":1,"title":"City Council Approves New Transit Plan","slug":"city-council-transit","excerpt":"Council votes to expand transit routes to underserved neighborhoods.","category":"India","date":"2025-11-20T09:00:00Z","author":"Ravi Kumar","image":"/assets/images/img-1.svg","views":1245},
+    {"id":2,"title":"Global Markets React to Trade News","slug":"global-markets-trade","excerpt":"Stocks show mixed results as traders digest fresh data.","category":"Business","date":"2025-11-22T12:30:00Z","author":"Priya Singh","image":"/assets/images/img-2.svg","views":987},
+    {"id":3,"title":"Startup Raises Series B to Scale","slug":"startup-series-b","excerpt":"Emerging startup secures funding to expand product lines.","category":"Tech","date":"2025-11-21T08:15:00Z","author":"Anita Shah","image":"/assets/images/img-3.svg","views":540},
+    {"id":4,"title":"Championship Final Ends in Dramatic Fashion","slug":"championship-final","excerpt":"A last-minute goal seals the victory in a memorable match.","category":"Sports","date":"2025-11-19T19:00:00Z","author":"Samir Patel","image":"/assets/images/img-4.svg","views":2200},
+    {"id":5,"title":"New Film Breaks Box Office Records","slug":"film-box-office-records","excerpt":"The summer blockbuster surpasses early expectations worldwide.","category":"Entertainment","date":"2025-11-18T14:45:00Z","author":"Leena Rao","image":"/assets/images/img-5.svg","views":1500},
+    {"id":6,"title":"Health Study Shows Promising Results","slug":"health-study-promising","excerpt":"A new clinical study indicates improved patient outcomes.","category":"Lifestyle","date":"2025-11-17T07:20:00Z","author":"Dr. Mehta","image":"/assets/images/img-6.svg","views":430},
+    {"id":7,"title":"International Summit Yields New Agreements","slug":"international-summit","excerpt":"Leaders reach consensus on climate and trade initiatives.","category":"World","date":"2025-11-23T10:00:00Z","author":"Global Desk","image":"/assets/images/img-7.svg","views":1760},
+    {"id":8,"title":"City Artists Revive Downtown District","slug":"artists-revive-district","excerpt":"A month-long festival brings new life to the city center.","category":"India","date":"2025-11-15T16:10:00Z","author":"Maya Iyer","image":"/assets/images/img-8.svg","views":310},
+    {"id":9,"title":"Tech Guide: Choosing the Right Laptop","slug":"tech-guide-laptop","excerpt":"How to pick a laptop for work, content creation, or gaming.","category":"Tech","date":"2025-11-12T09:40:00Z","author":"Rohit Desai","image":"/assets/images/img-9.svg","views":890},
+    {"id":10,"title":"Local Charity Launches Food Drive","slug":"charity-food-drive","excerpt":"Volunteers organize donations to support families in need.","category":"Lifestyle","date":"2025-11-10T11:00:00Z","author":"Community Desk","image":"/assets/images/img-10.svg","views":260},
+    {"id":11,"title":"Opinion: The Future of Work in 2026","slug":"opinion-future-of-work","excerpt":"Experts discuss how workplaces will evolve next year.","category":"Business","date":"2025-11-08T08:00:00Z","author":"Editorial","image":"/assets/images/img-11.svg","views":620},
+    {"id":12,"title":"Science: New Discovery in Renewable Energy","slug":"renewable-energy-discovery","excerpt":"Researchers publish promising results for efficiency improvements.","category":"World","date":"2025-11-05T05:30:00Z","author":"Science Desk","image":"/assets/images/img-12.svg","views":780}
+  ]
+}
+
+/*
+  Sample posts.json. Replace entries with real articles. Fields:
+  id, title, slug, excerpt, category, date (ISO8601), author, image (path), views (integer)
+*/

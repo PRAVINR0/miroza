@@ -1,46 +1,42 @@
 <!doctype html>
-+<html lang="en">
-+<head>
-+  <meta charset="utf-8" />
-+  <meta name="viewport" content="width=device-width,initial-scale=1" />
-+  <title>Category — MIROZA</title>
-+  <link rel="stylesheet" href="styles.css">
-+</head>
-+<body>
-+  <header class="site-header">
-+    <div class="topbar container">
-+      <div class="brand">MIROZA</div>
-+      <nav class="main-nav">
-+        <ul class="nav-list">
-+          <li><a href="index.html">Home</a></li>
-+        </ul>
-+      </nav>
-+    </div>
-+  </header>
-+
-+  <main class="container">
-+    <h1>Category: Technology</h1>
-+    <p class="muted">Latest stories from Technology</p>
-+
-+    <div class="grid" style="margin-top:12px">
-+      <!-- Article cards -->
-+      <article class="card"><img src="assets/card-3.svg" alt=""><div class="card-body"><h3><a href="article.html">Tech story one</a></h3><p class="muted">Nov 21, 2025</p></div></article>
-+      <article class="card"><img src="assets/card-4.svg" alt=""><div class="card-body"><h3><a href="article.html">Tech story two</a></h3><p class="muted">Nov 20, 2025</p></div></article>
-+      <article class="card"><img src="assets/card-5.svg" alt=""><div class="card-body"><h3><a href="article.html">Tech story three</a></h3><p class="muted">Nov 18, 2025</p></div></article>
-+      <article class="card"><img src="assets/card-2.svg" alt=""><div class="card-body"><h3><a href="article.html">Tech story four</a></h3><p class="muted">Nov 17, 2025</p></div></article>
-+    </div>
-+
-+    <nav class="pagination" style="margin-top:12px">
-+      <a href="#">◀ Prev</a> <span class="muted">Page 1 of 5</span> <a href="#">Next ▶</a>
-+    </nav>
-+  </main>
-+
-+  <footer class="site-footer">
-+    <div class="footer-grid"><div class="col"><h4>About</h4><p>MIROZA is an independent news network.</p></div></div>
-+    <div class="copyright">© 2025 MIROZA Media Network</div>
-+  </footer>
-+
-+  <script src="app.js"></script>
-+</body>
-+</html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<title>Category — MIROZA</title>
+	<meta name="description" content="Category page listing for MIROZA." />
+	<link rel="stylesheet" href="styles.css">
+	<link rel="manifest" href="manifest.json">
+	<script> (function(){try{var t=localStorage.getItem('miroza_theme');if(!t){var p=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches;t=p?'dark':'light';}if(t==='dark')document.documentElement.classList.add('theme-dark');}catch(e){}})();</script>
+</head>
+<body>
+	<a class="skip-link" href="#main">Skip to content</a>
+	<header class="site-header">
+		<div class="topbar container">
+			<div class="brand"><a href="/index.html">MIROZA</a></div>
+			<nav class="main-nav"><ul class="nav-list"><li><a href="/index.html">Home</a></li></ul></nav>
+		</div>
+	</header>
+
+	<main id="main" class="container">
+		<h1>Category</h1>
+		<p class="muted" id="categoryDescription">Browse articles by category.</p>
+
+		<div id="categoryList" class="grid" style="margin-top:12px">
+			<!-- Cards rendered by MIROZA.renderCategory -->
+		</div>
+
+		<nav class="pagination" style="margin-top:12px">
+			<a href="#">◀ Prev</a> <span class="muted">Page 1</span> <a href="#">Next ▶</a>
+		</nav>
+	</main>
+
+	<footer class="site-footer">
+		<div class="footer-grid"><div class="col"><h4>About</h4><p>MIROZA is an independent news network.</p></div></div>
+		<div class="copyright">© 2025 MIROZA Media Network</div>
+	</footer>
+
+	<script src="app.js" defer></script>
+</body>
+</html>
 +

@@ -4,42 +4,77 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>MIROZA — Breaking News, Analysis, Opinion</title>
+  <meta name="description" content="MIROZA — independent news network delivering timely journalism and analysis across India, World, Business, Tech, Sports and Lifestyle." />
+  <meta name="robots" content="index, follow">
+    <!-- Content Security Policy: this example allows inline scripts/styles for the demo only. For production,
+      replace 'unsafe-inline' with a strict policy using nonces or hashes and configure via server headers. -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self';">
+  <link rel="canonical" href="/index.html" />
+  <link rel="alternate" hreflang="en" href="/index.html" />
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="MIROZA — Breaking News, Analysis, Opinion" />
+  <meta property="og:description" content="Independent journalism and analysis across categories." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="/index.html" />
+  <meta property="og:image" content="/assets/hero-1.svg" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Minimal critical inline script to apply theme early and avoid FOUC. This only sets a class based on localStorage or prefers-color-scheme. Keep this small and safe. -->
+  <script>
+    (function(){
+      try{
+        var t = localStorage.getItem('miroza_theme');
+        if(!t){
+          var prefers = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+          t = prefers ? 'dark' : 'light';
+        }
+        if(t === 'dark') document.documentElement.classList.add('theme-dark');
+      }catch(e){/* ignore */}
+    })();
+  </script>
+
   <link rel="stylesheet" href="styles.css">
+  <link rel="manifest" href="manifest.json">
 </head>
 <body>
-  <header class="site-header" id="siteHeader">
-    <div class="topbar">
-      <div class="brand">MIROZA</div>
-      <nav class="main-nav" id="mainNav">
-        <ul class="nav-list">
-          <li class="has-dropdown"><a href="#">India</a>
-            <div class="dropdown">
-              <a href="#">Politics</a>
-              <a href="#">Cities</a>
-              <a href="#">Education</a>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header" id="siteHeader" role="banner">
+    <div class="topbar container">
+      <div class="brand"><a href="/index.html">MIROZA</a></div>
+
+      <button id="hamburger" class="hamburger" aria-expanded="false" aria-controls="mainNav" aria-label="Toggle navigation">☰</button>
+
+      <nav class="main-nav" id="mainNav" role="navigation" aria-label="Main navigation">
+        <ul class="nav-list" role="menubar">
+          <li role="none" class="has-dropdown" data-cat="India"><a role="menuitem" href="category.html?cat=India">India</a>
+            <div class="dropdown" role="menu">
+              <a role="menuitem" href="category.html?cat=Politics">Politics</a>
+              <a role="menuitem" href="category.html?cat=Cities">Cities</a>
+              <a role="menuitem" href="category.html?cat=Education">Education</a>
             </div>
           </li>
-          <li><a href="#">World</a></li>
-          <li class="has-dropdown"><a href="#">Business</a>
-            <div class="dropdown">
-              <a href="#">Markets</a>
-              <a href="#">Economy</a>
+          <li role="none"><a role="menuitem" href="category.html?cat=World">World</a></li>
+          <li role="none" class="has-dropdown"><a role="menuitem" href="category.html?cat=Business">Business</a>
+            <div class="dropdown" role="menu">
+              <a role="menuitem" href="category.html?cat=Markets">Markets</a>
+              <a role="menuitem" href="category.html?cat=Economy">Economy</a>
             </div>
           </li>
-          <li><a href="#">Tech</a></li>
-          <li><a href="#">Sports</a></li>
-          <li><a href="#">Entertainment</a></li>
-          <li><a href="#">Lifestyle</a></li>
-          <li><a href="#">Trending</a></li>
+          <li role="none"><a role="menuitem" href="category.html?cat=Tech">Tech</a></li>
+          <li role="none"><a role="menuitem" href="category.html?cat=Sports">Sports</a></li>
+          <li role="none"><a role="menuitem" href="category.html?cat=Entertainment">Entertainment</a></li>
+          <li role="none"><a role="menuitem" href="category.html?cat=Lifestyle">Lifestyle</a></li>
+          <li role="none"><a role="menuitem" href="category.html?cat=Trending">Trending</a></li>
         </ul>
       </nav>
+
       <div class="header-actions">
-        <button class="search-toggle" id="searchToggle" aria-label="Open search">🔍</button>
-        <button class="hamburger" id="hamburger" aria-label="Open menu">☰</button>
+        <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">🌙</button>
+        <button id="searchToggle" class="search-toggle" aria-label="Open search">🔍</button>
       </div>
     </div>
 
-    <div class="breaking" id="breaking">
+    <div class="breaking" id="breaking" aria-live="polite">
       <div class="breaking-label">Breaking</div>
       <div class="ticker" id="ticker">
         <div class="ticker-track" id="tickerTrack">
@@ -52,108 +87,61 @@
     </div>
   </header>
 
-  <main class="container">
-    <section class="hero">
-      <article class="hero-feature">
-        <img src="assets/hero-1.svg" alt="Featured"/>
-        <div class="feature-meta">
-          <span class="kicker">Feature</span>
-          <h1>MIROZA Exclusive: Inside the Story That Matters Most Today</h1>
-          <p class="summary">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer a lectus non nisl interdum tincidunt.</p>
-          <a class="readmore" href="article.html">Read full story</a>
-        </div>
-      </article>
-
-      <div class="hero-side">
-        <article class="side-card"><img src="assets/side-1.svg" alt=""><h3>Local leaders convene</h3><p>Short blurb about the meeting.</p></article>
-        <article class="side-card"><img src="assets/side-2.svg" alt=""><h3>Tech startup raises funds</h3><p>Short blurb about funding round.</p></article>
-        <article class="side-card"><img src="assets/side-3.svg" alt=""><h3>Environment update</h3><p>Short blurb about conservation.</p></article>
-        <article class="side-card"><img src="assets/side-4.svg" alt=""><h3>Sports headline</h3><p>Short blurb about match results.</p></article>
-      </div>
-    </section>
-
-    <section class="main-grid">
-      <div class="col col-left">
-        <h2>Top Stories</h2>
-        <article class="card">
-          <img src="assets/card-1.svg" alt="">
-          <div class="card-body">
-            <h3><a href="article.html">Top story headline with engaging lead</a></h3>
-            <p class="muted">By Staff • Nov 23, 2025</p>
+  <main id="main" class="container" role="main">
+    <!-- Hero and dynamic content populated by app.js using data/posts.json -->
+    <section class="hero" id="hero">
+      <div id="heroSkeleton" class="skeleton hero-skeleton"></div>
+      <div id="heroContent" class="hero-content" hidden>
+        <article class="hero-feature" data-article-id="">
+          <img data-src="assets/hero-1.svg" alt="Feature image" class="lazy" />
+          <div class="feature-meta">
+            <span class="kicker">Feature</span>
+            <h1 id="heroTitle">Loading…</h1>
+            <p class="summary" id="heroSummary">Loading summary…</p>
+            <a class="readmore" id="heroLink" href="#">Read full story</a>
           </div>
         </article>
 
-        <h3>National</h3>
-        <div class="list">
-          <article class="list-item"><a href="article.html">National news headline one</a></article>
-          <article class="list-item"><a href="article.html">National news headline two</a></article>
-          <article class="list-item"><a href="article.html">National news headline three</a></article>
-        </div>
+        <div class="hero-side" id="heroSide"></div>
+      </div>
+    </section>
+
+    <section class="main-grid" id="mainGrid">
+      <div class="col col-left">
+        <h2>Top Stories</h2>
+        <div id="topStories" class="list-shelf"></div>
       </div>
 
       <div class="col col-middle">
-        <h2>World</h2>
-        <div class="grid">
-          <article class="card"><img src="assets/card-2.svg" alt=""><div class="card-body"><h3><a href="article.html">World headline</a></h3><p class="muted">Nov 23, 2025</p></div></article>
-          <article class="card"><img src="assets/card-3.svg" alt=""><div class="card-body"><h3><a href="article.html">Business insight</a></h3><p class="muted">Nov 23, 2025</p></div></article>
-          <article class="card"><img src="assets/card-4.svg" alt=""><div class="card-body"><h3><a href="article.html">Tech trends to watch</a></h3><p class="muted">Nov 22, 2025</p></div></article>
-          <article class="card"><img src="assets/card-5.svg" alt=""><div class="card-body"><h3><a href="article.html">Sports recap</a></h3><p class="muted">Nov 22, 2025</p></div></article>
-        </div>
+        <h2>Latest</h2>
+        <div id="latestGrid" class="grid"></div>
       </div>
 
       <aside class="col col-right">
-        <section class="sidebar-block trending">
-          <h3>Trending</h3>
-          <ol>
-            <li><a href="article.html">Story everyone is reading</a></li>
-            <li><a href="article.html">Another trending headline</a></li>
-            <li><a href="article.html">Viral analysis</a></li>
-          </ol>
+        <section class="sidebar-block trending" aria-labelledby="trendingTitle">
+          <h3 id="trendingTitle">Trending</h3>
+          <ol id="trendingList"></ol>
         </section>
 
-        <section class="sidebar-block most-read">
-          <h3>Most Read</h3>
-          <ol>
-            <li><a href="article.html">Most read story one</a></li>
-            <li><a href="article.html">Most read story two</a></li>
-            <li><a href="article.html">Most read story three</a></li>
-          </ol>
+        <section class="sidebar-block most-read" aria-labelledby="mostReadTitle">
+          <h3 id="mostReadTitle">Most Read</h3>
+          <ol id="mostReadList"></ol>
         </section>
 
-        <div class="ad">Ad 300x250</div>
         <div class="ad">Ad 300x250</div>
       </aside>
     </section>
 
-    <section class="categories">
-      <header class="section-head"><h2>Categories</h2><a class="viewmore" href="category.html">View more</a></header>
-      <div class="category-grid">
-        <div class="category-card">
-          <h3>Business</h3>
-          <article class="mini"><img src="assets/cat-1.svg" alt=""><div><h4><a href="article.html">Economy outlook</a></h4><p class="muted">Nov 20, 2025</p></div></article>
-          <a class="viewmore small" href="category.html">View more</a>
-        </div>
-        <div class="category-card">
-          <h3>Technology</h3>
-          <article class="mini"><img src="assets/cat-2.svg" alt=""><div><h4><a href="article.html">New gadget review</a></h4><p class="muted">Nov 21, 2025</p></div></article>
-          <a class="viewmore small" href="category.html">View more</a>
-        </div>
-        <div class="category-card">
-          <h3>Sports</h3>
-          <article class="mini"><img src="assets/cat-3.svg" alt=""><div><h4><a href="article.html">Match highlights</a></h4><p class="muted">Nov 22, 2025</p></div></article>
-          <a class="viewmore small" href="category.html">View more</a>
-        </div>
-        <div class="category-card">
-          <h3>Entertainment</h3>
-          <article class="mini"><img src="assets/cat-4.svg" alt=""><div><h4><a href="article.html">Film premiere</a></h4><p class="muted">Nov 18, 2025</p></div></article>
-          <a class="viewmore small" href="category.html">View more</a>
-        </div>
-      </div>
+    <section class="categories" id="categoriesSection">
+      <header class="section-head"><h2>Categories</h2></header>
+      <div id="categoriesGrid" class="category-grid"></div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="footer-grid">
+  <button id="backToTop" class="back-to-top" aria-label="Back to top">↑</button>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-grid container">
       <div class="col">
         <h4>About</h4>
         <p>MIROZA is an independent news network delivering timely journalism and analysis.</p>
@@ -161,18 +149,18 @@
       <div class="col">
         <h4>Sections</h4>
         <ul>
-          <li><a href="#">India</a></li>
-          <li><a href="#">World</a></li>
-          <li><a href="#">Business</a></li>
-          <li><a href="#">Tech</a></li>
+          <li><a href="category.html?cat=India">India</a></li>
+          <li><a href="category.html?cat=World">World</a></li>
+          <li><a href="category.html?cat=Business">Business</a></li>
+          <li><a href="category.html?cat=Tech">Tech</a></li>
         </ul>
       </div>
       <div class="col">
         <h4>Connect</h4>
         <div class="socials">
-          <a href="#">Twitter</a>
-          <a href="#">Facebook</a>
-          <a href="#">Instagram</a>
+          <a href="#" rel="noopener noreferrer">Twitter</a>
+          <a href="#" rel="noopener noreferrer">Facebook</a>
+          <a href="#" rel="noopener noreferrer">Instagram</a>
         </div>
       </div>
       <div class="col">
@@ -186,6 +174,10 @@
     <div class="copyright">© 2025 MIROZA Media Network</div>
   </footer>
 
-  <script src="app.js"></script>
+  <!-- Core scripts: defer for progressive enhancement -->
+  <script src="app.js" defer></script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebSite","name":"MIROZA","url":"/","potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"/search?q={search_term_string}"},"query-input":"required name=search_term_string"}}
+  </script>
 </body>
 </html>

@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Article — MIROZA</title>
+  <meta name="description" content="Read this MIROZA article." />
+  <meta name="robots" content="index, follow">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="manifest" href="/manifest.json">
+  <script>
+    // Apply saved theme early to avoid FOUC
+    (function(){try{var t=localStorage.getItem('miroza_theme');if(!t){var p=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches;t=p?'dark':'light';}if(t==='dark')document.documentElement.classList.add('theme-dark');}catch(e){}})();
+  </script>
+  <!-- Demo Content Security Policy: See .htaccess.example for production headers. -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self';">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="topbar container">
+      <div class="brand"><a href="/index.html">MIROZA</a></div>
+      <nav class="main-nav"><ul class="nav-list"><li><a href="/index.html">Home</a></li><li><a href="/category.html?cat=Tech">Tech</a></li></ul></nav>
+      <div class="header-actions"><button id="themeToggle" class="theme-toggle">🌙</button></div>
+    </div>
+  </header>
+
+  <main id="main" class="container">
+    <article id="article" class="article-page">
+      <h1 id="title">Article title</h1>
+      <p class="muted"><span id="author">Author</span> • <time id="pubdate" datetime="">Date</time></p>
+      <img id="featuredImage" src="/assets/hero-1.svg" alt="" loading="lazy" />
+      <div id="content">
+        <p>Article content goes here. Replace with server content or use this template.</p>
+      </div>
+
+      <div class="share">
+        <strong>Share:</strong>
+        <a id="shareLink" href="#" rel="noopener noreferrer">Copy link</a>
+      </div>
+
+      <section class="related" id="related">
+        <h3>Related News</h3>
+        <div id="relatedList" class="grid"></div>
+      </section>
+
+      <section class="comments">
+        <h3>Comments</h3>
+        <form id="commentForm"><input name="name" placeholder="Your name"><textarea name="text" placeholder="Comment"></textarea><button type="submit">Post</button></form>
+        <div id="commentsList"></div>
+      </section>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-grid container"><div class="col"><h4>About</h4><p>MIROZA is an independent news network.</p></div></div>
+    <div class="copyright">© 2025 MIROZA Media Network</div>
+  </footer>
+
+  <script src="/app.js" defer></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "NewsArticle",
+    "headline": "Sample article title",
+    "image": ["/assets/hero-1.svg"],
+    "datePublished": "2025-11-23T08:00:00Z",
+    "author": {"@type":"Person","name":"Author Name"},
+    "publisher": {"@type":"Organization","name":"MIROZA","logo":{"@type":"ImageObject","url":"/assets/hero-1.svg"}}
+  }
+  </script>
+</body>
+</html>
+
+<!--
+  Article template: copy this to create new articles or use server-side rendering.
+  Replace static fields with real content and update metadata for SEO.
+-->
