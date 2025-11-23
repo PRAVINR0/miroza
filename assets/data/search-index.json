@@ -1,0 +1,455 @@
+﻿[
+    {
+        "id":  11,
+        "title":  "Amazon Launches Drone Delivery Service in Bengaluru",
+        "slug":  "amazon-launches-drone-delivery-service-in-bengaluru",
+        "type":  "search-index",
+        "tags":  [
+                     "Amazon",
+                     "drone",
+                     "delivery",
+                     "Bengaluru"
+                 ],
+        "category":  "News",
+        "date":  "2025-11-23",
+        "description":  "Amazon begins a pilot drone delivery service in Bengaluru to speed up small-package logistics in select neighbourhoods."
+    },
+    {
+        "id":  5,
+        "title":  "India Records Highest Solar Power Production in History",
+        "slug":  "india-records-highest-solar-power-production-in-history",
+        "type":  "search-index",
+        "tags":  [
+                     "solar",
+                     "renewables",
+                     "energy",
+                     "India"
+                 ],
+        "category":  "News",
+        "date":  "2025-11-23",
+        "description":  "Nation-wide solar output peaks, reflecting rapid capacity growth and favourable weather conditions."
+    },
+    {
+        "id":  9,
+        "title":  "Meta Introduces Ultra-Realistic Avatars for VR Meetings",
+        "slug":  "meta-introduces-ultra-realistic-avatars-for-vr-meetings",
+        "type":  "search-index",
+        "tags":  [
+                     "Meta",
+                     "VR",
+                     "avatars",
+                     "meetings"
+                 ],
+        "category":  "News",
+        "date":  "2025-11-23",
+        "description":  "Meta showcases avatars with detailed facial expressions and natural motion to improve virtual collaboration."
+    },
+    {
+        "id":  7,
+        "title":  "Google Adds Hindi \u0026 Tamil Support to Gemini Live AI",
+        "slug":  "google-adds-hindi-tamil-support-to-gemini-live-ai",
+        "type":  "search-index",
+        "tags":  [
+                     "Google",
+                     "Gemini Live",
+                     "languages",
+                     "Hindi",
+                     "Tamil"
+                 ],
+        "category":  "News",
+        "date":  "2025-11-23",
+        "description":  "Real-time spoken and written support for Hindi and Tamil expands Gemini Live\u0027s reach across South Asia."
+    },
+    {
+        "id":  5,
+        "title":  "India Records Highest Solar Power Production in History",
+        "slug":  "india-records-highest-solar-power-production-in-history",
+        "type":  "search-index",
+        "tags":  [
+                     "solar",
+                     "renewables",
+                     "energy",
+                     "India"
+                 ],
+        "category":  "News",
+        "date":  "2025-11-23",
+        "description":  "Nation-wide solar output peaks, reflecting rapid capacity growth and favourable weather conditions."
+    },
+    {
+        "id":  11,
+        "title":  "Amazon Launches Drone Delivery Service in Bengaluru",
+        "slug":  "amazon-launches-drone-delivery-service-in-bengaluru",
+        "type":  "search-index",
+        "tags":  [
+                     "Amazon",
+                     "drone",
+                     "delivery",
+                     "Bengaluru"
+                 ],
+        "category":  "News",
+        "date":  "2025-11-23",
+        "description":  "Amazon begins a pilot drone delivery service in Bengaluru to speed up small-package logistics in select neighbourhoods."
+    },
+    {
+        "id":  4,
+        "title":  "Apple Announces Vision Pro 2 With Major Upgrades",
+        "slug":  "apple-announces-vision-pro-2-with-major-upgrades",
+        "type":  "search-index",
+        "tags":  [
+                     "Apple",
+                     "Vision Pro",
+                     "VR",
+                     "hardware"
+                 ],
+        "category":  "News",
+        "date":  "2025-11-23",
+        "description":  "Apple unveils the Vision Pro 2 featuring improved optics, battery life and collaborative spatial features."
+    },
+    {
+        "id":  3,
+        "title":  "New AI Model Exceeds GPT-5 Benchmarks in Reasoning Tests",
+        "slug":  "new-ai-model-exceeds-gpt-5-benchmarks",
+        "type":  "search-index",
+        "tags":  [
+                     "AI",
+                     "research",
+                     "benchmarks",
+                     "machine-learning"
+                 ],
+        "category":  "News",
+        "date":  "2025-11-23",
+        "description":  "A research team publishes an AI that outperforms current benchmarks on complex reasoning tasks."
+    },
+    {
+        "id":  4,
+        "title":  "Apple Announces Vision Pro 2 With Major Upgrades",
+        "slug":  "apple-announces-vision-pro-2-with-major-upgrades",
+        "type":  "search-index",
+        "tags":  [
+                     "Apple",
+                     "Vision Pro",
+                     "VR",
+                     "hardware"
+                 ],
+        "category":  "News",
+        "date":  "2025-11-23",
+        "description":  "Apple unveils the Vision Pro 2 featuring improved optics, battery life and collaborative spatial features."
+    },
+    {
+        "id":  2,
+        "title":  "ISRO Successfully Launches GSAT-24 Communication Satellite",
+        "slug":  "isro-successfully-launches-gsat-24",
+        "type":  "search-index",
+        "tags":  [
+                     "ISRO",
+                     "space",
+                     "satellite",
+                     "connectivity"
+                 ],
+        "category":  "News",
+        "date":  "2025-11-23",
+        "description":  "India\u0027s space agency deploys GSAT-24 to strengthen regional communications and broadcasting services."
+    },
+    {
+        "id":  7,
+        "title":  "Google Adds Hindi \u0026 Tamil Support to Gemini Live AI",
+        "slug":  "google-adds-hindi-tamil-support-to-gemini-live-ai",
+        "type":  "search-index",
+        "tags":  [
+                     "Google",
+                     "Gemini Live",
+                     "languages",
+                     "Hindi",
+                     "Tamil"
+                 ],
+        "category":  "News",
+        "date":  "2025-11-23",
+        "description":  "Real-time spoken and written support for Hindi and Tamil expands Gemini Live\u0027s reach across South Asia."
+    },
+    {
+        "id":  8,
+        "title":  "Scientists Discover Earth-Like Planet in TRAPPIST-1 System",
+        "slug":  "scientists-discover-earth-like-planet-in-trappist-1-system",
+        "type":  "search-index",
+        "tags":  [
+                     "astronomy",
+                     "TRAPPIST-1",
+                     "exoplanet",
+                     "space"
+                 ],
+        "category":  "News",
+        "date":  "2025-11-23",
+        "description":  "A newly characterised planet in the TRAPPIST-1 system shows signs of temperate conditions and a rocky surface."
+    },
+    {
+        "id":  2,
+        "title":  "ISRO Successfully Launches GSAT-24 Communication Satellite",
+        "slug":  "isro-successfully-launches-gsat-24",
+        "type":  "search-index",
+        "tags":  [
+                     "ISRO",
+                     "space",
+                     "satellite",
+                     "connectivity"
+                 ],
+        "category":  "News",
+        "date":  "2025-11-23",
+        "description":  "India\u0027s space agency deploys GSAT-24 to strengthen regional communications and broadcasting services."
+    },
+    {
+        "id":  8,
+        "title":  "Scientists Discover Earth-Like Planet in TRAPPIST-1 System",
+        "slug":  "scientists-discover-earth-like-planet-in-trappist-1-system",
+        "type":  "search-index",
+        "tags":  [
+                     "astronomy",
+                     "TRAPPIST-1",
+                     "exoplanet",
+                     "space"
+                 ],
+        "category":  "News",
+        "date":  "2025-11-23",
+        "description":  "A newly characterised planet in the TRAPPIST-1 system shows signs of temperate conditions and a rocky surface."
+    },
+    {
+        "id":  10,
+        "title":  "WHO Releases Updated Report on Global Nutrition 2025",
+        "slug":  "who-releases-updated-report-on-global-nutrition-2025",
+        "type":  "search-index",
+        "tags":  [
+                     "WHO",
+                     "health",
+                     "nutrition",
+                     "report"
+                 ],
+        "category":  "News",
+        "date":  "2025-11-23",
+        "description":  "The WHO publishes a comprehensive report highlighting global nutrition trends, challenges and recommendations for 2025."
+    },
+    {
+        "id":  3,
+        "title":  "New AI Model Exceeds GPT-5 Benchmarks in Reasoning Tests",
+        "slug":  "new-ai-model-exceeds-gpt-5-benchmarks",
+        "type":  "search-index",
+        "tags":  [
+                     "AI",
+                     "research",
+                     "benchmarks",
+                     "machine-learning"
+                 ],
+        "category":  "News",
+        "date":  "2025-11-23",
+        "description":  "A research team publishes an AI that outperforms current benchmarks on complex reasoning tasks."
+    },
+    {
+        "id":  4,
+        "title":  "Apple Announces Vision Pro 2 With Major Upgrades",
+        "slug":  "apple-announces-vision-pro-2-with-major-upgrades",
+        "type":  "news",
+        "tags":  [
+                     "Apple",
+                     "Vision Pro",
+                     "VR",
+                     "hardware"
+                 ],
+        "category":  "News",
+        "date":  "2025-11-23",
+        "description":  "Apple unveils the Vision Pro 2 featuring improved optics, battery life and collaborative spatial features."
+    },
+    {
+        "id":  5,
+        "title":  "India Records Highest Solar Power Production in History",
+        "slug":  "india-records-highest-solar-power-production-in-history",
+        "type":  "news",
+        "tags":  [
+                     "solar",
+                     "renewables",
+                     "energy",
+                     "India"
+                 ],
+        "category":  "News",
+        "date":  "2025-11-23",
+        "description":  "Nation-wide solar output peaks, reflecting rapid capacity growth and favourable weather conditions."
+    },
+    {
+        "id":  6,
+        "title":  "Tesla Unveils New Electric Bike Concept in Berlin",
+        "slug":  "tesla-unveils-new-electric-bike-concept-in-berlin",
+        "type":  "news",
+        "tags":  [
+                     "Tesla",
+                     "e-bike",
+                     "mobility",
+                     "Berlin"
+                 ],
+        "category":  "News",
+        "date":  "2025-11-23",
+        "description":  "Tesla reveals an urban electric bike prototype blending the company\u0027s EV design language with lightweight e-mobility."
+    },
+    {
+        "id":  3,
+        "title":  "New AI Model Exceeds GPT-5 Benchmarks in Reasoning Tests",
+        "slug":  "new-ai-model-exceeds-gpt-5-benchmarks",
+        "type":  "news",
+        "tags":  [
+                     "AI",
+                     "research",
+                     "benchmarks",
+                     "machine-learning"
+                 ],
+        "category":  "News",
+        "date":  "2025-11-23",
+        "description":  "A research team publishes an AI that outperforms current benchmarks on complex reasoning tasks."
+    },
+    {
+        "id":  9,
+        "title":  "Meta Introduces Ultra-Realistic Avatars for VR Meetings",
+        "slug":  "meta-introduces-ultra-realistic-avatars-for-vr-meetings",
+        "type":  "search-index",
+        "tags":  [
+                     "Meta",
+                     "VR",
+                     "avatars",
+                     "meetings"
+                 ],
+        "category":  "News",
+        "date":  "2025-11-23",
+        "description":  "Meta showcases avatars with detailed facial expressions and natural motion to improve virtual collaboration."
+    },
+    {
+        "id":  6,
+        "title":  "Tesla Unveils New Electric Bike Concept in Berlin",
+        "slug":  "tesla-unveils-new-electric-bike-concept-in-berlin",
+        "type":  "search-index",
+        "tags":  [
+                     "Tesla",
+                     "e-bike",
+                     "mobility",
+                     "Berlin"
+                 ],
+        "category":  "News",
+        "date":  "2025-11-23",
+        "description":  "Tesla reveals an urban electric bike prototype blending the company\u0027s EV design language with lightweight e-mobility."
+    },
+    {
+        "id":  2,
+        "title":  "ISRO Successfully Launches GSAT-24 Communication Satellite",
+        "slug":  "isro-successfully-launches-gsat-24",
+        "type":  "news",
+        "tags":  [
+                     "ISRO",
+                     "space",
+                     "satellite",
+                     "connectivity"
+                 ],
+        "category":  "News",
+        "date":  "2025-11-23",
+        "description":  "India\u0027s space agency deploys GSAT-24 to strengthen regional communications and broadcasting services."
+    },
+    {
+        "id":  11,
+        "title":  "Amazon Launches Drone Delivery Service in Bengaluru",
+        "slug":  "amazon-launches-drone-delivery-service-in-bengaluru",
+        "type":  "news",
+        "tags":  [
+                     "Amazon",
+                     "drone",
+                     "delivery",
+                     "Bengaluru"
+                 ],
+        "category":  "News",
+        "date":  "2025-11-23",
+        "description":  "Amazon begins a pilot drone delivery service in Bengaluru to speed up small-package logistics in select neighbourhoods."
+    },
+    {
+        "id":  6,
+        "title":  "Tesla Unveils New Electric Bike Concept in Berlin",
+        "slug":  "tesla-unveils-new-electric-bike-concept-in-berlin",
+        "type":  "search-index",
+        "tags":  [
+                     "Tesla",
+                     "e-bike",
+                     "mobility",
+                     "Berlin"
+                 ],
+        "category":  "News",
+        "date":  "2025-11-23",
+        "description":  "Tesla reveals an urban electric bike prototype blending the company\u0027s EV design language with lightweight e-mobility."
+    },
+    {
+        "id":  10,
+        "title":  "WHO Releases Updated Report on Global Nutrition 2025",
+        "slug":  "who-releases-updated-report-on-global-nutrition-2025",
+        "type":  "search-index",
+        "tags":  [
+                     "WHO",
+                     "health",
+                     "nutrition",
+                     "report"
+                 ],
+        "category":  "News",
+        "date":  "2025-11-23",
+        "description":  "The WHO publishes a comprehensive report highlighting global nutrition trends, challenges and recommendations for 2025."
+    },
+    {
+        "id":  10,
+        "title":  "WHO Releases Updated Report on Global Nutrition 2025",
+        "slug":  "who-releases-updated-report-on-global-nutrition-2025",
+        "type":  "news",
+        "tags":  [
+                     "WHO",
+                     "health",
+                     "nutrition",
+                     "report"
+                 ],
+        "category":  "News",
+        "date":  "2025-11-23",
+        "description":  "The WHO publishes a comprehensive report highlighting global nutrition trends, challenges and recommendations for 2025."
+    },
+    {
+        "id":  8,
+        "title":  "Scientists Discover Earth-Like Planet in TRAPPIST-1 System",
+        "slug":  "scientists-discover-earth-like-planet-in-trappist-1-system",
+        "type":  "news",
+        "tags":  [
+                     "astronomy",
+                     "TRAPPIST-1",
+                     "exoplanet",
+                     "space"
+                 ],
+        "category":  "News",
+        "date":  "2025-11-23",
+        "description":  "A newly characterised planet in the TRAPPIST-1 system shows signs of temperate conditions and a rocky surface."
+    },
+    {
+        "id":  7,
+        "title":  "Google Adds Hindi \u0026 Tamil Support to Gemini Live AI",
+        "slug":  "google-adds-hindi-tamil-support-to-gemini-live-ai",
+        "type":  "news",
+        "tags":  [
+                     "Google",
+                     "Gemini Live",
+                     "languages",
+                     "Hindi",
+                     "Tamil"
+                 ],
+        "category":  "News",
+        "date":  "2025-11-23",
+        "description":  "Real-time spoken and written support for Hindi and Tamil expands Gemini Live\u0027s reach across South Asia."
+    },
+    {
+        "id":  9,
+        "title":  "Meta Introduces Ultra-Realistic Avatars for VR Meetings",
+        "slug":  "meta-introduces-ultra-realistic-avatars-for-vr-meetings",
+        "type":  "news",
+        "tags":  [
+                     "Meta",
+                     "VR",
+                     "avatars",
+                     "meetings"
+                 ],
+        "category":  "News",
+        "date":  "2025-11-23",
+        "description":  "Meta showcases avatars with detailed facial expressions and natural motion to improve virtual collaboration."
+    }
+]

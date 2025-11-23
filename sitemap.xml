@@ -1,61 +1,211 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-  <!-- Replace YOUR-DOMAIN with your published GitHub Pages domain -->
   <url>
-    <loc>https://YOUR-DOMAIN/index.html</loc>
-  </url>
-
-  <url>
-    <loc>https://YOUR-DOMAIN/articles.html</loc>
-  </url>
-
-  <url>
-    <loc>https://YOUR-DOMAIN/blog.html</loc>
-  </url>
-
-  <url>
-    <loc>https://YOUR-DOMAIN/news.html</loc>
-  </url>
-
-  <url>
-    <loc>https://YOUR-DOMAIN/stories.html</loc>
-  </url>
-
-  <url>
-    <loc>https://YOUR-DOMAIN/info.html</loc>
-  </url>
-
-  <!-- Detail pages for newly added news items -->
-  <url>
-    <loc>https://YOUR-DOMAIN/detail.html?type=news&amp;id=2&amp;slug=isro-successfully-launches-gsat-24</loc>
+    <loc>/</loc>
+    <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://YOUR-DOMAIN/detail.html?type=news&amp;id=3&amp;slug=new-ai-model-exceeds-gpt-5-benchmarks</loc>
+    <loc>/index.html</loc>
+    <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://YOUR-DOMAIN/detail.html?type=news&amp;id=4&amp;slug=apple-announces-vision-pro-2-with-major-upgrades</loc>
+    <loc>/news.html</loc>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://YOUR-DOMAIN/detail.html?type=news&amp;id=5&amp;slug=india-records-highest-solar-power-production-in-history</loc>
+    <loc>/blog.html</loc>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://YOUR-DOMAIN/detail.html?type=news&amp;id=6&amp;slug=tesla-unveils-new-electric-bike-concept-in-berlin</loc>
+    <loc>/articles.html</loc>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://YOUR-DOMAIN/detail.html?type=news&amp;id=7&amp;slug=google-adds-hindi-tamil-support-to-gemini-live-ai</loc>
+    <loc>/stories.html</loc>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://YOUR-DOMAIN/detail.html?type=news&amp;id=8&amp;slug=scientists-discover-earth-like-planet-in-trappist-1-system</loc>
+    <loc>/info.html</loc>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://YOUR-DOMAIN/detail.html?type=news&amp;id=9&amp;slug=meta-introduces-ultra-realistic-avatars-for-vr-meetings</loc>
+    <loc>/search.html</loc>
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://YOUR-DOMAIN/detail.html?type=news&amp;id=10&amp;slug=who-releases-updated-report-on-global-nutrition-2025</loc>
+    <loc>/detail.html?type=search-index&amp;id=11&amp;slug=True</loc>
+    <lastmod>2025-11-23</lastmod>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://YOUR-DOMAIN/detail.html?type=news&amp;id=11&amp;slug=amazon-launches-drone-delivery-service-in-bengaluru</loc>
+    <loc>/detail.html?type=search-index&amp;id=5&amp;slug=True</loc>
+    <lastmod>2025-11-23</lastmod>
+    <priority>0.6</priority>
   </url>
-
+  <url>
+    <loc>/detail.html?type=search-index&amp;id=9&amp;slug=True</loc>
+    <lastmod>2025-11-23</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>/detail.html?type=search-index&amp;id=7&amp;slug=True</loc>
+    <lastmod>2025-11-23</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>/detail.html?type=search-index&amp;id=5&amp;slug=True</loc>
+    <lastmod>2025-11-23</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>/detail.html?type=search-index&amp;id=11&amp;slug=True</loc>
+    <lastmod>2025-11-23</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>/detail.html?type=search-index&amp;id=4&amp;slug=True</loc>
+    <lastmod>2025-11-23</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>/detail.html?type=search-index&amp;id=3&amp;slug=True</loc>
+    <lastmod>2025-11-23</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>/detail.html?type=search-index&amp;id=4&amp;slug=True</loc>
+    <lastmod>2025-11-23</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>/detail.html?type=search-index&amp;id=2&amp;slug=True</loc>
+    <lastmod>2025-11-23</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>/detail.html?type=search-index&amp;id=7&amp;slug=True</loc>
+    <lastmod>2025-11-23</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>/detail.html?type=search-index&amp;id=8&amp;slug=True</loc>
+    <lastmod>2025-11-23</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>/detail.html?type=search-index&amp;id=2&amp;slug=True</loc>
+    <lastmod>2025-11-23</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>/detail.html?type=search-index&amp;id=8&amp;slug=True</loc>
+    <lastmod>2025-11-23</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>/detail.html?type=search-index&amp;id=10&amp;slug=True</loc>
+    <lastmod>2025-11-23</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>/detail.html?type=search-index&amp;id=3&amp;slug=True</loc>
+    <lastmod>2025-11-23</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>/detail.html?type=news&amp;id=4&amp;slug=True</loc>
+    <lastmod>2025-11-23</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>/detail.html?type=news&amp;id=5&amp;slug=True</loc>
+    <lastmod>2025-11-23</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>/detail.html?type=news&amp;id=6&amp;slug=True</loc>
+    <lastmod>2025-11-23</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>/detail.html?type=news&amp;id=3&amp;slug=True</loc>
+    <lastmod>2025-11-23</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>/detail.html?type=search-index&amp;id=9&amp;slug=True</loc>
+    <lastmod>2025-11-23</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>/detail.html?type=search-index&amp;id=6&amp;slug=True</loc>
+    <lastmod>2025-11-23</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>/detail.html?type=news&amp;id=2&amp;slug=True</loc>
+    <lastmod>2025-11-23</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>/detail.html?type=news&amp;id=11&amp;slug=True</loc>
+    <lastmod>2025-11-23</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>/detail.html?type=search-index&amp;id=6&amp;slug=True</loc>
+    <lastmod>2025-11-23</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>/detail.html?type=search-index&amp;id=10&amp;slug=True</loc>
+    <lastmod>2025-11-23</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>/detail.html?type=news&amp;id=10&amp;slug=True</loc>
+    <lastmod>2025-11-23</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>/detail.html?type=news&amp;id=8&amp;slug=True</loc>
+    <lastmod>2025-11-23</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>/detail.html?type=news&amp;id=7&amp;slug=True</loc>
+    <lastmod>2025-11-23</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>/detail.html?type=news&amp;id=9&amp;slug=True</loc>
+    <lastmod>2025-11-23</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>/detail.html?type=news&amp;id=1&amp;slug=True</loc>
+    <lastmod>2025-08-20</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>/detail.html?type=blogs&amp;id=1&amp;slug=True</loc>
+    <lastmod>2025-06-15</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>/detail.html?type=articles&amp;id=1&amp;slug=True</loc>
+    <lastmod>2025-01-01</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>/detail.html?type=stories&amp;id=1&amp;slug=True</loc>
+    <lastmod>2024-12-05</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>/detail.html?type=info&amp;id=1&amp;slug=True</loc>
+    <lastmod>2023-09-10</lastmod>
+    <priority>0.6</priority>
+  </url>
 </urlset>
+
