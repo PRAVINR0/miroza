@@ -1,7 +1,23 @@
 {
-  "name": "miroza-site-tools-disabled",
+  "name": "miroza-site-tools",
   "version": "0.0.0",
-  "description": "Automation disabled. Original package.json moved to /backup/old_unused/package.json",
+  "description": "Site generation and helper scripts for the Miroza static site",
   "private": true,
-  "scripts": {}
+  "engines": {
+    "node": ">=16"
+  },
+  "scripts": {
+    "generate": "node scripts/generate_site.js",
+    "build": "node scripts/build.js",
+    "optimize-images": "node scripts/optimize-images.js",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "node-fetch": "^2.6.7",
+    "sharp": "^0.32.0"
+  },
+  "devDependencies": {
+    "terser": "^5.20.0",
+    "clean-css": "^5.3.0"
+  }
 }

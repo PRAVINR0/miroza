@@ -8,11 +8,12 @@ const fetch = require('node-fetch');
 const sharp = require('sharp');
 
 const ROOT = path.resolve(__dirname, '..');
-const DATA_DIR = path.join(ROOT, 'assets', 'data');
+// Use `data/` at project root for JSON sources in this repository
+const DATA_DIR = path.join(ROOT, 'data');
 const ORIG_DIR = path.join(ROOT, 'assets', 'images', 'originals');
 const OPT_DIR = path.join(ROOT, 'assets', 'images', 'optimized');
 const PLC_DIR = path.join(ROOT, 'assets', 'images', 'placeholders');
-const OUT_MAP = path.join(DATA_DIR, 'image-placeholders.json');
+const OUT_MAP = path.join(ROOT, 'data', 'image-placeholders.json');
 
 async function ensureDir(d){ await fs.mkdir(d, { recursive: true }); }
 
@@ -21,7 +22,17 @@ function hashString(s){ const crypto = require('crypto'); return crypto.createHa
 async function collectUrls(){
   const urls = new Set();
   const files = await fs.readdir(DATA_DIR);
-  for(const f of files){ if(!f.endsWith('.json')) continue; const p = path.join(DATA_DIR,f); try{ const txt = await fs.readFile(p,'utf8'); const arr = JSON.parse(txt); if(Array.isArray(arr)){ arr.forEach(it=>{ if(it && it.image) urls.add(it.image); }); } }catch(e){ console.warn('skip',f,e.message); } }
+  for(const f of files){
+    if(!f.endsWith('.json')) continue;
+    const p = path.join(DATA_DIR,f);
+    try{
+      const txt = await fs.readFile(p,'utf8');
+      const arr = JSON.parse(txt);
+      if(Array.isArray(arr)){
+        arr.forEach(it=>{ if(it && it.image) urls.add(it.image); });
+      }
+    }catch(e){ console.warn('skip',f,e.message); }
+  }
   return Array.from(urls);
 }
 
