@@ -43,6 +43,8 @@ function injectHeader(){
             <a href="/info.html">Info</a>
           </div>
         </div>
+        <button class="icon-btn" id="font-dec" aria-label="Decrease font">A−</button>
+        <button class="icon-btn" id="font-inc" aria-label="Increase font">A+</button>
         <button class="icon-btn" id="theme-toggle" aria-pressed="false" aria-label="Toggle theme">🌓</button>
         <button class="icon-btn" id="pwa-install" title="Install Miroza" style="display:none">⬇️</button>
         <button class="icon-btn" id="mobile-search-btn" title="Search">🔎</button>
@@ -79,6 +81,14 @@ function initMenus(){
     });
   }
 
+  // Font size controls wired to centralized UI helpers
+  const fontInc = document.getElementById('font-inc');
+  const fontDec = document.getElementById('font-dec');
+  if(fontInc && fontDec){
+    fontInc.addEventListener('click', ()=>{ if(window.adjustFontScale) window.adjustFontScale(0.05); });
+    fontDec.addEventListener('click', ()=>{ if(window.adjustFontScale) window.adjustFontScale(-0.05); });
+  }
+
   const pwaBtn = document.getElementById('pwa-install');
   if(pwaBtn){ pwaBtn.addEventListener('click', async ()=>{ if(window.deferredPrompt){ await window.deferredPrompt.prompt(); window.deferredPrompt = null; pwaBtn.style.display = 'none'; } }); }
 }
@@ -107,6 +117,9 @@ function initTheme(){
   // Ensure header toggle reflects current theme state
   const themeToggle = document.getElementById('theme-toggle');
   if(themeToggle){ themeToggle.setAttribute('aria-pressed', applied === 'dark'); }
+
+  // Apply any saved font scale from UI settings (if available)
+  if(window.applyFontScale) try{ window.applyFontScale(); }catch(e){}
 }
 
 /* Robust fetch with timeout and retries */

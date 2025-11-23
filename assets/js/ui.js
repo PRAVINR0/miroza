@@ -29,16 +29,8 @@
   }
 
   function createFAB(){
-    if(document.getElementById('ui-fab')) return;
-    const wrap = document.createElement('div'); wrap.id = 'ui-fab';
-    const sizeBtn = document.createElement('button'); sizeBtn.className='ui-fab-btn'; sizeBtn.title='Increase font'; sizeBtn.textContent='A+';
-    const sizeDown = document.createElement('button'); sizeDown.className='ui-fab-btn'; sizeDown.title='Decrease font'; sizeDown.textContent='A-';
-    wrap.appendChild(sizeBtn); wrap.appendChild(sizeDown);
-    document.body.appendChild(wrap);
-
-    // Only font scaling is managed here. Theme controls are centralized in header (`assets/js/main.js`).
-    sizeBtn.addEventListener('click', ()=>{ const s=loadSettings(); s.fontScale = (s.fontScale || 1) + 0.05; applySettings(s); saveSettings(s); });
-    sizeDown.addEventListener('click', ()=>{ const s=loadSettings(); s.fontScale = Math.max(0.8, (s.fontScale || 1) - 0.05); applySettings(s); saveSettings(s); });
+    // Legacy FAB removed: font controls are centralized in the header.
+    return;
   }
 
   function applySettings(s){
@@ -48,23 +40,20 @@
   }
 
   function injectControls(){
-    if(document.getElementById('ui-controls')) return;
-    const c = document.createElement('div'); c.id='ui-controls';
-    c.innerHTML = `
-      <div style="margin-top:8px"><button id="ui-font-dec">A-</button> <button id="ui-font-inc">A+</button></div>
-    `;
-    document.body.appendChild(c);
-    const inc = c.querySelector('#ui-font-inc'); const dec = c.querySelector('#ui-font-dec');
-    const s = loadSettings();
-    inc.addEventListener('click', ()=>{ const cur=loadSettings(); cur.fontScale = (cur.fontScale||1)+0.05; applySettings(cur); saveSettings(cur); });
-    dec.addEventListener('click', ()=>{ const cur=loadSettings(); cur.fontScale = Math.max(0.8, (cur.fontScale||1)-0.05); applySettings(cur); saveSettings(cur); });
+    // Legacy injected controls removed: header contains the single global control.
+    return;
   }
 
   function initUI(){
-    createProgress(); createBackToTop(); createFAB(); injectControls(); applySettings(loadSettings());
+    createProgress(); createBackToTop(); applySettings(loadSettings());
   }
 
   // expose
   window.initUI = initUI;
   window.applyUISettings = applySettings;
+  // Font-scale helpers (single source of truth)
+  window.getFontScale = function(){ const s = loadSettings(); return s && s.fontScale ? s.fontScale : 1; };
+  window.setFontScale = function(scale){ const s = loadSettings() || {}; s.fontScale = scale; applySettings(s); saveSettings(s); };
+  window.adjustFontScale = function(delta){ const cur = window.getFontScale(); const next = Math.max(0.8, Math.min(1.5, Math.round((cur + delta) * 100) / 100)); window.setFontScale(next); };
+  window.applyFontScale = function(){ applySettings(loadSettings()); };
 })(window, document);
