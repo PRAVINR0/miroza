@@ -1,8 +1,36 @@
-/* Color mode rules */
-:root{--bg:#f6f8fb;--card:#fff;--text:#152238;--muted:#556;--accent:#375a7f}
-body.dark{--bg:#071023;--card:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));--text:#e6eef9;--muted:#9fb0cc;--accent:#5aa3ff}
-body{background:var(--bg);color:var(--text);transition:background .36s ease,color .36s ease}
+/* Theme variables and premium dark mode */
+:root{
+	--bg:#f6f8fb;
+	--card:#ffffff;
+	--text:#152238;
+	--muted:#556;
+	--accent:#375a7f;
+	--neon:#6bf0ff;
+	--neon-2:#7cffb2;
+	--glass: rgba(255,255,255,0.06);
+	--card-radius:12px;
+	--transition-fast: 220ms;
+	--transition-medium: 360ms;
+}
 
-/* slight color shift on buttons for modes */
-.btn{background:var(--card)}
-.dark .btn{background:rgba(255,255,255,0.03)}
+/* Premium dark mode */
+body.dark{
+	--bg:#0e0e0e; /* deep charcoal */
+	--card:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+	--text:rgba(230,238,249,0.94);
+	--muted:rgba(160,180,200,0.7);
+	--accent:#4da6ff;
+	--neon:#54f0ff;
+	--neon-2:#7bffb9;
+	--glass: rgba(255,255,255,0.03);
+	--card-radius:14px;
+}
+
+body{background:var(--bg);color:var(--text);transition:background var(--transition-medium) ease,color var(--transition-medium) ease}
+
+/* Buttons and surfaces */
+.btn{background:var(--card);transition:all var(--transition-fast) ease}
+.dark .btn{background:rgba(255,255,255,0.02)}
+
+/* Neon accent helper */
+.neon{box-shadow:0 0 18px rgba(84,240,255,0.08), inset 0 0 6px rgba(84,240,255,0.02)}
