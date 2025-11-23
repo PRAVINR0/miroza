@@ -1,9 +1,133 @@
-﻿{
-    "id":  1,
-    "title":  "The Lantern by the Sea",
-    "description":  "A short tale about a lighthouse keeper and an unexpected guest.",
-    "content":  "When the winter fog rolled in, the keeper waited for a knock that never came. One night the lantern revealed more than light â€” it revealed a story of lost letters and gentle forgiveness.",
-    "date":  "2024-12-05",
-    "image":  "/assets/images/example2.jpg",
-    "category":  "Fiction"
-}
+﻿[
+    {
+        "id": 1,
+        "title": "The Lantern by the Sea",
+        "description": "A short tale about a lighthouse keeper and an unexpected guest.",
+        "content": "When the winter fog rolled in, the keeper waited for a knock that never came. One night the lantern revealed more than light — it revealed a story of lost letters and gentle forgiveness.",
+        "date": "2024-12-05",
+        "image": "/assets/images/example2.jpg",
+        "category": "Fiction",
+        "slug": "the-lantern-by-the-sea",
+        "views": 0
+    },
+    {
+        "id": 2,
+        "title": "The Thunder Boy: Rise of Aayden Storm",
+        "description": "Aayden discovers he can summon lightning after a mysterious storm hits his village.",
+        "content": "When a supernatural storm strikes the quiet town of Velaris, 14-year-old Aayden is struck by a bolt of energy that grants him thunder-based abilities. As he learns to control lightning, Aayden uncovers a hidden society of storm-born warriors who protect Earth from dimensional monsters. But an ancient enemy, the Tempest King, rises again after 600 years—powerful enough to shatter worlds. Aayden must choose: remain ordinary or rise as the youngest Storm Guardian in history.",
+        "date": "2025-11-23",
+        "image": "https://images.unsplash.com/photo-1520975922071-aafc3ddb7b2a",
+        "category": "Comic Stories",
+        "tags": ["superhero","lightning","young hero","fantasy","adventure"],
+        "slug": "the-thunder-boy-rise-of-aayden-storm",
+        "views": 0
+    },
+    {
+        "id": 3,
+        "title": "ShadowGirl: The Night She Learned to Disappear",
+        "description": "A shy schoolgirl gains the power to vanish into shadows.",
+        "content": "Mira, a timid student bullied at school, discovers she can merge into shadows and travel through darkness. What starts as an escape method becomes a responsibility when she learns shadow demons hunt children like her. Guided by an ancient shadow goddess, Mira becomes ShadowGirl, protector of lost souls. But when her best friend is abducted by the Shadow King, she must face her deepest fear.",
+        "date": "2025-11-23",
+        "image": "https://images.unsplash.com/photo-1508672019048-805c876b67e2",
+        "category": "Comic Stories",
+        "tags": ["shadow powers","teen hero","dark magic","supernatural"],
+        "slug": "shadowgirl-the-night-she-learned-to-disappear",
+        "views": 0
+    },
+    {
+        "id": 4,
+        "title": "Robot Brothers: Operation Steel Hearts",
+        "description": "Two teen inventors accidentally create sentient robot brothers.",
+        "content": "Genius brothers Vikram and Nilan build two prototype AI robots. A lightning surge gives them full consciousness—brave Titan and goofy Bolt. When a rogue military AI tries to seize them, the boys must protect their new robotic family. Together, they confront a machine uprising and discover the meaning of true brotherhood.",
+        "date": "2025-11-23",
+        "image": "https://images.unsplash.com/photo-1518770660439-4636190af475",
+        "category": "Comic Stories",
+        "tags": ["robotics","ai","humor","adventure","teens"],
+        "slug": "robot-brothers-operation-steel-hearts",
+        "views": 0
+    },
+    {
+        "id": 5,
+        "title": "Luna Wolf: Guardian of the Moon Temple",
+        "description": "A girl raised by wolves is chosen by a Moon Temple to become the next guardian.",
+        "content": "Lost in the mountains as a child, Lyra was raised by mystical moon wolves. As she turns 16, an ancient Moon Temple awakens her lunar strength and heightened senses. But when corrupt priests try to harness a blood moon for dark rituals, Lyra must defend the celestial gates as the legendary Luna Wolf.",
+        "date": "2025-11-23",
+        "image": "https://images.unsplash.com/photo-1519681393784-d120267933ba",
+        "category": "Comic Stories",
+        "tags": ["wolves","moon powers","guardian","mythology"],
+        "slug": "luna-wolf-guardian-of-the-moon-temple",
+        "views": 0
+    },
+    {
+        "id": 6,
+        "title": "Captain Neon: The Boy Made of Light",
+        "description": "A boy gains neon-energy powers after touching a cosmic crystal.",
+        "content": "Rishi finds a neon meteor fragment in an abandoned lab. After touching it, he becomes Captain Neon, a light-powered superhero with invisibility and energy blast abilities. A cosmic villain named The Absorber arrives searching for the crystal’s power. Rishi must defend Earth and the Light Core.",
+        "date": "2025-11-23",
+        "image": "https://images.unsplash.com/photo-1504198453319-5ce911bafcde",
+        "category": "Comic Stories",
+        "tags": ["neon energy","cosmic powers","superheroes"],
+        "slug": "captain-neon-the-boy-made-of-light",
+        "views": 0
+    },
+    {
+        "id": 7,
+        "title": "The Time-Traveling Cycle",
+        "description": "A magical bicycle lets a boy travel through time and destiny.",
+        "content": "Arun buys an old cycle from a scrapyard, unaware it once belonged to a Time Guardian. His journeys span futuristic megacities, medieval kingdoms, and dinosaur jungles. A time thief hunts him to steal the cycle’s power. Arun must accept his fate as the next Guardian of the Time Wheel.",
+        "date": "2025-11-23",
+        "image": "https://images.unsplash.com/photo-1469474968028-56623f02e42e",
+        "category": "Comic Stories",
+        "tags": ["time travel","adventure","destiny","cycle"],
+        "slug": "the-time-traveling-cycle",
+        "views": 0
+    },
+    {
+        "id": 8,
+        "title": "The Crystal Dragons of Arkanos",
+        "description": "Three siblings awaken legendary elemental dragons beneath the earth.",
+        "content": "Arya, Dev, and Anish discover glowing eggs in a hidden cave. The dragons bond with them—granting fire, water, and wind abilities. But an ancient sorcerer rises to enslave the dragons. The siblings must unlock their powers and defend Arkanos from destruction.",
+        "date": "2025-11-23",
+        "image": "https://images.unsplash.com/photo-1518655048521-f130df041f66",
+        "category": "Comic Stories",
+        "tags": ["dragons","fantasy","elemental powers"],
+        "slug": "the-crystal-dragons-of-arkanos",
+        "views": 0
+    },
+    {
+        "id": 9,
+        "title": "Zero Gravity Girl",
+        "description": "A girl gains anti-gravity powers after a lab accident in space.",
+        "content": "A malfunction at a research station exposes Zara to gravity-warping energy. She can now float objects, reverse gravity, and walk on walls. When criminals steal a gravity-distortion device, Zara becomes the only hope to stop Earth's orbit from collapsing.",
+        "date": "2025-11-23",
+        "image": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee",
+        "category": "Comic Stories",
+        "tags": ["gravity powers","space","adventure"],
+        "slug": "zero-gravity-girl",
+        "views": 0
+    },
+    {
+        "id": 10,
+        "title": "The Phantom Painter",
+        "description": "A boy can bring paintings to life — but so can the villain chasing him.",
+        "content": "A magic paintbrush allows Jay to bring drawings to life. He creates heroic creatures and flying machines to protect his town. But a villain called InkMaster wields the “dark brush,” summoning chaos. Their showdown determines whether creation or destruction rules the world.",
+        "date": "2025-11-23",
+        "image": "https://images.unsplash.com/photo-1487412912498-0447578fcca8",
+        "category": "Comic Stories",
+        "tags": ["magic","art powers","imagination","heroes"],
+        "slug": "the-phantom-painter",
+        "views": 0
+    },
+    {
+        "id": 11,
+        "title": "Planet Zygor: The Last Star Rangers",
+        "description": "Five teens are chosen to defend an alien world from cosmic invaders.",
+        "content": "During a meteor shower, five teenagers are teleported to Planet Zygor—an advanced alien world under siege. They are chosen as Star Rangers and granted cosmic abilities. Together, they train, fight galactic enemies, and uncover why THEY were chosen to save the universe.",
+        "date": "2025-11-23",
+        "image": "https://images.unsplash.com/photo-1517849845537-4d257902454a",
+        "category": "Comic Stories",
+        "tags": ["space heroes","cosmic battles","sci-fi adventure"],
+        "slug": "planet-zygor-the-last-star-rangers",
+        "views": 0
+    }
+]

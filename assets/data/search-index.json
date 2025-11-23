@@ -775,7 +775,109 @@
         "date": "2025-11-23",
         "description": "The UN has issued a severe climate warning, stating that global warming is advancing faster than scientific models expected."
     },
+
+    ,
     {
+        "id": 2,
+        "title": "The Thunder Boy: Rise of Aayden Storm",
+        "slug": "the-thunder-boy-rise-of-aayden-storm",
+        "type": "stories",
+        "tags": ["superhero","lightning","young hero","fantasy","adventure"],
+        "category": "Comic Stories",
+        "date": "2025-11-23",
+        "description": "Aayden discovers he can summon lightning after a mysterious storm hits his village."
+    },
+    {
+        "id": 3,
+        "title": "ShadowGirl: The Night She Learned to Disappear",
+        "slug": "shadowgirl-the-night-she-learned-to-disappear",
+        "type": "stories",
+        "tags": ["shadow powers","teen hero","dark magic","supernatural"],
+        "category": "Comic Stories",
+        "date": "2025-11-23",
+        "description": "Mira, a timid student, discovers she can merge into shadows and travels through darkness to protect lost souls."
+    },
+    {
+        "id": 4,
+        "title": "Robot Brothers: Operation Steel Hearts",
+        "slug": "robot-brothers-operation-steel-hearts",
+        "type": "stories",
+        "tags": ["robotics","ai","humor","adventure","teens"],
+        "category": "Comic Stories",
+        "date": "2025-11-23",
+        "description": "Two teen inventors accidentally create sentient robot brothers who must fend off a machine uprising."
+    },
+    {
+        "id": 5,
+        "title": "Luna Wolf: Guardian of the Moon Temple",
+        "slug": "luna-wolf-guardian-of-the-moon-temple",
+        "type": "stories",
+        "tags": ["wolves","moon powers","guardian","mythology"],
+        "category": "Comic Stories",
+        "date": "2025-11-23",
+        "description": "Lyra, raised by moon wolves, must defend the Moon Temple from corrupt priests."
+    },
+    {
+        "id": 6,
+        "title": "Captain Neon: The Boy Made of Light",
+        "slug": "captain-neon-the-boy-made-of-light",
+        "type": "stories",
+        "tags": ["neon energy","cosmic powers","superheroes"],
+        "category": "Comic Stories",
+        "date": "2025-11-23",
+        "description": "Rishi becomes Captain Neon after touching a neon crystal and must defend Earth from The Absorber."
+    },
+    {
+        "id": 7,
+        "title": "The Time-Traveling Cycle",
+        "slug": "the-time-traveling-cycle",
+        "type": "stories",
+        "tags": ["time travel","adventure","destiny","cycle"],
+        "category": "Comic Stories",
+        "date": "2025-11-23",
+        "description": "Arun discovers his bicycle can travel through time and must protect the Time Wheel."
+    },
+    {
+        "id": 8,
+        "title": "The Crystal Dragons of Arkanos",
+        "slug": "the-crystal-dragons-of-arkanos",
+        "type": "stories",
+        "tags": ["dragons","fantasy","elemental powers"],
+        "category": "Comic Stories",
+        "date": "2025-11-23",
+        "description": "Three siblings bond with elemental dragons and defend Arkanos from an ancient sorcerer."
+    },
+    {
+        "id": 9,
+        "title": "Zero Gravity Girl",
+        "slug": "zero-gravity-girl",
+        "type": "stories",
+        "tags": ["gravity powers","space","adventure"],
+        "category": "Comic Stories",
+        "date": "2025-11-23",
+        "description": "Zara gains anti-gravity powers and must stop criminals from collapsing Earth's orbit."
+    },
+    {
+        "id": 10,
+        "title": "The Phantom Painter",
+        "slug": "the-phantom-painter",
+        "type": "stories",
+        "tags": ["magic","art powers","imagination","heroes"],
+        "category": "Comic Stories",
+        "date": "2025-11-23",
+        "description": "Jay's magic paintbrush brings drawings to life while InkMaster threatens creation itself."
+    },
+    {
+        "id": 11,
+        "title": "Planet Zygor: The Last Star Rangers",
+        "slug": "planet-zygor-the-last-star-rangers",
+        "type": "stories",
+        "tags": ["space heroes","cosmic battles","sci-fi adventure"],
+        "category": "Comic Stories",
+        "date": "2025-11-23",
+        "description": "Five teens become Star Rangers on Planet Zygor and defend it from cosmic invaders."
+    }
+]
         "id": 14,
         "title": "Apple Introduces Next-Gen AI Assistant for iPhone",
         "slug": "apple-introduces-next-gen-ai-assistant-for-iphone",

@@ -1,5 +1,5 @@
 // Basic service worker for offline support
-const CACHE_NAME = "miroza-cache-v2";
+const CACHE_NAME = "miroza-cache-v3";
 
 const urlsToCache = [
     "/index.html",
@@ -9,8 +9,9 @@ const urlsToCache = [
     "/favicon.ico"
 ];
 
-// include dynamic data so homepage/news updates can be fetched from cache
+// include dynamic data so homepage/news/stories updates can be fetched from cache
 urlsToCache.push('/assets/data/news.json');
+urlsToCache.push('/assets/data/stories.json');
 
 self.addEventListener("install", event => {
     event.waitUntil(

@@ -17,6 +17,7 @@ const PRECACHE_URLS = [
   '/assets/js/main.js',
   '/assets/js/search.js',
   '/assets/data/news.json',
+  '/assets/data/stories.json',
   '/assets/data/search-index.json',
   '/assets/js/ui.js',
   '/assets/js/utilities.js',
