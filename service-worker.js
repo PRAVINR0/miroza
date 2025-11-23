@@ -12,11 +12,13 @@ const PRECACHE_URLS = [
   '/',
   '/index.html',
   '/offline.html',
-  '/assets/css/styles.css',
+  '/assets/css/style.css',
   '/assets/css/ui.css',
   '/assets/js/main.js',
   '/assets/js/search.js',
-  '/assets/js/ui.js'
+  '/assets/js/ui.js',
+  '/assets/js/utilities.js',
+  '/assets/js/images.js'
 ];
 
 // Install: cache core assets

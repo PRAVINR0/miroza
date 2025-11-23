@@ -117,21 +117,11 @@ function renderCards(container, items, large = false, typeOverride){
   if(!container) return;
   container.innerHTML = '';
   items.forEach((it, idx) => {
-    const cardLink = document.createElement('a');
-    const itemType = typeOverride || it.type || '';
-    const id = it.id != null ? it.id : idx + 1;
-    cardLink.href = `/detail.html?type=${encodeURIComponent(itemType)}&id=${encodeURIComponent(id)}`;
-    cardLink.style.textDecoration = 'none'; cardLink.style.color = 'inherit';
-
-    const card = document.createElement('article'); card.className = 'card fade-in'; if(large) card.style.minHeight = '180px';
-    const img = document.createElement('img'); img.className = 'thumb'; img.loading = 'lazy'; img.decoding = 'async'; img.alt = it.title || ''; if(it.image) img.src = it.image; else img.setAttribute('aria-hidden','true');
-    const h3 = document.createElement('h3'); h3.textContent = it.title || 'Untitled';
-    const p = document.createElement('p'); p.textContent = it.description || '';
-    const meta = document.createElement('div'); meta.className = 'meta muted'; meta.textContent = `${it.date || ''}${itemType ? ' • ' + capitalize(itemType) : ''}`;
-
-    card.appendChild(img); card.appendChild(h3); card.appendChild(p); card.appendChild(meta);
-    card.setAttribute('data-title', it.title || ''); card.setAttribute('data-type', itemType || ''); card.setAttribute('data-description', it.description || ''); card.setAttribute('data-id', id);
-    cardLink.appendChild(card); container.appendChild(cardLink);
+    try{
+      const id = it.id != null ? it.id : idx + 1;
+      const el = (window.utils && window.utils.createCardElement) ? window.utils.createCardElement(it, { large, typeOverride, id }) : null;
+      if(el) container.appendChild(el);
+    }catch(e){ /* ignore individual render errors */ }
   });
 }
 
@@ -157,13 +147,20 @@ async function loadDetail(){
     const meta = document.createElement('div'); meta.className='meta muted'; meta.textContent = `${item.date || ''}${item.category ? ' • ' + item.category : ''}`;
     const content = document.createElement('div'); content.className='content'; content.style.marginTop='16px'; content.innerHTML = `<p>${(item.content || '').replace(/\n/g,'</p><p>')}</p>`;
 
+    // If the item has a canonical slug, ensure URL contains it. Do not redirect; normalize history instead.
+    const paramsSlug = getQueryParams().slug;
+    if(item.slug && paramsSlug !== item.slug){
+      const canonical = buildDetailUrl(type, id, item.slug);
+      try{ window.history.replaceState({}, '', canonical); }catch(e){ /* ignore history replace errors */ }
+    }
+
     container.appendChild(backLink); container.appendChild(title); container.appendChild(img); container.appendChild(meta); container.appendChild(content);
   }catch(err){ console.error(err); container.innerHTML = '<p class="muted">Failed to load item.</p>'; }
 }
 
 /* Shuffle helper (Fisher-Yates) */
 function shuffleArray(a){ for(let i=a.length-1;i>0;i--){ const j = Math.floor(Math.random()*(i+1)); [a[i],a[j]] = [a[j],a[i]]; } }
-function capitalize(s){ return s ? s.charAt(0).toUpperCase()+s.slice(1) : s }
+function capitalize(s){ return (window.utils && window.utils.capitalize) ? window.utils.capitalize(s) : (s ? s.charAt(0).toUpperCase()+s.slice(1) : s); }
 
 // Expose helpers
 window.injectHeader = injectHeader; window.initTheme = initTheme; window.initMenus = initMenus; window.initPWA = initPWA; window.fetchJSON = fetchJSON; window.renderCards = renderCards; window.shuffleArray = shuffleArray; window.loadDetail = loadDetail;

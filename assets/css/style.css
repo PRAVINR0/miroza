@@ -90,3 +90,22 @@ a:focus,button:focus{outline:2px solid rgba(124,144,255,0.18);outline-offset:3px
 
 /* Utility */
 .muted{color:var(--muted)}
+
+/* Responsive card grid improvements (added during cleanup)
+   - Improves layout on very wide and very small viewports
+   - Adds utility helpers for card spacing and large-image handling
+*/
+.grid--cols-2{grid-template-columns:repeat(2,1fr)}
+.grid--cols-3{grid-template-columns:repeat(3,1fr)}
+.card--large{grid-column:span 2}
+.card .thumb--large{height:220px}
+
+@media (max-width:420px){
+  .card .thumb{height:120px}
+  .card h3{font-size:1rem}
+  .container{margin:20px auto;padding:0 12px}
+}
+
+/* Make images load and position nicely when using object-position data-attr */
+.card img[data-object-position]{object-position:var(--object-position, center)}
+

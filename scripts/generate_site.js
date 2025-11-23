@@ -124,13 +124,13 @@ async function generate(){
   await fs.mkdir(CATS_DIR, { recursive: true });
   for(const t of Object.keys(tagsMap)){
     const list = tagsMap[t];
-    const html = `<!doctype html><html><head><meta charset="utf-8"><title>Tag: ${escapeXml(t)}</title><link rel="stylesheet" href="/assets/css/styles.css"></head><body><main><h1>Tag: ${escapeXml(t)}</h1><ul>${list.map(it=>`<li><a href="/detail.html?type=${encodeURIComponent(it.type)}&id=${encodeURIComponent(it.id)}&slug=${encodeURIComponent(it.slug||'')}">${escapeXml(it.title)}</a> <small>${escapeXml(it.date||'')}</small></li>`).join('')}</ul></main></body></html>`;
+    const html = `<!doctype html><html><head><meta charset="utf-8"><title>Tag: ${escapeXml(t)}</title><link rel="stylesheet" href="/assets/css/style.css"></head><body><main><h1>Tag: ${escapeXml(t)}</h1><ul>${list.map(it=>`<li><a href="/detail.html?type=${encodeURIComponent(it.type)}&id=${encodeURIComponent(it.id)}&slug=${encodeURIComponent(it.slug||'')}">${escapeXml(it.title)}</a> <small>${escapeXml(it.date||'')}</small></li>`).join('')}</ul></main></body></html>`;
     const dest = path.join(TAGS_DIR, `${safeSlug(t)}.html`);
     await writeIfChanged(dest, html);
   }
   for(const c of Object.keys(catsMap)){
     const list = catsMap[c];
-    const html = `<!doctype html><html><head><meta charset="utf-8"><title>Category: ${escapeXml(c)}</title><link rel="stylesheet" href="/assets/css/styles.css"></head><body><main><h1>Category: ${escapeXml(c)}</h1><ul>${list.map(it=>`<li><a href="/detail.html?type=${encodeURIComponent(it.type)}&id=${encodeURIComponent(it.id)}&slug=${encodeURIComponent(it.slug||'')}">${escapeXml(it.title)}</a> <small>${escapeXml(it.date||'')}</small></li>`).join('')}</ul></main></body></html>`;
+    const html = `<!doctype html><html><head><meta charset="utf-8"><title>Category: ${escapeXml(c)}</title><link rel="stylesheet" href="/assets/css/style.css"></head><body><main><h1>Category: ${escapeXml(c)}</h1><ul>${list.map(it=>`<li><a href="/detail.html?type=${encodeURIComponent(it.type)}&id=${encodeURIComponent(it.id)}&slug=${encodeURIComponent(it.slug||'')}">${escapeXml(it.title)}</a> <small>${escapeXml(it.date||'')}</small></li>`).join('')}</ul></main></body></html>`;
     const dest = path.join(CATS_DIR, `${safeSlug(c)}.html`);
     await writeIfChanged(dest, html);
   }

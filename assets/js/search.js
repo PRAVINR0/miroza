@@ -74,8 +74,8 @@
     });
   }
 
-  function escapeHtml(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
-  function capitalize(s){ return s ? s.charAt(0).toUpperCase()+s.slice(1) : ''; }
+  function escapeHtml(s){ return (window.utils && window.utils.escapeHtml) ? window.utils.escapeHtml(s) : String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+  function capitalize(s){ return (window.utils && window.utils.capitalize) ? window.utils.capitalize(s) : (s ? s.charAt(0).toUpperCase()+s.slice(1) : ''); }
 
   // Wire up the search input
   async function initSearch(){
@@ -127,13 +127,10 @@
     container.innerHTML = '';
     if(!results.length){ container.innerHTML = '<p class="muted">No results found</p>'; return; }
     results.forEach(it=>{
-      const card = document.createElement('article'); card.className='card';
-      const a = document.createElement('a'); a.href = it.url; a.style.textDecoration='none'; a.style.color='inherit';
-      const title = document.createElement('h3'); title.textContent = it.title;
-      const meta = document.createElement('div'); meta.className='meta muted'; meta.textContent = capitalize(it.type);
-      const p = document.createElement('p'); p.textContent = it.description;
-      card.appendChild(title); card.appendChild(meta); card.appendChild(p);
-      a.appendChild(card); container.appendChild(a);
+      try{
+        const el = (window.utils && window.utils.createCardElement) ? window.utils.createCardElement({ title: it.title, description: it.description, date: '', image: '', id: '', type: it.type, url: it.url }, { large: false, typeOverride: it.type }) : null;
+        if(el) container.appendChild(el);
+      }catch(e){ /* ignore render error */ }
     });
   }
 

@@ -138,7 +138,7 @@ New-Item -ItemType Directory -Force -Path $TagsDir | Out-Null
 New-Item -ItemType Directory -Force -Path $CatsDir | Out-Null
 foreach($k in $tagsMap.Keys){
   $list = $tagsMap[$k]
-  $html = "<!doctype html><html><head><meta charset='utf-8'><title>Tag: $(Escape-Xml $k)</title><link rel='stylesheet' href='/assets/css/styles.css'></head><body><main><h1>Tag: $(Escape-Xml $k)</h1><ul>"
+  $html = "<!doctype html><html><head><meta charset='utf-8'><title>Tag: $(Escape-Xml $k)</title><link rel='stylesheet' href='/assets/css/style.css'></head><body><main><h1>Tag: $(Escape-Xml $k)</h1><ul>"
   foreach($it in $list){
     # items are PSObjects so use dot-access
     $type = $it.type
@@ -156,7 +156,7 @@ foreach($k in $tagsMap.Keys){
 }
 foreach($k in $catsMap.Keys){
   $list = $catsMap[$k]
-  $html = "<!doctype html><html><head><meta charset='utf-8'><title>Category: $(Escape-Xml $k)</title><link rel='stylesheet' href='/assets/css/styles.css'></head><body><main><h1>Category: $(Escape-Xml $k)</h1><ul>"
+  $html = "<!doctype html><html><head><meta charset='utf-8'><title>Category: $(Escape-Xml $k)</title><link rel='stylesheet' href='/assets/css/style.css'></head><body><main><h1>Category: $(Escape-Xml $k)</h1><ul>"
   foreach($it in $list){
     $type = $it.type
     $id = $it.id

@@ -116,9 +116,9 @@
   document.getElementById('upload-json').addEventListener('change', (e)=>{
     const f = e.target.files[0]; if(!f) return;
     if(window.utils && window.utils.readJSONFile){
-      window.utils.readJSONFile(f, (err, obj)=>{ if(err){ alert('Invalid JSON'); } else { console.log(obj); alert('File loaded. Check console for structure.'); } });
+      window.utils.readJSONFile(f, (err, obj)=>{ if(err){ alert('Invalid JSON'); } else { alert('File loaded. Use the UI to inspect structure.'); } });
     }else{
-      const reader = new FileReader(); reader.onload = ()=>{ try{ const obj = JSON.parse(reader.result); console.log(obj); alert('File loaded. Check console for structure.'); }catch(err){ alert('Invalid JSON'); } }; reader.readAsText(f);
+      const reader = new FileReader(); reader.onload = ()=>{ try{ const obj = JSON.parse(reader.result); alert('File loaded. Use the UI to inspect structure.'); }catch(err){ alert('Invalid JSON'); } }; reader.readAsText(f);
     }
   });
 

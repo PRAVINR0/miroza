@@ -22,6 +22,41 @@
 
   function escapeHtml(s){ return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
 
+  function capitalize(s){ return s ? String(s).charAt(0).toUpperCase() + String(s).slice(1) : ''; }
+
+  function createCardElement(it, opts){
+    opts = opts || {};
+    const large = !!opts.large;
+    const typeOverride = opts.typeOverride || it.type || '';
+    const id = (opts.id != null) ? opts.id : (it.id != null ? it.id : undefined);
+
+    const a = document.createElement('a');
+    const itemType = typeOverride || '';
+    if(id != null){
+      a.href = buildDetailUrl(itemType, id, it.slug || it.title && slugify(it.title) || '');
+    } else if(it.url){
+      a.href = it.url;
+    } else {
+      a.href = '/';
+    }
+    a.style.textDecoration = 'none'; a.style.color = 'inherit';
+
+    const card = document.createElement('article'); card.className = 'card fade-in'; if(large) card.style.minHeight = '180px';
+    const img = document.createElement('img'); img.className = 'thumb'; img.loading = 'lazy'; img.decoding = 'async'; img.alt = it.title || '';
+    if(it.image) img.src = it.image; else img.setAttribute('aria-hidden','true');
+
+    const h3 = document.createElement('h3'); h3.textContent = it.title || 'Untitled';
+    const p = document.createElement('p'); p.textContent = it.description || '';
+    const meta = document.createElement('div'); meta.className = 'meta muted';
+    const metaText = `${it.date || ''}${itemType ? ' • ' + (capitalize(itemType)) : ''}`;
+    meta.textContent = metaText;
+
+    card.appendChild(img); card.appendChild(h3); card.appendChild(p); card.appendChild(meta);
+    card.setAttribute('data-title', it.title || ''); card.setAttribute('data-type', itemType || ''); card.setAttribute('data-description', it.description || ''); if(id != null) card.setAttribute('data-id', id);
+    a.appendChild(card);
+    return a;
+  }
+
   function downloadJSON(obj, filename){
     const blob = new Blob([JSON.stringify(obj,null,2)], { type: 'application/json' });
     const url = URL.createObjectURL(blob);
@@ -41,5 +76,5 @@
   }
 
   window.utils = window.utils || {};
-  Object.assign(window.utils, { slugify, uid, todayISO, escapeHtml, downloadJSON, readJSONFile, buildDetailUrl });
+  Object.assign(window.utils, { slugify, uid, todayISO, escapeHtml, capitalize, createCardElement, downloadJSON, readJSONFile, buildDetailUrl });
 })();
