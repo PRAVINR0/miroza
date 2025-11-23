@@ -1,4 +1,13 @@
 /* Simple animation utilities */
 @keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
 .fade-in{animation:fadeIn .5s ease both}
-.card:hover{transform:translateY(-6px);box-shadow:0 12px 30px rgba(20,30,50,0.12)}
+.card:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(20,30,50,0.14)}
+
+/* button ripple */
+@keyframes rippleScale{from{opacity:0.35;transform:scale(.2)}to{opacity:0;transform:scale(2.6)}}
+.ripple-effect{position:relative;overflow:hidden}
+.ripple-effect .ripple-anim{position:absolute;border-radius:50%;background:rgba(255,255,255,0.35);transform:scale(0);animation:rippleScale .6s ease-out}
+
+/* fade page */
+.page-fade{opacity:0;transition:opacity .36s ease}
+.page-fade.visible{opacity:1}

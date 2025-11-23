@@ -1,4 +1,8 @@
 /* Color mode rules */
 :root{--bg:#f6f8fb;--card:#fff;--text:#152238;--muted:#556;--accent:#375a7f}
-body.dark{--bg:#0f1724;--card:rgba(255,255,255,0.03);--text:#e6eef9;--muted:#9fb0cc;--accent:#5aa3ff}
-body{background:var(--bg);color:var(--text);transition:background .3s,color .3s}
+body.dark{--bg:#071023;--card:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));--text:#e6eef9;--muted:#9fb0cc;--accent:#5aa3ff}
+body{background:var(--bg);color:var(--text);transition:background .36s ease,color .36s ease}
+
+/* slight color shift on buttons for modes */
+.btn{background:var(--card)}
+.dark .btn{background:rgba(255,255,255,0.03)}

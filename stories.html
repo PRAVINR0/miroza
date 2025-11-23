@@ -10,12 +10,54 @@
   <link rel="stylesheet" href="/assets/css/responsive.css">
 </head>
 <body>
+  <header class="site-header sticky">
+    <div class="header-inner">
+      <a class="brand" href="/index.html" aria-label="MIROZA home">
+        <img src="/assets/images/logo.svg" alt="MIROZA logo" width="44" height="44">
+        <span class="brand-title">MIROZA</span>
+      </a>
+      <div class="header-center">
+        <div class="search-wrap">
+          <input id="global-search" type="search" placeholder="Search MIROZA — press /" aria-label="Search" />
+          <button id="search-clear" class="icon-btn" aria-hidden="true">×</button>
+        </div>
+      </div>
+      <div class="header-actions">
+        <button id="theme-toggle" class="icon-btn ripple-effect" aria-label="Toggle theme">🌓</button>
+        <button id="mobile-menu" class="icon-btn mobile-only ripple-effect" aria-label="Menu">⋮</button>
+      </div>
+    </div>
+  </header>
+
   <main class="container">
     <h1 class="page-title">Stories</h1>
     <section id="category-list" class="grid"></section>
   </main>
 
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-column">
+        <h4>MIROZA</h4>
+        <div>Curated stories &amp; insight</div>
+        <div style="margin-top:8px;color:var(--muted)">© <span id="year"></span> MIROZA</div>
+      </div>
+      <div class="footer-column">
+        <h4>Quick Links</h4>
+        <nav class="footer-links"><a href="/index.html">Home</a><a href="/news.html">News</a><a href="/articles.html">Articles</a></nav>
+      </div>
+      <div class="footer-column">
+        <h4>Categories</h4>
+        <nav class="footer-links"><a href="/blogs.html">Blogs</a><a href="/stories.html">Stories</a><a href="/info.html">Info</a></nav>
+      </div>
+      <div class="footer-column">
+        <h4>Contact</h4>
+        <div class="footer-links">hello@miroza.example</div>
+      </div>
+    </div>
+  </footer>
+
   <script src="/assets/js/utils.js" defer></script>
+  <script src="/assets/js/ui.js" defer></script>
   <script src="/assets/js/datastore.js" defer></script>
   <script>
   document.addEventListener('DOMContentLoaded', async ()=>{

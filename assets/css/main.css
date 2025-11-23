@@ -6,15 +6,18 @@
 *{box-sizing:border-box}
 html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial; background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased}
 .container{max-width:1100px;margin:28px auto;padding:0 18px}
-.sticky{position:sticky;top:0;z-index:80;backdrop-filter:blur(6px);background:linear-gradient(180deg,rgba(255,255,255,0.6),rgba(255,255,255,0.4));}
+.sticky{position:sticky;top:0;z-index:80;backdrop-filter:blur(8px);background:linear-gradient(180deg,rgba(255,255,255,0.6),rgba(255,255,255,0.35));box-shadow:0 6px 24px rgba(20,30,50,0.06);}
 .header-inner{display:flex;align-items:center;justify-content:space-between;padding:12px 18px}
-.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit}
+.brand img{width:44px;height:44px;border-radius:10px;transition:transform .22s ease,box-shadow .22s ease}
+.brand:hover img{transform:scale(1.06);box-shadow:0 8px 30px rgba(55,90,127,0.18)}
 .brand-title{font-weight:700;letter-spacing:0.6px}
-.search-wrap{min-width:260px;max-width:560px;width:50%}
-.search-wrap input{width:100%;padding:10px 14px;border-radius:999px;border:1px solid rgba(20,30,40,0.06);background:transparent}
+.search-wrap{min-width:260px;max-width:720px;width:50%;display:flex;justify-content:center}
+.search-wrap input{width:100%;max-width:560px;padding:12px 16px;border-radius:999px;border:1px solid rgba(20,30,40,0.06);background:rgba(255,255,255,0.7);box-shadow:inset 0 1px 0 rgba(255,255,255,0.6)}
 .icon-btn{background:transparent;border:0;font-size:18px;cursor:pointer}
 .mobile-only{display:none}
 .header-actions{display:flex;gap:10px;align-items:center}
+.header-center{flex:1;display:flex;justify-content:center}
 .hero{padding:28px 0}
 .hero-title{margin:0;font-size:28px}
 .hero-sub{margin:6px 0 18px;color:var(--muted)}
@@ -27,8 +30,11 @@ html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,Segoe U
 .card h3{margin:6px 0 8px;font-size:16px}
 .card p{margin:0;color:var(--muted);font-size:14px}
 .badge{display:inline-block;background:linear-gradient(90deg,var(--accent),#4b7fb3);color:#fff;padding:6px 8px;border-radius:999px;font-size:12px}
-.site-footer{padding:22px 0;border-top:1px solid rgba(0,0,0,0.04);background:transparent}
-.footer-inner{max-width:1100px;margin:0 auto;padding:0 18px;display:flex;justify-content:space-between;align-items:center}
+.site-footer{padding:28px 0;background:linear-gradient(180deg,rgba(0,0,0,0.02),transparent);border-top:1px solid rgba(0,0,0,0.04)}
+.footer-inner{max-width:1100px;margin:0 auto;padding:12px 18px;display:flex;justify-content:space-between;align-items:flex-start;gap:24px}
+.footer-column{flex:1;min-width:160px}
+.footer-column h4{margin:0 0 8px;font-size:14px}
+.footer-links a{display:block;color:var(--muted);text-decoration:none;padding:4px 0}
 .page-title{font-size:20px;margin:10px 0}
 .detail-container{max-width:800px}
 .detail-header h1{margin:0}
@@ -36,5 +42,20 @@ html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,Segoe U
 .detail-content{line-height:1.7;color:var(--text)}
 .tag{display:inline-block;background:rgba(0,0,0,0.06);padding:6px 8px;border-radius:6px;margin-left:6px;font-size:13px}
 .btn{padding:8px 12px;border-radius:8px;border:1px solid rgba(0,0,0,0.06);background:var(--card);cursor:pointer}
+/* Buttons - subtle hover and focus */
+.btn, .icon-btn{transition:transform .18s ease,box-shadow .18s ease,background-color .18s ease}
+.btn:hover, .icon-btn:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(55,90,127,0.08)}
+.btn:active{transform:translateY(-1px) scale(.995)}
+
+/* page transitions */
+.page-enter{opacity:0;transform:translateY(6px)}
+.page-enter-active{opacity:1;transform:none;transition:all .36s cubic-bezier(.2,.9,.2,1)}
+.page-exit{opacity:1}
+.page-exit-active{opacity:0;transform:translateY(-8px);transition:all .28s ease}
+
+/* ripple placeholder */
+.ripple{position:relative;overflow:hidden}
+.ripple__circle{position:absolute;border-radius:50%;transform:scale(0);background:rgba(255,255,255,0.4);animation:ripple 600ms linear}
+@keyframes ripple{to{transform:scale(4);opacity:0}}
 /* Accessibility */
 [aria-live]{outline:0}
