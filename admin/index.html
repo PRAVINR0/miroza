@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Miroza Admin</title>
+  <link rel="stylesheet" href="/assets/css/styles.css">
+  <style>
+    .admin-wrap{max-width:1000px;margin:36px auto;padding:20px}
+    .card-form{background:var(--card);padding:16px;border-radius:10px}
+    label{display:block;margin:8px 0 4px}
+    input,select,textarea{width:100%;padding:8px;border-radius:8px;border:1px solid rgba(0,0,0,0.06)}
+    .actions{display:flex;gap:8px;margin-top:12px}
+    .admin-nav{display:flex;gap:8px;margin-bottom:12px}
+    .hidden{display:none}
+  </style>
+</head>
+<body>
+  <main class="admin-wrap">
+    <h1>Admin — Miroza</h1>
+    <div id="login" class="card-form">
+      <label>Password</label>
+      <input id="admin-pass" type="password" placeholder="Enter admin password">
+      <div class="actions"><button id="login-btn">Login</button></div>
+    </div>
+
+    <div id="panel" class="hidden">
+      <div class="admin-nav">
+        <button data-action="add" data-type="blogs">Add Blog</button>
+        <button data-action="add" data-type="articles">Add Article</button>
+        <button data-action="add" data-type="news">Add News</button>
+        <button data-action="add" data-type="stories">Add Story</button>
+        <button data-action="add" data-type="info">Add Info</button>
+        <button id="export-all">Export All JSON</button>
+        <input id="upload-json" type="file" accept="application/json">
+      </div>
+
+      <div id="form-area" class="card-form">
+        <form id="post-form">
+          <input type="hidden" id="post-type" value="blogs">
+          <label>Title</label>
+          <input id="title" required>
+          <label>Category</label>
+          <input id="category">
+          <label>Tags (comma separated)</label>
+          <input id="tags">
+          <label>Main image (URL or drag file below)</label>
+          <input id="image" placeholder="/assets/images/... or https://...">
+          <label>Upload image file</label>
+          <input id="image-file" type="file" accept="image/*">
+          <label>Short description</label>
+          <input id="description">
+          <label>Full content</label>
+          <textarea id="content" rows="8"></textarea>
+          <div class="actions">
+            <button id="save-post">Save Post (download JSON)</button>
+            <button id="generate-html" type="button">Generate HTML Snippet</button>
+            <button id="clear-form" type="button">Clear</button>
+          </div>
+        </form>
+        <pre id="snippet" style="white-space:pre-wrap;margin-top:12px"></pre>
+      </div>
+    </div>
+  </main>
+
+  <script src="/assets/js/admin.js"></script>
+</body>
+</html>
