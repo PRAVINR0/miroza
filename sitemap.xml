@@ -6,4 +6,11 @@
   <url><loc>/blogs.html</loc></url>
   <url><loc>/stories.html</loc></url>
   <url><loc>/info.html</loc></url>
+
+  <!-- Detail pages (auto-generated from data slugs) -->
+  <url><loc>/detail.html?slug=global-green-energy-summit</loc></url>
+  <url><loc>/detail.html?slug=designing-for-calm-ux-principles</loc></url>
+  <url><loc>/detail.html?slug=why-slow-tech-is-often-better</loc></url>
+  <url><loc>/detail.html?slug=the-lightkeepers-letter</loc></url>
+  <url><loc>/detail.html?slug=how-to-submit-a-story-to-miroza</loc></url>
 </urlset>

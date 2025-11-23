@@ -13,6 +13,7 @@
   <link rel="preload" href="/assets/css/main.css" as="style">
   <link rel="stylesheet" href="/assets/css/main.css">
   <link rel="stylesheet" href="/assets/css/theme.css">
+  <link rel="stylesheet" href="/assets/css/newspaper.css">
   <link rel="stylesheet" href="/assets/css/animations.css">
   <link rel="stylesheet" href="/assets/css/responsive.css">
 
@@ -65,13 +66,24 @@
 
     <main class="container">
       <section class="hero">
-        <h1 class="hero-title">MIROZA — Curated stories &amp; insight</h1>
-        <p class="hero-sub">Latest News, Articles, Blogs, Stories and Info — fast, accessible, and beautiful.</p>
+          <div class="topbar"><div class="ticker">Breaking: Global Green Energy Summit Announces Major Partnerships</div></div>
+          <div class="hero-inner">
+            <h1 class="h1-hero">MIROZA — Curated stories &amp; insight</h1>
+            <p class="p-lead">Latest News, Articles, Blogs, Stories and Info — professional editorial coverage with a clean layout.</p>
+          </div>
       </section>
 
-      <section id="feed" class="grid feed-grid" aria-live="polite">
-        <!-- JS renders mixed feed here -->
-      </section>
+        <section id="feed" class="section">
+          <div class="container grid-news">
+            <div id="main-feed" class="main-feed">
+              <!-- Hero and primary stories populated by JS -->
+            </div>
+            <aside class="section-aside">
+              <div class="h2-section">Top Stories</div>
+              <div id="aside-feed"></div>
+            </aside>
+          </div>
+        </section>
     </main>
 
     <footer class="site-footer">

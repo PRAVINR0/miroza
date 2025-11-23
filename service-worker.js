@@ -3,9 +3,12 @@ const ASSETS = [
   '/',
   '/index.html',
   '/assets/css/main.css',
+  '/assets/css/newspaper.css',
   '/assets/css/theme.css',
   '/assets/js/main.js',
   '/assets/js/datastore.js',
+  '/assets/js/ui.js',
+  '/offline.html',
   '/assets/images/logo.svg'
 ];
 
@@ -29,6 +32,10 @@ self.addEventListener('fetch', (e)=>{
       caches.open(CACHE_NAME).then(cache=>cache.put(req, copy));
       return resp;
     }).catch(()=>{
+      // If navigation to a page failed (user offline), serve the offline fallback if cached
+      if(req.mode === 'navigate'){
+        return caches.match('/offline.html');
+      }
       return caches.match('/index.html');
     });
   }));
