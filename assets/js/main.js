@@ -30,14 +30,20 @@ function injectHeader(){
         <a href="/blog.html">Blogs</a>
         <a href="/articles.html">Articles</a>
         <a href="/stories.html">Stories</a>
-  // Theme handled in assets/js/theme.js (initTheme)
-  // Footer (single injection)
-  // fetchJSON is provided by utilities.js
-    moreBtn.addEventListener('click', ()=>{ const open = morePanel.classList.toggle('open'); moreBtn.setAttribute('aria-expanded', open ? 'true' : 'false'); });
-    document.addEventListener('click', (e)=>{ if(!morePanel.contains(e.target) && e.target !== moreBtn){ morePanel.classList.remove('open'); moreBtn.setAttribute('aria-expanded','false'); } });
-  /* Query helper moved to router.js */
+        </nav>
+      </header>
+    `;
+    // Theme handled in assets/js/theme.js (initTheme)
+    // Footer (single injection)
+    // fetchJSON is provided by utilities.js
 
-  /* Detail loader moved to router.js */
+    // Note: menu wiring and detail routing live in `router.js`.
+    // Provide a small no-op initMenus so the site can call it safely.
+    function initMenus(){ /* router.js provides richer behavior; this is a safe stub */ }
+
+    /* Query helper moved to router.js */
+
+    /* Detail loader moved to router.js */
 
 /* Theme init */
 function initTheme(){

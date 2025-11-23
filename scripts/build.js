@@ -18,11 +18,17 @@ async function minifyCss(file){
 }
 
 async function minifyJs(file){
+  const base = path.basename(file);
+  // Skip minification for files known to use advanced or non-standard build steps
+  if(['admin.js','main.js'].includes(base)){
+    console.log('Skipping minify for (left unminified):', base);
+    return;
+  }
   try{
     const src = await fs.readFile(file,'utf8');
     const res = await Terser.minify(src, {
-      ecma: 2020,
-      compress: true,
+      parse: { ecma: 2022 },
+      compress: { ecma: 2022 },
       mangle: true,
       format: { comments: false }
     });
