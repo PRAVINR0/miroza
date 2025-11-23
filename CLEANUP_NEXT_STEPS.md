@@ -1,3 +1,27 @@
+## Cleanup Next Steps — Run Coverage Locally
+
+I prepared a PowerShell helper script to run the preview server and the Puppeteer coverage collector.
+
+Files added:
+- `scripts/run_local_coverage.ps1` — runs `npm ci`, starts `node server.js`, runs `npm run coverage`, then stops the server.
+
+How to run (PowerShell):
+
+```powershell
+# from repository root
+npm ci
+.\scripts\run_local_coverage.ps1
+```
+
+Notes:
+- This environment did not have Node.js available (the earlier `node server.js` attempt exited with code 1). Run the script on your machine where Node is installed.
+- The coverage script `npm run coverage` is expected to run `scripts/collect_coverage.js` and write its artifacts (see that script for exact output path).
+
+After you run the script, please upload the generated coverage report(s) or paste the output here and I'll:
+
+1. Analyze CSS/JS coverage and identify safe removals.
+2. Produce conservative patch(es) removing unused selectors and dead JS functions.
+3. Run a smoke-test checklist (manual steps) and finalize the cleanup report.
 # Cleanup — Next Steps (commands to run locally)
 
 I started a conservative, safe cleanup and refactor. To finish the full automated cleanup (remove unused CSS selectors and dead JS safely) we need runtime coverage data. Follow these steps locally and then share the generated coverage report (`assets/data/coverage-report.json`) or let me run further edits.
