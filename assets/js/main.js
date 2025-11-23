@@ -37,6 +37,7 @@ function injectHeader(){
           </div>
         </div>
         <button class="icon-btn" id="theme-toggle" aria-pressed="false">🌓</button>
+        <button class="icon-btn" id="pwa-install" title="Install Miroza" style="display:none">⬇️</button>
       </div>
     </header>
   `;
@@ -85,6 +86,42 @@ function initMenus(){
       themeToggle.setAttribute('aria-pressed', next === 'dark');
     });
   }
+  // PWA install button
+  const pwaBtn = document.getElementById('pwa-install');
+  if(pwaBtn){
+    pwaBtn.addEventListener('click', async ()=>{
+      if(window.deferredPrompt){
+        window.deferredPrompt.prompt();
+        const choice = await window.deferredPrompt.userChoice;
+        window.deferredPrompt = null;
+        pwaBtn.style.display = 'none';
+      }
+    });
+  }
+}
+
+/* Register service worker and handle beforeinstallprompt */
+function initPWA(){
+  // Register service-worker (stale-while-revalidate implementation in /service-worker.js)
+  if('serviceWorker' in navigator){
+    navigator.serviceWorker.register('/service-worker.js').then(()=>{
+      // console.log('Service worker registered');
+    }).catch(err=>{ console.warn('SW register failed', err); });
+  }
+
+  // Listen for install prompt
+  window.addEventListener('beforeinstallprompt', (e)=>{
+    e.preventDefault();
+    window.deferredPrompt = e;
+    const btn = document.getElementById('pwa-install');
+    if(btn) btn.style.display = 'inline-block';
+  });
+
+  // Hide install button after appinstalled
+  window.addEventListener('appinstalled', ()=>{
+    const btn = document.getElementById('pwa-install');
+    if(btn) btn.style.display = 'none';
+  });
 }
 
 /* Initialize theme from localStorage or prefers-color-scheme */
@@ -97,6 +134,9 @@ function initTheme(){
     document.documentElement.setAttribute('data-theme','dark');
   }
 }
+
+// initialize PWA support
+window.initPWA = initPWA;
 
 /* Fetch JSON helper */
 async function fetchJSON(path){

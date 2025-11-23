@@ -8,10 +8,49 @@
   <meta http-equiv="Referrer-Policy" content="no-referrer-when-downgrade">
   <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()">
   <meta name="theme-color" content="#ffffff">
-  <title>Miroza — Home</title>
+  <title>Miroza — Calm news, blogs, articles & stories</title>
+  <meta name="description" content="Miroza — a calm place for daily news, thoughtful blogs, in-depth articles, evocative stories and informational content.">
+  <meta name="keywords" content="news, articles, blogs, stories, info, miroza">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://YOUR-DOMAIN/index.html">
+  <meta name="author" content="Miroza">
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  <link rel="manifest" href="/site.webmanifest">
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="stylesheet" href="assets/css/styles.css">
+
+  <!-- OpenGraph / Twitter -->
+  <meta property="og:title" content="Miroza — Calm news, blogs, articles & stories">
+  <meta property="og:description" content="A calm place for daily news, thoughtful blogs, in-depth articles, evocative stories and informational content.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Miroza">
+  <meta property="og:url" content="https://YOUR-DOMAIN/index.html">
+  <meta property="og:image" content="https://YOUR-DOMAIN/assets/og-default.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Miroza — Calm news, blogs, articles & stories">
+  <meta name="twitter:description" content="A calm place for daily news, thoughtful blogs, in-depth articles, evocative stories and informational content.">
+  <meta name="twitter:image" content="https://YOUR-DOMAIN/assets/og-default.png">
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Miroza",
+    "url": "https://YOUR-DOMAIN/"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Miroza Home",
+    "description": "A calm place for daily news, thoughtful blogs, in-depth articles, evocative stories and informational content.",
+    "url": "https://YOUR-DOMAIN/index.html"
+  }
+  </script>
+
+  <!-- Plausible Analytics (privacy-friendly) -->
+  <script defer data-domain="miroza.in.net" src="https://plausible.io/js/script.js"></script>
 </head>
 <body>
   <!-- Header will be injected by assets/js/main.js -->
@@ -32,6 +71,7 @@
     injectHeader();
     initTheme();
     initMenus();
+    initPWA();
     // Load latest item from each data file, then shuffle display
     async function loadHome() {
       const types = ['articles','blogs','news','stories','info'];
@@ -53,11 +93,6 @@
     }
     loadHome();
   </script>
-    <script>
-      // Register service worker for offline support
-      if ("serviceWorker" in navigator) {
-        navigator.serviceWorker.register('/sw.js').catch(err=>console.warn('SW registration failed', err));
-      }
-    </script>
+    <!-- Service worker registration moved to assets/js/main.js for consistent registration across pages -->
 </body>
 </html>

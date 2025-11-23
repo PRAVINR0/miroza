@@ -11,7 +11,12 @@
   <title>Miroza — Detail</title>
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="manifest" href="/site.webmanifest">
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <meta name="description" content="Detail view for Miroza content.">
+  <meta name="keywords" content="detail, article, blog, story, news, info">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://YOUR-DOMAIN/detail.html">
+  <script defer data-domain="miroza.in.net" src="https://plausible.io/js/script.js"></script>
 </head>
 <body>
   <div id="site-header"></div>
@@ -23,7 +28,7 @@
   <script src="assets/js/main.js"></script>
   <script>
     // Initialize common UI
-    injectHeader(); initTheme(); initMenus();
+    injectHeader(); initTheme(); initMenus(); initPWA();
     // Load the detail view based on URL params
     loadDetail();
   </script>

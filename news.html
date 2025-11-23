@@ -9,9 +9,30 @@
   <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()">
   <meta name="theme-color" content="#ffffff">
   <title>Miroza — News</title>
+  <meta name="description" content="Daily local and global news updates presented calmly and clearly on Miroza.">
+  <meta name="keywords" content="news, local news, global news, miroza">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://YOUR-DOMAIN/news.html">
+  <meta name="author" content="Miroza">
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  <link rel="manifest" href="/site.webmanifest">
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="stylesheet" href="assets/css/styles.css">
+
+  <meta property="og:title" content="Miroza — News">
+  <meta property="og:description" content="Daily local and global news updates presented calmly and clearly on Miroza.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Miroza">
+  <meta property="og:url" content="https://YOUR-DOMAIN/news.html">
+  <meta property="og:image" content="https://YOUR-DOMAIN/assets/og-default.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Miroza — News">
+  <meta name="twitter:description" content="Daily local and global news updates presented calmly and clearly on Miroza.">
+  <meta name="twitter:image" content="https://YOUR-DOMAIN/assets/og-default.png">
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebPage","name":"Miroza News","description":"Daily local and global news updates presented calmly and clearly on Miroza.","url":"https://YOUR-DOMAIN/news.html"}
+  </script>
+  <script defer data-domain="miroza.in.net" src="https://plausible.io/js/script.js"></script>
 </head>
 <body>
   <div id="site-header"></div>
@@ -23,7 +44,7 @@
 
   <script src="assets/js/main.js"></script>
   <script>
-    injectHeader(); initTheme(); initMenus();
+    injectHeader(); initTheme(); initMenus(); initPWA();
     (async ()=>{
       const items = await fetchJSON('assets/data/news.json');
       renderCards(document.getElementById('news-grid'), items, false, 'news');

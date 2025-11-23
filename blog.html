@@ -9,9 +9,30 @@
   <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()">
   <meta name="theme-color" content="#ffffff">
   <title>Miroza — Blogs</title>
+  <meta name="description" content="Thoughtful personal and topical blog posts from Miroza.">
+  <meta name="keywords" content="blogs, personal, essays, miroza">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://YOUR-DOMAIN/blog.html">
+  <meta name="author" content="Miroza">
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  <link rel="manifest" href="/site.webmanifest">
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="stylesheet" href="assets/css/styles.css">
+
+  <meta property="og:title" content="Miroza — Blogs">
+  <meta property="og:description" content="Thoughtful personal and topical blog posts from Miroza.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Miroza">
+  <meta property="og:url" content="https://YOUR-DOMAIN/blog.html">
+  <meta property="og:image" content="https://YOUR-DOMAIN/assets/og-default.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Miroza — Blogs">
+  <meta name="twitter:description" content="Thoughtful personal and topical blog posts from Miroza.">
+  <meta name="twitter:image" content="https://YOUR-DOMAIN/assets/og-default.png">
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebPage","name":"Miroza Blogs","description":"Thoughtful personal and topical blog posts from Miroza.","url":"https://YOUR-DOMAIN/blog.html"}
+  </script>
+  <script defer data-domain="miroza.in.net" src="https://plausible.io/js/script.js"></script>
 </head>
 <body>
   <div id="site-header"></div>
@@ -23,7 +44,7 @@
 
   <script src="assets/js/main.js"></script>
   <script>
-    injectHeader(); initTheme(); initMenus();
+    injectHeader(); initTheme(); initMenus(); initPWA();
     (async ()=>{
       const items = await fetchJSON('assets/data/blogs.json');
       renderCards(document.getElementById('blogs-grid'), items, false, 'blogs');

@@ -1,0 +1,4 @@
+/* Wrapper stylesheet to preserve existing style.css and provide an import point.
+   This file intentionally imports the original `style.css` so new references can use `styles.css`.
+*/
+@import url('style.css');
