@@ -16,7 +16,12 @@
   <meta name="author" content="Miroza">
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="manifest" href="/manifest.json">
+  <!-- Performance: preload critical assets and preconnect to analytics -->
+  <link rel="preload" href="/assets/css/styles.css" as="style">
+  <link rel="preload" href="/assets/js/main.js" as="script">
   <link rel="stylesheet" href="/assets/css/styles.css">
+  <link rel="stylesheet" href="/assets/css/ui.css">
+  <link rel="preconnect" href="https://plausible.io" crossorigin>
 
   <!-- OpenGraph / Twitter -->
   <meta property="og:title" content="Miroza — Calm news, blogs, articles & stories">
@@ -73,12 +78,18 @@
 
   <script src="/assets/js/main.js"></script>
   <script src="/assets/js/search.js"></script>
+  <script src="/assets/js/ui.js" defer></script>
+  <script src="/assets/js/images.js" defer></script>
   <script>
     // Initialize header, theme and home content
     injectHeader();
     initTheme();
     initMenus();
     initPWA();
+    // init images lazy loader
+    window.addEventListener('DOMContentLoaded', ()=>{ if(window.initImages) window.initImages(); });
+    // init small UI helpers (progress, FAB, theme toggles)
+    window.addEventListener('DOMContentLoaded', ()=>{ if(window.initUI) window.initUI(); });
     // Load latest item from each data file, then shuffle display
     async function loadHome() {
       const types = ['articles','blogs','news','stories','info'];

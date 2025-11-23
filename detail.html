@@ -27,11 +27,14 @@
 
   <script src="/assets/js/main.js"></script>
   <script src="/assets/js/search.js"></script>
+  <script src="/assets/js/meta.js" defer></script>
   <script>
     // Initialize common UI
     injectHeader(); initTheme(); initMenus(); initPWA();
     // Load the detail view based on URL params
-    loadDetail();
+    // inject metadata then load detail view
+    if(window.initMeta){ window.addEventListener('DOMContentLoaded', ()=>{ window.initMeta(); loadDetail(); }); }
+    else { loadDetail(); }
   </script>
 </body>
 </html>
