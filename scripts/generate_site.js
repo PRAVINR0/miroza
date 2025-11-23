@@ -44,7 +44,9 @@ async function readJsonFiles(){
         parsed = JSON.parse(txt);
       }catch(parseErr){
         // fallback: replace control characters (except allowed whitespace) and retry
-        const cleaned = txt.replace(/[\x00-\x08\x0B\x0C\x0E-\x1F]/g, ' ');
+        let cleaned = txt.replace(/[\x00-\x08\x0B\x0C\x0E-\x1F]/g, ' ');
+        // also remove Unicode line/paragraph separators which can break JSON parsing
+        cleaned = cleaned.replace(/\u2028|\u2029/g, ' ');
         try{ parsed = JSON.parse(cleaned); console.warn('Auto-cleaned control chars in', p); }
         catch(e2){ throw parseErr }
       }
