@@ -1,0 +1,23 @@
+<svg width="1200" height="675" viewBox="0 0 1200 675" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Food security illustration</title>
+  <desc id="desc">Grain silos and cropped fields representing emergency stockpiles.</desc>
+  <defs>
+    <linearGradient id="grad-food" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#3d1d00" />
+      <stop offset="100%" stop-color="#f4a261" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" rx="48" fill="#1b0c02" />
+  <rect x="32" y="32" width="1136" height="611" rx="40" fill="#2c1204" />
+  <g>
+    <circle cx="300" cy="300" r="140" fill="#f4a261" opacity="0.85" />
+    <circle cx="900" cy="260" r="110" fill="#f7c77d" opacity="0.8" />
+    <circle cx="620" cy="380" r="120" fill="#f6bd60" opacity="0.7" />
+  </g>
+  <path d="M120 520 C240 460 360 540 480 500 C600 460 720 540 840 500 C960 460 1080 520 1140 500" stroke="#ffd29a" stroke-width="28" fill="none" stroke-linecap="round" />
+  <rect x="220" y="160" width="160" height="240" rx="24" fill="#9c6644" stroke="#ffe8d2" stroke-width="8" />
+  <rect x="420" y="140" width="160" height="280" rx="24" fill="#bb7d51" stroke="#ffe8d2" stroke-width="8" />
+  <rect x="620" y="200" width="160" height="220" rx="24" fill="#9c6644" stroke="#ffe8d2" stroke-width="8" />
+  <rect x="820" y="170" width="160" height="250" rx="24" fill="#bb7d51" stroke="#ffe8d2" stroke-width="8" />
+  <text x="600" y="610" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="64" fill="#ffe8d2">Global Reserves</text>
+</svg>

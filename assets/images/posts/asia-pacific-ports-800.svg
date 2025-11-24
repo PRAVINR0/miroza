@@ -1,0 +1,29 @@
+<svg width="800" height="450" viewBox="0 0 1200 675" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Port recovery illustration</title>
+  <desc id="desc">Container cranes and waves showing restored operations.</desc>
+  <defs>
+    <linearGradient id="grad-port" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#002d62" />
+      <stop offset="100%" stop-color="#00b4d8" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" rx="48" fill="#021225" />
+  <rect x="28" y="28" width="1144" height="619" rx="40" fill="#032f4d" />
+  <path d="M80 520 Q 200 480 320 520 T 560 520 T 800 520 T 1040 520" stroke="#52d1ff" stroke-width="18" fill="none" opacity="0.6" />
+  <path d="M80 560 Q 200 520 320 560 T 560 560 T 800 560 T 1040 560" stroke="#00b4d8" stroke-width="22" fill="none" opacity="0.8" />
+  <g stroke="#f7f7ff" stroke-width="10" stroke-linecap="round">
+    <path d="M240 180 L240 420" />
+    <path d="M240 220 L360 220" />
+    <path d="M360 180 L360 420" />
+    <path d="M360 220 L480 220" />
+    <path d="M480 180 L480 420" />
+  </g>
+  <rect x="260" y="320" width="80" height="80" fill="#ffba08" rx="8" />
+  <rect x="360" y="320" width="80" height="80" fill="#ffd166" rx="8" />
+  <rect x="460" y="320" width="80" height="80" fill="#ff9e00" rx="8" />
+  <circle cx="900" cy="260" r="110" fill="url(#grad-port)" opacity="0.9" />
+  <path d="M860 200 L860 340" stroke="#ffffff" stroke-width="8" />
+  <path d="M940 200 L940 340" stroke="#ffffff" stroke-width="8" />
+  <path d="M900 200 L900 140" stroke="#ffffff" stroke-width="8" />
+  <path d="M860 200 L940 200" stroke="#ffffff" stroke-width="8" />
+</svg>

@@ -52,7 +52,7 @@
     ex.className='card-excerpt';
     ex.innerHTML=window.MIROZA.utils.safeHTML(post.excerpt);
     const link=document.createElement('a');
-    link.href='/articles/'+post.slug+'.html';
+    link.href = post.link || ('/articles/'+post.slug+'.html');
     link.textContent='Read More →';
     link.className='read-more';
     link.setAttribute('data-prefetch','');
@@ -101,10 +101,14 @@
     function filterByCategory(cat){ return posts.filter(p=>p.category.toLowerCase()===cat.toLowerCase()); }
     function trending(){ return window.MIROZA.utils.shuffle([...posts]).slice(0,5); }
 
-    function renderTrending(){ const list = window.MIROZA.utils.qs('#trending-list'); if(!list) return; list.innerHTML=''; trending().forEach(p=>{ const li=document.createElement('li'); const a=document.createElement('a'); a.href='/articles/'+p.slug+'.html'; a.textContent=p.title; a.setAttribute('data-prefetch',''); li.appendChild(a); list.appendChild(li); }); }
+    function renderTrending(){ const list = window.MIROZA.utils.qs('#trending-list'); if(!list) return; list.innerHTML=''; trending().forEach(p=>{ const li=document.createElement('li'); const a=document.createElement('a'); a.href = p.link || ('/articles/'+p.slug+'.html'); a.textContent=p.title; a.setAttribute('data-prefetch',''); li.appendChild(a); list.appendChild(li); }); }
 
     function mountHomeSections(){
-      const latestOrder = window.MIROZA.utils.shuffle([...posts]);
+      const latestOrder = [...posts].sort((a,b)=>{
+        const dateA = new Date(a.date || 0).getTime();
+        const dateB = new Date(b.date || 0).getTime();
+        return dateB - dateA;
+      });
       window.MIROZA.pagination.mount({ targetSelector:'#latest-cards', controlsSelector:'#latest-pagination', getData:()=>latestOrder, pageSize:10, emptyMessage:'Fresh stories are on the way.' });
       window.MIROZA.pagination.mount({ targetSelector:'#news-cards', controlsSelector:'#news-pagination', getData:()=>filterByCategory('News'), pageSize:10, emptyMessage:'News stories publishing soon.' });
       window.MIROZA.pagination.mount({ targetSelector:'#blog-cards', controlsSelector:'#blog-pagination', getData:()=>filterByCategory('Blog'), pageSize:10, emptyMessage:'Blog stories publishing soon.' });

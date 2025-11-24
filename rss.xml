@@ -6,39 +6,39 @@
     <description>Latest stories and deep dives from MIROZA.</description>
     <language>en-us</language>
     <item>
-      <title>Newsletter Strategy: Measuring Real Engagement</title>
-      <link>https://example.com/articles/newsletter-strategy-engagement.html</link>
-      <guid isPermaLink="true">https://example.com/articles/newsletter-strategy-engagement.html</guid>
-      <description>Metrics and approaches for meaningful subscriber retention.</description>
-      <pubDate>Wed, 08 Jan 2025 09:00:00 +0000</pubDate>
+      <title>Global Climate Coalition Reaches Emissions Pact</title>
+      <link>https://example.com/articles/global-climate-coalition.html</link>
+      <guid isPermaLink="true">https://example.com/articles/global-climate-coalition.html</guid>
+      <description>Leaders from 70 nations locked in binding methane cuts and revived climate finance benchmarks.</description>
+      <pubDate>Mon, 24 Nov 2025 09:00:00 +0000</pubDate>
     </item>
     <item>
-      <title>Security Headers: Practical Defaults</title>
-      <link>https://example.com/articles/security-headers-practical-defaults.html</link>
-      <guid isPermaLink="true">https://example.com/articles/security-headers-practical-defaults.html</guid>
-      <description>A review of headers balancing protection with maintainability.</description>
-      <pubDate>Tue, 07 Jan 2025 09:00:00 +0000</pubDate>
+      <title>Digital ID Fast-Track Links Emerging Markets</title>
+      <link>https://example.com/articles/digital-id-fast-track.html</link>
+      <guid isPermaLink="true">https://example.com/articles/digital-id-fast-track.html</guid>
+      <description>Finance ministers backed an interoperable ID rail to unlock cheaper remittances and portable health records.</description>
+      <pubDate>Mon, 24 Nov 2025 09:05:00 +0000</pubDate>
     </item>
     <item>
-      <title>Designing Robust Offline Experiences</title>
-      <link>https://example.com/articles/robust-offline-experiences.html</link>
-      <guid isPermaLink="true">https://example.com/articles/robust-offline-experiences.html</guid>
-      <description>Patterns for resilient functionality when the network degrades.</description>
-      <pubDate>Mon, 06 Jan 2025 09:00:00 +0000</pubDate>
+      <title>Northern Corridor Summit Unlocks Infrastructure Funds</title>
+      <link>https://example.com/articles/northern-corridor-summit.html</link>
+      <guid isPermaLink="true">https://example.com/articles/northern-corridor-summit.html</guid>
+      <description>Regional leaders secured $18B for rail modernization and hybrid ports to ease commodity bottlenecks.</description>
+      <pubDate>Mon, 24 Nov 2025 09:10:00 +0000</pubDate>
     </item>
     <item>
-      <title>Edge Caching Strategies for Content Platforms</title>
-      <link>https://example.com/articles/edge-caching-strategies.html</link>
-      <guid isPermaLink="true">https://example.com/articles/edge-caching-strategies.html</guid>
-      <description>Reducing latency through optimized distribution and smart invalidation.</description>
-      <pubDate>Sun, 05 Jan 2025 09:00:00 +0000</pubDate>
+      <title>Asia-Pacific Ports Resume Ops After Typhoon Repairs</title>
+      <link>https://example.com/articles/asia-pacific-ports-reopen.html</link>
+      <guid isPermaLink="true">https://example.com/articles/asia-pacific-ports-reopen.html</guid>
+      <description>Logistics groups restored 80% capacity and prioritized medical cargo lanes after emergency repairs.</description>
+      <pubDate>Mon, 24 Nov 2025 09:15:00 +0000</pubDate>
     </item>
     <item>
-      <title>Accessible Color Systems That Scale</title>
-      <link>https://example.com/articles/accessible-color-systems.html</link>
-      <guid isPermaLink="true">https://example.com/articles/accessible-color-systems.html</guid>
-      <description>Building a palette that satisfies contrast while enabling brand expression.</description>
-      <pubDate>Sat, 04 Jan 2025 09:00:00 +0000</pubDate>
+      <title>Global Food Security Fund Expands Emergency Stockpiles</title>
+      <link>https://example.com/articles/global-food-security-fund.html</link>
+      <guid isPermaLink="true">https://example.com/articles/global-food-security-fund.html</guid>
+      <description>Donor blocs doubled rapid-response grain reserves and tied payouts to drought triggers.</description>
+      <pubDate>Mon, 24 Nov 2025 09:20:00 +0000</pubDate>
     </item>
   </channel>
 </rss>

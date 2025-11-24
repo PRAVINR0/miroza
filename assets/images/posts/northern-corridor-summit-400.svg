@@ -1,0 +1,25 @@
+<svg width="400" height="225" viewBox="0 0 1200 675" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Corridor infrastructure illustration</title>
+  <desc id="desc">Stylized freight lanes and investment flow lines.</desc>
+  <defs>
+    <linearGradient id="grad-corridor" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0c2e15" />
+      <stop offset="100%" stop-color="#4fd471" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" rx="48" fill="#031108" />
+  <rect x="32" y="32" width="1136" height="611" rx="40" fill="#062e13" />
+  <path d="M80 500 L1120 180" stroke="url(#grad-corridor)" stroke-width="40" stroke-linecap="round" opacity="0.8" />
+  <path d="M120 560 L1080 260" stroke="#93ffac" stroke-width="16" stroke-linecap="round" opacity="0.7" stroke-dasharray="32 24" />
+  <path d="M200 420 L1040 360" stroke="#37b36f" stroke-width="12" stroke-linecap="round" opacity="0.8" />
+  <g fill="#ffffff">
+    <circle cx="240" cy="430" r="22" />
+    <circle cx="520" cy="360" r="22" />
+    <circle cx="800" cy="320" r="22" />
+    <circle cx="1040" cy="280" r="22" />
+  </g>
+  <rect x="220" y="120" width="280" height="120" rx="16" fill="#0f4d24" stroke="#68f28b" stroke-width="4" />
+  <rect x="620" y="80" width="320" height="140" rx="16" fill="#0b381a" stroke="#68f28b" stroke-width="4" />
+  <text x="360" y="194" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="42" fill="#a6ffd4">Rail 2030</text>
+  <text x="780" y="150" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="42" fill="#d6ffe5">Green Ports</text>
+</svg>

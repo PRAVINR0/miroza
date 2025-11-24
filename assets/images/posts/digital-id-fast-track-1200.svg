@@ -1,0 +1,24 @@
+<svg width="1200" height="675" viewBox="0 0 1200 675" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Digital ID interoperability</title>
+  <desc id="desc">Stylized screens showing secure identification tokens.</desc>
+  <defs>
+    <linearGradient id="grad-id" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#12005c" />
+      <stop offset="100%" stop-color="#7c4dff" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" rx="48" fill="#050014" />
+  <rect x="40" y="40" width="1120" height="595" rx="40" fill="url(#grad-id)" />
+  <g opacity="0.9">
+    <rect x="160" y="150" width="240" height="360" rx="32" fill="#1f1144" stroke="#b5a8ff" stroke-width="6" />
+    <rect x="480" y="120" width="240" height="420" rx="32" fill="#1a0d39" stroke="#fff6d6" stroke-width="6" />
+    <rect x="800" y="170" width="240" height="320" rx="32" fill="#1f1144" stroke="#7de3ff" stroke-width="6" />
+  </g>
+  <circle cx="300" cy="280" r="68" fill="#7de3ff" opacity="0.8" />
+  <circle cx="620" cy="260" r="68" fill="#f9c46b" opacity="0.85" />
+  <circle cx="940" cy="320" r="68" fill="#7de3ff" opacity="0.7" />
+  <text x="300" y="470" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="48" fill="#ffffff" opacity="0.7">ID</text>
+  <text x="620" y="460" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="48" fill="#ffffff" opacity="0.7">BIO</text>
+  <text x="940" y="440" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="48" fill="#ffffff" opacity="0.7">QR</text>
+  <path d="M300 360 C400 420 520 420 620 360 C720 300 840 300 940 360" stroke="#fefefe" stroke-width="10" stroke-linecap="round" fill="none" opacity="0.8" />
+</svg>
