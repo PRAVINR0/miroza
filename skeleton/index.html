@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MIROZA — News & Knowledge</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Basic skeleton site — no advanced features yet -->
+</head>
+<body>
+  <!-- Header: logo + navigation -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">MIROZA</div>
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-label="Toggle navigation">☰</button>
+      <nav class="main-nav" id="mainNav" aria-label="Main navigation">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">News</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Articles</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero: featured content -->
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-media">
+        <img src="assets/hero-placeholder.svg" alt="Featured" />
+      </div>
+      <div class="hero-content">
+        <h1>Featured Story Headline — Placeholder Title</h1>
+        <p class="kicker">Featured • Breaking</p>
+        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero.</p>
+        <a class="btn" href="#">Read full story</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main layout: three columns (left, center, right) -->
+  <main class="container main-grid" id="main">
+    <aside class="col col-left" aria-label="Latest">
+      <h2>Latest</h2>
+      <article class="card">
+        <img src="assets/card-placeholder.svg" alt="" />
+        <h3><a href="#">Local council approves new plan</a></h3>
+        <p class="muted">By Reporter • Nov 2025</p>
+      </article>
+      <article class="card">
+        <img src="assets/card-placeholder.svg" alt="" />
+        <h3><a href="#">Market roundup: Today's highlights</a></h3>
+        <p class="muted">By Business Desk • Nov 2025</p>
+      </article>
+    </aside>
+
+    <section class="col col-center" aria-label="Main content">
+      <h2>Top Stories</h2>
+      <div class="feature-list">
+        <article class="feature">
+          <h3>In-depth feature: The story behind the numbers</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <a href="#">Continue reading →</a>
+        </article>
+        <article class="feature">
+          <h3>Opinion: A new perspective</h3>
+          <p>Quisque velit nisi, pretium ut lacinia in, elementum id enim. Curabitur non nulla sit amet nisl tempus.</p>
+          <a href="#">Continue reading →</a>
+        </article>
+      </div>
+    </section>
+
+    <aside class="col col-right" aria-label="Trending">
+      <h2>Trending</h2>
+      <ul class="trending-list">
+        <li><a href="#">Why this matters today</a></li>
+        <li><a href="#">Explainer: How it works</a></li>
+        <li><a href="#">Quick take: Market moves</a></li>
+      </ul>
+      <div class="ad">Advertisement</div>
+    </aside>
+  </main>
+
+  <!-- Footer: multi-column -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="col">
+        <h4>About MIROZA</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. MIROZA is a news and knowledge platform.</p>
+      </div>
+      <div class="col">
+        <h4>Contact</h4>
+        <address>
+          <a href="mailto:info@miroza.example">info@miroza.example</a>
+        </address>
+      </div>
+      <div class="col">
+        <h4>Categories</h4>
+        <ul>
+          <li><a href="#">Politics</a></li>
+          <li><a href="#">Business</a></li>
+          <li><a href="#">Technology</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <div class="socials">[Social links placeholder]</div>
+      <div class="copyright">© 2025 MIROZA</div>
+    </div>
+  </footer>
+
+  <script src="scripts/app.js"></script>
+</body>
+</html>

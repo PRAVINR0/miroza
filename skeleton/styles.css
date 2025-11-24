@@ -1,0 +1,72 @@
+/* styles.css — MIROZA skeleton styles
+   Clean, responsive, newspaper-style layout using CSS Grid + Flexbox
+*/
+
+:root{
+  --bg:#ffffff; --text:#111827; --muted:#6b7280; --accent:#b91c1c;
+  --container:1200px; --gap:16px; --radius:8px; --shadow:0 6px 18px rgba(16,24,40,0.06);
+  --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;font-family:var(--font-sans);color:var(--text);background:var(--bg);line-height:1.5}
+.container{max-width:var(--container);margin:0 auto;padding:20px}
+
+/* Header */
+.site-header{border-bottom:1px solid #e6e6e6;background:var(--bg)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.brand{font-weight:800;font-size:1.25rem;color:var(--accent)}
+.nav-toggle{display:none;background:transparent;border:0;font-size:1.25rem}
+.main-nav ul{list-style:none;margin:0;padding:0;display:flex;gap:14px}
+.main-nav a{color:var(--text);text-decoration:none;padding:8px;border-radius:6px}
+.main-nav a:hover{background:#f3f4f6}
+
+/* Hero */
+.hero{padding:18px 0}
+.hero-inner{display:grid;grid-template-columns:1fr 420px;gap:20px;align-items:center}
+.hero-media img{width:100%;height:320px;object-fit:cover;border-radius:8px;box-shadow:var(--shadow)}
+.hero-content h1{margin:0 0 8px;font-size:1.6rem}
+.kicker{font-weight:700;color:var(--accent);font-size:.9rem}
+.lead{color:var(--muted)}
+.btn{display:inline-block;margin-top:12px;padding:10px 14px;background:var(--accent);color:#fff;border-radius:6px;text-decoration:none}
+
+/* Main 3-column layout */
+.main-grid{display:grid;grid-template-columns:280px 1fr 300px;gap:20px;padding:30px 0}
+.col h2{margin-top:0}
+.card{display:flex;gap:12px;align-items:flex-start;padding:12px;border-radius:8px;background:#fff;box-shadow:var(--shadow);margin-bottom:12px}
+.card img{width:84px;height:64px;object-fit:cover;border-radius:6px}
+.muted{color:var(--muted);font-size:.9rem}
+.feature-list .feature{padding:14px 0;border-bottom:1px solid #f3f4f6}
+.feature-list .feature:last-child{border-bottom:0}
+.trending-list{list-style:none;padding:0;margin:0}
+.trending-list li{padding:6px 0}
+.ad{margin-top:18px;padding:20px;background:#f9fafb;border-radius:6px;text-align:center;color:var(--muted)}
+
+/* Footer */
+.site-footer{border-top:1px solid #e6e6e6;padding:24px 0;background:#fafafa;margin-top:30px}
+.footer-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:16px;font-size:.9rem;color:var(--muted)}
+
+/* Responsive */
+@media (max-width:1000px){
+  .hero-inner{grid-template-columns:1fr}
+  .main-grid{grid-template-columns:1fr;}
+  .main-grid .col-left{order:2}
+  .main-grid .col-center{order:1}
+  .main-grid .col-right{order:3}
+}
+@media (max-width:700px){
+  .main-nav{display:none}
+  .nav-toggle{display:block}
+  .hero-media img{height:200px}
+  .brand{font-size:1rem}
+}
+
+/* Utility: simple focus outline for accessibility */
+a:focus{outline:3px solid rgba(59,130,246,0.15);outline-offset:2px}
+
+/* Small helpers */
+.muted small{color:var(--muted)}
+
+/* keep things tidy for skeleton */
+body, h1, h2, h3, h4, p {margin:0 0 12px 0}
