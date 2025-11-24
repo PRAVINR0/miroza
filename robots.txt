@@ -1,5 +1,0 @@
-User-agent: *
-Allow: /
-Sitemap: /sitemap.xml
-
-# For production, consider disallowing staging or private areas.
