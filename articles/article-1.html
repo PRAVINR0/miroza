@@ -10,11 +10,11 @@
   <meta property="og:description" content="Architecture principles behind MIROZA's modern publishing approach." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://example.com/articles/article-1.html" />
-  <meta property="og:image" content="https://example.com/assets/images/placeholder.svg" />
+  <meta property="og:image" content="https://example.com/assets/images/posts/edge-cache-1200.svg" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="How MIROZA Structures Modern Content" />
   <meta name="twitter:description" content="Architecture principles behind MIROZA's publishing approach." />
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; frame-ancestors 'none';" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; frame-ancestors 'none';" />
   <link rel="stylesheet" href="/styles/styles.css" />
   <script>(function(){try{var t=localStorage.getItem('miroza_theme'); if(t){document.documentElement.dataset.theme=t;}}catch(e){}})();</script>
   <script type="application/ld+json">
@@ -31,7 +31,7 @@
   }
   </script>
 </head>
-<body>
+<body data-page="article">
   <a href="#content" class="skip-link">Skip to content</a>
   <header class="site-header"><div class="header-inner"><a class="logo" href="/"><img src="/assets/icons/logo.svg" alt="MIROZA logo" width="40" height="40"/> MIROZA</a><nav class="main-nav" aria-label="Primary navigation"><ul><li><a href="/">Home</a></li><li><a href="/category/news.html">News</a></li><li><a href="/category/blog.html">Blog</a></li><li><a href="/category/articles.html">Articles</a></li></ul></nav><button class="theme-toggle" aria-label="Toggle dark/light"><img src="/assets/icons/moon.svg" alt="Toggle theme" width="24" height="24" /></button></div></header>
   <main id="content" tabindex="-1">
@@ -41,7 +41,7 @@
         <p class="meta">By <span class="author">Editorial Team</span> • <time datetime="2025-01-02">Jan 2, 2025</time> • Category: <a href="/category/articles.html">Articles</a></p>
       </header>
       <figure>
-        <img src="/assets/images/placeholder.svg" alt="Architecture abstract" width="800" height="450" loading="lazy" />
+        <img src="/assets/images/posts/edge-cache-800.svg" srcset="/assets/images/posts/edge-cache-400.svg 400w, /assets/images/posts/edge-cache-800.svg 800w, /assets/images/posts/edge-cache-1200.svg 1200w" sizes="(max-width: 900px) 100vw, 800px" alt="Architecture abstract" width="800" height="450" loading="lazy" />
         <figcaption>Placeholder visual representing a modular architecture.</figcaption>
       </figure>
       <section>
@@ -53,6 +53,7 @@
     </article>
   </main>
   <footer class="site-footer"><div class="footer-grid"><div><h3>MIROZA</h3><p>Modern news & articles hub.</p></div><div><h3>Categories</h3><ul><li><a href="/category/news.html">News</a></li><li><a href="/category/blog.html">Blog</a></li><li><a href="/category/articles.html">Articles</a></li></ul></div></div><p class="copyright">© <span id="year"></span> MIROZA.</p></footer>
+  <script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.11/dist/purify.min.js" defer crossorigin="anonymous"></script>
   <script src="/scripts/app.js" defer></script>
 </body>
 </html>

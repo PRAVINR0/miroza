@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450" role="img" aria-label="Accessible color swatches">
+  <rect width="800" height="450" rx="44" fill="#0f172a" />
+  <rect x="80" y="100" width="120" height="250" rx="24" fill="#38bdf8" />
+  <rect x="230" y="100" width="120" height="250" rx="24" fill="#22d3ee" />
+  <rect x="380" y="100" width="120" height="250" rx="24" fill="#f472b6" />
+  <rect x="530" y="100" width="120" height="250" rx="24" fill="#f59e0b" />
+  <text x="80" y="80" font-family="'Segoe UI', sans-serif" font-size="32" fill="#e2e8f0">Palette AA</text>
+</svg>

@@ -6,34 +6,39 @@ MIROZA is a modern, performant, accessible news / articles / blog platform scaff
 - Semantic HTML5 structure for improved SEO & accessibility
 - Responsive layout using CSS Grid + Flexbox
 - Dark / Light mode with CSS variables and localStorage persistence (`miroza_theme`)
-- Modular JavaScript under `window.MIROZA` namespace (theme, nav, posts, prefetch, a11y, PWA)
+- Modular JavaScript under `window.MIROZA` namespace (theme, nav, posts, pagination, prefetch, a11y, PWA)
 - Skeleton loaders while content (JSON) fetches
 - Prefetch on link hover / touch for perceived performance
 - Service Worker caching core assets, offline navigation fallback
 - SEO: meta tags, OpenGraph, Twitter Card, JSON-LD for site & articles
 - Security: strict CSP example, external links use `rel="noopener noreferrer"`
 - Performance: lazy-loaded images, minimal critical CSS inline, transform/opacity animations
+- Responsive art-directed SVG bundles with `srcset` + `sizes`
+- DOMPurify ready for safe user-generated content ingestion (sample usage documented in `scripts/app.js`)
+- RSS feed (`rss.xml`) advertised in `<head>` for subscribers
+- Client-side pagination module for home & category listings (10 posts per page)
 
 ## Structure
 ```
 index.html
-articles/ (individual article pages)
-category/ (category listing pages)
+articles/
+category/
 styles/styles.css
 scripts/app.js
-assets/images/placeholder.svg
-assets/icons/*.svg
+assets/images/
+assets/icons/
 data/posts.json
 manifest.json
 sw.js
 sitemap.xml
 robots.txt
+rss.xml
 .htaccess.example
 ```
 
 ## Getting Started
 1. Serve the root directory with any static server (examples below).
-2. Ensure `manifest.json` and `sw.js` are at root scope for PWA functionality.
+2. Ensure `manifest.json`, `sw.js`, and `rss.xml` stay at the project root for proper scope.
 3. Update `canonical` + OpenGraph URLs to your production domain.
 
 ### Quick Dev Server (Node)
@@ -46,48 +51,51 @@ npx serve .
 python -m http.server 8080
 ```
 
-Visit `http://localhost:8080` and inspect network tab: service worker should register.
+Visit `http://localhost:8080` and inspect the Network tab: the service worker should register.
 
 ## Theming
-- Stored in `localStorage` key `miroza_theme`.
-- Applied before first paint via inline script for FOUC prevention.
 - Variables defined for light & dark palettes in `styles.css`.
+- Theme persistence stored in `localStorage` (`miroza_theme`).
+- Toggle updates icons and labels for assistive tech.
 
 ## Posts Data
 - Located in `data/posts.json`.
-- Each post: `{ id, title, slug, excerpt, category, author, date, image }`.
+- Each post entry contains `{ id, title, slug, excerpt, category, author, date, image }`.
+- `image` is an object with `src`, `srcset`, `sizes`, `alt` for responsive rendering.
 - Extend by adding new JSON entries and corresponding HTML article pages.
 
 ## Adding Articles
 1. Create a new HTML file under `articles/` named `<slug>.html`.
 2. Include proper meta tags + JSON-LD schema.
 3. Ensure `slug` matches the JSON entry for deep linking.
+4. Reuse the art-directed SVG sets or add your own responsive sources (400 / 800 / 1200) and update the JSON entry.
 
 ## Accessibility
 - Skip link for keyboard users.
 - Focus management when mobile nav toggles.
 - Sufficient contrast maintained (verify via tooling).
+- Pagination controls expose current state via text (`Page X of Y`).
 
 ## Security Notes
-- Example `.htaccess.example` shows recommended headers.
-- CSP restricts sources to self + data URIs for images.
-- For user-generated HTML, add DOMPurify and replace `safeHTML` fallback.
+- `.htaccess.example` includes CSP, HSTS, Permissions-Policy, and caching best practices.
+- DOMPurify CDN + inline example show where to sanitize user submissions.
 
 ## Performance Considerations
-- Additional optimization: inline font preload once custom fonts decided.
-- Consider responsive image sets (srcset) when real images available.
-- Preconnect / dns-prefetch can be added if external APIs are integrated.
+- Responsive SVG sets reduce payload without sacrificing quality.
+- Prefetched links + paginated DOM operations keep bundle small.
+- Additional optimization: inline font preload once custom fonts are selected.
+- Consider responsive bitmap sources (WebP/AVIF) if photography is added later.
 
 ## PWA
 - Simplified `manifest.json` with base icon.
-- Service worker caches core shell; navigation fallback to `index.html`.
+- Service worker caches the core shell (plus `rss.xml`) with navigation fallback to `index.html`.
 - Extend by adding runtime caching strategies for API calls.
 
 ## Roadmap Ideas
 - Pagination & dynamic search results
 - CMS or static site generator integration
 - Tag-based filtering & related posts
-- Author profile pages & RSS feed generation
+- Author profile pages & newsletter automation
 
 ## License
 Placeholder scaffold – integrate into your existing project with appropriate licensing considerations for fonts/images you add later.

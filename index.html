@@ -12,14 +12,15 @@
   <meta property="og:description" content="Discover curated news, blogs, and articles with MIROZA's clean, fast experience." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://example.com/" />
-  <meta property="og:image" content="https://example.com/assets/images/placeholder.svg" />
+  <meta property="og:image" content="https://example.com/assets/images/hero-insight-1200.svg" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="MIROZA – Modern News & Articles Hub" />
   <meta name="twitter:description" content="Clean, fast, responsive news & articles platform." />
-  <meta name="twitter:image" content="https://example.com/assets/images/placeholder.svg" />
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests;" />
+  <meta name="twitter:image" content="https://example.com/assets/images/hero-insight-1200.svg" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests;" />
   <link rel="manifest" href="manifest.json" />
   <link rel="icon" type="image/svg+xml" href="/assets/icons/logo.svg" />
+  <link rel="alternate" type="application/rss+xml" title="MIROZA RSS Feed" href="/rss.xml" />
   <meta name="theme-color" content="#0f172a" />
   <!-- Preload critical font (example placeholder) -->
   <link rel="preload" href="/styles/styles.css" as="style" />
@@ -62,7 +63,7 @@
   </script>
   <link rel="stylesheet" href="/styles/styles.css" />
 </head>
-<body>
+<body data-page="home">
   <a href="#main" class="skip-link">Skip to content</a>
   <header class="site-header" aria-label="Site header">
     <div class="header-inner">
@@ -93,7 +94,7 @@
     <section class="hero" aria-labelledby="hero-heading">
       <div class="hero-content">
         <div class="hero-image-wrapper">
-          <img src="/assets/images/placeholder.svg" alt="Featured article image" width="800" height="450" loading="lazy" />
+          <img src="/assets/images/hero-insight-800.svg" srcset="/assets/images/hero-insight-400.svg 400w, /assets/images/hero-insight-800.svg 800w, /assets/images/hero-insight-1200.svg 1200w" sizes="(max-width: 900px) 100vw, 50vw" alt="Featured article image" width="800" height="450" loading="lazy" />
         </div>
         <div class="hero-text">
           <h1 id="hero-heading">Featured Insight: Building a Modern Web Platform</h1>
@@ -111,6 +112,7 @@
         <div class="card skeleton" aria-hidden="true"></div>
         <div class="card skeleton" aria-hidden="true"></div>
       </div>
+      <div class="pagination" id="latest-pagination" aria-label="Latest pagination"></div>
     </section>
     <div class="content-grid">
       <section class="category-block" aria-labelledby="news-heading">
@@ -118,18 +120,21 @@
         <div class="cards" id="news-cards" aria-live="polite">
           <div class="card skeleton" aria-hidden="true"></div>
         </div>
+        <div class="pagination" id="news-pagination" aria-label="News pagination"></div>
       </section>
       <section class="category-block" aria-labelledby="blog-heading">
         <h2 id="blog-heading">Blog</h2>
         <div class="cards" id="blog-cards" aria-live="polite">
           <div class="card skeleton" aria-hidden="true"></div>
         </div>
+        <div class="pagination" id="blog-pagination" aria-label="Blog pagination"></div>
       </section>
       <section class="category-block" aria-labelledby="articles-heading">
         <h2 id="articles-heading">Articles</h2>
         <div class="cards" id="articles-cards" aria-live="polite">
           <div class="card skeleton" aria-hidden="true"></div>
         </div>
+        <div class="pagination" id="articles-pagination" aria-label="Articles pagination"></div>
       </section>
       <aside class="sidebar" aria-label="Trending">
         <h2>Trending</h2>
@@ -180,6 +185,7 @@
     </div>
     <p class="copyright">© <span id="year"></span> MIROZA. All rights reserved.</p>
   </footer>
+  <script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.11/dist/purify.min.js" defer crossorigin="anonymous"></script>
   <script src="/scripts/app.js" defer></script>
 </body>
 </html>

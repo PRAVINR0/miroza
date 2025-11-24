@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="225" viewBox="0 0 400 225" role="img" aria-label="Offline mesh illustration">
+  <rect width="400" height="225" rx="28" fill="#052e16" />
+  <g stroke="#86efac" stroke-width="2" stroke-linecap="round">
+    <path d="M60 60l80 50 80-40 80 60 40-20" />
+    <path d="M60 140l80-30 80 50 80-20 40 20" />
+  </g>
+  <circle cx="140" cy="110" r="8" fill="#bbf7d0" />
+  <circle cx="220" cy="70" r="8" fill="#bbf7d0" />
+  <circle cx="300" cy="130" r="8" fill="#bbf7d0" />
+  <text x="30" y="200" font-family="'Segoe UI', sans-serif" font-size="18" fill="#bbf7d0">Offline Ready</text>
+</svg>

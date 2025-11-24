@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="225" viewBox="0 0 400 225" role="img" aria-label="Security shield">
+  <defs>
+    <linearGradient id="shield400" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#7c3aed" />
+      <stop offset="100%" stop-color="#312e81" />
+    </linearGradient>
+  </defs>
+  <rect width="400" height="225" rx="28" fill="#0f172a" />
+  <path d="M200 36l90 34v56c0 44-35 93-90 118-55-25-90-74-90-118V70z" fill="url(#shield400)" />
+  <path d="M200 80l40 16v34c0 26-16 52-40 66-24-14-40-40-40-66V96z" fill="#c4b5fd" opacity="0.8" />
+  <text x="150" y="210" font-family="'Segoe UI', sans-serif" font-size="18" fill="#e0e7ff">Secure Headers</text>
+</svg>

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450" role="img" aria-label="Weekly briefing board">
+  <defs>
+    <linearGradient id="intel800" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#f97316" />
+      <stop offset="100%" stop-color="#c026d3" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" rx="44" fill="url(#intel800)" />
+  <rect x="64" y="64" width="672" height="120" rx="20" fill="rgba(255,255,255,0.12)" />
+  <rect x="64" y="220" width="360" height="120" rx="20" fill="rgba(255,255,255,0.12)" />
+  <rect x="448" y="220" width="288" height="120" rx="20" fill="rgba(255,255,255,0.12)" />
+  <text x="92" y="140" font-family="'Segoe UI', sans-serif" font-size="44" fill="#fff">Weekly Intel</text>
+  <text x="92" y="304" font-family="'Segoe UI', sans-serif" font-size="24" fill="#fee2ff">Curated Signals</text>
+</svg>

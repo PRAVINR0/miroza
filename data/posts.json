@@ -7,7 +7,12 @@
     "category": "News",
     "author": "Staff Writer",
     "date": "2025-01-01",
-    "image": "/assets/images/placeholder.svg"
+    "image": {
+      "src": "/assets/images/posts/market-radar-800.svg",
+      "srcset": "/assets/images/posts/market-radar-400.svg 400w, /assets/images/posts/market-radar-800.svg 800w, /assets/images/posts/market-radar-1200.svg 1200w",
+      "sizes": "(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px",
+      "alt": "Traders analyzing digital market dashboards"
+    }
   },
   {
     "id": 2,
@@ -17,7 +22,12 @@
     "category": "News",
     "author": "Staff Writer",
     "date": "2025-01-02",
-    "image": "/assets/images/placeholder.svg"
+    "image": {
+      "src": "/assets/images/posts/weekly-intel-800.svg",
+      "srcset": "/assets/images/posts/weekly-intel-400.svg 400w, /assets/images/posts/weekly-intel-800.svg 800w, /assets/images/posts/weekly-intel-1200.svg 1200w",
+      "sizes": "(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px",
+      "alt": "Weekly briefing cards with highlights"
+    }
   },
   {
     "id": 3,
@@ -27,7 +37,12 @@
     "category": "Blog",
     "author": "Editorial Team",
     "date": "2025-01-03",
-    "image": "/assets/images/placeholder.svg"
+    "image": {
+      "src": "/assets/images/posts/focus-hacks-800.svg",
+      "srcset": "/assets/images/posts/focus-hacks-400.svg 400w, /assets/images/posts/focus-hacks-800.svg 800w, /assets/images/posts/focus-hacks-1200.svg 1200w",
+      "sizes": "(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px",
+      "alt": "Illustration of deep work focus bubbles"
+    }
   },
   {
     "id": 4,
@@ -37,7 +52,12 @@
     "category": "Blog",
     "author": "Design Desk",
     "date": "2025-01-04",
-    "image": "/assets/images/placeholder.svg"
+    "image": {
+      "src": "/assets/images/posts/accessible-palette-800.svg",
+      "srcset": "/assets/images/posts/accessible-palette-400.svg 400w, /assets/images/posts/accessible-palette-800.svg 800w, /assets/images/posts/accessible-palette-1200.svg 1200w",
+      "sizes": "(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px",
+      "alt": "Contrasting accessible color swatches"
+    }
   },
   {
     "id": 5,
@@ -47,7 +67,12 @@
     "category": "Article",
     "author": "Performance Lab",
     "date": "2025-01-05",
-    "image": "/assets/images/placeholder.svg"
+    "image": {
+      "src": "/assets/images/posts/edge-cache-800.svg",
+      "srcset": "/assets/images/posts/edge-cache-400.svg 400w, /assets/images/posts/edge-cache-800.svg 800w, /assets/images/posts/edge-cache-1200.svg 1200w",
+      "sizes": "(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px",
+      "alt": "Edge cache network visualization"
+    }
   },
   {
     "id": 6,
@@ -57,7 +82,12 @@
     "category": "Article",
     "author": "UX Research",
     "date": "2025-01-06",
-    "image": "/assets/images/placeholder.svg"
+    "image": {
+      "src": "/assets/images/posts/offline-grid-800.svg",
+      "srcset": "/assets/images/posts/offline-grid-400.svg 400w, /assets/images/posts/offline-grid-800.svg 800w, /assets/images/posts/offline-grid-1200.svg 1200w",
+      "sizes": "(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px",
+      "alt": "Offline mesh nodes connected"
+    }
   },
   {
     "id": 7,
@@ -67,7 +97,12 @@
     "category": "Article",
     "author": "Security Analyst",
     "date": "2025-01-07",
-    "image": "/assets/images/placeholder.svg"
+    "image": {
+      "src": "/assets/images/posts/security-headers-800.svg",
+      "srcset": "/assets/images/posts/security-headers-400.svg 400w, /assets/images/posts/security-headers-800.svg 800w, /assets/images/posts/security-headers-1200.svg 1200w",
+      "sizes": "(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px",
+      "alt": "Security shield illustration"
+    }
   },
   {
     "id": 8,
@@ -77,6 +112,11 @@
     "category": "Blog",
     "author": "Growth Team",
     "date": "2025-01-08",
-    "image": "/assets/images/placeholder.svg"
+    "image": {
+      "src": "/assets/images/posts/newsletter-growth-800.svg",
+      "srcset": "/assets/images/posts/newsletter-growth-400.svg 400w, /assets/images/posts/newsletter-growth-800.svg 800w, /assets/images/posts/newsletter-growth-1200.svg 1200w",
+      "sizes": "(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px",
+      "alt": "Newsletter analytics board"
+    }
   }
 ]

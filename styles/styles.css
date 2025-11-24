@@ -77,6 +77,12 @@ html[data-theme='dark'] .site-header { background:rgba(15,23,42,0.8); }
 .card-excerpt { font-size:.85rem; color:var(--text-alt); margin:0; flex:1; }
 .card a.read-more { margin-top:var(--space-2); font-weight:600; font-size:0.85rem; }
 
+.pagination { display:flex; align-items:center; gap:var(--space-3); margin-top:var(--space-4); flex-wrap:wrap; }
+.pagination button { border:1px solid var(--border); background:var(--bg-alt); color:var(--text); padding:var(--space-2) var(--space-4); border-radius:var(--radius-sm); cursor:pointer; transition:background var(--transition); }
+.pagination button:hover:not(:disabled) { background:var(--accent); color:#fff; }
+.pagination button:disabled { opacity:0.5; cursor:not-allowed; }
+.pagination .page-indicator { font-size:0.9rem; color:var(--text-alt); }
+
 .content-grid { display:grid; gap:var(--space-6); grid-template-columns:3fr 2fr; max-width:var(--max-width); margin:var(--space-2) auto var(--space-6); padding:0 var(--space-4); }
 .sidebar { background:var(--bg-alt); padding:var(--space-4); border:1px solid var(--border); border-radius:var(--radius-md); }
 .trending-list { list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:var(--space-2); }

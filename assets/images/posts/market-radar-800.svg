@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450" role="img" aria-label="Digital market data visualization">
+  <defs>
+    <linearGradient id="market800" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#22d3ee" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" rx="44" fill="url(#market800)" />
+  <polyline points="40 360 150 240 300 280 420 140 560 200 680 80 760 120" fill="none" stroke="#f8fafc" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
+  <circle cx="420" cy="140" r="12" fill="#fbbf24" />
+  <circle cx="680" cy="80" r="12" fill="#fbbf24" />
+  <text x="52" y="120" font-family="'Segoe UI', sans-serif" font-size="42" fill="#e0f2fe">Global Markets</text>
+  <text x="52" y="165" font-family="'Segoe UI', sans-serif" font-size="24" fill="#bae6fd">Pulse 2025</text>
+</svg>

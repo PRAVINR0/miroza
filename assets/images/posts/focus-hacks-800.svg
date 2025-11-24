@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450" role="img" aria-label="Focus toolkit illustration">
+  <defs>
+    <linearGradient id="focus800" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#10b981" />
+      <stop offset="100%" stop-color="#2563eb" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" rx="44" fill="url(#focus800)" />
+  <circle cx="240" cy="225" r="110" fill="rgba(15,23,42,0.25)" />
+  <rect x="380" y="130" width="320" height="80" rx="22" fill="rgba(15,23,42,0.3)" />
+  <rect x="380" y="240" width="200" height="64" rx="20" fill="rgba(15,23,42,0.3)" />
+  <text x="220" y="235" font-family="'Segoe UI', sans-serif" font-size="46" fill="#ecfccb">Focus</text>
+  <text x="400" y="185" font-family="'Segoe UI', sans-serif" font-size="28" fill="#e0f2fe">Deep Work</text>
+</svg>

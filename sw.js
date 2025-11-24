@@ -8,7 +8,8 @@ const CORE_ASSETS = [
   '/manifest.json',
   '/assets/icons/logo.svg',
   '/assets/images/placeholder.svg',
-  '/data/posts.json'
+  '/data/posts.json',
+  '/rss.xml'
 ];
 
 self.addEventListener('install', event => {
