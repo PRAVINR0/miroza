@@ -408,6 +408,365 @@
     return { init, hydrateLazySections };
   })();
 
+  /* Forms & Newsletter Handling */
+  window.MIROZA.forms = (function(){
+    const NEWSLETTER_KEY = 'miroza_newsletter_optin';
+    const SUBMIT_LATENCY = 900;
+
+    function sanitizeInput(value){
+      if(typeof value !== 'string') return '';
+      if(window.DOMPurify){ return DOMPurify.sanitize(value, { ALLOWED_TAGS:[], ALLOWED_ATTR:[] }); }
+      return value.replace(/[<>]/g,'');
+    }
+
+    function validateEmail(value){ return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value); }
+
+    function safeStorage(action, key, value){
+      try {
+        if(action==='get'){ return localStorage.getItem(key); }
+        if(action==='set'){ localStorage.setItem(key, value); }
+        if(action==='remove'){ localStorage.removeItem(key); }
+      } catch(e){}
+      return null;
+    }
+
+    function updateFeedback(el, message, state='info'){
+      if(!el) return;
+      el.textContent = message;
+      el.dataset.state = state;
+    }
+
+    function lockForm(form){
+      form.classList.add('is-success');
+      window.MIROZA.utils.qsa('input, button', form).forEach(el => { el.disabled = true; });
+    }
+
+    function simulateRequest(payload){
+      return new Promise((resolve)=>{
+        window.setTimeout(()=> resolve({ ok:true, ...payload }), SUBMIT_LATENCY);
+      });
+    }
+
+    function initNewsletter(){
+      const form = window.MIROZA.utils.qs('#newsletter-form');
+      if(!form) return;
+      const emailInput = form.querySelector('input[type="email"]');
+      const feedback = form.querySelector('.form-feedback');
+      const submitBtn = form.querySelector('button[type="submit"]');
+      if(!emailInput || !feedback || !submitBtn) return;
+
+      if(safeStorage('get', NEWSLETTER_KEY) === 'subscribed'){
+        updateFeedback(feedback, 'You are already subscribed.', 'success');
+        lockForm(form);
+      }
+
+      form.addEventListener('submit', e=>{
+        e.preventDefault();
+        if(form.classList.contains('is-loading')) return;
+        const email = sanitizeInput(emailInput.value.trim());
+        if(!validateEmail(email)){
+          updateFeedback(feedback, 'Enter a valid email address.', 'error');
+          emailInput.focus();
+          return;
+        }
+        form.classList.add('is-loading');
+        submitBtn.disabled = true;
+        updateFeedback(feedback, 'Subscribing you now…', 'pending');
+        const finish = (keepDisabled)=>{
+          form.classList.remove('is-loading');
+          if(!keepDisabled){ submitBtn.disabled = false; }
+        };
+        simulateRequest({ email }).then(()=>{
+          updateFeedback(feedback, 'You are officially on the list. Welcome aboard!', 'success');
+          safeStorage('set', NEWSLETTER_KEY, 'subscribed');
+          lockForm(form);
+          finish(true);
+        }).catch(()=>{
+          updateFeedback(feedback, 'We could not reach the server. Please try again.', 'error');
+          finish(false);
+        });
+      });
+    }
+
+    function init(){ initNewsletter(); }
+
+    return { init };
+  })();
+
+  /* Community Interactions (share, like, comments) */
+  window.MIROZA.community = (function(){
+    const COMMENTS_KEY = 'miroza_comments_v1';
+    const LIKE_KEY = 'miroza_likes_v1';
+    const MAX_COMMENTS = 20;
+    let commentsFallback = {};
+    let likesCache = null;
+
+    function sanitizePlain(value){
+      if(typeof value !== 'string') return '';
+      if(window.DOMPurify){ return DOMPurify.sanitize(value, { ALLOWED_TAGS:[], ALLOWED_ATTR:[] }); }
+      return value.replace(/[<>]/g,'');
+    }
+
+    function getArticleKey(){
+      const body = document.body;
+      if(body.dataset.articleId) return body.dataset.articleId;
+      if(body.dataset.slug) return body.dataset.slug;
+      const path = window.location.pathname.replace(/\/+/g,'/').replace(/\/$/, '');
+      return path || 'home';
+    }
+
+    function readComments(){
+      try {
+        const raw = localStorage.getItem(COMMENTS_KEY);
+        if(!raw) return commentsFallback;
+        commentsFallback = JSON.parse(raw) || {};
+        return commentsFallback;
+      } catch(e){
+        return commentsFallback;
+      }
+    }
+
+    function writeComments(data){
+      commentsFallback = data;
+      try { localStorage.setItem(COMMENTS_KEY, JSON.stringify(data)); } catch(e){}
+    }
+
+    function readLikes(){
+      if(likesCache) return likesCache;
+      try {
+        const raw = localStorage.getItem(LIKE_KEY);
+        likesCache = raw ? JSON.parse(raw) : {};
+      } catch(e){ likesCache = {}; }
+      return likesCache;
+    }
+
+    function writeLikes(data){
+      likesCache = data;
+      try { localStorage.setItem(LIKE_KEY, JSON.stringify(data)); } catch(e){}
+    }
+
+    function updateFeedback(node, message, state='info'){
+      if(!node) return;
+      node.textContent = message;
+      node.dataset.state = state;
+    }
+
+    function formatDate(ts){
+      try {
+        return new Intl.DateTimeFormat('en', { month:'short', day:'numeric', year:'numeric' }).format(new Date(ts));
+      } catch(e){
+        return new Date(ts).toLocaleDateString();
+      }
+    }
+
+    function renderComments(list, items){
+      if(!list) return;
+      list.innerHTML='';
+      if(!items.length){
+        const empty=document.createElement('li');
+        empty.className='card-meta';
+        empty.textContent='No comments yet. Share your perspective below (stored locally only).';
+        list.appendChild(empty);
+        return;
+      }
+      items.forEach(entry=>{
+        const li=document.createElement('li');
+        li.className='comment-card';
+        const meta=document.createElement('div');
+        meta.className='comment-meta';
+        meta.textContent = `${entry.name} • ${formatDate(entry.ts)}`;
+        const body=document.createElement('p');
+        body.textContent = entry.comment;
+        li.appendChild(meta);
+        li.appendChild(body);
+        list.appendChild(li);
+      });
+    }
+
+    function saveComment(entry){
+      const key = getArticleKey();
+      const store = { ...readComments() };
+      const list = store[key] ? [...store[key]] : [];
+      list.push(entry);
+      store[key] = list.slice(-MAX_COMMENTS);
+      writeComments(store);
+      return store[key];
+    }
+
+    function toggleLike(button, feedback){
+      const key = getArticleKey();
+      const likes = { ...readLikes() };
+      const nextState = !likes[key];
+      if(nextState){ likes[key]=true; } else { delete likes[key]; }
+      writeLikes(likes);
+      if(button){
+        button.dataset.liked = nextState ? 'true':'false';
+        button.setAttribute('aria-pressed', nextState ? 'true':'false');
+        button.textContent = nextState ? '♥ Liked' : '♡ Appreciate';
+      }
+      updateFeedback(feedback, nextState ? 'Thanks for the love!' : 'Like removed.', 'success');
+    }
+
+    function handleShare(action, feedback, button){
+      const url = window.location.href;
+      const title = document.title;
+      const description = document.querySelector('meta[name="description"]')?.content || 'Discover more from MIROZA.';
+      const encodedUrl = encodeURIComponent(url);
+      if(action === 'like'){ toggleLike(button, feedback); return; }
+      if(action === 'copy'){
+        if(navigator.clipboard?.writeText){
+          navigator.clipboard.writeText(url).then(()=> updateFeedback(feedback, 'Link copied to clipboard.', 'success')).catch(()=> fallbackCopy(url, feedback));
+        } else { fallbackCopy(url, feedback); }
+        return;
+      }
+      if(action === 'twitter'){
+        window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodedUrl}`, '_blank', 'noopener');
+        updateFeedback(feedback, 'Opening X (Twitter)…', 'pending');
+        return;
+      }
+      if(action === 'linkedin'){
+        window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`, '_blank', 'noopener');
+        updateFeedback(feedback, 'Opening LinkedIn…', 'pending');
+        return;
+      }
+      if(action === 'native' && navigator.share){
+        navigator.share({ title, text: description, url })
+          .then(()=> updateFeedback(feedback, 'Thanks for sharing!', 'success'))
+          .catch(()=> updateFeedback(feedback, 'Share cancelled.', 'info'));
+        return;
+      }
+      // fallback to copy link
+      handleShare('copy', feedback);
+    }
+
+    function fallbackCopy(url, feedback){
+      const copyPrompt = window.prompt('Copy this link and share it anywhere:', url);
+      if(copyPrompt !== null){ updateFeedback(feedback, 'Copy the highlighted link to share.', 'info'); }
+    }
+
+    function buildShareActions(article){
+      let block = article.querySelector('.share-actions');
+      if(!block){
+        block = document.createElement('div');
+        block.className='share-actions';
+        block.setAttribute('aria-label', 'Share actions');
+        const buttons = [
+          { type:'native', label:'Quick share' },
+          { type:'twitter', label:'Post to X' },
+          { type:'linkedin', label:'Share on LinkedIn' },
+          { type:'copy', label:'Copy link' }
+        ];
+        const frag=document.createDocumentFragment();
+        buttons.forEach(cfg=>{
+          const btn=document.createElement('button');
+          btn.type='button';
+          btn.dataset.share=cfg.type;
+          btn.textContent=cfg.label;
+          frag.appendChild(btn);
+        });
+        const likeBtn=document.createElement('button');
+        likeBtn.type='button';
+        likeBtn.dataset.share='like';
+        likeBtn.classList.add('like-btn');
+        const liked = !!readLikes()[getArticleKey()];
+        likeBtn.dataset.liked = liked ? 'true':'false';
+        likeBtn.setAttribute('aria-pressed', liked ? 'true':'false');
+        likeBtn.textContent = liked ? '♥ Liked' : '♡ Appreciate';
+        frag.appendChild(likeBtn);
+        block.appendChild(frag);
+        const header = article.querySelector('header');
+        if(header){ header.insertAdjacentElement('afterend', block); }
+        else { article.prepend(block); }
+      }
+      let feedback = article.querySelector('.share-feedback');
+      if(!feedback){
+        feedback = document.createElement('p');
+        feedback.className='form-feedback share-feedback';
+        feedback.setAttribute('aria-live','polite');
+        feedback.textContent='';
+        block.insertAdjacentElement('afterend', feedback);
+      }
+      return { block, feedback };
+    }
+
+    function buildCommentsSection(article){
+      let section = article.querySelector('.comments');
+      if(!section){
+        const slug = getArticleKey().split('/').pop() || 'story';
+        const uid = `comments-${slug.replace(/[^a-z0-9]+/gi,'-')}`;
+        section = document.createElement('section');
+        section.className='comments';
+        section.setAttribute('aria-labelledby', `${uid}-heading`);
+        section.innerHTML = `
+          <h2 id="${uid}-heading">Join the conversation</h2>
+          <form class="comment-form" novalidate>
+            <label for="${uid}-name">Name</label>
+            <input type="text" id="${uid}-name" name="name" maxlength="60" placeholder="Your name" required />
+            <label for="${uid}-body">Comment</label>
+            <textarea id="${uid}-body" name="comment" maxlength="500" placeholder="Be constructive and kind." required></textarea>
+            <input type="text" name="company" class="hidden" tabindex="-1" autocomplete="off" aria-hidden="true" />
+            <p class="form-feedback" aria-live="polite"></p>
+            <button type="submit">Post comment</button>
+          </form>
+          <ul class="comment-list" aria-live="polite"></ul>
+        `;
+        article.appendChild(section);
+      }
+      return section;
+    }
+
+    function bindShare(block, feedback){
+      if(!block || block.dataset.shareBound) return;
+      block.dataset.shareBound='true';
+      block.addEventListener('click', e=>{
+        const btn = e.target.closest('button[data-share]');
+        if(!btn) return;
+        const action = btn.dataset.share;
+        handleShare(action, feedback, btn);
+      });
+    }
+
+    function bindComments(section){
+      const form = section.querySelector('form');
+      const list = section.querySelector('.comment-list');
+      const feedback = form.querySelector('.form-feedback');
+      const store = readComments();
+      const existing = store[getArticleKey()] || [];
+      renderComments(list, existing);
+      updateFeedback(feedback, 'Comments stay on this device until realtime APIs are wired up.', 'info');
+      form.addEventListener('submit', e=>{
+        e.preventDefault();
+        const formData = new FormData(form);
+        if(formData.get('company')){ form.reset(); return; }
+        const name = sanitizePlain((formData.get('name') || 'Guest').trim()).slice(0,60) || 'Guest';
+        const comment = sanitizePlain((formData.get('comment') || '').trim());
+        if(comment.length < 5){
+          updateFeedback(feedback, 'Please add a bit more detail (minimum 5 characters).', 'error');
+          return;
+        }
+        const entry = { name, comment, ts: Date.now() };
+        const latest = saveComment(entry);
+        renderComments(list, latest);
+        updateFeedback(feedback, 'Comment captured locally for preview. ✅', 'success');
+        form.reset();
+      });
+    }
+
+    function enhanceArticle(){
+      if(document.body.dataset.page !== 'article') return;
+      const article = window.MIROZA.utils.qs('.single-article');
+      if(!article) return;
+      const { block, feedback } = buildShareActions(article);
+      bindShare(block, feedback);
+      const commentsSection = buildCommentsSection(article);
+      bindComments(commentsSection);
+    }
+
+    function init(){ enhanceArticle(); }
+
+    return { init };
+  })();
+
   /* Analytics & Diagnostics */
   window.MIROZA.analytics = (function(){
     const defaults = { enabled:false, plausibleDomain:'', debug:false };
@@ -496,6 +855,8 @@
     window.MIROZA.nav.init();
     window.MIROZA.posts.init();
     window.MIROZA.prefetch.init();
+    window.MIROZA.forms.init();
+    window.MIROZA.community.init();
     window.MIROZA.ui.init();
     window.MIROZA.a11y.init();
     window.MIROZA.pwa.register();
