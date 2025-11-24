@@ -7,6 +7,8 @@
   <title>MIROZA – Modern News & Articles Hub</title>
   <meta name="description" content="MIROZA is a modern, responsive news and articles platform delivering curated stories across categories with exceptional UX." />
   <meta name="keywords" content="news, blog, articles, technology, lifestyle, updates" />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="lighthouse" content="performance-monitoring" />
   <link rel="canonical" href="https://example.com/" />
   <meta property="og:title" content="MIROZA – Modern News & Articles Hub" />
   <meta property="og:description" content="Discover curated news, blogs, and articles with MIROZA's clean, fast experience." />
@@ -17,8 +19,10 @@
   <meta name="twitter:title" content="MIROZA – Modern News & Articles Hub" />
   <meta name="twitter:description" content="Clean, fast, responsive news & articles platform." />
   <meta name="twitter:image" content="https://example.com/assets/images/hero-insight-1200.svg" />
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests;" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net https://plausible.io https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://www.google-analytics.com; font-src 'self'; connect-src 'self' https://plausible.io https://www.google-analytics.com; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests;" />
   <link rel="manifest" href="manifest.json" />
+  <link rel="preconnect" href="https://plausible.io" crossorigin />
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
   <link rel="icon" type="image/svg+xml" href="/assets/icons/logo.svg" />
   <link rel="alternate" type="application/rss+xml" title="MIROZA RSS Feed" href="/rss.xml" />
   <meta name="theme-color" content="#0f172a" />
@@ -37,6 +41,19 @@
   <script>
     // Apply stored theme before paint to prevent FOUC.
     (function(){try{var t=localStorage.getItem('miroza_theme'); if(t){document.documentElement.dataset.theme=t;}}catch(e){}})();
+  </script>
+  <script>
+    (function(){
+      window.MIROZA = window.MIROZA || {};
+      var debugFlag = false;
+      try { debugFlag = localStorage.getItem('miroza_debug') === '1'; } catch(e){}
+      if(!debugFlag){ debugFlag = window.location.search.indexOf('debug=1') !== -1; }
+      window.MIROZA.analyticsConfig = {
+        enabled: true,
+        plausibleDomain: 'example.com',
+        debug: debugFlag
+      };
+    })();
   </script>
   <script type="application/ld+json">
   {
@@ -91,19 +108,25 @@
     </div>
   </header>
   <main id="main" tabindex="-1">
-    <section class="hero" aria-labelledby="hero-heading">
+    <section class="hero" aria-labelledby="hero-heading" data-hero>
       <div class="hero-content">
         <div class="hero-image-wrapper">
-          <img src="/assets/images/hero-insight-800.svg" srcset="/assets/images/hero-insight-400.svg 400w, /assets/images/hero-insight-800.svg 800w, /assets/images/hero-insight-1200.svg 1200w" sizes="(max-width: 900px) 100vw, 50vw" alt="Featured article image" width="800" height="450" loading="lazy" />
+          <picture id="hero-picture">
+            <img id="hero-image" src="/assets/images/hero-insight-800.svg" srcset="/assets/images/hero-insight-400.svg 400w, /assets/images/hero-insight-800.svg 800w, /assets/images/hero-insight-1200.svg 1200w" sizes="(max-width: 900px) 100vw, 50vw" alt="Featured article image" width="800" height="450" loading="eager" fetchpriority="high" />
+          </picture>
         </div>
         <div class="hero-text">
-          <h1 id="hero-heading">Featured Insight: Building a Modern Web Platform</h1>
-          <p class="excerpt">Explore how MIROZA establishes a foundation for scalable, performant, and accessible publishing on the modern web. This is placeholder content to demonstrate hero layout and style.</p>
-          <a class="cta" href="/articles/article-1.html" data-prefetch>Read Featured Article →</a>
+          <p class="hero-tag" id="hero-tag">Featured Insight</p>
+          <h1 id="hero-heading" data-hero-title>Building a Modern Web Platform</h1>
+          <p class="excerpt" id="hero-excerpt" data-hero-excerpt>Explore how MIROZA establishes a foundation for scalable, performant, and accessible publishing on the modern web.</p>
+          <a class="cta" id="hero-link" href="/articles/article-1.html" data-prefetch>Read Featured Article →</a>
+          <div class="hero-rotator" aria-live="polite">
+            <button type="button" class="hero-advance" aria-label="View next featured story">Next feature →</button>
+          </div>
         </div>
       </div>
     </section>
-    <section class="latest" aria-labelledby="latest-heading">
+    <section class="latest" aria-labelledby="latest-heading" data-lazy>
       <h2 id="latest-heading">Latest Across Categories</h2>
       <div class="cards" id="latest-cards" aria-live="polite">
         <!-- Skeleton placeholders -->
@@ -115,28 +138,28 @@
       <div class="pagination" id="latest-pagination" aria-label="Latest pagination"></div>
     </section>
     <div class="content-grid">
-      <section class="category-block" aria-labelledby="news-heading">
+      <section class="category-block" aria-labelledby="news-heading" data-lazy>
         <h2 id="news-heading">News</h2>
         <div class="cards" id="news-cards" aria-live="polite">
           <div class="card skeleton" aria-hidden="true"></div>
         </div>
         <div class="pagination" id="news-pagination" aria-label="News pagination"></div>
       </section>
-      <section class="category-block" aria-labelledby="blog-heading">
+      <section class="category-block" aria-labelledby="blog-heading" data-lazy>
         <h2 id="blog-heading">Blog</h2>
         <div class="cards" id="blog-cards" aria-live="polite">
           <div class="card skeleton" aria-hidden="true"></div>
         </div>
         <div class="pagination" id="blog-pagination" aria-label="Blog pagination"></div>
       </section>
-      <section class="category-block" aria-labelledby="articles-heading">
+      <section class="category-block" aria-labelledby="articles-heading" data-lazy>
         <h2 id="articles-heading">Articles</h2>
         <div class="cards" id="articles-cards" aria-live="polite">
           <div class="card skeleton" aria-hidden="true"></div>
         </div>
         <div class="pagination" id="articles-pagination" aria-label="Articles pagination"></div>
       </section>
-      <aside class="sidebar" aria-label="Trending">
+      <aside class="sidebar" aria-label="Trending" data-lazy>
         <h2>Trending</h2>
         <ul id="trending-list" class="trending-list" aria-live="polite">
           <li class="skeleton" aria-hidden="true" style="height:1.5rem"></li>
@@ -145,13 +168,28 @@
         </ul>
       </aside>
     </div>
-    <section id="about" aria-labelledby="about-heading" class="about-section">
+    <section id="about" aria-labelledby="about-heading" class="about-section" data-lazy>
       <h2 id="about-heading">About MIROZA</h2>
       <p>MIROZA is a modern publishing platform focusing on performance, accessibility, and user experience. All content currently serves as placeholder examples to demonstrate structure.</p>
     </section>
-    <section id="contact" aria-labelledby="contact-heading" class="contact-section">
+    <section id="contact" aria-labelledby="contact-heading" class="contact-section" data-lazy>
       <h2 id="contact-heading">Contact</h2>
       <p>Email: <a href="mailto:contact@example.com">contact@example.com</a></p>
+    </section>
+    <section class="newsletter" id="newsletter" aria-labelledby="newsletter-heading" data-lazy>
+      <div class="newsletter-inner">
+        <div>
+          <p class="hero-tag">Stay current</p>
+          <h2 id="newsletter-heading">Weekly intelligence in your inbox</h2>
+          <p>Join the MIROZA briefing for hand-picked world analysis, zero spam, and one-click unsubscribe.</p>
+        </div>
+        <form id="newsletter-form" novalidate>
+          <label for="newsletter-email" class="visually-hidden">Email address</label>
+          <input type="email" id="newsletter-email" name="email" placeholder="name@email.com" required />
+          <button type="submit">Subscribe</button>
+          <p class="form-feedback" aria-live="polite"></p>
+        </form>
+      </div>
     </section>
   </main>
   <footer class="site-footer" aria-label="Site footer">
@@ -185,6 +223,7 @@
     </div>
     <p class="copyright">© <span id="year"></span> MIROZA. All rights reserved.</p>
   </footer>
+  <button type="button" class="back-to-top" aria-label="Back to top">Top</button>
   <script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.11/dist/purify.min.js" defer crossorigin="anonymous"></script>
   <script src="/scripts/app.js" defer></script>
 </body>

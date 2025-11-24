@@ -7,6 +7,7 @@
     "category": "News",
     "author": "Staff Writer",
     "date": "2025-01-01",
+    "views": 1240,
     "image": {
       "src": "/assets/images/posts/market-radar-800.svg",
       "srcset": "/assets/images/posts/market-radar-400.svg 400w, /assets/images/posts/market-radar-800.svg 800w, /assets/images/posts/market-radar-1200.svg 1200w",
@@ -22,6 +23,7 @@
     "category": "News",
     "author": "Staff Writer",
     "date": "2025-01-02",
+    "views": 980,
     "image": {
       "src": "/assets/images/posts/weekly-intel-800.svg",
       "srcset": "/assets/images/posts/weekly-intel-400.svg 400w, /assets/images/posts/weekly-intel-800.svg 800w, /assets/images/posts/weekly-intel-1200.svg 1200w",
@@ -37,6 +39,7 @@
     "category": "Blog",
     "author": "Editorial Team",
     "date": "2025-01-03",
+    "views": 730,
     "image": {
       "src": "/assets/images/posts/focus-hacks-800.svg",
       "srcset": "/assets/images/posts/focus-hacks-400.svg 400w, /assets/images/posts/focus-hacks-800.svg 800w, /assets/images/posts/focus-hacks-1200.svg 1200w",
@@ -52,6 +55,7 @@
     "category": "Blog",
     "author": "Design Desk",
     "date": "2025-01-04",
+    "views": 650,
     "image": {
       "src": "/assets/images/posts/accessible-palette-800.svg",
       "srcset": "/assets/images/posts/accessible-palette-400.svg 400w, /assets/images/posts/accessible-palette-800.svg 800w, /assets/images/posts/accessible-palette-1200.svg 1200w",
@@ -67,6 +71,7 @@
     "category": "Article",
     "author": "Performance Lab",
     "date": "2025-01-05",
+    "views": 870,
     "image": {
       "src": "/assets/images/posts/edge-cache-800.svg",
       "srcset": "/assets/images/posts/edge-cache-400.svg 400w, /assets/images/posts/edge-cache-800.svg 800w, /assets/images/posts/edge-cache-1200.svg 1200w",
@@ -82,6 +87,7 @@
     "category": "Article",
     "author": "UX Research",
     "date": "2025-01-06",
+    "views": 810,
     "image": {
       "src": "/assets/images/posts/offline-grid-800.svg",
       "srcset": "/assets/images/posts/offline-grid-400.svg 400w, /assets/images/posts/offline-grid-800.svg 800w, /assets/images/posts/offline-grid-1200.svg 1200w",
@@ -97,6 +103,7 @@
     "category": "Article",
     "author": "Security Analyst",
     "date": "2025-01-07",
+    "views": 640,
     "image": {
       "src": "/assets/images/posts/security-headers-800.svg",
       "srcset": "/assets/images/posts/security-headers-400.svg 400w, /assets/images/posts/security-headers-800.svg 800w, /assets/images/posts/security-headers-1200.svg 1200w",
@@ -112,6 +119,7 @@
     "category": "Blog",
     "author": "Growth Team",
     "date": "2025-01-08",
+    "views": 560,
     "image": {
       "src": "/assets/images/posts/newsletter-growth-800.svg",
       "srcset": "/assets/images/posts/newsletter-growth-400.svg 400w, /assets/images/posts/newsletter-growth-800.svg 800w, /assets/images/posts/newsletter-growth-1200.svg 1200w",
@@ -127,6 +135,7 @@
     "category": "World",
     "author": "Anika Bose",
     "date": "2025-11-24",
+    "views": 2050,
     "link": "/articles/global-climate-coalition.html",
     "image": {
       "src": "/assets/images/posts/climate-coalition-800.svg",
@@ -143,6 +152,7 @@
     "category": "World",
     "author": "Mateo Alvarez",
     "date": "2025-11-24",
+    "views": 1820,
     "link": "/articles/digital-id-fast-track.html",
     "image": {
       "src": "/assets/images/posts/digital-id-fast-track-800.svg",
@@ -159,6 +169,7 @@
     "category": "World",
     "author": "Nadia Kamau",
     "date": "2025-11-24",
+    "views": 1640,
     "link": "/articles/northern-corridor-summit.html",
     "image": {
       "src": "/assets/images/posts/northern-corridor-summit-800.svg",
@@ -175,6 +186,7 @@
     "category": "World",
     "author": "Kenji Morita",
     "date": "2025-11-24",
+    "views": 1505,
     "link": "/articles/asia-pacific-ports-reopen.html",
     "image": {
       "src": "/assets/images/posts/asia-pacific-ports-800.svg",
@@ -191,6 +203,7 @@
     "category": "World",
     "author": "Leila Moreau",
     "date": "2025-11-24",
+    "views": 1710,
     "link": "/articles/global-food-security-fund.html",
     "image": {
       "src": "/assets/images/posts/food-security-fund-800.svg",
