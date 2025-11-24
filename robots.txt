@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Sitemap: https://example.com/sitemap.xml
+
+# If you need to block staging environments, add rules here, e.g.:
+# Disallow: /staging/
