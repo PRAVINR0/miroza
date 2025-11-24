@@ -9,7 +9,7 @@ MIROZA is a modern, performant, accessible news / articles / blog platform scaff
 - Modular JavaScript under `window.MIROZA` namespace (theme, nav, posts, pagination, prefetch, a11y, PWA)
 - Skeleton loaders while content (JSON) fetches
 - Prefetch on link hover / touch for perceived performance
-- Service Worker caching core assets, offline navigation fallback
+- Service Worker caches core shell + offline page with runtime strategies for data/images
 - SEO: meta tags, OpenGraph, Twitter Card, JSON-LD for site & articles
 - Security: strict CSP example, external links use `rel="noopener noreferrer"`
 - Performance: lazy-loaded images, minimal critical CSS inline, transform/opacity animations
@@ -88,8 +88,9 @@ Visit `http://localhost:8080` and inspect the Network tab: the service worker sh
 
 ## PWA
 - Simplified `manifest.json` with base icon.
-- Service worker caches the core shell (plus `rss.xml`) with navigation fallback to `index.html`.
-- Extend by adding runtime caching strategies for API calls.
+- Service worker precaches the app shell, `offline.html`, and auto-updates caches with stale-while-revalidate for JSON/images.
+- Navigation requests fall back to the offline card when the network is unreachable.
+- Extend by adding push notifications or background sync once APIs are wired up.
 
 ## Roadmap Ideas
 - Pagination & dynamic search results

@@ -42,7 +42,7 @@ self.addEventListener('fetch', event => {
   }
 
   if(url.origin !== self.location.origin){
-    event.respondWith(cacheFirst(req));
+    event.respondWith(fetch(req).catch(()=> caches.match('/offline.html')));
     return;
   }
 
