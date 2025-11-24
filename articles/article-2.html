@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Designing Accessible Themes in MIROZA – MIROZA</title>
+  <meta name="description" content="A guide to implementing accessible dark/light theme toggling using CSS variables and localStorage." />
+  <link rel="canonical" href="https://example.com/articles/article-2.html" />
+  <meta property="og:title" content="Designing Accessible Themes in MIROZA" />
+  <meta property="og:description" content="Using CSS variables and localStorage for accessible theming." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://example.com/articles/article-2.html" />
+  <meta property="og:image" content="https://example.com/assets/images/placeholder.svg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Designing Accessible Themes in MIROZA" />
+  <meta name="twitter:description" content="Using CSS variables and localStorage for accessible theming." />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; frame-ancestors 'none';" />
+  <link rel="stylesheet" href="/styles/styles.css" />
+  <script>(function(){try{var t=localStorage.getItem('miroza_theme'); if(t){document.documentElement.dataset.theme=t;}}catch(e){}})();</script>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Article",
+    "headline":"Designing Accessible Themes in MIROZA",
+    "image":"https://example.com/assets/images/placeholder.svg",
+    "datePublished":"2025-01-03T09:00:00+00:00",
+    "author":{"@type":"Person","name":"Editorial Team"},
+    "publisher":{"@type":"Organization","name":"MIROZA","logo":{"@type":"ImageObject","url":"https://example.com/assets/icons/logo.svg"}},
+    "description":"A guide to implementing accessible dark/light theme toggling using CSS variables.",
+    "articleSection":"Articles"
+  }
+  </script>
+</head>
+<body>
+  <a href="#content" class="skip-link">Skip to content</a>
+  <header class="site-header"><div class="header-inner"><a class="logo" href="/"><img src="/assets/icons/logo.svg" alt="MIROZA logo" width="40" height="40"/> MIROZA</a><nav class="main-nav" aria-label="Primary navigation"><ul><li><a href="/">Home</a></li><li><a href="/category/news.html">News</a></li><li><a href="/category/blog.html">Blog</a></li><li><a href="/category/articles.html">Articles</a></li></ul></nav><button class="theme-toggle" aria-label="Toggle dark/light"><img src="/assets/icons/moon.svg" alt="Toggle theme" width="24" height="24" /></button></div></header>
+  <main id="content" tabindex="-1">
+    <article class="single-article" aria-labelledby="article-title">
+      <header>
+        <h1 id="article-title">Designing Accessible Themes in MIROZA</h1>
+        <p class="meta">By <span class="author">Editorial Team</span> • <time datetime="2025-01-03">Jan 3, 2025</time> • Category: <a href="/category/articles.html">Articles</a></p>
+      </header>
+      <figure>
+        <img src="/assets/images/placeholder.svg" alt="Accessible theming abstract" width="800" height="450" loading="lazy" />
+        <figcaption>Placeholder visual illustrating theme toggling.</figcaption>
+      </figure>
+      <section>
+        <p>Accessible theming considers user preference, color contrast, and smooth transitions that avoid motion sensitivity. MIROZA applies themes before first paint, utilizes CSS variables for fast switching, and keeps contrast ratios at or above WCAG AA.</p>
+        <p>User preference persistence relies on simple localStorage entries while the UI updates icons and labels to remain clear for assistive technologies.</p>
+        <p>This placeholder demonstrates how theming topics can be presented with code snippets, design guidelines, and cross-browser considerations in a production-ready format.</p>
+      </section>
+    </article>
+  </main>
+  <footer class="site-footer"><div class="footer-grid"><div><h3>MIROZA</h3><p>Modern news & articles hub.</p></div><div><h3>Categories</h3><ul><li><a href="/category/news.html">News</a></li><li><a href="/category/blog.html">Blog</a></li><li><a href="/category/articles.html">Articles</a></li></ul></div></div><p class="copyright">© <span id="year"></span> MIROZA.</p></footer>
+  <script src="/scripts/app.js" defer></script>
+</body>
+</html>

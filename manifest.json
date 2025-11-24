@@ -1,0 +1,12 @@
+{
+  "name": "MIROZA",
+  "short_name": "Miroza",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#0f172a",
+  "description": "Modern news & articles hub.",
+  "icons": [
+    {"src": "/assets/icons/logo.svg", "sizes": "64x64", "type": "image/svg+xml"}
+  ]
+}

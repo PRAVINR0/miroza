@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "title": "Global Tech Markets React to New Policy",
+    "slug": "global-tech-markets",
+    "excerpt": "Major indices shift as regulators outline a new framework for cross-border innovation.",
+    "category": "News",
+    "author": "Staff Writer",
+    "date": "2025-01-01",
+    "image": "/assets/images/placeholder.svg"
+  },
+  {
+    "id": 2,
+    "title": "Weekly Roundup: Trends Shaping 2025",
+    "slug": "weekly-roundup-2025",
+    "excerpt": "A curated selection of developments across tech, society, and design.",
+    "category": "News",
+    "author": "Staff Writer",
+    "date": "2025-01-02",
+    "image": "/assets/images/placeholder.svg"
+  },
+  {
+    "id": 3,
+    "title": "Developer Productivity Hacks for Focus",
+    "slug": "developer-productivity-hacks",
+    "excerpt": "Lightweight techniques to reduce cognitive load and stay in flow.",
+    "category": "Blog",
+    "author": "Editorial Team",
+    "date": "2025-01-03",
+    "image": "/assets/images/placeholder.svg"
+  },
+  {
+    "id": 4,
+    "title": "Accessible Color Systems That Scale",
+    "slug": "accessible-color-systems",
+    "excerpt": "Building a palette that satisfies contrast while enabling brand expression.",
+    "category": "Blog",
+    "author": "Design Desk",
+    "date": "2025-01-04",
+    "image": "/assets/images/placeholder.svg"
+  },
+  {
+    "id": 5,
+    "title": "Edge Caching Strategies for Content Platforms",
+    "slug": "edge-caching-strategies",
+    "excerpt": "Reducing latency through optimized distribution and smart invalidation.",
+    "category": "Article",
+    "author": "Performance Lab",
+    "date": "2025-01-05",
+    "image": "/assets/images/placeholder.svg"
+  },
+  {
+    "id": 6,
+    "title": "Designing Robust Offline Experiences",
+    "slug": "robust-offline-experiences",
+    "excerpt": "Patterns for resilient functionality when the network degrades.",
+    "category": "Article",
+    "author": "UX Research",
+    "date": "2025-01-06",
+    "image": "/assets/images/placeholder.svg"
+  },
+  {
+    "id": 7,
+    "title": "Security Headers: Practical Defaults",
+    "slug": "security-headers-practical-defaults",
+    "excerpt": "A review of headers balancing protection with maintainability.",
+    "category": "Article",
+    "author": "Security Analyst",
+    "date": "2025-01-07",
+    "image": "/assets/images/placeholder.svg"
+  },
+  {
+    "id": 8,
+    "title": "Newsletter Strategy: Measuring Real Engagement",
+    "slug": "newsletter-strategy-engagement",
+    "excerpt": "Metrics and approaches for meaningful subscriber retention.",
+    "category": "Blog",
+    "author": "Growth Team",
+    "date": "2025-01-08",
+    "image": "/assets/images/placeholder.svg"
+  }
+]
