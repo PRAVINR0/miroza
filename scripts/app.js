@@ -4,6 +4,74 @@
 */
 (function(){
   'use strict';
+  const TOPIC_LABELS = {
+    world:'World',
+    science:'Science',
+    health:'Health',
+    space:'Space',
+    economy:'Economy',
+    technology:'Technology',
+    weather:'Weather',
+    business:'Business',
+    finance:'Finance',
+    education:'Education',
+    climate:'Climate',
+    travel:'Travel',
+    culture:'Culture',
+    analysis:'Analysis',
+    ideas:'Ideas',
+    lifestyle:'Lifestyle',
+    automobiles:'Automobiles',
+    career:'Career',
+    energy:'Energy',
+    security:'Security'
+  };
+  const CATEGORY_ROUTE_MAP = {
+    news:'/news.html',
+    'india-news':'/news.html',
+    india:'/news.html',
+    blog:'/blog.html',
+    article:'/articles.html',
+    articles:'/articles.html',
+    story:'/articles.html',
+    posts:'/articles.html'
+  };
+  Object.entries(TOPIC_LABELS).forEach(([slug, label])=>{
+    if(!CATEGORY_ROUTE_MAP[slug]){
+      CATEGORY_ROUTE_MAP[slug] = `/articles.html?topic=${encodeURIComponent(label)}`;
+    }
+  });
+
+  function normalizeRouteSlug(value){
+    return (value || '').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'');
+  }
+
+  function resolveCategoryRoute(value){
+    const slug = normalizeRouteSlug(value);
+    return CATEGORY_ROUTE_MAP[slug] || null;
+  }
+
+  function patchLegacyCategoryLinks(){
+    if(!window.MIROZA?.utils) return;
+    const legacyNewsTargets = new Set(['/news/index.html', 'news/index.html']);
+    window.MIROZA.utils.qsa('a[href]').forEach(link => {
+      const rawHref = link.getAttribute('href') || '';
+      if(legacyNewsTargets.has(rawHref)){
+        link.setAttribute('href', '/news.html');
+        link.dataset.prefetch = link.dataset.prefetch || '';
+        return;
+      }
+    });
+    window.MIROZA.utils.qsa('a[href^="/category/"]').forEach(link => {
+      const href = link.getAttribute('href') || '';
+      const slug = normalizeRouteSlug(href.replace('/category/','').replace(/\.html?$/,''));
+      const next = resolveCategoryRoute(slug);
+      if(next){
+        link.setAttribute('href', next);
+        link.dataset.prefetch = link.dataset.prefetch || '';
+      }
+    });
+  }
   document.documentElement.classList.add('js-ready'); // Flag for CSS fallbacks so content stays visible when JS runs
 
   // Namespace root
@@ -300,6 +368,47 @@
       const match = normalizeCategory(cat);
       return posts.filter(p=> normalizeCategory(p.category) === match);
     }
+
+    function filterByCategoryList(slugs){
+      if(!Array.isArray(slugs) || !slugs.length) return posts.slice();
+      return posts.filter(post => slugs.includes(normalizeCategory(post.category)));
+    }
+
+    function parseCategoryList(raw){
+      if(!raw) return [];
+      return raw.split(',').map(item => normalizeCategory(item)).filter(Boolean);
+    }
+
+    function highlightTopicChips(activeSlug){
+      const chips = window.MIROZA.utils?.qsa?.('.chip') || [];
+      if(!chips.length) return;
+      chips.forEach(chip => {
+        let chipSlug = '';
+        try {
+          const chipUrl = new URL(chip.href, window.location.origin);
+          const topicParam = chipUrl.searchParams.get('topic');
+          chipSlug = normalizeCategory(topicParam || (chip.textContent || ''));
+          if(topicParam){
+            chip.setAttribute('aria-current', chipSlug && chipSlug === activeSlug ? 'page' : 'false');
+          } else {
+            chip.setAttribute('aria-current', activeSlug ? 'false' : 'page');
+          }
+        } catch(e){
+          chip.setAttribute('aria-current', activeSlug ? 'false' : 'page');
+        }
+      });
+    }
+
+    function syncCategoryHeading(topicLabel){
+      const heading = window.MIROZA.utils?.qs?.('[data-category-label]');
+      if(!heading) return;
+      if(!heading.dataset.defaultTitle){ heading.dataset.defaultTitle = heading.textContent?.trim() || ''; }
+      if(topicLabel){
+        heading.textContent = `${topicLabel} Briefings`;
+      } else if(heading.dataset.defaultTitle){
+        heading.textContent = heading.dataset.defaultTitle;
+      }
+    }
     function trending(){ return heroCandidates.slice(0,5); }
     function isTrending(id){ return trendingSet.has(id); }
 
@@ -394,9 +503,19 @@
       const normalized = (category || '').toLowerCase();
       if(normalized === 'blog'){
         window.MIROZA.blogs?.ready().then(()=> window.MIROZA.blogs.mountCategorySection()).catch(()=>{});
-      } else {
-        window.MIROZA.pagination.mount({ targetSelector:'#category-list', controlsSelector:'#category-pagination', getData:()=>filterByCategory(category), pageSize:10, emptyMessage:`${category} stories publishing soon.`, mode:'load-more', autoLoad:true });
+        renderTrending();
+        return;
       }
+      const attrList = parseCategoryList(document.body.dataset.categories || '');
+      const params = typeof URLSearchParams !== 'undefined' ? new URLSearchParams(window.location.search || '') : null;
+      const topicParam = params?.get('topic') || '';
+      const topicSlug = normalizeCategory(topicParam);
+      const baseItems = attrList.length ? filterByCategoryList(attrList) : filterByCategory(category);
+      const activeItems = topicSlug ? baseItems.filter(item => normalizeCategory(item.category) === topicSlug) : baseItems;
+      const emptyLabel = topicSlug && topicParam ? `${topicParam} coverage is publishing soon.` : `${category} stories publishing soon.`;
+      syncCategoryHeading(topicParam);
+      highlightTopicChips(topicSlug);
+      window.MIROZA.pagination.mount({ targetSelector:'#category-list', controlsSelector:'#category-pagination', getData:()=>activeItems, pageSize:10, emptyMessage: emptyLabel, mode:'load-more', autoLoad:true });
       renderTrending();
     }
 
@@ -1653,14 +1772,7 @@
 
     function buildCategoryRoute(slug){
       if(!slug) return null;
-      const map = {
-        news:'/news.html',
-        blog:'/blog.html',
-        article:'/articles.html',
-        articles:'/articles.html',
-        world:'/news.html#world'
-      };
-      return map[slug] || null;
+      return resolveCategoryRoute(slug);
     }
 
     function mapToFilterKey(slug){
@@ -1888,6 +2000,7 @@
     window.MIROZA.a11y.init();
     window.MIROZA.vitals.init();
     window.MIROZA.pwa.register();
+    patchLegacyCategoryLinks();
     // Theme toggle button binding
     const themeBtn = window.MIROZA.utils.qs('.theme-toggle'); if(themeBtn){ themeBtn.addEventListener('click', window.MIROZA.theme.toggle); }
     // Dynamic year

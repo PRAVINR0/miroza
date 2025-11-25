@@ -420,7 +420,7 @@ def build_html(
 </head>
 <body data-page=\"blog-article\" data-blog-slug=\"{slug}\">
   <a href=\"#content\" class=\"skip-link\">Skip to content</a>
-  <header class=\"site-header\"><div class=\"header-inner\"><a class=\"logo\" href=\"/\"><img src=\"/assets/icons/logo.svg\" alt=\"MIROZA logo\" width=\"40\" height=\"40\" loading=\"lazy\" /> MIROZA</a><nav class=\"main-nav\" aria-label=\"Primary navigation\"><ul><li><a href=\"/\">Home</a></li><li><a href=\"/news/index.html\">News</a></li><li><a href=\"/category/blog.html\">Blog</a></li><li><a href=\"/category/articles.html\">Articles</a></li></ul></nav><button class=\"theme-toggle\" aria-label=\"Toggle dark or light\"><img src=\"/assets/icons/moon.svg\" alt=\"Toggle theme\" width=\"24\" height=\"24\" /></button></div></header>
+    <header class=\"site-header\"><div class=\"header-inner\"><a class=\"logo\" href=\"/\"><img src=\"/assets/icons/logo.svg\" alt=\"MIROZA logo\" width=\"40\" height=\"40\" loading=\"lazy\" /> MIROZA</a><nav class=\"main-nav\" aria-label=\"Primary navigation\"><ul><li><a href=\"/\">Home</a></li><li><a href=\"/news.html\">News</a></li><li><a href=\"/blog.html\">Blog</a></li><li><a href=\"/articles.html\">Articles</a></li></ul></nav><button class=\"theme-toggle\" aria-label=\"Toggle dark or light\"><img src=\"/assets/icons/moon.svg\" alt=\"Toggle theme\" width=\"24\" height=\"24\" /></button></div></header>
   <main id=\"content\" tabindex=\"-1\">
     <article class=\"single-article\" aria-labelledby=\"headline\">
       <header>
@@ -432,7 +432,7 @@ def build_html(
 {sections_html}
       <h2>Conclusion</h2>
       <p>{conclusion}</p>
-      <p><a class=\"back-link\" href=\"/index.html\">← Back to Home</a></p>
+    <p><a class=\"back-link\" href=\"/blog.html\">← Back to Blog hub</a></p>
     </article>
   </main>
   <footer class=\"site-footer\"><div class=\"footer-grid\"><div><h3>MIROZA</h3><p>Modern news and articles hub.</p></div></div><p class=\"copyright\">© <span id=\"year\"></span> MIROZA.</p></footer>
