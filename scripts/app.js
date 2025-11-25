@@ -67,7 +67,8 @@
     const meta=document.createElement('p');
     meta.className='card-meta';
     const viewsLabel = window.MIROZA.utils.formatNumber(post.views || 0);
-    meta.textContent=`${post.category || 'Story'} • ${viewsLabel} views`;
+    const metaLabel = post.metaLabel || `${post.category || 'Story'} • ${viewsLabel} views`;
+    meta.textContent=metaLabel;
     const ex=document.createElement('p');
     ex.className='card-excerpt';
     ex.innerHTML=window.MIROZA.utils.safeHTML(post.excerpt);
@@ -442,6 +443,111 @@
     }
 
     return { mount };
+  })();
+
+  /* India News Feed */
+  window.MIROZA.indiaNews = (function(){
+    const dataUrl = '/data/news.json';
+    let items = [];
+    let readyPromise = null;
+
+    function fetchNews(){
+      return fetch(dataUrl)
+        .then(resp => resp.json())
+        .then(json => {
+          items = normalize(json);
+          return items;
+        })
+        .catch(err => {
+          console.error('MIROZA: Unable to load India news feed', err);
+          items = [];
+          return items;
+        });
+    }
+
+    function normalize(payload){
+      const source = Array.isArray(payload) ? payload : [];
+      return source.map((entry, index) => {
+        const slug = entry.slug || `india-news-${index+1}`;
+        const dateStr = entry.date || '';
+        const readableDate = formatDate(dateStr);
+        const category = entry.category || 'India';
+        const title = entry.title || 'India desk update';
+        return {
+          id: slug,
+          slug,
+          title,
+          excerpt: entry.excerpt || '',
+          category,
+          date: dateStr,
+          metaLabel: readableDate ? `${category} • ${readableDate}` : category,
+          link: entry.contentFile || `/news/${slug}.html`,
+          image: entry.image ? { src: entry.image, alt: title, sizes: DEFAULT_IMAGE_SIZES } : FALLBACK_IMAGE
+        };
+      }).sort((a, b) => {
+        const timeA = new Date(a.date || 0).getTime();
+        const timeB = new Date(b.date || 0).getTime();
+        return timeB - timeA;
+      });
+    }
+
+    function formatDate(value){
+      if(!value) return '';
+      const parsed = new Date(value);
+      if(isNaN(parsed)) return value;
+      try {
+        return new Intl.DateTimeFormat('en-US', { month:'short', day:'2-digit', year:'numeric' }).format(parsed);
+      } catch(e){
+        return parsed.toISOString().slice(0, 10);
+      }
+    }
+
+    function mountHome(){
+      if(document.body?.dataset?.page !== 'home') return;
+      if(!window.MIROZA.utils.qs('#india-news-cards')) return;
+      window.MIROZA.pagination.mount({
+        targetSelector:'#india-news-cards',
+        controlsSelector:'#india-news-controls',
+        getData:()=>items,
+        pageSize:4,
+        emptyMessage:'India desk coverage publishes shortly.',
+        mode:'load-more',
+        autoLoad:true
+      });
+    }
+
+    function mountHub(){
+      if(document.body?.dataset?.page !== 'india-news') return;
+      if(!window.MIROZA.utils.qs('#india-news-list')) return;
+      window.MIROZA.pagination.mount({
+        targetSelector:'#india-news-list',
+        controlsSelector:'#india-news-pagination',
+        getData:()=>items,
+        pageSize:6,
+        emptyMessage:'India desk stories are being prepared.',
+        mode:'load-more',
+        autoLoad:true
+      });
+    }
+
+    function hydrate(){
+      const pageType = document.body?.dataset?.page;
+      if(pageType === 'home') mountHome();
+      if(pageType === 'india-news') mountHub();
+    }
+
+    function init(){
+      const pageType = document.body?.dataset?.page;
+      if(pageType !== 'home' && pageType !== 'india-news') return;
+      ready().then(()=> hydrate());
+    }
+
+    function ready(){
+      if(!readyPromise){ readyPromise = fetchNews(); }
+      return readyPromise;
+    }
+
+    return { init, ready, items:()=>items.slice() };
   })();
 
   /* Link Prefetch */
@@ -1588,6 +1694,7 @@
     window.MIROZA.theme.init();
     window.MIROZA.nav.init();
     window.MIROZA.posts.init();
+    window.MIROZA.indiaNews.init();
     window.MIROZA.prefetch.init();
     window.MIROZA.forms.init();
     window.MIROZA.community.init();
