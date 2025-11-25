@@ -10,6 +10,11 @@ MIROZA is a modern, performant, accessible news / articles / blog platform scaff
 - Skeleton loaders while content (JSON) fetches
 - Prefetch on link hover / touch for perceived performance
 - Service Worker caches core shell + offline page with runtime strategies for data/images
+- Live search suggestions powered by cached post JSON
+- Quick-find drawer (⌘/Ctrl+K) for recent reads, saved stories, and category jumps
+- Category filter chips for the home feed (news, blog, articles, world)
+- Hero tagline rotation plus inline trust badges linking to privacy/security blurbs
+- Polished hero + navigation micro-animations for a richer UX feel
 - SEO: meta tags, OpenGraph, Twitter Card, JSON-LD for site & articles
 - Security: strict CSP example, external links use `rel="noopener noreferrer"`
 - Performance: lazy-loaded images, minimal critical CSS inline, transform/opacity animations
@@ -53,6 +58,26 @@ python -m http.server 8080
 
 Visit `http://localhost:8080` and inspect the Network tab: the service worker should register.
 
+### Quick UX Smoke Test
+1. Toggle the navigation (desktop + mobile widths) to see the underline/focus animation.
+2. Hover the hero image/cards to confirm the parallax glow and depth transitions.
+3. Scroll past the hero ensuring sticky header blur and back-to-top button behave smoothly.
+
+## Quick Find Drawer
+- Keyboard shortcut: press `⌘K` (macOS) or `Ctrl+K` (Windows/Linux) anywhere to open.
+- Tracks clicks on any element with `data-track-story` to populate recents via `localStorage` key `miroza_recent_reads_v1`.
+- Saved stories combine manual pins (from the drawer) and article “Appreciate” hearts, stored under `miroza_saved_stories_v1`.
+- Category chips map directly to the latest feed filters when available; otherwise they deep-link to the matching `/category/*.html` page.
+- Drawer focus returns to the original trigger for accessibility, and opening the panel locks body scroll to avoid background jumps.
+
+## Content Pipeline Workflow
+1. Draft the long-form article under `articles/<slug>.html` with correct meta/JSON-LD and assign a unique `id` in `data/posts.json`.
+2. Export responsive imagery (400/800/1200) and, when available, include AVIF/WebP sources by adding an `image.sources` array (see `buildCard` in `scripts/app.js`).
+3. Update `data/posts.json` with the new entry, ensuring `category`, `date`, `views`, and `link`/`slug` are set.
+4. Rebuild the home hero queue (top views automatically fill) or manually tag hero CTA by calling `window.MIROZA.hero.setItems([...])` in `app.js` if bespoke ordering is required.
+5. Run a quick pass: open the site locally, interact with the new card, verify it appears in quick-find recents, and confirm Lighthouse/CLS metrics in `localStorage` (`miroza_vitals_snapshot`).
+
+
 ## Theming
 - Variables defined for light & dark palettes in `styles.css`.
 - Theme persistence stored in `localStorage` (`miroza_theme`).
@@ -84,7 +109,9 @@ Visit `http://localhost:8080` and inspect the Network tab: the service worker sh
 - Responsive SVG sets reduce payload without sacrificing quality.
 - Prefetched links + paginated DOM operations keep bundle small.
 - Additional optimization: inline font preload once custom fonts are selected.
-- Consider responsive bitmap sources (WebP/AVIF) if photography is added later.
+- `window.MIROZA.vitals` samples LCP/FID/CLS via `PerformanceObserver` and persists snapshots to `localStorage` (`miroza_vitals_snapshot`) for Lighthouse parity checks.
+- Picture components accept optional `image.sources` entries so you can ship AVIF/WebP alongside existing SVG/PNG assets without touching layout code.
+- Dedicated `/privacy.html` and `/security.html` outlines capture the policies you can share with stakeholders; the hero trust badges and assurance cards link directly to them.
 
 ## PWA
 - Simplified `manifest.json` with base icon.

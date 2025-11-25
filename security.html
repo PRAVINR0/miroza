@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MIROZA Security Checklist</title>
+  <meta name="description" content="MIROZA summarizes the operational security controls protecting editorial tooling." />
+  <link rel="stylesheet" href="/styles/styles.css" />
+</head>
+<body data-page="policy" data-policy="security">
+  <a href="#main" class="skip-link">Skip to content</a>
+  <header class="site-header" aria-label="Site header">
+    <div class="header-inner">
+      <a class="logo" href="/" aria-label="MIROZA Home">
+        <img src="/assets/icons/logo.svg" alt="MIROZA logo" width="40" height="40" loading="lazy" />
+        <span class="logo-text">MIROZA</span>
+      </a>
+      <nav class="main-nav" aria-label="Primary navigation">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/category/news.html">News</a></li>
+          <li><a href="/category/blog.html">Blog</a></li>
+          <li><a href="/category/articles.html">Articles</a></li>
+          <li><a href="#main">Security</a></li>
+        </ul>
+      </nav>
+      <button class="theme-toggle" aria-label="Toggle dark/light mode"><img src="/assets/icons/moon.svg" alt="Toggle theme" width="24" height="24" /></button>
+    </div>
+  </header>
+  <main id="main" tabindex="-1">
+    <section class="policy-doc" aria-labelledby="security-heading">
+      <p class="hero-tag">Security checklist</p>
+      <h1 id="security-heading">Operational security that scales with partners</h1>
+      <p>Use this checklist when briefing IT, legal, or procurement teams on how MIROZA protects content systems and customer data.</p>
+      <div class="policy-doc__grid">
+        <article>
+          <h2>Controls</h2>
+          <ul>
+            <li>Role-based access with just-in-time elevation for editorial tooling.</li>
+            <li>All data in transit uses TLS 1.3; at rest encryption keys rotate every 90 days.</li>
+            <li>SSO + hardware-backed MFA available for newsroom partners.</li>
+          </ul>
+        </article>
+        <article>
+          <h2>Monitoring</h2>
+          <ul>
+            <li>Error budgets tracked by service; regressions alert the on-call desk.</li>
+            <li>Automated dependency scans run nightly with SBOM exports.</li>
+            <li>Quarterly tabletop exercises drill outage, data-loss, and abuse scenarios.</li>
+          </ul>
+        </article>
+        <article>
+          <h2>Assurance</h2>
+          <ul>
+            <li>SOC 2 binder updated in lockstep with policy and infrastructure changes.</li>
+            <li>Pen tests scheduled twice per year with remediation tracked in Jira.</li>
+            <li>Security contact: <a href="mailto:security@example.com">security@example.com</a> (PGP available on request).</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer" aria-label="Site footer">
+    <div class="footer-grid">
+      <div>
+        <h3>MIROZA</h3>
+        <p>Modern news & articles hub. Fast, accessible, secure.</p>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <ul>
+          <li><a href="mailto:privacy@example.com">privacy@example.com</a></li>
+          <li><a href="mailto:security@example.com">security@example.com</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Return</h3>
+        <ul>
+          <li><a href="/">Back to homepage</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="copyright">© <span id="year"></span> MIROZA. All rights reserved.</p>
+  </footer>
+  <script src="/scripts/app.js" defer></script>
+</body>
+</html>

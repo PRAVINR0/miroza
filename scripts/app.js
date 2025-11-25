@@ -40,6 +40,14 @@
     if(isTrending) card.dataset.trending='true'; else card.removeAttribute('data-trending');
 
     const imgData = post.image || FALLBACK_IMAGE;
+    const picture=document.createElement('picture');
+    if(Array.isArray(imgData.sources)){
+      imgData.sources.forEach(sourceCfg => {
+        const source=document.createElement('source');
+        Object.entries(sourceCfg || {}).forEach(([attr, value])=>{ if(value) source.setAttribute(attr, value); });
+        picture.appendChild(source);
+      });
+    }
     const img=document.createElement('img');
     img.loading='lazy';
     img.decoding='async';
@@ -48,7 +56,8 @@
     img.setAttribute('sizes', imgData.sizes || DEFAULT_IMAGE_SIZES);
     img.alt = imgData.alt || post.title;
     img.width=400; img.height=225;
-    card.appendChild(img);
+    picture.appendChild(img);
+    card.appendChild(picture);
 
     const content=document.createElement('div');
     content.className='card-content';
@@ -68,6 +77,10 @@
     link.className='read-more';
     link.setAttribute('data-prefetch','');
     link.setAttribute('data-transition','');
+    link.dataset.trackStory = post.id ?? post.slug ?? '';
+    link.dataset.trackSlug = post.slug || '';
+    link.dataset.trackTitle = post.title;
+    link.dataset.trackCategory = post.category || 'Story';
     content.appendChild(h);
     content.appendChild(meta);
     content.appendChild(ex);
@@ -81,11 +94,20 @@
   /* Hero Rotator */
   window.MIROZA.hero = (function(){
     const ROTATE_INTERVAL = 12000;
+    const TAGLINE_INTERVAL = 9000;
+    const HERO_TAGLINES = [
+      'Climate finance, corridors, and civic infrastructure.',
+      'Ports, policy, and the people connecting them.',
+      'Signals our partners brief boards with before dawn.',
+      'Emerging market pilots, resilience, and governance.'
+    ];
     let items = [];
     let index = 0;
     let timer = null;
+    let taglineIndex = 0;
+    let taglineTimer = null;
     let controlsBound = false;
-    const els = { tag:null, title:null, excerpt:null, link:null, picture:null, image:null, advance:null };
+    const els = { tag:null, title:null, excerpt:null, link:null, picture:null, image:null, advance:null, tagline:null };
 
     function cacheEls(){
       els.tag = window.MIROZA.utils.qs('#hero-tag');
@@ -95,6 +117,7 @@
       els.picture = window.MIROZA.utils.qs('#hero-picture');
       els.image = window.MIROZA.utils.qs('#hero-image');
       els.advance = window.MIROZA.utils.qs('.hero-advance');
+      els.tagline = window.MIROZA.utils.qs('[data-hero-tagline]');
     }
 
     function bindControls(){
@@ -110,6 +133,24 @@
       timer = window.setInterval(()=> advance(false), ROTATE_INTERVAL);
     }
 
+    function startTaglines(){
+      if(!els.tagline || HERO_TAGLINES.length < 2) {
+        if(HERO_TAGLINES.length === 1) applyTagline(HERO_TAGLINES[0]);
+        return;
+      }
+      stopTaglines();
+      applyTagline(HERO_TAGLINES[taglineIndex]);
+      if(window.MIROZA.utils.prefersReducedMotion()) return;
+      taglineTimer = window.setInterval(()=> advanceTagline(), TAGLINE_INTERVAL);
+    }
+
+    function stopTaglines(){ if(taglineTimer){ window.clearInterval(taglineTimer); taglineTimer=null; } }
+
+    function advanceTagline(){
+      taglineIndex = (taglineIndex + 1) % HERO_TAGLINES.length;
+      applyTagline(HERO_TAGLINES[taglineIndex]);
+    }
+
     function getLink(post){ return post.link || (post.slug ? `/articles/${post.slug}.html` : '#'); }
 
     function apply(post){
@@ -121,6 +162,10 @@
       if(els.link){
         els.link.href = getLink(post);
         els.link.setAttribute('data-prefetch','');
+        els.link.dataset.trackStory = post.id ?? post.slug ?? 'hero';
+        els.link.dataset.trackSlug = post.slug || '';
+        els.link.dataset.trackTitle = post.title;
+        els.link.dataset.trackCategory = post.category || 'Story';
       }
       const imageData = post.image || FALLBACK_IMAGE;
       if(els.image){
@@ -130,6 +175,11 @@
         els.image.alt = imageData.alt || post.title;
       }
       if(els.picture){ els.picture.dataset.storyId = post.id; }
+    }
+
+    function applyTagline(text){
+      if(!els.tagline || !text) return;
+      els.tagline.textContent = text;
     }
 
     function advance(manual=false){
@@ -147,14 +197,16 @@
       apply(items[0]);
       bindControls();
       startTimer();
+      startTaglines();
     }
 
     function setItems(heroItems=[]){
       items = heroItems.filter(Boolean);
       index = 0;
-      if(!items.length){ stopTimer(); return; }
+      if(!items.length){ stopTimer(); stopTaglines(); return; }
       apply(items[0]);
       startTimer();
+      startTaglines();
     }
 
     return { mount, setItems, next:()=>advance(true) };
@@ -185,8 +237,9 @@
     const dataUrl = '/data/posts.json';
     let posts=[];
     let readyPromise=null;
-    let heroCandidates=[];
-    let trendingSet=new Set();
+      let heroCandidates=[];
+      let trendingSet=new Set();
+      const postsById = new Map();
 
     function fetchPosts(){
       return fetch(dataUrl)
@@ -198,6 +251,11 @@
     function computeDerived(){
       heroCandidates = [...posts].sort((a,b)=> (b.views||0) - (a.views||0));
       trendingSet = new Set(heroCandidates.slice(0,5).map(p=>p.id));
+        postsById.clear();
+        posts.forEach(post => {
+          const key = (post.id ?? post.slug ?? post.link ?? Math.random()).toString();
+          postsById.set(key, post);
+        });
     }
 
     function filterByCategory(cat){
@@ -233,12 +291,30 @@
         const dateB = new Date(b.date || 0).getTime();
         return dateB - dateA;
       });
-      window.MIROZA.pagination.mount({ targetSelector:'#latest-cards', controlsSelector:'#latest-pagination', getData:()=>latestOrder, pageSize:8, emptyMessage:'Fresh stories are on the way.', mode:'load-more', autoLoad:true });
+      let latestFilter='all';
+      const latestPagination = window.MIROZA.pagination.mount({
+        targetSelector:'#latest-cards',
+        controlsSelector:'#latest-pagination',
+        getData:()=>filterLatest(latestOrder, latestFilter),
+        pageSize:8,
+        emptyMessage:'Fresh stories are on the way.',
+        mode:'load-more',
+        autoLoad:true
+      });
+      window.MIROZA.filters?.initLatest({ onChange:(filter)=>{
+        latestFilter = filter;
+        latestPagination?.render();
+      }});
       window.MIROZA.pagination.mount({ targetSelector:'#news-cards', controlsSelector:'#news-pagination', getData:()=>filterByCategory('News'), pageSize:6, emptyMessage:'News stories publishing soon.', mode:'load-more' });
       window.MIROZA.pagination.mount({ targetSelector:'#blog-cards', controlsSelector:'#blog-pagination', getData:()=>filterByCategory('Blog'), pageSize:6, emptyMessage:'Blog stories publishing soon.', mode:'load-more' });
       window.MIROZA.pagination.mount({ targetSelector:'#articles-cards', controlsSelector:'#articles-pagination', getData:()=>filterByCategory('Article'), pageSize:6, emptyMessage:'Long-form stories publishing soon.', mode:'load-more' });
       renderTrending();
       window.MIROZA.hero?.mount(heroCandidates.slice(0,5));
+    }
+    function filterLatest(source, filter){
+      if(filter==='all') return source;
+      const match = (filter || '').toLowerCase();
+      return source.filter(item => (item.category || '').toLowerCase() === match);
     }
 
     function mountCategoryPage(){
@@ -265,7 +341,9 @@
 
     function heroFeed(){ return heroCandidates.slice(0,5); }
 
-    return { init, ready, posts:()=>posts, filterByCategory, trending, isTrending, heroFeed };
+    function findById(id){ if(!id) return null; return postsById.get(id.toString()) || posts.find(p=> (p.slug || '') === id); }
+
+    return { init, ready, posts:()=>posts, filterByCategory, trending, isTrending, heroFeed, byId:findById };
   })();
 
   /* Pagination Helper */
@@ -772,7 +850,600 @@
 
     function init(){ enhanceArticle(); }
 
+    function getLikedMap(){ return { ...readLikes() }; }
+
+    return { init, getLikedMap };
+  })();
+
+  /* Search Suggestions */
+  window.MIROZA.search = (function(){
+    const MAX_RESULTS = 5;
+    const DEBOUNCE_MS = 120;
+    let input, panel, posts = [], results = [], activeIndex = -1, debounceTimer;
+
+    function init(){
+      input = window.MIROZA.utils.qs('#search');
+      panel = window.MIROZA.utils.qs('#search-suggestions');
+      if(!input || !panel) return;
+      bindEvents();
+      window.MIROZA.posts.ready().then(data => { posts = data || []; }).catch(()=>{});
+    }
+
+    function bindEvents(){
+      input.addEventListener('input', handleInput, { passive:true });
+      input.addEventListener('focus', ()=>{ if(input.value.trim().length>=2){ runSearch(input.value.trim()); } });
+      input.addEventListener('keydown', handleKeydown);
+      document.addEventListener('click', e=>{
+        if(e.target === input || panel.contains(e.target)) return;
+        hidePanel();
+      });
+      panel.addEventListener('mousedown', e=> e.preventDefault());
+      panel.addEventListener('click', e=>{
+        const btn = e.target.closest('.search-suggestion');
+        if(!btn) return;
+        const idx = Number(btn.dataset.index);
+        selectResult(idx);
+      });
+    }
+
+    function handleInput(){
+      const value = input.value.trim();
+      window.clearTimeout(debounceTimer);
+      if(value.length < 2){ hidePanel(); return; }
+      debounceTimer = window.setTimeout(()=> runSearch(value), DEBOUNCE_MS);
+    }
+
+    function runSearch(query){
+      const norm = query.toLowerCase();
+      const matches = posts.filter(post => {
+        const haystack = [post.title, post.excerpt, post.category].filter(Boolean).join(' ').toLowerCase();
+        return haystack.includes(norm);
+      }).slice(0, MAX_RESULTS).map(post => ({
+        title: post.title,
+        category: post.category || 'Story',
+        link: post.link || (post.slug ? `/articles/${post.slug}.html` : '#')
+      }));
+      results = matches;
+      activeIndex = matches.length ? 0 : -1;
+      render();
+    }
+
+    function render(){
+      if(!panel) return;
+      panel.innerHTML='';
+      if(!results.length){ hidePanel(); return; }
+      results.forEach((item, index)=>{
+        const btn=document.createElement('button');
+        btn.type='button';
+        btn.className='search-suggestion'+(index===activeIndex?' is-active':'');
+        btn.dataset.index=String(index);
+        btn.setAttribute('role','option');
+        const title=document.createElement('strong');
+        title.textContent=item.title;
+        const meta=document.createElement('span');
+        meta.textContent=item.category;
+        btn.appendChild(title);
+        btn.appendChild(meta);
+        panel.appendChild(btn);
+      });
+      panel.hidden=false;
+    }
+
+    function handleKeydown(e){
+      if(panel.hidden) return;
+      if(e.key==='ArrowDown'){ e.preventDefault(); moveActive(1); }
+      else if(e.key==='ArrowUp'){ e.preventDefault(); moveActive(-1); }
+      else if(e.key==='Enter'){ if(activeIndex>-1){ e.preventDefault(); selectResult(activeIndex); } }
+      else if(e.key==='Escape'){ hidePanel(); }
+    }
+
+    function moveActive(step){
+      if(!results.length) return;
+      activeIndex = (activeIndex + step + results.length) % results.length;
+      render();
+    }
+
+    function selectResult(index){
+      const item = results[index];
+      if(!item) return;
+      window.location.href = item.link;
+      hidePanel();
+    }
+
+    function hidePanel(){
+      if(!panel) return;
+      panel.hidden=true;
+      activeIndex=-1;
+      panel.innerHTML='';
+    }
+
     return { init };
+  })();
+
+  /* Filter Controls */
+  window.MIROZA.filters = (function(){
+    let latestController=null;
+    function initLatest({ onChange }={}){
+      const container = window.MIROZA.utils.qs('#latest-filters');
+      if(!container) return;
+      const buttons = window.MIROZA.utils.qsa('button[data-filter]', container);
+      if(!buttons.length) return;
+      let active = 'all';
+
+      function setActive(next){
+        active = next;
+        buttons.forEach(btn=> btn.setAttribute('aria-pressed', btn.dataset.filter === active ? 'true':'false'));
+        onChange?.(active);
+      }
+      latestController = { setActive };
+
+      container.addEventListener('click', e=>{
+        const btn = e.target.closest('button[data-filter]');
+        if(!btn || btn.dataset.filter === active) return;
+        setActive(btn.dataset.filter);
+      });
+    }
+
+    function setLatestFilter(filter){ if(filter) latestController?.setActive(filter); }
+
+    return { initLatest, setLatestFilter };
+  })();
+
+  /* Quick Find Drawer */
+  window.MIROZA.quickFind = (function(){
+    const STORAGE_KEYS = {
+      recent:'miroza_recent_reads_v1',
+      saved:'miroza_saved_stories_v1'
+    };
+    const MAX_RECENTS = 8;
+    const state = { recents:[], savedManual:[] };
+    const els = { panel:null, toggle:null, recent:null, saved:null, categories:null, title:null };
+    const filterButtons = new Set();
+    let postsCache=[];
+    let cachedSavedStories=[];
+    let lastFocus=null;
+
+    function init(){
+      cacheEls();
+      if(!els.panel || !els.toggle) return;
+      loadStorage();
+      cacheFilterKeys();
+      bindUI();
+      hydratePosts();
+      renderRecent();
+      renderSaved();
+      renderCategories();
+    }
+
+    function cacheEls(){
+      els.panel = document.getElementById('quick-find');
+      els.toggle = window.MIROZA.utils.qs('.quick-find-toggle');
+      els.recent = document.getElementById('quick-find-recent');
+      els.saved = document.getElementById('quick-find-saved');
+      els.categories = document.getElementById('quick-find-categories');
+      els.title = document.getElementById('quick-find-title');
+    }
+
+    function cacheFilterKeys(){
+      window.MIROZA.utils.qsa('#latest-filters button[data-filter]').forEach(btn =>{
+        if(btn?.dataset.filter){ filterButtons.add(btn.dataset.filter); }
+      });
+    }
+
+    function bindUI(){
+      els.toggle.addEventListener('click', toggle);
+      window.MIROZA.utils.qsa('[data-close="quick-find"]', els.panel).forEach(btn => btn.addEventListener('click', close));
+      document.addEventListener('keydown', handleKeydown);
+      document.addEventListener('click', handleTrackedLinkClick, true);
+      els.panel.addEventListener('click', handlePanelClick);
+      els.categories?.addEventListener('click', handleCategoryClick);
+    }
+
+    function hydratePosts(){
+      window.MIROZA.posts?.ready?.().then(posts => {
+        postsCache = posts || [];
+        renderCategories();
+        renderSaved();
+      }).catch(()=>{});
+    }
+
+    function loadStorage(){
+      state.recents = readStorage(STORAGE_KEYS.recent);
+      state.savedManual = readStorage(STORAGE_KEYS.saved);
+    }
+
+    function readStorage(key){
+      try {
+        const raw = window.localStorage?.getItem(key);
+        return raw ? JSON.parse(raw) : [];
+      } catch(e){ return []; }
+    }
+
+    function writeStorage(key, value){
+      try { window.localStorage?.setItem(key, JSON.stringify(value)); } catch(e){}
+    }
+
+    function handleKeydown(e){
+      if(e.key === 'Escape' && isOpen()){ e.preventDefault(); close(); return; }
+      if((e.key === 'k' || e.key === 'K') && (e.metaKey || e.ctrlKey)){
+        const target = e.target;
+        if(isTypingContext(target)) return;
+        e.preventDefault();
+        open();
+      }
+    }
+
+    function handleTrackedLinkClick(e){
+      const link = e.target.closest('a[data-track-story]');
+      if(!link) return;
+      const story = extractStory(link);
+      if(!story) return;
+      recordRecent(story);
+    }
+
+    function handlePanelClick(e){
+      const actionBtn = e.target.closest('[data-quick-find-action]');
+      if(actionBtn){
+        const { quickFindAction:action, storyId, storyHref } = actionBtn.dataset;
+        if(action === 'save'){ toggleManualSave(storyId, storyHref); }
+        if(action === 'remove'){ removeManualSave(storyId, storyHref); }
+        return;
+      }
+      const link = e.target.closest('.quick-find__details a');
+      if(link){ close(); }
+    }
+
+    function handleCategoryClick(e){
+      const btn = e.target.closest('button[data-category]');
+      if(!btn) return;
+      const action = btn.dataset.action;
+      if(action === 'filter'){
+        const key = btn.dataset.filterKey || btn.dataset.category;
+        if(key){ window.MIROZA.filters?.setLatestFilter?.(key); }
+        close();
+        scrollToLatest(() => focusFilterButton(key));
+        return;
+      }
+      if(action === 'navigate' && btn.dataset.href){
+        close();
+        window.location.href = btn.dataset.href;
+      }
+    }
+
+    function focusFilterButton(key){
+      if(!key) return;
+      window.setTimeout(()=>{
+        const btn = window.MIROZA.utils.qs(`#latest-filters button[data-filter="${key}"]`);
+        btn?.focus();
+      }, 220);
+    }
+
+    function isTypingContext(node){
+      if(!node) return false;
+      const tag = node.tagName;
+      return node.isContentEditable || tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT';
+    }
+
+    function open(){
+      if(isOpen()) return;
+      lastFocus = document.activeElement;
+      els.panel.hidden = false;
+      document.body.classList.add('quick-find-open');
+      els.toggle.setAttribute('aria-expanded','true');
+      window.requestAnimationFrame(()=> els.title?.focus());
+      renderRecent();
+      renderSaved();
+    }
+
+    function close(){
+      if(!isOpen()) return;
+      els.panel.hidden = true;
+      document.body.classList.remove('quick-find-open');
+      els.toggle.setAttribute('aria-expanded','false');
+      lastFocus?.focus?.();
+      lastFocus = null;
+    }
+
+    function toggle(){ isOpen()? close(): open(); }
+
+    function isOpen(){ return !!els.panel && !els.panel.hidden; }
+
+    function extractStory(link){
+      const dataset = link.dataset || {};
+      const href = link.href;
+      if(!href) return null;
+      const resolved = resolvePost(dataset.trackStory || dataset.trackSlug);
+      const title = dataset.trackTitle || resolved?.title || link.textContent?.trim();
+      if(!title) return null;
+      return {
+        id: dataset.trackStory || resolved?.id || dataset.trackSlug || href,
+        slug: dataset.trackSlug || resolved?.slug || '',
+        title,
+        category: dataset.trackCategory || resolved?.category || 'Story',
+        href,
+        ts: Date.now()
+      };
+    }
+
+    function resolvePost(id){
+      if(!id) return null;
+      return window.MIROZA.posts?.byId?.(id) || null;
+    }
+
+    function recordRecent(entry){
+      if(!entry) return;
+      const existing = state.recents.filter(item => !matchesStory(item, entry.id, entry.href));
+      state.recents = [entry, ...existing].slice(0, MAX_RECENTS);
+      persistRecents();
+      if(isOpen()) renderRecent();
+    }
+
+    function persistRecents(){ writeStorage(STORAGE_KEYS.recent, state.recents); }
+
+    function persistSaved(){ writeStorage(STORAGE_KEYS.saved, state.savedManual.slice(0, MAX_RECENTS)); }
+
+    function toggleManualSave(id, href){
+      const idx = state.savedManual.findIndex(item => matchesStory(item, id, href));
+      if(idx > -1){
+        state.savedManual.splice(idx,1);
+      } else {
+        const source = findStory(id, href);
+        if(source){ state.savedManual.unshift({ ...source, ts: Date.now() }); }
+      }
+      state.savedManual = state.savedManual.slice(0, MAX_RECENTS);
+      persistSaved();
+      renderSaved();
+      renderRecent();
+    }
+
+    function removeManualSave(id, href){
+      const next = state.savedManual.filter(item => !matchesStory(item, id, href));
+      if(next.length === state.savedManual.length) return;
+      state.savedManual = next;
+      persistSaved();
+      renderSaved();
+      renderRecent();
+    }
+
+    function findStory(id, href){
+      return state.recents.find(item => matchesStory(item, id, href))
+        || state.savedManual.find(item => matchesStory(item, id, href))
+        || buildStoryFromPost(resolvePost(id) || findPostByHref(href));
+    }
+
+    function findPostByHref(href){
+      if(!href || !postsCache.length) return null;
+      try {
+        const url = new URL(href, window.location.origin);
+        const slug = url.pathname.split('/').pop()?.replace('.html','');
+        if(!slug) return null;
+        return window.MIROZA.posts?.byId?.(slug) || null;
+      } catch(e){ return null; }
+    }
+
+    function buildStoryFromPost(post){
+      if(!post) return null;
+      const ts = Date.parse(post.date || '') || Date.now();
+      return {
+        id: post.id || post.slug || post.link,
+        slug: post.slug || '',
+        title: post.title,
+        category: post.category || 'Story',
+        href: post.link || (post.slug ? `/articles/${post.slug}.html` : '#'),
+        ts
+      };
+    }
+
+    function matchesStory(item, id, href){
+      if(!item) return false;
+      if(id && (item.id === id || item.slug === id)) return true;
+      if(href && item.href === href) return true;
+      return false;
+    }
+
+    function refreshSavedCache(){
+      cachedSavedStories = getSavedStories();
+      return cachedSavedStories;
+    }
+
+    function getSavedStories(){
+      const seen=new Set();
+      const manual = state.savedManual.map(entry => ({ ...entry, origin:'manual' }));
+      const liked = mapLikedStories();
+      return [...manual, ...liked].filter(item => {
+        const key = item.id || item.href;
+        if(!key || seen.has(key)) return false;
+        seen.add(key);
+        return true;
+      });
+    }
+
+    function mapLikedStories(){
+      const likedMap = window.MIROZA.community?.getLikedMap?.() || {};
+      return Object.keys(likedMap).map(key => {
+        const slug = key.split('/').filter(Boolean).pop();
+        const post = slug ? (window.MIROZA.posts?.byId?.(slug) || postsCache.find(p => p.slug === slug)) : null;
+        if(!post) return null;
+        return { ...buildStoryFromPost(post), origin:'liked' };
+      }).filter(Boolean);
+    }
+
+    function renderRecent(){
+      if(!els.recent) return;
+      const fragment=document.createDocumentFragment();
+      const recents = state.recents;
+      const savedKeys = new Set(refreshSavedCache().map(item => item.id || item.href));
+      if(!recents.length){
+        fragment.appendChild(buildEmptyRow('Explore a story to see it here.'));
+      } else {
+        recents.forEach(item => fragment.appendChild(buildListRow(item, {
+          allowToggle:true,
+          isPinned: savedKeys.has(item.id || item.href)
+        })));
+      }
+      els.recent.innerHTML='';
+      els.recent.appendChild(fragment);
+    }
+
+    function renderSaved(){
+      if(!els.saved) return;
+      const fragment=document.createDocumentFragment();
+      const saved = refreshSavedCache();
+      if(!saved.length){
+        fragment.appendChild(buildEmptyRow('Tap the heart inside an article or pin a recent story.'));
+      } else {
+        saved.forEach(item => fragment.appendChild(buildListRow(item, {
+          allowRemoval: item.origin === 'manual'
+        })));
+      }
+      els.saved.innerHTML='';
+      els.saved.appendChild(fragment);
+    }
+
+    function renderCategories(){
+      if(!els.categories) return;
+      els.categories.innerHTML='';
+      const categories = deriveCategories();
+      if(!categories.length){
+        const fallback=document.createElement('p');
+        fallback.className='quick-find__meta';
+        fallback.textContent='Stories are loading…';
+        els.categories.appendChild(fallback);
+        return;
+      }
+      categories.forEach(item => {
+        const btn=document.createElement('button');
+        btn.type='button';
+        btn.dataset.category=item.slug;
+        btn.dataset.action=item.action;
+        if(item.filterKey){ btn.dataset.filterKey=item.filterKey; }
+        if(item.href){ btn.dataset.href=item.href; }
+        btn.textContent = `${item.label} (${item.count})`;
+        els.categories.appendChild(btn);
+      });
+    }
+
+    function deriveCategories(){
+      if(!postsCache.length) return [];
+      const counts = {};
+      postsCache.forEach(post => {
+        const label = (post.category || '').trim();
+        if(!label) return;
+        const slug = normalizeCategory(label);
+        if(!slug) return;
+        if(!counts[slug]) counts[slug] = { label, slug, count:0 };
+        counts[slug].count += 1;
+        counts[slug].label = label;
+      });
+      return Object.values(counts).sort((a,b)=> b.count - a.count).slice(0,8).map(item => {
+        const filterKey = mapToFilterKey(item.slug);
+        if(filterKey) return { ...item, action:'filter', filterKey };
+        const route = buildCategoryRoute(item.slug);
+        if(route) return { ...item, action:'navigate', href: route };
+        return null;
+      }).filter(Boolean);
+    }
+
+    function buildCategoryRoute(slug){
+      if(!slug) return null;
+      const map = {
+        news:'/category/news.html',
+        blog:'/category/blog.html',
+        article:'/category/articles.html',
+        articles:'/category/articles.html',
+        world:'/category/news.html#world'
+      };
+      return map[slug] || null;
+    }
+
+    function mapToFilterKey(slug){
+      if(!slug) return null;
+      if(filterButtons.has(slug)) return slug;
+      if(slug.endsWith('s')){
+        const singular = slug.slice(0,-1);
+        if(filterButtons.has(singular)) return singular;
+      }
+      return null;
+    }
+
+    function normalizeCategory(label){
+      return (label || '').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'');
+    }
+
+    function buildEmptyRow(message){
+      const li=document.createElement('li');
+      li.className='empty';
+      li.textContent=message;
+      return li;
+    }
+
+    function buildListRow(item, { allowToggle=false, isPinned=false, allowRemoval=false }={}){
+      const li=document.createElement('li');
+      const details=document.createElement('div');
+      details.className='quick-find__details';
+      const link=document.createElement('a');
+      link.href=item.href || '#';
+      link.textContent=item.title;
+      link.setAttribute('data-prefetch','');
+      link.setAttribute('data-track-story', item.id || item.slug || '');
+      link.dataset.trackSlug = item.slug || '';
+      link.dataset.trackTitle = item.title;
+      link.dataset.trackCategory = item.category || 'Story';
+      const meta=document.createElement('p');
+      meta.className='quick-find__meta';
+      meta.textContent=[item.category, formatRelativeTime(item.ts)].filter(Boolean).join(' • ');
+      details.appendChild(link);
+      details.appendChild(meta);
+      li.appendChild(details);
+      if(allowToggle){
+        const btn=document.createElement('button');
+        btn.type='button';
+        btn.className='quick-find__action';
+        btn.dataset.quickFindAction='save';
+        btn.dataset.storyId=item.id || '';
+        btn.dataset.storyHref=item.href || '';
+        btn.textContent = isPinned ? 'Saved' : 'Save';
+        btn.setAttribute('aria-pressed', isPinned ? 'true':'false');
+        li.appendChild(btn);
+      } else if(allowRemoval){
+        const btn=document.createElement('button');
+        btn.type='button';
+        btn.className='quick-find__action';
+        btn.dataset.quickFindAction='remove';
+        btn.dataset.storyId=item.id || '';
+        btn.dataset.storyHref=item.href || '';
+        btn.textContent='Remove';
+        li.appendChild(btn);
+      }
+      return li;
+    }
+
+    function formatRelativeTime(ts){
+      if(!ts) return '';
+      const diff = Date.now() - ts;
+      const minute = 60 * 1000;
+      const hour = 60 * minute;
+      const day = 24 * hour;
+      try {
+        const rtf = new Intl.RelativeTimeFormat('en', { numeric:'auto' });
+        if(diff < minute) return 'Just now';
+        if(diff < hour) return rtf.format(-Math.round(diff / minute), 'minute');
+        if(diff < day) return rtf.format(-Math.round(diff / hour), 'hour');
+        return rtf.format(-Math.round(diff / day), 'day');
+      } catch(e){
+        return new Date(ts).toLocaleString();
+      }
+    }
+
+    function scrollToLatest(cb){
+      const section = document.getElementById('latest-heading');
+      if(section){
+        section.scrollIntoView({ behavior: window.MIROZA.utils.prefersReducedMotion()? 'auto':'smooth', block:'start' });
+      }
+      if(typeof cb === 'function'){ window.setTimeout(cb, 300); }
+    }
+
+    return { init, open, close };
   })();
 
   /* Analytics & Diagnostics */
@@ -839,6 +1510,43 @@
     return { init, config:()=>({ ...config }) };
   })();
 
+  /* Core Web Vitals Sampling */
+  window.MIROZA.vitals = (function(){
+    const metrics = {};
+    const STORAGE_KEY = 'miroza_vitals_snapshot';
+    function init(){
+      if(!('PerformanceObserver' in window)) return;
+      observe('largest-contentful-paint', entry => record('lcp', entry.renderTime || entry.loadTime || entry.startTime));
+      observe('first-input', entry => record('fid', entry.processingStart - entry.startTime));
+      observe('layout-shift', entry => { if(!entry.hadRecentInput){ record('cls', ((metrics.cls || 0) + entry.value)); } });
+    }
+
+    function observe(type, handler){
+      try {
+        const observer = new PerformanceObserver(list => {
+          list.getEntries().forEach(entry => handler(entry));
+        });
+        const options = type === 'layout-shift' ? { type, buffered:true } : { type, buffered:true }; // maintain buffered for initial entries
+        observer.observe(options);
+      } catch(e){}
+    }
+
+    function record(name, value){
+      if(typeof value !== 'number' || !isFinite(value)) return;
+      metrics[name] = value;
+      persist();
+      if(window.MIROZA.analytics?.config?.().debug){
+        console.info('[MIROZA][Vitals]', name, value);
+      }
+    }
+
+    function persist(){
+      try { localStorage.setItem(STORAGE_KEY, JSON.stringify(metrics)); } catch(e){}
+    }
+
+    return { init, get:()=>({ ...metrics }) };
+  })();
+
   /* Accessibility Enhancements */
   window.MIROZA.a11y = (function(){
     function skipLinkFocus(){ const skip = window.MIROZA.utils.qs('.skip-link'); if(skip){ skip.addEventListener('click', ()=>{ window.MIROZA.utils.qs('#main')?.focus(); }); } }
@@ -865,8 +1573,11 @@
     window.MIROZA.prefetch.init();
     window.MIROZA.forms.init();
     window.MIROZA.community.init();
+    window.MIROZA.search.init();
+    window.MIROZA.quickFind.init();
     window.MIROZA.ui.init();
     window.MIROZA.a11y.init();
+    window.MIROZA.vitals.init();
     window.MIROZA.pwa.register();
     // Theme toggle button binding
     const themeBtn = window.MIROZA.utils.qs('.theme-toggle'); if(themeBtn){ themeBtn.addEventListener('click', window.MIROZA.theme.toggle); }

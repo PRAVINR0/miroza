@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MIROZA Privacy Memo</title>
+  <meta name="description" content="MIROZA outlines how reader telemetry stays private and compliant." />
+  <link rel="stylesheet" href="/styles/styles.css" />
+</head>
+<body data-page="policy" data-policy="privacy">
+  <a href="#main" class="skip-link">Skip to content</a>
+  <header class="site-header" aria-label="Site header">
+    <div class="header-inner">
+      <a class="logo" href="/" aria-label="MIROZA Home">
+        <img src="/assets/icons/logo.svg" alt="MIROZA logo" width="40" height="40" loading="lazy" />
+        <span class="logo-text">MIROZA</span>
+      </a>
+      <nav class="main-nav" aria-label="Primary navigation">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/category/news.html">News</a></li>
+          <li><a href="/category/blog.html">Blog</a></li>
+          <li><a href="/category/articles.html">Articles</a></li>
+          <li><a href="#main">Memo</a></li>
+        </ul>
+      </nav>
+      <button class="theme-toggle" aria-label="Toggle dark/light mode"><img src="/assets/icons/moon.svg" alt="Toggle theme" width="24" height="24" /></button>
+    </div>
+  </header>
+  <main id="main" tabindex="-1">
+    <section class="policy-doc" aria-labelledby="privacy-heading">
+      <p class="hero-tag">Privacy memo</p>
+      <h1 id="privacy-heading">Reader privacy stays default-on</h1>
+      <p>These notes summarize how MIROZA treats audience insights, telemetry, and contact data across newsletters, quick-find interactions, and article engagement.</p>
+      <div class="policy-doc__grid">
+        <article>
+          <h2>Collection</h2>
+          <ul>
+            <li>Only aggregated analytics are stored; IPs are truncated before leaving the edge.</li>
+            <li>No third-party pixels outside of self-hosted analytics and error tracking.</li>
+            <li>Newsletter opt-ins persist under <code>miroza_newsletter_optin</code> solely for rate-limiting.</li>
+          </ul>
+        </article>
+        <article>
+          <h2>Usage</h2>
+          <ul>
+            <li>Signals inform editorial prioritization and never resell user profiles.</li>
+            <li>Quick-find recents/saves remain inside the browser via localStorage keys.</li>
+            <li>Deletion requests are honored within 5 business days via <a href="mailto:privacy@example.com">privacy@example.com</a>.</li>
+          </ul>
+        </article>
+        <article>
+          <h2>Compliance</h2>
+          <ul>
+            <li>DPIA templates mirror this memo for EU/UK regimes.</li>
+            <li>Regional partners receive change logs before policy updates go live.</li>
+            <li>We document vendors and retention schedules for SOC 2 / ISO mapping.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer" aria-label="Site footer">
+    <div class="footer-grid">
+      <div>
+        <h3>MIROZA</h3>
+        <p>Modern news & articles hub. Fast, accessible, secure.</p>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <ul>
+          <li><a href="mailto:privacy@example.com">privacy@example.com</a></li>
+          <li><a href="mailto:security@example.com">security@example.com</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Return</h3>
+        <ul>
+          <li><a href="/">Back to homepage</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="copyright">© <span id="year"></span> MIROZA. All rights reserved.</p>
+  </footer>
+  <script src="/scripts/app.js" defer></script>
+</body>
+</html>
