@@ -1654,11 +1654,11 @@
     function buildCategoryRoute(slug){
       if(!slug) return null;
       const map = {
-        news:'/category/news.html',
-        blog:'/category/blog.html',
-        article:'/category/articles.html',
-        articles:'/category/articles.html',
-        world:'/category/news.html#world'
+        news:'/news.html',
+        blog:'/blog.html',
+        article:'/articles.html',
+        articles:'/articles.html',
+        world:'/news.html#world'
       };
       return map[slug] || null;
     }

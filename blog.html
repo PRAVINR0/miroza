@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MIROZA Blog Library</title>
+  <meta name="description" content="Dive into commentary, frameworks, and playbooks from the MIROZA editorial team." />
+  <link rel="canonical" href="https://example.com/blog.html" />
+  <meta property="og:title" content="MIROZA Blog Library" />
+  <meta property="og:description" content="Fresh thinking on policy, product, capital, and culture from MIROZA." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://example.com/blog.html" />
+  <meta property="og:image" content="https://example.com/assets/images/posts/focus-hacks-1200.svg" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://images.unsplash.com; font-src 'self'; connect-src 'self'; object-src 'none'; frame-ancestors 'none';" />
+  <link rel="stylesheet" href="/styles/styles.css" />
+  <script>(function(){try{var t=localStorage.getItem('miroza_theme'); if(t){document.documentElement.dataset.theme=t;}}catch(e){}})();</script>
+</head>
+<body data-page="category" data-category="Blog">
+  <a href="#content" class="skip-link">Skip to content</a>
+  <header class="site-header"><div class="header-inner"><a class="logo" href="/"><img src="/assets/icons/logo.svg" alt="MIROZA logo" width="40" height="40" loading="lazy" /> MIROZA</a><nav class="main-nav" aria-label="Primary navigation"><ul><li><a href="/">Home</a></li><li><a href="/news.html">News</a></li><li><a href="/blog.html" aria-current="page">Blog</a></li><li><a href="/articles.html">Articles</a></li></ul></nav><button class="theme-toggle" aria-label="Toggle dark/light"><img src="/assets/icons/moon.svg" alt="Toggle theme" width="24" height="24" /></button></div></header>
+  <main id="content" tabindex="-1">
+    <section class="page-hero" aria-labelledby="blog-hero">
+      <p class="hero-tag">Playbooks & Opinions</p>
+      <h1 id="blog-hero">MIROZA Blog Library</h1>
+      <p class="intro">Signals, strategies, and operating notes from the MIROZA editorial desks. Always practical, always shippable.</p>
+      <div class="hero-actions">
+        <a class="button" href="/index.html#blog" data-prefetch>See homepage highlights</a>
+        <a class="ghost-button" href="/newsletter.html">Subscribe for weekly digests</a>
+      </div>
+    </section>
+
+    <section class="page-section" aria-labelledby="blog-promises">
+      <h2 id="blog-promises">What to expect</h2>
+      <div class="feature-grid">
+        <article>
+          <h3>Frameworks first</h3>
+          <p>Every post ends with takeaways you can plug into roadmaps, board updates, or customer ops.</p>
+        </article>
+        <article>
+          <h3>Fresh every week</h3>
+          <p>New essays land each weekday across AI, infrastructure, capital, society, and wellbeing.</p>
+        </article>
+        <article>
+          <h3>Actionable tags</h3>
+          <p>Use Quick Find or the topic chips inside each post to filter insights by sector.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="category-block" aria-labelledby="blog-feed-heading">
+      <div class="section-heading">
+        <h2 id="blog-feed-heading">Latest posts</h2>
+        <p class="intro">Sorted newest to oldest. Toggle filters or scroll to auto-load more.</p>
+      </div>
+      <div class="cards" id="category-list" aria-live="polite">
+        <div class="card skeleton" aria-hidden="true"></div>
+        <div class="card skeleton" aria-hidden="true"></div>
+        <div class="card skeleton" aria-hidden="true"></div>
+      </div>
+      <div class="pagination" id="category-pagination" aria-label="Blog pagination"></div>
+    </section>
+  </main>
+  <footer class="site-footer"><div class="footer-grid"><div><h3>MIROZA</h3><p>Modern news & articles hub.</p></div></div><p class="copyright">© <span id="year"></span> MIROZA.</p></footer>
+  <script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.11/dist/purify.min.js" defer crossorigin="anonymous"></script>
+  <script src="/scripts/app.js" defer></script>
+</body>
+</html>

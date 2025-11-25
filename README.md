@@ -67,7 +67,7 @@ Visit `http://localhost:8080` and inspect the Network tab: the service worker sh
 - Keyboard shortcut: press `⌘K` (macOS) or `Ctrl+K` (Windows/Linux) anywhere to open.
 - Tracks clicks on any element with `data-track-story` to populate recents via `localStorage` key `miroza_recent_reads_v1`.
 - Saved stories combine manual pins (from the drawer) and article “Appreciate” hearts, stored under `miroza_saved_stories_v1`.
-- Category chips map directly to the latest feed filters when available; otherwise they deep-link to the matching `/category/*.html` page.
+- Category chips map directly to the latest feed filters when available; otherwise they deep-link to `/news.html`, `/blog.html`, or `/articles.html`.
 - Drawer focus returns to the original trigger for accessibility, and opening the panel locks body scroll to avoid background jumps.
 
 ## Content Pipeline Workflow
