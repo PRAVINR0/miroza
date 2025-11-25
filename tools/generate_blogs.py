@@ -333,6 +333,8 @@ ANGLES = [
     },
 ]
 
+THEME_SNIPPET = "(function(){try{var t=localStorage.getItem('miroza_theme');if(t){document.documentElement.dataset.theme=t;}}catch(e){}})();"
+
 
 def render_section(heading: str, paragraphs: list[str], bullets_title: str, bullets: list[str]) -> str:
     section_lines = [f"      <h2>{heading}</h2>"]
@@ -413,7 +415,7 @@ def build_html(
   <meta name=\"twitter:description\" content=\"{excerpt}\" />
   <link rel=\"stylesheet\" href=\"/styles/styles.css\" />
   <meta http-equiv=\"Content-Security-Policy\" content=\"default-src 'self'; script-src 'self' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; frame-ancestors 'none';\" />
-  <script>(function(){{try{{var t=localStorage.getItem('miroza_theme');if(t){{document.documentElement.dataset.theme=t;}}}}catch(e){{}}})();</script>
+    <script>{THEME_SNIPPET}</script>
   <script type=\"application/ld+json\">{ld_json_str}</script>
 </head>
 <body data-page=\"blog-article\" data-blog-slug=\"{slug}\">
