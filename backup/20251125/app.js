@@ -4,7 +4,6 @@
 */
 (function(){
   'use strict';
-  document.documentElement.classList.add('js-ready'); // Flag for CSS fallbacks so content stays visible when JS runs
 
   // Namespace root
   window.MIROZA = window.MIROZA || {};
@@ -358,8 +357,7 @@
 
   /* UI Interactions */
   window.MIROZA.ui = (function(){
-    let header, backToTopBtn, lazyObserver, ticking=false, lazyFallbackTimer;
-    const FALLBACK_REVEAL_DELAY = 2500;
+    let header, backToTopBtn, lazyObserver, ticking=false;
 
     function handleScroll(){
       const offset = window.scrollY || document.documentElement.scrollTop || 0;
@@ -392,12 +390,6 @@
         });
       }, { rootMargin:'0px 0px -10% 0px' });
       lazyEls.forEach(el=> lazyObserver.observe(el));
-      window.clearTimeout(lazyFallbackTimer);
-      lazyFallbackTimer = window.setTimeout(forceRevealLazySections, FALLBACK_REVEAL_DELAY); // Safety net for browsers that fail IO callbacks
-    }
-
-    function forceRevealLazySections(){
-      window.MIROZA.utils.qsa('[data-lazy]:not(.lazy-ready)').forEach(el=> el.classList.add('lazy-ready'));
     }
 
     function init(){
