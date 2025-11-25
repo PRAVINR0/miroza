@@ -286,30 +286,48 @@
     }
 
     function mountHomeSections(){
-      const latestOrder = [...posts].sort((a,b)=>{
-        const dateA = new Date(a.date || 0).getTime();
-        const dateB = new Date(b.date || 0).getTime();
-        return dateB - dateA;
-      });
-      let latestFilter='all';
-      const latestPagination = window.MIROZA.pagination.mount({
-        targetSelector:'#latest-cards',
-        controlsSelector:'#latest-pagination',
-        getData:()=>filterLatest(latestOrder, latestFilter),
-        pageSize:8,
-        emptyMessage:'Fresh stories are on the way.',
-        mode:'load-more',
-        autoLoad:true
-      });
-      window.MIROZA.filters?.initLatest({ onChange:(filter)=>{
-        latestFilter = filter;
-        latestPagination?.render();
-      }});
-      window.MIROZA.pagination.mount({ targetSelector:'#news-cards', controlsSelector:'#news-pagination', getData:()=>filterByCategory('News'), pageSize:6, emptyMessage:'News stories publishing soon.', mode:'load-more' });
-      window.MIROZA.pagination.mount({ targetSelector:'#blog-cards', controlsSelector:'#blog-pagination', getData:()=>filterByCategory('Blog'), pageSize:6, emptyMessage:'Blog stories publishing soon.', mode:'load-more' });
-      window.MIROZA.pagination.mount({ targetSelector:'#articles-cards', controlsSelector:'#articles-pagination', getData:()=>filterByCategory('Article'), pageSize:6, emptyMessage:'Long-form stories publishing soon.', mode:'load-more' });
-      renderTrending();
-      window.MIROZA.hero?.mount(heroCandidates.slice(0,5));
+      try {
+        const latestOrder = [...posts].sort((a,b)=>{
+          const dateA = new Date(a.date || 0).getTime();
+          const dateB = new Date(b.date || 0).getTime();
+          return dateB - dateA;
+        });
+        let latestFilter='all';
+        const latestPagination = window.MIROZA.pagination.mount({
+          targetSelector:'#latest-cards',
+          controlsSelector:'#latest-pagination',
+          getData:()=>filterLatest(latestOrder, latestFilter),
+          pageSize:8,
+          emptyMessage:'Fresh stories are on the way.',
+          mode:'load-more',
+          autoLoad:true
+        });
+        window.MIROZA.filters?.initLatest({ onChange:(filter)=>{
+          latestFilter = filter;
+          latestPagination?.render();
+        }});
+        window.MIROZA.pagination.mount({ targetSelector:'#news-cards', controlsSelector:'#news-pagination', getData:()=>filterByCategory('News'), pageSize:6, emptyMessage:'News stories publishing soon.', mode:'load-more' });
+        window.MIROZA.pagination.mount({ targetSelector:'#blog-cards', controlsSelector:'#blog-pagination', getData:()=>filterByCategory('Blog'), pageSize:6, emptyMessage:'Blog stories publishing soon.', mode:'load-more' });
+        window.MIROZA.pagination.mount({ targetSelector:'#articles-cards', controlsSelector:'#articles-pagination', getData:()=>filterByCategory('Article'), pageSize:6, emptyMessage:'Long-form stories publishing soon.', mode:'load-more' });
+        renderTrending();
+        const heroFeed = heroCandidates.slice(0,5);
+        window.MIROZA.hero?.mount(heroFeed);
+        console.info('[MIROZA] Home sections rendered', {
+          totalPosts: posts.length,
+          latestRendered: latestOrder.length,
+          heroStories: heroFeed.length
+        });
+      } catch(error){
+        console.error('MIROZA: Failed to render home layout', error);
+        const latestCards = document.getElementById('latest-cards');
+        if(latestCards){
+          latestCards.innerHTML='';
+          const fallback=document.createElement('p');
+          fallback.className='card-excerpt';
+          fallback.textContent='We hit a snag while loading stories. Please refresh to try again.';
+          latestCards.appendChild(fallback);
+        }
+      }
     }
     function filterLatest(source, filter){
       if(filter==='all') return source;
