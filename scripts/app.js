@@ -308,7 +308,6 @@
           latestPagination?.render();
         }});
         window.MIROZA.pagination.mount({ targetSelector:'#news-cards', controlsSelector:'#news-pagination', getData:()=>filterByCategory('News'), pageSize:6, emptyMessage:'News stories publishing soon.', mode:'load-more' });
-        window.MIROZA.pagination.mount({ targetSelector:'#blog-cards', controlsSelector:'#blog-pagination', getData:()=>filterByCategory('Blog'), pageSize:6, emptyMessage:'Blog stories publishing soon.', mode:'load-more' });
         window.MIROZA.pagination.mount({ targetSelector:'#articles-cards', controlsSelector:'#articles-pagination', getData:()=>filterByCategory('Article'), pageSize:6, emptyMessage:'Long-form stories publishing soon.', mode:'load-more' });
         renderTrending();
         const heroFeed = heroCandidates.slice(0,5);
@@ -339,7 +338,12 @@
     function mountCategoryPage(){
       const category = document.body.dataset.category;
       if(!category) return;
-      window.MIROZA.pagination.mount({ targetSelector:'#category-list', controlsSelector:'#category-pagination', getData:()=>filterByCategory(category), pageSize:10, emptyMessage:`${category} stories publishing soon.`, mode:'load-more', autoLoad:true });
+      const normalized = (category || '').toLowerCase();
+      if(normalized === 'blog'){
+        window.MIROZA.blogs?.ready().then(()=> window.MIROZA.blogs.mountCategorySection()).catch(()=>{});
+      } else {
+        window.MIROZA.pagination.mount({ targetSelector:'#category-list', controlsSelector:'#category-pagination', getData:()=>filterByCategory(category), pageSize:10, emptyMessage:`${category} stories publishing soon.`, mode:'load-more', autoLoad:true });
+      }
       renderTrending();
     }
 
@@ -363,6 +367,120 @@
     function findById(id){ if(!id) return null; return postsById.get(id.toString()) || posts.find(p=> (p.slug || '') === id); }
 
     return { init, ready, posts:()=>posts, filterByCategory, trending, isTrending, heroFeed, byId:findById };
+  })();
+
+  /* Blog Feed Loader */
+  window.MIROZA.blogs = (function(){
+    const dataUrl = '/data/blogs.json';
+    let raw = [];
+    let cards = [];
+    let readyPromise = null;
+
+    function fetchBlogs(){
+      return fetch(dataUrl)
+        .then(response => response.json())
+        .then(json => {
+          raw = Array.isArray(json) ? json : [];
+          cards = raw.map(mapToCard).sort((a,b)=> (b.dateValue || 0) - (a.dateValue || 0));
+          return cards;
+        })
+        .catch(error => {
+          console.error('MIROZA: Failed to load blogs', error);
+          raw = [];
+          cards = [];
+          return [];
+        });
+    }
+
+    function mapToCard(entry){
+      const link = entry.url || entry.canonical || `/blogs/${entry.slug || ('blog-' + entry.id)}.html`;
+      const dateValue = Date.parse(entry.date || entry.displayDate || '') || 0;
+      const metaPieces = [entry.displayDate, entry.readTimeMinutes ? `${entry.readTimeMinutes} min read` : null].filter(Boolean);
+      return {
+        id: entry.slug || `blog-${entry.id}`,
+        slug: entry.slug,
+        title: entry.title,
+        excerpt: entry.excerpt,
+        category: 'Blog',
+        link,
+        metaLabel: metaPieces.join(' • ') || 'Blog insight',
+        date: entry.date,
+        dateValue,
+        tags: entry.tags || [],
+        views: entry.readTimeMinutes ? entry.readTimeMinutes * 100 : undefined // pseudo metric for consistency
+      };
+    }
+
+    function latest(count=8){
+      return cards.slice(0, count);
+    }
+
+    function renderHomeSection(){
+      const target = window.MIROZA.utils.qs('#blog-cards');
+      const pagination = window.MIROZA.utils.qs('#blog-pagination');
+      if(!target) return;
+      const items = latest(8);
+      target.innerHTML='';
+      if(!items.length){
+        const empty=document.createElement('p');
+        empty.className='card-excerpt';
+        empty.textContent='Blogs are publishing soon.';
+        target.appendChild(empty);
+        if(pagination){ pagination.innerHTML=''; }
+        return;
+      }
+      items.forEach(item => target.appendChild(window.MIROZA.buildCard(item)));
+      if(pagination){
+        pagination.innerHTML='';
+        const info=document.createElement('p');
+        info.className='card-meta';
+        info.textContent=`Showing ${items.length} of ${cards.length} blog posts`;
+        pagination.appendChild(info);
+      }
+    }
+
+    function mountCategorySection(){
+      const listSelector = '#category-list';
+      const paginationSelector = '#category-pagination';
+      const listEl = window.MIROZA.utils.qs(listSelector);
+      const paginationEl = window.MIROZA.utils.qs(paginationSelector);
+      if(!listEl || !paginationEl) return;
+      if(!cards.length){
+        listEl.innerHTML='';
+        const empty=document.createElement('p');
+        empty.className='card-excerpt';
+        empty.textContent='Blog posts are publishing soon.';
+        listEl.appendChild(empty);
+        paginationEl.innerHTML='';
+        return;
+      }
+      window.MIROZA.pagination.mount({
+        targetSelector: listSelector,
+        controlsSelector: paginationSelector,
+        getData: () => cards,
+        pageSize: 10,
+        emptyMessage: 'Blog posts are publishing soon.',
+        mode: 'load-more',
+        autoLoad: true
+      });
+    }
+
+    function hydrate(){
+      const pageType = document.body.dataset.page;
+      const category = (document.body.dataset.category || '').toLowerCase();
+      if(pageType === 'home'){ renderHomeSection(); }
+      if(pageType === 'category' && category === 'blog'){ mountCategorySection(); }
+    }
+
+    function init(){
+      if(!readyPromise){ readyPromise = fetchBlogs(); }
+      readyPromise.then(()=> hydrate());
+      return readyPromise;
+    }
+
+    function ready(){ return readyPromise ?? (readyPromise = fetchBlogs()); }
+
+    return { init, ready, latest, renderHomeSection, mountCategorySection };
   })();
 
   /* Pagination Helper */
@@ -1694,6 +1812,7 @@
     window.MIROZA.theme.init();
     window.MIROZA.nav.init();
     window.MIROZA.posts.init();
+    window.MIROZA.blogs.init();
     window.MIROZA.indiaNews.init();
     window.MIROZA.prefetch.init();
     window.MIROZA.forms.init();
