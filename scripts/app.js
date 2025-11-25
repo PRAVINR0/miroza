@@ -242,10 +242,47 @@
       let trendingSet=new Set();
       const postsById = new Map();
 
+    function normalizeCategory(value){
+      return (value || '').toLowerCase();
+    }
+
+    function buildLink(category, slug){
+      if(!slug) return '#';
+      if(category === 'blog') return `/blogs/${slug}.html`;
+      return `/articles/${slug}.html`;
+    }
+
+    function formatDisplayDate(value){
+      if(!value) return '';
+      const parsed = new Date(value);
+      if(Number.isNaN(parsed.getTime())) return '';
+      try {
+        return new Intl.DateTimeFormat('en-US', { month:'short', day:'numeric', year:'numeric' }).format(parsed);
+      } catch(e){
+        return parsed.toISOString().slice(0, 10);
+      }
+    }
+
+    function enrichPost(entry, index){
+      const slug = entry.slug || `story-${entry.id || index + 1}`;
+      const category = entry.category || 'Story';
+      const normalized = normalizeCategory(category);
+      const dateValue = Date.parse(entry.date || entry.updated || '') || Date.now();
+      const link = entry.link || buildLink(normalized, slug);
+      const metaLabel = entry.metaLabel || [category, formatDisplayDate(entry.date)].filter(Boolean).join(' • ');
+      return { ...entry, slug, category, link, dateValue, metaLabel };
+    }
+
     function fetchPosts(){
       return fetch(dataUrl)
         .then(r=>r.json())
-        .then(json=>{ posts=json; computeDerived(); return posts; })
+        .then(json=>{
+          const source = Array.isArray(json) ? json : [];
+          const hydrated = source.map(enrichPost);
+          posts = hydrated.filter(post => normalizeCategory(post.category) !== 'blog');
+          computeDerived();
+          return posts;
+        })
         .catch(err=>{ console.error('Posts load failed', err); return []; });
     }
 
@@ -260,8 +297,8 @@
     }
 
     function filterByCategory(cat){
-      const match = (cat || '').toLowerCase();
-      return posts.filter(p=>(p.category || '').toLowerCase() === match);
+      const match = normalizeCategory(cat);
+      return posts.filter(p=> normalizeCategory(p.category) === match);
     }
     function trending(){ return heroCandidates.slice(0,5); }
     function isTrending(id){ return trendingSet.has(id); }
@@ -279,7 +316,7 @@
         a.setAttribute('data-transition','');
         const meta=document.createElement('span');
         meta.className='card-meta';
-        meta.textContent = window.MIROZA.utils.formatNumber(p.views||0)+' views';
+        meta.textContent = p.metaLabel || (window.MIROZA.utils.formatNumber(p.views||0)+' views');
         li.appendChild(a);
         li.appendChild(meta);
         list.appendChild(li);
@@ -288,11 +325,20 @@
 
     function mountHomeSections(){
       try {
-        const latestOrder = [...posts].sort((a,b)=>{
-          const dateA = new Date(a.date || 0).getTime();
-          const dateB = new Date(b.date || 0).getTime();
-          return dateB - dateA;
-        });
+        const baseLatest = [...posts];
+        let blogExtras = [];
+        let latestOrder = [];
+
+        function rebuildLatest(newExtras){
+          if(Array.isArray(newExtras)){ blogExtras = newExtras.map(item => ({ ...item })); }
+          latestOrder = [...baseLatest, ...blogExtras].sort((a,b)=>{
+            const dateA = a.dateValue || Date.parse(a.date || 0) || 0;
+            const dateB = b.dateValue || Date.parse(b.date || 0) || 0;
+            return dateB - dateA;
+          });
+        }
+
+        rebuildLatest();
         let latestFilter='all';
         const latestPagination = window.MIROZA.pagination.mount({
           targetSelector:'#latest-cards',
@@ -307,6 +353,13 @@
           latestFilter = filter;
           latestPagination?.render();
         }});
+        if(window.MIROZA.blogs?.ready){
+          window.MIROZA.blogs.ready().then(()=>{
+            const extras = window.MIROZA.blogs.all ? window.MIROZA.blogs.all() : window.MIROZA.blogs.latest(20);
+            rebuildLatest(extras);
+            latestPagination?.render({ reset:true });
+          }).catch(()=>{});
+        }
         window.MIROZA.pagination.mount({ targetSelector:'#news-cards', controlsSelector:'#news-pagination', getData:()=>filterByCategory('News'), pageSize:6, emptyMessage:'News stories publishing soon.', mode:'load-more' });
         window.MIROZA.pagination.mount({ targetSelector:'#articles-cards', controlsSelector:'#articles-pagination', getData:()=>filterByCategory('Article'), pageSize:6, emptyMessage:'Long-form stories publishing soon.', mode:'load-more' });
         renderTrending();
@@ -331,8 +384,8 @@
     }
     function filterLatest(source, filter){
       if(filter==='all') return source;
-      const match = (filter || '').toLowerCase();
-      return source.filter(item => (item.category || '').toLowerCase() === match);
+      const match = normalizeCategory(filter);
+      return source.filter(item => normalizeCategory(item.category) === match);
     }
 
     function mountCategoryPage(){
@@ -415,6 +468,10 @@
       return cards.slice(0, count);
     }
 
+    function all(){
+      return cards.slice();
+    }
+
     function renderHomeSection(){
       const target = window.MIROZA.utils.qs('#blog-cards');
       const pagination = window.MIROZA.utils.qs('#blog-pagination');
@@ -480,7 +537,7 @@
 
     function ready(){ return readyPromise ?? (readyPromise = fetchBlogs()); }
 
-    return { init, ready, latest, renderHomeSection, mountCategorySection };
+    return { init, ready, latest, all, renderHomeSection, mountCategorySection };
   })();
 
   /* Pagination Helper */
@@ -492,7 +549,9 @@
       const state = { page:0 };
       const loadMoreMode = mode === 'load-more';
       let io;
-      function render(){
+      function render(options){
+        const opts = typeof options === 'boolean' ? { reset: options } : (options || {});
+        if(opts.reset){ state.page = 0; }
         const data = getData() || [];
         if(!data.length){
           target.innerHTML = '';
@@ -1101,7 +1160,7 @@
   window.MIROZA.search = (function(){
     const MAX_RESULTS = 5;
     const DEBOUNCE_MS = 120;
-    let input, panel, posts = [], results = [], activeIndex = -1, debounceTimer;
+    let input, panel, posts = [], blogPosts = [], results = [], activeIndex = -1, debounceTimer;
 
     function init(){
       input = window.MIROZA.utils.qs('#search');
@@ -1109,6 +1168,9 @@
       if(!input || !panel) return;
       bindEvents();
       window.MIROZA.posts.ready().then(data => { posts = data || []; }).catch(()=>{});
+      if(window.MIROZA.blogs?.ready){
+        window.MIROZA.blogs.ready().then(data => { blogPosts = data ? (window.MIROZA.blogs.all ? window.MIROZA.blogs.all() : data) : []; }).catch(()=>{});
+      }
     }
 
     function bindEvents(){
@@ -1137,7 +1199,8 @@
 
     function runSearch(query){
       const norm = query.toLowerCase();
-      const matches = posts.filter(post => {
+      const combined = [...posts, ...blogPosts];
+      const matches = combined.filter(post => {
         const haystack = [post.title, post.excerpt, post.category].filter(Boolean).join(' ').toLowerCase();
         return haystack.includes(norm);
       }).slice(0, MAX_RESULTS).map(post => ({
@@ -1282,8 +1345,10 @@
     }
 
     function hydratePosts(){
-      window.MIROZA.posts?.ready?.().then(posts => {
-        postsCache = posts || [];
+      const postPromise = window.MIROZA.posts?.ready?.() || Promise.resolve([]);
+      const blogPromise = window.MIROZA.blogs?.ready?.().then(()=> window.MIROZA.blogs.all ? window.MIROZA.blogs.all() : []) || Promise.resolve([]);
+      Promise.all([postPromise, blogPromise]).then(([postItems, blogItems])=>{
+        postsCache = [...(postItems || []), ...(blogItems || [])];
         renderCategories();
         renderSaved();
       }).catch(()=>{});
