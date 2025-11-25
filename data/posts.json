@@ -381,5 +381,365 @@
       "sizes": "(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px",
       "alt": "Engineer testing next-generation battery cells"
     }
+  },
+  {
+    "id": 24,
+    "title": "Why 2025 Is Becoming the Golden Year of Artificial Intelligence",
+    "slug": "2025-golden-year-of-ai",
+    "excerpt": "Artificial Intelligence is reaching a historical turning point in 2025, reshaping industries like healthcare, finance, and manufacturing.",
+    "category": "Technology",
+    "author": "MIROZA Editorial",
+    "date": "2025-01-12",
+    "views": 1500,
+    "link": "/articles/2025-golden-year-of-ai.html",
+    "keywords": "AI 2025, machine learning, future technology, automation",
+    "image": {
+      "src": "https://images.unsplash.com/photo-1508385082359-f38ae991e8f2?auto=format&fit=crop&w=800&q=80",
+      "srcset": "https://images.unsplash.com/photo-1508385082359-f38ae991e8f2?auto=format&fit=crop&w=400&q=80 400w, https://images.unsplash.com/photo-1508385082359-f38ae991e8f2?auto=format&fit=crop&w=800&q=80 800w, https://images.unsplash.com/photo-1508385082359-f38ae991e8f2?auto=format&fit=crop&w=1200&q=80 1200w",
+      "sizes": "(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px",
+      "alt": "Robotic hand reaching toward a glowing neural interface"
+    }
+  },
+  {
+    "id": 25,
+    "title": "10 Morning Habits of Highly Successful People",
+    "slug": "morning-habits-successful-people",
+    "excerpt": "Success is not built overnight — it is crafted through daily discipline. Here are the top morning habits that shape high achievers.",
+    "category": "Lifestyle",
+    "author": "MIROZA Life",
+    "date": "2025-01-11",
+    "views": 1560,
+    "link": "/articles/morning-habits-successful-people.html",
+    "keywords": "morning habits, productivity, lifestyle improvement",
+    "image": {
+      "src": "https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?auto=format&fit=crop&w=800&q=80",
+      "srcset": "https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?auto=format&fit=crop&w=400&q=80 400w, https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?auto=format&fit=crop&w=800&q=80 800w, https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?auto=format&fit=crop&w=1200&q=80 1200w",
+      "sizes": "(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px",
+      "alt": "Sunlight pouring over a breakfast table with a journal and coffee"
+    }
+  },
+  {
+    "id": 26,
+    "title": "The Future of Electric Cars: What to Expect by 2030",
+    "slug": "future-of-electric-cars-2030",
+    "excerpt": "Electric cars are entering their exponential growth phase, driven by technology, sustainability, and global policies.",
+    "category": "Automobiles",
+    "author": "MIROZA Auto",
+    "date": "2025-01-10",
+    "views": 1620,
+    "link": "/articles/future-of-electric-cars-2030.html",
+    "keywords": "electric cars 2030, EV future, sustainable transport",
+    "image": {
+      "src": "https://images.unsplash.com/photo-1549921296-3c8b5b7a6450?auto=format&fit=crop&w=800&q=80",
+      "srcset": "https://images.unsplash.com/photo-1549921296-3c8b5b7a6450?auto=format&fit=crop&w=400&q=80 400w, https://images.unsplash.com/photo-1549921296-3c8b5b7a6450?auto=format&fit=crop&w=800&q=80 800w, https://images.unsplash.com/photo-1549921296-3c8b5b7a6450?auto=format&fit=crop&w=1200&q=80 1200w",
+      "sizes": "(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px",
+      "alt": "Futuristic electric car charging at night under neon lights"
+    }
+  },
+  {
+    "id": 27,
+    "title": "How to Build a Strong Personal Brand in 2025",
+    "slug": "build-personal-brand-2025",
+    "excerpt": "A powerful personal brand sets you apart from the noise. Here’s how to build influence in the modern digital landscape.",
+    "category": "Career",
+    "author": "MIROZA Career Hub",
+    "date": "2025-01-12",
+    "views": 1680,
+    "link": "/articles/build-personal-brand-2025.html",
+    "keywords": "personal branding, career growth, digital identity",
+    "image": {
+      "src": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=800&q=80",
+      "srcset": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=400&q=80 400w, https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=800&q=80 800w, https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80 1200w",
+      "sizes": "(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px",
+      "alt": "Professional presenting ideas on a glass wall during a workshop"
+    }
+  },
+  {
+    "id": 28,
+    "title": "Top 15 Travel Destinations You Must Visit in 2025",
+    "slug": "top-travel-destinations-2025",
+    "excerpt": "From crystal beaches to futuristic cities — 2025 brings an unforgettable travel list.",
+    "category": "Travel",
+    "author": "MIROZA Travel Desk",
+    "date": "2025-01-09",
+    "views": 1740,
+    "link": "/articles/top-travel-destinations-2025.html",
+    "keywords": "travel 2025, holiday destinations, tourism",
+    "image": {
+      "src": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=80",
+      "srcset": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=400&q=80 400w, https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=80 800w, https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80 1200w",
+      "sizes": "(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px",
+      "alt": "Traveler overlooking a tropical cliffside ocean view"
+    }
+  },
+  {
+    "id": 29,
+    "title": "How to Master Personal Finance in Your 20s",
+    "slug": "master-personal-finance-20s",
+    "excerpt": "Your 20s define your financial future — learning money skills early pays lifelong dividends.",
+    "category": "Finance",
+    "author": "MIROZA Money",
+    "date": "2025-01-08",
+    "views": 1800,
+    "link": "/articles/master-personal-finance-20s.html",
+    "keywords": "finance tips, budgeting, savings strategy",
+    "image": {
+      "src": "https://images.unsplash.com/photo-1580519542036-c47de6196ba5?auto=format&fit=crop&w=800&q=80",
+      "srcset": "https://images.unsplash.com/photo-1580519542036-c47de6196ba5?auto=format&fit=crop&w=400&q=80 400w, https://images.unsplash.com/photo-1580519542036-c47de6196ba5?auto=format&fit=crop&w=800&q=80 800w, https://images.unsplash.com/photo-1580519542036-c47de6196ba5?auto=format&fit=crop&w=1200&q=80 1200w",
+      "sizes": "(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px",
+      "alt": "Young professional reviewing budgets on a laptop"
+    }
+  },
+  {
+    "id": 30,
+    "title": "The Rise of Remote Work: What Has Changed Forever?",
+    "slug": "rise-of-remote-work-2025",
+    "excerpt": "Remote work is no longer a trend — it is the new professional standard.",
+    "category": "Business",
+    "author": "MIROZA Business",
+    "date": "2025-01-07",
+    "views": 1860,
+    "link": "/articles/rise-of-remote-work-2025.html",
+    "keywords": "remote work, future of work, business transformation",
+    "image": {
+      "src": "https://images.unsplash.com/photo-1593642532973-d31b6557fa68?auto=format&fit=crop&w=800&q=80",
+      "srcset": "https://images.unsplash.com/photo-1593642532973-d31b6557fa68?auto=format&fit=crop&w=400&q=80 400w, https://images.unsplash.com/photo-1593642532973-d31b6557fa68?auto=format&fit=crop&w=800&q=80 800w, https://images.unsplash.com/photo-1593642532973-d31b6557fa68?auto=format&fit=crop&w=1200&q=80 1200w",
+      "sizes": "(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px",
+      "alt": "Open laptop on a remote worker’s minimalist desk setup"
+    }
+  },
+  {
+    "id": 31,
+    "title": "The Science Behind Better Sleep: 2025 Update",
+    "slug": "science-behind-better-sleep",
+    "excerpt": "Better sleep equals better life. Modern research reveals new insights.",
+    "category": "Health",
+    "author": "MIROZA Health",
+    "date": "2025-01-06",
+    "views": 1920,
+    "link": "/articles/science-behind-better-sleep.html",
+    "keywords": "sleep science, health tips, well-being",
+    "image": {
+      "src": "https://images.unsplash.com/photo-1542332213-8e94d0e53a28?auto=format&fit=crop&w=800&q=80",
+      "srcset": "https://images.unsplash.com/photo-1542332213-8e94d0e53a28?auto=format&fit=crop&w=400&q=80 400w, https://images.unsplash.com/photo-1542332213-8e94d0e53a28?auto=format&fit=crop&w=800&q=80 800w, https://images.unsplash.com/photo-1542332213-8e94d0e53a28?auto=format&fit=crop&w=1200&q=80 1200w",
+      "sizes": "(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px",
+      "alt": "Peaceful bedroom with soft lighting and plants"
+    }
+  },
+  {
+    "id": 32,
+    "title": "How Blockchain Is Changing Global Banking",
+    "slug": "blockchain-global-banking",
+    "excerpt": "Blockchain’s potential goes far beyond cryptocurrency.",
+    "category": "Technology",
+    "author": "MIROZA Tech",
+    "date": "2025-01-06",
+    "views": 1980,
+    "link": "/articles/blockchain-global-banking.html",
+    "keywords": "blockchain banking, fintech, crypto",
+    "image": {
+      "src": "https://images.unsplash.com/photo-1518546305927-5a555bb7020e?auto=format&fit=crop&w=800&q=80",
+      "srcset": "https://images.unsplash.com/photo-1518546305927-5a555bb7020e?auto=format&fit=crop&w=400&q=80 400w, https://images.unsplash.com/photo-1518546305927-5a555bb7020e?auto=format&fit=crop&w=800&q=80 800w, https://images.unsplash.com/photo-1518546305927-5a555bb7020e?auto=format&fit=crop&w=1200&q=80 1200w",
+      "sizes": "(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px",
+      "alt": "Abstract blockchain network rendered in blue light"
+    }
+  },
+  {
+    "id": 33,
+    "title": "Simple Ways to Improve Mental Health in Busy Life",
+    "slug": "improve-mental-health-tips",
+    "excerpt": "Your mental health matters. Small daily actions create powerful changes.",
+    "category": "Health",
+    "author": "MIROZA Wellness",
+    "date": "2025-01-05",
+    "views": 2040,
+    "link": "/articles/improve-mental-health-tips.html",
+    "keywords": "mental health, stress management",
+    "image": {
+      "src": "https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?auto=format&fit=crop&w=800&q=80",
+      "srcset": "https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?auto=format&fit=crop&w=400&q=80 400w, https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?auto=format&fit=crop&w=800&q=80 800w, https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?auto=format&fit=crop&w=1200&q=80 1200w",
+      "sizes": "(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px",
+      "alt": "Calm woman meditating near a sunlit window"
+    }
+  },
+  {
+    "id": 34,
+    "title": "The Future of Smartphones: Foldable Tech and Beyond",
+    "slug": "future-smartphones-foldable-tech",
+    "excerpt": "2025 marks a new era for smartphone innovation.",
+    "category": "Technology",
+    "author": "MIROZA Tech Lab",
+    "date": "2025-01-04",
+    "views": 2100,
+    "link": "/articles/future-smartphones-foldable-tech.html",
+    "keywords": "smartphones, foldable phones, mobile tech",
+    "image": {
+      "src": "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=800&q=80",
+      "srcset": "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=400&q=80 400w, https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=800&q=80 800w, https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=1200&q=80 1200w",
+      "sizes": "(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px",
+      "alt": "Foldable smartphone glowing on a futuristic table"
+    }
+  },
+  {
+    "id": 35,
+    "title": "Minimalism: Living Better With Less",
+    "slug": "minimalism-living-better-with-less",
+    "excerpt": "Minimalism is more than aesthetics — it’s a lifestyle revolution.",
+    "category": "Lifestyle",
+    "author": "MIROZA Life",
+    "date": "2025-01-03",
+    "views": 2160,
+    "link": "/articles/minimalism-living-better-with-less.html",
+    "keywords": "minimalism lifestyle, declutter, simple living",
+    "image": {
+      "src": "https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&w=800&q=80",
+      "srcset": "https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&w=400&q=80 400w, https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&w=800&q=80 800w, https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&w=1200&q=80 1200w",
+      "sizes": "(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px",
+      "alt": "Minimal living room with clean lines and natural light"
+    }
+  },
+  {
+    "id": 36,
+    "title": "How to Start Investing in 2025: A Beginner’s Guide",
+    "slug": "start-investing-2025",
+    "excerpt": "Investing early builds long-term wealth. Here's a simple guide.",
+    "category": "Finance",
+    "author": "MIROZA Finance",
+    "date": "2025-01-03",
+    "views": 2220,
+    "link": "/articles/start-investing-2025.html",
+    "keywords": "investing 2025, beginner finance, stock market",
+    "image": {
+      "src": "https://images.unsplash.com/photo-1553729459-efe14ef6055d?auto=format&fit=crop&w=800&q=80",
+      "srcset": "https://images.unsplash.com/photo-1553729459-efe14ef6055d?auto=format&fit=crop&w=400&q=80 400w, https://images.unsplash.com/photo-1553729459-efe14ef6055d?auto=format&fit=crop&w=800&q=80 800w, https://images.unsplash.com/photo-1553729459-efe14ef6055d?auto=format&fit=crop&w=1200&q=80 1200w",
+      "sizes": "(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px",
+      "alt": "Investor reviewing stock charts on a tablet"
+    }
+  },
+  {
+    "id": 37,
+    "title": "Why Reading Books Is the Ultimate Superpower",
+    "slug": "reading-books-superpower",
+    "excerpt": "Reading strengthens the mind like nothing else.",
+    "category": "Education",
+    "author": "MIROZA Education",
+    "date": "2025-01-02",
+    "views": 2280,
+    "link": "/articles/reading-books-superpower.html",
+    "keywords": "reading benefits, education, learning",
+    "image": {
+      "src": "https://images.unsplash.com/photo-1495446815901-a7297e633e8d?auto=format&fit=crop&w=800&q=80",
+      "srcset": "https://images.unsplash.com/photo-1495446815901-a7297e633e8d?auto=format&fit=crop&w=400&q=80 400w, https://images.unsplash.com/photo-1495446815901-a7297e633e8d?auto=format&fit=crop&w=800&q=80 800w, https://images.unsplash.com/photo-1495446815901-a7297e633e8d?auto=format&fit=crop&w=1200&q=80 1200w",
+      "sizes": "(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px",
+      "alt": "Stack of books beside a glowing lamp"
+    }
+  },
+  {
+    "id": 38,
+    "title": "How Green Hydrogen Is Transforming Clean Energy",
+    "slug": "green-hydrogen-clean-energy",
+    "excerpt": "Green hydrogen is emerging as a top clean-energy solution.",
+    "category": "Energy",
+    "author": "MIROZA Energy Desk",
+    "date": "2025-01-02",
+    "views": 2340,
+    "link": "/articles/green-hydrogen-clean-energy.html",
+    "keywords": "green hydrogen, clean energy, sustainability",
+    "image": {
+      "src": "https://images.unsplash.com/photo-1526401485004-2fda9f7f6f59?auto=format&fit=crop&w=800&q=80",
+      "srcset": "https://images.unsplash.com/photo-1526401485004-2fda9f7f6f59?auto=format&fit=crop&w=400&q=80 400w, https://images.unsplash.com/photo-1526401485004-2fda9f7f6f59?auto=format&fit=crop&w=800&q=80 800w, https://images.unsplash.com/photo-1526401485004-2fda9f7f6f59?auto=format&fit=crop&w=1200&q=80 1200w",
+      "sizes": "(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px",
+      "alt": "Industrial tanks with green energy lighting"
+    }
+  },
+  {
+    "id": 39,
+    "title": "The Rise of Digital Nomads in 2025",
+    "slug": "digital-nomads-rise-2025",
+    "excerpt": "More people than ever are choosing a location-independent life.",
+    "category": "Lifestyle",
+    "author": "MIROZA Global Life",
+    "date": "2025-01-01",
+    "views": 2400,
+    "link": "/articles/digital-nomads-rise-2025.html",
+    "keywords": "digital nomads, remote lifestyle",
+    "image": {
+      "src": "https://images.unsplash.com/photo-1506784365847-bbad939e9335?auto=format&fit=crop&w=800&q=80",
+      "srcset": "https://images.unsplash.com/photo-1506784365847-bbad939e9335?auto=format&fit=crop&w=400&q=80 400w, https://images.unsplash.com/photo-1506784365847-bbad939e9335?auto=format&fit=crop&w=800&q=80 800w, https://images.unsplash.com/photo-1506784365847-bbad939e9335?auto=format&fit=crop&w=1200&q=80 1200w",
+      "sizes": "(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px",
+      "alt": "Remote worker using a laptop overlooking the ocean"
+    }
+  },
+  {
+    "id": 40,
+    "title": "10 Easy Ways to Eat Healthier Without Dieting",
+    "slug": "eat-healthier-no-diet",
+    "excerpt": "Eating healthy doesn’t have to be complicated or restrictive.",
+    "category": "Health",
+    "author": "MIROZA Food & Health",
+    "date": "2025-01-01",
+    "views": 2460,
+    "link": "/articles/eat-healthier-no-diet.html",
+    "keywords": "healthy eating, nutrition tips",
+    "image": {
+      "src": "https://images.unsplash.com/photo-1506084868230-bb9d95c24759?auto=format&fit=crop&w=800&q=80",
+      "srcset": "https://images.unsplash.com/photo-1506084868230-bb9d95c24759?auto=format&fit=crop&w=400&q=80 400w, https://images.unsplash.com/photo-1506084868230-bb9d95c24759?auto=format&fit=crop&w=800&q=80 800w, https://images.unsplash.com/photo-1506084868230-bb9d95c24759?auto=format&fit=crop&w=1200&q=80 1200w",
+      "sizes": "(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px",
+      "alt": "Fresh colorful vegetables prepared on a kitchen counter"
+    }
+  },
+  {
+    "id": 41,
+    "title": "Why Cybersecurity Skills Are in Highest Demand",
+    "slug": "cybersecurity-skills-demand",
+    "excerpt": "Cybersecurity roles are exploding as global threats rise.",
+    "category": "Security",
+    "author": "MIROZA Security Desk",
+    "date": "2024-12-30",
+    "views": 2520,
+    "link": "/articles/cybersecurity-skills-demand.html",
+    "keywords": "cybersecurity jobs, IT security, digital safety",
+    "image": {
+      "src": "https://images.unsplash.com/photo-1526378722484-bd91ca387e72?auto=format&fit=crop&w=800&q=80",
+      "srcset": "https://images.unsplash.com/photo-1526378722484-bd91ca387e72?auto=format&fit=crop&w=400&q=80 400w, https://images.unsplash.com/photo-1526378722484-bd91ca387e72?auto=format&fit=crop&w=800&q=80 800w, https://images.unsplash.com/photo-1526378722484-bd91ca387e72?auto=format&fit=crop&w=1200&q=80 1200w",
+      "sizes": "(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px",
+      "alt": "Security analyst monitoring threat dashboards"
+    }
+  },
+  {
+    "id": 42,
+    "title": "The History and Future of Space Exploration",
+    "slug": "history-future-space-exploration",
+    "excerpt": "Space exploration is entering a revolutionary new phase.",
+    "category": "Space",
+    "author": "MIROZA Space Bureau",
+    "date": "2024-12-29",
+    "views": 2580,
+    "link": "/articles/history-future-space-exploration.html",
+    "keywords": "space exploration, astronomy",
+    "image": {
+      "src": "https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&w=800&q=80",
+      "srcset": "https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&w=400&q=80 400w, https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&w=800&q=80 800w, https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&w=1200&q=80 1200w",
+      "sizes": "(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px",
+      "alt": "Rocket launch illuminating night sky"
+    }
+  },
+  {
+    "id": 43,
+    "title": "What Makes a Great Leader? Insights for 2025",
+    "slug": "great-leadership-insights-2025",
+    "excerpt": "Leadership is evolving — here are the qualities that matter most.",
+    "category": "Career",
+    "author": "MIROZA Leadership",
+    "date": "2024-12-28",
+    "views": 2640,
+    "link": "/articles/great-leadership-insights-2025.html",
+    "keywords": "leadership skills, career growth",
+    "image": {
+      "src": "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80",
+      "srcset": "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=400&q=80 400w, https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80 800w, https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80 1200w",
+      "sizes": "(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px",
+      "alt": "Team leader addressing colleagues in a modern office"
+    }
   }
 ]
