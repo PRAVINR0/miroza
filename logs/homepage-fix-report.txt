@@ -1,0 +1,45 @@
+MIROZA Homepage Fix Report – 2025-11-28
+=======================================
+
+Data sources scanned
+--------------------
+- /data/posts.json (43 stories; JSON feed available)
+- /data/news.json (10 India desk bulletins; JSON feed available)
+- /data/blogs.json (50 blog entries; JSON feed available)
+- /sitemap.xml (registered for fallback HTML scanning; not required in this run)
+
+Homepage selections
+-------------------
+- News bucket: 8 newest stories (interleaved, shuffled before placement)
+- Articles bucket: 8 newest long-form dispatches
+- Blogs bucket: 8 newest opinion/insight posts
+- Final round-robin feed: 24 cards (news → articles → blogs, repeated) with deduping by slug/url
+- Progressive rendering: first 3 cards injected immediately, remaining cards streamed in batches of 8 via the new load-more control + IntersectionObserver
+
+Fallback activity
+-----------------
+- JSON feeds were healthy, so HTML scraping fallback was not triggered. The sitemap parser is wired and will populate arrays automatically if any feed is missing/empty.
+
+Layout & scroll fixes
+---------------------
+- Confirmed existing `html, body, main` flex rules already prevent 100vh clipping; no additional CSS required.
+- Latest-section container is now pre-marked with `data-home-feed` so JS populates it immediately, eliminating the blank space previously caused by missing cards.
+
+Console/audit output
+--------------------
+- `[MIROZA] Home feed audit` logs the files read, category counts, selected items, and fallback status for each page load.
+
+Manual verification checklist
+-----------------------------
+1. `npx http-server . -p 8080` then open http://localhost:8080.
+2. Confirm hero plus the first three cards render above the fold with no white gap.
+3. Scroll past the first fold; additional cards should stream in automatically or by tapping **Load more stories**.
+4. Click at least three cards (one per category) and verify navigation resolves to the proper article/blog/news page.
+5. Toggle dark/light mode, refresh, and confirm the preference persists.
+6. Monitor the browser console for `[MIROZA] Home feed audit`; ensure no uncaught errors appear.
+
+Additional homepage polish (2025-11-28)
+---------------------------------------
+- Updated canonical, OpenGraph, and Twitter metadata to point at https://miroza.online/.
+- Replaced mojibake characters (arrows, dashes, accent marks) with HTML entities so copy renders correctly on every page load.
+- Confirmed the quick-find hint now uses the Command-key entity (`&#8984;`) to avoid encoding issues across browsers.
