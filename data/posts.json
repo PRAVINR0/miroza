@@ -1,133 +1,5 @@
 [
   {
-    "id": 1,
-    "title": "Global Tech Markets React to New Policy",
-    "slug": "global-tech-markets",
-    "excerpt": "Major indices shift as regulators outline a new framework for cross-border innovation.",
-    "category": "News",
-    "author": "Staff Writer",
-    "date": "2025-01-01",
-    "views": 1240,
-    "image": {
-      "src": "/assets/images/posts/market-radar-800.svg",
-      "srcset": "/assets/images/posts/market-radar-400.svg 400w, /assets/images/posts/market-radar-800.svg 800w, /assets/images/posts/market-radar-1200.svg 1200w",
-      "sizes": "(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px",
-      "alt": "Traders analyzing digital market dashboards"
-    }
-  },
-  {
-    "id": 2,
-    "title": "Weekly Roundup: Trends Shaping 2025",
-    "slug": "weekly-roundup-2025",
-    "excerpt": "A curated selection of developments across tech, society, and design.",
-    "category": "News",
-    "author": "Staff Writer",
-    "date": "2025-01-02",
-    "views": 980,
-    "image": {
-      "src": "/assets/images/posts/weekly-intel-800.svg",
-      "srcset": "/assets/images/posts/weekly-intel-400.svg 400w, /assets/images/posts/weekly-intel-800.svg 800w, /assets/images/posts/weekly-intel-1200.svg 1200w",
-      "sizes": "(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px",
-      "alt": "Weekly briefing cards with highlights"
-    }
-  },
-  {
-    "id": 3,
-    "title": "Developer Productivity Hacks for Focus",
-    "slug": "developer-productivity-hacks",
-    "excerpt": "Lightweight techniques to reduce cognitive load and stay in flow.",
-    "category": "Blog",
-    "author": "Editorial Team",
-    "date": "2025-01-03",
-    "views": 730,
-    "image": {
-      "src": "/assets/images/posts/focus-hacks-800.svg",
-      "srcset": "/assets/images/posts/focus-hacks-400.svg 400w, /assets/images/posts/focus-hacks-800.svg 800w, /assets/images/posts/focus-hacks-1200.svg 1200w",
-      "sizes": "(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px",
-      "alt": "Illustration of deep work focus bubbles"
-    }
-  },
-  {
-    "id": 4,
-    "title": "Accessible Color Systems That Scale",
-    "slug": "accessible-color-systems",
-    "excerpt": "Building a palette that satisfies contrast while enabling brand expression.",
-    "category": "Blog",
-    "author": "Design Desk",
-    "date": "2025-01-04",
-    "views": 650,
-    "image": {
-      "src": "/assets/images/posts/accessible-palette-800.svg",
-      "srcset": "/assets/images/posts/accessible-palette-400.svg 400w, /assets/images/posts/accessible-palette-800.svg 800w, /assets/images/posts/accessible-palette-1200.svg 1200w",
-      "sizes": "(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px",
-      "alt": "Contrasting accessible color swatches"
-    }
-  },
-  {
-    "id": 5,
-    "title": "Edge Caching Strategies for Content Platforms",
-    "slug": "edge-caching-strategies",
-    "excerpt": "Reducing latency through optimized distribution and smart invalidation.",
-    "category": "Article",
-    "author": "Performance Lab",
-    "date": "2025-01-05",
-    "views": 870,
-    "image": {
-      "src": "/assets/images/posts/edge-cache-800.svg",
-      "srcset": "/assets/images/posts/edge-cache-400.svg 400w, /assets/images/posts/edge-cache-800.svg 800w, /assets/images/posts/edge-cache-1200.svg 1200w",
-      "sizes": "(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px",
-      "alt": "Edge cache network visualization"
-    }
-  },
-  {
-    "id": 6,
-    "title": "Designing Robust Offline Experiences",
-    "slug": "robust-offline-experiences",
-    "excerpt": "Patterns for resilient functionality when the network degrades.",
-    "category": "Article",
-    "author": "UX Research",
-    "date": "2025-01-06",
-    "views": 810,
-    "image": {
-      "src": "/assets/images/posts/offline-grid-800.svg",
-      "srcset": "/assets/images/posts/offline-grid-400.svg 400w, /assets/images/posts/offline-grid-800.svg 800w, /assets/images/posts/offline-grid-1200.svg 1200w",
-      "sizes": "(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px",
-      "alt": "Offline mesh nodes connected"
-    }
-  },
-  {
-    "id": 7,
-    "title": "Security Headers: Practical Defaults",
-    "slug": "security-headers-practical-defaults",
-    "excerpt": "A review of headers balancing protection with maintainability.",
-    "category": "Article",
-    "author": "Security Analyst",
-    "date": "2025-01-07",
-    "views": 640,
-    "image": {
-      "src": "/assets/images/posts/security-headers-800.svg",
-      "srcset": "/assets/images/posts/security-headers-400.svg 400w, /assets/images/posts/security-headers-800.svg 800w, /assets/images/posts/security-headers-1200.svg 1200w",
-      "sizes": "(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px",
-      "alt": "Security shield illustration"
-    }
-  },
-  {
-    "id": 8,
-    "title": "Newsletter Strategy: Measuring Real Engagement",
-    "slug": "newsletter-strategy-engagement",
-    "excerpt": "Metrics and approaches for meaningful subscriber retention.",
-    "category": "Blog",
-    "author": "Growth Team",
-    "date": "2025-01-08",
-    "views": 560,
-    "image": {
-      "src": "/assets/images/posts/newsletter-growth-800.svg",
-      "srcset": "/assets/images/posts/newsletter-growth-400.svg 400w, /assets/images/posts/newsletter-growth-800.svg 800w, /assets/images/posts/newsletter-growth-1200.svg 1200w",
-      "sizes": "(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px",
-      "alt": "Newsletter analytics board"
-    }
-  },
-  {
     "id": 9,
     "title": "Global Climate Coalition Reaches Emissions Pact",
     "slug": "global-climate-coalition",
@@ -230,40 +102,6 @@
     }
   },
   {
-    "id": 15,
-    "title": "UN Confirms New Climate Accord Signed by 194 Nations",
-    "slug": "un-new-climate-accord",
-    "excerpt": "A historic new climate accord has been signed, uniting 194 nations in a coordinated effort to reduce global carbon emissions.",
-    "category": "World",
-    "author": "MIROZA International",
-    "date": "2025-01-11",
-    "views": 2155,
-    "link": "/articles/un-new-climate-accord.html",
-    "image": {
-      "src": "https://images.unsplash.com/photo-1502303756788-0e6a56f68e96?auto=format&fit=crop&w=800&q=80",
-      "srcset": "https://images.unsplash.com/photo-1502303756788-0e6a56f68e96?auto=format&fit=crop&w=400&q=80 400w, https://images.unsplash.com/photo-1502303756788-0e6a56f68e96?auto=format&fit=crop&w=800&q=80 800w, https://images.unsplash.com/photo-1502303756788-0e6a56f68e96?auto=format&fit=crop&w=1200&q=80 1200w",
-      "sizes": "(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px",
-      "alt": "Delegates applaud during an international summit"
-    }
-  },
-  {
-    "id": 16,
-    "title": "Major Breakthrough Achieved in Fusion Energy Reactor",
-    "slug": "fusion-reactor-breakthrough",
-    "excerpt": "Scientists achieved a new milestone in fusion energy production, surpassing global expectations.",
-    "category": "Science",
-    "author": "MIROZA Science Bureau",
-    "date": "2025-01-10",
-    "views": 1890,
-    "link": "/articles/fusion-reactor-breakthrough.html",
-    "image": {
-      "src": "https://images.unsplash.com/photo-1526406915894-6a7a5e66f7e3?auto=format&fit=crop&w=800&q=80",
-      "srcset": "https://images.unsplash.com/photo-1526406915894-6a7a5e66f7e3?auto=format&fit=crop&w=400&q=80 400w, https://images.unsplash.com/photo-1526406915894-6a7a5e66f7e3?auto=format&fit=crop&w=800&q=80 800w, https://images.unsplash.com/photo-1526406915894-6a7a5e66f7e3?auto=format&fit=crop&w=1200&q=80 1200w",
-      "sizes": "(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px",
-      "alt": "Fusion reactor interior illuminated in blue"
-    }
-  },
-  {
     "id": 17,
     "title": "AI-Powered Medical Scanner Detects Diseases in Seconds",
     "slug": "ai-medical-scanner",
@@ -278,108 +116,6 @@
       "srcset": "https://images.unsplash.com/photo-1581091012184-5c17f1e5eabf?auto=format&fit=crop&w=400&q=80 400w, https://images.unsplash.com/photo-1581091012184-5c17f1e5eabf?auto=format&fit=crop&w=800&q=80 800w, https://images.unsplash.com/photo-1581091012184-5c17f1e5eabf?auto=format&fit=crop&w=1200&q=80 1200w",
       "sizes": "(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px",
       "alt": "Advanced medical scanner in a clinical lab"
-    }
-  },
-  {
-    "id": 18,
-    "title": "Astronomers Discover Earth-Sized Exoplanet in Goldilocks Zone",
-    "slug": "earth-sized-exoplanet-discovered",
-    "excerpt": "Astronomers have discovered an Earth-sized planet orbiting within the habitable zone of a nearby star.",
-    "category": "Space",
-    "author": "MIROZA Space Research",
-    "date": "2025-01-09",
-    "views": 1685,
-    "link": "/articles/earth-sized-exoplanet-discovered.html",
-    "image": {
-      "src": "https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?auto=format&fit=crop&w=800&q=80",
-      "srcset": "https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?auto=format&fit=crop&w=400&q=80 400w, https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?auto=format&fit=crop&w=800&q=80 800w, https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?auto=format&fit=crop&w=1200&q=80 1200w",
-      "sizes": "(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px",
-      "alt": "Illustration of a distant exoplanet against stars"
-    }
-  },
-  {
-    "id": 19,
-    "title": "Global Food Prices Stabilize After Five Months of Volatility",
-    "slug": "global-food-prices-stabilize",
-    "excerpt": "International food markets show signs of stability after five months of unpredictable price surges.",
-    "category": "Economy",
-    "author": "MIROZA Economic Desk",
-    "date": "2025-01-08",
-    "views": 1595,
-    "link": "/articles/global-food-prices-stabilize.html",
-    "image": {
-      "src": "https://images.unsplash.com/photo-1506806732259-39c2d0268443?auto=format&fit=crop&w=800&q=80",
-      "srcset": "https://images.unsplash.com/photo-1506806732259-39c2d0268443?auto=format&fit=crop&w=400&q=80 400w, https://images.unsplash.com/photo-1506806732259-39c2d0268443?auto=format&fit=crop&w=800&q=80 800w, https://images.unsplash.com/photo-1506806732259-39c2d0268443?auto=format&fit=crop&w=1200&q=80 1200w",
-      "sizes": "(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px",
-      "alt": "Fresh produce displayed in a busy market"
-    }
-  },
-  {
-    "id": 20,
-    "title": "Breakthrough Drone Network Begins Delivering Medicines in Rural Areas",
-    "slug": "drone-delivery-medicine",
-    "excerpt": "A fully-autonomous drone network has begun delivering essential medicines to remote villages.",
-    "category": "Technology",
-    "author": "MIROZA Tech Watch",
-    "date": "2025-01-07",
-    "views": 1520,
-    "link": "/articles/drone-delivery-medicine.html",
-    "image": {
-      "src": "https://images.unsplash.com/photo-1587502536263-5df8f8a262b9?auto=format&fit=crop&w=800&q=80",
-      "srcset": "https://images.unsplash.com/photo-1587502536263-5df8f8a262b9?auto=format&fit=crop&w=400&q=80 400w, https://images.unsplash.com/photo-1587502536263-5df8f8a262b9?auto=format&fit=crop&w=800&q=80 800w, https://images.unsplash.com/photo-1587502536263-5df8f8a262b9?auto=format&fit=crop&w=1200&q=80 1200w",
-      "sizes": "(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px",
-      "alt": "Medical delivery drone preparing for flight"
-    }
-  },
-  {
-    "id": 21,
-    "title": "Record-Breaking Winter Storm Sweeps Across Northern Hemisphere",
-    "slug": "winter-storm-record-2025",
-    "excerpt": "A massive winter storm has shattered temperature and snowfall records across the Northern Hemisphere.",
-    "category": "Weather",
-    "author": "MIROZA Climate Desk",
-    "date": "2025-01-06",
-    "views": 1705,
-    "link": "/articles/winter-storm-record-2025.html",
-    "image": {
-      "src": "https://images.unsplash.com/photo-1608889175120-2445da84aab0?auto=format&fit=crop&w=800&q=80",
-      "srcset": "https://images.unsplash.com/photo-1608889175120-2445da84aab0?auto=format&fit=crop&w=400&q=80 400w, https://images.unsplash.com/photo-1608889175120-2445da84aab0?auto=format&fit=crop&w=800&q=80 800w, https://images.unsplash.com/photo-1608889175120-2445da84aab0?auto=format&fit=crop&w=1200&q=80 1200w",
-      "sizes": "(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px",
-      "alt": "Snow-covered trees during a blizzard"
-    }
-  },
-  {
-    "id": 22,
-    "title": "New Cybersecurity Shield Launched to Protect Global Infrastructure",
-    "slug": "cybersecurity-shield-2025",
-    "excerpt": "A next-generation cybersecurity system aims to safeguard critical infrastructure from advanced threats.",
-    "category": "Security",
-    "author": "MIROZA Security Bureau",
-    "date": "2025-01-05",
-    "views": 1610,
-    "link": "/articles/cybersecurity-shield-2025.html",
-    "image": {
-      "src": "https://images.unsplash.com/photo-1550376029-d79a3f9e6984?auto=format&fit=crop&w=800&q=80",
-      "srcset": "https://images.unsplash.com/photo-1550376029-d79a3f9e6984?auto=format&fit=crop&w=400&q=80 400w, https://images.unsplash.com/photo-1550376029-d79a3f9e6984?auto=format&fit=crop&w=800&q=80 800w, https://images.unsplash.com/photo-1550376029-d79a3f9e6984?auto=format&fit=crop&w=1200&q=80 1200w",
-      "sizes": "(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px",
-      "alt": "Cybersecurity professional monitoring data feeds"
-    }
-  },
-  {
-    "id": 23,
-    "title": "Breakthrough in Battery Tech Promises 4× Faster Charging",
-    "slug": "battery-tech-breakthrough",
-    "excerpt": "A new battery technology delivers up to four times faster charging with double the lifespan.",
-    "category": "Technology",
-    "author": "MIROZA Tech Research",
-    "date": "2025-01-04",
-    "views": 1580,
-    "link": "/articles/battery-tech-breakthrough.html",
-    "image": {
-      "src": "https://images.unsplash.com/photo-1581091012184-5c17f1e5eabf?auto=format&fit=crop&w=800&q=80",
-      "srcset": "https://images.unsplash.com/photo-1581091012184-5c17f1e5eabf?auto=format&fit=crop&w=400&q=80 400w, https://images.unsplash.com/photo-1581091012184-5c17f1e5eabf?auto=format&fit=crop&w=800&q=80 800w, https://images.unsplash.com/photo-1581091012184-5c17f1e5eabf?auto=format&fit=crop&w=1200&q=80 1200w",
-      "sizes": "(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px",
-      "alt": "Engineer testing next-generation battery cells"
     }
   },
   {
@@ -401,6 +137,41 @@
     }
   },
   {
+    "id": 27,
+    "title": "How to Build a Strong Personal Brand in 2025",
+    "slug": "build-personal-brand-2025",
+    "excerpt": "A powerful personal brand sets you apart from the noise. Here’s how to build influence in the modern digital landscape.",
+    "category": "Career",
+    "author": "MIROZA Career Hub",
+    "date": "2025-01-12",
+    "views": 1680,
+    "link": "/articles/build-personal-brand-2025.html",
+    "keywords": "personal branding, career growth, digital identity",
+    "image": {
+      "src": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=800&q=80",
+      "srcset": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=400&q=80 400w, https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=800&q=80 800w, https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80 1200w",
+      "sizes": "(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px",
+      "alt": "Professional presenting ideas on a glass wall during a workshop"
+    }
+  },
+  {
+    "id": 15,
+    "title": "UN Confirms New Climate Accord Signed by 194 Nations",
+    "slug": "un-new-climate-accord",
+    "excerpt": "A historic new climate accord has been signed, uniting 194 nations in a coordinated effort to reduce global carbon emissions.",
+    "category": "World",
+    "author": "MIROZA International",
+    "date": "2025-01-11",
+    "views": 2155,
+    "link": "/articles/un-new-climate-accord.html",
+    "image": {
+      "src": "https://images.unsplash.com/photo-1502303756788-0e6a56f68e96?auto=format&fit=crop&w=800&q=80",
+      "srcset": "https://images.unsplash.com/photo-1502303756788-0e6a56f68e96?auto=format&fit=crop&w=400&q=80 400w, https://images.unsplash.com/photo-1502303756788-0e6a56f68e96?auto=format&fit=crop&w=800&q=80 800w, https://images.unsplash.com/photo-1502303756788-0e6a56f68e96?auto=format&fit=crop&w=1200&q=80 1200w",
+      "sizes": "(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px",
+      "alt": "Delegates applaud during an international summit"
+    }
+  },
+  {
     "id": 25,
     "title": "10 Morning Habits of Highly Successful People",
     "slug": "morning-habits-successful-people",
@@ -416,6 +187,23 @@
       "srcset": "https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?auto=format&fit=crop&w=400&q=80 400w, https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?auto=format&fit=crop&w=800&q=80 800w, https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?auto=format&fit=crop&w=1200&q=80 1200w",
       "sizes": "(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px",
       "alt": "Sunlight pouring over a breakfast table with a journal and coffee"
+    }
+  },
+  {
+    "id": 16,
+    "title": "Major Breakthrough Achieved in Fusion Energy Reactor",
+    "slug": "fusion-reactor-breakthrough",
+    "excerpt": "Scientists achieved a new milestone in fusion energy production, surpassing global expectations.",
+    "category": "Science",
+    "author": "MIROZA Science Bureau",
+    "date": "2025-01-10",
+    "views": 1890,
+    "link": "/articles/fusion-reactor-breakthrough.html",
+    "image": {
+      "src": "https://images.unsplash.com/photo-1526406915894-6a7a5e66f7e3?auto=format&fit=crop&w=800&q=80",
+      "srcset": "https://images.unsplash.com/photo-1526406915894-6a7a5e66f7e3?auto=format&fit=crop&w=400&q=80 400w, https://images.unsplash.com/photo-1526406915894-6a7a5e66f7e3?auto=format&fit=crop&w=800&q=80 800w, https://images.unsplash.com/photo-1526406915894-6a7a5e66f7e3?auto=format&fit=crop&w=1200&q=80 1200w",
+      "sizes": "(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px",
+      "alt": "Fusion reactor interior illuminated in blue"
     }
   },
   {
@@ -437,21 +225,20 @@
     }
   },
   {
-    "id": 27,
-    "title": "How to Build a Strong Personal Brand in 2025",
-    "slug": "build-personal-brand-2025",
-    "excerpt": "A powerful personal brand sets you apart from the noise. Here’s how to build influence in the modern digital landscape.",
-    "category": "Career",
-    "author": "MIROZA Career Hub",
-    "date": "2025-01-12",
-    "views": 1680,
-    "link": "/articles/build-personal-brand-2025.html",
-    "keywords": "personal branding, career growth, digital identity",
+    "id": 18,
+    "title": "Astronomers Discover Earth-Sized Exoplanet in Goldilocks Zone",
+    "slug": "earth-sized-exoplanet-discovered",
+    "excerpt": "Astronomers have discovered an Earth-sized planet orbiting within the habitable zone of a nearby star.",
+    "category": "Space",
+    "author": "MIROZA Space Research",
+    "date": "2025-01-09",
+    "views": 1685,
+    "link": "/articles/earth-sized-exoplanet-discovered.html",
     "image": {
-      "src": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=800&q=80",
-      "srcset": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=400&q=80 400w, https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=800&q=80 800w, https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80 1200w",
+      "src": "https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?auto=format&fit=crop&w=800&q=80",
+      "srcset": "https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?auto=format&fit=crop&w=400&q=80 400w, https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?auto=format&fit=crop&w=800&q=80 800w, https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?auto=format&fit=crop&w=1200&q=80 1200w",
       "sizes": "(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px",
-      "alt": "Professional presenting ideas on a glass wall during a workshop"
+      "alt": "Illustration of a distant exoplanet against stars"
     }
   },
   {
@@ -473,6 +260,40 @@
     }
   },
   {
+    "id": 8,
+    "title": "Newsletter Strategy: Measuring Real Engagement",
+    "slug": "newsletter-strategy-engagement",
+    "excerpt": "Metrics and approaches for meaningful subscriber retention.",
+    "category": "Blog",
+    "author": "Growth Team",
+    "date": "2025-01-08",
+    "views": 560,
+    "image": {
+      "src": "/assets/images/posts/newsletter-growth-800.svg",
+      "srcset": "/assets/images/posts/newsletter-growth-400.svg 400w, /assets/images/posts/newsletter-growth-800.svg 800w, /assets/images/posts/newsletter-growth-1200.svg 1200w",
+      "sizes": "(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px",
+      "alt": "Newsletter analytics board"
+    },
+    "link": "/articles/newsletter-strategy-engagement.html"
+  },
+  {
+    "id": 19,
+    "title": "Global Food Prices Stabilize After Five Months of Volatility",
+    "slug": "global-food-prices-stabilize",
+    "excerpt": "International food markets show signs of stability after five months of unpredictable price surges.",
+    "category": "Economy",
+    "author": "MIROZA Economic Desk",
+    "date": "2025-01-08",
+    "views": 1595,
+    "link": "/articles/global-food-prices-stabilize.html",
+    "image": {
+      "src": "https://images.unsplash.com/photo-1506806732259-39c2d0268443?auto=format&fit=crop&w=800&q=80",
+      "srcset": "https://images.unsplash.com/photo-1506806732259-39c2d0268443?auto=format&fit=crop&w=400&q=80 400w, https://images.unsplash.com/photo-1506806732259-39c2d0268443?auto=format&fit=crop&w=800&q=80 800w, https://images.unsplash.com/photo-1506806732259-39c2d0268443?auto=format&fit=crop&w=1200&q=80 1200w",
+      "sizes": "(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px",
+      "alt": "Fresh produce displayed in a busy market"
+    }
+  },
+  {
     "id": 29,
     "title": "How to Master Personal Finance in Your 20s",
     "slug": "master-personal-finance-20s",
@@ -491,6 +312,40 @@
     }
   },
   {
+    "id": 7,
+    "title": "Security Headers: Practical Defaults",
+    "slug": "security-headers-practical-defaults",
+    "excerpt": "A review of headers balancing protection with maintainability.",
+    "category": "Article",
+    "author": "Security Analyst",
+    "date": "2025-01-07",
+    "views": 640,
+    "image": {
+      "src": "/assets/images/posts/security-headers-800.svg",
+      "srcset": "/assets/images/posts/security-headers-400.svg 400w, /assets/images/posts/security-headers-800.svg 800w, /assets/images/posts/security-headers-1200.svg 1200w",
+      "sizes": "(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px",
+      "alt": "Security shield illustration"
+    },
+    "link": "/articles/security-headers-practical-defaults.html"
+  },
+  {
+    "id": 20,
+    "title": "Breakthrough Drone Network Begins Delivering Medicines in Rural Areas",
+    "slug": "drone-delivery-medicine",
+    "excerpt": "A fully-autonomous drone network has begun delivering essential medicines to remote villages.",
+    "category": "Technology",
+    "author": "MIROZA Tech Watch",
+    "date": "2025-01-07",
+    "views": 1520,
+    "link": "/articles/drone-delivery-medicine.html",
+    "image": {
+      "src": "https://images.unsplash.com/photo-1587502536263-5df8f8a262b9?auto=format&fit=crop&w=800&q=80",
+      "srcset": "https://images.unsplash.com/photo-1587502536263-5df8f8a262b9?auto=format&fit=crop&w=400&q=80 400w, https://images.unsplash.com/photo-1587502536263-5df8f8a262b9?auto=format&fit=crop&w=800&q=80 800w, https://images.unsplash.com/photo-1587502536263-5df8f8a262b9?auto=format&fit=crop&w=1200&q=80 1200w",
+      "sizes": "(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px",
+      "alt": "Medical delivery drone preparing for flight"
+    }
+  },
+  {
     "id": 30,
     "title": "The Rise of Remote Work: What Has Changed Forever?",
     "slug": "rise-of-remote-work-2025",
@@ -506,6 +361,40 @@
       "srcset": "https://images.unsplash.com/photo-1593642532973-d31b6557fa68?auto=format&fit=crop&w=400&q=80 400w, https://images.unsplash.com/photo-1593642532973-d31b6557fa68?auto=format&fit=crop&w=800&q=80 800w, https://images.unsplash.com/photo-1593642532973-d31b6557fa68?auto=format&fit=crop&w=1200&q=80 1200w",
       "sizes": "(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px",
       "alt": "Open laptop on a remote worker’s minimalist desk setup"
+    }
+  },
+  {
+    "id": 6,
+    "title": "Designing Robust Offline Experiences",
+    "slug": "robust-offline-experiences",
+    "excerpt": "Patterns for resilient functionality when the network degrades.",
+    "category": "Article",
+    "author": "UX Research",
+    "date": "2025-01-06",
+    "views": 810,
+    "image": {
+      "src": "/assets/images/posts/offline-grid-800.svg",
+      "srcset": "/assets/images/posts/offline-grid-400.svg 400w, /assets/images/posts/offline-grid-800.svg 800w, /assets/images/posts/offline-grid-1200.svg 1200w",
+      "sizes": "(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px",
+      "alt": "Offline mesh nodes connected"
+    },
+    "link": "/articles/robust-offline-experiences.html"
+  },
+  {
+    "id": 21,
+    "title": "Record-Breaking Winter Storm Sweeps Across Northern Hemisphere",
+    "slug": "winter-storm-record-2025",
+    "excerpt": "A massive winter storm has shattered temperature and snowfall records across the Northern Hemisphere.",
+    "category": "Weather",
+    "author": "MIROZA Climate Desk",
+    "date": "2025-01-06",
+    "views": 1705,
+    "link": "/articles/winter-storm-record-2025.html",
+    "image": {
+      "src": "https://images.unsplash.com/photo-1608889175120-2445da84aab0?auto=format&fit=crop&w=800&q=80",
+      "srcset": "https://images.unsplash.com/photo-1608889175120-2445da84aab0?auto=format&fit=crop&w=400&q=80 400w, https://images.unsplash.com/photo-1608889175120-2445da84aab0?auto=format&fit=crop&w=800&q=80 800w, https://images.unsplash.com/photo-1608889175120-2445da84aab0?auto=format&fit=crop&w=1200&q=80 1200w",
+      "sizes": "(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px",
+      "alt": "Snow-covered trees during a blizzard"
     }
   },
   {
@@ -545,6 +434,40 @@
     }
   },
   {
+    "id": 5,
+    "title": "Edge Caching Strategies for Content Platforms",
+    "slug": "edge-caching-strategies",
+    "excerpt": "Reducing latency through optimized distribution and smart invalidation.",
+    "category": "Article",
+    "author": "Performance Lab",
+    "date": "2025-01-05",
+    "views": 870,
+    "image": {
+      "src": "/assets/images/posts/edge-cache-800.svg",
+      "srcset": "/assets/images/posts/edge-cache-400.svg 400w, /assets/images/posts/edge-cache-800.svg 800w, /assets/images/posts/edge-cache-1200.svg 1200w",
+      "sizes": "(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px",
+      "alt": "Edge cache network visualization"
+    },
+    "link": "/articles/edge-caching-strategies.html"
+  },
+  {
+    "id": 22,
+    "title": "New Cybersecurity Shield Launched to Protect Global Infrastructure",
+    "slug": "cybersecurity-shield-2025",
+    "excerpt": "A next-generation cybersecurity system aims to safeguard critical infrastructure from advanced threats.",
+    "category": "Security",
+    "author": "MIROZA Security Bureau",
+    "date": "2025-01-05",
+    "views": 1610,
+    "link": "/articles/cybersecurity-shield-2025.html",
+    "image": {
+      "src": "https://images.unsplash.com/photo-1550376029-d79a3f9e6984?auto=format&fit=crop&w=800&q=80",
+      "srcset": "https://images.unsplash.com/photo-1550376029-d79a3f9e6984?auto=format&fit=crop&w=400&q=80 400w, https://images.unsplash.com/photo-1550376029-d79a3f9e6984?auto=format&fit=crop&w=800&q=80 800w, https://images.unsplash.com/photo-1550376029-d79a3f9e6984?auto=format&fit=crop&w=1200&q=80 1200w",
+      "sizes": "(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px",
+      "alt": "Cybersecurity professional monitoring data feeds"
+    }
+  },
+  {
     "id": 33,
     "title": "Simple Ways to Improve Mental Health in Busy Life",
     "slug": "improve-mental-health-tips",
@@ -560,6 +483,40 @@
       "srcset": "https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?auto=format&fit=crop&w=400&q=80 400w, https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?auto=format&fit=crop&w=800&q=80 800w, https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?auto=format&fit=crop&w=1200&q=80 1200w",
       "sizes": "(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px",
       "alt": "Calm woman meditating near a sunlit window"
+    }
+  },
+  {
+    "id": 4,
+    "title": "Accessible Color Systems That Scale",
+    "slug": "accessible-color-systems",
+    "excerpt": "Building a palette that satisfies contrast while enabling brand expression.",
+    "category": "Blog",
+    "author": "Design Desk",
+    "date": "2025-01-04",
+    "views": 650,
+    "image": {
+      "src": "/assets/images/posts/accessible-palette-800.svg",
+      "srcset": "/assets/images/posts/accessible-palette-400.svg 400w, /assets/images/posts/accessible-palette-800.svg 800w, /assets/images/posts/accessible-palette-1200.svg 1200w",
+      "sizes": "(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px",
+      "alt": "Contrasting accessible color swatches"
+    },
+    "link": "/articles/accessible-color-systems.html"
+  },
+  {
+    "id": 23,
+    "title": "Breakthrough in Battery Tech Promises 4× Faster Charging",
+    "slug": "battery-tech-breakthrough",
+    "excerpt": "A new battery technology delivers up to four times faster charging with double the lifespan.",
+    "category": "Technology",
+    "author": "MIROZA Tech Research",
+    "date": "2025-01-04",
+    "views": 1580,
+    "link": "/articles/battery-tech-breakthrough.html",
+    "image": {
+      "src": "https://images.unsplash.com/photo-1581091012184-5c17f1e5eabf?auto=format&fit=crop&w=800&q=80",
+      "srcset": "https://images.unsplash.com/photo-1581091012184-5c17f1e5eabf?auto=format&fit=crop&w=400&q=80 400w, https://images.unsplash.com/photo-1581091012184-5c17f1e5eabf?auto=format&fit=crop&w=800&q=80 800w, https://images.unsplash.com/photo-1581091012184-5c17f1e5eabf?auto=format&fit=crop&w=1200&q=80 1200w",
+      "sizes": "(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px",
+      "alt": "Engineer testing next-generation battery cells"
     }
   },
   {
@@ -579,6 +536,23 @@
       "sizes": "(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px",
       "alt": "Foldable smartphone glowing on a futuristic table"
     }
+  },
+  {
+    "id": 3,
+    "title": "Developer Productivity Hacks for Focus",
+    "slug": "developer-productivity-hacks",
+    "excerpt": "Lightweight techniques to reduce cognitive load and stay in flow.",
+    "category": "Blog",
+    "author": "Editorial Team",
+    "date": "2025-01-03",
+    "views": 730,
+    "image": {
+      "src": "/assets/images/posts/focus-hacks-800.svg",
+      "srcset": "/assets/images/posts/focus-hacks-400.svg 400w, /assets/images/posts/focus-hacks-800.svg 800w, /assets/images/posts/focus-hacks-1200.svg 1200w",
+      "sizes": "(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px",
+      "alt": "Illustration of deep work focus bubbles"
+    },
+    "link": "/articles/developer-productivity-hacks.html"
   },
   {
     "id": 35,
@@ -617,6 +591,23 @@
     }
   },
   {
+    "id": 2,
+    "title": "Weekly Roundup: Trends Shaping 2025",
+    "slug": "weekly-roundup-2025",
+    "excerpt": "A curated selection of developments across tech, society, and design.",
+    "category": "News",
+    "author": "Staff Writer",
+    "date": "2025-01-02",
+    "views": 980,
+    "image": {
+      "src": "/assets/images/posts/weekly-intel-800.svg",
+      "srcset": "/assets/images/posts/weekly-intel-400.svg 400w, /assets/images/posts/weekly-intel-800.svg 800w, /assets/images/posts/weekly-intel-1200.svg 1200w",
+      "sizes": "(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px",
+      "alt": "Weekly briefing cards with highlights"
+    },
+    "link": "/articles/weekly-roundup-2025.html"
+  },
+  {
     "id": 37,
     "title": "Why Reading Books Is the Ultimate Superpower",
     "slug": "reading-books-superpower",
@@ -651,6 +642,23 @@
       "sizes": "(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px",
       "alt": "Industrial tanks with green energy lighting"
     }
+  },
+  {
+    "id": 1,
+    "title": "Global Tech Markets React to New Policy",
+    "slug": "global-tech-markets",
+    "excerpt": "Major indices shift as regulators outline a new framework for cross-border innovation.",
+    "category": "News",
+    "author": "Staff Writer",
+    "date": "2025-01-01",
+    "views": 1240,
+    "image": {
+      "src": "/assets/images/posts/market-radar-800.svg",
+      "srcset": "/assets/images/posts/market-radar-400.svg 400w, /assets/images/posts/market-radar-800.svg 800w, /assets/images/posts/market-radar-1200.svg 1200w",
+      "sizes": "(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px",
+      "alt": "Traders analyzing digital market dashboards"
+    },
+    "link": "/articles/global-tech-markets.html"
   },
   {
     "id": 39,

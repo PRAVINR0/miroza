@@ -17,6 +17,7 @@ const CORE_ASSETS = [
   '/data/news.json',
   '/data/blogs.json',
   '/data/posts.json',
+  '/data/categories.json',
   '/rss.xml'
 ];
 

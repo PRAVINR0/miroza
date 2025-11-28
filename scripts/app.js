@@ -1028,6 +1028,12 @@
           chip.setAttribute('data-prefetch','');
           row.appendChild(chip);
         });
+        const reset=document.createElement('a');
+        reset.className='chip';
+        reset.href='/articles.html';
+        reset.textContent='Reset';
+        reset.setAttribute('data-prefetch','');
+        row.appendChild(reset);
       });
     }
 
