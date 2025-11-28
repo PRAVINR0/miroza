@@ -31,7 +31,7 @@
 
     <section class="topic-chips" aria-label="Filter by topic">
       <strong>Browse topics:</strong>
-      <div class="chip-row">
+      <div class="chip-row" data-category-chips data-category-limit="8">
         <a class="chip" href="?topic=World">World</a>
         <a class="chip" href="?topic=Economy">Economy</a>
         <a class="chip" href="?topic=Technology">Technology</a>
@@ -40,6 +40,19 @@
         <a class="chip" href="?topic=Finance">Finance</a>
         <a class="chip" href="?topic=Travel">Travel</a>
         <a class="chip" href="/articles.html">Reset</a>
+      </div>
+    </section>
+
+    <section class="category-directory" aria-labelledby="article-directory-heading">
+      <div class="section-heading">
+        <p class="hero-tag">Automated curation</p>
+        <h2 id="article-directory-heading">Category hubs refreshed from the data feed</h2>
+        <p class="intro">This grid is generated from the same JSON data used on every page so editors never touch markup.</p>
+      </div>
+      <div class="category-directory__grid" data-category-directory data-category-limit="9" aria-live="polite">
+        <article class="category-card skeleton" aria-hidden="true"></article>
+        <article class="category-card skeleton" aria-hidden="true"></article>
+        <article class="category-card skeleton" aria-hidden="true"></article>
       </div>
     </section>
 
