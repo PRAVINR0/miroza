@@ -321,6 +321,13 @@
       return (value || '').toLowerCase();
     }
 
+    function normalizeContentType(value, fallback='article'){
+      const normalized = normalizeCategory(value);
+      if(!normalized) return fallback;
+      if(normalized === 'india-news') return 'news';
+      return normalized;
+    }
+
     function isNewsCategory(value){
       const slug = normalizeCategory(value);
       return slug === 'news' || slug === 'india';
@@ -336,12 +343,21 @@
       return slug !== 'news' && slug !== 'blog';
     }
 
-    function buildLink(category, slug){
+    function buildLink(contentType, slug, category){
       if(!slug) return '#';
-      const normalized = normalizeCategory(category);
-      if(normalized === 'blog') return `/blogs/${slug}.html`;
-      if(normalized === 'news' || normalized === 'india') return `/news/${slug}.html`;
+      const normalizedType = normalizeContentType(contentType);
+      const normalizedCategory = normalizeCategory(category);
+      if(normalizedType === 'blog' || normalizedCategory === 'blog') return `/blogs/${slug}.html`;
+      if(normalizedType === 'news' || normalizedCategory === 'news' || normalizedCategory === 'india') return `/news/${slug}.html`;
       return `/articles/${slug}.html`;
+    }
+
+    function matchContentType(item, type){
+      if(!item) return false;
+      const target = normalizeCategory(type);
+      if(!target) return false;
+      const itemType = normalizeContentType(item.contentType || item.category);
+      return itemType === target;
     }
 
     function normalizeImage(data, fallbackAlt){
@@ -371,18 +387,19 @@
       }
     }
 
-    function enrichPost(entry, index){
+    function enrichPost(entry, index, sourceType='article'){
       const slug = entry.slug || `story-${entry.id || index + 1}`;
       const category = entry.category || 'Story';
-      const normalized = normalizeCategory(category);
+      const normalizedCategory = normalizeCategory(category);
+      const contentType = normalizeContentType(entry.contentType || sourceType);
       const dateValue = Date.parse(entry.date || entry.updated || '') || Date.now() - index;
-      const link = entry.link || buildLink(normalized, slug);
+      const link = entry.link || entry.contentFile || buildLink(contentType, slug, category);
       const metaLabel = entry.metaLabel || [category, formatDisplayDate(entry.date)].filter(Boolean).join(' • ');
       const excerpt = entry.excerpt || entry.summary || '';
       const image = normalizeImage(entry.image, entry.title);
-      const defaultViews = normalized === 'news' ? (1150 - index * 12) : (1600 - index * 20);
+      const defaultViews = normalizedCategory === 'news' ? (1150 - index * 12) : (1600 - index * 20);
       const views = typeof entry.views === 'number' ? entry.views : defaultViews;
-      return { ...entry, slug, category, link, dateValue, metaLabel, excerpt, image, views };
+      return { ...entry, slug, category, link, dateValue, metaLabel, excerpt, image, views, contentType };
     }
 
     function normalizeNewsEntry(entry, index){
@@ -393,9 +410,9 @@
         ...entry,
         id: entry.id || `news-${index+1}`,
         slug,
-        category: 'News',
-        link: entry.contentFile || buildLink('news', slug)
-      }, index + 1000);
+        category: regionLabel,
+        contentFile: entry.contentFile
+      }, index + 1000, 'news');
       const dateLabel = formatDisplayDate(hydrated.date);
       const metaPieces = [regionLabel, dateLabel].filter(Boolean);
       hydrated.metaLabel = metaPieces.join(' • ') || regionLabel;
@@ -439,7 +456,7 @@
       return Promise.all([fetchArticlesFeed(), fetchNewsFeed()])
         .then(([articlePayload, newsPayload]) => {
           const articleEntries = ensureArray(articlePayload)
-            .map((entry, index) => enrichPost(entry, index))
+            .map((entry, index) => enrichPost(entry, index, 'article'))
             .filter(item => !isBlogCategory(item.category))
             .sort((a,b)=> (b.dateValue || 0) - (a.dateValue || 0));
           const newsEntries = ensureArray(newsPayload)
@@ -475,7 +492,7 @@
         const key = (post.id ?? post.slug ?? post.link ?? Math.random()).toString();
         postsById.set(key, post);
       });
-      const articlePool = posts.filter(item => isArticleCategory(item.category));
+      const articlePool = posts.filter(item => matchContentType(item, 'article'));
       heroCandidates = articlePool.slice().sort((a,b)=> (b.dateValue || 0) - (a.dateValue || 0));
       const trendingPool = posts.slice().sort((a,b)=> (b.views || 0) - (a.views || 0));
       trendingList = trendingPool.slice(0,8);
@@ -494,8 +511,15 @@
     function filterByCategoryList(slugs){
       if(!Array.isArray(slugs) || !slugs.length) return posts.slice();
       const normalized = slugs.map(item => normalizeCategory(item));
+      const wantsArticles = normalized.includes('article');
+      const wantsNews = normalized.includes('news');
       return posts
-        .filter(post => normalized.includes(normalizeCategory(post.category)))
+        .filter(post => {
+          const categorySlug = normalizeCategory(post.category);
+          if(wantsArticles && matchContentType(post, 'article')) return true;
+          if(wantsNews && matchContentType(post, 'news')) return true;
+          return normalized.includes(categorySlug);
+        })
         .sort((a,b)=> (b.dateValue || 0) - (a.dateValue || 0));
     }
 
@@ -559,11 +583,11 @@
     }
 
     function newsSectionItems(){
-      return posts.filter(item => isNewsCategory(item.category)).sort((a,b)=> (b.dateValue || 0) - (a.dateValue || 0));
+      return posts.filter(item => matchContentType(item, 'news')).sort((a,b)=> (b.dateValue || 0) - (a.dateValue || 0));
     }
 
     function articleSectionItems(){
-      return posts.filter(item => isArticleCategory(item.category)).sort((a,b)=> (b.dateValue || 0) - (a.dateValue || 0));
+      return posts.filter(item => matchContentType(item, 'article')).sort((a,b)=> (b.dateValue || 0) - (a.dateValue || 0));
     }
 
     function mountHomeSections(){
@@ -608,6 +632,7 @@
         renderTrending();
         const heroFeed = heroCandidates.slice(0,5);
         window.MIROZA.hero?.mount(heroFeed);
+        window.MIROZA.ui?.hydrateLazySections?.();
         console.info('[MIROZA] Home sections rendered', {
           totalPosts: posts.length,
           latestRendered: latestOrder.length,
@@ -629,8 +654,9 @@
     function filterLatest(source, filter){
       if(filter==='all') return source;
       const match = normalizeCategory(filter);
-      if(match === 'article') return source.filter(item => isArticleCategory(item.category));
-      if(match === 'news') return source.filter(item => isNewsCategory(item.category));
+      if(match === 'article') return source.filter(item => matchContentType(item, 'article'));
+      if(match === 'news') return source.filter(item => matchContentType(item, 'news'));
+      if(match === 'blog') return source.filter(item => matchContentType(item, 'blog'));
       return source.filter(item => normalizeCategory(item.category) === match);
     }
 
@@ -716,7 +742,8 @@
         date: entry.date,
         dateValue,
         tags: entry.tags || [],
-        views: entry.readTimeMinutes ? entry.readTimeMinutes * 100 : undefined // pseudo metric for consistency
+        views: entry.readTimeMinutes ? entry.readTimeMinutes * 100 : undefined, // pseudo metric for consistency
+        contentType: 'blog'
       };
     }
 
