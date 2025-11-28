@@ -11,7 +11,9 @@ const CORE_ASSETS = [
   '/assets/icons/logo.svg',
   '/assets/images/hero-insight-800.svg',
   '/assets/images/placeholder.svg',
-  '/data/posts.json',
+  '/data/articles.json',
+  '/data/news.json',
+  '/data/blogs.json',
   '/rss.xml'
 ];
 

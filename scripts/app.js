@@ -99,13 +99,17 @@
     alt: 'MIROZA featured story'
   };
 
-  function buildCard(post){
+  function buildCard(post, options={}){
+    if(!post || typeof post !== 'object') return null;
     const card=document.createElement('article');
     card.className='card fade-in';
     card.setAttribute('data-id', post.id);
     card.dataset.label = post.category || 'Story';
     const isTrending = window.MIROZA.posts?.isTrending?.(post.id);
     if(isTrending) card.dataset.trending='true'; else card.removeAttribute('data-trending');
+    if(typeof options.order === 'number'){
+      card.style.setProperty('--card-order', options.order);
+    }
 
     const imgData = post.image || FALLBACK_IMAGE;
     const picture=document.createElement('picture');
@@ -303,21 +307,57 @@
 
   /* Posts Loading & Rendering */
   window.MIROZA.posts = (function(){
-    const dataUrl = '/data/posts.json';
+    const ARTICLE_SOURCE = '/data/articles.json';
+    const LEGACY_POST_SOURCE = '/data/posts.json';
+    const NEWS_SOURCE = '/data/news.json';
     let posts=[];
     let readyPromise=null;
-      let heroCandidates=[];
-      let trendingSet=new Set();
-      const postsById = new Map();
+    let heroCandidates=[];
+    let trendingSet=new Set();
+    let trendingList=[];
+    const postsById = new Map();
 
     function normalizeCategory(value){
       return (value || '').toLowerCase();
     }
 
+    function isNewsCategory(value){
+      const slug = normalizeCategory(value);
+      return slug === 'news' || slug === 'india';
+    }
+
+    function isBlogCategory(value){
+      return normalizeCategory(value) === 'blog';
+    }
+
+    function isArticleCategory(value){
+      const slug = normalizeCategory(value);
+      if(!slug) return false;
+      return slug !== 'news' && slug !== 'blog';
+    }
+
     function buildLink(category, slug){
       if(!slug) return '#';
-      if(category === 'blog') return `/blogs/${slug}.html`;
+      const normalized = normalizeCategory(category);
+      if(normalized === 'blog') return `/blogs/${slug}.html`;
+      if(normalized === 'news' || normalized === 'india') return `/news/${slug}.html`;
       return `/articles/${slug}.html`;
+    }
+
+    function normalizeImage(data, fallbackAlt){
+      if(!data){
+        return { ...FALLBACK_IMAGE, alt: fallbackAlt || FALLBACK_IMAGE.alt };
+      }
+      if(typeof data === 'string'){
+        return { src:data, alt:fallbackAlt || 'Story art', sizes: DEFAULT_IMAGE_SIZES };
+      }
+      return {
+        src: data.src || FALLBACK_IMAGE.src,
+        srcset: data.srcset || FALLBACK_IMAGE.srcset,
+        sizes: data.sizes || DEFAULT_IMAGE_SIZES,
+        alt: data.alt || fallbackAlt || FALLBACK_IMAGE.alt,
+        sources: Array.isArray(data.sources) ? data.sources : undefined
+      };
     }
 
     function formatDisplayDate(value){
@@ -335,43 +375,128 @@
       const slug = entry.slug || `story-${entry.id || index + 1}`;
       const category = entry.category || 'Story';
       const normalized = normalizeCategory(category);
-      const dateValue = Date.parse(entry.date || entry.updated || '') || Date.now();
+      const dateValue = Date.parse(entry.date || entry.updated || '') || Date.now() - index;
       const link = entry.link || buildLink(normalized, slug);
       const metaLabel = entry.metaLabel || [category, formatDisplayDate(entry.date)].filter(Boolean).join(' • ');
-      return { ...entry, slug, category, link, dateValue, metaLabel };
+      const excerpt = entry.excerpt || entry.summary || '';
+      const image = normalizeImage(entry.image, entry.title);
+      const defaultViews = normalized === 'news' ? (1150 - index * 12) : (1600 - index * 20);
+      const views = typeof entry.views === 'number' ? entry.views : defaultViews;
+      return { ...entry, slug, category, link, dateValue, metaLabel, excerpt, image, views };
+    }
+
+    function normalizeNewsEntry(entry, index){
+      if(!entry) return null;
+      const slug = entry.slug || `news-${index+1}`;
+      const regionLabel = entry.category || 'News';
+      const hydrated = enrichPost({
+        ...entry,
+        id: entry.id || `news-${index+1}`,
+        slug,
+        category: 'News',
+        link: entry.contentFile || buildLink('news', slug)
+      }, index + 1000);
+      const dateLabel = formatDisplayDate(hydrated.date);
+      const metaPieces = [regionLabel, dateLabel].filter(Boolean);
+      hydrated.metaLabel = metaPieces.join(' • ') || regionLabel;
+      hydrated.views = hydrated.views || (1200 - index * 15);
+      hydrated.region = regionLabel;
+      return hydrated;
+    }
+
+    function fetchJSON(url){
+      return fetch(url).then(response => {
+        if(!response.ok) throw new Error(`${url} responded with ${response.status}`);
+        return response.json();
+      });
+    }
+
+    function fetchArticlesFeed(){
+      return fetchJSON(ARTICLE_SOURCE)
+        .catch(err => {
+          console.warn('MIROZA: Falling back to legacy posts feed', err);
+          return fetchJSON(LEGACY_POST_SOURCE);
+        })
+        .catch(err => {
+          console.error('MIROZA: Unable to load article feed', err);
+          return [];
+        });
+    }
+
+    function fetchNewsFeed(){
+      return fetchJSON(NEWS_SOURCE)
+        .catch(err => {
+          console.error('MIROZA: Unable to load news feed', err);
+          return [];
+        });
+    }
+
+    function ensureArray(payload){
+      return Array.isArray(payload) ? payload : [];
     }
 
     function fetchPosts(){
-      return fetch(dataUrl)
-        .then(r=>r.json())
-        .then(json=>{
-          const source = Array.isArray(json) ? json : [];
-          const hydrated = source.map(enrichPost);
-          posts = hydrated.filter(post => normalizeCategory(post.category) !== 'blog');
+      return Promise.all([fetchArticlesFeed(), fetchNewsFeed()])
+        .then(([articlePayload, newsPayload]) => {
+          const articleEntries = ensureArray(articlePayload)
+            .map((entry, index) => enrichPost(entry, index))
+            .filter(item => !isBlogCategory(item.category))
+            .sort((a,b)=> (b.dateValue || 0) - (a.dateValue || 0));
+          const newsEntries = ensureArray(newsPayload)
+            .map((entry, index) => normalizeNewsEntry(entry, index))
+            .filter(Boolean)
+            .sort((a,b)=> (b.dateValue || 0) - (a.dateValue || 0));
+          primeNewsModule(newsPayload);
+          posts = [...newsEntries, ...articleEntries];
           computeDerived();
           return posts;
         })
-        .catch(err=>{ console.error('Posts load failed', err); return []; });
+        .catch(err => {
+          console.error('Posts load failed', err);
+          posts = [];
+          computeDerived();
+          return posts;
+        });
+    }
+
+    function primeNewsModule(payload){
+      if(window.MIROZA?.indiaNews?.prime && Array.isArray(payload) && payload.length){
+        try {
+          window.MIROZA.indiaNews.prime(payload);
+        } catch(error){
+          console.warn('MIROZA: Unable to seed India desk from posts module', error);
+        }
+      }
     }
 
     function computeDerived(){
-      heroCandidates = [...posts].sort((a,b)=> (b.views||0) - (a.views||0));
-      trendingSet = new Set(heroCandidates.slice(0,5).map(p=>p.id));
-        postsById.clear();
-        posts.forEach(post => {
-          const key = (post.id ?? post.slug ?? post.link ?? Math.random()).toString();
-          postsById.set(key, post);
-        });
+      postsById.clear();
+      posts.forEach(post => {
+        const key = (post.id ?? post.slug ?? post.link ?? Math.random()).toString();
+        postsById.set(key, post);
+      });
+      const articlePool = posts.filter(item => isArticleCategory(item.category));
+      heroCandidates = articlePool.slice().sort((a,b)=> (b.dateValue || 0) - (a.dateValue || 0));
+      const trendingPool = posts.slice().sort((a,b)=> (b.views || 0) - (a.views || 0));
+      trendingList = trendingPool.slice(0,8);
+      trendingSet = new Set(trendingList.map(item => item.id));
     }
 
     function filterByCategory(cat){
       const match = normalizeCategory(cat);
-      return posts.filter(p=> normalizeCategory(p.category) === match);
+      if(match === 'news') return newsSectionItems();
+      if(match === 'article') return articleSectionItems();
+      return posts
+        .filter(p=> normalizeCategory(p.category) === match)
+        .sort((a,b)=> (b.dateValue || 0) - (a.dateValue || 0));
     }
 
     function filterByCategoryList(slugs){
       if(!Array.isArray(slugs) || !slugs.length) return posts.slice();
-      return posts.filter(post => slugs.includes(normalizeCategory(post.category)));
+      const normalized = slugs.map(item => normalizeCategory(item));
+      return posts
+        .filter(post => normalized.includes(normalizeCategory(post.category)))
+        .sort((a,b)=> (b.dateValue || 0) - (a.dateValue || 0));
     }
 
     function parseCategoryList(raw){
@@ -409,7 +534,8 @@
         heading.textContent = heading.dataset.defaultTitle;
       }
     }
-    function trending(){ return heroCandidates.slice(0,5); }
+
+    function trending(){ return trendingList.slice(0,5); }
     function isTrending(id){ return trendingSet.has(id); }
 
     function renderTrending(){
@@ -430,6 +556,14 @@
         li.appendChild(meta);
         list.appendChild(li);
       });
+    }
+
+    function newsSectionItems(){
+      return posts.filter(item => isNewsCategory(item.category)).sort((a,b)=> (b.dateValue || 0) - (a.dateValue || 0));
+    }
+
+    function articleSectionItems(){
+      return posts.filter(item => isArticleCategory(item.category)).sort((a,b)=> (b.dateValue || 0) - (a.dateValue || 0));
     }
 
     function mountHomeSections(){
@@ -469,8 +603,8 @@
             latestPagination?.render({ reset:true });
           }).catch(()=>{});
         }
-        window.MIROZA.pagination.mount({ targetSelector:'#news-cards', controlsSelector:'#news-pagination', getData:()=>filterByCategory('News'), pageSize:6, emptyMessage:'News stories publishing soon.', mode:'load-more' });
-        window.MIROZA.pagination.mount({ targetSelector:'#articles-cards', controlsSelector:'#articles-pagination', getData:()=>filterByCategory('Article'), pageSize:6, emptyMessage:'Long-form stories publishing soon.', mode:'load-more' });
+        window.MIROZA.pagination.mount({ targetSelector:'#news-cards', controlsSelector:'#news-pagination', getData:()=>newsSectionItems(), pageSize:6, emptyMessage:'News stories publishing soon.', mode:'load-more' });
+        window.MIROZA.pagination.mount({ targetSelector:'#articles-cards', controlsSelector:'#articles-pagination', getData:()=>articleSectionItems(), pageSize:6, emptyMessage:'Long-form stories publishing soon.', mode:'load-more' });
         renderTrending();
         const heroFeed = heroCandidates.slice(0,5);
         window.MIROZA.hero?.mount(heroFeed);
@@ -491,9 +625,12 @@
         }
       }
     }
+
     function filterLatest(source, filter){
       if(filter==='all') return source;
       const match = normalizeCategory(filter);
+      if(match === 'article') return source.filter(item => isArticleCategory(item.category));
+      if(match === 'news') return source.filter(item => isNewsCategory(item.category));
       return source.filter(item => normalizeCategory(item.category) === match);
     }
 
@@ -605,7 +742,10 @@
         if(pagination){ pagination.innerHTML=''; }
         return;
       }
-      items.forEach(item => target.appendChild(window.MIROZA.buildCard(item)));
+      items.forEach((item, index) => {
+        const card = window.MIROZA.buildCard(item, { order:index });
+        if(card) target.appendChild(card);
+      });
       if(pagination){
         pagination.innerHTML='';
         const info=document.createElement('p');
@@ -690,7 +830,10 @@
         const start = state.page * pageSize;
         const slice = data.slice(start, start + pageSize);
         target.innerHTML='';
-        slice.forEach(post => target.appendChild(window.MIROZA.buildCard(post)));
+        slice.forEach((post, index) => {
+          const card = window.MIROZA.buildCard(post, { order: start + index });
+          if(card) target.appendChild(card);
+        });
         controls.innerHTML='';
         const prev = document.createElement('button');
         prev.type='button'; prev.textContent='Previous'; prev.disabled = state.page === 0;
@@ -710,7 +853,10 @@
       function renderLoadMore(data, totalPages){
         const visibleCount = Math.min((state.page + 1) * pageSize, data.length);
         target.innerHTML='';
-        data.slice(0, visibleCount).forEach(post => target.appendChild(window.MIROZA.buildCard(post)));
+        data.slice(0, visibleCount).forEach((post, index) => {
+          const card = window.MIROZA.buildCard(post, { order:index });
+          if(card) target.appendChild(card);
+        });
         controls.innerHTML='';
         const btn=document.createElement('button');
         btn.type='button';
@@ -746,12 +892,21 @@
     const dataUrl = '/data/news.json';
     let items = [];
     let readyPromise = null;
+    let hydratedPage = null;
+
+    function setItems(payload){
+      const normalized = normalize(payload);
+      if(!normalized.length) return false;
+      items = normalized;
+      readyPromise = Promise.resolve(items);
+      return true;
+    }
 
     function fetchNews(){
       return fetch(dataUrl)
         .then(resp => resp.json())
         .then(json => {
-          items = normalize(json);
+          setItems(json);
           return items;
         })
         .catch(err => {
@@ -828,8 +983,16 @@
 
     function hydrate(){
       const pageType = document.body?.dataset?.page;
-      if(pageType === 'home') mountHome();
-      if(pageType === 'india-news') mountHub();
+      if(!pageType || hydratedPage === pageType) return;
+      if(pageType === 'home'){
+        mountHome();
+        hydratedPage = pageType;
+        return;
+      }
+      if(pageType === 'india-news'){
+        mountHub();
+        hydratedPage = pageType;
+      }
     }
 
     function init(){
@@ -843,7 +1006,16 @@
       return readyPromise;
     }
 
-    return { init, ready, items:()=>items.slice() };
+    function prime(payload){
+      if(setItems(payload)){
+        const pageType = document.body?.dataset?.page;
+        if(pageType === 'home' || pageType === 'india-news'){
+          window.requestAnimationFrame(()=> hydrate());
+        }
+      }
+    }
+
+    return { init, ready, items:()=>items.slice(), prime };
   })();
 
   /* Link Prefetch */

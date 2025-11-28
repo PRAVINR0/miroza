@@ -32,7 +32,9 @@ styles/styles.css
 scripts/app.js
 assets/images/
 assets/icons/
-data/posts.json
+data/articles.json
+data/news.json
+data/blogs.json
 manifest.json
 sw.js
 sitemap.xml
@@ -71,9 +73,9 @@ Visit `http://localhost:8080` and inspect the Network tab: the service worker sh
 - Drawer focus returns to the original trigger for accessibility, and opening the panel locks body scroll to avoid background jumps.
 
 ## Content Pipeline Workflow
-1. Draft the long-form article under `articles/<slug>.html` with correct meta/JSON-LD and assign a unique `id` in `data/posts.json`.
+1. Draft the long-form article under `articles/<slug>.html` with correct meta/JSON-LD and assign a unique `id` in `data/articles.json`.
 2. Export responsive imagery (400/800/1200) and, when available, include AVIF/WebP sources by adding an `image.sources` array (see `buildCard` in `scripts/app.js`).
-3. Update `data/posts.json` with the new entry, ensuring `category`, `date`, `views`, and `link`/`slug` are set.
+3. Update `data/articles.json` with the new entry, ensuring `category`, `date`, `views`, and `link`/`slug` are set. The home page now hydrates three feeds: `/data/articles.json` (long-form + world coverage), `/data/news.json` (India + quick desk notes), and `/data/blogs.json` (playbooks/analysis). Keep categories accurate so filters remain in sync.
 4. Rebuild the home hero queue (top views automatically fill) or manually tag hero CTA by calling `window.MIROZA.hero.setItems([...])` in `app.js` if bespoke ordering is required.
 5. Run a quick pass: open the site locally, interact with the new card, verify it appears in quick-find recents, and confirm Lighthouse/CLS metrics in `localStorage` (`miroza_vitals_snapshot`).
 
@@ -84,10 +86,10 @@ Visit `http://localhost:8080` and inspect the Network tab: the service worker sh
 - Toggle updates icons and labels for assistive tech.
 
 ## Posts Data
-- Located in `data/posts.json`.
+- Located in `data/articles.json` (legacy `data/posts.json` remains as a fallback for tooling).
 - Each post entry contains `{ id, title, slug, excerpt, category, author, date, image }`.
 - `image` is an object with `src`, `srcset`, `sizes`, `alt` for responsive rendering.
-- Extend by adding new JSON entries and corresponding HTML article pages.
+- Extend by adding new JSON entries and corresponding HTML article pages. Use `data/news.json` for India desk updates and `data/blogs.json` for playbooks/blog posts so the JS pipeline can stream everything to the homepage grid without gaps.
 
 ## Adding Articles
 1. Create a new HTML file under `articles/` named `<slug>.html`.
