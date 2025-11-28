@@ -1,12 +1,14 @@
 /* MIROZA Service Worker v2: smarter caching + offline fallbacks */
-const STATIC_CACHE = 'miroza-static-v2';
+const STATIC_CACHE = 'miroza-static-v3';
 const RUNTIME_CACHE = 'miroza-runtime-v2';
 const CORE_ASSETS = [
   '/',
   '/index.html',
   '/offline.html',
   '/styles/styles.css',
+  '/styles/styles.min.css',
   '/scripts/app.js',
+  '/scripts/app.min.js',
   '/manifest.json',
   '/assets/icons/logo.svg',
   '/assets/images/hero-insight-800.svg',
@@ -14,6 +16,7 @@ const CORE_ASSETS = [
   '/data/articles.json',
   '/data/news.json',
   '/data/blogs.json',
+  '/data/posts.json',
   '/rss.xml'
 ];
 

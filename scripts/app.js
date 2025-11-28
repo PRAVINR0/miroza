@@ -4,6 +4,29 @@
 */
 (function(){
   'use strict';
+  const THEME_STORAGE_KEY = 'miroza_theme';
+  const SITE_BASE = 'https://miroza.online';
+
+  function readStoredTheme(){
+    try {
+      const stored = localStorage.getItem(THEME_STORAGE_KEY);
+      return stored === 'dark' || stored === 'light' ? stored : null;
+    } catch(e){
+      return null;
+    }
+  }
+
+  (function primeTheme(){
+    const stored = readStoredTheme();
+    if(stored && document.documentElement.dataset.theme !== stored){
+      document.documentElement.dataset.theme = stored;
+      return;
+    }
+    if(!stored && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches){
+      document.documentElement.dataset.theme = 'dark';
+    }
+  })();
+
   const TOPIC_LABELS = {
     world:'World',
     science:'Science',
@@ -90,6 +113,155 @@
     formatNumber(num){ try { return Intl.NumberFormat('en-US',{notation:'compact',maximumFractionDigits:1}).format(num||0); } catch(e){ return num || 0; } },
     isInternalLink(href){ try { const url=new URL(href, window.location.origin); return url.origin === window.location.origin; } catch(e){ return false; } }
   };
+
+  /* Shared shell helpers (nav/footer) */
+  window.MIROZA.shell = (function(){
+    const NAV_ITEMS = [
+      { label:'Home', href:'/', match:['/'] },
+      { label:'News', href:'/news.html', startsWith:['/news'] },
+      { label:'Articles', href:'/articles.html', startsWith:['/articles'] },
+      { label:'Blogs', href:'/blog.html', startsWith:['/blog', '/blogs'] },
+      { label:'About', href:'/#about', hash:'#about', homeOnly:true },
+      { label:'Contact', href:'/#contact', hash:'#contact', homeOnly:true }
+    ];
+
+    function init(){ enhanceNav(); }
+
+    function enhanceNav(){
+      const nav = window.MIROZA.utils.qs('.main-nav');
+      if(!nav) return;
+      let list = nav.querySelector('ul');
+      if(!list){
+        list = document.createElement('ul');
+        nav.appendChild(list);
+      }
+      list.innerHTML='';
+      NAV_ITEMS.forEach(item => {
+        const li=document.createElement('li');
+        const link=document.createElement('a');
+        link.href=item.href;
+        link.textContent=item.label;
+        link.setAttribute('data-prefetch','');
+        if(shouldMarkActive(item)){
+          link.setAttribute('aria-current','page');
+        }
+        li.appendChild(link);
+        list.appendChild(li);
+      });
+      nav.dataset.shellReady='true';
+    }
+
+    function shouldMarkActive(item){
+      const path = normalizePath(window.location.pathname);
+      if(item.startsWith && matchesStart(path, item.startsWith)) return true;
+      if(item.match && matchesExact(path, item.match)) return true;
+      if(item.hash){
+        return !item.homeOnly ? window.location.hash === item.hash : (path === '/' && window.location.hash === item.hash);
+      }
+      if(item.href === '/' && path === '/' && !window.location.hash) return true;
+      return false;
+    }
+
+    function matchesStart(path, candidates){
+      const list = Array.isArray(candidates) ? candidates : [candidates];
+      return list.some(candidate => path.startsWith(candidate));
+    }
+
+    function matchesExact(path, candidates){
+      const list = Array.isArray(candidates) ? candidates : [candidates];
+      return list.includes(path);
+    }
+
+    function normalizePath(pathname){
+      if(!pathname) return '/';
+      const normalized = pathname.replace(/\\/g,'/').replace(/\/index\.html$/i,'/');
+      return normalized === '' ? '/' : normalized;
+    }
+
+    return { init, enhanceNav };
+  })();
+
+  /* Shared footer/components */
+  window.MIROZA.components = (function(){
+    const FOOTER_COLUMNS = [
+      {
+        title:'MIROZA',
+        body:['Modern news & articles hub focused on trustworthy analysis and zero-noise delivery.', 'Updated daily with world, economy, and culture briefings.']
+      },
+      {
+        title:'Coverage',
+        links:[
+          { label:'News', href:'/news.html' },
+          { label:'Blog', href:'/blog.html' },
+          { label:'Articles', href:'/articles.html' },
+          { label:'Privacy Memo', href:'/privacy.html' }
+        ]
+      },
+      {
+        title:'Resources',
+        links:[
+          { label:'Security Checklist', href:'/security.html' },
+          { label:'RSS Feed', href:'/rss.xml' },
+          { label:'Sitemap', href:'/sitemap.xml' },
+          { label:'Offline Brief', href:'/offline.html' }
+        ]
+      },
+      {
+        title:'Connect',
+        links:[
+          { label:'contact@miroza.online', href:'mailto:contact@miroza.online' },
+          { label:'LinkedIn', href:'https://linkedin.com', external:true },
+          { label:'Twitter', href:'https://twitter.com', external:true }
+        ]
+      }
+    ];
+
+    function init(){ enhanceFooter(); }
+
+    function enhanceFooter(){
+      const footer = window.MIROZA.utils.qs('.site-footer');
+      if(!footer || footer.dataset.componentReady==='true') return;
+      const grid = footer.querySelector('.footer-grid');
+      if(!grid) return;
+      grid.innerHTML='';
+      FOOTER_COLUMNS.forEach(column => grid.appendChild(renderColumn(column)));
+      footer.dataset.componentReady='true';
+    }
+
+    function renderColumn(column){
+      const wrapper=document.createElement('div');
+      const heading=document.createElement('h3');
+      heading.textContent = column.title;
+      wrapper.appendChild(heading);
+      if(Array.isArray(column.body)){
+        column.body.forEach(text => {
+          const p=document.createElement('p');
+          p.textContent = text;
+          wrapper.appendChild(p);
+        });
+      }
+      if(Array.isArray(column.links)){
+        const list=document.createElement('ul');
+        column.links.forEach(link => {
+          const li=document.createElement('li');
+          const anchor=document.createElement('a');
+          anchor.href = link.href;
+          anchor.textContent = link.label;
+          anchor.setAttribute('data-prefetch','');
+          if(link.external){
+            anchor.target='_blank';
+            anchor.rel='noopener noreferrer';
+          }
+          li.appendChild(anchor);
+          list.appendChild(li);
+        });
+        wrapper.appendChild(list);
+      }
+      return wrapper;
+    }
+
+    return { init, enhanceFooter };
+  })();
 
   const DEFAULT_IMAGE_SIZES = '(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px';
   const FALLBACK_IMAGE = {
@@ -287,13 +459,32 @@
 
   /* Theme Module */
   window.MIROZA.theme = (function(){
-    const storageKey='miroza_theme';
+    const storageKey = THEME_STORAGE_KEY;
     function current(){ return document.documentElement.dataset.theme || 'light'; }
-    function setTheme(theme){ document.documentElement.dataset.theme=theme; try{ localStorage.setItem(storageKey, theme); }catch(e){} updateToggleIcon(); }
+    function setTheme(theme, { persist=true }={}){
+      const next = theme === 'dark' ? 'dark' : 'light';
+      document.documentElement.dataset.theme = next;
+      if(persist){
+        try { localStorage.setItem(storageKey, next); } catch(e){}
+      }
+      updateToggleIcon();
+    }
     function toggle(){ setTheme(current()==='light'? 'dark':'light'); }
-    function updateToggleIcon(){ const btn = window.MIROZA.utils.qs('.theme-toggle img'); if(!btn) return; btn.src = current()==='light'? '/assets/icons/moon.svg':'/assets/icons/sun.svg'; btn.alt = current()==='light'? 'Enable dark mode':'Enable light mode'; }
-    function init(){ updateToggleIcon(); }
-    return { init, toggle };
+    function updateToggleIcon(){
+      const btn = window.MIROZA.utils.qs('.theme-toggle img');
+      if(!btn) return;
+      const isLight = current() === 'light';
+      btn.src = isLight ? '/assets/icons/moon.svg' : '/assets/icons/sun.svg';
+      btn.alt = isLight ? 'Enable dark mode' : 'Enable light mode';
+    }
+    function init(){
+      const stored = readStoredTheme();
+      if(stored && stored !== current()){
+        document.documentElement.dataset.theme = stored;
+      }
+      updateToggleIcon();
+    }
+    return { init, toggle, set:setTheme };
   })();
 
   /* Mobile Navigation */
@@ -1108,6 +1299,43 @@
       }, { passive:true });
       handleScroll();
       hydrateLazySections();
+      enhanceInlineMedia();
+    }
+
+    function enhanceInlineMedia(){
+      const inlineImages = window.MIROZA.utils.qsa('.single-article img, main img[data-enhance-responsive]');
+      if(!inlineImages.length) return;
+      inlineImages.forEach(img => {
+        if(!img) return;
+        if(!img.getAttribute('loading')) img.loading = 'lazy';
+        img.decoding = 'async';
+        if(!img.hasAttribute('srcset')){
+          const responsive = buildResponsiveSet(img.getAttribute('src'));
+          if(responsive){
+            img.setAttribute('srcset', responsive);
+            if(!img.hasAttribute('sizes')){
+              img.setAttribute('sizes', '(max-width: 900px) 100vw, 800px');
+            }
+          }
+        }
+      });
+    }
+
+    function buildResponsiveSet(src){
+      if(!src) return null;
+      if(!/images\.(unsplash|pexels)\.com/i.test(src)) return null;
+      const widths = [480, 768, 1200];
+      const entries = widths.map(width => `${swapWidthParam(src, width)} ${width}w`);
+      return entries.join(', ');
+    }
+
+    function swapWidthParam(url, width){
+      const widthParam = `w=${width}`;
+      if(/w=\d+/i.test(url)){
+        return url.replace(/w=\d+/gi, widthParam);
+      }
+      const separator = url.includes('?') ? '&' : '?';
+      return `${url}${separator}${widthParam}`;
     }
 
     return { init, hydrateLazySections };
@@ -1472,6 +1700,264 @@
     function getLikedMap(){ return { ...readLikes() }; }
 
     return { init, getLikedMap };
+  })();
+
+  /* Breadcrumb injector */
+  window.MIROZA.breadcrumbs = (function(){
+    const DETAIL_PAGES = {
+      article: { label:'Articles', href:'/articles.html' },
+      'blog-article': { label:'Blogs', href:'/blog.html' },
+      'news-article': { label:'News', href:'/news.html' }
+    };
+
+    function init(){
+      const pageType = document.body?.dataset?.page;
+      if(!pageType || !DETAIL_PAGES[pageType]) return;
+      const article = window.MIROZA.utils.qs('.single-article') || window.MIROZA.utils.qs('main');
+      if(!article || article.querySelector('.breadcrumbs')) return;
+      const titleNode = article.querySelector('h1') || window.MIROZA.utils.qs('h1');
+      const title = titleNode?.textContent?.trim();
+      if(!title) return;
+      const crumbs = buildCrumbs(pageType, title);
+      const nav = render(crumbs);
+      if(!nav) return;
+      article.insertAdjacentElement('afterbegin', nav);
+    }
+
+    function buildCrumbs(pageType, title){
+      const crumbs = [{ label:'Home', href:'/' }];
+      const secondary = DETAIL_PAGES[pageType];
+      if(secondary) crumbs.push(secondary);
+      crumbs.push({ label:title, current:true });
+      return crumbs;
+    }
+
+    function render(items){
+      if(!Array.isArray(items) || items.length < 2) return null;
+      const nav=document.createElement('nav');
+      nav.className='breadcrumbs';
+      nav.setAttribute('aria-label','Breadcrumb');
+      const list=document.createElement('ol');
+      items.forEach(item => {
+        const li=document.createElement('li');
+        if(item.current || !item.href){
+          li.textContent=item.label;
+          li.setAttribute('aria-current','page');
+        } else {
+          const link=document.createElement('a');
+          link.href=item.href;
+          link.textContent=item.label;
+          link.setAttribute('data-prefetch','');
+          li.appendChild(link);
+        }
+        list.appendChild(li);
+      });
+      nav.appendChild(list);
+      return nav;
+    }
+
+    return { init };
+  })();
+
+  /* SEO + Metadata Enhancer */
+  window.MIROZA.seo = (function(){
+    const DEFAULT_IMAGE = `${SITE_BASE}/assets/images/hero-insight-1200.svg`;
+    const DEFAULT_LOGO = `${SITE_BASE}/assets/icons/logo.svg`;
+    const DEFAULT_KEYWORDS = 'news, blog, articles, analysis, intelligence, MIROZA';
+    const DEFAULT_AUTHOR = 'MIROZA Editorial Desk';
+
+    function init(){
+      if(!document?.head) return;
+      const canonicalUrl = ensureCanonical();
+      ensureMetaTags(canonicalUrl);
+      injectSchemas(canonicalUrl);
+    }
+
+    function ensureCanonical(){
+      const origin = getSiteOrigin();
+      const path = (window.location?.pathname || '/') || '/';
+      const canonicalValue = new URL(path, origin).toString();
+      let link = document.head.querySelector('link[rel="canonical"]');
+      if(!link){
+        link = document.createElement('link');
+        link.rel = 'canonical';
+        document.head.appendChild(link);
+      }
+      link.href = canonicalValue;
+      return canonicalValue;
+    }
+
+    function ensureMetaTags(canonicalUrl){
+      const title = (document.title || 'MIROZA').trim();
+      const description = deriveDescription();
+      const keywords = DEFAULT_KEYWORDS;
+      const author = document.head.querySelector('meta[name="author"]')?.content?.trim() || DEFAULT_AUTHOR;
+      const image = determineOgImage();
+      upsertMeta('description', description);
+      upsertMeta('keywords', keywords);
+      upsertMeta('author', author);
+      upsertMeta('last-modified', new Date(document.lastModified || Date.now()).toISOString());
+      upsertMeta('og:title', title, 'property');
+      upsertMeta('og:description', description, 'property');
+      upsertMeta('og:url', canonicalUrl, 'property');
+      upsertMeta('og:image', image, 'property');
+      upsertMeta('twitter:title', title);
+      upsertMeta('twitter:description', description);
+      upsertMeta('twitter:image', image);
+    }
+
+    function injectSchemas(canonicalUrl){
+      injectArticleSchema(canonicalUrl);
+      injectBreadcrumbSchema();
+      injectWebsiteSchema();
+    }
+
+    function injectArticleSchema(canonicalUrl){
+      const pageType = document.body?.dataset?.page;
+      if(!['article','news-article','blog-article'].includes(pageType)) return;
+      if(document.head.querySelector('script[type="application/ld+json"][data-seo="article"]')) return;
+      if(hasSchemaType(schemaType)) return;
+      const headline = document.querySelector('.single-article h1')?.textContent?.trim() || document.title;
+      if(!headline) return;
+      const description = deriveDescription();
+      const image = determineOgImage();
+      const authorName = document.head.querySelector('meta[name="author"]')?.content?.trim() || DEFAULT_AUTHOR;
+      const published = determinePublishedDate();
+      const schemaType = pageType === 'blog-article' ? 'BlogPosting' : 'NewsArticle';
+      const payload = {
+        '@context':'https://schema.org',
+        '@type': schemaType,
+        'headline': headline,
+        'description': description,
+        'image': image,
+        'datePublished': published,
+        'dateModified': new Date(document.lastModified || Date.now()).toISOString(),
+        'author': { '@type':'Organization', 'name': authorName },
+        'publisher': { '@type':'Organization', 'name':'MIROZA', 'logo': { '@type':'ImageObject', 'url': DEFAULT_LOGO } },
+        'mainEntityOfPage': canonicalUrl
+      };
+      appendJsonLd(payload, 'article');
+    }
+
+    function injectBreadcrumbSchema(){
+      const crumbList = document.querySelector('.breadcrumbs ol');
+      if(!crumbList) return;
+      if(document.head.querySelector('script[type="application/ld+json"][data-seo="breadcrumbs"]')) return;
+      if(hasSchemaType('BreadcrumbList')) return;
+      const origin = getSiteOrigin();
+      const canonical = document.head.querySelector('link[rel="canonical"]')?.href || origin;
+      const items = Array.from(crumbList.querySelectorAll('li')).map((li, index) => {
+        const anchor = li.querySelector('a');
+        const href = anchor ? new URL(anchor.getAttribute('href'), origin).toString() : canonical;
+        return { '@type':'ListItem', position:index+1, name: li.textContent.trim(), item: href };
+      });
+      if(!items.length) return;
+      appendJsonLd({ '@context':'https://schema.org', '@type':'BreadcrumbList', itemListElement:items }, 'breadcrumbs');
+    }
+
+    function injectWebsiteSchema(){
+      if(document.body?.dataset?.page !== 'home') return;
+      if(document.head.querySelector('script[type="application/ld+json"][data-seo="website"]')) return;
+      if(hasSchemaType('WebSite')) return;
+      const origin = getSiteOrigin();
+      const payload = {
+        '@context':'https://schema.org',
+        '@type':'WebSite',
+        'url': origin,
+        'name':'MIROZA',
+        'potentialAction': {
+          '@type':'SearchAction',
+          'target': `${origin}/?q={search_term_string}`,
+          'query-input':'required name=search_term_string'
+        }
+      };
+      appendJsonLd(payload, 'website');
+    }
+
+    function appendJsonLd(payload, marker){
+      const script=document.createElement('script');
+      script.type='application/ld+json';
+      script.dataset.seo = marker;
+      script.textContent = JSON.stringify(payload);
+      document.head.appendChild(script);
+    }
+
+    function hasSchemaType(targetType){
+      const nodes = Array.from(document.head.querySelectorAll('script[type="application/ld+json"]'));
+      return nodes.some(node => {
+        try {
+          const data = JSON.parse(node.textContent);
+          if(Array.isArray(data)) return data.some(entry => matchesType(entry, targetType));
+          return matchesType(data, targetType);
+        } catch(e){
+          return false;
+        }
+      });
+    }
+
+    function matchesType(entry, targetType){
+      if(!entry || !entry['@type']) return false;
+      const type = entry['@type'];
+      if(Array.isArray(type)) return type.includes(targetType);
+      return type === targetType;
+    }
+
+    function upsertMeta(name, content, attr='name'){
+      if(!content) return;
+      let meta = document.head.querySelector(`meta[${attr}="${name}"]`);
+      if(!meta){
+        meta = document.createElement('meta');
+        meta.setAttribute(attr, name);
+        document.head.appendChild(meta);
+      }
+      const current = meta.getAttribute('content');
+      if(!current || /example\.com|lorem ipsum/i.test(current)){
+        meta.setAttribute('content', content);
+      }
+    }
+
+    function deriveDescription(){
+      const existing = document.head.querySelector('meta[name="description"]')?.getAttribute('content');
+      if(existing && !/example\.com/i.test(existing)) return existing;
+      const lead = document.querySelector('.single-article p, main p');
+      if(lead){
+        const text = lead.textContent.trim();
+        if(text) return text.length > 160 ? `${text.slice(0, 157)}...` : text;
+      }
+      return 'MIROZA curates fast, accessible intelligence across news, blogs, and analytical articles.';
+    }
+
+    function determineOgImage(){
+      const candidate = document.querySelector('.single-article img, .hero img');
+      const raw = candidate?.currentSrc || candidate?.src;
+      if(raw){
+        try { return new URL(raw, getSiteOrigin()).toString(); } catch(e){ return raw; }
+      }
+      return DEFAULT_IMAGE;
+    }
+
+    function determinePublishedDate(){
+      const timeEl = document.querySelector('time[datetime]');
+      const metaDate = document.head.querySelector('meta[name="date"], meta[property="article:published_time"]');
+      const value = timeEl?.getAttribute('datetime') || metaDate?.getAttribute('content');
+      if(value){
+        const parsed = new Date(value);
+        if(!isNaN(parsed)) return parsed.toISOString();
+      }
+      return new Date(document.lastModified || Date.now()).toISOString();
+    }
+
+    function getSiteOrigin(){
+      try {
+        const { protocol, host } = window.location;
+        if(host && !/localhost|127\.0\.0\.1/i.test(host)){
+          return `${protocol}//${host}`;
+        }
+      } catch(e){}
+      return SITE_BASE;
+    }
+
+    return { init };
   })();
 
   /* Search Suggestions */
@@ -2184,6 +2670,8 @@
 
   /* Initialization on DOMContentLoaded */
   document.addEventListener('DOMContentLoaded', function(){
+    window.MIROZA.shell.init();
+    window.MIROZA.components.init();
     window.MIROZA.analytics.init();
     window.MIROZA.theme.init();
     window.MIROZA.nav.init();
@@ -2199,6 +2687,8 @@
     window.MIROZA.a11y.init();
     window.MIROZA.vitals.init();
     window.MIROZA.pwa.register();
+    window.MIROZA.breadcrumbs.init();
+    window.MIROZA.seo.init();
     patchLegacyCategoryLinks();
     // Theme toggle button binding
     const themeBtn = window.MIROZA.utils.qs('.theme-toggle'); if(themeBtn){ themeBtn.addEventListener('click', window.MIROZA.theme.toggle); }

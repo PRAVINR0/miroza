@@ -4,7 +4,11 @@
   "description": "MIROZA is a modern, performant, accessible news / articles / blog platform scaffold. All content provided here is placeholder material for development and design iteration.",
   "main": "sw.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npm run build:data && npm run build:css && npm run build:js",
+    "build:data": "node tools/refresh-posts.js",
+    "build:css": "esbuild styles/styles.css --minify --outfile=styles/styles.min.css",
+    "build:js": "esbuild scripts/app.js --minify --target=es2018 --legal-comments=none --outfile=scripts/app.min.js"
   },
   "repository": {
     "type": "git",
@@ -20,5 +24,8 @@
   "homepage": "https://github.com/PRAVINR0/miroza#readme",
   "dependencies": {
     "puppeteer": "^22.11.1"
+  },
+  "devDependencies": {
+    "esbuild": "^0.27.0"
   }
 }

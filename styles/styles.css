@@ -35,6 +35,7 @@
   --elevation:0 8px 28px rgba(15,23,42,0.15);
   --elevation-soft:0 10px 34px rgba(15,23,42,0.12);
   --header-blur:12px;
+  color-scheme: light dark;
 }
 
 html[data-theme='light'] { --bg:var(--light-bg); --bg-alt:var(--light-bg-alt); --text:var(--light-text); --text-alt:var(--light-text-alt); --border:var(--light-border); --accent:var(--light-accent); --accent-alt:var(--light-accent-alt); --skeleton-base:var(--light-skeleton-base); --skeleton-highlight:var(--light-skeleton-highlight); }
