@@ -3,7 +3,8 @@ const path = require('path');
 const data = JSON.parse(fs.readFileSync(path.join(__dirname,'..','data','posts.json'),'utf8'));
 const missing = [];
 for(const p of data){
-  const link = p.link || p.url || (p.slug ? (`/articles/${p.slug}.html`) : null);
+  // prefer explicit link/url or contentPath/path when present (blogs use contentPath)
+  const link = p.link || p.url || p.contentPath || p.path || (p.slug ? (`/articles/${p.slug}.html`) : null);
   if(!link) continue;
   // normalize
   const rel = link.replace(/^\//, '');
