@@ -717,8 +717,8 @@
     // Load per-article enhancements when on a single article page
     try{
       const path = (location.pathname || '').toLowerCase();
-      const isArticleDetail = path.indexOf('/articles/') === 0 && !/articles(\/|index\.html|articles\.html)$/.test(path);
-      const isBlogDetail = path.indexOf('/blogs/') === 0 && !/blogs(\/|index\.html|blogs\.html)$/.test(path);
+      const isArticleDetail = path.includes('/articles/') && !/articles(\/|index\.html|articles\.html)$/.test(path);
+      const isBlogDetail = path.includes('/blogs/') && !/blogs(\/|index\.html|blogs\.html)$/.test(path);
       if(isArticleDetail || isBlogDetail){
         const s = document.createElement('script');
         s.src = '/scripts/article-nav.js';
