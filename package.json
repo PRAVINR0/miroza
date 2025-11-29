@@ -11,10 +11,11 @@
     "smoke-test": "node ./tools/smoke-test.js",
     "add-defer": "node ./tools/add-defer-to-scripts.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "npm run build:data && npm run build:css && npm run build:js",
+    "build": "npm run build:data && npm run build:css && npm run build:js && npm run build:seo",
     "build:data": "node tools/refresh-posts.js",
     "build:css": "esbuild styles/styles.css --minify --outfile=styles/styles.min.css",
     "build:js": "esbuild scripts/app.js --minify --target=es2018 --legal-comments=none --outfile=scripts/app.min.js",
+    "build:seo": "node tools/build-seo.js",
     "build:js-wasm": "node tools/build-wasm.js"
   },
   "repository": {

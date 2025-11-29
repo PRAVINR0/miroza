@@ -656,12 +656,33 @@
     return { init };
   })();
 
+  /* Ad Manager (Placeholder for Future Ads) */
+  window.MIROZA.ads = (function(){
+    function init(){
+      const slots = window.MIROZA.utils.qsa('.ad-slot');
+      if(!slots.length) return;
+      
+      // In the future, this can be replaced with real ad network code (e.g., Google AdSense)
+      // For now, we can either leave them empty or show a "Advertise Here" placeholder
+      // or inject a house ad.
+      
+      slots.forEach(slot => {
+        if(slot.dataset.loaded) return;
+        // Example: Inject a placeholder if in debug mode or just mark as ready
+        // slot.innerHTML = '<div class="ad-placeholder">Advertisement</div>';
+        slot.dataset.loaded = 'true';
+      });
+    }
+    return { init };
+  })();
+
   /* Initialization */
   document.addEventListener('DOMContentLoaded', () => {
     window.MIROZA.theme.init();
     window.MIROZA.nav.init();
     window.MIROZA.ui.init();
     window.MIROZA.subscription.init();
+    window.MIROZA.ads.init(); // Initialize Ads
 
     const themeBtn = window.MIROZA.utils.qs('.theme-toggle');
     if(themeBtn) themeBtn.addEventListener('click', window.MIROZA.theme.toggle);

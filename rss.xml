@@ -3,409 +3,169 @@
 <channel>
   <title>MIROZA</title>
   <link>https://miroza.online</link>
-  <description>Modern news and articles hub. Technology, Science, and Global Trends.</description>
+  <description>Modern News &amp; Articles Hub</description>
   <language>en-us</language>
-  <lastBuildDate>Sat, 29 Nov 2025 12:20:54 GMT</lastBuildDate>
+  <lastBuildDate>Sat, 29 Nov 2025 12:48:05 GMT</lastBuildDate>
   <atom:link href="https://miroza.online/rss.xml" rel="self" type="application/rss+xml" />
-  <item>
-    <title><![CDATA[AI Assistant Wars 2025: How Agentic AI Is Changing Work Forever]]></title>
-    <link>https://miroza.online/blogs/ai-assistant-wars-2025-agentic-ai-changing-work.html</link>
-    <guid>https://miroza.online/blogs/ai-assistant-wars-2025-agentic-ai-changing-work.html</guid>
-    <pubDate>Sat, 29 Nov 2025 00:00:00 GMT</pubDate>
-    <description><![CDATA[Agentic AI in 2025 is reshaping work: autonomous agents, new productivity models, risks and policy questions. Read a deep analysis.]]></description>
-    <category>Blog</category>
-  </item>
-  <item>
-    <title><![CDATA[The Electric Scooter Boom in India: A Silent Urban Revolution]]></title>
-    <link>https://miroza.online/blogs/electric-scooter-boom-india-urban-revolution.html</link>
-    <guid>https://miroza.online/blogs/electric-scooter-boom-india-urban-revolution.html</guid>
-    <pubDate>Sat, 29 Nov 2025 00:00:00 GMT</pubDate>
-    <description><![CDATA[How electric scooters transformed urban mobility across India: technology, policy, and social impacts of the EV two-wheeler boom in 2025.]]></description>
-    <category>Blog</category>
-  </item>
-  <item>
-    <title><![CDATA[Fitness 3.0: How Technology is Transforming the Indian Fitness Culture]]></title>
-    <link>https://miroza.online/blogs/fitness-3-0-technology-transforming-indian-fitness-culture.html</link>
-    <guid>https://miroza.online/blogs/fitness-3-0-technology-transforming-indian-fitness-culture.html</guid>
-    <pubDate>Sat, 29 Nov 2025 00:00:00 GMT</pubDate>
-    <description><![CDATA[Fitness 3.0 explores the intersection of wearable tech, AI coaches and community fitness in India, and how technology is reshaping health routines.]]></description>
-    <category>Blog</category>
-  </item>
-  <item>
-    <title><![CDATA[The Rise of Hyper-Local Content Platforms in 2025]]></title>
-    <link>https://miroza.online/blogs/hyper-local-content-platforms-2025.html</link>
-    <guid>https://miroza.online/blogs/hyper-local-content-platforms-2025.html</guid>
-    <pubDate>Sat, 29 Nov 2025 00:00:00 GMT</pubDate>
-    <description><![CDATA[Why hyper-local content platforms are rising in 2025: trust, community engagement, AI tools and business models shaping neighborhood journalism.]]></description>
-    <category>Blog</category>
-  </item>
-  <item>
-    <title><![CDATA[How Sleep Quality Shapes Mental Performance: The Science of the 2025 Lifestyle]]></title>
-    <link>https://miroza.online/blogs/sleep-quality-mental-performance-2025-lifestyle.html</link>
-    <guid>https://miroza.online/blogs/sleep-quality-mental-performance-2025-lifestyle.html</guid>
-    <pubDate>Sat, 29 Nov 2025 00:00:00 GMT</pubDate>
-    <description><![CDATA[Research-backed exploration of how sleep quality affects cognition, mood and productivity and practical strategies to improve rest in the digital age.]]></description>
-    <category>Blog</category>
-  </item>
-  <item>
-    <title><![CDATA[India’s Economy Grows 8.2% in Q2, Beats Forecasts]]></title>
-    <link>https://miroza.online/news/indias-economy-grows-8-2-percent-q2-2025.html</link>
-    <guid>https://miroza.online/news/indias-economy-grows-8-2-percent-q2-2025.html</guid>
-    <pubDate>Fri, 28 Nov 2025 00:00:00 GMT</pubDate>
-    <description><![CDATA[India’s economy posted a strong 8.2% year-on-year growth in Q2 2025, surpassing forecasts and boosting investor confidence.]]></description>
-    <category>India</category>
-  </item>
-  <item>
-    <title><![CDATA[India’s Stock Markets Hit Record High After 14-Month Rally]]></title>
-    <link>https://miroza.online/news/india-stock-markets-hit-record-high-nov-2025.html</link>
-    <guid>https://miroza.online/news/india-stock-markets-hit-record-high-nov-2025.html</guid>
-    <pubDate>Thu, 27 Nov 2025 00:00:00 GMT</pubDate>
-    <description><![CDATA[Indian equity indices surged to record highs, driven by easing valuations and upbeat corporate earnings outlook.]]></description>
-    <category>India</category>
-  </item>
-  <item>
-    <title><![CDATA[Gold Prices Climb as Investors Bet on US Rate Cut]]></title>
-    <link>https://miroza.online/news/gold-prices-climb-us-rate-cut-bets-india-2025.html</link>
-    <guid>https://miroza.online/news/gold-prices-climb-us-rate-cut-bets-india-2025.html</guid>
-    <pubDate>Wed, 26 Nov 2025 00:00:00 GMT</pubDate>
-    <description><![CDATA[Gold prices surged in India today, as global investors bet on a possible US interest-rate cut, prompting a rush to safe-haven assets.]]></description>
-    <category>India</category>
-  </item>
-  <item>
-    <title><![CDATA[IMF Reclassifies India’s Exchange Rate Regime, Markets Watch Closely]]></title>
-    <link>https://miroza.online/news/imf-reclassifies-india-exchange-rate-regime-2025.html</link>
-    <guid>https://miroza.online/news/imf-reclassifies-india-exchange-rate-regime-2025.html</guid>
-    <pubDate>Wed, 26 Nov 2025 00:00:00 GMT</pubDate>
-    <description><![CDATA[The IMF reclassified India’s exchange-rate policy regime — a move that could impact forex outlook and investor sentiment.]]></description>
-    <category>India</category>
-  </item>
-  <item>
-    <title><![CDATA[India’s GDP Expected to Grow 7.3% in Q2]]></title>
-    <link>https://miroza.online/news/india-gdp-expected-73-q2.html</link>
-    <guid>https://miroza.online/news/india-gdp-expected-73-q2.html</guid>
-    <pubDate>Tue, 25 Nov 2025 00:00:00 GMT</pubDate>
-    <description><![CDATA[Government sources signal that India’s quarterly GDP may expand by 7.3% in Q2, driven by manufacturing output and steady services demand.]]></description>
-    <category>India</category>
-  </item>
-  <item>
-    <title><![CDATA[Sensex and Nifty Open Flat Amid Global Cues]]></title>
-    <link>https://miroza.online/news/sensex-nifty-open-flat.html</link>
-    <guid>https://miroza.online/news/sensex-nifty-open-flat.html</guid>
-    <pubDate>Tue, 25 Nov 2025 00:00:00 GMT</pubDate>
-    <description><![CDATA[Indian benchmark indices started Tuesday’s session little changed as traders tracked mixed signals from Asian and US markets.]]></description>
-    <category>India</category>
-  </item>
-  <item>
-    <title><![CDATA[RBI Report Highlights Strong Investment Climate]]></title>
-    <link>https://miroza.online/news/rbi-report-investment-climate.html</link>
-    <guid>https://miroza.online/news/rbi-report-investment-climate.html</guid>
-    <pubDate>Tue, 25 Nov 2025 00:00:00 GMT</pubDate>
-    <description><![CDATA[The Reserve Bank of India’s latest bulletin notes that private capital expenditure pipelines remain robust despite global uncertainty.]]></description>
-    <category>India</category>
-  </item>
-  <item>
-    <title><![CDATA[India’s Manufacturing Growth Slows in November]]></title>
-    <link>https://miroza.online/news/india-manufacturing-growth-slows-november.html</link>
-    <guid>https://miroza.online/news/india-manufacturing-growth-slows-november.html</guid>
-    <pubDate>Tue, 25 Nov 2025 00:00:00 GMT</pubDate>
-    <description><![CDATA[Industry trackers say factory output moderated in November as export orders softened and firms worked through inventories.]]></description>
-    <category>India</category>
-  </item>
-  <item>
-    <title><![CDATA[India–Canada Trade Discussions Resume]]></title>
-    <link>https://miroza.online/news/india-canada-trade-discussions-resume.html</link>
-    <guid>https://miroza.online/news/india-canada-trade-discussions-resume.html</guid>
-    <pubDate>Tue, 25 Nov 2025 00:00:00 GMT</pubDate>
-    <description><![CDATA[Negotiators from India and Canada met in New Delhi to restart talks on a trade agreement after a months-long pause.]]></description>
-    <category>India</category>
-  </item>
-  <item>
-    <title><![CDATA[Ayodhya Ram Mandir Inauguration Preparations Intensify]]></title>
-    <link>https://miroza.online/news/ayodhya-ram-mandir-inauguration-prep.html</link>
-    <guid>https://miroza.online/news/ayodhya-ram-mandir-inauguration-prep.html</guid>
-    <pubDate>Tue, 25 Nov 2025 00:00:00 GMT</pubDate>
-    <description><![CDATA[Authorities in Ayodhya accelerated security, transport, and hospitality plans ahead of the Ram Mandir inauguration ceremony.]]></description>
-    <category>India</category>
-  </item>
-  <item>
-    <title><![CDATA[Tripura Marks 150 Years of ‘Vande Mataram’]]></title>
-    <link>https://miroza.online/news/tripura-150-years-vande-mataram.html</link>
-    <guid>https://miroza.online/news/tripura-150-years-vande-mataram.html</guid>
-    <pubDate>Tue, 25 Nov 2025 00:00:00 GMT</pubDate>
-    <description><![CDATA[Tripura hosted cultural programs and youth parades to celebrate 150 years since ‘Vande Mataram’ was composed.]]></description>
-    <category>India</category>
-  </item>
-  <item>
-    <title><![CDATA[OnePlus 15 India Launch Expectations Grow]]></title>
-    <link>https://miroza.online/news/oneplus-15-india-launch.html</link>
-    <guid>https://miroza.online/news/oneplus-15-india-launch.html</guid>
-    <pubDate>Tue, 25 Nov 2025 00:00:00 GMT</pubDate>
-    <description><![CDATA[Tech enthusiasts anticipate camera and battery upgrades as OnePlus readies its flagship 15 series for the Indian market.]]></description>
-    <category>India</category>
-  </item>
-  <item>
-    <title><![CDATA[Tulsi Vivah Celebrations Across India]]></title>
-    <link>https://miroza.online/news/tulsi-vivah-festival-celebration.html</link>
-    <guid>https://miroza.online/news/tulsi-vivah-festival-celebration.html</guid>
-    <pubDate>Tue, 25 Nov 2025 00:00:00 GMT</pubDate>
-    <description><![CDATA[Devotees performed traditional rituals and community feasts to mark Tulsi Vivah, ushering in the winter wedding season.]]></description>
-    <category>India</category>
-  </item>
-  <item>
-    <title><![CDATA[India’s Digital Payments Hit Fresh Monthly Record]]></title>
-    <link>https://miroza.online/news/india-digital-payments-record.html</link>
-    <guid>https://miroza.online/news/india-digital-payments-record.html</guid>
-    <pubDate>Tue, 25 Nov 2025 00:00:00 GMT</pubDate>
-    <description><![CDATA[UPI transactions crossed a new high in October as merchants in smaller towns embraced QR-based payments.]]></description>
-    <category>India</category>
-  </item>
-  <item>
-    <title><![CDATA[Western Ghats Wildlife Corridor Declared to Protect Elephants and Biodiversity]]></title>
-    <link>https://miroza.online/news/western-ghats-wildlife-corridor-2025.html</link>
-    <guid>https://miroza.online/news/western-ghats-wildlife-corridor-2025.html</guid>
-    <pubDate>Tue, 25 Nov 2025 00:00:00 GMT</pubDate>
-    <description><![CDATA[Indian Government designates 1,200 sq km area in Western Ghats as protected wildlife corridor to safeguard migrating elephants and rich biodiversity.]]></description>
-    <category>India</category>
-  </item>
-  <item>
-    <title><![CDATA[Global Climate Coalition Reaches Emissions Pact]]></title>
-    <link>https://miroza.online/articles/global-climate-coalition.html</link>
-    <guid>https://miroza.online/articles/global-climate-coalition.html</guid>
-    <pubDate>Mon, 24 Nov 2025 00:00:00 GMT</pubDate>
-    <description><![CDATA[Leaders from 70 nations agreed on binding methane cuts and fresh climate finance benchmarks after marathon talks in Nairobi. Observers say the pact revives trust ahead of next year’s compliance window.]]></description>
-    <category>World</category>
-  </item>
-  <item>
-    <title><![CDATA[Digital ID Fast-Track Links Emerging Markets]]></title>
-    <link>https://miroza.online/articles/digital-id-fast-track.html</link>
-    <guid>https://miroza.online/articles/digital-id-fast-track.html</guid>
-    <pubDate>Mon, 24 Nov 2025 00:00:00 GMT</pubDate>
-    <description><![CDATA[Finance ministers endorsed an interoperable ID rail to unlock cheaper remittances and portable health records. Pilot corridors covering 1.2 billion people will go live within six months.]]></description>
-    <category>World</category>
-  </item>
-  <item>
-    <title><![CDATA[Northern Corridor Summit Unlocks Infrastructure Funds]]></title>
-    <link>https://miroza.online/articles/northern-corridor-summit.html</link>
-    <guid>https://miroza.online/articles/northern-corridor-summit.html</guid>
-    <pubDate>Mon, 24 Nov 2025 00:00:00 GMT</pubDate>
-    <description><![CDATA[East African states secured $18B for rail modernization and hybrid ports to ease commodity bottlenecks. The package ties disbursements to transparent procurement dashboards overseen by regional auditors.]]></description>
-    <category>World</category>
-  </item>
-  <item>
-    <title><![CDATA[Asia-Pacific Ports Resume Ops After Typhoon Repairs]]></title>
-    <link>https://miroza.online/articles/asia-pacific-ports-reopen.html</link>
-    <guid>https://miroza.online/articles/asia-pacific-ports-reopen.html</guid>
-    <pubDate>Mon, 24 Nov 2025 00:00:00 GMT</pubDate>
-    <description><![CDATA[Logistics groups restored 80% capacity by deploying modular power barges and flexible berths across Manila, Kaohsiung, and Osaka. Relief lanes now prioritize medical cargo and cold-chain food staples.]]></description>
-    <category>World</category>
-  </item>
-  <item>
-    <title><![CDATA[Global Food Security Fund Expands Emergency Stockpiles]]></title>
-    <link>https://miroza.online/articles/global-food-security-fund.html</link>
-    <guid>https://miroza.online/articles/global-food-security-fund.html</guid>
-    <pubDate>Mon, 24 Nov 2025 00:00:00 GMT</pubDate>
-    <description><![CDATA[Donor blocs doubled rapid-response grain reserves and linked payouts to satellite drought triggers. Agencies expect the move to cut delivery times to high-risk regions by half.]]></description>
-    <category>World</category>
-  </item>
-  <item>
-    <title><![CDATA[Delhi Airport Incident: Afghan Plane Lands on Wrong Runway, Probe Launched]]></title>
-    <link>https://miroza.online/news/delhi-airport-wrong-runway-landing-2025.html</link>
-    <guid>https://miroza.online/news/delhi-airport-wrong-runway-landing-2025.html</guid>
-    <pubDate>Mon, 24 Nov 2025 00:00:00 GMT</pubDate>
-    <description><![CDATA[A flight from Kabul mistakenly landed on the wrong runway at Delhi’s IGI Airport — no casualties reported, but an official investigation has been ordered.]]></description>
-    <category>India</category>
-  </item>
-  <item>
-    <title><![CDATA[Eastern Coast Braces as Severe Cyclone Warning Issued]]></title>
-    <link>https://miroza.online/news/eastern-coast-cyclone-warning-2025.html</link>
-    <guid>https://miroza.online/news/eastern-coast-cyclone-warning-2025.html</guid>
-    <pubDate>Sun, 23 Nov 2025 00:00:00 GMT</pubDate>
-    <description><![CDATA[A red alert has been issued along India’s eastern coastline as a severe cyclone approaches — coastal districts begin evacuation procedures.]]></description>
-    <category>India</category>
-  </item>
-  <item>
-    <title><![CDATA[India Launches Massive Solar Farm Project; Rural Electrification Boost Expected]]></title>
-    <link>https://miroza.online/news/india-massive-solar-farm-project-2025.html</link>
-    <guid>https://miroza.online/news/india-massive-solar-farm-project-2025.html</guid>
-    <pubDate>Sat, 22 Nov 2025 00:00:00 GMT</pubDate>
-    <description><![CDATA[Government greenlights a new mega-solar farm project aimed at electrifying rural India and meeting renewable energy targets.]]></description>
-    <category>India</category>
-  </item>
-  <item>
-    <title><![CDATA[Trade Unions Stage Nationwide Protests Against New Labour Codes]]></title>
-    <link>https://miroza.online/news/india-trade-unions-protest-new-labour-codes-2025.html</link>
-    <guid>https://miroza.online/news/india-trade-unions-protest-new-labour-codes-2025.html</guid>
-    <pubDate>Sat, 22 Nov 2025 00:00:00 GMT</pubDate>
-    <description><![CDATA[Major trade unions across India have begun large-scale protests against newly implemented labour laws, demanding rollback of key provisions.]]></description>
-    <category>India</category>
-  </item>
-  <item>
-    <title><![CDATA[Major Trade Deal On Table: India-US Negotiations Enter Final Stage]]></title>
-    <link>https://miroza.online/news/india-us-trade-deal-final-stage-2025.html</link>
-    <guid>https://miroza.online/news/india-us-trade-deal-final-stage-2025.html</guid>
-    <pubDate>Fri, 21 Nov 2025 00:00:00 GMT</pubDate>
-    <description><![CDATA[India and the United States have reportedly moved to final-stage talks over a major trade agreement — a deal that could reshape exports and bilateral trade relations.]]></description>
-    <category>India</category>
-  </item>
-  <item>
-    <title><![CDATA[How to Start a Local Volunteer Group]]></title>
-    <link>https://miroza.online/blogs/how-to-start-a-local-volunteer-group.html</link>
-    <guid>https://miroza.online/blogs/how-to-start-a-local-volunteer-group.html</guid>
-    <pubDate>Fri, 07 Nov 2025 00:00:00 GMT</pubDate>
-    <description><![CDATA[How to Start a Local Volunteer Group — A concise exploration of practical takeaways and real-world applications.]]></description>
-    <category>Blog</category>
-  </item>
-  <item>
-    <title><![CDATA[Using Public Data to Tell Better Stories]]></title>
-    <link>https://miroza.online/blogs/using-public-data-to-tell-better-stories.html</link>
-    <guid>https://miroza.online/blogs/using-public-data-to-tell-better-stories.html</guid>
-    <pubDate>Mon, 03 Nov 2025 00:00:00 GMT</pubDate>
-    <description><![CDATA[Using Public Data to Tell Better Stories — A concise exploration of practical takeaways and real-world applications.]]></description>
-    <category>Blog</category>
-  </item>
-  <item>
-    <title><![CDATA[What to Pack for a Research Expedition]]></title>
-    <link>https://miroza.online/blogs/what-to-pack-for-a-research-expedition.html</link>
-    <guid>https://miroza.online/blogs/what-to-pack-for-a-research-expedition.html</guid>
-    <pubDate>Fri, 31 Oct 2025 00:00:00 GMT</pubDate>
-    <description><![CDATA[What to Pack for a Research Expedition — A concise exploration of practical takeaways and real-world applications.]]></description>
-    <category>Blog</category>
-  </item>
-  <item>
-    <title><![CDATA[Mindful Eating Practices for Better Digestion]]></title>
-    <link>https://miroza.online/blogs/mindful-eating-practices-for-better-digestion.html</link>
-    <guid>https://miroza.online/blogs/mindful-eating-practices-for-better-digestion.html</guid>
-    <pubDate>Mon, 27 Oct 2025 00:00:00 GMT</pubDate>
-    <description><![CDATA[Mindful Eating Practices for Better Digestion — A concise exploration of practical takeaways and real-world applications.]]></description>
-    <category>Blog</category>
-  </item>
-  <item>
-    <title><![CDATA[Design Systems for Small Teams]]></title>
-    <link>https://miroza.online/blogs/design-systems-for-small-teams.html</link>
-    <guid>https://miroza.online/blogs/design-systems-for-small-teams.html</guid>
-    <pubDate>Thu, 23 Oct 2025 00:00:00 GMT</pubDate>
-    <description><![CDATA[Design Systems for Small Teams — A concise exploration of practical takeaways and real-world applications.]]></description>
-    <category>Blog</category>
-  </item>
-  <item>
-    <title><![CDATA[Practical Biohacking for Everyday Performance]]></title>
-    <link>https://miroza.online/blogs/practical-biohacking-for-everyday-performance.html</link>
-    <guid>https://miroza.online/blogs/practical-biohacking-for-everyday-performance.html</guid>
-    <pubDate>Mon, 20 Oct 2025 00:00:00 GMT</pubDate>
-    <description><![CDATA[Practical Biohacking for Everyday Performance — A concise exploration of practical takeaways and real-world applications.]]></description>
-    <category>Blog</category>
-  </item>
-  <item>
-    <title><![CDATA[The History of Navigation and Exploration]]></title>
-    <link>https://miroza.online/blogs/the-history-of-navigation-and-exploration.html</link>
-    <guid>https://miroza.online/blogs/the-history-of-navigation-and-exploration.html</guid>
-    <pubDate>Thu, 16 Oct 2025 00:00:00 GMT</pubDate>
-    <description><![CDATA[The History of Navigation and Exploration — A concise exploration of practical takeaways and real-world applications.]]></description>
-    <category>Blog</category>
-  </item>
-  <item>
-    <title><![CDATA[Creative Uses for Leftover Groceries]]></title>
-    <link>https://miroza.online/blogs/creative-uses-for-leftover-groceries.html</link>
-    <guid>https://miroza.online/blogs/creative-uses-for-leftover-groceries.html</guid>
-    <pubDate>Sun, 12 Oct 2025 00:00:00 GMT</pubDate>
-    <description><![CDATA[Creative Uses for Leftover Groceries — A concise exploration of practical takeaways and real-world applications.]]></description>
-    <category>Blog</category>
-  </item>
-  <item>
-    <title><![CDATA[Community-Led Renewable Energy Projects]]></title>
-    <link>https://miroza.online/blogs/community-led-renewable-energy-projects.html</link>
-    <guid>https://miroza.online/blogs/community-led-renewable-energy-projects.html</guid>
-    <pubDate>Thu, 09 Oct 2025 00:00:00 GMT</pubDate>
-    <description><![CDATA[Community-Led Renewable Energy Projects — A concise exploration of practical takeaways and real-world applications.]]></description>
-    <category>Blog</category>
-  </item>
-  <item>
-    <title><![CDATA[How to Make Better Decisions with Bayesian Thinking]]></title>
-    <link>https://miroza.online/blogs/how-to-make-better-decisions-with-bayesian-thinking.html</link>
-    <guid>https://miroza.online/blogs/how-to-make-better-decisions-with-bayesian-thinking.html</guid>
-    <pubDate>Sun, 05 Oct 2025 00:00:00 GMT</pubDate>
-    <description><![CDATA[How to Make Better Decisions with Bayesian Thinking — A concise exploration of practical takeaways and real-world applications.]]></description>
-    <category>Blog</category>
-  </item>
-  <item>
-    <title><![CDATA[Habit Tracking for Behavioral Change]]></title>
-    <link>https://miroza.online/blogs/habit-tracking-for-behavioral-change.html</link>
-    <guid>https://miroza.online/blogs/habit-tracking-for-behavioral-change.html</guid>
-    <pubDate>Wed, 01 Oct 2025 00:00:00 GMT</pubDate>
-    <description><![CDATA[Habit Tracking for Behavioral Change — A concise exploration of practical takeaways and real-world applications.]]></description>
-    <category>Blog</category>
-  </item>
-  <item>
-    <title><![CDATA[The Impact of Microplastics on Food Chains]]></title>
-    <link>https://miroza.online/blogs/the-impact-of-microplastics-on-food-chains.html</link>
-    <guid>https://miroza.online/blogs/the-impact-of-microplastics-on-food-chains.html</guid>
-    <pubDate>Sun, 28 Sep 2025 00:00:00 GMT</pubDate>
-    <description><![CDATA[The Impact of Microplastics on Food Chains — A concise exploration of practical takeaways and real-world applications.]]></description>
-    <category>Blog</category>
-  </item>
-  <item>
-    <title><![CDATA[Building a Home Library That Inspires]]></title>
-    <link>https://miroza.online/blogs/building-a-home-library-that-inspires.html</link>
-    <guid>https://miroza.online/blogs/building-a-home-library-that-inspires.html</guid>
-    <pubDate>Wed, 24 Sep 2025 00:00:00 GMT</pubDate>
-    <description><![CDATA[Building a Home Library That Inspires — A concise exploration of practical takeaways and real-world applications.]]></description>
-    <category>Blog</category>
-  </item>
-  <item>
-    <title><![CDATA[How to Read Academic Papers Efficiently]]></title>
-    <link>https://miroza.online/blogs/how-to-read-academic-papers-efficiently.html</link>
-    <guid>https://miroza.online/blogs/how-to-read-academic-papers-efficiently.html</guid>
-    <pubDate>Sat, 20 Sep 2025 00:00:00 GMT</pubDate>
-    <description><![CDATA[How to Read Academic Papers Efficiently — A concise exploration of practical takeaways and real-world applications.]]></description>
-    <category>Blog</category>
-  </item>
-  <item>
-    <title><![CDATA[Nutrition Myths Debunked by Research]]></title>
-    <link>https://miroza.online/blogs/nutrition-myths-debunked-by-research.html</link>
-    <guid>https://miroza.online/blogs/nutrition-myths-debunked-by-research.html</guid>
-    <pubDate>Wed, 17 Sep 2025 00:00:00 GMT</pubDate>
-    <description><![CDATA[Nutrition Myths Debunked by Research — A concise exploration of practical takeaways and real-world applications.]]></description>
-    <category>Blog</category>
-  </item>
-  <item>
-    <title><![CDATA[Remote Team Rituals that Build Culture]]></title>
-    <link>https://miroza.online/blogs/remote-team-rituals-that-build-culture.html</link>
-    <guid>https://miroza.online/blogs/remote-team-rituals-that-build-culture.html</guid>
-    <pubDate>Sat, 13 Sep 2025 00:00:00 GMT</pubDate>
-    <description><![CDATA[Remote Team Rituals that Build Culture — A concise exploration of practical takeaways and real-world applications.]]></description>
-    <category>Blog</category>
-  </item>
-  <item>
-    <title><![CDATA[Home Studio Setup for Musicians]]></title>
-    <link>https://miroza.online/blogs/home-studio-setup-for-musicians.html</link>
-    <guid>https://miroza.online/blogs/home-studio-setup-for-musicians.html</guid>
-    <pubDate>Wed, 10 Sep 2025 00:00:00 GMT</pubDate>
-    <description><![CDATA[Home Studio Setup for Musicians — A concise exploration of practical takeaways and real-world applications.]]></description>
-    <category>Blog</category>
-  </item>
-  <item>
-    <title><![CDATA[Resilience Practices for Entrepreneurs]]></title>
-    <link>https://miroza.online/blogs/resilience-practices-for-entrepreneurs.html</link>
-    <guid>https://miroza.online/blogs/resilience-practices-for-entrepreneurs.html</guid>
-    <pubDate>Sat, 06 Sep 2025 00:00:00 GMT</pubDate>
-    <description><![CDATA[Resilience Practices for Entrepreneurs — A concise exploration of practical takeaways and real-world applications.]]></description>
-    <category>Blog</category>
-  </item>
-  <item>
-    <title><![CDATA[The Future of Vertical Farming]]></title>
-    <link>https://miroza.online/blogs/the-future-of-vertical-farming.html</link>
-    <guid>https://miroza.online/blogs/the-future-of-vertical-farming.html</guid>
-    <pubDate>Tue, 02 Sep 2025 00:00:00 GMT</pubDate>
-    <description><![CDATA[The Future of Vertical Farming — A concise exploration of practical takeaways and real-world applications.]]></description>
-    <category>Blog</category>
-  </item>
-  <item>
-    <title><![CDATA[Sustainable Fashion Choices on a Budget]]></title>
-    <link>https://miroza.online/blogs/sustainable-fashion-choices-on-a-budget.html</link>
-    <guid>https://miroza.online/blogs/sustainable-fashion-choices-on-a-budget.html</guid>
-    <pubDate>Sat, 30 Aug 2025 00:00:00 GMT</pubDate>
-    <description><![CDATA[Sustainable Fashion Choices on a Budget — A concise exploration of practical takeaways and real-world applications.]]></description>
-    <category>Blog</category>
-  </item>
+  
+    <item>
+      <title><![CDATA[AI Assistant Wars 2025: How Agentic AI Is Changing Work Forever]]></title>
+      <link>https://miroza.online/blogs/ai-assistant-wars-2025-agentic-ai-changing-work.html</link>
+      <guid>https://miroza.online/blogs/ai-assistant-wars-2025-agentic-ai-changing-work.html</guid>
+      <pubDate>Sat, 29 Nov 2025 00:00:00 GMT</pubDate>
+      <description><![CDATA[Agentic AI in 2025 is reshaping work: autonomous agents, new productivity models, risks and policy questions. Read a deep analysis.]]></description>
+    </item>
+
+    <item>
+      <title><![CDATA[The Electric Scooter Boom in India: A Silent Urban Revolution]]></title>
+      <link>https://miroza.online/blogs/electric-scooter-boom-india-urban-revolution.html</link>
+      <guid>https://miroza.online/blogs/electric-scooter-boom-india-urban-revolution.html</guid>
+      <pubDate>Sat, 29 Nov 2025 00:00:00 GMT</pubDate>
+      <description><![CDATA[How electric scooters transformed urban mobility across India: technology, policy, and social impacts of the EV two-wheeler boom in 2025.]]></description>
+    </item>
+
+    <item>
+      <title><![CDATA[Fitness 3.0: How Technology is Transforming the Indian Fitness Culture]]></title>
+      <link>https://miroza.online/blogs/fitness-3-0-technology-transforming-indian-fitness-culture.html</link>
+      <guid>https://miroza.online/blogs/fitness-3-0-technology-transforming-indian-fitness-culture.html</guid>
+      <pubDate>Sat, 29 Nov 2025 00:00:00 GMT</pubDate>
+      <description><![CDATA[Fitness 3.0 explores the intersection of wearable tech, AI coaches and community fitness in India, and how technology is reshaping health routines.]]></description>
+    </item>
+
+    <item>
+      <title><![CDATA[The Rise of Hyper-Local Content Platforms in 2025]]></title>
+      <link>https://miroza.online/blogs/hyper-local-content-platforms-2025.html</link>
+      <guid>https://miroza.online/blogs/hyper-local-content-platforms-2025.html</guid>
+      <pubDate>Sat, 29 Nov 2025 00:00:00 GMT</pubDate>
+      <description><![CDATA[Why hyper-local content platforms are rising in 2025: trust, community engagement, AI tools and business models shaping neighborhood journalism.]]></description>
+    </item>
+
+    <item>
+      <title><![CDATA[How Sleep Quality Shapes Mental Performance: The Science of the 2025 Lifestyle]]></title>
+      <link>https://miroza.online/blogs/sleep-quality-mental-performance-2025-lifestyle.html</link>
+      <guid>https://miroza.online/blogs/sleep-quality-mental-performance-2025-lifestyle.html</guid>
+      <pubDate>Sat, 29 Nov 2025 00:00:00 GMT</pubDate>
+      <description><![CDATA[Research-backed exploration of how sleep quality affects cognition, mood and productivity and practical strategies to improve rest in the digital age.]]></description>
+    </item>
+
+    <item>
+      <title><![CDATA[Global Climate Coalition Reaches Emissions Pact]]></title>
+      <link>https://miroza.online/articles/global-climate-coalition.html</link>
+      <guid>https://miroza.online/articles/global-climate-coalition.html</guid>
+      <pubDate>Mon, 24 Nov 2025 00:00:00 GMT</pubDate>
+      <description><![CDATA[Leaders from 70 nations agreed on binding methane cuts and fresh climate finance benchmarks after marathon talks in Nairobi. Observers say the pact revives trust ahead of next year’s compliance window.]]></description>
+    </item>
+
+    <item>
+      <title><![CDATA[Digital ID Fast-Track Links Emerging Markets]]></title>
+      <link>https://miroza.online/articles/digital-id-fast-track.html</link>
+      <guid>https://miroza.online/articles/digital-id-fast-track.html</guid>
+      <pubDate>Mon, 24 Nov 2025 00:00:00 GMT</pubDate>
+      <description><![CDATA[Finance ministers endorsed an interoperable ID rail to unlock cheaper remittances and portable health records. Pilot corridors covering 1.2 billion people will go live within six months.]]></description>
+    </item>
+
+    <item>
+      <title><![CDATA[Northern Corridor Summit Unlocks Infrastructure Funds]]></title>
+      <link>https://miroza.online/articles/northern-corridor-summit.html</link>
+      <guid>https://miroza.online/articles/northern-corridor-summit.html</guid>
+      <pubDate>Mon, 24 Nov 2025 00:00:00 GMT</pubDate>
+      <description><![CDATA[East African states secured $18B for rail modernization and hybrid ports to ease commodity bottlenecks. The package ties disbursements to transparent procurement dashboards overseen by regional auditors.]]></description>
+    </item>
+
+    <item>
+      <title><![CDATA[Asia-Pacific Ports Resume Ops After Typhoon Repairs]]></title>
+      <link>https://miroza.online/articles/asia-pacific-ports-reopen.html</link>
+      <guid>https://miroza.online/articles/asia-pacific-ports-reopen.html</guid>
+      <pubDate>Mon, 24 Nov 2025 00:00:00 GMT</pubDate>
+      <description><![CDATA[Logistics groups restored 80% capacity by deploying modular power barges and flexible berths across Manila, Kaohsiung, and Osaka. Relief lanes now prioritize medical cargo and cold-chain food staples.]]></description>
+    </item>
+
+    <item>
+      <title><![CDATA[Global Food Security Fund Expands Emergency Stockpiles]]></title>
+      <link>https://miroza.online/articles/global-food-security-fund.html</link>
+      <guid>https://miroza.online/articles/global-food-security-fund.html</guid>
+      <pubDate>Mon, 24 Nov 2025 00:00:00 GMT</pubDate>
+      <description><![CDATA[Donor blocs doubled rapid-response grain reserves and linked payouts to satellite drought triggers. Agencies expect the move to cut delivery times to high-risk regions by half.]]></description>
+    </item>
+
+    <item>
+      <title><![CDATA[How to Start a Local Volunteer Group]]></title>
+      <link>https://miroza.online/blogs/how-to-start-a-local-volunteer-group.html</link>
+      <guid>https://miroza.online/blogs/how-to-start-a-local-volunteer-group.html</guid>
+      <pubDate>Fri, 07 Nov 2025 00:00:00 GMT</pubDate>
+      <description><![CDATA[How to Start a Local Volunteer Group — A concise exploration of practical takeaways and real-world applications.]]></description>
+    </item>
+
+    <item>
+      <title><![CDATA[Using Public Data to Tell Better Stories]]></title>
+      <link>https://miroza.online/blogs/using-public-data-to-tell-better-stories.html</link>
+      <guid>https://miroza.online/blogs/using-public-data-to-tell-better-stories.html</guid>
+      <pubDate>Mon, 03 Nov 2025 00:00:00 GMT</pubDate>
+      <description><![CDATA[Using Public Data to Tell Better Stories — A concise exploration of practical takeaways and real-world applications.]]></description>
+    </item>
+
+    <item>
+      <title><![CDATA[What to Pack for a Research Expedition]]></title>
+      <link>https://miroza.online/blogs/what-to-pack-for-a-research-expedition.html</link>
+      <guid>https://miroza.online/blogs/what-to-pack-for-a-research-expedition.html</guid>
+      <pubDate>Fri, 31 Oct 2025 00:00:00 GMT</pubDate>
+      <description><![CDATA[What to Pack for a Research Expedition — A concise exploration of practical takeaways and real-world applications.]]></description>
+    </item>
+
+    <item>
+      <title><![CDATA[Mindful Eating Practices for Better Digestion]]></title>
+      <link>https://miroza.online/blogs/mindful-eating-practices-for-better-digestion.html</link>
+      <guid>https://miroza.online/blogs/mindful-eating-practices-for-better-digestion.html</guid>
+      <pubDate>Mon, 27 Oct 2025 00:00:00 GMT</pubDate>
+      <description><![CDATA[Mindful Eating Practices for Better Digestion — A concise exploration of practical takeaways and real-world applications.]]></description>
+    </item>
+
+    <item>
+      <title><![CDATA[Design Systems for Small Teams]]></title>
+      <link>https://miroza.online/blogs/design-systems-for-small-teams.html</link>
+      <guid>https://miroza.online/blogs/design-systems-for-small-teams.html</guid>
+      <pubDate>Thu, 23 Oct 2025 00:00:00 GMT</pubDate>
+      <description><![CDATA[Design Systems for Small Teams — A concise exploration of practical takeaways and real-world applications.]]></description>
+    </item>
+
+    <item>
+      <title><![CDATA[Practical Biohacking for Everyday Performance]]></title>
+      <link>https://miroza.online/blogs/practical-biohacking-for-everyday-performance.html</link>
+      <guid>https://miroza.online/blogs/practical-biohacking-for-everyday-performance.html</guid>
+      <pubDate>Mon, 20 Oct 2025 00:00:00 GMT</pubDate>
+      <description><![CDATA[Practical Biohacking for Everyday Performance — A concise exploration of practical takeaways and real-world applications.]]></description>
+    </item>
+
+    <item>
+      <title><![CDATA[The History of Navigation and Exploration]]></title>
+      <link>https://miroza.online/blogs/the-history-of-navigation-and-exploration.html</link>
+      <guid>https://miroza.online/blogs/the-history-of-navigation-and-exploration.html</guid>
+      <pubDate>Thu, 16 Oct 2025 00:00:00 GMT</pubDate>
+      <description><![CDATA[The History of Navigation and Exploration — A concise exploration of practical takeaways and real-world applications.]]></description>
+    </item>
+
+    <item>
+      <title><![CDATA[Creative Uses for Leftover Groceries]]></title>
+      <link>https://miroza.online/blogs/creative-uses-for-leftover-groceries.html</link>
+      <guid>https://miroza.online/blogs/creative-uses-for-leftover-groceries.html</guid>
+      <pubDate>Sun, 12 Oct 2025 00:00:00 GMT</pubDate>
+      <description><![CDATA[Creative Uses for Leftover Groceries — A concise exploration of practical takeaways and real-world applications.]]></description>
+    </item>
+
+    <item>
+      <title><![CDATA[Community-Led Renewable Energy Projects]]></title>
+      <link>https://miroza.online/blogs/community-led-renewable-energy-projects.html</link>
+      <guid>https://miroza.online/blogs/community-led-renewable-energy-projects.html</guid>
+      <pubDate>Thu, 09 Oct 2025 00:00:00 GMT</pubDate>
+      <description><![CDATA[Community-Led Renewable Energy Projects — A concise exploration of practical takeaways and real-world applications.]]></description>
+    </item>
+
+    <item>
+      <title><![CDATA[How to Make Better Decisions with Bayesian Thinking]]></title>
+      <link>https://miroza.online/blogs/how-to-make-better-decisions-with-bayesian-thinking.html</link>
+      <guid>https://miroza.online/blogs/how-to-make-better-decisions-with-bayesian-thinking.html</guid>
+      <pubDate>Sun, 05 Oct 2025 00:00:00 GMT</pubDate>
+      <description><![CDATA[How to Make Better Decisions with Bayesian Thinking — A concise exploration of practical takeaways and real-world applications.]]></description>
+    </item>
 </channel>
 </rss>
