@@ -4,7 +4,7 @@ async function checkPage(browser, url){
   const page = await browser.newPage();
   await page.goto(url, { waitUntil: 'networkidle2', timeout: 30000 });
   // wait for header or body
-  await page.waitForTimeout(200);
+  await new Promise(r=>setTimeout(r,200));
   const hasToggle = await page.$('.theme-toggle');
   const results = { url, hasToggle: !!hasToggle };
   if(!hasToggle){
@@ -17,7 +17,7 @@ async function checkPage(browser, url){
     .catch(()=>null);
 
   await page.click('.theme-toggle');
-  await page.waitForTimeout(250);
+  await new Promise(r=>setTimeout(r,250));
 
   const htmlClassAfter = await page.evaluate(()=>document.documentElement.className || '');
   const imgAfter = await page.$eval('.theme-toggle img', el => el.getAttribute('src'))
