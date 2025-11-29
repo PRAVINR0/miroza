@@ -1,6 +1,6 @@
-/* MIROZA Service Worker v2: smarter caching + offline fallbacks */
-const STATIC_CACHE = 'miroza-static-v3';
-const RUNTIME_CACHE = 'miroza-runtime-v2';
+/* MIROZA Service Worker v4: smarter caching + offline fallbacks */
+const STATIC_CACHE = 'miroza-static-v4';
+const RUNTIME_CACHE = 'miroza-runtime-v4';
 const CORE_ASSETS = [
   '/',
   '/index.html',

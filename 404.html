@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Page Not Found — MIROZA</title>
+  <meta name="description" content="The page you are looking for does not exist." />
+  <link rel="icon" href="/assets/icons/favicon.ico">
+  <link rel="stylesheet" href="/styles/styles.min.css" />
+  <link rel="stylesheet" href="/styles/theme.css" />
+  <style>
+    .error-page {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 60vh;
+      text-align: center;
+      padding: 2rem;
+    }
+    .error-code {
+      font-size: 6rem;
+      font-weight: 700;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 1rem;
+    }
+    .error-message {
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+      color: var(--text-alt);
+    }
+    .home-btn {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      background: var(--accent);
+      color: white;
+      border-radius: 4px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+    .home-btn:hover {
+      background: var(--accent-alt);
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="logo" href="/">
+        <img src="/assets/icons/logo.svg" alt="MIROZA logo" width="32" height="32" />
+        MIROZA
+      </a>
+    </div>
+  </header>
+
+  <main class="error-page">
+    <div class="error-code">404</div>
+    <h1 class="error-message">Oops! Page not found.</h1>
+    <p>The article or page you are looking for might have been moved or deleted.</p>
+    <a href="/" class="home-btn">Go Back Home</a>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div>
+        <h3>MIROZA</h3>
+        <p>Modern news & articles hub.</p>
+      </div>
+    </div>
+    <p class="copyright">&copy; <span id="year"></span> MIROZA.</p>
+  </footer>
+
+  <script src="/scripts/app.min.js"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
