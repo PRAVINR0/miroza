@@ -1,5 +1,19 @@
 {
   "name": "miroza",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./tools/static-server.js",
+    "check-links": "node ./tools/check-links.js",
+    "smoke-test": "node ./tools/smoke-test.js",
+    "add-defer": "node ./tools/add-defer-to-scripts.js"
+  },
+  "devDependencies": {
+    "puppeteer": "^20.0.0"
+  }
+}
+{
+  "name": "miroza",
   "version": "1.0.0",
   "description": "MIROZA is a modern, performant, accessible news / articles / blog platform scaffold. All content provided here is placeholder material for development and design iteration.",
   "main": "sw.js",
