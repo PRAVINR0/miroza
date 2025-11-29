@@ -145,56 +145,57 @@
     return { init };
   })();
 
-  /* Home Feed Manager */
-  window.MIROZA.home = (function(){
-    async function init(){
-      // Only run on pages that are explicitly home or contain home structure
-      if(!window.MIROZA.utils.qs('#hero-heading')) return;
 
-      await window.MIROZA.store.ready();
 
-      const allPosts = window.MIROZA.store.getAll();
-
-      // Categorize roughly based on string matching if explicit type missing, or use category
-      // Note: The posts.json structure has 'category' field like "World", "Technology".
-      // We map these to the requested "News", "Articles", "Blogs" buckets if possible,
-      // or just distribute them.
-
-      // Simple heuristic mapping
-      const news = allPosts.filter(p => ['World', 'News', 'Politics', 'Weather'].includes(p.category));
-      const articles = allPosts.filter(p => ['Technology', 'Science', 'Health', 'Finance', 'Automobiles', 'Space'].includes(p.category));
-      const blogs = allPosts.filter(p => ['Lifestyle', 'Travel', 'Career', 'Education', 'Blog', 'Business'].includes(p.category));
-
-      // Fallbacks if empty
-      const fill = (source) => source.length ? source : allPosts;
-
-      fillSection('#news-cards', fill(news), 4);
-      fillSection('#articles-cards', fill(articles), 4);
-      fillSection('#blog-cards', fill(blogs), 4);
-
-      // Mixed Stream (Shuffled)
-      const mixed = window.MIROZA.utils.shuffle([...allPosts]);
-      fillSection('#latest-cards', mixed, 8, true);
-
-      // Hero Section (Top 5 from articles or news)
-      const heroStories = [...articles, ...news].slice(0, 5);
-      if(heroStories.length > 0) setupHero(heroStories);
-
-      // Trending (Top views)
-      const trending = [...allPosts].sort((a,b) => (b.views || 0) - (a.views || 0)).slice(0, 5);
-      fillTrending(trending);
-    }
-
-    function fillSection(selector, items, limit, append=false){
-      const container = window.MIROZA.utils.qs(selector);
-      if(!container) return;
-      if(!append) container.innerHTML = '';
-
-      items.slice(0, limit).forEach(post => {
-        const card = window.MIROZA.builder.build(post);
-        container.appendChild(card);
+    function enhanceInlineMedia(){
+      const inlineImages = window.MIROZA.utils.qsa('.single-article img, main img[data-enhance-responsive]');
+      if(!inlineImages.length) return;
+      inlineImages.forEach(img => {
+        if(!img) return;
+        if(!img.getAttribute('loading')) img.loading = 'lazy';
+        img.decoding = 'async';
+        if(!img.hasAttribute('srcset')){
+          const responsive = buildResponsiveSet(img.getAttribute('src'));
+          if(responsive){
+            img.setAttribute('srcset', responsive);
+            if(!img.hasAttribute('sizes')){
+              img.setAttribute('sizes', '(max-width: 900px) 100vw, 800px');
+            }
+          }
+        }
       });
     }
+
+    function buildResponsiveSet(src){
+      if(!src) return null;
+      if(!/images\.(unsplash|pexels)\.com/i.test(src)) return null;
+      const widths = [480, 768, 1200];
+      const entries = widths.map(width => `${swapWidthParam(src, width)} ${width}w`);
+      return entries.join(', ');
+    }
+
+    function swapWidthParam(url, width){
+      const widthParam = `w=${width}`;
+      if(/w=\d+/i.test(url)){
+        return url.replace(/w=\d+/gi, widthParam);
+      }
+      const separator = url.includes('?') ? '&' : '?';
+      return `${url}${separator}${widthParam}`;
+    }
+
+
+    }
+
+    function lockForm(form){
+      form.classList.add('is-success');
+      window.MIROZA.utils.qsa('input, button', form).forEach(el => { el.disabled = true; });
+    }
+
+    function simulateRequest(payload){
+      return new Promise((resolve)=>{
+        window.setTimeout(()=> resolve({ ok:true, ...payload }), SUBMIT_LATENCY);
+      });
+
 
     function fillTrending(items){
       const list = window.MIROZA.utils.qs('#trending-list');
