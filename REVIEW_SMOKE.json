@@ -60,11 +60,6 @@
       "cards": 0
     },
     {
-      "type": "console",
-      "text": "The Content Security Policy directive 'frame-ancestors' is ignored when delivered via a <meta> element.",
-      "location": ""
-    },
-    {
       "type": "visit",
       "url": "http://localhost:8080/articles/articles.html",
       "status": 200
@@ -72,8 +67,8 @@
     {
       "type": "dom-snapshot",
       "url": "http://localhost:8080/articles/articles.html",
-      "hasMain": true,
-      "cards": 19
+      "hasMain": false,
+      "cards": 0
     },
     {
       "type": "console",
@@ -100,11 +95,11 @@
       "type": "dom-snapshot",
       "url": "http://localhost:8080/blogs/blogs.html",
       "hasMain": false,
-      "cards": 12
+      "cards": 0
     }
   ],
   "summary": {
-    "events": 19,
+    "events": 18,
     "errors": 0
   }
 }
