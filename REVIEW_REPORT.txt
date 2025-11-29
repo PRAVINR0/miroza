@@ -18,8 +18,8 @@ Key fixes implemented:
   - Safer HTML sanitization via `MIROZA.utils.safeHTML` which uses DOMPurify if available.
 - India news list (`MIROZA.indiaNews`) uses `/data/news.json` and maps `contentFile` to `link` for news entries.
 - Subscription manager preserved; ensures email input exists and saves subscribers to localStorage.
-- Theme system:
-  - `styles/styles.css` already included CSS variables and theme blocks (`html[data-theme='light']` and `html[data-theme='dark']`). JS `MIROZA.theme` initializes and persists theme in `localStorage` key `miroza_theme` and updates the toggle icon.
+  - Theme system:
+    - `styles/styles.css` already included CSS variables and theme blocks (`html[data-theme='light']` and `html[data-theme='dark']`). JS `MIROZA.theme` initializes and persists theme in `localStorage` key `theme` and updates the toggle icon.
 - UI/UX helpers:
   - Back-to-top and sticky header behavior preserved in `MIROZA.ui`.
 - Error handling:

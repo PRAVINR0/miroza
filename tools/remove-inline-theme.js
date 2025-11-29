@@ -15,7 +15,7 @@ function walk(dir){
 }
 
 const files = walk(root);
-const snippet = /<script>\s*\(function\(\)\{try\{var t=localStorage.getItem\('miroza_theme'\);[^<]*?\}\)\(\);<\/script>/gmi;
+const snippet = /<script>\s*\(function\(\)\{try\{var t=localStorage.getItem\('(miroza_theme|theme)'\);[^<]*?\}\)\(\);<\/script>/gmi;
 let changed = 0;
 files.forEach(f=>{
   let txt = fs.readFileSync(f,'utf8');

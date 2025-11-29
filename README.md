@@ -5,7 +5,7 @@ MIROZA is a modern, performant, accessible news / articles / blog platform scaff
 ## Features
 - Semantic HTML5 structure for improved SEO & accessibility
 - Responsive layout using CSS Grid + Flexbox
-- Dark / Light mode with CSS variables and localStorage persistence (`miroza_theme`)
+- Dark / Light mode with CSS variables and localStorage persistence (`theme`)
 - Modular JavaScript under `window.MIROZA` namespace (theme, nav, posts, pagination, prefetch, a11y, PWA)
 - Skeleton loaders while content (JSON) fetches
 - Prefetch on link hover / touch for perceived performance
@@ -104,7 +104,7 @@ Visit `http://localhost:8080` and inspect the Network tab: the service worker sh
 
 ## Theming
 - Variables defined for light & dark palettes in `styles.css`.
-- Theme persistence stored in `localStorage` (`miroza_theme`).
+- Theme persistence stored in `localStorage` (`theme`).
 - Toggle updates icons and labels for assistive tech.
 
 ## Posts Data

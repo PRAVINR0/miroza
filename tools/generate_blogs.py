@@ -333,7 +333,7 @@ ANGLES = [
     },
 ]
 
-THEME_SNIPPET = "(function(){try{var t=localStorage.getItem('miroza_theme');if(t){document.documentElement.dataset.theme=t;}}catch(e){}})();"
+THEME_SNIPPET = "(function(){try{var t=localStorage.getItem('theme');if(t){document.documentElement.dataset.theme=t;}}catch(e){}})();"
 
 
 def render_section(heading: str, paragraphs: list[str], bullets_title: str, bullets: list[str]) -> str:
