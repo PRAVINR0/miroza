@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://example.com/</loc><priority>1.0</priority><changefreq>daily</changefreq></url>
-  <url><loc>https://example.com/articles/article-1.html</loc><priority>0.8</priority></url>
-  <url><loc>https://example.com/articles/article-2.html</loc><priority>0.8</priority></url>
-  <url><loc>https://example.com/news.html</loc><priority>0.8</priority></url>
-  <url><loc>https://example.com/blog.html</loc><priority>0.7</priority></url>
-  <url><loc>https://example.com/articles.html</loc><priority>0.7</priority></url>
+  <url><loc>https://miroza.online/</loc><priority>1.0</priority><changefreq>daily</changefreq></url>
+  <url><loc>https://miroza.online/news.html</loc><priority>0.8</priority><changefreq>daily</changefreq></url>
+  <url><loc>https://miroza.online/blog.html</loc><priority>0.8</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://miroza.online/articles.html</loc><priority>0.8</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://miroza.online/privacy.html</loc><priority>0.3</priority></url>
 </urlset>
