@@ -1,0 +1,58 @@
+MIROZA - REVIEW REPORT
+
+Date: 2025-11-29
+
+Summary:
+This pass focused on stabilizing the client-side behavior across the site, ensuring data-driven feeds render on homepage/category/news pages, improving robustness of the card builder and theme, and adding graceful fallbacks and wiring for category pages. The repo still contains many features and scaffolding; this work addresses the most impactful runtime errors and usability defects to reach a stable, browsable state.
+
+Key fixes implemented:
+- Unify JS usage across pages:
+  - `index.html`, `news.html`, `articles.html`, `blog.html` now reference `/scripts/app.js` (development canonical bundle) so all pages run consistent logic.
+- Category pages wired:
+  - Implemented `window.MIROZA.listing` in `scripts/app.js` to populate `#category-list` on articles and blog pages.
+  - Updated `articles.html` `data-page` to `articles` and `blog.html` `data-page` to `blog` so the listing module runs on load.
+- Improved card builder (`MIROZA.builder`):
+  - Link fallbacks: builds `link` from `post.link`, `post.url`, or falls back to `/articles/{slug}.html` or `/blogs/{slug}.html` based on category.
+  - Responsive images: include `srcset` and `sizes` when present (from JSON), add `decoding="async"`, `loading="lazy"`.
+  - Image error fallback: `onerror` handler sets a default image when loading fails.
+  - Safer HTML sanitization via `MIROZA.utils.safeHTML` which uses DOMPurify if available.
+- India news list (`MIROZA.indiaNews`) uses `/data/news.json` and maps `contentFile` to `link` for news entries.
+- Subscription manager preserved; ensures email input exists and saves subscribers to localStorage.
+- Theme system:
+  - `styles/styles.css` already included CSS variables and theme blocks (`html[data-theme='light']` and `html[data-theme='dark']`). JS `MIROZA.theme` initializes and persists theme in `localStorage` key `miroza_theme` and updates the toggle icon.
+- UI/UX helpers:
+  - Back-to-top and sticky header behavior preserved in `MIROZA.ui`.
+- Error handling:
+  - Fetches (posts, news, blogs) guard against HTTP errors with fallbacks and console messages.
+
+Files updated:
+- Updated: `index.html` (use `/scripts/app.js`)
+- Updated: `articles.html` (`data-page` changed to `articles`)
+- Updated: `blog.html` (`data-page` changed to `blog`)
+- Updated: `scripts/app.js` (many changes; added `MIROZA.listing`, enhanced `MIROZA.builder`, added blog listing initialization, improved error handling)
+- Added: `REVIEW_REPORT.txt` (this file)
+
+Build and environment notes:
+- Attempted `npm run build:js` failed on this environment due to `esbuild` native binary being installed for a different platform. The error message indicates `@esbuild/linux-x64` present while this environment needs `@esbuild/win32-x64`.
+- Recommended local steps to fix and produce `scripts/app.min.js`:
+  1. Remove existing `node_modules` and reinstall on the target platform:
+     - `rm -Recurse -Force node_modules` (PowerShell) or delete folder.
+     - `npm install`
+  2. Run full build:
+     - `npm run build`
+- Alternatively, use `esbuild-wasm` as a fallback if installing native binaries is problematic (note: wasm is slower).
+
+Next recommended improvements (optional):
+1. Pagination support for category pages (client-side or server-side paging).
+2. Add JSON-LD templates into each article/blog/news HTML detail page automatically (scripted injection or manual editing).
+3. Add end-to-end static tests and a small test harness for smoke testing pages under a local server.
+4. Add more robust error reporting (UI-level feedback when fetch fails).
+5. Consider splitting `scripts/app.js` into smaller modules for maintainability (the repo README suggested `/js/components/`, but folder restructuring was not requested in this task).
+6. Rebuild minified assets (`scripts/app.min.js`, `styles/styles.min.css`) on the target machine.
+
+If you'd like, I can continue by:
+- Implementing client-side pagination and topic filtering for category pages.
+- Injecting JSON-LD metadata into each detail page template.
+- Creating a small local smoke-test script that loads key pages and reports console errors.
+
+End of report.

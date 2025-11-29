@@ -67,22 +67,41 @@
       const imgUrl = rawImage
         ? (typeof rawImage === 'string' ? rawImage : (rawImage.src || '/assets/images/hero-insight-800.svg'))
         : '/assets/images/hero-insight-800.svg';
-      const imgAlt = (rawImage && typeof rawImage === 'object' && rawImage.alt) ? rawImage.alt : post.title;
+      const imgAlt = (rawImage && typeof rawImage === 'object' && rawImage.alt) ? rawImage.alt : post.title || '';
+
+      // compute link fallback
+      let link = post.link || post.url || '';
+      if(!link) {
+        if(post.slug) {
+          // prefer blogs -> /blogs/, else /articles/
+          link = (post.category && post.category.toLowerCase() === 'blog') ? `/blogs/${post.slug}.html` : `/articles/${post.slug}.html`;
+        } else {
+          link = '/';
+        }
+      }
+
+      // build img attributes: srcset / sizes when provided
+      let srcsetAttr = '';
+      let sizesAttr = '';
+      if(rawImage && typeof rawImage === 'object'){
+        if(rawImage.srcset) srcsetAttr = `srcset="${rawImage.srcset}"`;
+        if(rawImage.sizes) sizesAttr = `sizes="${rawImage.sizes}"`;
+      }
 
       const html = `
-        <a href="${post.link}" class="card-link" aria-label="Read ${window.MIROZA.utils.safeHTML(post.title)}">
-          <img src="${imgUrl}" alt="${window.MIROZA.utils.safeHTML(imgAlt)}" loading="lazy" width="400" height="225" />
+        <a href="${link}" class="card-link" aria-label="Read ${window.MIROZA.utils.safeHTML(post.title || '')}">
+          <img src="${imgUrl}" ${srcsetAttr} ${sizesAttr} alt="${window.MIROZA.utils.safeHTML(imgAlt)}" loading="lazy" decoding="async" width="400" height="225" onerror="this.onerror=null;this.src='/assets/images/hero-insight-800.svg'" />
         </a>
         <div class="card-content">
           <div class="card-meta">
             <span class="category">${window.MIROZA.utils.safeHTML(post.category || 'Story')}</span> •
-            <span class="date">${new Date(post.date).toLocaleDateString()}</span>
+            <span class="date">${post.date ? new Date(post.date).toLocaleDateString() : ''}</span>
           </div>
           <h3 class="card-title">
-            <a href="${post.link}">${window.MIROZA.utils.safeHTML(post.title)}</a>
+            <a href="${link}">${window.MIROZA.utils.safeHTML(post.title || '')}</a>
           </h3>
           <p class="card-excerpt">${window.MIROZA.utils.safeHTML(post.excerpt || '')}</p>
-          <a href="${post.link}" class="read-more" aria-hidden="true">Read Article</a>
+          <a href="${link}" class="read-more" aria-hidden="true">Read Article</a>
         </div>
       `;
 
@@ -462,6 +481,7 @@
       window.MIROZA.store.init().then(() => {
         if(isHome && window.MIROZA.home) window.MIROZA.home.init();
         if(isArticles && window.MIROZA.listing) window.MIROZA.listing.initArticles();
+        if(isBlog && window.MIROZA.listing) window.MIROZA.listing.initBlogs();
         if(window.MIROZA.search) window.MIROZA.search.init();
         if(isIndiaNews && window.MIROZA.indiaNews) window.MIROZA.indiaNews.init();
         document.body.classList.add('js-ready');
