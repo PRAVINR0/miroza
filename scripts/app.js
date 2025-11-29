@@ -1698,6 +1698,7 @@
   /* Forms & Newsletter Handling */
   window.MIROZA.forms = (function(){
     const NEWSLETTER_KEY = 'miroza_newsletter_optin';
+    const SUBSCRIBER_BUFFER_KEY = 'miroza_subscribers_buffer';
     const SUBMIT_LATENCY = 900;
 
     function sanitizeInput(value){
@@ -1715,6 +1716,45 @@
         if(action==='remove'){ localStorage.removeItem(key); }
       } catch(e){}
       return null;
+    }
+
+    function readSubscribers(){
+      try {
+        const raw = safeStorage('get', SUBSCRIBER_BUFFER_KEY);
+        const list = raw ? JSON.parse(raw) : [];
+        return Array.isArray(list) ? list : [];
+      } catch(e){
+        return [];
+      }
+    }
+
+    function writeSubscribers(list){
+      try {
+        safeStorage('set', SUBSCRIBER_BUFFER_KEY, JSON.stringify(list));
+      } catch(e){}
+    }
+
+    function addSubscriber(email){
+      if(!email) return;
+      const list = readSubscribers();
+      if(!list.includes(email)){
+        list.push(email);
+        writeSubscribers(list);
+      }
+    }
+
+    function downloadSubscribersTxt(){
+      const list = readSubscribers();
+      if(!list.length) return;
+      const blob = new Blob([list.join('\n') + '\n'], { type:'text/plain' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'subscribers.txt';
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      URL.revokeObjectURL(url);
     }
 
     function updateFeedback(el, message, state='info'){
@@ -1766,6 +1806,7 @@
         simulateRequest({ email }).then(()=>{
           updateFeedback(feedback, 'You are officially on the list. Welcome aboard!', 'success');
           safeStorage('set', NEWSLETTER_KEY, 'subscribed');
+          addSubscriber(email);
           lockForm(form);
           finish(true);
         }).catch(()=>{
@@ -1773,11 +1814,30 @@
           finish(false);
         });
       });
+
+      // Optional admin-only export when ?admin=1 is present
+      try {
+        const params = new URLSearchParams(window.location.search || '');
+        if(params.get('admin') === '1'){
+          const tools = document.createElement('div');
+          tools.className = 'newsletter-tools';
+          const btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'text-link';
+          btn.textContent = 'Download subscribers.txt';
+          btn.addEventListener('click', e => {
+            e.preventDefault();
+            downloadSubscribersTxt();
+          });
+          tools.appendChild(btn);
+          form.appendChild(tools);
+        }
+      } catch(e){}
     }
 
     function init(){ initNewsletter(); }
 
-    return { init };
+    return { init, downloadSubscribersTxt, addSubscriber, readSubscribers };
   })();
 
   /* Community Interactions (share, like, comments) */
