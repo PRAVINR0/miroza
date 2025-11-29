@@ -30,65 +30,6 @@
     }
   };
 
-  /* Data Store Module */
-  window.MIROZA.store = (function(){
-    let _posts = [];
-    let _ready = null;
-
-    function init() {
-        if (_ready) return _ready;
-        _ready = Promise.all([
-            fetch('/data/posts.json').then(r => r.ok ? r.json() : [])
-        ]).then(([posts]) => {
-            _posts = posts;
-            return true;
-        }).catch(err => {
-            console.error('Failed to load data:', err);
-            return false;
-        });
-        return _ready;
-    }
-
-    return {
-        init,
-        ready: () => _ready,
-        getAll: () => _posts,
-        getByCategory: (cat) => _posts.filter(p => p.category === cat)
-    };
-  })();
-
-  /* UI Builder Module */
-  window.MIROZA.builder = (function(){
-    function build(post) {
-      const article = document.createElement('article');
-      article.className = 'card';
-
-      const imgUrl = (post.image && post.image.src) ? post.image.src : '/assets/images/hero-insight-800.svg';
-      const imgAlt = (post.image && post.image.alt) ? post.image.alt : post.title;
-
-      const html = `
-        <a href="${post.link}" class="card-link" aria-label="Read ${window.MIROZA.utils.safeHTML(post.title)}">
-          <img src="${imgUrl}" alt="${window.MIROZA.utils.safeHTML(imgAlt)}" loading="lazy" width="400" height="225" />
-        </a>
-        <div class="card-content">
-          <div class="card-meta">
-            <span class="category">${window.MIROZA.utils.safeHTML(post.category || 'Story')}</span> •
-            <span class="date">${new Date(post.date).toLocaleDateString()}</span>
-          </div>
-          <h3 class="card-title">
-            <a href="${post.link}">${window.MIROZA.utils.safeHTML(post.title)}</a>
-          </h3>
-          <p class="card-excerpt">${window.MIROZA.utils.safeHTML(post.excerpt || '')}</p>
-          <a href="${post.link}" class="read-more" aria-hidden="true">Read Article</a>
-        </div>
-      `;
-
-      article.innerHTML = html;
-      return article;
-    }
-    return { build };
-  })();
-
   /* Theme Manager */
   window.MIROZA.theme = (function(){
     function init(){
@@ -148,39 +89,32 @@
   /* Home Feed Manager */
   window.MIROZA.home = (function(){
     async function init(){
-      // Only run on pages that are explicitly home or contain home structure
-      if(!window.MIROZA.utils.qs('#hero-heading')) return;
+      if(!document.body.dataset.page === 'home' && !window.MIROZA.utils.qs('[data-page="home"]')) return;
 
       await window.MIROZA.store.ready();
 
       const allPosts = window.MIROZA.store.getAll();
 
-      // Categorize roughly based on string matching if explicit type missing, or use category
-      // Note: The posts.json structure has 'category' field like "World", "Technology".
-      // We map these to the requested "News", "Articles", "Blogs" buckets if possible,
-      // or just distribute them.
+      // 1. Populate Latest News (Sorted by Date)
+      const news = allPosts.filter(p => p.type === 'news').sort((a,b) => new Date(b.date) - new Date(a.date));
+      fillSection('#news-cards', news, 4);
 
-      // Simple heuristic mapping
-      const news = allPosts.filter(p => ['World', 'News', 'Politics', 'Weather'].includes(p.category));
-      const articles = allPosts.filter(p => ['Technology', 'Science', 'Health', 'Finance', 'Automobiles', 'Space'].includes(p.category));
-      const blogs = allPosts.filter(p => ['Lifestyle', 'Travel', 'Career', 'Education', 'Blog', 'Business'].includes(p.category));
+      // 2. Populate Latest Articles (Sorted by Date)
+      const articles = allPosts.filter(p => p.type === 'article').sort((a,b) => new Date(b.date) - new Date(a.date));
+      fillSection('#articles-cards', articles, 4);
 
-      // Fallbacks if empty
-      const fill = (source) => source.length ? source : allPosts;
+      // 3. Populate Latest Blogs (Sorted by Date)
+      const blogs = allPosts.filter(p => p.type === 'blog').sort((a,b) => new Date(b.date) - new Date(a.date));
+      fillSection('#blog-cards', blogs, 4);
 
-      fillSection('#news-cards', fill(news), 4);
-      fillSection('#articles-cards', fill(articles), 4);
-      fillSection('#blog-cards', fill(blogs), 4);
+      // 4. Populate Mixed Stream (Shuffled)
+      const mixed = window.MIROZA.utils.shuffle([...allPosts]); // Copy before shuffle
+      fillSection('#latest-cards', mixed, 8, true); // Allow pagination logic later if needed
 
-      // Mixed Stream (Shuffled)
-      const mixed = window.MIROZA.utils.shuffle([...allPosts]);
-      fillSection('#latest-cards', mixed, 8, true);
+      // 5. Hero Section (Top 5 latest articles)
+      if(articles.length > 0) setupHero(articles.slice(0, 5));
 
-      // Hero Section (Top 5 from articles or news)
-      const heroStories = [...articles, ...news].slice(0, 5);
-      if(heroStories.length > 0) setupHero(heroStories);
-
-      // Trending (Top views)
+      // 6. Trending (Top views)
       const trending = [...allPosts].sort((a,b) => (b.views || 0) - (a.views || 0)).slice(0, 5);
       fillTrending(trending);
     }
@@ -194,6 +128,8 @@
         const card = window.MIROZA.builder.build(post);
         container.appendChild(card);
       });
+
+      // Remove skeletons if any remain (handled by innerHTML='' above for replace)
     }
 
     function fillTrending(items){
@@ -218,6 +154,9 @@
       const hero = window.MIROZA.utils.qs('.hero');
       if(!hero || !stories.length) return;
 
+      // For now, just set the first one. Rotator logic can be added if requested,
+      // but simpler is often more robust.
+      // Let's implement a simple rotator.
       let idx = 0;
       const els = {
         tag: hero.querySelector('#hero-tag'),
@@ -233,8 +172,7 @@
         if(els.title) els.title.innerHTML = window.MIROZA.utils.safeHTML(story.title);
         if(els.excerpt) els.excerpt.innerHTML = window.MIROZA.utils.safeHTML(story.excerpt);
         if(els.img) {
-             const imgUrl = (story.image && story.image.src) ? story.image.src : '/assets/images/hero-insight-800.svg';
-             els.img.src = imgUrl;
+
              els.img.alt = story.title;
         }
         if(els.link) els.link.href = story.link || `/articles/${story.slug}.html`;
@@ -301,107 +239,21 @@
     return { init };
   })();
 
-  /* Subscription Manager */
-  window.MIROZA.subscription = (function(){
-    function init(){
-      const form = window.MIROZA.utils.qs('#newsletter-form');
-      if(!form) return;
-
-      // Ensure input exists
-      if(!form.querySelector('input[type="email"]')){
-        const input = document.createElement('input');
-        input.type = 'email';
-        input.placeholder = 'Your email address';
-        input.required = true;
-        input.setAttribute('aria-label', 'Email address');
-        form.insertBefore(input, form.querySelector('button'));
-      }
-
-      form.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const input = form.querySelector('input[type="email"]');
-        const email = input.value.trim();
-        if(!email) return;
-
-        // Save to LocalStorage
-        saveSubscriber(email);
-
-        // UI Feedback
-        const originalBtnText = form.querySelector('button').textContent;
-        form.querySelector('button').textContent = 'Subscribed!';
-        form.querySelector('button').disabled = true;
-        input.value = '';
-        setTimeout(() => {
-             form.querySelector('button').textContent = originalBtnText;
-             form.querySelector('button').disabled = false;
-        }, 3000);
-      });
-
-      // Admin Trigger (Double click on "Stay Updated" title to download list - Hidden Feature)
-      const title = window.MIROZA.utils.qs('.newsletter h3');
-      if(title){
-          title.addEventListener('dblclick', downloadList);
-          title.title = "Admin: Double click to download subscriber list";
-      }
-    }
-
-    function saveSubscriber(email){
-      let subscribers = [];
-      try {
-        const stored = localStorage.getItem(SUBSCRIBERS_KEY);
-        if(stored) subscribers = JSON.parse(stored);
-      } catch(e){}
-
-      const entry = {
-        email: email,
-        date: new Date().toISOString(),
-        source: 'newsletter-form'
-      };
-
-      subscribers.push(entry);
-      localStorage.setItem(SUBSCRIBERS_KEY, JSON.stringify(subscribers));
-      console.log('Subscriber saved locally:', entry);
-    }
-
-    function downloadList(){
-      let subscribers = [];
-      try {
-        const stored = localStorage.getItem(SUBSCRIBERS_KEY);
-        if(stored) subscribers = JSON.parse(stored);
-      } catch(e){}
-
-      if(!subscribers.length) {
-          alert('No subscribers yet.');
-          return;
-      }
-
-      // Convert to CSV
-      const headers = 'Email,Date,Source\n';
-      const rows = subscribers.map(s => `${s.email},${s.date},${s.source}`).join('\n');
-      const blob = new Blob([headers + rows], { type: 'text/csv' });
-      const url = URL.createObjectURL(blob);
-
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = 'subscribers.csv';
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-      URL.revokeObjectURL(url);
-    }
-
-    return { init };
-  })();
-
   /* Initialization */
   document.addEventListener('DOMContentLoaded', () => {
     window.MIROZA.theme.init();
     window.MIROZA.nav.init();
-    window.MIROZA.subscription.init();
 
     window.MIROZA.store.init().then(() => {
         window.MIROZA.home.init();
         window.MIROZA.search.init();
+
+        // Handle specific page feeds if not home
+        const page = document.body.dataset.page;
+        if(page === 'news'){
+             // Load news page logic
+        }
+        // Remove 'no-js' or add 'js-ready'
         document.body.classList.add('js-ready');
     });
 
@@ -409,12 +261,5 @@
     const themeBtn = window.MIROZA.utils.qs('.theme-toggle');
     if(themeBtn) themeBtn.addEventListener('click', window.MIROZA.theme.toggle);
   });
-
-  /* Public API Aliases (for category pages) */
-  window.MIROZA.loadPosts = async () => {
-      await window.MIROZA.store.init();
-      return window.MIROZA.store.getAll();
-  };
-  window.MIROZA.buildCard = window.MIROZA.builder.build;
 
 })();
