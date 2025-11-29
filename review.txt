@@ -42,11 +42,33 @@ Remaining recommended work (optional but advised):
 5. Review and consolidate duplicate theme/navigation code across `site-shell.js`, `theme.js`, and the inline scripts embedded in legacy pages (move to a single source to reduce duplication).
 
 If you want, I can now:
-- run a headless smoke test (open key pages and report console/404s),
-- perform a repo-wide migration of `miroza_theme` → `theme`, or
-- generate full placeholder pages for any other missing post links.
 
--- Copilot (assistant)
+
+Smoke test (automated)
+----------------------
+
+- I added `tools/static-server.js` and `tools/smoke-test.js` and used them to run a Puppeteer smoke test that visits key pages (`/`, `/index.html`, `/news/news.html`, a sample news article, `/articles/articles.html`, a sample article, and `/blogs/blogs.html`).
+- I removed inline theme snippet blocks (which were blocked by the site's CSP) from many HTML files using `tools/remove-inline-theme.js` and re-ran the smoke test.
+- Result: All visited pages returned HTTP 200 and the test recorded cards loaded for the index and listing pages. The smoke-test wrote `REVIEW_SMOKE.json` with details and reported 0 errors on the final run.
+
+Files added in this session (summary):
+- `tools/static-server.js` (simple static server for smoke-tests)
+- `tools/smoke-test.js` (Puppeteer smoke-test; spawns the server, runs checks, writes `REVIEW_SMOKE.json`)
+- `tools/remove-inline-theme.js` (utility to remove inline theme snippets blocked by CSP)
+
+Files modified in this session (high level):
+- `scripts/app.js` (unified theme storage key -> `'theme'`)
+- `scripts/theme.js` (added migration from legacy `miroza_theme` to `theme`)
+- `scripts/theme.js` / `scripts/site-shell.js` already present and used for unified theme handling
+- Many HTML files had inline theme snippets removed (approx 97 files changed) to avoid CSP blocking and rely on external scripts; this includes files under `articles/`, `blogs/`, `news/`, and root-level pages.
+- Added placeholder article pages: `articles/newsletter-strategy-engagement.html`, `articles/security-headers-practical-defaults.html`, `articles/robust-offline-experiences.html` to avoid 404s for feed-referenced links.
+
+Where to go next
+-----------------
+- Replace placeholders with full article content when available.
+- Optionally perform a repo-wide conversion of any remaining references to `miroza_theme` → `theme` (migration code is present but a static sweep would simplify the codebase).
+- Run further tests (link-checker, visual regression, Lighthouse) if you want more validation.
+
 REVIEW SUMMARY
 
 1. scripts/app.js
@@ -68,3 +90,7 @@ REVIEW SUMMARY
 4. New Features
    - Subscription data is saved to Browser LocalStorage.
    - Admin Export: Double-click "Stay Updated" in footer to download CSV.
+
+   Additional update (2025-11-29):
+   - `scripts/app.min.js` was edited in-place to replace the legacy `miroza_theme` storage key with `theme` so the minified bundle and unminified runtime are consistent. This avoids a mismatch between runtime and production artifacts; a full rebuild is still recommended when convenient.
+
