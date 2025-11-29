@@ -48,7 +48,16 @@ html,body{background:var(--bg);color:var(--text);}
 .pagination .page-btn:hover{background:rgba(0,0,0,0.03)}
 .pagination .page-btn:disabled{opacity:0.5;cursor:default}
 .pagination .page-btn.active{background:var(--accent);color:#fff;border-color:transparent}
+.pagination .page-btn:focus{outline:2px solid var(--accent);outline-offset:2px}
+.pagination .page-btn:focus:not(:focus-visible){outline: none}
 .post-card-link{display:block;text-decoration:none;color:inherit}
 .post-card{background:var(--card-bg);padding:1rem;border-radius:8px;margin:0.4rem 0}
 .post-card h3{margin:0 0 0.4rem 0;font-size:1.05rem}
 .post-card .meta{color:var(--muted);font-size:0.9rem;margin-bottom:0.6rem}
+
+/* Prev/Next nav styles for article pages */
+.prev-next-nav{display:flex;gap:1rem;align-items:center;justify-content:space-between;margin-top:1.25rem}
+.article-nav-link{color:var(--accent);text-decoration:none}
+.article-nav-link.prev{justify-self:flex-start}
+.article-nav-link.next{justify-self:flex-end}
+.nav-sep{color:var(--muted)}

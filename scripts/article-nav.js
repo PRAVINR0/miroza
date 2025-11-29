@@ -44,6 +44,23 @@
         if(prev && next){ const sep = document.createElement('span'); sep.className='nav-sep'; sep.textContent=' | '; wrapper.appendChild(sep); }
         if(next){ wrapper.appendChild(createLink(next,'next')); }
 
+        // inject rel links into head for SEO
+        try{
+          // remove existing rel prev/next to avoid duplicates
+          ['prev','next'].forEach(r => {
+            const ex = document.querySelector(`link[rel="${r}"]`);
+            if(ex) ex.remove();
+          });
+          if(prev){
+            const l = document.createElement('link'); l.rel='prev'; l.href = prev.url || (`/articles/${prev.slug}.html`);
+            document.head.appendChild(l);
+          }
+          if(next){
+            const l2 = document.createElement('link'); l2.rel='next'; l2.href = next.url || (`/articles/${next.slug}.html`);
+            document.head.appendChild(l2);
+          }
+        }catch(e){}
+
         // append into container
         if(container.parentNode){ // container exists in DOM
           container.appendChild(wrapper);

@@ -56,13 +56,17 @@
   function renderPagination(totalItems, currentPage) {
     const totalPages = Math.max(1, Math.ceil(totalItems / PER_PAGE));
     paginationEl.innerHTML = '';
+    paginationEl.setAttribute('role','navigation');
+    paginationEl.setAttribute('aria-label','Articles pagination');
 
     function createButton(label, page, disabled) {
       const btn = document.createElement('button');
       btn.type = 'button';
       btn.className = 'page-btn';
       btn.textContent = label;
+      btn.setAttribute('aria-label', typeof label === 'string' && label.match(/^[0-9]+$/) ? `Page ${label}` : label);
       if (disabled) btn.disabled = true;
+      if (disabled && typeof label === 'string' && label.match(/^[0-9]+$/)) btn.setAttribute('aria-current','page');
       btn.addEventListener('click', () => goToPage(page));
       return btn;
     }
@@ -81,13 +85,30 @@
       btn.type = 'button';
       btn.className = 'page-btn' + (i===currentPage ? ' active' : '');
       btn.textContent = String(i);
-      if (i===currentPage) btn.disabled = true;
+      if (i===currentPage) { btn.disabled = true; btn.setAttribute('aria-current','page'); }
+      btn.setAttribute('aria-label', `Page ${i}`);
       btn.addEventListener('click', () => goToPage(i));
       paginationEl.appendChild(btn);
     }
 
     const next = createButton('Next', Math.min(totalPages, currentPage+1), currentPage===totalPages);
     paginationEl.appendChild(next);
+  }
+
+  // keyboard navigation for pagination (Left/Right)
+  if (paginationEl) {
+    paginationEl.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        const cur = parseInt(qs('page')) || 1;
+        if (cur > 1) goToPage(cur - 1);
+      } else if (e.key === 'ArrowRight') {
+        e.preventDefault();
+        const cur = parseInt(qs('page')) || 1;
+        const totalPages = Math.max(1, Math.ceil((window.__MIROZA_ARTICLES ? window.__MIROZA_ARTICLES.length : 0) / PER_PAGE));
+        if (cur < totalPages) goToPage(cur + 1);
+      }
+    });
   }
 
   function goToPage(page) {
