@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MIROZA — Landing</title>
+  <meta name="description" content="Landing page for MIROZA (not named index.html)." />
+  <link rel="stylesheet" href="/styles/styles.min.css" />
+</head>
+<body data-page="landing">
+  <a class="skip-link" href="#content">Skip to content</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="logo" href="/"> <img src="/assets/icons/logo.svg" alt="MIROZA" width="40" height="40" loading="lazy"/> MIROZA</a>
+      <nav class="main-nav" aria-label="Primary navigation">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/news.html">News</a></li>
+          <li><a href="/blog.html">Blog</a></li>
+          <li><a href="/articles.html">Articles</a></li>
+        </ul>
+      </nav>
+      <button class="theme-toggle" aria-label="Toggle theme"><img src="/assets/icons/moon.svg" alt="theme" width="24" height="24"/></button>
+    </div>
+  </header>
+  <main id="content" tabindex="-1">
+    <section class="hero">
+      <div class="hero-inner">
+        <h1>MIROZA — News, Analysis, and Ideas</h1>
+        <p>Curated posts and commentary. This page is intentionally named `landing.html` (not `index.html`).</p>
+      </div>
+    </section>
+    <section aria-labelledby="latest" class="container">
+      <h2 id="latest">Latest posts</h2>
+      <div id="latest-posts" class="cards-grid"></div>
+      <p id="landing-note" class="muted" hidden>Unable to load posts.</p>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div>
+        <h3>MIROZA</h3>
+        <p>Modern news and articles hub.</p>
+      </div>
+    </div>
+    <p class="copyright">&copy; <span id="year"></span> MIROZA.</p>
+  </footer>
+
+  <script src="/scripts/app.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', async function () {
+      var container = document.getElementById('latest-posts');
+      var note = document.getElementById('landing-note');
+      if (window.MIROZA && typeof window.MIROZA.loadPosts === 'function' && typeof window.MIROZA.buildCard === 'function') {
+        try {
+          var posts = await window.MIROZA.loadPosts();
+          if (!posts || !posts.length) {
+            note.hidden = false;
+            return;
+          }
+          posts.slice(0, 8).forEach(function(p) {
+            try { container.appendChild(window.MIROZA.buildCard(p)); } catch (e) { /* ignore per-card errors */ }
+          });
+        } catch (err) {
+          note.hidden = false;
+        }
+      } else {
+        note.hidden = false;
+      }
+    });
+  </script>
+</body>
+</html>
