@@ -49,6 +49,11 @@
       "location": ""
     },
     {
+      "type": "request-failed",
+      "url": "http://localhost:8080/assets/icons/moon.svg",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
       "type": "visit",
       "url": "http://localhost:8080/news/india-gdp-expected-73-q2.html",
       "status": 200
@@ -99,7 +104,7 @@
     }
   ],
   "summary": {
-    "events": 18,
-    "errors": 0
+    "events": 19,
+    "errors": 1
   }
 }
