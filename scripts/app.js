@@ -3,7 +3,6 @@
   'use strict';
   const THEME_STORAGE_KEY = 'theme';
   const SUBSCRIBERS_KEY = 'miroza_subscribers';
-  const SUBSCRIBERS_FILE_NAME = 'subscribers.txt';
   const SITE_BASE = 'https://miroza.online';
 
   /* Utilities */
@@ -61,7 +60,7 @@
   window.MIROZA.builder = (function(){
     function build(post) {
       const article = document.createElement('article');
-      article.className = 'card';
+      article.className = 'card post-card'; // Unified class name
 
       const rawImage = post.image;
       const imgUrl = rawImage
@@ -90,19 +89,21 @@
 
       const html = `
         <a href="${link}" class="card-link" aria-label="Read ${window.MIROZA.utils.safeHTML(post.title || '')}">
-          <img src="${imgUrl}" ${srcsetAttr} ${sizesAttr} alt="${window.MIROZA.utils.safeHTML(imgAlt)}" loading="lazy" decoding="async" width="400" height="225" onerror="this.onerror=null;this.src='/assets/images/hero-insight-800.svg'" />
-        </a>
-        <div class="card-content">
-          <div class="card-meta">
-            <span class="category">${window.MIROZA.utils.safeHTML(post.category || 'Story')}</span> •
-            <span class="date">${post.date ? new Date(post.date).toLocaleDateString() : ''}</span>
+          <div class="card-image-wrap">
+             <img src="${imgUrl}" ${srcsetAttr} ${sizesAttr} alt="${window.MIROZA.utils.safeHTML(imgAlt)}" loading="lazy" decoding="async" width="400" height="225" onerror="this.onerror=null;this.src='/assets/images/hero-insight-800.svg'" />
           </div>
-          <h3 class="card-title">
-            <a href="${link}">${window.MIROZA.utils.safeHTML(post.title || '')}</a>
-          </h3>
-          <p class="card-excerpt">${window.MIROZA.utils.safeHTML(post.excerpt || '')}</p>
-          <a href="${link}" class="read-more" aria-hidden="true">Read Article</a>
-        </div>
+          <div class="card-content card-body">
+            <div class="card-meta">
+              <span class="category">${window.MIROZA.utils.safeHTML(post.category || 'Story')}</span> •
+              <span class="date">${post.date ? new Date(post.date).toLocaleDateString() : ''}</span>
+            </div>
+            <h3 class="card-title">
+              ${window.MIROZA.utils.safeHTML(post.title || '')}
+            </h3>
+            <p class="card-excerpt">${window.MIROZA.utils.safeHTML(post.excerpt || '')}</p>
+            <span class="read-more" aria-hidden="true">Read Article</span>
+          </div>
+        </a>
       `;
 
       article.innerHTML = html;
@@ -524,11 +525,16 @@
     }
 
     function initArticles(){
-      const container = '#category-list';
-      const pagination = '#category-pagination';
+      // Updated to match articles.html IDs
+      const container = '#articles-list'; 
+      const pagination = '#articles-pagination';
+      
       if(!window.MIROZA.store || !window.MIROZA.utils.qs(container)) return;
       const all = window.MIROZA.store.getAll();
-      if(!all || !all.length) return;
+      if(!all || !all.length) {
+          window.MIROZA.utils.qs(container).innerHTML = '<p>No articles found.</p>';
+          return;
+      }
       
       const topic = getTopicFromQuery();
       // Treat anything not explicitly Blog as an article/long-form
@@ -546,12 +552,33 @@
     }
 
     async function initBlogs(){
-      const container = '#category-list';
-      const pagination = '#category-pagination';
+      // Updated to match blogs.html IDs
+      const container = '#posts-grid';
+      // blogs.html doesn't have a pagination container by default, let's create one if missing or append to grid
+      let pagination = '#blogs-pagination';
+      
       if(!window.MIROZA.utils.qs(container)) return;
+      
+      // Ensure pagination container exists
+      if(!window.MIROZA.utils.qs(pagination)){
+          const pDiv = document.createElement('nav');
+          pDiv.id = 'blogs-pagination';
+          pDiv.className = 'pagination';
+          window.MIROZA.utils.qs(container).parentNode.appendChild(pDiv);
+      }
+
       try {
-        const res = await fetch('/data/blogs.json');
-        const items = res.ok ? await res.json() : [];
+        const res = await fetch('/data/blogs.json'); // Or posts.json if blogs are there
+        // Fallback to posts.json if blogs.json fails or is empty, but here we assume blogs.json or filtered posts
+        let items = [];
+        if(res.ok) {
+            items = await res.json();
+        } else {
+            // Fallback to store if blogs.json missing
+             await window.MIROZA.store.init();
+             items = window.MIROZA.store.getAll().filter(p => p.category === 'Blog');
+        }
+
         let mapped = items
           .slice()
           .sort((a,b) => (b.date || '').localeCompare(a.date || ''))
@@ -572,8 +599,13 @@
 
         const pager = renderPage(container, mapped, 12);
         attachLoadMore(pagination, pager);
+        
+        // Hide skeleton if present
+        const skeleton = document.getElementById('posts-skeleton');
+        if(skeleton) skeleton.style.display = 'none';
+
       } catch(e) {
-        console.error('Failed to load blogs.json', e);
+        console.error('Failed to load blogs', e);
       }
     }
 
