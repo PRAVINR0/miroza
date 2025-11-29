@@ -181,10 +181,18 @@
         <div class="newsletter">
           <h3>Stay Updated</h3>
           <p>Get the latest stories delivered to your inbox weekly.</p>
-          <form id="newsletter-form">
-
+          <form id="newsletter-form" novalidate>
+            <input
+              type="email"
+              name="email"
+              autocomplete="email"
+              required
+              placeholder="you@example.com"
+              aria-label="Email address"
+            />
             <button type="submit">Subscribe</button>
           </form>
+          <p class="form-feedback" aria-live="polite"></p>
         </div>
       </aside>
     </div>
