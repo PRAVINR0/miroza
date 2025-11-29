@@ -1,7 +1,7 @@
 /* MIROZA Main JS - Optimized */
 (function(){
   'use strict';
-  const THEME_STORAGE_KEY = 'miroza_theme';
+  const THEME_STORAGE_KEY = 'theme';
   const SUBSCRIBERS_KEY = 'miroza_subscribers';
   const SUBSCRIBERS_FILE_NAME = 'subscribers.txt';
   const SITE_BASE = 'https://miroza.online';

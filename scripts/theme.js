@@ -1,5 +1,12 @@
 // Lightweight theme helper: reads/writes localStorage 'theme' and applies dataset on <html>
 (function(){
+  // Migrate legacy theme storage key if present
+  try{
+    var legacy = localStorage.getItem('miroza_theme');
+    if(legacy && !localStorage.getItem('theme')){
+      localStorage.setItem('theme', legacy);
+    }
+  }catch(e){}
   function setTheme(t){
     try{
       document.documentElement.dataset.theme = t;

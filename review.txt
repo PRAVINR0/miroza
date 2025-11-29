@@ -1,3 +1,52 @@
+MIROZA Repair Summary
+=====================
+
+Date: 2025-11-29
+
+Summary of changes made (this run):
+
+- Unified theme storage key: updated `scripts/app.js` to use `localStorage['theme']` instead of `miroza_theme` so the theme toggle behaves consistently across `site-shell.js`, `theme.js`, and `app.js`.
+- Added a migration in `scripts/theme.js` to copy any legacy `miroza_theme` value into the new `theme` key to avoid breaking older pages.
+- Created three placeholder article pages to resolve missing feed links referenced in `data/posts.json` that produced 404s: 
+  - `/articles/newsletter-strategy-engagement.html`
+  - `/articles/security-headers-practical-defaults.html`
+  - `/articles/robust-offline-experiences.html`
+  These placeholders include the site shell and scripts; replace with full content when available.
+- Added a small link-checker script at `tools/check-links.js` and executed it to verify `data/posts.json` references resolve to files on disk.
+
+Files added or modified in this session:
+
+Modified:
+- `scripts/app.js`  — changed theme storage key to `'theme'`.
+- `scripts/theme.js` — added migration code for legacy `miroza_theme`.
+
+Added:
+- `articles/newsletter-strategy-engagement.html` (placeholder)
+- `articles/security-headers-practical-defaults.html` (placeholder)
+- `articles/robust-offline-experiences.html` (placeholder)
+- `tools/check-links.js` (link verification helper)
+
+What I validated during the run:
+
+- `data/posts.json` was inspected and initially referenced three article files that did not exist — placeholders were created and the link checker now reports all links resolve.
+- Core script files exist: `scripts/app.js`, `scripts/theme.js`, `scripts/site-shell.js`, `scripts/news-list.js`, `scripts/data-loader.js`, `scripts/main.js`.
+- Styles are present: `styles/styles.min.css`, `styles/theme.css`, and `styles/global.css`.
+- Key pages present: `/index.html`, `/news/news.html`, `/articles.html`, `/blogs/blogs.html`, `/about.html`, `/contact.html` and per-item pages under `/articles/` and `/news/`.
+
+Remaining recommended work (optional but advised):
+
+1. Replace the placeholder article pages with real content (copy from source or markdown renderer) where available.
+2. Consider a full repo-wide replacement of legacy theme references (instances of `miroza_theme`) to `theme` to simplify code (migration is already present so it is not urgent).
+3. Run a live smoke test in a browser (or headless Chromium) to confirm runtime JS (fetch calls) work and there are no console errors when loading `/index.html`, `/news/news.html`, a sample `/news/*` article, `/articles.html` and `/blogs/blogs.html`.
+4. Optionally run an HTML validator / link-check across all pages (tools/check-links.js only checks `data/posts.json` links currently).
+5. Review and consolidate duplicate theme/navigation code across `site-shell.js`, `theme.js`, and the inline scripts embedded in legacy pages (move to a single source to reduce duplication).
+
+If you want, I can now:
+- run a headless smoke test (open key pages and report console/404s),
+- perform a repo-wide migration of `miroza_theme` → `theme`, or
+- generate full placeholder pages for any other missing post links.
+
+-- Copilot (assistant)
 REVIEW SUMMARY
 
 1. scripts/app.js
