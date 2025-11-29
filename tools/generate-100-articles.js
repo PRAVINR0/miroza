@@ -108,7 +108,6 @@ function renderArticleHTML(meta, content){
   <meta property="og:title" content="${escape(meta.title)}" />
   <meta property="og:description" content="${escape(meta.excerpt)}" />
   <meta property="og:image" content="/assets/placeholder.jpg" />
-  <script src="/js/theme.js"></script>
   <link rel="stylesheet" href="/styles/styles.min.css" />
   <link rel="stylesheet" href="/styles/theme.css" />
   <script type="application/ld+json">${JSON.stringify(ld)}</script>
@@ -127,7 +126,9 @@ function renderArticleHTML(meta, content){
     </article>
   </main>
   <footer class="site-footer"><div class="footer-grid"><div><h3>MIROZA</h3><p>Modern news and articles hub.</p></div></div><p class="copyright">&copy; <span id="year"></span> MIROZA.</p></footer>
-  <script src="/scripts/app.js" defer></script>
+  
+  <script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.11/dist/purify.min.js" defer crossorigin="anonymous"></script>
+  <script src="/scripts/app.min.js" defer></script>
 </body>
 </html>`;
 }
@@ -143,7 +144,6 @@ function renderArticlesIndex(all){
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Articles — MIROZA</title>
   <link rel="icon" href="/assets/icons/favicon.ico">
-  <script src="/js/theme.js"></script>
   <link rel="stylesheet" href="/styles/styles.min.css" />
   <link rel="stylesheet" href="/styles/theme.css" />
 </head>
@@ -156,7 +156,9 @@ function renderArticlesIndex(all){
     </section>
   </main>
   <footer class="site-footer"><div class="footer-grid"><div><h3>MIROZA</h3><p>Modern news and articles hub.</p></div></div><p class="copyright">&copy; <span id="year"></span> MIROZA.</p></footer>
-  <script src="/scripts/app.js" defer></script>
+  
+  <script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.11/dist/purify.min.js" defer crossorigin="anonymous"></script>
+  <script src="/scripts/app.min.js" defer></script>
 </body>
 </html>`;
 }

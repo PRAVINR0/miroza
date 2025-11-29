@@ -208,7 +208,6 @@ function renderBlogHTML(post, content){
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://miroza.online/blogs/${post.slug}.html" />
   <meta property="og:image" content="/assets/placeholder.jpg" />
-  <script src="/js/theme.js"></script>
   <link rel="stylesheet" href="/styles/styles.min.css" />
   <link rel="stylesheet" href="/styles/theme.css" />
 </head>
@@ -229,7 +228,9 @@ function renderBlogHTML(post, content){
   </main>
   <footer class="site-footer"><div class="footer-grid"><div><h3>MIROZA</h3><p>Modern news and articles hub.</p></div></div><p class="copyright">&copy; <span id="year"></span> MIROZA.</p></footer>
   <script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.11/dist/purify.min.js" defer crossorigin="anonymous"></script>
-  <script src="/scripts/app.js" defer></script>
+  
+  <script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.11/dist/purify.min.js" defer crossorigin="anonymous"></script>
+  <script src="/scripts/app.min.js" defer></script>
 </body>
 </html>`;
 }
@@ -243,7 +244,6 @@ function renderBlogsIndex(posts){
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Blogs — MIROZA</title>
   <link rel="icon" href="/assets/icons/favicon.ico">
-  <script src="/js/theme.js"></script>
   <link rel="stylesheet" href="/styles/styles.min.css" />
   <link rel="stylesheet" href="/styles/theme.css" />
 </head>
@@ -256,7 +256,9 @@ function renderBlogsIndex(posts){
     </section>
   </main>
   <footer class="site-footer"><div class="footer-grid"><div><h3>MIROZA</h3><p>Modern news and articles hub.</p></div></div><p class="copyright">&copy; <span id="year"></span> MIROZA.</p></footer>
-  <script src="/scripts/app.js" defer></script>
+  
+  <script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.11/dist/purify.min.js" defer crossorigin="anonymous"></script>
+  <script src="/scripts/app.min.js" defer></script>
 </body>
 </html>`;
 }

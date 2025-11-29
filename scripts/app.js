@@ -415,6 +415,13 @@
       };
     }
 
+    function getTopicFromQuery(){
+      try{
+        const q = new URLSearchParams(window.location.search);
+        return q.get('topic');
+      }catch(e){ return null; }
+    }
+
     function init(){
       const listEl = window.MIROZA.utils.qs('#india-news-list');
       if(!listEl) return;
@@ -423,12 +430,21 @@
         .then(r => r.ok ? r.json() : [])
         .then(items => {
           listEl.innerHTML = '';
-          items
-            .slice()
-            .sort((a,b) => (b.date || '').localeCompare(a.date || ''))
-            .forEach(item => {
+          let filtered = items.slice().sort((a,b) => (b.date || '').localeCompare(a.date || ''));
+          
+          const topic = getTopicFromQuery();
+          if(topic){
+             filtered = filtered.filter(item => (item.category || '').toLowerCase() === topic.toLowerCase() || (item.title || '').toLowerCase().includes(topic.toLowerCase()));
+          }
+
+          if(filtered.length === 0){
+             listEl.innerHTML = '<p>No news found for this topic.</p>';
+             return;
+          }
+
+          filtered.forEach(item => {
               listEl.appendChild(window.MIROZA.builder.build(buildIndiaCard(item)));
-            });
+          });
         })
         .catch(() => {
           listEl.innerHTML = '<p>Unable to load latest India news right now.</p>';
@@ -447,6 +463,13 @@
         const p = parseInt(q.get('page'), 10);
         return isNaN(p) || p < 1 ? 1 : p;
       }catch(e){ return 1; }
+    }
+
+    function getTopicFromQuery(){
+      try{
+        const q = new URLSearchParams(window.location.search);
+        return q.get('topic');
+      }catch(e){ return null; }
     }
 
     function updateQueryPage(page){
@@ -506,11 +529,18 @@
       if(!window.MIROZA.store || !window.MIROZA.utils.qs(container)) return;
       const all = window.MIROZA.store.getAll();
       if(!all || !all.length) return;
+      
+      const topic = getTopicFromQuery();
       // Treat anything not explicitly Blog as an article/long-form
-      const articles = all
+      let articles = all
         .filter(p => p.category !== 'Blog')
         .slice()
         .sort((a,b) => (b.date || '').localeCompare(a.date || ''));
+      
+      if(topic) {
+        articles = articles.filter(p => (p.category || '').toLowerCase() === topic.toLowerCase() || (p.title || '').toLowerCase().includes(topic.toLowerCase()));
+      }
+
       const pager = renderPage(container, articles, 12);
       attachLoadMore(pagination, pager);
     }
@@ -522,7 +552,7 @@
       try {
         const res = await fetch('/data/blogs.json');
         const items = res.ok ? await res.json() : [];
-        const mapped = items
+        let mapped = items
           .slice()
           .sort((a,b) => (b.date || '').localeCompare(a.date || ''))
           .map(item => ({
@@ -534,6 +564,12 @@
             link: item.url || item.contentFile || `/blogs/${item.slug}.html`,
             image: item.image ? { src: item.image, alt: item.title } : null
           }));
+        
+        const topic = getTopicFromQuery();
+        if(topic) {
+            mapped = mapped.filter(p => (p.title || '').toLowerCase().includes(topic.toLowerCase()));
+        }
+
         const pager = renderPage(container, mapped, 12);
         attachLoadMore(pagination, pager);
       } catch(e) {

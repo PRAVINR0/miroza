@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>MIROZA — Landing</title>
     <link rel="icon" href="/assets/icons/favicon.ico">
-    <script src="/js/theme.js"></script>
     <meta name="description" content="Landing page for MIROZA (not named index.html)." />
     <link rel="canonical" href="https://miroza.online/landing.html">
   <link rel="stylesheet" href="/styles/styles.min.css" />
@@ -49,7 +48,10 @@
     <p class="copyright">&copy; <span id="year"></span> MIROZA.</p>
   </footer>
 
-  <script src="/scripts/app.js" defer></script>
+  
+  <script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.11/dist/purify.min.js" defer crossorigin="anonymous"></script>
+  <script src="/scripts/app.min.js" defer></script>
+
   <script>
     document.addEventListener('DOMContentLoaded', async function () {
       var container = document.getElementById('latest-posts');
