@@ -391,6 +391,57 @@
     return { init };
   })();
 
+  /* Category / Listing pages for articles & blogs */
+  window.MIROZA.listing = (function(){
+    function renderList(containerId, items){
+      const container = window.MIROZA.utils.qs(containerId);
+      if(!container) return;
+      container.innerHTML = '';
+      items.forEach(item => {
+        container.appendChild(window.MIROZA.builder.build(item));
+      });
+    }
+
+    function initArticles(){
+      const container = '#category-list';
+      if(!window.MIROZA.store || !window.MIROZA.utils.qs(container)) return;
+      const all = window.MIROZA.store.getAll();
+      if(!all || !all.length) return;
+      // Treat anything not explicitly Blog as an article/long-form
+      const articles = all
+        .filter(p => p.category !== 'Blog')
+        .slice()
+        .sort((a,b) => (b.date || '').localeCompare(a.date || ''));
+      renderList(container, articles);
+    }
+
+    async function initBlogs(){
+      const container = '#category-list';
+      if(!window.MIROZA.utils.qs(container)) return;
+      try {
+        const res = await fetch('/data/blogs.json');
+        const items = res.ok ? await res.json() : [];
+        const mapped = items
+          .slice()
+          .sort((a,b) => (b.date || '').localeCompare(a.date || ''))
+          .map(item => ({
+            title: item.title,
+            slug: item.slug,
+            date: item.date,
+            category: 'Blog',
+            excerpt: item.excerpt,
+            link: item.url || item.contentFile || `/blogs/${item.slug}.html`,
+            image: item.image ? { src: item.image, alt: item.title } : null
+          }));
+        renderList(container, mapped);
+      } catch(e) {
+        console.error('Failed to load blogs.json', e);
+      }
+    }
+
+    return { initArticles, initBlogs };
+  })();
+
   /* Initialization */
   document.addEventListener('DOMContentLoaded', () => {
     window.MIROZA.theme.init();
@@ -404,10 +455,13 @@
     const page = document.body.dataset.page || 'home';
     const isHome = page === 'home';
     const isIndiaNews = page === 'india-news';
+    const isArticles = page === 'articles';
+    const isBlog = page === 'blog';
 
     if(window.MIROZA.store && typeof window.MIROZA.store.init === 'function'){
       window.MIROZA.store.init().then(() => {
         if(isHome && window.MIROZA.home) window.MIROZA.home.init();
+        if(isArticles && window.MIROZA.listing) window.MIROZA.listing.initArticles();
         if(window.MIROZA.search) window.MIROZA.search.init();
         if(isIndiaNews && window.MIROZA.indiaNews) window.MIROZA.indiaNews.init();
         document.body.classList.add('js-ready');
@@ -417,6 +471,7 @@
       });
     } else {
       if(isIndiaNews && window.MIROZA.indiaNews) window.MIROZA.indiaNews.init();
+      if(isBlog && window.MIROZA.listing) window.MIROZA.listing.initBlogs();
       document.body.classList.add('js-ready');
     }
   });
