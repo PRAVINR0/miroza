@@ -622,6 +622,17 @@
       if(window.MIROZA.postMeta) window.MIROZA.postMeta.init();
       document.body.classList.add('js-ready');
     }
+
+    // Load per-article enhancements when on a single article page
+    try{
+      const path = (location.pathname || '').toLowerCase();
+      if(path.indexOf('/articles/') === 0 && !/articles(\/|index\.html|articles\.html)$/.test(path)){
+        const s = document.createElement('script');
+        s.src = '/scripts/article-nav.js';
+        s.defer = true;
+        document.body.appendChild(s);
+      }
+    }catch(e){/* ignore */}
   });
 
   /* Public API Aliases (for category pages) */
