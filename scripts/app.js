@@ -2,6 +2,8 @@
 (function(){
   'use strict';
   const THEME_STORAGE_KEY = 'miroza_theme';
+  const SUBSCRIBERS_KEY = 'miroza_subscribers';
+  const SUBSCRIBERS_FILE_NAME = 'subscribers.txt';
   const SITE_BASE = 'https://miroza.online';
 
   /* Utilities */
@@ -82,107 +84,6 @@
       });
     }
     return { init };
-  })();
-
-  /* Data Loader & Store */
-  window.MIROZA.store = (function(){
-    let posts = [];
-    let readyPromise = null;
-
-    async function fetchAll(){
-      try {
-        const [p, n, b] = await Promise.all([
-          fetch('/data/posts.json').then(r=>r.json()).catch(()=>[]),
-          fetch('/data/news.json').then(r=>r.json()).catch(()=>[]),
-          fetch('/data/blogs.json').then(r=>r.json()).catch(()=>[])
-        ]);
-
-        // Normalize and merge
-        const normPosts = p.map(x => ({...x, type: 'article'}));
-        const normNews = n.map(x => ({...x, type: 'news', category: 'News'})); // Ensure category
-        const normBlogs = b.map(x => ({...x, type: 'blog', category: 'Blog'}));
-
-        posts = [...normPosts, ...normNews, ...normBlogs];
-        return posts;
-      } catch(e) {
-        console.error('Data load failed', e);
-        return [];
-      }
-    }
-
-    function init(){
-      readyPromise = fetchAll();
-      return readyPromise;
-    }
-
-    function get(type){
-      if(!type) return posts;
-      return posts.filter(p => p.type === type || (type === 'article' && !p.type)); // Fallback for old structure
-    }
-
-    function getAll() { return posts; }
-
-    return { init, get, getAll, ready: () => readyPromise };
-  })();
-
-  /* Card Builder */
-  window.MIROZA.builder = (function(){
-    function build(post){
-      const article = document.createElement('article');
-      article.className = 'card fade-in';
-      article.dataset.id = post.id || post.slug;
-      article.dataset.label = post.category || 'Story';
-
-      const imgWrap = document.createElement('div');
-      imgWrap.style.overflow = 'hidden';
-
-      const img = document.createElement('img');
-      img.loading = 'lazy';
-      // Use fallback image if missing
-      const imgSrc = (post.image && (post.image.src || post.image)) || '/assets/images/hero-insight-800.svg';
-      img.src = imgSrc;
-      img.alt = post.title;
-      img.width = 400; img.height = 225;
-      imgWrap.appendChild(img);
-      article.appendChild(imgWrap);
-
-      const content = document.createElement('div');
-      content.className = 'card-content';
-
-      const title = document.createElement('h3');
-      title.className = 'card-title';
-      title.innerHTML = window.MIROZA.utils.safeHTML(post.title);
-
-      const meta = document.createElement('p');
-      meta.className = 'card-meta';
-      const dateStr = post.date ? new Date(post.date).toLocaleDateString() : '';
-      meta.textContent = `${post.category || 'Update'} • ${dateStr}`;
-
-      const excerpt = document.createElement('p');
-      excerpt.className = 'card-excerpt';
-      excerpt.innerHTML = window.MIROZA.utils.safeHTML(post.excerpt || '');
-
-      const link = document.createElement('a');
-      link.className = 'read-more';
-      // Fix link logic: favor provided link, else construct
-      let href = post.link;
-      if (!href) {
-         if (post.contentFile) href = post.contentFile;
-         else if (post.slug) href = `/${post.type === 'blog' ? 'blogs' : post.type === 'news' ? 'news' : 'articles'}/${post.slug}.html`;
-         else href = '#';
-      }
-      link.href = href;
-      link.textContent = 'Read Article';
-
-      content.appendChild(title);
-      content.appendChild(meta);
-      content.appendChild(excerpt);
-      content.appendChild(link);
-
-      article.appendChild(content);
-      return article;
-    }
-    return { build };
   })();
 
   /* Home Feed Manager */
@@ -271,7 +172,7 @@
         if(els.title) els.title.innerHTML = window.MIROZA.utils.safeHTML(story.title);
         if(els.excerpt) els.excerpt.innerHTML = window.MIROZA.utils.safeHTML(story.excerpt);
         if(els.img) {
-             els.img.src = (story.image && (story.image.src || story.image)) || '/assets/images/hero-insight-800.svg';
+
              els.img.alt = story.title;
         }
         if(els.link) els.link.href = story.link || `/articles/${story.slug}.html`;
@@ -342,6 +243,7 @@
   document.addEventListener('DOMContentLoaded', () => {
     window.MIROZA.theme.init();
     window.MIROZA.nav.init();
+
     window.MIROZA.store.init().then(() => {
         window.MIROZA.home.init();
         window.MIROZA.search.init();
