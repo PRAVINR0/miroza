@@ -36,3 +36,39 @@ html.dark .tag{ background:rgba(255,255,255,0.04); }
 @media(min-width:1400px){ .posts-grid{ grid-template-columns:repeat(4,1fr);} }
 
 .no-js-note{ text-align:center; padding:1rem; color:var(--muted); }
+
+/* Article prev/next navigation */
+.article-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 2rem 0;
+  align-items: stretch;
+}
+.article-nav > div {
+  flex: 1 1 50%;
+}
+.article-nav .article-nav-link {
+  display: block;
+  padding: 1rem;
+  border-radius: 8px;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  color: inherit;
+  text-decoration: none;
+}
+.article-nav .article-nav-title {
+  display: block;
+  font-weight: 600;
+}
+.article-nav .article-nav-meta {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+.article-nav .empty { opacity: 0.4; }
+
+@media (max-width: 700px) {
+  .article-nav { flex-direction: column; }
+  .article-nav > div { width: 100%; }
+}

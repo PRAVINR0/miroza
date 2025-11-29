@@ -1,3 +1,140 @@
+// Client-side prev/next navigation injector for article pages
+// Loads /data/posts.json, finds current article by URL/slug/contentPath,
+// then appends a navigation block with previous and next links.
+(function () {
+  'use strict';
+
+  async function fetchPosts() {
+    try {
+      const res = await fetch('/data/posts.json', {cache: 'no-store'});
+      if (!res.ok) return null;
+      return await res.json();
+    } catch (e) {
+      return null;
+    }
+  }
+
+  function parsePathParts(path) {
+    // Normalize and return last pathname segment (slug or file)
+    const p = path.split('/').filter(Boolean);
+    return p[p.length - 1] || '';
+  }
+
+  function matchPostToLocation(post, locPath, filename) {
+    if (!post) return false;
+    // Match by explicit contentPath
+    if (post.contentPath && post.contentPath.replace(/^\//, '') === locPath.replace(/^\//, '')) return true;
+    // Match by slug -> {slug}.html or just slug
+    if (post.slug) {
+      if (post.slug === filename) return true;
+      if ((post.slug + '.html') === filename) return true;
+    }
+    // Match by link field if present
+    if (post.link) {
+      const linkParts = post.link.split('/').filter(Boolean);
+      const linkName = linkParts[linkParts.length - 1];
+      if (linkName === filename) return true;
+    }
+    return false;
+  }
+
+  function createNavLink(post, label) {
+    const a = document.createElement('a');
+    a.className = 'article-nav-link';
+    a.href = post.link || post.contentPath || (`/blogs/${post.slug}.html`);
+    a.setAttribute('aria-label', `${label}: ${post.title}`);
+
+    const title = document.createElement('span');
+    title.className = 'article-nav-title';
+    title.textContent = post.title || post.slug || 'Read more';
+
+    const meta = document.createElement('span');
+    meta.className = 'article-nav-meta';
+    meta.textContent = new Date(post.date || '').toLocaleDateString();
+
+    a.appendChild(title);
+    a.appendChild(meta);
+    return a;
+  }
+
+  function renderNav(prevPost, nextPost) {
+    const container = document.createElement('nav');
+    container.className = 'article-nav';
+    container.setAttribute('aria-label', 'Article navigation');
+
+    if (prevPost) {
+      const left = document.createElement('div');
+      left.className = 'article-nav-previous';
+      left.appendChild(createNavLink(prevPost, 'Previous'));
+      container.appendChild(left);
+    } else {
+      const left = document.createElement('div');
+      left.className = 'article-nav-previous empty';
+      container.appendChild(left);
+    }
+
+    if (nextPost) {
+      const right = document.createElement('div');
+      right.className = 'article-nav-next';
+      right.appendChild(createNavLink(nextPost, 'Next'));
+      container.appendChild(right);
+    } else {
+      const right = document.createElement('div');
+      right.className = 'article-nav-next empty';
+      container.appendChild(right);
+    }
+
+    // Try to place the nav after the main article area
+    const selectors = ['main article', 'main .post', 'main .post-article', 'article.post-article', 'main'];
+    let placed = false;
+    for (const sel of selectors) {
+      const el = document.querySelector(sel);
+      if (el) {
+        el.insertAdjacentElement('afterend', container);
+        placed = true;
+        break;
+      }
+    }
+    if (!placed) {
+      // fallback: append to body
+      document.body.appendChild(container);
+    }
+  }
+
+  async function init() {
+    if (!location.pathname.includes('/blogs/')) return; // only run on blog pages
+    const posts = await fetchPosts();
+    if (!Array.isArray(posts) || posts.length === 0) return;
+
+    // Normalize and sort by date ascending for easier prev/next logic
+    const sorted = posts.slice().sort((a, b) => new Date(a.date) - new Date(b.date));
+
+    const locPath = location.pathname.replace(/^\//, '');
+    const filename = parsePathParts(locPath).toLowerCase();
+
+    // Find index matching current page
+    let idx = -1;
+    for (let i = 0; i < sorted.length; i++) {
+      if (matchPostToLocation(sorted[i], locPath, filename)) {
+        idx = i;
+        break;
+      }
+    }
+    if (idx === -1) return; // no match
+
+    const prevPost = idx > 0 ? sorted[idx - 1] : null;
+    const nextPost = idx < sorted.length - 1 ? sorted[idx + 1] : null;
+
+    renderNav(prevPost, nextPost);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+
+})();
 (function(){
   // Inject previous/next links into article pages using /data/posts.json
   function slugFromPath(path){
