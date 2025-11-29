@@ -1,0 +1,6 @@
+/* Global alias to the compiled stylesheet so pages can reference a stable path */
+@import url('/styles/styles.min.css');
+
+/* Additional small helpers used across pages */
+:root{--site-max-width:1200px}
+body{max-width:var(--site-max-width);margin:0 auto}
