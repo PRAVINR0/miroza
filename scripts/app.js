@@ -63,8 +63,11 @@
       const article = document.createElement('article');
       article.className = 'card';
 
-      const imgUrl = (post.image && post.image.src) ? post.image.src : '/assets/images/hero-insight-800.svg';
-      const imgAlt = (post.image && post.image.alt) ? post.image.alt : post.title;
+      const rawImage = post.image;
+      const imgUrl = rawImage
+        ? (typeof rawImage === 'string' ? rawImage : (rawImage.src || '/assets/images/hero-insight-800.svg'))
+        : '/assets/images/hero-insight-800.svg';
+      const imgAlt = (rawImage && typeof rawImage === 'object' && rawImage.alt) ? rawImage.alt : post.title;
 
       const html = `
         <a href="${post.link}" class="card-link" aria-label="Read ${window.MIROZA.utils.safeHTML(post.title)}">
