@@ -1315,30 +1315,16 @@
     }
 
     function renderHomeSection(){
-      const target = window.MIROZA.utils.qs('#blog-cards');
-      const pagination = window.MIROZA.utils.qs('#blog-pagination');
-      if(!target) return;
-      const items = latest(8);
-      target.innerHTML='';
-      if(!items.length){
-        const empty=document.createElement('p');
-        empty.className='card-excerpt';
-        empty.textContent='Blogs are publishing soon.';
-        target.appendChild(empty);
-        if(pagination){ pagination.innerHTML=''; }
-        return;
-      }
-      items.forEach((item, index) => {
-        const card = window.MIROZA.buildCard(item, { order:index });
-        if(card) target.appendChild(card);
+      if(!window.MIROZA.pagination) return;
+      window.MIROZA.pagination.mount({
+        targetSelector:'#blog-cards',
+        controlsSelector:'#blog-pagination',
+        getData:()=>cards,
+        pageSize:12,
+        emptyMessage:'Blogs are publishing soon.',
+        mode:'load-more',
+        autoLoad:true
       });
-      if(pagination){
-        pagination.innerHTML='';
-        const info=document.createElement('p');
-        info.className='card-meta';
-        info.textContent=`Showing ${items.length} of ${cards.length} blog posts`;
-        pagination.appendChild(info);
-      }
     }
 
     function mountCategorySection(){
@@ -2940,7 +2926,15 @@
 
   /* Home Feed Aggregator (news/articles/blogs interleave) */
   window.MIROZA.homeFeed = (function(){
-    const defaults = { perCategory:8, pageSize:8, displayLimit:24, immediateCount:3 };
+    const ORDER = ['news','articles','blogs'];
+    const defaults = {
+      limits:{ news:24, articles:24, blogs:18 },
+      minimum:{ news:18, articles:18, blogs:12 },
+      displayLimit:60,
+      minimumDisplay:40,
+      pageSize:12,
+      immediateCount:12
+    };
     let options = { ...defaults };
     let container = null;
     let controls = null;
@@ -2955,6 +2949,7 @@
     function init(config={}){
       if(document.body.dataset.page !== 'home') return;
       options = { ...defaults, ...config };
+      options.immediateCount = Math.min(options.immediateCount || options.pageSize, options.pageSize);
       container = document.querySelector('[data-home-feed]') || document.getElementById('latest-cards');
       if(!container) return;
       container.dataset.homeFeedManaged = 'true';
@@ -2962,7 +2957,7 @@
       window.MIROZA.filters?.initLatest?.({ onChange: handleFilterChange });
       showSkeleton(true);
       Promise.all([window.MIROZA.posts.ready(), window.MIROZA.blogs.ready()])
-        .then(loadBuckets)
+        .then(()=> loadBuckets())
         .catch(error => {
           console.error('MIROZA: Home feed failed to load', error);
           renderEmptyState('We hit a snag loading stories. Visit the category pages instead.');
@@ -2977,39 +2972,79 @@
     }
 
     function loadBuckets(){
-      const news = window.MIROZA.posts.byType ? window.MIROZA.posts.byType('news') : [];
-      const articles = window.MIROZA.posts.byType ? window.MIROZA.posts.byType('article') : [];
-      const blogs = window.MIROZA.blogs.all ? window.MIROZA.blogs.all() : [];
-      auditSnapshot = {
-        sourceCounts: {
-          news: news.length,
-          articles: articles.length,
-          blogs: blogs.length
+      return prepareBuckets().then(buckets => {
+        const selected = selectFeed(buckets);
+        baseFeed = selected.feed;
+        auditSnapshot.selected = selected.selectedCounts;
+        const feedAudit = window.MIROZA.feedTools?.getAudit?.() || {};
+        auditSnapshot.filesRead = feedAudit.filesRead;
+        auditSnapshot.htmlFallbacks = feedAudit.htmlFallbacks;
+        auditSnapshot.totalRendered = baseFeed.length;
+        if(baseFeed.length < options.minimumDisplay){
+          auditSnapshot.shortfall = options.minimumDisplay - baseFeed.length;
+          console.warn(`[MIROZA] Mixed feed shortfall: ${baseFeed.length}/${options.minimumDisplay}`);
+        } else {
+          delete auditSnapshot.shortfall;
         }
+        logAudit();
+        activeFilter = 'all';
+        applyFilter();
+      });
+    }
+
+    function prepareBuckets(){
+      const seeds = {
+        news: window.MIROZA.posts.byType ? window.MIROZA.posts.byType('news') : [],
+        articles: window.MIROZA.posts.byType ? window.MIROZA.posts.byType('article') : [],
+        blogs: window.MIROZA.blogs.all ? window.MIROZA.blogs.all() : []
       };
-      const selected = selectFeed({ news, articles, blogs });
-      baseFeed = selected.feed;
-      auditSnapshot.selected = selected.selectedCounts;
-      const feedAudit = window.MIROZA.feedTools.getAudit();
-      auditSnapshot.filesRead = feedAudit.filesRead;
-      auditSnapshot.htmlFallbacks = feedAudit.htmlFallbacks;
-      auditSnapshot.totalRendered = baseFeed.length;
-      logAudit();
-      activeFilter = 'all';
-      applyFilter();
+      auditSnapshot = {
+        sourceCounts: ORDER.reduce((acc, type)=>{
+          acc[type] = (seeds[type] || []).length;
+          return acc;
+        }, {})
+      };
+      return Promise.all(ORDER.map(type => ensureMinimumSupply(type, seeds[type] || []))).then(results => {
+        const filled = {};
+        results.forEach((list, index) => {
+          const type = ORDER[index];
+          filled[type] = list;
+          if(!auditSnapshot.toppedUp){ auditSnapshot.toppedUp = {}; }
+          auditSnapshot.toppedUp[type] = Math.max(0, (list?.length || 0) - (auditSnapshot.sourceCounts?.[type] || 0));
+        });
+        return filled;
+      });
+    }
+
+    function ensureMinimumSupply(type, items){
+      const baseline = dedupeWithin(items || []);
+      const minimumTarget = options.minimum?.[type] || baseline.length;
+      if(baseline.length >= minimumTarget || !window.MIROZA.feedTools?.scanType){
+        return Promise.resolve(baseline);
+      }
+      const scanType = type === 'blogs' ? 'blogs' : (type === 'articles' ? 'articles' : 'news');
+      const limit = Math.max(minimumTarget * 2, options.limits?.[type] || minimumTarget);
+      return window.MIROZA.feedTools.scanType(scanType, limit)
+        .then(fallback => dedupeWithin(baseline.concat(fallback || [])))
+        .catch(()=> baseline);
     }
 
     function selectFeed(buckets){
       const selectedCounts = { news:0, articles:0, blogs:0 };
-      const processed = ['news','articles','blogs'].map(type => {
+      const processed = ORDER.map(type => {
         const pool = dedupeWithin(buckets[type] || []);
         const sorted = pool.slice().sort((a,b)=> getDateValue(b) - getDateValue(a));
-        const slice = sorted.slice(0, options.perCategory).map(normalizeCardPayload);
+        const limit = options.limits?.[type] ?? options.displayLimit;
+        const slice = sorted.slice(0, limit).map(normalizeCardPayload);
         window.MIROZA.utils.shuffle(slice);
         selectedCounts[type] = slice.length;
         return { type, items: slice };
       });
-      const feed = interleave(processed);
+      const mixed = interleave(processed);
+      const shuffled = window.MIROZA.utils.shuffle(mixed.slice());
+      const ordered = shuffled.sort((a,b)=> getDateValue(b) - getDateValue(a));
+      const targetSize = Math.max(options.displayLimit, options.minimumDisplay);
+      const feed = ordered.slice(0, targetSize);
       return { feed, selectedCounts };
     }
 
@@ -3036,7 +3071,8 @@
       const queues = processed.map(entry => entry.items.slice());
       const result = [];
       const seen = new Map();
-      while(result.length < options.displayLimit){
+      const targetSize = Math.max(options.displayLimit, options.minimumDisplay);
+      while(result.length < targetSize){
         let appended = false;
         for(const queue of queues){
           const next = queue.shift();
@@ -3050,7 +3086,7 @@
           }
           result.push(next);
           appended = true;
-          if(result.length >= options.displayLimit) break;
+          if(result.length >= targetSize) break;
         }
         if(!appended) break;
       }
@@ -3060,12 +3096,17 @@
     function normalizeCardPayload(item){
       const link = normalizeLink(item.link || item.url || (item.slug ? `/articles/${item.slug}.html` : '#'));
       const image = item.image && typeof item.image === 'object' ? item.image : (typeof item.image === 'string' && item.image ? { src:item.image, alt:item.title, sizes:'(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px' } : FALLBACK_IMAGE);
+      const title = item.title || 'MIROZA story update';
+      const excerpt = item.excerpt || item.description || 'Details publishing shortly.';
       return {
         ...item,
+        title,
+        excerpt,
         link,
         image,
         metaLabel: buildMetaLabel(item),
-        contentType: item.contentType || normalizeCategory(item.category)
+        contentType: item.contentType || normalizeCategory(item.category),
+        dateValue: getDateValue(item)
       };
     }
 
@@ -3214,6 +3255,10 @@
       console.log('Files read', auditSnapshot.filesRead || []);
       console.log('Source counts', auditSnapshot.sourceCounts);
       console.log('Selected per category', auditSnapshot.selected);
+      console.log('Top ups applied', auditSnapshot.toppedUp || {});
+      if(auditSnapshot.shortfall){
+        console.log('Mixed feed shortfall', auditSnapshot.shortfall);
+      }
       console.log('Fallback HTML usage', auditSnapshot.htmlFallbacks || []);
       console.log('Feed items prepared', auditSnapshot.totalRendered);
       console.groupEnd();
