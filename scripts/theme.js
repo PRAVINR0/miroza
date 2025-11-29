@@ -36,9 +36,11 @@
         if(t === 'dark'){
           img.src = '/assets/icons/sun.svg';
           img.alt = 'Switch to light mode';
+          btn.setAttribute('aria-pressed', 'true');
         }else{
           img.src = '/assets/icons/moon.svg';
           img.alt = 'Switch to dark mode';
+          btn.setAttribute('aria-pressed', 'false');
         }
       });
     }catch(e){/* silent */}
