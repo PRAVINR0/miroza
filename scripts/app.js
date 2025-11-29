@@ -132,7 +132,7 @@
           ? '<img src="/assets/icons/close.svg" alt="Close" width="24" height="24" />'
           : '<img src="/assets/icons/menu.svg" alt="Menu" width="24" height="24" />';
       });
-      // Close on link click
+
       nav.addEventListener('click', (e) => {
         if(e.target.tagName === 'A') {
           isOpen = false;
@@ -142,10 +142,26 @@
         }
       });
     }
+
     return { init };
   })();
 
+  /* Simple UI helpers: back-to-top, responsive images */
+  window.MIROZA.ui = (function(){
+    let header, backToTopBtn, ticking=false;
 
+    function handleScroll(){
+      const offset = window.scrollY || document.documentElement.scrollTop || 0;
+      if(header){ header.classList.toggle('is-stuck', offset > 24); }
+      if(backToTopBtn){ backToTopBtn.classList.toggle('visible', offset > 480); }
+    }
+
+    function bindBackToTop(){
+      if(!backToTopBtn) return;
+      backToTopBtn.addEventListener('click', ()=>{
+        window.scrollTo({ top:0, behavior:'smooth' });
+      });
+    }
 
     function enhanceInlineMedia(){
       const inlineImages = window.MIROZA.utils.qsa('.single-article img, main img[data-enhance-responsive]');
@@ -154,126 +170,38 @@
         if(!img) return;
         if(!img.getAttribute('loading')) img.loading = 'lazy';
         img.decoding = 'async';
-        if(!img.hasAttribute('srcset')){
-          const responsive = buildResponsiveSet(img.getAttribute('src'));
-          if(responsive){
-            img.setAttribute('srcset', responsive);
-            if(!img.hasAttribute('sizes')){
-              img.setAttribute('sizes', '(max-width: 900px) 100vw, 800px');
-            }
-          }
-        }
       });
     }
 
-    function buildResponsiveSet(src){
-      if(!src) return null;
-      if(!/images\.(unsplash|pexels)\.com/i.test(src)) return null;
-      const widths = [480, 768, 1200];
-      const entries = widths.map(width => `${swapWidthParam(src, width)} ${width}w`);
-      return entries.join(', ');
-    }
-
-    function swapWidthParam(url, width){
-      const widthParam = `w=${width}`;
-      if(/w=\d+/i.test(url)){
-        return url.replace(/w=\d+/gi, widthParam);
-      }
-      const separator = url.includes('?') ? '&' : '?';
-      return `${url}${separator}${widthParam}`;
-    }
-
-
-    }
-
-    function lockForm(form){
-      form.classList.add('is-success');
-      window.MIROZA.utils.qsa('input, button', form).forEach(el => { el.disabled = true; });
-    }
-
-    function simulateRequest(payload){
-      return new Promise((resolve)=>{
-        window.setTimeout(()=> resolve({ ok:true, ...payload }), SUBMIT_LATENCY);
-      });
-
-
-    function fillTrending(items){
-      const list = window.MIROZA.utils.qs('#trending-list');
-      if(!list) return;
-      list.innerHTML = '';
-      items.forEach(p => {
-        const li = document.createElement('li');
-        const a = document.createElement('a');
-        a.href = p.link || `/articles/${p.slug}.html`;
-        a.textContent = p.title;
-        const meta = document.createElement('span');
-        meta.className = 'card-meta';
-        meta.textContent = `${window.MIROZA.utils.formatNumber(p.views)} views`;
-        li.appendChild(a);
-        li.appendChild(meta);
-        list.appendChild(li);
-      });
-    }
-
-    function setupHero(stories){
-      const hero = window.MIROZA.utils.qs('.hero');
-      if(!hero || !stories.length) return;
-
-      let idx = 0;
-      const els = {
-        tag: hero.querySelector('#hero-tag'),
-        title: hero.querySelector('#hero-heading'),
-        excerpt: hero.querySelector('#hero-excerpt'),
-        img: hero.querySelector('#hero-image'),
-        link: hero.querySelector('#hero-link')
-      };
-
-      function setHero(story){
-        if(!story) return;
-        if(els.tag) els.tag.textContent = story.category || 'Featured';
-        if(els.title) els.title.innerHTML = window.MIROZA.utils.safeHTML(story.title);
-        if(els.excerpt) els.excerpt.innerHTML = window.MIROZA.utils.safeHTML(story.excerpt);
-        if(els.img) {
-             const imgUrl = (story.image && story.image.src) ? story.image.src : '/assets/images/hero-insight-800.svg';
-             els.img.src = imgUrl;
-             els.img.alt = story.title;
-        }
-        if(els.link) els.link.href = story.link || `/articles/${story.slug}.html`;
-      }
-
-      setHero(stories[0]);
-
-      // Rotate every 8s
-      setInterval(() => {
-        idx = (idx + 1) % stories.length;
-        setHero(stories[idx]);
-      }, 8000);
-
-      const advanceBtn = hero.querySelector('.hero-advance');
-      if(advanceBtn) {
-          advanceBtn.addEventListener('click', () => {
-              idx = (idx + 1) % stories.length;
-              setHero(stories[idx]);
-          });
-      }
+    function init(){
+      header = window.MIROZA.utils.qs('.site-header');
+      backToTopBtn = window.MIROZA.utils.qs('.back-to-top');
+      bindBackToTop();
+      window.addEventListener('scroll', ()=>{
+        if(ticking) return;
+        ticking = true;
+        window.requestAnimationFrame(()=>{ handleScroll(); ticking=false; });
+      }, { passive:true });
+      handleScroll();
+      enhanceInlineMedia();
     }
 
     return { init };
   })();
 
-  /* Search */
+  /* Search (guarded: requires store) */
   window.MIROZA.search = (function(){
     function init(){
       const input = window.MIROZA.utils.qs('#search');
       const suggestions = window.MIROZA.utils.qs('#search-suggestions');
-      if(!input || !suggestions) return;
+      if(!input || !suggestions || !window.MIROZA.store) return;
 
       input.addEventListener('input', window.MIROZA.utils.debounce((e) => {
         const q = e.target.value.toLowerCase();
         if(q.length < 2) { suggestions.hidden = true; return; }
 
         const all = window.MIROZA.store.getAll();
-        const matches = all.filter(p => p.title.toLowerCase().includes(q)).slice(0, 5);
+        const matches = all.filter(p => (p.title || '').toLowerCase().includes(q)).slice(0, 5);
 
         suggestions.innerHTML = '';
         if(matches.length){
@@ -281,7 +209,7 @@
           matches.forEach(p => {
             const btn = document.createElement('button');
             btn.className = 'search-suggestion';
-            btn.innerHTML = `<strong>${window.MIROZA.utils.safeHTML(p.title)}</strong><br><span>${p.category}</span>`;
+            btn.innerHTML = `<strong>${window.MIROZA.utils.safeHTML(p.title)}</strong><br><span>${window.MIROZA.utils.safeHTML(p.category || '')}</span>`;
             btn.addEventListener('click', () => {
               window.location.href = p.link || `/articles/${p.slug}.html`;
             });
@@ -292,7 +220,6 @@
         }
       }, 300));
 
-      // Hide on click outside
       document.addEventListener('click', (e) => {
         if(!input.contains(e.target) && !suggestions.contains(e.target)){
           suggestions.hidden = true;
@@ -394,21 +321,101 @@
     return { init };
   })();
 
+  /* Simple home + India news rendering */
+  window.MIROZA.home = (function(){
+    function renderList(targetId, posts){
+      const container = window.MIROZA.utils.qs(`#${targetId}`);
+      if(!container) return;
+      container.innerHTML = '';
+      posts.forEach(p => {
+        container.appendChild(window.MIROZA.builder.build(p));
+      });
+    }
+
+    function init(){
+      if(!window.MIROZA.store) return;
+      const all = window.MIROZA.store.getAll();
+      if(!all || !all.length) return;
+
+      const news = all.filter(p => p.category === 'News').slice(0,4);
+      const blogs = all.filter(p => p.category === 'Blog').slice(0,4);
+      const articles = all.filter(p => p.category !== 'News' && p.category !== 'Blog').slice(0,4);
+
+      renderList('news-cards', news);
+      renderList('blog-cards', blogs);
+      renderList('articles-cards', articles);
+
+      const mixed = window.MIROZA.utils.shuffle(all.slice(0)).slice(0,8);
+      renderList('latest-cards', mixed);
+    }
+
+    return { init };
+  })();
+
+  window.MIROZA.indiaNews = (function(){
+    function buildIndiaCard(item){
+      return {
+        title: item.title,
+        slug: item.slug,
+        date: item.date,
+        category: 'India',
+        excerpt: item.excerpt,
+        link: item.contentFile || `/news/${item.slug}.html`,
+        image: item.image ? { src: item.image, alt: item.title } : null
+      };
+    }
+
+    function init(){
+      const listEl = window.MIROZA.utils.qs('#india-news-list');
+      if(!listEl) return;
+
+      fetch('/data/news.json')
+        .then(r => r.ok ? r.json() : [])
+        .then(items => {
+          listEl.innerHTML = '';
+          items
+            .slice()
+            .sort((a,b) => (b.date || '').localeCompare(a.date || ''))
+            .forEach(item => {
+              listEl.appendChild(window.MIROZA.builder.build(buildIndiaCard(item)));
+            });
+        })
+        .catch(() => {
+          listEl.innerHTML = '<p>Unable to load latest India news right now.</p>';
+        });
+    }
+
+    return { init };
+  })();
+
   /* Initialization */
   document.addEventListener('DOMContentLoaded', () => {
     window.MIROZA.theme.init();
     window.MIROZA.nav.init();
+    window.MIROZA.ui.init();
     window.MIROZA.subscription.init();
 
-    window.MIROZA.store.init().then(() => {
-        window.MIROZA.home.init();
-        window.MIROZA.search.init();
-        document.body.classList.add('js-ready');
-    });
-
-    // Event listeners for static UI
     const themeBtn = window.MIROZA.utils.qs('.theme-toggle');
     if(themeBtn) themeBtn.addEventListener('click', window.MIROZA.theme.toggle);
+
+    const page = document.body.dataset.page || 'home';
+    const isHome = page === 'home';
+    const isIndiaNews = page === 'india-news';
+
+    if(window.MIROZA.store && typeof window.MIROZA.store.init === 'function'){
+      window.MIROZA.store.init().then(() => {
+        if(isHome && window.MIROZA.home) window.MIROZA.home.init();
+        if(window.MIROZA.search) window.MIROZA.search.init();
+        if(isIndiaNews && window.MIROZA.indiaNews) window.MIROZA.indiaNews.init();
+        document.body.classList.add('js-ready');
+      }).catch(() => {
+        if(isIndiaNews && window.MIROZA.indiaNews) window.MIROZA.indiaNews.init();
+        document.body.classList.add('js-ready');
+      });
+    } else {
+      if(isIndiaNews && window.MIROZA.indiaNews) window.MIROZA.indiaNews.init();
+      document.body.classList.add('js-ready');
+    }
   });
 
   /* Public API Aliases (for category pages) */
