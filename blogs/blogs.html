@@ -13,7 +13,14 @@
   <header class="site-header"><div class="header-inner"><a class="logo" href="/"><img src="/assets/icons/logo.svg" alt="MIROZA logo" width="40" height="40" loading="lazy" /> MIROZA</a><nav class="main-nav" aria-label="Primary navigation"><ul><li><a href="/index.html">Home</a></li><li><a href="/news/news.html">News</a></li><li><a href="/articles/articles.html">Articles</a></li><li><a href="/blogs/blogs.html">Blogs</a></li></ul></nav><button class="theme-toggle" aria-label="Toggle dark or light"><img src="/assets/icons/moon.svg" alt="Toggle theme" width="24" height="24" /></button></div></header>
   <main id="content">
     <h1>Blogs</h1>
-    <section class="posts-grid">
+    <section id="posts-skeleton" class="posts-skeleton" aria-hidden="true">
+      <div class="skeleton-grid">
+        <div class="skeleton-card"></div>
+        <div class="skeleton-card"></div>
+        <div class="skeleton-card"></div>
+      </div>
+    </section>
+    <section id="posts-grid" class="posts-grid">
       <!-- Newly added posts: India batch -->
       <article class="post-card"><a href="/blogs/ai-assistant-wars-2025-agentic-ai-changing-work.html"><h3>AI Assistant Wars 2025: How Agentic AI Is Changing Work Forever</h3><p class="meta">2025-11-29</p><p>Agentic AI platforms are turning into autonomous collaborators, reshaping workflows, governance and job design.</p><p><button>Read More</button></p></a></article>
       <article class="post-card"><a href="/blogs/electric-scooter-boom-india-urban-revolution.html"><h3>The Electric Scooter Boom in India: A Silent Urban Revolution</h3><p class="meta">2025-11-29</p><p>How e-scooters changed commuting, delivery economics, and urban planning across Indian cities.</p><p><button>Read More</button></p></a></article>
@@ -167,5 +174,6 @@
   </main>
   <footer class="site-footer"><div class="footer-grid"><div><h3>MIROZA</h3><p>Modern news and articles hub.</p></div></div><p class="copyright">&copy; <span id="year"></span> MIROZA.</p></footer>
   <script src="/scripts/app.js" defer></script>
+  <script src="/scripts/blogs-loader.js" defer></script>
 </body>
 </html>
