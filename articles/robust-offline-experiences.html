@@ -18,7 +18,14 @@
   <main id="main">
     <article class="single-article">
       <h1>Designing Robust Offline Experiences</h1>
-      <p>This article was referenced in the feed but the static HTML file was missing. This is a placeholder page created to avoid 404s. Replace with the full content as needed.</p>
+      <p>Offline-first design helps applications stay useful when network connectivity is poor. This primer covers caching, graceful degradation, and UX patterns for unreliable networks.</p>
+      <h2>Cache strategy</h2>
+      <p>Use a cache-first strategy for static assets and a network-first or stale-while-revalidate approach for dynamic content where freshness matters.</p>
+      <h2>Provide meaningful fallbacks</h2>
+      <p>When a network request fails, show useful content: cached data, readable error messages, and affordances to retry actions.</p>
+      <h2>Test under constrained networks</h2>
+      <p>Simulate slow or intermittent connections in developer tools and ensure key flows remain usable.</p>
+      <p>Replace this placeholder with the full article text when ready.</p>
     </article>
   </main>
   <footer class="site-footer"></footer>

@@ -18,7 +18,14 @@
   <main id="main">
     <article class="single-article">
       <h1>Security Headers: Practical Defaults</h1>
-      <p>This article was referenced in the feed but the static HTML file was missing. This is a placeholder page created to avoid 404s. Replace with the full content as needed.</p>
+      <p>Security headers are a simple and effective way to harden web applications against common threats. This guide lists recommended default headers and why they matter.</p>
+      <h2>Strict-Transport-Security (HSTS)</h2>
+      <p>Ensure HSTS is set to force HTTPS and protect against protocol downgrade attacks. Use a long max-age and includeSubDomains when confident.</p>
+      <h2>Content-Security-Policy (CSP)</h2>
+      <p>Apply a CSP that limits allowed sources for scripts, styles and images. Start with a report-only policy to surface violations before enforcing.</p>
+      <h2>X-Content-Type-Options</h2>
+      <p>Send <code>X-Content-Type-Options: nosniff</code> to prevent MIME type sniffing.</p>
+      <p>Replace this placeholder with full technical guidance and examples when available.</p>
     </article>
   </main>
   <footer class="site-footer"></footer>
