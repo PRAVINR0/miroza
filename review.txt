@@ -1,0 +1,21 @@
+REVIEW SUMMARY
+
+1. scripts/app.js
+   - Added `MIROZA.store` module (fetches /data/posts.json).
+   - Added `MIROZA.builder` module (generates HTML cards).
+   - Added `MIROZA.subscription` module (handles form submit + CSV export).
+   - Refined `MIROZA.home.init` to use the new store.
+
+2. index.html
+   - Switched to `styles.min.css` and `app.min.js`.
+   - Added `rel="noopener noreferrer"` to footer links.
+   - Confirmed SEO meta tags are present.
+
+3. Assets
+   - Generated `styles/styles.min.css`
+   - Generated `scripts/app.min.js`
+   - Created `sitemap.xml`
+
+4. New Features
+   - Subscription data is saved to Browser LocalStorage.
+   - Admin Export: Double-click "Stay Updated" in footer to download CSV.
