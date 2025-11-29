@@ -1,31 +1,45 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Designing Robust Offline Experiences — MIROZA</title>
-    <link rel="icon" href="/assets/icons/favicon.ico">
-  <meta name="description" content="Designing Robust Offline Experiences — placeholder" />
-  <link rel="canonical" href="/articles/robust-offline-experiences.html" />
+  <link rel="icon" href="/assets/icons/favicon.ico">
+  <meta name="description" content="Offline-first patterns for resilient web apps: caching strategies, graceful fallbacks, and UX for intermittent networks." />
+  <link rel="canonical" href="https://miroza.online/articles/robust-offline-experiences.html" />
+  <meta property="og:title" content="Designing Robust Offline Experiences" />
+  <meta property="og:description" content="Offline-first patterns for resilient web apps: caching strategies, graceful fallbacks, and UX for intermittent networks." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://miroza.online/articles/robust-offline-experiences.html" />
+  <meta property="og:image" content="https://miroza.online/assets/images/posts/offline-1200.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Designing Robust Offline Experiences" />
+  <meta name="twitter:description" content="Offline-first patterns for resilient web apps: caching strategies, graceful fallbacks, and UX for intermittent networks." />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; frame-ancestors 'none';" />
   <link rel="stylesheet" href="/styles/styles.min.css" />
-  <link rel="stylesheet" href="/styles/theme.css" />
-  <link rel="stylesheet" href="/styles/global.css" />
-  
 </head>
 <body data-page="article">
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header"></header>
   <main id="main">
-    <article class="single-article">
-      <h1>Designing Robust Offline Experiences</h1>
-      <p>Offline-first design helps applications stay useful when network connectivity is poor. This primer covers caching, graceful degradation, and UX patterns for unreliable networks.</p>
-      <h2>Cache strategy</h2>
-      <p>Use a cache-first strategy for static assets and a network-first or stale-while-revalidate approach for dynamic content where freshness matters.</p>
-      <h2>Provide meaningful fallbacks</h2>
-      <p>When a network request fails, show useful content: cached data, readable error messages, and affordances to retry actions.</p>
-      <h2>Test under constrained networks</h2>
-      <p>Simulate slow or intermittent connections in developer tools and ensure key flows remain usable.</p>
-      <p>Replace this placeholder with the full article text when ready.</p>
+    <article class="single-article" aria-labelledby="article-title">
+      <header>
+        <h1 id="article-title">Designing Robust Offline Experiences</h1>
+        <p class="meta">By <span class="author">MIROZA UX</span> — <time datetime="2025-05-20">May 20, 2025</time></p>
+      </header>
+      <figure>
+        <img src="/assets/images/posts/offline-800.jpg" srcset="/assets/images/posts/offline-400.jpg 400w, /assets/images/posts/offline-800.jpg 800w, /assets/images/posts/offline-1200.jpg 1200w" sizes="(max-width:900px) 100vw, 800px" alt="Offline-ready app illustration" width="800" height="450" loading="lazy" />
+        <figcaption>Design for intermittent connectivity first.</figcaption>
+      </figure>
+      <section>
+        <p>Designing for offline resilience means prioritizing core flows, caching key assets, and offering clear fallbacks. Users should be able to read cached content and retry actions when connectivity returns.</p>
+        <h2>Cache strategies</h2>
+        <p>Use cache-first for stable assets, stale-while-revalidate for content that benefits from freshness, and network-first for actions that must succeed immediately.</p>
+        <h2>Graceful degradation</h2>
+        <p>Provide meaningful error states, queue outgoing actions, and surface sync status so users understand what's happening when offline.</p>
+        <h2>Test realistically</h2>
+        <p>Simulate flaky networks in dev tools and on devices. Validate that critical flows (read, save, retry) work reliably under constraints.</p>
+      </section>
     </article>
   </main>
   <footer class="site-footer"></footer>
