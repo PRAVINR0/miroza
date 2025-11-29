@@ -355,15 +355,43 @@
     }
 
     function init(){
-      if(!window.MIROZA.store) return;
-      const all = window.MIROZA.store.getAll();
-      if(!all || !all.length) return;
+        if(!window.MIROZA.store) return;
+        const all = window.MIROZA.store.getAll();
+        if(!all || !all.length) return;
 
-      const news = all.filter(p => p.category === 'News').slice(0,4);
+        // Prefer explicit news feed if available (data/news.json), otherwise fall back to posts.json
+        let news = [];
+        try {
+          // attempt to synchronously fetch cached news (non-blocking)
+          // fetch and map to builder-friendly shape
+          fetch('/data/news.json').then(r => r.ok ? r.json() : []).then(items => {
+            if(items && items.length){
+              const mapped = items.slice().sort((a,b) => (b.date||'').localeCompare(a.date||'')).slice(0,4).map(item => ({
+                title: item.title,
+                slug: item.slug,
+                date: item.date,
+                category: item.category || 'News',
+                excerpt: item.excerpt,
+                link: item.contentFile || `/news/${item.slug}.html`,
+                image: item.image ? { src: item.image, alt: item.title } : null
+              }));
+              renderList('news-cards', mapped);
+              return;
+            }
+            // fallback to posts.json below
+            const fallback = all.filter(p => p.category === 'News').slice(0,4);
+            renderList('news-cards', fallback);
+          }).catch(() => {
+            const fallback = all.filter(p => p.category === 'News').slice(0,4);
+            renderList('news-cards', fallback);
+          });
+        } catch(e){
+          const fallback = all.filter(p => p.category === 'News').slice(0,4);
+          renderList('news-cards', fallback);
+        }
       const blogs = all.filter(p => p.category === 'Blog').slice(0,4);
       const articles = all.filter(p => p.category !== 'News' && p.category !== 'Blog').slice(0,4);
 
-      renderList('news-cards', news);
       renderList('blog-cards', blogs);
       renderList('articles-cards', articles);
 

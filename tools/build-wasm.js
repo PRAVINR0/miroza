@@ -2,12 +2,30 @@
 // Fallback build using esbuild-wasm when native esbuild isn't available
 const fs = require('fs');
 const path = require('path');
+const https = require('https');
+
+function fetchBuffer(url){
+  return new Promise((resolve, reject) => {
+    https.get(url, (res) => {
+      if(res.statusCode !== 200) return reject(new Error('Failed to download ' + url + ' status ' + res.statusCode));
+      const chunks = [];
+      res.on('data', (c) => chunks.push(c));
+      res.on('end', () => resolve(Buffer.concat(chunks)));
+      res.on('error', reject);
+    }).on('error', reject);
+  });
+}
+
 (async function(){
   try{
-    const { initialize, build } = require('esbuild-wasm');
-    const http = require('http');
-    await initialize({ wasmURL: 'https://unpkg.com/esbuild-wasm@0.18.10/esbuild.wasm' });
-    const result = await build({
+    const esbuild = require('esbuild-wasm');
+    // download wasm binary and initialize with wasmBinary for Node
+    const wasmUrl = 'https://unpkg.com/esbuild-wasm@0.18.10/esbuild.wasm';
+    console.log('Downloading esbuild wasm from', wasmUrl);
+    const buf = await fetchBuffer(wasmUrl);
+    await esbuild.initialize({ wasmBinary: buf });
+
+    const result = await esbuild.build({
       entryPoints: [path.join(process.cwd(), 'scripts', 'app.js')],
       bundle: true,
       minify: true,
