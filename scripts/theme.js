@@ -8,23 +8,22 @@
     }
   }catch(e){}
 
-  function applyClass(t){
+  function applyThemeData(t){
     try{
-      if(t === 'dark') document.documentElement.classList.add('dark');
-      else document.documentElement.classList.remove('dark');
+      document.documentElement.dataset.theme = (t === 'dark') ? 'dark' : 'light';
     }catch(e){console.warn(e)}
   }
 
   function setTheme(t){
     try{
-      applyClass(t);
+      applyThemeData(t);
       localStorage.setItem('theme', t);
       updateToggleIcon(t);
     }catch(e){console.warn('theme set failed', e)}
   }
 
   function toggle(){
-    var cur = (localStorage.getItem('theme') || (document.documentElement.classList.contains('dark') ? 'dark' : 'light'));
+    var cur = (localStorage.getItem('theme') || (document.documentElement.dataset.theme === 'dark' ? 'dark' : 'light'));
     setTheme(cur === 'dark' ? 'light' : 'dark');
   }
 
@@ -61,16 +60,16 @@
     try{
       var stored = null;
       try{ stored = localStorage.getItem('theme'); }catch(e){}
-      if(stored) applyClass(stored);
+      if(stored) applyThemeData(stored);
       else {
-        // if html already has class (set by head init), respect it and persist
-        var hasDark = document.documentElement.classList.contains('dark');
+        // Respect existing dataset set by any head initializer
+        var hasDark = (document.documentElement.dataset.theme === 'dark');
         setTheme(hasDark ? 'dark' : 'light');
       }
     }catch(e){console.warn(e);}    
 
     attachToggleHandlers();
-    updateToggleIcon(localStorage.getItem('theme') || (document.documentElement.classList.contains('dark') ? 'dark' : 'light'));
+    updateToggleIcon(localStorage.getItem('theme') || (document.documentElement.dataset.theme === 'dark' ? 'dark' : 'light'));
 
     // expose
     window.MIROZA = window.MIROZA || {};
