@@ -412,17 +412,69 @@
 
   /* Category / Listing pages for articles & blogs */
   window.MIROZA.listing = (function(){
-    function renderList(containerId, items){
+    // pagination aware renderer
+    function getPageFromQuery(){
+      try{
+        const q = new URLSearchParams(window.location.search);
+        const p = parseInt(q.get('page'), 10);
+        return isNaN(p) || p < 1 ? 1 : p;
+      }catch(e){ return 1; }
+    }
+
+    function updateQueryPage(page){
+      try{
+        const url = new URL(window.location.href);
+        url.searchParams.set('page', String(page));
+        window.history.replaceState({}, '', url.toString());
+      }catch(e){}
+    }
+
+    function renderPage(containerId, items, pageSize = 12, initialPage = null){
       const container = window.MIROZA.utils.qs(containerId);
-      if(!container) return;
+      if(!container) return null;
       container.innerHTML = '';
-      items.forEach(item => {
-        container.appendChild(window.MIROZA.builder.build(item));
+      const page = initialPage || getPageFromQuery() || 1;
+      const state = { items, pageSize, index: (page - 1) * pageSize };
+      // render items up to current page (so deep link to page=2 shows first 2 pages)
+      if(state.index > 0){
+        const initialSlice = state.items.slice(0, state.index);
+        initialSlice.forEach(item => container.appendChild(window.MIROZA.builder.build(item)));
+      }
+      function renderNext(){
+        const slice = state.items.slice(state.index, state.index + state.pageSize);
+        slice.forEach(item => container.appendChild(window.MIROZA.builder.build(item)));
+        state.index += slice.length;
+        return state.index < state.items.length;
+      }
+      // ensure at least one page is shown
+      if(state.index === 0) renderNext();
+      // reflect page in URL
+      const currentPage = Math.ceil(state.index / state.pageSize) || 1;
+      updateQueryPage(currentPage);
+      return { renderNext, state };
+    }
+
+    function attachLoadMore(paginationSelector, pager){
+      const pagination = window.MIROZA.utils.qs(paginationSelector);
+      if(!pagination || !pager) return;
+      pagination.innerHTML = '';
+      if(pager.state.index >= pager.state.items.length) return;
+      const btn = document.createElement('button');
+      btn.className = 'load-more';
+      btn.textContent = 'Load more';
+      btn.addEventListener('click', () => {
+        const more = pager.renderNext();
+        // update page query param to reflect number of pages currently shown
+        const pageNow = Math.ceil(pager.state.index / pager.state.pageSize) || 1;
+        updateQueryPage(pageNow);
+        if(!more) btn.remove();
       });
+      pagination.appendChild(btn);
     }
 
     function initArticles(){
       const container = '#category-list';
+      const pagination = '#category-pagination';
       if(!window.MIROZA.store || !window.MIROZA.utils.qs(container)) return;
       const all = window.MIROZA.store.getAll();
       if(!all || !all.length) return;
@@ -431,11 +483,13 @@
         .filter(p => p.category !== 'Blog')
         .slice()
         .sort((a,b) => (b.date || '').localeCompare(a.date || ''));
-      renderList(container, articles);
+      const pager = renderPage(container, articles, 12);
+      attachLoadMore(pagination, pager);
     }
 
     async function initBlogs(){
       const container = '#category-list';
+      const pagination = '#category-pagination';
       if(!window.MIROZA.utils.qs(container)) return;
       try {
         const res = await fetch('/data/blogs.json');
@@ -452,13 +506,56 @@
             link: item.url || item.contentFile || `/blogs/${item.slug}.html`,
             image: item.image ? { src: item.image, alt: item.title } : null
           }));
-        renderList(container, mapped);
+        const pager = renderPage(container, mapped, 12);
+        attachLoadMore(pagination, pager);
       } catch(e) {
         console.error('Failed to load blogs.json', e);
       }
     }
 
     return { initArticles, initBlogs };
+  })();
+
+  /* Post metadata injector (JSON-LD) */
+  window.MIROZA.postMeta = (function(){
+    function init(){
+      const page = document.body.dataset.page || '';
+      if(!/article|news-article|blog-article/.test(page)) return;
+      // Do not overwrite existing JSON-LD
+      if(document.querySelector('script[type="application/ld+json"]')) return;
+
+      const title = document.querySelector('meta[property="og:title"]')?.getAttribute('content') || document.title;
+      const description = document.querySelector('meta[name="description"]')?.getAttribute('content') || document.querySelector('meta[property="og:description"]')?.getAttribute('content') || '';
+      const image = document.querySelector('meta[property="og:image"]')?.getAttribute('content') || document.querySelector('img')?.src || '';
+      const canonical = document.querySelector('link[rel="canonical"]')?.href || window.location.href;
+      const timeEl = document.querySelector('.single-article time') || document.querySelector('.meta time');
+      const datePublished = timeEl ? timeEl.getAttribute('datetime') || timeEl.textContent : document.querySelector('meta[property="article:published_time"]')?.getAttribute('content') || '';
+      const authorEl = document.querySelector('.author') || document.querySelector('meta[name="author"]');
+      const author = authorEl ? (authorEl.textContent || authorEl.getAttribute('content')) : '';
+
+      const type = page === 'blog-article' || page === 'blog' ? 'BlogPosting' : 'NewsArticle';
+
+      const ld = {
+        '@context': 'https://schema.org',
+        '@type': type,
+        'headline': title,
+        'description': description,
+        'image': image,
+        'datePublished': datePublished || undefined,
+        'author': author ? { '@type': 'Person', 'name': author } : undefined,
+        'publisher': { '@type': 'Organization', 'name': 'MIROZA', 'logo': { '@type': 'ImageObject', 'url': (location.origin + '/assets/icons/logo.svg') } },
+        'mainEntityOfPage': { '@type': 'WebPage', '@id': canonical }
+      };
+
+      // remove undefined entries
+      Object.keys(ld).forEach(k => ld[k] === undefined && delete ld[k]);
+
+      const script = document.createElement('script');
+      script.type = 'application/ld+json';
+      script.text = JSON.stringify(ld, null, 2);
+      document.head.appendChild(script);
+    }
+    return { init };
   })();
 
   /* Initialization */
@@ -484,14 +581,17 @@
         if(isBlog && window.MIROZA.listing) window.MIROZA.listing.initBlogs();
         if(window.MIROZA.search) window.MIROZA.search.init();
         if(isIndiaNews && window.MIROZA.indiaNews) window.MIROZA.indiaNews.init();
+        if(window.MIROZA.postMeta) window.MIROZA.postMeta.init();
         document.body.classList.add('js-ready');
       }).catch(() => {
         if(isIndiaNews && window.MIROZA.indiaNews) window.MIROZA.indiaNews.init();
+        if(window.MIROZA.postMeta) window.MIROZA.postMeta.init();
         document.body.classList.add('js-ready');
       });
     } else {
       if(isIndiaNews && window.MIROZA.indiaNews) window.MIROZA.indiaNews.init();
       if(isBlog && window.MIROZA.listing) window.MIROZA.listing.initBlogs();
+      if(window.MIROZA.postMeta) window.MIROZA.postMeta.init();
       document.body.classList.add('js-ready');
     }
   });

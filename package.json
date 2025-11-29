@@ -8,7 +8,8 @@
     "build": "npm run build:data && npm run build:css && npm run build:js",
     "build:data": "node tools/refresh-posts.js",
     "build:css": "esbuild styles/styles.css --minify --outfile=styles/styles.min.css",
-    "build:js": "esbuild scripts/app.js --minify --target=es2018 --legal-comments=none --outfile=scripts/app.min.js"
+    "build:js": "esbuild scripts/app.js --minify --target=es2018 --legal-comments=none --outfile=scripts/app.min.js",
+    "build:js-wasm": "node tools/build-wasm.js"
   },
   "repository": {
     "type": "git",
@@ -26,6 +27,7 @@
     "puppeteer": "^22.11.1"
   },
   "devDependencies": {
-    "esbuild": "^0.27.0"
+    "esbuild": "^0.27.0",
+    "esbuild-wasm": "^0.18.10"
   }
 }

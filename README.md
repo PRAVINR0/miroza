@@ -58,6 +58,28 @@ npx serve .
 python -m http.server 8080
 ```
 
+### Build notes for Windows / platform mismatches
+
+If `npm run build` fails with an `esbuild` native binary error (common when node_modules was copied from another OS), you can either reinstall dependencies on your platform or use the wasm fallback build:
+
+PowerShell (recommended):
+
+```powershell
+cd "c:\Users\pk341\Downloads\miroza"
+rm -Recurse -Force node_modules
+npm install
+npm run build
+```
+
+If you cannot rebuild native modules, use the slower `esbuild-wasm` fallback to generate the minified bundle:
+
+```powershell
+npm install
+npm run build:js-wasm
+```
+
+`build:js-wasm` will download a small WebAssembly binary and produce `scripts/app.min.js` without requiring a platform-specific native executable.
+
 Visit `http://localhost:8080` and inspect the Network tab: the service worker should register.
 
 ### Quick UX Smoke Test
