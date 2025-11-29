@@ -4,6 +4,7 @@
     var header = document.createElement('header');
     header.className = 'site-header';
     header.innerHTML = `
+      <a class="skip-link" href="#main">Skip to content</a>
       <div class="header-inner">
         <a class="logo" href="/index.html"><img src="/assets/icons/logo.svg" alt="MIROZA logo" width="40" height="40" loading="lazy"> MIROZA</a>
         <nav class="main-nav" aria-label="Primary navigation">
@@ -85,6 +86,9 @@
     var initial = localStorage.getItem('theme') || document.documentElement.dataset.theme || 'light';
     document.documentElement.dataset.theme = initial;
     updateToggleIcon(initial);
+    // ensure main has id for skip links and consistent anchors
+    var mainEl = document.querySelector('main');
+    if(mainEl && !mainEl.id) mainEl.id = 'main';
     // fix common legacy links across pages
     try{ fixLegacyLinks(); }catch(e){}
   }

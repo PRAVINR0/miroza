@@ -1,23 +1,15 @@
 {
   "name": "miroza",
-  "version": "0.1.0",
+  "version": "1.0.0",
+  "description": "MIROZA is a modern, performant, accessible news / articles / blog platform scaffold.",
+  "main": "sw.js",
   "private": true,
+  "type": "commonjs",
   "scripts": {
     "start": "node ./tools/static-server.js",
     "check-links": "node ./tools/check-links.js",
     "smoke-test": "node ./tools/smoke-test.js",
-    "add-defer": "node ./tools/add-defer-to-scripts.js"
-  },
-  "devDependencies": {
-    "puppeteer": "^20.0.0"
-  }
-}
-{
-  "name": "miroza",
-  "version": "1.0.0",
-  "description": "MIROZA is a modern, performant, accessible news / articles / blog platform scaffold. All content provided here is placeholder material for development and design iteration.",
-  "main": "sw.js",
-  "scripts": {
+    "add-defer": "node ./tools/add-defer-to-scripts.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "npm run build:data && npm run build:css && npm run build:js",
     "build:data": "node tools/refresh-posts.js",
@@ -32,7 +24,6 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
   "bugs": {
     "url": "https://github.com/PRAVINR0/miroza/issues"
   },
@@ -42,6 +33,7 @@
   },
   "devDependencies": {
     "esbuild": "^0.27.0",
-    "esbuild-wasm": "^0.18.10"
+    "esbuild-wasm": "^0.18.10",
+    "puppeteer": "^22.11.1"
   }
 }
