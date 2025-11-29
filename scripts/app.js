@@ -72,8 +72,10 @@
       let link = post.link || post.url || '';
       if(!link) {
         if(post.slug) {
-          // prefer blogs -> /blogs/, else /articles/
-          link = (post.category && post.category.toLowerCase() === 'blog') ? `/blogs/${post.slug}.html` : `/articles/${post.slug}.html`;
+          const cat = (post.category || '').toLowerCase();
+          if(cat === 'blog') link = `/blogs/${post.slug}.html`;
+          else if(cat === 'news' || cat === 'india') link = `/news/${post.slug}.html`;
+          else link = `/articles/${post.slug}.html`;
         } else {
           link = '/';
         }
