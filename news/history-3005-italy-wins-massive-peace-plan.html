@@ -23,6 +23,14 @@
           <li><a href="/articles/articles.html">Articles</a></li>
         </ul>
       </nav>
+      <form class="search-form" role="search" onsubmit="return false;">
+        <label for="search" class="visually-hidden">Search</label>
+        <input id="search" name="q" type="search" placeholder="Search..." autocomplete="off" />
+        <div class="search-suggestions" id="search-suggestions" hidden></div>
+      </form>
+      <button class="theme-toggle" aria-label="Toggle dark mode">
+        <img src="/assets/icons/moon.svg" alt="Enable dark mode" width="24" height="24" />
+      </button>
     </div>
   </header>
   <main id="main">
