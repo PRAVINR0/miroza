@@ -1,0 +1,15 @@
+<svg width="800" height="450" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad-img-world-2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#C6FFDD;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FBD786;stop-opacity:1" />
+    </linearGradient>
+    <pattern id="pat-img-world-2" x="0" y="0" width="50" height="50" patternUnits="userSpaceOnUse">
+      <circle cx="25" cy="25" r="2" fill="rgba(255,255,255,0.1)" />
+    </pattern>
+  </defs>
+  <rect width="800" height="450" fill="url(#grad-img-world-2)" />
+  <rect width="800" height="450" fill="url(#pat-img-world-2)" />
+  <text x="50%" y="45%" font-family="Arial, sans-serif" font-size="48" font-weight="bold" fill="white" text-anchor="middle" dy=".3em">World</text>
+  <text x="50%" y="60%" font-family="Arial, sans-serif" font-size="24" fill="rgba(255,255,255,0.8)" text-anchor="middle">MIROZA • Insight</text>
+</svg>
