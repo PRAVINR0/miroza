@@ -136,8 +136,8 @@ function main(){
 
   const allPosts = [...articles, ...blogs].sort(sortByDateDesc);
 
-  writeJson(postsPath, allPosts);
-  console.log(`posts.json refreshed with ${allPosts.length} entries.`);
+  // writeJson(postsPath, allPosts); // Moved below to include news
+  // console.log(`posts.json refreshed with ${allPosts.length} entries.`);
 
   const indiaNews = readArray(newsPath).map((entry, index) => ({
     ...entry,
@@ -146,6 +146,11 @@ function main(){
     link: entry.contentFile || `/news/${ensureSlug(entry.slug, `india-news-${index + 1}`)}.html`,
     slug: ensureSlug(entry.slug, `india-news-${index + 1}`)
   }));
+
+  // Merge news into allPosts for search/listing
+  const completeIndex = [...allPosts, ...indiaNews].sort(sortByDateDesc);
+  writeJson(postsPath, completeIndex);
+  console.log(`posts.json refreshed with ${completeIndex.length} entries.`);
 
   const categories = buildCategories(allPosts, indiaNews);
   writeJson(categoriesPath, categories);
