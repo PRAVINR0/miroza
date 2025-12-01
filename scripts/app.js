@@ -710,6 +710,43 @@
     return { init };
   })();
 
+  /* Cookie Banner */
+  window.MIROZA.cookieBanner = (function(){
+    function init(){
+      if(localStorage.getItem('miroza_cookie_consent')) return;
+      
+      const banner = document.createElement('div');
+      banner.className = 'cookie-banner';
+      banner.innerHTML = `
+        <div class="cookie-content">
+          <p>We use cookies to improve your experience. By using our site, you agree to our <a href="/privacy.html">Privacy Policy</a>.</p>
+          <button id="accept-cookies">Accept</button>
+        </div>
+      `;
+      document.body.appendChild(banner);
+      
+      // Add styles dynamically if not present
+      if(!document.getElementById('cookie-styles')){
+        const style = document.createElement('style');
+        style.id = 'cookie-styles';
+        style.textContent = `
+          .cookie-banner { position: fixed; bottom: 0; left: 0; right: 0; background: var(--bg-alt, #f1f5f9); border-top: 1px solid var(--border, #e2e8f0); padding: 1rem; z-index: 9999; display: flex; justify-content: center; box-shadow: 0 -2px 10px rgba(0,0,0,0.1); }
+          .cookie-content { display: flex; align-items: center; gap: 1rem; max-width: 1200px; width: 100%; justify-content: space-between; flex-wrap: wrap; }
+          .cookie-content p { margin: 0; font-size: 0.9rem; color: var(--text, #333); }
+          .cookie-content button { background: var(--primary, #2563eb); color: white; border: none; padding: 0.5rem 1.5rem; border-radius: 4px; cursor: pointer; font-weight: 500; }
+          .cookie-content button:hover { opacity: 0.9; }
+        `;
+        document.head.appendChild(style);
+      }
+
+      document.getElementById('accept-cookies').addEventListener('click', () => {
+        localStorage.setItem('miroza_cookie_consent', 'true');
+        banner.remove();
+      });
+    }
+    return { init };
+  })();
+
   /* Initialization */
   document.addEventListener('DOMContentLoaded', () => {
     window.MIROZA.theme.init();
@@ -717,6 +754,7 @@
     window.MIROZA.ui.init();
     window.MIROZA.subscription.init();
     window.MIROZA.ads.init(); // Initialize Ads
+    if(window.MIROZA.cookieBanner) window.MIROZA.cookieBanner.init();
 
     const themeBtn = window.MIROZA.utils.qs('.theme-toggle');
     if(themeBtn) themeBtn.addEventListener('click', window.MIROZA.theme.toggle);

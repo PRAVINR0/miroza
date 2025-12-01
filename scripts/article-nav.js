@@ -1,9 +1,10 @@
 /**
  * MIROZA Article Navigation & Engagement
  * Handles:
- * 1. Previous/Next Article Navigation
+ * 1. Breadcrumbs
  * 2. Social Sharing Buttons
- * 3. Reading Progress Bar (Bonus)
+ * 3. Previous/Next Article Navigation
+ * 4. Related Articles
  */
 (function () {
   'use strict';
@@ -11,6 +12,7 @@
   // --- Configuration ---
   const SELECTORS = {
     article: '.single-article, main article, .post-content',
+    header: '.single-article header',
     title: 'h1',
     navContainer: '.article-nav',
     shareContainer: '.article-share'
@@ -19,9 +21,47 @@
   // --- Utilities ---
   function getSlug() {
     const path = location.pathname;
-    // Match /articles/slug.html or /blogs/slug.html
     const match = path.match(/\/(articles|blogs|news)\/([^/]+)\.html$/);
     return match ? match[2] : null;
+  }
+
+  function getSection() {
+    const path = location.pathname;
+    if (path.includes('/articles/')) return 'Articles';
+    if (path.includes('/blogs/')) return 'Blogs';
+    if (path.includes('/news/')) return 'News';
+    return 'Home';
+  }
+
+  // --- Breadcrumbs ---
+  function renderBreadcrumbs() {
+    const article = document.querySelector(SELECTORS.article);
+    if (!article) return;
+    
+    // Check if already exists
+    if (document.querySelector('.breadcrumbs')) return;
+
+    const section = getSection();
+    const sectionLink = `/${section.toLowerCase()}/${section.toLowerCase()}.html`;
+    const title = document.querySelector('h1')?.textContent || 'Current Page';
+
+    const html = `
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="/">Home</a></li>
+          <li><a href="${sectionLink}">${section}</a></li>
+          <li aria-current="page">${title}</li>
+        </ol>
+      </nav>
+    `;
+
+    // Insert before header
+    const header = document.querySelector(SELECTORS.header);
+    if (header) {
+      const div = document.createElement('div');
+      div.innerHTML = html;
+      header.parentNode.insertBefore(div.firstElementChild, header);
+    }
   }
 
   // --- Social Sharing ---
@@ -29,7 +69,6 @@
     const article = document.querySelector(SELECTORS.article);
     if (!article) return;
 
-    // Avoid duplicates
     if (document.querySelector(SELECTORS.shareContainer)) return;
 
     const url = encodeURIComponent(window.location.href);
@@ -60,8 +99,8 @@
     article.appendChild(wrapper.firstElementChild);
   }
 
-  // --- Navigation (Prev/Next) ---
-  async function renderNavigation() {
+  // --- Related & Navigation ---
+  async function renderRelatedAndNav() {
     const slug = getSlug();
     if (!slug) return;
 
@@ -70,42 +109,67 @@
       if (!res.ok) return;
       const allPosts = await res.json();
 
-      // Sort by date descending (Newest first)
+      // Sort by date descending
       const sorted = allPosts.sort((a, b) => new Date(b.date || 0) - new Date(a.date || 0));
       
-      // Find current index
       const idx = sorted.findIndex(p => p.slug === slug || (p.link && p.link.includes(slug)));
       if (idx === -1) return;
 
-      // Next (newer) is idx - 1, Prev (older) is idx + 1 because of desc sort
+      const currentPost = sorted[idx];
       const nextPost = sorted[idx - 1];
       const prevPost = sorted[idx + 1];
 
-      if (!nextPost && !prevPost) return;
-
-      const navHTML = `
-        <nav class="article-nav" aria-label="Article navigation">
-          ${prevPost ? `
-            <a href="${prevPost.link || prevPost.url}" class="nav-link prev">
-              <span class="nav-label">&larr; Previous</span>
-              <span class="nav-title">${prevPost.title}</span>
-            </a>
-          ` : '<div class="nav-spacer"></div>'}
-          
-          ${nextPost ? `
-            <a href="${nextPost.link || nextPost.url}" class="nav-link next">
-              <span class="nav-label">Next &rarr;</span>
-              <span class="nav-title">${nextPost.title}</span>
-            </a>
-          ` : '<div class="nav-spacer"></div>'}
-        </nav>
-      `;
-
       const article = document.querySelector(SELECTORS.article);
-      if (article) {
-        const wrapper = document.createElement('div');
-        wrapper.innerHTML = navHTML;
-        article.appendChild(wrapper.firstElementChild);
+      if (!article) return;
+
+      // 1. Navigation (Prev/Next)
+      if (nextPost || prevPost) {
+        const navHTML = `
+          <nav class="article-nav" aria-label="Article navigation">
+            ${prevPost ? `
+              <a href="${prevPost.link || prevPost.url}" class="nav-link prev">
+                <span class="nav-label">&larr; Previous</span>
+                <span class="nav-title">${prevPost.title}</span>
+              </a>
+            ` : '<div class="nav-spacer"></div>'}
+            
+            ${nextPost ? `
+              <a href="${nextPost.link || nextPost.url}" class="nav-link next">
+                <span class="nav-label">Next &rarr;</span>
+                <span class="nav-title">${nextPost.title}</span>
+              </a>
+            ` : '<div class="nav-spacer"></div>'}
+          </nav>
+        `;
+        const navWrapper = document.createElement('div');
+        navWrapper.innerHTML = navHTML;
+        article.appendChild(navWrapper.firstElementChild);
+      }
+
+      // 2. Related Articles (Same Category)
+      const related = allPosts
+        .filter(p => p.category === currentPost.category && p.slug !== currentPost.slug)
+        .slice(0, 3);
+
+      if (related.length > 0) {
+        const relatedHTML = `
+          <section class="related-articles">
+            <h3>You might also like</h3>
+            <div class="related-grid">
+              ${related.map(p => `
+                <a href="${p.link}" class="related-card">
+                  <div class="related-image">
+                    <img src="${p.image || '/assets/images/hero-insight-800.svg'}" alt="${p.title}" loading="lazy">
+                  </div>
+                  <h4>${p.title}</h4>
+                </a>
+              `).join('')}
+            </div>
+          </section>
+        `;
+        const relatedWrapper = document.createElement('div');
+        relatedWrapper.innerHTML = relatedHTML;
+        article.appendChild(relatedWrapper.firstElementChild);
       }
 
     } catch (e) {
@@ -115,11 +179,11 @@
 
   // --- Initialization ---
   function init() {
-    // Only run on article/blog pages
     if (!document.querySelector(SELECTORS.article)) return;
     
+    renderBreadcrumbs();
     renderSocialShare();
-    renderNavigation();
+    renderRelatedAndNav();
   }
 
   if (document.readyState === 'loading') {
