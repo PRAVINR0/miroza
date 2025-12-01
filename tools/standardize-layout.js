@@ -1,19 +1,11 @@
-﻿<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About — MIROZA</title>
-    <link rel="icon" href="/assets/icons/favicon.ico">
-  <meta name="description" content="About — MIROZA — mission, team, and editorial values." />
-    <link rel="canonical" href="https://miroza.online/about.html">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; frame-ancestors 'none';" />
-  <link rel="stylesheet" href="/styles/styles.min.css" />
-</head>
-<body data-page="about">
-  <a href="#main" class="skip-link">Skip to content</a>
-  
+
+const fs = require('fs');
+const path = require('path');
+
+const rootDir = path.resolve(__dirname, '..');
+const dirs = ['articles', 'news', 'blogs', '.']; // '.' for root files like about.html
+
+const standardHeader = `
   <header class="site-header" aria-label="Site header">
     <div class="header-inner">
       <a class="logo" href="/" aria-label="MIROZA Home">
@@ -47,18 +39,9 @@
       </button>
     </div>
   </header>
+`;
 
-  <main id="main" tabindex="-1">
-    <section class="page-hero">
-      <h1>About — MIROZA</h1>
-      <p>MIROZA publishes concise, clear coverage on news, trends and analysis.</p>
-    </section>
-    <section>
-      <h2>Our mission</h2>
-      <p>To provide high-quality reporting and explainers with a focus on clarity and utility.</p>
-    </section>
-  </main>
-  
+const standardFooter = `
   <footer class="site-footer">
     <div class="footer-grid">
       <div>
@@ -94,12 +77,51 @@
       &copy; <span id="year">2025</span> MIROZA. All rights reserved.
     </div>
   </footer>
+`;
 
-  
-  <script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.11/dist/purify.min.js" defer crossorigin="anonymous"></script>
-  <script src="/scripts/app.min.js" defer></script>
-
+const backToTopButton = `
   <button class="back-to-top" aria-label="Back to top">↑</button>
+`;
 
-</body>
-</html>
+function walk(dir, callback) {
+    const files = fs.readdirSync(dir);
+    files.forEach(file => {
+        const filepath = path.join(dir, file);
+        const stats = fs.statSync(filepath);
+        if (stats.isDirectory() && !file.startsWith('.') && file !== 'node_modules' && file !== 'tools' && file !== 'scripts' && file !== 'styles' && file !== 'assets' && file !== 'data') {
+             // Skip non-content dirs if recursing from root, but we are explicit with dirs array
+        } else if (stats.isFile() && file.endsWith('.html')) {
+            callback(filepath);
+        }
+    });
+}
+
+dirs.forEach(d => {
+    const fullPath = path.join(rootDir, d);
+    if (fs.existsSync(fullPath)) {
+        walk(fullPath, (filepath) => {
+            if (filepath.endsWith('index.html')) return; // Skip index.html as it is the source
+            
+            let content = fs.readFileSync(filepath, 'utf8');
+            let original = content;
+
+            // Replace Header
+            // Regex to match <header ... > ... </header>
+            // We use [\s\S]*? for non-greedy match across lines
+            content = content.replace(/<header[\s\S]*?<\/header>/, standardHeader);
+
+            // Replace Footer
+            content = content.replace(/<footer[\s\S]*?<\/footer>/, standardFooter);
+
+            // Ensure Back to Top button exists before body end
+            if (!content.includes('class="back-to-top"')) {
+                content = content.replace('</body>', `${backToTopButton}\n</body>`);
+            }
+
+            if (content !== original) {
+                fs.writeFileSync(filepath, content, 'utf8');
+                console.log(`Updated layout: ${path.relative(rootDir, filepath)}`);
+            }
+        });
+    }
+});

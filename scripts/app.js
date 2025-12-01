@@ -145,7 +145,41 @@
   /* Navigation */
   window.MIROZA.nav = (function(){
     let isOpen = false;
+
+    function highlightActive(){
+      const path = window.location.pathname;
+      const links = window.MIROZA.utils.qsa('.main-nav a');
+      let found = false;
+
+      // 1. Try exact match first
+      links.forEach(link => {
+        const href = link.getAttribute('href');
+        if (path === href || (path === '/' && href === '/index.html') || (path === '/index.html' && href === '/')) {
+          link.setAttribute('aria-current', 'page');
+          found = true;
+        } else {
+          link.removeAttribute('aria-current');
+        }
+      });
+
+      if (found) return;
+
+      // 2. Try section match (e.g. /articles/foo matches /articles/articles.html)
+      links.forEach(link => {
+        const href = link.getAttribute('href');
+        if (href === '/' || href === '/index.html') return;
+        
+        // Extract section from href (e.g. /articles/)
+        const section = href.split('/')[1]; // "articles"
+        if (section && path.includes(`/${section}/`)) {
+           link.setAttribute('aria-current', 'page');
+        }
+      });
+    }
+
     function init(){
+      highlightActive(); // Run on load
+
       const toggleBtn = window.MIROZA.utils.qs('.menu-toggle');
       const nav = window.MIROZA.utils.qs('.main-nav');
       if(!toggleBtn || !nav) return;

@@ -20,7 +20,41 @@
 </head>
 <body data-page="blog-article" data-blog-slug="the-history-of-navigation-and-exploration">
   <a href="#content" class="skip-link">Skip to content</a>
-  <header class="site-header"><div class="header-inner"><a class="logo" href="/"><img src="/assets/icons/logo.svg" alt="MIROZA logo" width="40" height="40" loading="lazy" /> MIROZA</a><nav class="main-nav" aria-label="Primary navigation"><ul><li><a href="/index.html">Home</a></li><li><a href="/news/news.html">News</a></li><li><a href="/articles/articles.html">Articles</a></li><li><a href="/blogs/blogs.html">Blogs</a></li></ul></nav><button class="theme-toggle" aria-label="Toggle dark or light"><img src="/assets/icons/moon.svg" alt="Toggle theme" width="24" height="24" /></button></div></header>
+  
+  <header class="site-header" aria-label="Site header">
+    <div class="header-inner">
+      <a class="logo" href="/" aria-label="MIROZA Home">
+        <img src="/assets/icons/logo.svg" alt="MIROZA" width="32" height="32" />
+        <span class="logo-text">MIROZA</span>
+      </a>
+
+      <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <img src="/assets/icons/menu.svg" alt="Menu" width="24" height="24" />
+      </button>
+
+      <nav class="main-nav" aria-label="Primary navigation">
+        <ul>
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="/news/news.html">News</a></li>
+          <li><a href="/articles/articles.html">Articles</a></li>
+          <li><a href="/blogs/blogs.html">Blogs</a></li>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <form class="search-form" role="search" onsubmit="return false;">
+        <label for="search" class="visually-hidden">Search</label>
+        <input id="search" name="q" type="search" placeholder="Search..." autocomplete="off" />
+        <div class="search-suggestions" id="search-suggestions" hidden></div>
+      </form>
+
+      <button class="theme-toggle" aria-label="Toggle dark mode">
+        <img src="/assets/icons/moon.svg" alt="Enable dark mode" width="24" height="24" />
+      </button>
+    </div>
+  </header>
+
   <main id="content" tabindex="-1">
     <article class="single-article" aria-labelledby="headline">
       <header>
@@ -37,8 +71,47 @@
       <p><a class="back-link" href="/blogs/blogs.html">â† Back to Blogs</a></p>
     </article>
   </main>
-  <footer class="site-footer"><div class="footer-grid"><div><h3>MIROZA</h3><p>Modern news and articles hub.</p></div></div><p class="copyright">&copy; <span id="year"></span> MIROZA.</p></footer>
+  
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div>
+        <h3>MIROZA</h3>
+        <p>Modern news & articles hub. Fast, accessible, secure.</p>
+      </div>
+      <div>
+        <h3>Explore</h3>
+        <ul>
+          <li><a href="/news/news.html">News</a></li>
+          <li><a href="/articles/articles.html">Articles</a></li>
+          <li><a href="/blogs/blogs.html">Blogs</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Connect</h3>
+        <ul>
+          <li><a href="#" target="_blank" rel="noopener noreferrer">Twitter</a></li>
+          <li><a href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+          <li><a href="/contact.html">Contact Us</a></li>
+          <li><a href="/contact.html#advertise">Advertise with us</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Legal</h3>
+        <ul>
+          <li><a href="/privacy.html">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="copyright">
+      &copy; <span id="year">2025</span> MIROZA. All rights reserved.
+    </div>
+  </footer>
+
   <script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.11/dist/purify.min.js" defer crossorigin="anonymous"></script>
   <script src="/scripts/app.min.js" defer></script>
+
+  <button class="back-to-top" aria-label="Back to top">↑</button>
+
 </body>
 </html>

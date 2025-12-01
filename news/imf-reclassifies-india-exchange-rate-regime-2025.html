@@ -32,10 +32,41 @@
   </script>
 </head>
 <body>
-  <header>
-    <h1>IMF Reclassifies Indiaâ€™s Exchange Rate Regime, Markets Watch Closely</h1>
-    <p><strong>MIROZA Economy</strong> â€” <time datetime="2025-11-26">Nov 26, 2025</time></p>
+  
+  <header class="site-header" aria-label="Site header">
+    <div class="header-inner">
+      <a class="logo" href="/" aria-label="MIROZA Home">
+        <img src="/assets/icons/logo.svg" alt="MIROZA" width="32" height="32" />
+        <span class="logo-text">MIROZA</span>
+      </a>
+
+      <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <img src="/assets/icons/menu.svg" alt="Menu" width="24" height="24" />
+      </button>
+
+      <nav class="main-nav" aria-label="Primary navigation">
+        <ul>
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="/news/news.html">News</a></li>
+          <li><a href="/articles/articles.html">Articles</a></li>
+          <li><a href="/blogs/blogs.html">Blogs</a></li>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <form class="search-form" role="search" onsubmit="return false;">
+        <label for="search" class="visually-hidden">Search</label>
+        <input id="search" name="q" type="search" placeholder="Search..." autocomplete="off" />
+        <div class="search-suggestions" id="search-suggestions" hidden></div>
+      </form>
+
+      <button class="theme-toggle" aria-label="Toggle dark mode">
+        <img src="/assets/icons/moon.svg" alt="Enable dark mode" width="24" height="24" />
+      </button>
+    </div>
   </header>
+
   <article>
     <figure>
       <img src="https://images.unsplash.com/photo-1581091012184-5c17f1e5eabf" alt="Currency and markets" style="max-width:100%;height:auto;">
@@ -45,8 +76,45 @@
     <p>Policy analysts said this shift might influence foreign investment, currency hedging costs, and import-export pricing structures. While the Reserve Bank of India has defended its market interventions, the reclassification has prompted caution among exporters and import-dependent industries.</p>
     <p>Some economists view this as a short-term realignment, expecting gradual stabilization if global interest rates ease, but recommend firms hedge forex exposure and monitor capital flow developments closely.</p>
   </article>
-  <footer>
-    <p><a href="/">Back to— MIROZA</a></p>
+  
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div>
+        <h3>MIROZA</h3>
+        <p>Modern news & articles hub. Fast, accessible, secure.</p>
+      </div>
+      <div>
+        <h3>Explore</h3>
+        <ul>
+          <li><a href="/news/news.html">News</a></li>
+          <li><a href="/articles/articles.html">Articles</a></li>
+          <li><a href="/blogs/blogs.html">Blogs</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Connect</h3>
+        <ul>
+          <li><a href="#" target="_blank" rel="noopener noreferrer">Twitter</a></li>
+          <li><a href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+          <li><a href="/contact.html">Contact Us</a></li>
+          <li><a href="/contact.html#advertise">Advertise with us</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Legal</h3>
+        <ul>
+          <li><a href="/privacy.html">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="copyright">
+      &copy; <span id="year">2025</span> MIROZA. All rights reserved.
+    </div>
   </footer>
+
+
+  <button class="back-to-top" aria-label="Back to top">↑</button>
+
 </body>
 </html>
