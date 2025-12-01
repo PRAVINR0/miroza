@@ -426,13 +426,14 @@
           const fallback = all.filter(p => p.category === 'News').slice(0,4);
           renderList('news-cards', fallback);
         }
-      const blogs = all.filter(p => p.category === 'Blog').slice(0,4);
-      const articles = all.filter(p => p.category !== 'News' && p.category !== 'Blog').slice(0,4);
+      const blogs = all.filter(p => p.category === 'Blog' || (p.link && p.link.includes('/blogs/'))).slice(0,4);
+      const articles = all.filter(p => p.category !== 'News' && p.category !== 'Blog' && (!p.link || !p.link.includes('/blogs/'))).slice(0,4);
 
       renderList('blog-cards', blogs);
       renderList('articles-cards', articles);
 
-      const mixed = window.MIROZA.utils.shuffle(all.slice(0)).slice(0,8);
+      // Show latest 30 items in the mixed stream as requested
+      const mixed = all.slice(0, 30);
       renderList('latest-cards', mixed);
     }
 
