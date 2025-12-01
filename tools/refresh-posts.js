@@ -5,6 +5,7 @@ const rootDir = path.resolve(__dirname, '..');
 const dataDir = path.join(rootDir, 'data');
 const articlesPath = path.join(dataDir, 'articles.json');
 const newsPath = path.join(dataDir, 'news.json');
+const blogsPath = path.join(dataDir, 'blogs.json');
 const postsPath = path.join(dataDir, 'posts.json');
 const categoriesPath = path.join(dataDir, 'categories.json');
 
@@ -127,11 +128,16 @@ function main(){
 
   const articles = readArray(articlesPath)
     .map(normalizeArticle)
-    .filter(Boolean)
-    .sort(sortByDateDesc);
+    .filter(Boolean);
 
-  writeJson(postsPath, articles);
-  console.log(`posts.json refreshed with ${articles.length} entries.`);
+  const blogs = readArray(blogsPath)
+    .map(normalizeArticle)
+    .filter(Boolean);
+
+  const allPosts = [...articles, ...blogs].sort(sortByDateDesc);
+
+  writeJson(postsPath, allPosts);
+  console.log(`posts.json refreshed with ${allPosts.length} entries.`);
 
   const indiaNews = readArray(newsPath).map((entry, index) => ({
     ...entry,
@@ -141,7 +147,7 @@ function main(){
     slug: ensureSlug(entry.slug, `india-news-${index + 1}`)
   }));
 
-  const categories = buildCategories(articles, indiaNews);
+  const categories = buildCategories(allPosts, indiaNews);
   writeJson(categoriesPath, categories);
   console.log(`categories.json generated with ${categories.length} category buckets.`);
 }
