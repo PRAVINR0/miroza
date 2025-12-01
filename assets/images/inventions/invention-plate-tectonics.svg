@@ -1,0 +1,17 @@
+<svg width="800" height="450" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="grid-65" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="450" fill="hsl(250.55729756723514, 70%, 20%)" />
+  <rect width="800" height="450" fill="url(#grid-65)" />
+  <circle cx="400" cy="225" r="150" stroke="rgba(255,255,255,0.2)" stroke-width="2" fill="none" />
+  <circle cx="400" cy="225" r="100" stroke="rgba(255,255,255,0.2)" stroke-width="2" fill="none" />
+  <line x1="0" y1="225" x2="800" y2="225" stroke="rgba(255,255,255,0.1)" stroke-width="1" />
+  <line x1="400" y1="0" x2="400" y2="450" stroke="rgba(255,255,255,0.1)" stroke-width="1" />
+  
+  <text x="400" y="200" font-family="Courier New, monospace" font-size="20" fill="rgba(255,255,255,0.6)" text-anchor="middle">FIG 1.0</text>
+  <text x="400" y="240" font-family="Arial, sans-serif" font-size="40" font-weight="bold" fill="white" text-anchor="middle" dy=".3em">Plate Tectonics</text>
+  <text x="780" y="430" font-family="Courier New, monospace" font-size="16" fill="rgba(255,255,255,0.5)" text-anchor="end">MIROZA LABS</text>
+</svg>
