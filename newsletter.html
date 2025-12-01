@@ -1,18 +1,18 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About — MIROZA</title>
-    <link rel="icon" type="image/svg+xml" href="/assets/icons/logo.svg" />
-  <meta name="description" content="About — MIROZA — mission, team, and editorial values." />
-    <link rel="canonical" href="https://miroza.online/about.html">
+  <title>Newsletter — MIROZA</title>
+  <link rel="icon" type="image/svg+xml" href="/assets/icons/logo.svg" />
+  <meta name="description" content="Subscribe to MIROZA's newsletter for the latest news, articles, and insights." />
+  <link rel="canonical" href="https://miroza.online/newsletter.html">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; frame-ancestors 'none';" />
   
   <link rel="stylesheet" href="/styles/main.min.css" />
 </head>
-<body data-page="about">
+<body data-page="newsletter">
   <a href="#main" class="skip-link">Skip to content</a>
   
   <header class="site-header" aria-label="Site header">
@@ -51,12 +51,21 @@
 
   <main id="main" tabindex="-1">
     <section class="page-hero">
-      <h1>About — MIROZA</h1>
-      <p>MIROZA publishes concise, clear coverage on news, trends and analysis.</p>
+      <h1>Stay Updated</h1>
+      <p>Join our community and get the best of MIROZA delivered to your inbox.</p>
     </section>
-    <section>
-      <h2>Our mission</h2>
-      <p>To provide high-quality reporting and explainers with a focus on clarity and utility.</p>
+    
+    <section class="newsletter-page-content" style="max-width: 600px; margin: 0 auto; padding: 2rem 1rem; text-align: center;">
+      <div class="card" style="padding: 2rem;">
+        <h2>Subscribe to our Newsletter</h2>
+        <p>Get weekly updates on technology, science, and global trends. No spam, unsubscribe anytime.</p>
+        
+        <form id="newsletter-form" class="newsletter-form" style="display: flex; flex-direction: column; gap: 1rem; margin-top: 1.5rem;">
+          <label for="email-input" class="visually-hidden">Email address</label>
+          <input type="email" id="email-input" placeholder="Your email address" required style="padding: 0.8rem; border: 1px solid var(--border); border-radius: var(--radius-md); background: var(--bg); color: var(--text);">
+          <button type="submit" class="btn btn-primary" style="padding: 0.8rem; background: var(--accent); color: white; border: none; border-radius: var(--radius-md); font-weight: 600; cursor: pointer;">Subscribe</button>
+        </form>
+      </div>
     </section>
   </main>
   
@@ -96,7 +105,6 @@
     </div>
   </footer>
 
-  
   <script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.11/dist/purify.min.js" defer crossorigin="anonymous"></script>
   <script src="/scripts/app.min.js" defer></script>
 
