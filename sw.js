@@ -1,24 +1,17 @@
-/* MIROZA Service Worker v4: smarter caching + offline fallbacks */
-const STATIC_CACHE = 'miroza-static-v4';
-const RUNTIME_CACHE = 'miroza-runtime-v4';
+/* MIROZA Service Worker v5: optimized assets */
+const STATIC_CACHE = 'miroza-static-v5';
+const RUNTIME_CACHE = 'miroza-runtime-v5';
 const CORE_ASSETS = [
   '/',
   '/index.html',
   '/offline.html',
-  '/styles/styles.css',
-  '/styles/styles.min.css',
-  '/scripts/app.js',
+  '/styles/main.min.css',
   '/scripts/app.min.js',
   '/manifest.json',
   '/assets/icons/logo.svg',
   '/assets/images/hero-insight-800.svg',
   '/assets/images/placeholder.svg',
-  '/data/articles.json',
-  '/data/news.json',
-  '/data/blogs.json',
-  '/data/posts.json',
-  '/data/categories.json',
-  '/rss.xml'
+  '/data/posts.json'
 ];
 
 self.addEventListener('install', event => {

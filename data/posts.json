@@ -1,1642 +1,1853 @@
 [
   {
-    "title": "A Beginner Guide to Sustainable Investing",
-    "slug": "a-beginner-guide-to-sustainable-investing",
-    "date": "2025-12-01",
-    "category": "Blog",
-    "excerpt": "A Beginner Guide to Sustainable Investing — A concise exploration of practical takeaways and real-world applications.",
-    "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1200&q=80",
-    "link": "/blogs/a-beginner-guide-to-sustainable-investing.html",
-    "contentFile": "/blogs/a-beginner-guide-to-sustainable-investing.html"
-  },
-  {
-    "title": "Affordable Travel Photography Tips",
-    "slug": "affordable-travel-photography-tips",
-    "date": "2025-12-01",
-    "category": "Blog",
-    "excerpt": "Affordable Travel Photography Tips — A concise exploration of practical takeaways and real-world applications.",
-    "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
-    "link": "/blogs/affordable-travel-photography-tips.html",
-    "contentFile": "/blogs/affordable-travel-photography-tips.html"
-  },
-  {
+    "id": 1764418621440,
     "title": "AI Assistant Wars 2025: How Agentic AI Is Changing Work Forever",
     "slug": "ai-assistant-wars-2025-agentic-ai-changing-work",
-    "date": "2025-12-01",
-    "category": "Blog",
     "excerpt": "Agentic AI in 2025 is reshaping work: autonomous agents, new productivity models, risks and policy questions. Read a deep analysis.",
-    "image": "https://images.unsplash.com/photo-1534723328310-e82dad3ee43f",
+    "category": "Blog",
+    "author": "MIROZA Editorial",
+    "date": "2025-11-29",
     "link": "/blogs/ai-assistant-wars-2025-agentic-ai-changing-work.html",
-    "contentFile": "/blogs/ai-assistant-wars-2025-agentic-ai-changing-work.html"
+    "image": "https://images.unsplash.com/photo-1534723328310-e82dad3ee43f"
   },
   {
-    "title": "AI-Powered Productivity Hacks for Hybrid Teams",
-    "slug": "ai-powered-productivity-hacks-for-hybrid-teams",
-    "date": "2025-12-01",
-    "category": "Blog",
-    "excerpt": "AI-Powered Productivity Hacks for Hybrid Teams — A concise exploration of practical takeaways and real-world applications.",
-    "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1200&q=80",
-    "link": "/blogs/ai-powered-productivity-hacks-for-hybrid-teams.html",
-    "contentFile": "/blogs/ai-powered-productivity-hacks-for-hybrid-teams.html"
-  },
-  {
-    "title": "AI Tools for Small Business Automation",
-    "slug": "ai-tools-for-small-business-automation",
-    "date": "2025-12-01",
-    "category": "Blog",
-    "excerpt": "AI Tools for Small Business Automation — A concise exploration of practical takeaways and real-world applications.",
-    "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
-    "link": "/blogs/ai-tools-for-small-business-automation.html",
-    "contentFile": "/blogs/ai-tools-for-small-business-automation.html"
-  },
-  {
-    "title": "Balancing Screen Time in Childhood",
-    "slug": "balancing-screen-time-in-childhood",
-    "date": "2025-12-01",
-    "category": "Blog",
-    "excerpt": "Balancing Screen Time in Childhood — A concise exploration of practical takeaways and real-world applications.",
-    "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
-    "link": "/blogs/balancing-screen-time-in-childhood.html",
-    "contentFile": "/blogs/balancing-screen-time-in-childhood.html"
-  },
-  {
-    "title": "Breakthroughs in Quantum Computing Explained",
-    "slug": "breakthroughs-in-quantum-computing-explained",
-    "date": "2025-12-01",
-    "category": "Blog",
-    "excerpt": "Breakthroughs in Quantum Computing Explained — A concise exploration of practical takeaways and real-world applications.",
-    "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1200&q=80",
-    "link": "/blogs/breakthroughs-in-quantum-computing-explained.html",
-    "contentFile": "/blogs/breakthroughs-in-quantum-computing-explained.html"
-  },
-  {
-    "title": "Breathing Techniques for Stress Resilience",
-    "slug": "breathing-techniques-for-stress-resilience",
-    "date": "2025-12-01",
-    "category": "Blog",
-    "excerpt": "Breathing Techniques for Stress Resilience — A concise exploration of practical takeaways and real-world applications.",
-    "image": "https://images.unsplash.com/photo-1531297461136-82af7ce10197?auto=format&fit=crop&w=1200&q=80",
-    "link": "/blogs/breathing-techniques-for-stress-resilience.html",
-    "contentFile": "/blogs/breathing-techniques-for-stress-resilience.html"
-  },
-  {
-    "title": "Budgeting for Early-Career Professionals in 2026",
-    "slug": "budgeting-for-early-career-professionals-in-2026",
-    "date": "2025-12-01",
-    "category": "Blog",
-    "excerpt": "Budgeting for Early-Career Professionals in 2026 — A concise exploration of practical takeaways and real-world applications.",
-    "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
-    "link": "/blogs/budgeting-for-early-career-professionals-in-2026.html",
-    "contentFile": "/blogs/budgeting-for-early-career-professionals-in-2026.html"
-  },
-  {
-    "title": "Building a Home Library That Inspires",
-    "slug": "building-a-home-library-that-inspires",
-    "date": "2025-12-01",
-    "category": "Blog",
-    "excerpt": "Building a Home Library That Inspires — A concise exploration of practical takeaways and real-world applications.",
-    "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1200&q=80",
-    "link": "/blogs/building-a-home-library-that-inspires.html",
-    "contentFile": "/blogs/building-a-home-library-that-inspires.html"
-  },
-  {
-    "title": "Career Ladders in Small Startups",
-    "slug": "career-ladders-in-small-startups",
-    "date": "2025-12-01",
-    "category": "Blog",
-    "excerpt": "Career Ladders in Small Startups — A concise exploration of practical takeaways and real-world applications.",
-    "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1200&q=80",
-    "link": "/blogs/career-ladders-in-small-startups.html",
-    "contentFile": "/blogs/career-ladders-in-small-startups.html"
-  },
-  {
-    "title": "Citizen Science: How Anyone Can Contribute to Research",
-    "slug": "citizen-science-how-anyone-can-contribute-to-research",
-    "date": "2025-12-01",
-    "category": "Blog",
-    "excerpt": "Citizen Science: How Anyone Can Contribute to Research — A concise exploration of practical takeaways and real-world applications.",
-    "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1200&q=80",
-    "link": "/blogs/citizen-science-how-anyone-can-contribute-to-research.html",
-    "contentFile": "/blogs/citizen-science-how-anyone-can-contribute-to-research.html"
-  },
-  {
-    "title": "Cold-Brew vs. Hot Coffee: Flavor Chemistry",
-    "slug": "cold-brew-vs-hot-coffee-flavor-chemistry",
-    "date": "2025-12-01",
-    "category": "Blog",
-    "excerpt": "Cold-Brew vs. Hot Coffee: Flavor Chemistry — A concise exploration of practical takeaways and real-world applications.",
-    "image": "https://images.unsplash.com/photo-1531297461136-82af7ce10197?auto=format&fit=crop&w=1200&q=80",
-    "link": "/blogs/cold-brew-vs-hot-coffee-flavor-chemistry.html",
-    "contentFile": "/blogs/cold-brew-vs-hot-coffee-flavor-chemistry.html"
-  },
-  {
-    "title": "Cold Exposure and Health: What Studies Say",
-    "slug": "cold-exposure-and-health-what-studies-say",
-    "date": "2025-12-01",
-    "category": "Blog",
-    "excerpt": "Cold Exposure and Health: What Studies Say — A concise exploration of practical takeaways and real-world applications.",
-    "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
-    "link": "/blogs/cold-exposure-and-health-what-studies-say.html",
-    "contentFile": "/blogs/cold-exposure-and-health-what-studies-say.html"
-  },
-  {
-    "title": "Community-Led Renewable Energy Projects",
-    "slug": "community-led-renewable-energy-projects",
-    "date": "2025-12-01",
-    "category": "Blog",
-    "excerpt": "Community-Led Renewable Energy Projects — A concise exploration of practical takeaways and real-world applications.",
-    "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1200&q=80",
-    "link": "/blogs/community-led-renewable-energy-projects.html",
-    "contentFile": "/blogs/community-led-renewable-energy-projects.html"
-  },
-  {
-    "title": "Creating a Capsule Wardrobe Mindfully",
-    "slug": "creating-a-capsule-wardrobe-mindfully",
-    "date": "2025-12-01",
-    "category": "Blog",
-    "excerpt": "Creating a Capsule Wardrobe Mindfully — A concise exploration of practical takeaways and real-world applications.",
-    "image": "https://images.unsplash.com/photo-1531297461136-82af7ce10197?auto=format&fit=crop&w=1200&q=80",
-    "link": "/blogs/creating-a-capsule-wardrobe-mindfully.html",
-    "contentFile": "/blogs/creating-a-capsule-wardrobe-mindfully.html"
-  },
-  {
-    "title": "Creating Accessible Online Courses",
-    "slug": "creating-accessible-online-courses",
-    "date": "2025-12-01",
-    "category": "Blog",
-    "excerpt": "Creating Accessible Online Courses — A concise exploration of practical takeaways and real-world applications.",
-    "image": "https://images.unsplash.com/photo-1531297461136-82af7ce10197?auto=format&fit=crop&w=1200&q=80",
-    "link": "/blogs/creating-accessible-online-courses.html",
-    "contentFile": "/blogs/creating-accessible-online-courses.html"
-  },
-  {
-    "title": "Creative Uses for Leftover Groceries",
-    "slug": "creative-uses-for-leftover-groceries",
-    "date": "2025-12-01",
-    "category": "Blog",
-    "excerpt": "Creative Uses for Leftover Groceries — A concise exploration of practical takeaways and real-world applications.",
-    "image": "https://images.unsplash.com/photo-1531297461136-82af7ce10197?auto=format&fit=crop&w=1200&q=80",
-    "link": "/blogs/creative-uses-for-leftover-groceries.html",
-    "contentFile": "/blogs/creative-uses-for-leftover-groceries.html"
-  },
-  {
-    "title": "Creative Writing Prompts to Unlock a Novel",
-    "slug": "creative-writing-prompts-to-unlock-a-novel",
-    "date": "2025-12-01",
-    "category": "Blog",
-    "excerpt": "Creative Writing Prompts to Unlock a Novel — A concise exploration of practical takeaways and real-world applications.",
-    "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
-    "link": "/blogs/creative-writing-prompts-to-unlock-a-novel.html",
-    "contentFile": "/blogs/creative-writing-prompts-to-unlock-a-novel.html"
-  },
-  {
-    "title": "Crypto Tax Basics for Casual Investors",
-    "slug": "crypto-tax-basics-for-casual-investors",
-    "date": "2025-12-01",
-    "category": "Blog",
-    "excerpt": "Crypto Tax Basics for Casual Investors — A concise exploration of practical takeaways and real-world applications.",
-    "image": "https://images.unsplash.com/photo-1531297461136-82af7ce10197?auto=format&fit=crop&w=1200&q=80",
-    "link": "/blogs/crypto-tax-basics-for-casual-investors.html",
-    "contentFile": "/blogs/crypto-tax-basics-for-casual-investors.html"
-  },
-  {
-    "title": "Daily Habits that Improve Focus and Creativity",
-    "slug": "daily-habits-that-improve-focus-and-creativity",
-    "date": "2025-12-01",
-    "category": "Blog",
-    "excerpt": "Daily Habits that Improve Focus and Creativity — A concise exploration of practical takeaways and real-world applications.",
-    "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
-    "link": "/blogs/daily-habits-that-improve-focus-and-creativity.html",
-    "contentFile": "/blogs/daily-habits-that-improve-focus-and-creativity.html"
-  },
-  {
-    "title": "Design Systems for Small Teams",
-    "slug": "design-systems-for-small-teams",
-    "date": "2025-12-01",
-    "category": "Blog",
-    "excerpt": "Design Systems for Small Teams — A concise exploration of practical takeaways and real-world applications.",
-    "image": "https://images.unsplash.com/photo-1531297461136-82af7ce10197?auto=format&fit=crop&w=1200&q=80",
-    "link": "/blogs/design-systems-for-small-teams.html",
-    "contentFile": "/blogs/design-systems-for-small-teams.html"
-  },
-  {
-    "title": "Designing a Morning Routine that Scales",
-    "slug": "designing-a-morning-routine-that-scales",
-    "date": "2025-12-01",
-    "category": "Blog",
-    "excerpt": "Designing a Morning Routine that Scales — A concise exploration of practical takeaways and real-world applications.",
-    "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
-    "link": "/blogs/designing-a-morning-routine-that-scales.html",
-    "contentFile": "/blogs/designing-a-morning-routine-that-scales.html"
-  },
-  {
-    "title": "Designing a Personal Knowledge System",
-    "slug": "designing-a-personal-knowledge-system",
-    "date": "2025-12-01",
-    "category": "Blog",
-    "excerpt": "Designing a Personal Knowledge System — A concise exploration of practical takeaways and real-world applications.",
-    "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
-    "link": "/blogs/designing-a-personal-knowledge-system.html",
-    "contentFile": "/blogs/designing-a-personal-knowledge-system.html"
-  },
-  {
-    "title": "DIY Bike Maintenance for Urban Riders",
-    "slug": "diy-bike-maintenance-for-urban-riders",
-    "date": "2025-12-01",
-    "category": "Blog",
-    "excerpt": "DIY Bike Maintenance for Urban Riders — A concise exploration of practical takeaways and real-world applications.",
-    "image": "https://images.unsplash.com/photo-1531297461136-82af7ce10197?auto=format&fit=crop&w=1200&q=80",
-    "link": "/blogs/diy-bike-maintenance-for-urban-riders.html",
-    "contentFile": "/blogs/diy-bike-maintenance-for-urban-riders.html"
-  },
-  {
-    "title": "Effective Meetings: Agenda and Follow-up",
-    "slug": "effective-meetings-agenda-and-follow-up",
-    "date": "2025-12-01",
-    "category": "Blog",
-    "excerpt": "Effective Meetings: Agenda and Follow-up — A concise exploration of practical takeaways and real-world applications.",
-    "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1200&q=80",
-    "link": "/blogs/effective-meetings-agenda-and-follow-up.html",
-    "contentFile": "/blogs/effective-meetings-agenda-and-follow-up.html"
-  },
-  {
+    "id": 1764418620837,
     "title": "The Electric Scooter Boom in India: A Silent Urban Revolution",
     "slug": "electric-scooter-boom-india-urban-revolution",
-    "date": "2025-12-01",
-    "category": "Blog",
     "excerpt": "How electric scooters transformed urban mobility across India: technology, policy, and social impacts of the EV two-wheeler boom in 2025.",
-    "image": "https://images.unsplash.com/photo-1598528738936-c50861e8c9b3",
+    "category": "Blog",
+    "author": "MIROZA Editorial",
+    "date": "2025-11-29",
     "link": "/blogs/electric-scooter-boom-india-urban-revolution.html",
-    "contentFile": "/blogs/electric-scooter-boom-india-urban-revolution.html"
+    "image": "https://images.unsplash.com/photo-1598528738936-c50861e8c9b3"
   },
   {
-    "title": "Electric Vehicles: Charging at Home",
-    "slug": "electric-vehicles-charging-at-home",
-    "date": "2025-12-01",
-    "category": "Blog",
-    "excerpt": "Electric Vehicles: Charging at Home — A concise exploration of practical takeaways and real-world applications.",
-    "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1200&q=80",
-    "link": "/blogs/electric-vehicles-charging-at-home.html",
-    "contentFile": "/blogs/electric-vehicles-charging-at-home.html"
-  },
-  {
-    "title": "Fermentation at Home: Safety and Flavor Tips",
-    "slug": "fermentation-at-home-safety-and-flavor-tips",
-    "date": "2025-12-01",
-    "category": "Blog",
-    "excerpt": "Fermentation at Home: Safety and Flavor Tips — A concise exploration of practical takeaways and real-world applications.",
-    "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
-    "link": "/blogs/fermentation-at-home-safety-and-flavor-tips.html",
-    "contentFile": "/blogs/fermentation-at-home-safety-and-flavor-tips.html"
-  },
-  {
-    "title": "Fermentation: Kombucha vs. Kefir",
-    "slug": "fermentation-kombucha-vs-kefir",
-    "date": "2025-12-01",
-    "category": "Blog",
-    "excerpt": "Fermentation: Kombucha vs. Kefir — A concise exploration of practical takeaways and real-world applications.",
-    "image": "https://images.unsplash.com/photo-1531297461136-82af7ce10197?auto=format&fit=crop&w=1200&q=80",
-    "link": "/blogs/fermentation-kombucha-vs-kefir.html",
-    "contentFile": "/blogs/fermentation-kombucha-vs-kefir.html"
-  },
-  {
-    "title": "Fermentation Safety: Avoiding Contamination",
-    "slug": "fermentation-safety-avoiding-contamination",
-    "date": "2025-12-01",
-    "category": "Blog",
-    "excerpt": "Fermentation Safety: Avoiding Contamination — A concise exploration of practical takeaways and real-world applications.",
-    "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
-    "link": "/blogs/fermentation-safety-avoiding-contamination.html",
-    "contentFile": "/blogs/fermentation-safety-avoiding-contamination.html"
-  },
-  {
-    "title": "Fermented Foods and Gut Health: Evidence Review",
-    "slug": "fermented-foods-and-gut-health-evidence-review",
-    "date": "2025-12-01",
-    "category": "Blog",
-    "excerpt": "Fermented Foods and Gut Health: Evidence Review — A concise exploration of practical takeaways and real-world applications.",
-    "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
-    "link": "/blogs/fermented-foods-and-gut-health-evidence-review.html",
-    "contentFile": "/blogs/fermented-foods-and-gut-health-evidence-review.html"
-  },
-  {
-    "title": "Ferroelectric RAM and Next-Gen Memory",
-    "slug": "ferroelectric-ram-and-next-gen-memory",
-    "date": "2025-12-01",
-    "category": "Blog",
-    "excerpt": "Ferroelectric RAM and Next-Gen Memory — A concise exploration of practical takeaways and real-world applications.",
-    "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
-    "link": "/blogs/ferroelectric-ram-and-next-gen-memory.html",
-    "contentFile": "/blogs/ferroelectric-ram-and-next-gen-memory.html"
-  },
-  {
-    "title": "Financial Planning for New Parents",
-    "slug": "financial-planning-for-new-parents",
-    "date": "2025-12-01",
-    "category": "Blog",
-    "excerpt": "Financial Planning for New Parents — A concise exploration of practical takeaways and real-world applications.",
-    "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1200&q=80",
-    "link": "/blogs/financial-planning-for-new-parents.html",
-    "contentFile": "/blogs/financial-planning-for-new-parents.html"
-  },
-  {
+    "id": 1764418621398,
     "title": "Fitness 3.0: How Technology is Transforming the Indian Fitness Culture",
     "slug": "fitness-3-0-technology-transforming-indian-fitness-culture",
-    "date": "2025-12-01",
-    "category": "Blog",
     "excerpt": "Fitness 3.0 explores the intersection of wearable tech, AI coaches and community fitness in India, and how technology is reshaping health routines.",
-    "image": "https://images.unsplash.com/photo-1571019613577-2b7342f4c15a",
+    "category": "Blog",
+    "author": "MIROZA Editorial",
+    "date": "2025-11-29",
     "link": "/blogs/fitness-3-0-technology-transforming-indian-fitness-culture.html",
-    "contentFile": "/blogs/fitness-3-0-technology-transforming-indian-fitness-culture.html"
+    "image": "https://images.unsplash.com/photo-1571019613577-2b7342f4c15a"
   },
   {
-    "title": "Habit Tracking for Behavioral Change",
-    "slug": "habit-tracking-for-behavioral-change",
-    "date": "2025-12-01",
-    "category": "Blog",
-    "excerpt": "Habit Tracking for Behavioral Change — A concise exploration of practical takeaways and real-world applications.",
-    "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
-    "link": "/blogs/habit-tracking-for-behavioral-change.html",
-    "contentFile": "/blogs/habit-tracking-for-behavioral-change.html"
-  },
-  {
-    "title": "Healthy Aging: Mobility and Strength",
-    "slug": "healthy-aging-mobility-and-strength",
-    "date": "2025-12-01",
-    "category": "Blog",
-    "excerpt": "Healthy Aging: Mobility and Strength — A concise exploration of practical takeaways and real-world applications.",
-    "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1200&q=80",
-    "link": "/blogs/healthy-aging-mobility-and-strength.html",
-    "contentFile": "/blogs/healthy-aging-mobility-and-strength.html"
-  },
-  {
-    "title": "Healthy Meal Prep for Families",
-    "slug": "healthy-meal-prep-for-families",
-    "date": "2025-12-01",
-    "category": "Blog",
-    "excerpt": "Healthy Meal Prep for Families — A concise exploration of practical takeaways and real-world applications.",
-    "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
-    "link": "/blogs/healthy-meal-prep-for-families.html",
-    "contentFile": "/blogs/healthy-meal-prep-for-families.html"
-  },
-  {
-    "title": "Home Coffee Brewing Techniques",
-    "slug": "home-coffee-brewing-techniques",
-    "date": "2025-12-01",
-    "category": "Blog",
-    "excerpt": "Home Coffee Brewing Techniques — A concise exploration of practical takeaways and real-world applications.",
-    "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1200&q=80",
-    "link": "/blogs/home-coffee-brewing-techniques.html",
-    "contentFile": "/blogs/home-coffee-brewing-techniques.html"
-  },
-  {
-    "title": "Home Energy Efficiency on a Budget",
-    "slug": "home-energy-efficiency-on-a-budget",
-    "date": "2025-12-01",
-    "category": "Blog",
-    "excerpt": "Home Energy Efficiency on a Budget — A concise exploration of practical takeaways and real-world applications.",
-    "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
-    "link": "/blogs/home-energy-efficiency-on-a-budget.html",
-    "contentFile": "/blogs/home-energy-efficiency-on-a-budget.html"
-  },
-  {
-    "title": "Home Studio Setup for Musicians",
-    "slug": "home-studio-setup-for-musicians",
-    "date": "2025-12-01",
-    "category": "Blog",
-    "excerpt": "Home Studio Setup for Musicians — A concise exploration of practical takeaways and real-world applications.",
-    "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1200&q=80",
-    "link": "/blogs/home-studio-setup-for-musicians.html",
-    "contentFile": "/blogs/home-studio-setup-for-musicians.html"
-  },
-  {
-    "title": "Home Workouts that Build Strength Without Equipment",
-    "slug": "home-workouts-that-build-strength-without-equipment",
-    "date": "2025-12-01",
-    "category": "Blog",
-    "excerpt": "Home Workouts that Build Strength Without Equipment — A concise exploration of practical takeaways and real-world applications.",
-    "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1200&q=80",
-    "link": "/blogs/home-workouts-that-build-strength-without-equipment.html",
-    "contentFile": "/blogs/home-workouts-that-build-strength-without-equipment.html"
-  },
-  {
-    "title": "How to Build a Reading Habit That Sticks",
-    "slug": "how-to-build-a-reading-habit-that-sticks",
-    "date": "2025-12-01",
-    "category": "Blog",
-    "excerpt": "How to Build a Reading Habit That Sticks — A concise exploration of practical takeaways and real-world applications.",
-    "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
-    "link": "/blogs/how-to-build-a-reading-habit-that-sticks.html",
-    "contentFile": "/blogs/how-to-build-a-reading-habit-that-sticks.html"
-  },
-  {
-    "title": "How to Make Better Decisions with Bayesian Thinking",
-    "slug": "how-to-make-better-decisions-with-bayesian-thinking",
-    "date": "2025-12-01",
-    "category": "Blog",
-    "excerpt": "How to Make Better Decisions with Bayesian Thinking — A concise exploration of practical takeaways and real-world applications.",
-    "image": "https://images.unsplash.com/photo-1531297461136-82af7ce10197?auto=format&fit=crop&w=1200&q=80",
-    "link": "/blogs/how-to-make-better-decisions-with-bayesian-thinking.html",
-    "contentFile": "/blogs/how-to-make-better-decisions-with-bayesian-thinking.html"
-  },
-  {
-    "title": "How to Plan a Solo Road Trip Safely",
-    "slug": "how-to-plan-a-solo-road-trip-safely",
-    "date": "2025-12-01",
-    "category": "Blog",
-    "excerpt": "How to Plan a Solo Road Trip Safely — A concise exploration of practical takeaways and real-world applications.",
-    "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
-    "link": "/blogs/how-to-plan-a-solo-road-trip-safely.html",
-    "contentFile": "/blogs/how-to-plan-a-solo-road-trip-safely.html"
-  },
-  {
-    "title": "How to Read Academic Papers Efficiently",
-    "slug": "how-to-read-academic-papers-efficiently",
-    "date": "2025-12-01",
-    "category": "Blog",
-    "excerpt": "How to Read Academic Papers Efficiently — A concise exploration of practical takeaways and real-world applications.",
-    "image": "https://images.unsplash.com/photo-1531297461136-82af7ce10197?auto=format&fit=crop&w=1200&q=80",
-    "link": "/blogs/how-to-read-academic-papers-efficiently.html",
-    "contentFile": "/blogs/how-to-read-academic-papers-efficiently.html"
-  },
-  {
-    "title": "How to Start a Local Volunteer Group",
-    "slug": "how-to-start-a-local-volunteer-group",
-    "date": "2025-12-01",
-    "category": "Blog",
-    "excerpt": "How to Start a Local Volunteer Group — A concise exploration of practical takeaways and real-world applications.",
-    "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1200&q=80",
-    "link": "/blogs/how-to-start-a-local-volunteer-group.html",
-    "contentFile": "/blogs/how-to-start-a-local-volunteer-group.html"
-  },
-  {
-    "title": "How to Teach Critical Thinking",
-    "slug": "how-to-teach-critical-thinking",
-    "date": "2025-12-01",
-    "category": "Blog",
-    "excerpt": "How to Teach Critical Thinking — A concise exploration of practical takeaways and real-world applications.",
-    "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1200&q=80",
-    "link": "/blogs/how-to-teach-critical-thinking.html",
-    "contentFile": "/blogs/how-to-teach-critical-thinking.html"
-  },
-  {
-    "title": "Hybrid Event Planning: Mixing Virtual and Physical",
-    "slug": "hybrid-event-planning-mixing-virtual-and-physical",
-    "date": "2025-12-01",
-    "category": "Blog",
-    "excerpt": "Hybrid Event Planning: Mixing Virtual and Physical — A concise exploration of practical takeaways and real-world applications.",
-    "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
-    "link": "/blogs/hybrid-event-planning-mixing-virtual-and-physical.html",
-    "contentFile": "/blogs/hybrid-event-planning-mixing-virtual-and-physical.html"
-  },
-  {
+    "id": 1764418621506,
     "title": "The Rise of Hyper-Local Content Platforms in 2025",
     "slug": "hyper-local-content-platforms-2025",
-    "date": "2025-12-01",
-    "category": "Blog",
     "excerpt": "Why hyper-local content platforms are rising in 2025: trust, community engagement, AI tools and business models shaping neighborhood journalism.",
-    "image": "https://images.unsplash.com/photo-1504711434969-e33886168f5c",
+    "category": "Blog",
+    "author": "MIROZA Editorial",
+    "date": "2025-11-29",
     "link": "/blogs/hyper-local-content-platforms-2025.html",
-    "contentFile": "/blogs/hyper-local-content-platforms-2025.html"
+    "image": "https://images.unsplash.com/photo-1504711434969-e33886168f5c"
   },
   {
-    "title": "Intro to Backyard Beekeeping",
-    "slug": "intro-to-backyard-beekeeping",
-    "date": "2025-12-01",
-    "category": "Blog",
-    "excerpt": "Intro to Backyard Beekeeping — A concise exploration of practical takeaways and real-world applications.",
-    "image": "https://images.unsplash.com/photo-1531297461136-82af7ce10197?auto=format&fit=crop&w=1200&q=80",
-    "link": "/blogs/intro-to-backyard-beekeeping.html",
-    "contentFile": "/blogs/intro-to-backyard-beekeeping.html"
-  },
-  {
-    "title": "Learning a Language Fast: Evidence-Based Methods",
-    "slug": "learning-a-language-fast-evidence-based-methods",
-    "date": "2025-12-01",
-    "category": "Blog",
-    "excerpt": "Learning a Language Fast: Evidence-Based Methods — A concise exploration of practical takeaways and real-world applications.",
-    "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
-    "link": "/blogs/learning-a-language-fast-evidence-based-methods.html",
-    "contentFile": "/blogs/learning-a-language-fast-evidence-based-methods.html"
-  },
-  {
-    "title": "Legacy Planning for Creatives",
-    "slug": "legacy-planning-for-creatives",
-    "date": "2025-12-01",
-    "category": "Blog",
-    "excerpt": "Legacy Planning for Creatives — A concise exploration of practical takeaways and real-world applications.",
-    "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1200&q=80",
-    "link": "/blogs/legacy-planning-for-creatives.html",
-    "contentFile": "/blogs/legacy-planning-for-creatives.html"
-  },
-  {
-    "title": "Low-Code Tools for Rapid Prototyping",
-    "slug": "low-code-tools-for-rapid-prototyping",
-    "date": "2025-12-01",
-    "category": "Blog",
-    "excerpt": "Low-Code Tools for Rapid Prototyping — A concise exploration of practical takeaways and real-world applications.",
-    "image": "https://images.unsplash.com/photo-1531297461136-82af7ce10197?auto=format&fit=crop&w=1200&q=80",
-    "link": "/blogs/low-code-tools-for-rapid-prototyping.html",
-    "contentFile": "/blogs/low-code-tools-for-rapid-prototyping.html"
-  },
-  {
-    "title": "Microbial Diversity in Food Systems",
-    "slug": "microbial-diversity-in-food-systems",
-    "date": "2025-12-01",
-    "category": "Blog",
-    "excerpt": "Microbial Diversity in Food Systems — A concise exploration of practical takeaways and real-world applications.",
-    "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1200&q=80",
-    "link": "/blogs/microbial-diversity-in-food-systems.html",
-    "contentFile": "/blogs/microbial-diversity-in-food-systems.html"
-  },
-  {
-    "title": "Microlearning: Short Lessons that Boost Retention",
-    "slug": "microlearning-short-lessons-that-boost-retention",
-    "date": "2025-12-01",
-    "category": "Blog",
-    "excerpt": "Microlearning: Short Lessons that Boost Retention — A concise exploration of practical takeaways and real-world applications.",
-    "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1200&q=80",
-    "link": "/blogs/microlearning-short-lessons-that-boost-retention.html",
-    "contentFile": "/blogs/microlearning-short-lessons-that-boost-retention.html"
-  },
-  {
-    "title": "Mindful Eating Practices for Better Digestion",
-    "slug": "mindful-eating-practices-for-better-digestion",
-    "date": "2025-12-01",
-    "category": "Blog",
-    "excerpt": "Mindful Eating Practices for Better Digestion — A concise exploration of practical takeaways and real-world applications.",
-    "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1200&q=80",
-    "link": "/blogs/mindful-eating-practices-for-better-digestion.html",
-    "contentFile": "/blogs/mindful-eating-practices-for-better-digestion.html"
-  },
-  {
-    "title": "Mindful Running: Techniques for Sustainable Endurance",
-    "slug": "mindful-running-techniques-for-sustainable-endurance",
-    "date": "2025-12-01",
-    "category": "Blog",
-    "excerpt": "Mindful Running: Techniques for Sustainable Endurance — A concise exploration of practical takeaways and real-world applications.",
-    "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
-    "link": "/blogs/mindful-running-techniques-for-sustainable-endurance.html",
-    "contentFile": "/blogs/mindful-running-techniques-for-sustainable-endurance.html"
-  },
-  {
-    "title": "Mindset Shifts for Long-Term Projects",
-    "slug": "mindset-shifts-for-long-term-projects",
-    "date": "2025-12-01",
-    "category": "Blog",
-    "excerpt": "Mindset Shifts for Long-Term Projects — A concise exploration of practical takeaways and real-world applications.",
-    "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1200&q=80",
-    "link": "/blogs/mindset-shifts-for-long-term-projects.html",
-    "contentFile": "/blogs/mindset-shifts-for-long-term-projects.html"
-  },
-  {
-    "title": "Minimalist Home Office Setup for Peak Focus",
-    "slug": "minimalist-home-office-setup-for-peak-focus",
-    "date": "2025-12-01",
-    "category": "Blog",
-    "excerpt": "Minimalist Home Office Setup for Peak Focus — A concise exploration of practical takeaways and real-world applications.",
-    "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1200&q=80",
-    "link": "/blogs/minimalist-home-office-setup-for-peak-focus.html",
-    "contentFile": "/blogs/minimalist-home-office-setup-for-peak-focus.html"
-  },
-  {
-    "title": "Negotiation Tactics for Salary Raises",
-    "slug": "negotiation-tactics-for-salary-raises",
-    "date": "2025-12-01",
-    "category": "Blog",
-    "excerpt": "Negotiation Tactics for Salary Raises — A concise exploration of practical takeaways and real-world applications.",
-    "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1200&q=80",
-    "link": "/blogs/negotiation-tactics-for-salary-raises.html",
-    "contentFile": "/blogs/negotiation-tactics-for-salary-raises.html"
-  },
-  {
-    "title": "Nutrition Myths Debunked by Research",
-    "slug": "nutrition-myths-debunked-by-research",
-    "date": "2025-12-01",
-    "category": "Blog",
-    "excerpt": "Nutrition Myths Debunked by Research — A concise exploration of practical takeaways and real-world applications.",
-    "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
-    "link": "/blogs/nutrition-myths-debunked-by-research.html",
-    "contentFile": "/blogs/nutrition-myths-debunked-by-research.html"
-  },
-  {
-    "title": "Nutrition Strategies for Sustainable Energy",
-    "slug": "nutrition-strategies-for-sustainable-energy",
-    "date": "2025-12-01",
-    "category": "Blog",
-    "excerpt": "Nutrition Strategies for Sustainable Energy — A concise exploration of practical takeaways and real-world applications.",
-    "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
-    "link": "/blogs/nutrition-strategies-for-sustainable-energy.html",
-    "contentFile": "/blogs/nutrition-strategies-for-sustainable-energy.html"
-  },
-  {
-    "title": "Nutrition Timing for Athletes",
-    "slug": "nutrition-timing-for-athletes",
-    "date": "2025-12-01",
-    "category": "Blog",
-    "excerpt": "Nutrition Timing for Athletes — A concise exploration of practical takeaways and real-world applications.",
-    "image": "https://images.unsplash.com/photo-1531297461136-82af7ce10197?auto=format&fit=crop&w=1200&q=80",
-    "link": "/blogs/nutrition-timing-for-athletes.html",
-    "contentFile": "/blogs/nutrition-timing-for-athletes.html"
-  },
-  {
-    "title": "Ocean Conservation You Can Support Locally",
-    "slug": "ocean-conservation-you-can-support-locally",
-    "date": "2025-12-01",
-    "category": "Blog",
-    "excerpt": "Ocean Conservation You Can Support Locally — A concise exploration of practical takeaways and real-world applications.",
-    "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
-    "link": "/blogs/ocean-conservation-you-can-support-locally.html",
-    "contentFile": "/blogs/ocean-conservation-you-can-support-locally.html"
-  },
-  {
-    "title": "Open Source Tools for Data Analysis",
-    "slug": "open-source-tools-for-data-analysis",
-    "date": "2025-12-01",
-    "category": "Blog",
-    "excerpt": "Open Source Tools for Data Analysis — A concise exploration of practical takeaways and real-world applications.",
-    "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1200&q=80",
-    "link": "/blogs/open-source-tools-for-data-analysis.html",
-    "contentFile": "/blogs/open-source-tools-for-data-analysis.html"
-  },
-  {
-    "title": "Optimizing Sleep with Light and Temperature",
-    "slug": "optimizing-sleep-with-light-and-temperature",
-    "date": "2025-12-01",
-    "category": "Blog",
-    "excerpt": "Optimizing Sleep with Light and Temperature — A concise exploration of practical takeaways and real-world applications.",
-    "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1200&q=80",
-    "link": "/blogs/optimizing-sleep-with-light-and-temperature.html",
-    "contentFile": "/blogs/optimizing-sleep-with-light-and-temperature.html"
-  },
-  {
-    "title": "Pacing for Marathon Runners",
-    "slug": "pacing-for-marathon-runners",
-    "date": "2025-12-01",
-    "category": "Blog",
-    "excerpt": "Pacing for Marathon Runners — A concise exploration of practical takeaways and real-world applications.",
-    "image": "https://images.unsplash.com/photo-1531297461136-82af7ce10197?auto=format&fit=crop&w=1200&q=80",
-    "link": "/blogs/pacing-for-marathon-runners.html",
-    "contentFile": "/blogs/pacing-for-marathon-runners.html"
-  },
-  {
-    "title": "Passive Income Strategies for Creatives",
-    "slug": "passive-income-strategies-for-creatives",
-    "date": "2025-12-01",
-    "category": "Blog",
-    "excerpt": "Passive Income Strategies for Creatives — A concise exploration of practical takeaways and real-world applications.",
-    "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
-    "link": "/blogs/passive-income-strategies-for-creatives.html",
-    "contentFile": "/blogs/passive-income-strategies-for-creatives.html"
-  },
-  {
-    "title": "Plant-Based Recipes for Busy Weeknights",
-    "slug": "plant-based-recipes-for-busy-weeknights",
-    "date": "2025-12-01",
-    "category": "Blog",
-    "excerpt": "Plant-Based Recipes for Busy Weeknights — A concise exploration of practical takeaways and real-world applications.",
-    "image": "https://images.unsplash.com/photo-1531297461136-82af7ce10197?auto=format&fit=crop&w=1200&q=80",
-    "link": "/blogs/plant-based-recipes-for-busy-weeknights.html",
-    "contentFile": "/blogs/plant-based-recipes-for-busy-weeknights.html"
-  },
-  {
-    "title": "Practical Biohacking for Everyday Performance",
-    "slug": "practical-biohacking-for-everyday-performance",
-    "date": "2025-12-01",
-    "category": "Blog",
-    "excerpt": "Practical Biohacking for Everyday Performance — A concise exploration of practical takeaways and real-world applications.",
-    "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1200&q=80",
-    "link": "/blogs/practical-biohacking-for-everyday-performance.html",
-    "contentFile": "/blogs/practical-biohacking-for-everyday-performance.html"
-  },
-  {
-    "title": "Public Speaking Tips for Remote Presentations",
-    "slug": "public-speaking-tips-for-remote-presentations",
-    "date": "2025-12-01",
-    "category": "Blog",
-    "excerpt": "Public Speaking Tips for Remote Presentations — A concise exploration of practical takeaways and real-world applications.",
-    "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
-    "link": "/blogs/public-speaking-tips-for-remote-presentations.html",
-    "contentFile": "/blogs/public-speaking-tips-for-remote-presentations.html"
-  },
-  {
-    "title": "Recovery Protocols for Amateur Athletes",
-    "slug": "recovery-protocols-for-amateur-athletes",
-    "date": "2025-12-01",
-    "category": "Blog",
-    "excerpt": "Recovery Protocols for Amateur Athletes — A concise exploration of practical takeaways and real-world applications.",
-    "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1200&q=80",
-    "link": "/blogs/recovery-protocols-for-amateur-athletes.html",
-    "contentFile": "/blogs/recovery-protocols-for-amateur-athletes.html"
-  },
-  {
-    "title": "Remote Team Rituals that Build Culture",
-    "slug": "remote-team-rituals-that-build-culture",
-    "date": "2025-12-01",
-    "category": "Blog",
-    "excerpt": "Remote Team Rituals that Build Culture — A concise exploration of practical takeaways and real-world applications.",
-    "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1200&q=80",
-    "link": "/blogs/remote-team-rituals-that-build-culture.html",
-    "contentFile": "/blogs/remote-team-rituals-that-build-culture.html"
-  },
-  {
-    "title": "Resilience Practices for Entrepreneurs",
-    "slug": "resilience-practices-for-entrepreneurs",
-    "date": "2025-12-01",
-    "category": "Blog",
-    "excerpt": "Resilience Practices for Entrepreneurs — A concise exploration of practical takeaways and real-world applications.",
-    "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
-    "link": "/blogs/resilience-practices-for-entrepreneurs.html",
-    "contentFile": "/blogs/resilience-practices-for-entrepreneurs.html"
-  },
-  {
-    "title": "Restorative Yoga for Desk Workers",
-    "slug": "restorative-yoga-for-desk-workers",
-    "date": "2025-12-01",
-    "category": "Blog",
-    "excerpt": "Restorative Yoga for Desk Workers — A concise exploration of practical takeaways and real-world applications.",
-    "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
-    "link": "/blogs/restorative-yoga-for-desk-workers.html",
-    "contentFile": "/blogs/restorative-yoga-for-desk-workers.html"
-  },
-  {
-    "title": "Running a Podcast: Tools and Workflow",
-    "slug": "running-a-podcast-tools-and-workflow",
-    "date": "2025-12-01",
-    "category": "Blog",
-    "excerpt": "Running a Podcast: Tools and Workflow — A concise exploration of practical takeaways and real-world applications.",
-    "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1200&q=80",
-    "link": "/blogs/running-a-podcast-tools-and-workflow.html",
-    "contentFile": "/blogs/running-a-podcast-tools-and-workflow.html"
-  },
-  {
+    "id": 1764418621021,
     "title": "How Sleep Quality Shapes Mental Performance: The Science of the 2025 Lifestyle",
     "slug": "sleep-quality-mental-performance-2025-lifestyle",
-    "date": "2025-12-01",
-    "category": "Blog",
     "excerpt": "Research-backed exploration of how sleep quality affects cognition, mood and productivity and practical strategies to improve rest in the digital age.",
-    "image": "https://images.unsplash.com/photo-1504704911898-6837f86ba35f",
+    "category": "Blog",
+    "author": "MIROZA Editorial",
+    "date": "2025-11-29",
     "link": "/blogs/sleep-quality-mental-performance-2025-lifestyle.html",
-    "contentFile": "/blogs/sleep-quality-mental-performance-2025-lifestyle.html"
+    "image": "https://images.unsplash.com/photo-1504704911898-6837f86ba35f"
   },
   {
-    "title": "Slow Travel Essentials for Deeper Cultural Immersion",
-    "slug": "slow-travel-essentials-for-deeper-cultural-immersion",
-    "date": "2025-12-01",
-    "category": "Blog",
-    "excerpt": "Slow Travel Essentials for Deeper Cultural Immersion — A concise exploration of practical takeaways and real-world applications.",
-    "image": "https://images.unsplash.com/photo-1531297461136-82af7ce10197?auto=format&fit=crop&w=1200&q=80",
-    "link": "/blogs/slow-travel-essentials-for-deeper-cultural-immersion.html",
-    "contentFile": "/blogs/slow-travel-essentials-for-deeper-cultural-immersion.html"
-  },
-  {
-    "title": "Solo Business Travel Safety Checklist",
-    "slug": "solo-business-travel-safety-checklist",
-    "date": "2025-12-01",
-    "category": "Blog",
-    "excerpt": "Solo Business Travel Safety Checklist — A concise exploration of practical takeaways and real-world applications.",
-    "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
-    "link": "/blogs/solo-business-travel-safety-checklist.html",
-    "contentFile": "/blogs/solo-business-travel-safety-checklist.html"
-  },
-  {
-    "title": "Sourdough Science: Gluten and Texture",
-    "slug": "sourdough-science-gluten-and-texture",
-    "date": "2025-12-01",
-    "category": "Blog",
-    "excerpt": "Sourdough Science: Gluten and Texture — A concise exploration of practical takeaways and real-world applications.",
-    "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
-    "link": "/blogs/sourdough-science-gluten-and-texture.html",
-    "contentFile": "/blogs/sourdough-science-gluten-and-texture.html"
-  },
-  {
-    "title": "Starting a Side Hustle While Working Full Time",
-    "slug": "starting-a-side-hustle-while-working-full-time",
-    "date": "2025-12-01",
-    "category": "Blog",
-    "excerpt": "Starting a Side Hustle While Working Full Time — A concise exploration of practical takeaways and real-world applications.",
-    "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1200&q=80",
-    "link": "/blogs/starting-a-side-hustle-while-working-full-time.html",
-    "contentFile": "/blogs/starting-a-side-hustle-while-working-full-time.html"
-  },
-  {
-    "title": "Sustainable Fashion Choices on a Budget",
-    "slug": "sustainable-fashion-choices-on-a-budget",
-    "date": "2025-12-01",
-    "category": "Blog",
-    "excerpt": "Sustainable Fashion Choices on a Budget — A concise exploration of practical takeaways and real-world applications.",
-    "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
-    "link": "/blogs/sustainable-fashion-choices-on-a-budget.html",
-    "contentFile": "/blogs/sustainable-fashion-choices-on-a-budget.html"
-  },
-  {
-    "title": "The Ethics of Generative AI",
-    "slug": "the-ethics-of-generative-ai",
-    "date": "2025-12-01",
-    "category": "Blog",
-    "excerpt": "The Ethics of Generative AI — A concise exploration of practical takeaways and real-world applications.",
-    "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1200&q=80",
-    "link": "/blogs/the-ethics-of-generative-ai.html",
-    "contentFile": "/blogs/the-ethics-of-generative-ai.html"
-  },
-  {
-    "title": "The Future of Remote Education Platforms",
-    "slug": "the-future-of-remote-education-platforms",
-    "date": "2025-12-01",
-    "category": "Blog",
-    "excerpt": "The Future of Remote Education Platforms — A concise exploration of practical takeaways and real-world applications.",
-    "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
-    "link": "/blogs/the-future-of-remote-education-platforms.html",
-    "contentFile": "/blogs/the-future-of-remote-education-platforms.html"
-  },
-  {
-    "title": "The Future of Vertical Farming",
-    "slug": "the-future-of-vertical-farming",
-    "date": "2025-12-01",
-    "category": "Blog",
-    "excerpt": "The Future of Vertical Farming — A concise exploration of practical takeaways and real-world applications.",
-    "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
-    "link": "/blogs/the-future-of-vertical-farming.html",
-    "contentFile": "/blogs/the-future-of-vertical-farming.html"
-  },
-  {
-    "title": "The History of Navigation and Exploration",
-    "slug": "the-history-of-navigation-and-exploration",
-    "date": "2025-12-01",
-    "category": "Blog",
-    "excerpt": "The History of Navigation and Exploration — A concise exploration of practical takeaways and real-world applications.",
-    "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1200&q=80",
-    "link": "/blogs/the-history-of-navigation-and-exploration.html",
-    "contentFile": "/blogs/the-history-of-navigation-and-exploration.html"
-  },
-  {
-    "title": "The Impact of Microplastics on Food Chains",
-    "slug": "the-impact-of-microplastics-on-food-chains",
-    "date": "2025-12-01",
-    "category": "Blog",
-    "excerpt": "The Impact of Microplastics on Food Chains — A concise exploration of practical takeaways and real-world applications.",
-    "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
-    "link": "/blogs/the-impact-of-microplastics-on-food-chains.html",
-    "contentFile": "/blogs/the-impact-of-microplastics-on-food-chains.html"
-  },
-  {
-    "title": "The Rise of Micro-Communities Online",
-    "slug": "the-rise-of-micro-communities-online",
-    "date": "2025-12-01",
-    "category": "Blog",
-    "excerpt": "The Rise of Micro-Communities Online — A concise exploration of practical takeaways and real-world applications.",
-    "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
-    "link": "/blogs/the-rise-of-micro-communities-online.html",
-    "contentFile": "/blogs/the-rise-of-micro-communities-online.html"
-  },
-  {
-    "title": "The Role of AI in Medical Imaging",
-    "slug": "the-role-of-ai-in-medical-imaging",
-    "date": "2025-12-01",
-    "category": "Blog",
-    "excerpt": "The Role of AI in Medical Imaging — A concise exploration of practical takeaways and real-world applications.",
-    "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1200&q=80",
-    "link": "/blogs/the-role-of-ai-in-medical-imaging.html",
-    "contentFile": "/blogs/the-role-of-ai-in-medical-imaging.html"
-  },
-  {
-    "title": "The Role of Satellites in Climate Monitoring",
-    "slug": "the-role-of-satellites-in-climate-monitoring",
-    "date": "2025-12-01",
-    "category": "Blog",
-    "excerpt": "The Role of Satellites in Climate Monitoring — A concise exploration of practical takeaways and real-world applications.",
-    "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1200&q=80",
-    "link": "/blogs/the-role-of-satellites-in-climate-monitoring.html",
-    "contentFile": "/blogs/the-role-of-satellites-in-climate-monitoring.html"
-  },
-  {
-    "title": "The Science Behind Habit Stacking",
-    "slug": "the-science-behind-habit-stacking",
-    "date": "2025-12-01",
-    "category": "Blog",
-    "excerpt": "The Science Behind Habit Stacking — A concise exploration of practical takeaways and real-world applications.",
-    "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
-    "link": "/blogs/the-science-behind-habit-stacking.html",
-    "contentFile": "/blogs/the-science-behind-habit-stacking.html"
-  },
-  {
-    "title": "The Science of Habit Formation",
-    "slug": "the-science-of-habit-formation",
-    "date": "2025-12-01",
-    "category": "Blog",
-    "excerpt": "The Science of Habit Formation — A concise exploration of practical takeaways and real-world applications.",
-    "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
-    "link": "/blogs/the-science-of-habit-formation.html",
-    "contentFile": "/blogs/the-science-of-habit-formation.html"
-  },
-  {
-    "title": "Time Blocking for Deep Work",
-    "slug": "time-blocking-for-deep-work",
-    "date": "2025-12-01",
-    "category": "Blog",
-    "excerpt": "Time Blocking for Deep Work — A concise exploration of practical takeaways and real-world applications.",
-    "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1200&q=80",
-    "link": "/blogs/time-blocking-for-deep-work.html",
-    "contentFile": "/blogs/time-blocking-for-deep-work.html"
-  },
-  {
-    "title": "Underrated European Destinations for 2026",
-    "slug": "underrated-european-destinations-for-2026",
-    "date": "2025-12-01",
-    "category": "Blog",
-    "excerpt": "Underrated European Destinations for 2026 — A concise exploration of practical takeaways and real-world applications.",
-    "image": "https://images.unsplash.com/photo-1531297461136-82af7ce10197?auto=format&fit=crop&w=1200&q=80",
-    "link": "/blogs/underrated-european-destinations-for-2026.html",
-    "contentFile": "/blogs/underrated-european-destinations-for-2026.html"
-  },
-  {
-    "title": "Understanding Central Bank Digital Currencies",
-    "slug": "understanding-central-bank-digital-currencies",
-    "date": "2025-12-01",
-    "category": "Blog",
-    "excerpt": "Understanding Central Bank Digital Currencies — A concise exploration of practical takeaways and real-world applications.",
-    "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1200&q=80",
-    "link": "/blogs/understanding-central-bank-digital-currencies.html",
-    "contentFile": "/blogs/understanding-central-bank-digital-currencies.html"
-  },
-  {
-    "title": "Urban Gardening in Small Spaces",
-    "slug": "urban-gardening-in-small-spaces",
-    "date": "2025-12-01",
-    "category": "Blog",
-    "excerpt": "Urban Gardening in Small Spaces — A concise exploration of practical takeaways and real-world applications.",
-    "image": "https://images.unsplash.com/photo-1531297461136-82af7ce10197?auto=format&fit=crop&w=1200&q=80",
-    "link": "/blogs/urban-gardening-in-small-spaces.html",
-    "contentFile": "/blogs/urban-gardening-in-small-spaces.html"
-  },
-  {
-    "title": "Using Public Data to Tell Better Stories",
-    "slug": "using-public-data-to-tell-better-stories",
-    "date": "2025-12-01",
-    "category": "Blog",
-    "excerpt": "Using Public Data to Tell Better Stories — A concise exploration of practical takeaways and real-world applications.",
-    "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
-    "link": "/blogs/using-public-data-to-tell-better-stories.html",
-    "contentFile": "/blogs/using-public-data-to-tell-better-stories.html"
-  },
-  {
-    "title": "Weekend Hiking Itineraries Near Major Cities",
-    "slug": "weekend-hiking-itineraries-near-major-cities",
-    "date": "2025-12-01",
-    "category": "Blog",
-    "excerpt": "Weekend Hiking Itineraries Near Major Cities — A concise exploration of practical takeaways and real-world applications.",
-    "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
-    "link": "/blogs/weekend-hiking-itineraries-near-major-cities.html",
-    "contentFile": "/blogs/weekend-hiking-itineraries-near-major-cities.html"
-  },
-  {
-    "title": "What to Pack for a Research Expedition",
-    "slug": "what-to-pack-for-a-research-expedition",
-    "date": "2025-12-01",
-    "category": "Blog",
-    "excerpt": "What to Pack for a Research Expedition — A concise exploration of practical takeaways and real-world applications.",
-    "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1200&q=80",
-    "link": "/blogs/what-to-pack-for-a-research-expedition.html",
-    "contentFile": "/blogs/what-to-pack-for-a-research-expedition.html"
-  },
-  {
-    "title": "Ayodhya Ram Mandir Inauguration Preparations Intensify",
-    "slug": "ayodhya-ram-mandir-inauguration-prep",
-    "date": "2025-12-01",
-    "category": "News",
-    "excerpt": "Authorities in Ayodhya scaled up security, transport, and hospitality plans ahead of the Ram Mandir inauguration.",
-    "image": "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=1200&q=80",
-    "link": "/news/ayodhya-ram-mandir-inauguration-prep.html",
-    "contentFile": "/news/ayodhya-ram-mandir-inauguration-prep.html"
-  },
-  {
-    "title": "Delhi Airport Incident: Afghan Plane Lands on Wrong Runway, Probe Launched",
-    "slug": "delhi-airport-wrong-runway-landing-2025",
-    "date": "2025-12-01",
-    "category": "News",
-    "excerpt": "A flight from Kabul mistakenly landed on the wrong runway at Delhi's IGI Airport — no casualties reported, but an official investigation has been ordered.",
-    "image": "https://images.unsplash.com/photo-1504151932400-72d4384f04b3",
-    "link": "/news/delhi-airport-wrong-runway-landing-2025.html",
-    "contentFile": "/news/delhi-airport-wrong-runway-landing-2025.html"
-  },
-  {
-    "title": "Eastern Coast Braces as Severe Cyclone Warning Issued",
-    "slug": "eastern-coast-cyclone-warning-2025",
-    "date": "2025-12-01",
-    "category": "News",
-    "excerpt": "A red alert has been issued along India's eastern coastline as a severe cyclone approaches — coastal districts begin evacuation procedures.",
-    "image": "https://images.unsplash.com/photo-1608889175120-2445da84aab0",
-    "link": "/news/eastern-coast-cyclone-warning-2025.html",
-    "contentFile": "/news/eastern-coast-cyclone-warning-2025.html"
-  },
-  {
-    "title": "Gold Prices Climb as Investors Bet on US Rate Cut",
-    "slug": "gold-prices-climb-us-rate-cut-bets-india-2025",
-    "date": "2025-12-01",
-    "category": "News",
-    "excerpt": "Gold prices surged in India today, as global investors bet on a possible US interest-rate cut, prompting a rush to safe-haven assets.",
-    "image": "https://images.unsplash.com/photo-1582423607605-35e3c7f4fc91",
-    "link": "/news/gold-prices-climb-us-rate-cut-bets-india-2025.html",
-    "contentFile": "/news/gold-prices-climb-us-rate-cut-bets-india-2025.html"
-  },
-  {
-    "title": "IMF Reclassifies India's Exchange Rate Regime, Markets Watch Closely",
-    "slug": "imf-reclassifies-india-exchange-rate-regime-2025",
-    "date": "2025-12-01",
-    "category": "News",
-    "excerpt": "The IMF reclassified India's exchange-rate policy regime — a move that could impact forex outlook and investor sentiment.",
-    "image": "https://images.unsplash.com/photo-1581091012184-5c17f1e5eabf",
-    "link": "/news/imf-reclassifies-india-exchange-rate-regime-2025.html",
-    "contentFile": "/news/imf-reclassifies-india-exchange-rate-regime-2025.html"
-  },
-  {
-    "title": "India",
-    "slug": "india-canada-trade-discussions-resume",
-    "date": "2025-12-01",
-    "category": "News",
-    "excerpt": "Negotiators from India and Canada reopened trade talks in New Delhi, prioritizing agri-exports, clean tech, and mobility rules.",
-    "image": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&q=80",
-    "link": "/news/india-canada-trade-discussions-resume.html",
-    "contentFile": "/news/india-canada-trade-discussions-resume.html"
-  },
-  {
-    "title": "India Sets New Digital Payments Record",
-    "slug": "india-digital-payments-record",
-    "date": "2025-12-01",
-    "category": "News",
-    "excerpt": "UPI and RuPay volumes hit an all-time high in October as merchants and consumers embraced contactless payments across India.",
-    "image": "https://images.unsplash.com/photo-1517430816045-df4b7de11d1d?auto=format&fit=crop&w=1200&q=80",
-    "link": "/news/india-digital-payments-record.html",
-    "contentFile": "/news/india-digital-payments-record.html"
-  },
-  {
-    "title": "India's GDP Expected to Grow 7.3% in Q2",
-    "slug": "india-gdp-expected-73-q2",
-    "date": "2025-12-01",
-    "category": "News",
-    "excerpt": "Finance ministry estimates suggest India's GDP could expand 7.3% in the second quarter on resilient demand and manufacturing support.",
-    "image": "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1200&q=80",
-    "link": "/news/india-gdp-expected-73-q2.html",
-    "contentFile": "/news/india-gdp-expected-73-q2.html"
-  },
-  {
-    "title": "India's Manufacturing Growth Slows in November",
-    "slug": "india-manufacturing-growth-slows-november",
-    "date": "2025-12-01",
-    "category": "News",
-    "excerpt": "Purchasing managers reported that factory growth eased in November as export orders softened and firms focused on inventory control.",
-    "image": "https://images.unsplash.com/photo-1455165814004-1126a7199f9b?auto=format&fit=crop&w=1200&q=80",
-    "link": "/news/india-manufacturing-growth-slows-november.html",
-    "contentFile": "/news/india-manufacturing-growth-slows-november.html"
-  },
-  {
-    "title": "India Launches Massive Solar Farm Project; Rural Electrification Boost Expected",
-    "slug": "india-massive-solar-farm-project-2025",
-    "date": "2025-12-01",
-    "category": "News",
-    "excerpt": "Government greenlights a new mega-solar farm project aimed at electrifying rural India and meeting renewable energy targets.",
-    "image": "https://images.unsplash.com/photo-1508385082359-f38ae991e8f2",
-    "link": "/news/india-massive-solar-farm-project-2025.html",
-    "contentFile": "/news/india-massive-solar-farm-project-2025.html"
-  },
-  {
-    "title": "India's Stock Markets Hit Record High After 14-Month Rally",
-    "slug": "india-stock-markets-hit-record-high-nov-2025",
-    "date": "2025-12-01",
-    "category": "News",
-    "excerpt": "Indian equity indices surged to record highs, driven by easing valuations and upbeat corporate earnings outlook.",
-    "image": "https://images.unsplash.com/photo-1559526324-593bc073d938",
-    "link": "/news/india-stock-markets-hit-record-high-nov-2025.html",
-    "contentFile": "/news/india-stock-markets-hit-record-high-nov-2025.html"
-  },
-  {
-    "title": "Trade Unions Stage Nationwide Protests Against New Labour Codes",
-    "slug": "india-trade-unions-protest-new-labour-codes-2025",
-    "date": "2025-12-01",
-    "category": "News",
-    "excerpt": "Major trade unions across India have begun large-scale protests against newly implemented labour laws, demanding rollback of key provisions.",
-    "image": "https://images.unsplash.com/photo-1556740749-887f6717d7e4",
-    "link": "/news/india-trade-unions-protest-new-labour-codes-2025.html",
-    "contentFile": "/news/india-trade-unions-protest-new-labour-codes-2025.html"
-  },
-  {
-    "title": "Major Trade Deal On Table: India-US Negotiations Enter Final Stage",
-    "slug": "india-us-trade-deal-final-stage-2025",
-    "date": "2025-12-01",
-    "category": "News",
-    "excerpt": "India and the United States have reportedly moved to final-stage talks over a major trade agreement — a deal that could reshape exports and bilateral trade relations.",
-    "image": "https://images.unsplash.com/photo-1526401485004-2fda9f7f6f59",
-    "link": "/news/india-us-trade-deal-final-stage-2025.html",
-    "contentFile": "/news/india-us-trade-deal-final-stage-2025.html"
-  },
-  {
-    "title": "India's Economy Grows 8.2% in Q2, Beats Forecasts",
-    "slug": "indias-economy-grows-8-2-percent-q2-2025",
-    "date": "2025-12-01",
-    "category": "News",
-    "excerpt": "India's economy posted a strong 8.2% year-on-year growth in Q2 2025, surpassing forecasts and boosting investor confidence.",
-    "image": "https://images.unsplash.com/photo-1496317899792-9d7dbcd928a1",
-    "link": "/news/indias-economy-grows-8-2-percent-q2-2025.html",
-    "contentFile": "/news/indias-economy-grows-8-2-percent-q2-2025.html"
-  },
-  {
-    "title": "OnePlus 15 India Launch Expectations Build",
-    "slug": "oneplus-15-india-launch",
-    "date": "2025-12-01",
-    "category": "News",
-    "excerpt": "OnePlus is tipped to unveil the 15 series in India with camera co-engineered hardware, faster charging, and AI-enhanced OxygenOS features.",
-    "image": "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=1200&q=80",
-    "link": "/news/oneplus-15-india-launch.html",
-    "contentFile": "/news/oneplus-15-india-launch.html"
-  },
-  {
-    "title": "RBI Report Highlights Strong Investment Climate",
-    "slug": "rbi-report-investment-climate",
-    "date": "2025-12-01",
-    "category": "News",
-    "excerpt": "The Reserve Bank of India's latest bulletin cites resilient private capex pipelines and healthy bank credit growth across core sectors.",
-    "image": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=80",
-    "link": "/news/rbi-report-investment-climate.html",
-    "contentFile": "/news/rbi-report-investment-climate.html"
-  },
-  {
-    "title": "Sensex and Nifty Open Flat Amid Global Cues",
-    "slug": "sensex-nifty-open-flat",
-    "date": "2025-12-01",
-    "category": "News",
-    "excerpt": "Indian equity benchmarks opened flat as traders tracked mixed global signals and awaited fresh macro data.",
-    "image": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1200&q=80",
-    "link": "/news/sensex-nifty-open-flat.html",
-    "contentFile": "/news/sensex-nifty-open-flat.html"
-  },
-  {
-    "title": "Tripura Celebrates 150 Years of \"Vande Mataram\"",
-    "slug": "tripura-150-years-vande-mataram",
-    "date": "2025-12-01",
-    "category": "News",
-    "excerpt": "Tripura hosted cultural shows, school choirs, and heritage walks to commemorate 150 years of Bankim Chandra Chattopadhyay's 'Vande Mataram'.",
-    "image": "https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=1200&q=80",
-    "link": "/news/tripura-150-years-vande-mataram.html",
-    "contentFile": "/news/tripura-150-years-vande-mataram.html"
-  },
-  {
-    "title": "Tulsi Vivah Celebrations Across India",
-    "slug": "tulsi-vivah-festival-celebration",
-    "date": "2025-12-01",
-    "category": "News",
-    "excerpt": "Devotees across India marked Tulsi Vivah with ceremonial weddings, devotional music, and community feasts as the winter wedding season begins.",
-    "image": "https://images.unsplash.com/photo-1508672019048-805c876b67e2?auto=format&fit=crop&w=1200&q=80",
-    "link": "/news/tulsi-vivah-festival-celebration.html",
-    "contentFile": "/news/tulsi-vivah-festival-celebration.html"
-  },
-  {
-    "title": "Western Ghats Wildlife Corridor Declared to Protect Elephants and Biodiversity",
-    "slug": "western-ghats-wildlife-corridor-2025",
-    "date": "2025-12-01",
-    "category": "News",
-    "excerpt": "Indian Government designates 1,200 sq km area in Western Ghats as protected wildlife corridor to safeguard migrating elephants and rich biodiversity.",
-    "image": "https://images.unsplash.com/photo-1505765051860-7f9b5d4b9b48",
-    "link": "/news/western-ghats-wildlife-corridor-2025.html",
-    "contentFile": "/news/western-ghats-wildlife-corridor-2025.html"
-  },
-  {
-    "title": "Asia-Pacific Ports Resume Ops After Typhoon Repairs",
-    "slug": "asia-pacific-ports-reopen",
-    "date": "2025-11-24",
-    "category": "World",
-    "excerpt": "Logistics groups restored 80% capacity and prioritized medical cargo lanes after emergency repairs.",
-    "image": "https://miroza.online/assets/images/posts/asia-pacific-ports-1200.svg",
-    "link": "/articles/asia-pacific-ports-reopen.html",
-    "contentFile": "/articles/asia-pacific-ports-reopen.html"
-  },
-  {
-    "title": "Digital ID Fast-Track Links Emerging Markets",
-    "slug": "digital-id-fast-track",
-    "date": "2025-11-24",
-    "category": "World",
-    "excerpt": "Finance ministers backed an interoperable ID rail to unlock cheaper remittances and portable health records.",
-    "image": "https://miroza.online/assets/images/posts/digital-id-fast-track-1200.svg",
-    "link": "/articles/digital-id-fast-track.html",
-    "contentFile": "/articles/digital-id-fast-track.html"
-  },
-  {
+    "id": 9,
     "title": "Global Climate Coalition Reaches Emissions Pact",
     "slug": "global-climate-coalition",
-    "date": "2025-11-24",
+    "excerpt": "Leaders from 70 nations agreed on binding methane cuts and fresh climate finance benchmarks after marathon talks in Nairobi. Observers say the pact revives trust ahead of next year’s compliance window.",
     "category": "World",
-    "excerpt": "Leaders from 70 nations locked in binding methane cuts and revived climate finance benchmarks.",
-    "image": "https://miroza.online/assets/images/posts/climate-coalition-1200.svg",
+    "author": "Anika Bose",
+    "date": "2025-11-24",
+    "views": 2050,
     "link": "/articles/global-climate-coalition.html",
-    "contentFile": "/articles/global-climate-coalition.html"
+    "image": {
+      "src": "/assets/images/posts/climate-coalition-800.svg",
+      "srcset": "/assets/images/posts/climate-coalition-400.svg 400w, /assets/images/posts/climate-coalition-800.svg 800w, /assets/images/posts/climate-coalition-1200.svg 1200w",
+      "sizes": "(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px",
+      "alt": "Delegates signing a climate agreement"
+    }
   },
   {
-    "title": "Global Food Security Fund Expands Emergency Stockpiles",
-    "slug": "global-food-security-fund",
-    "date": "2025-11-24",
+    "id": 10,
+    "title": "Digital ID Fast-Track Links Emerging Markets",
+    "slug": "digital-id-fast-track",
+    "excerpt": "Finance ministers endorsed an interoperable ID rail to unlock cheaper remittances and portable health records. Pilot corridors covering 1.2 billion people will go live within six months.",
     "category": "World",
-    "excerpt": "Donor blocs doubled rapid-response grain reserves and tied payouts to drought triggers.",
-    "image": "https://miroza.online/assets/images/posts/food-security-fund-1200.svg",
-    "link": "/articles/global-food-security-fund.html",
-    "contentFile": "/articles/global-food-security-fund.html"
+    "author": "Mateo Alvarez",
+    "date": "2025-11-24",
+    "views": 1820,
+    "link": "/articles/digital-id-fast-track.html",
+    "image": {
+      "src": "/assets/images/posts/digital-id-fast-track-800.svg",
+      "srcset": "/assets/images/posts/digital-id-fast-track-400.svg 400w, /assets/images/posts/digital-id-fast-track-800.svg 800w, /assets/images/posts/digital-id-fast-track-1200.svg 1200w",
+      "sizes": "(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px",
+      "alt": "Screens showing secure digital identity tokens"
+    }
   },
   {
+    "id": 11,
     "title": "Northern Corridor Summit Unlocks Infrastructure Funds",
     "slug": "northern-corridor-summit",
-    "date": "2025-11-24",
+    "excerpt": "East African states secured $18B for rail modernization and hybrid ports to ease commodity bottlenecks. The package ties disbursements to transparent procurement dashboards overseen by regional auditors.",
     "category": "World",
-    "excerpt": "Regional leaders secured $18B for rail modernization and hybrid ports to ease commodity bottlenecks.",
-    "image": "https://miroza.online/assets/images/posts/northern-corridor-summit-1200.svg",
+    "author": "Nadia Kamau",
+    "date": "2025-11-24",
+    "views": 1640,
     "link": "/articles/northern-corridor-summit.html",
-    "contentFile": "/articles/northern-corridor-summit.html"
+    "image": {
+      "src": "/assets/images/posts/northern-corridor-summit-800.svg",
+      "srcset": "/assets/images/posts/northern-corridor-summit-400.svg 400w, /assets/images/posts/northern-corridor-summit-800.svg 800w, /assets/images/posts/northern-corridor-summit-1200.svg 1200w",
+      "sizes": "(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px",
+      "alt": "Freight corridor investment map"
+    }
   },
   {
-    "title": "Newsletter Strategy: Measuring Real Engagement",
-    "slug": "newsletter-strategy-engagement",
-    "date": "2025-06-01",
-    "category": "Technology",
-    "excerpt": "Practical newsletter strategy: how to measure real engagement beyond opens and build durable reader relationships.",
-    "image": "https://miroza.online/assets/images/posts/newsletter-engagement-1200.jpg",
-    "link": "/articles/newsletter-strategy-engagement.html",
-    "contentFile": "/articles/newsletter-strategy-engagement.html"
+    "id": 12,
+    "title": "Asia-Pacific Ports Resume Ops After Typhoon Repairs",
+    "slug": "asia-pacific-ports-reopen",
+    "excerpt": "Logistics groups restored 80% capacity by deploying modular power barges and flexible berths across Manila, Kaohsiung, and Osaka. Relief lanes now prioritize medical cargo and cold-chain food staples.",
+    "category": "World",
+    "author": "Kenji Morita",
+    "date": "2025-11-24",
+    "views": 1505,
+    "link": "/articles/asia-pacific-ports-reopen.html",
+    "image": {
+      "src": "/assets/images/posts/asia-pacific-ports-800.svg",
+      "srcset": "/assets/images/posts/asia-pacific-ports-400.svg 400w, /assets/images/posts/asia-pacific-ports-800.svg 800w, /assets/images/posts/asia-pacific-ports-1200.svg 1200w",
+      "sizes": "(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px",
+      "alt": "Container cranes above teal waves"
+    }
   },
   {
-    "title": "Designing Robust Offline Experiences",
-    "slug": "robust-offline-experiences",
-    "date": "2025-05-20",
-    "category": "Technology",
-    "excerpt": "Offline-first patterns for resilient web apps: caching strategies, graceful fallbacks, and UX for intermittent networks.",
-    "image": "https://miroza.online/assets/images/posts/offline-1200.jpg",
-    "link": "/articles/robust-offline-experiences.html",
-    "contentFile": "/articles/robust-offline-experiences.html"
+    "id": 13,
+    "title": "Global Food Security Fund Expands Emergency Stockpiles",
+    "slug": "global-food-security-fund",
+    "excerpt": "Donor blocs doubled rapid-response grain reserves and linked payouts to satellite drought triggers. Agencies expect the move to cut delivery times to high-risk regions by half.",
+    "category": "World",
+    "author": "Leila Moreau",
+    "date": "2025-11-24",
+    "views": 1710,
+    "link": "/articles/global-food-security-fund.html",
+    "image": {
+      "src": "/assets/images/posts/food-security-fund-800.svg",
+      "srcset": "/assets/images/posts/food-security-fund-400.svg 400w, /assets/images/posts/food-security-fund-800.svg 800w, /assets/images/posts/food-security-fund-1200.svg 1200w",
+      "sizes": "(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px",
+      "alt": "Stylized grain reserves illustration"
+    }
   },
   {
-    "title": "Security Headers: Practical Defaults",
-    "slug": "security-headers-practical-defaults",
-    "date": "2025-04-15",
-    "category": "Technology",
-    "excerpt": "A concise guide to practical default security headers you can enable to reduce common web risks.",
-    "image": "https://miroza.online/assets/images/posts/security-headers-1200.jpg",
-    "link": "/articles/security-headers-practical-defaults.html",
-    "contentFile": "/articles/security-headers-practical-defaults.html"
+    "id": 1764418621030,
+    "title": "How to Start a Local Volunteer Group",
+    "slug": "how-to-start-a-local-volunteer-group",
+    "excerpt": "How to Start a Local Volunteer Group — A concise exploration of practical takeaways and real-world applications.",
+    "category": "Blog",
+    "author": "MIROZA Editorial",
+    "date": "2025-11-07",
+    "link": "/blogs/how-to-start-a-local-volunteer-group.html",
+    "image": "/assets/placeholder.jpg"
   },
   {
-    "title": "Why 2025 Is Becoming the Golden Year of Artificial Intelligence",
-    "slug": "2025-golden-year-of-ai",
-    "date": "2025-01-12",
-    "category": "Technology",
-    "excerpt": "Artificial Intelligence is reaching a historical turning point in 2025, reshaping industries like healthcare, finance, and manufacturing.",
-    "image": "https://images.unsplash.com/photo-1508385082359-f38ae991e8f2?auto=format&fit=crop&w=1200&q=80",
-    "link": "/articles/2025-golden-year-of-ai.html",
-    "contentFile": "/articles/2025-golden-year-of-ai.html"
+    "id": 1764418621013,
+    "title": "Using Public Data to Tell Better Stories",
+    "slug": "using-public-data-to-tell-better-stories",
+    "excerpt": "Using Public Data to Tell Better Stories — A concise exploration of practical takeaways and real-world applications.",
+    "category": "Blog",
+    "author": "MIROZA Editorial",
+    "date": "2025-11-03",
+    "link": "/blogs/using-public-data-to-tell-better-stories.html",
+    "image": "/assets/placeholder.jpg"
   },
   {
-    "title": "AI-Powered Medical Scanner Detects Diseases in Seconds",
-    "slug": "ai-medical-scanner",
-    "date": "2025-01-12",
-    "category": "Health",
-    "excerpt": "A new AI-powered scanning device is capable of identifying early-stage diseases with near-instant precision.",
-    "image": "https://images.unsplash.com/photo-1581091012184-5c17f1e5eabf?auto=format&fit=crop&w=1200&q=80",
-    "link": "/articles/ai-medical-scanner.html",
-    "contentFile": "/articles/ai-medical-scanner.html"
+    "id": 1764418621150,
+    "title": "What to Pack for a Research Expedition",
+    "slug": "what-to-pack-for-a-research-expedition",
+    "excerpt": "What to Pack for a Research Expedition — A concise exploration of practical takeaways and real-world applications.",
+    "category": "Blog",
+    "author": "MIROZA Editorial",
+    "date": "2025-10-31",
+    "link": "/blogs/what-to-pack-for-a-research-expedition.html",
+    "image": "/assets/placeholder.jpg"
   },
   {
-    "title": "How to Build a Strong Personal Brand in 2025",
-    "slug": "build-personal-brand-2025",
-    "date": "2025-01-12",
-    "category": "Career",
-    "excerpt": "A powerful personal brand sets you apart from the noise. Here–larr;‚¬—„¢s how to build influence in the modern digital landscape.",
-    "image": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80",
-    "link": "/articles/build-personal-brand-2025.html",
-    "contentFile": "/articles/build-personal-brand-2025.html"
+    "id": 1764418621733,
+    "title": "Mindful Eating Practices for Better Digestion",
+    "slug": "mindful-eating-practices-for-better-digestion",
+    "excerpt": "Mindful Eating Practices for Better Digestion — A concise exploration of practical takeaways and real-world applications.",
+    "category": "Blog",
+    "author": "MIROZA Editorial",
+    "date": "2025-10-27",
+    "link": "/blogs/mindful-eating-practices-for-better-digestion.html",
+    "image": "/assets/placeholder.jpg"
   },
   {
+    "id": 1764418620972,
+    "title": "Design Systems for Small Teams",
+    "slug": "design-systems-for-small-teams",
+    "excerpt": "Design Systems for Small Teams — A concise exploration of practical takeaways and real-world applications.",
+    "category": "Blog",
+    "author": "MIROZA Editorial",
+    "date": "2025-10-23",
+    "link": "/blogs/design-systems-for-small-teams.html",
+    "image": "/assets/placeholder.jpg"
+  },
+  {
+    "id": 1764418620947,
+    "title": "Practical Biohacking for Everyday Performance",
+    "slug": "practical-biohacking-for-everyday-performance",
+    "excerpt": "Practical Biohacking for Everyday Performance — A concise exploration of practical takeaways and real-world applications.",
+    "category": "Blog",
+    "author": "MIROZA Editorial",
+    "date": "2025-10-20",
+    "link": "/blogs/practical-biohacking-for-everyday-performance.html",
+    "image": "/assets/placeholder.jpg"
+  },
+  {
+    "id": 1764418621778,
+    "title": "The History of Navigation and Exploration",
+    "slug": "the-history-of-navigation-and-exploration",
+    "excerpt": "The History of Navigation and Exploration — A concise exploration of practical takeaways and real-world applications.",
+    "category": "Blog",
+    "author": "MIROZA Editorial",
+    "date": "2025-10-16",
+    "link": "/blogs/the-history-of-navigation-and-exploration.html",
+    "image": "/assets/placeholder.jpg"
+  },
+  {
+    "id": 1764418621284,
+    "title": "Creative Uses for Leftover Groceries",
+    "slug": "creative-uses-for-leftover-groceries",
+    "excerpt": "Creative Uses for Leftover Groceries — A concise exploration of practical takeaways and real-world applications.",
+    "category": "Blog",
+    "author": "MIROZA Editorial",
+    "date": "2025-10-12",
+    "link": "/blogs/creative-uses-for-leftover-groceries.html",
+    "image": "/assets/placeholder.jpg"
+  },
+  {
+    "id": 1764418621622,
+    "title": "Community-Led Renewable Energy Projects",
+    "slug": "community-led-renewable-energy-projects",
+    "excerpt": "Community-Led Renewable Energy Projects — A concise exploration of practical takeaways and real-world applications.",
+    "category": "Blog",
+    "author": "MIROZA Editorial",
+    "date": "2025-10-09",
+    "link": "/blogs/community-led-renewable-energy-projects.html",
+    "image": "/assets/placeholder.jpg"
+  },
+  {
+    "id": 1764418621124,
+    "title": "How to Make Better Decisions with Bayesian Thinking",
+    "slug": "how-to-make-better-decisions-with-bayesian-thinking",
+    "excerpt": "How to Make Better Decisions with Bayesian Thinking — A concise exploration of practical takeaways and real-world applications.",
+    "category": "Blog",
+    "author": "MIROZA Editorial",
+    "date": "2025-10-05",
+    "link": "/blogs/how-to-make-better-decisions-with-bayesian-thinking.html",
+    "image": "/assets/placeholder.jpg"
+  },
+  {
+    "id": 1764418620788,
+    "title": "Habit Tracking for Behavioral Change",
+    "slug": "habit-tracking-for-behavioral-change",
+    "excerpt": "Habit Tracking for Behavioral Change — A concise exploration of practical takeaways and real-world applications.",
+    "category": "Blog",
+    "author": "MIROZA Editorial",
+    "date": "2025-10-01",
+    "link": "/blogs/habit-tracking-for-behavioral-change.html",
+    "image": "/assets/placeholder.jpg"
+  },
+  {
+    "id": 1764418621280,
+    "title": "The Impact of Microplastics on Food Chains",
+    "slug": "the-impact-of-microplastics-on-food-chains",
+    "excerpt": "The Impact of Microplastics on Food Chains — A concise exploration of practical takeaways and real-world applications.",
+    "category": "Blog",
+    "author": "MIROZA Editorial",
+    "date": "2025-09-28",
+    "link": "/blogs/the-impact-of-microplastics-on-food-chains.html",
+    "image": "/assets/placeholder.jpg"
+  },
+  {
+    "id": 1764418621597,
+    "title": "Building a Home Library That Inspires",
+    "slug": "building-a-home-library-that-inspires",
+    "excerpt": "Building a Home Library That Inspires — A concise exploration of practical takeaways and real-world applications.",
+    "category": "Blog",
+    "author": "MIROZA Editorial",
+    "date": "2025-09-24",
+    "link": "/blogs/building-a-home-library-that-inspires.html",
+    "image": "/assets/placeholder.jpg"
+  },
+  {
+    "id": 1764418620886,
+    "title": "How to Read Academic Papers Efficiently",
+    "slug": "how-to-read-academic-papers-efficiently",
+    "excerpt": "How to Read Academic Papers Efficiently — A concise exploration of practical takeaways and real-world applications.",
+    "category": "Blog",
+    "author": "MIROZA Editorial",
+    "date": "2025-09-20",
+    "link": "/blogs/how-to-read-academic-papers-efficiently.html",
+    "image": "/assets/placeholder.jpg"
+  },
+  {
+    "id": 1764418621712,
+    "title": "Nutrition Myths Debunked by Research",
+    "slug": "nutrition-myths-debunked-by-research",
+    "excerpt": "Nutrition Myths Debunked by Research — A concise exploration of practical takeaways and real-world applications.",
+    "category": "Blog",
+    "author": "MIROZA Editorial",
+    "date": "2025-09-17",
+    "link": "/blogs/nutrition-myths-debunked-by-research.html",
+    "image": "/assets/placeholder.jpg"
+  },
+  {
+    "id": 1764418621235,
+    "title": "Remote Team Rituals that Build Culture",
+    "slug": "remote-team-rituals-that-build-culture",
+    "excerpt": "Remote Team Rituals that Build Culture — A concise exploration of practical takeaways and real-world applications.",
+    "category": "Blog",
+    "author": "MIROZA Editorial",
+    "date": "2025-09-13",
+    "link": "/blogs/remote-team-rituals-that-build-culture.html",
+    "image": "/assets/placeholder.jpg"
+  },
+  {
+    "id": 1764418621143,
+    "title": "Home Studio Setup for Musicians",
+    "slug": "home-studio-setup-for-musicians",
+    "excerpt": "Home Studio Setup for Musicians — A concise exploration of practical takeaways and real-world applications.",
+    "category": "Blog",
+    "author": "MIROZA Editorial",
+    "date": "2025-09-10",
+    "link": "/blogs/home-studio-setup-for-musicians.html",
+    "image": "/assets/placeholder.jpg"
+  },
+  {
+    "id": 1764418621554,
+    "title": "Resilience Practices for Entrepreneurs",
+    "slug": "resilience-practices-for-entrepreneurs",
+    "excerpt": "Resilience Practices for Entrepreneurs — A concise exploration of practical takeaways and real-world applications.",
+    "category": "Blog",
+    "author": "MIROZA Editorial",
+    "date": "2025-09-06",
+    "link": "/blogs/resilience-practices-for-entrepreneurs.html",
+    "image": "/assets/placeholder.jpg"
+  },
+  {
+    "id": 1764418621667,
+    "title": "The Future of Vertical Farming",
+    "slug": "the-future-of-vertical-farming",
+    "excerpt": "The Future of Vertical Farming — A concise exploration of practical takeaways and real-world applications.",
+    "category": "Blog",
+    "author": "MIROZA Editorial",
+    "date": "2025-09-02",
+    "link": "/blogs/the-future-of-vertical-farming.html",
+    "image": "/assets/placeholder.jpg"
+  },
+  {
+    "id": 1764418620889,
+    "title": "Sustainable Fashion Choices on a Budget",
+    "slug": "sustainable-fashion-choices-on-a-budget",
+    "excerpt": "Sustainable Fashion Choices on a Budget — A concise exploration of practical takeaways and real-world applications.",
+    "category": "Blog",
+    "author": "MIROZA Editorial",
+    "date": "2025-08-30",
+    "link": "/blogs/sustainable-fashion-choices-on-a-budget.html",
+    "image": "/assets/placeholder.jpg"
+  },
+  {
+    "id": 1764418621353,
+    "title": "How to Teach Critical Thinking",
+    "slug": "how-to-teach-critical-thinking",
+    "excerpt": "How to Teach Critical Thinking — A concise exploration of practical takeaways and real-world applications.",
+    "category": "Blog",
+    "author": "MIROZA Editorial",
+    "date": "2025-08-26",
+    "link": "/blogs/how-to-teach-critical-thinking.html",
+    "image": "/assets/placeholder.jpg"
+  },
+  {
+    "id": 1764418620938,
+    "title": "Open Source Tools for Data Analysis",
+    "slug": "open-source-tools-for-data-analysis",
+    "excerpt": "Open Source Tools for Data Analysis — A concise exploration of practical takeaways and real-world applications.",
+    "category": "Blog",
+    "author": "MIROZA Editorial",
+    "date": "2025-08-22",
+    "link": "/blogs/open-source-tools-for-data-analysis.html",
+    "image": "/assets/placeholder.jpg"
+  },
+  {
+    "id": 1764418621444,
+    "title": "Pacing for Marathon Runners",
+    "slug": "pacing-for-marathon-runners",
+    "excerpt": "Pacing for Marathon Runners — A concise exploration of practical takeaways and real-world applications.",
+    "category": "Blog",
+    "author": "MIROZA Editorial",
+    "date": "2025-08-19",
+    "link": "/blogs/pacing-for-marathon-runners.html",
+    "image": "/assets/placeholder.jpg"
+  },
+  {
+    "id": 1764418621553,
+    "title": "Creating a Capsule Wardrobe Mindfully",
+    "slug": "creating-a-capsule-wardrobe-mindfully",
+    "excerpt": "Creating a Capsule Wardrobe Mindfully — A concise exploration of practical takeaways and real-world applications.",
+    "category": "Blog",
+    "author": "MIROZA Editorial",
+    "date": "2025-08-15",
+    "link": "/blogs/creating-a-capsule-wardrobe-mindfully.html",
+    "image": "/assets/placeholder.jpg"
+  },
+  {
+    "id": 1764418621654,
+    "title": "The Science Behind Habit Stacking",
+    "slug": "the-science-behind-habit-stacking",
+    "excerpt": "The Science Behind Habit Stacking — A concise exploration of practical takeaways and real-world applications.",
+    "category": "Blog",
+    "author": "MIROZA Editorial",
+    "date": "2025-08-11",
+    "link": "/blogs/the-science-behind-habit-stacking.html",
+    "image": "/assets/placeholder.jpg"
+  },
+  {
+    "id": 1764418621076,
+    "title": "Financial Planning for New Parents",
+    "slug": "financial-planning-for-new-parents",
+    "excerpt": "Financial Planning for New Parents — A concise exploration of practical takeaways and real-world applications.",
+    "category": "Blog",
+    "author": "MIROZA Editorial",
+    "date": "2025-08-08",
+    "link": "/blogs/financial-planning-for-new-parents.html",
+    "image": "/assets/placeholder.jpg"
+  },
+  {
+    "id": 1764418621217,
+    "title": "Cold-Brew vs. Hot Coffee: Flavor Chemistry",
+    "slug": "cold-brew-vs-hot-coffee-flavor-chemistry",
+    "excerpt": "Cold-Brew vs. Hot Coffee: Flavor Chemistry — A concise exploration of practical takeaways and real-world applications.",
+    "category": "Blog",
+    "author": "MIROZA Editorial",
+    "date": "2025-08-04",
+    "link": "/blogs/cold-brew-vs-hot-coffee-flavor-chemistry.html",
+    "image": "/assets/placeholder.jpg"
+  },
+  {
+    "id": 1764418620813,
+    "title": "Weekend Hiking Itineraries Near Major Cities",
+    "slug": "weekend-hiking-itineraries-near-major-cities",
+    "excerpt": "Weekend Hiking Itineraries Near Major Cities — A concise exploration of practical takeaways and real-world applications.",
+    "category": "Blog",
+    "author": "MIROZA Editorial",
+    "date": "2025-07-31",
+    "link": "/blogs/weekend-hiking-itineraries-near-major-cities.html",
+    "image": "/assets/placeholder.jpg"
+  },
+  {
+    "id": 1764418621462,
+    "title": "Fermentation Safety: Avoiding Contamination",
+    "slug": "fermentation-safety-avoiding-contamination",
+    "excerpt": "Fermentation Safety: Avoiding Contamination — A concise exploration of practical takeaways and real-world applications.",
+    "category": "Blog",
+    "author": "MIROZA Editorial",
+    "date": "2025-07-28",
+    "link": "/blogs/fermentation-safety-avoiding-contamination.html",
+    "image": "/assets/placeholder.jpg"
+  },
+  {
+    "id": 1764418620951,
+    "title": "The Ethics of Generative AI",
+    "slug": "the-ethics-of-generative-ai",
+    "excerpt": "The Ethics of Generative AI — A concise exploration of practical takeaways and real-world applications.",
+    "category": "Blog",
+    "author": "MIROZA Editorial",
+    "date": "2025-07-24",
+    "link": "/blogs/the-ethics-of-generative-ai.html",
+    "image": "/assets/placeholder.jpg"
+  },
+  {
+    "id": 1764418621074,
+    "title": "Solo Business Travel Safety Checklist",
+    "slug": "solo-business-travel-safety-checklist",
+    "excerpt": "Solo Business Travel Safety Checklist — A concise exploration of practical takeaways and real-world applications.",
+    "category": "Blog",
+    "author": "MIROZA Editorial",
+    "date": "2025-07-20",
+    "link": "/blogs/solo-business-travel-safety-checklist.html",
+    "image": "/assets/placeholder.jpg"
+  },
+  {
+    "id": 1764418620859,
+    "title": "Healthy Aging: Mobility and Strength",
+    "slug": "healthy-aging-mobility-and-strength",
+    "excerpt": "Healthy Aging: Mobility and Strength — A concise exploration of practical takeaways and real-world applications.",
+    "category": "Blog",
+    "author": "MIROZA Editorial",
+    "date": "2025-07-17",
+    "link": "/blogs/healthy-aging-mobility-and-strength.html",
+    "image": "/assets/placeholder.jpg"
+  },
+  {
+    "id": 1764418620803,
+    "title": "Designing a Personal Knowledge System",
+    "slug": "designing-a-personal-knowledge-system",
+    "excerpt": "Designing a Personal Knowledge System — A concise exploration of practical takeaways and real-world applications.",
+    "category": "Blog",
+    "author": "MIROZA Editorial",
+    "date": "2025-07-13",
+    "link": "/blogs/designing-a-personal-knowledge-system.html",
+    "image": "/assets/placeholder.jpg"
+  },
+  {
+    "id": 1764418621193,
+    "title": "Restorative Yoga for Desk Workers",
+    "slug": "restorative-yoga-for-desk-workers",
+    "excerpt": "Restorative Yoga for Desk Workers — A concise exploration of practical takeaways and real-world applications.",
+    "category": "Blog",
+    "author": "MIROZA Editorial",
+    "date": "2025-07-09",
+    "link": "/blogs/restorative-yoga-for-desk-workers.html",
+    "image": "/assets/placeholder.jpg"
+  },
+  {
+    "id": 1764418621760,
+    "title": "Negotiation Tactics for Salary Raises",
+    "slug": "negotiation-tactics-for-salary-raises",
+    "excerpt": "Negotiation Tactics for Salary Raises — A concise exploration of practical takeaways and real-world applications.",
+    "category": "Blog",
+    "author": "MIROZA Editorial",
+    "date": "2025-07-06",
+    "link": "/blogs/negotiation-tactics-for-salary-raises.html",
+    "image": "/assets/placeholder.jpg"
+  },
+  {
+    "id": 1764418621228,
+    "title": "Microbial Diversity in Food Systems",
+    "slug": "microbial-diversity-in-food-systems",
+    "excerpt": "Microbial Diversity in Food Systems — A concise exploration of practical takeaways and real-world applications.",
+    "category": "Blog",
+    "author": "MIROZA Editorial",
+    "date": "2025-07-02",
+    "link": "/blogs/microbial-diversity-in-food-systems.html",
+    "image": "/assets/placeholder.jpg"
+  },
+  {
+    "id": 1764418621232,
+    "title": "Balancing Screen Time in Childhood",
+    "slug": "balancing-screen-time-in-childhood",
+    "excerpt": "Balancing Screen Time in Childhood — A concise exploration of practical takeaways and real-world applications.",
+    "category": "Blog",
+    "author": "MIROZA Editorial",
+    "date": "2025-06-29",
+    "link": "/blogs/balancing-screen-time-in-childhood.html",
+    "image": "/assets/placeholder.jpg"
+  },
+  {
+    "id": 1764418621527,
+    "title": "The Role of AI in Medical Imaging",
+    "slug": "the-role-of-ai-in-medical-imaging",
+    "excerpt": "The Role of AI in Medical Imaging — A concise exploration of practical takeaways and real-world applications.",
+    "category": "Blog",
+    "author": "MIROZA Editorial",
+    "date": "2025-06-25",
+    "link": "/blogs/the-role-of-ai-in-medical-imaging.html",
+    "image": "/assets/placeholder.jpg"
+  },
+  {
+    "id": 1764418620966,
+    "title": "Home Coffee Brewing Techniques",
+    "slug": "home-coffee-brewing-techniques",
+    "excerpt": "Home Coffee Brewing Techniques — A concise exploration of practical takeaways and real-world applications.",
+    "category": "Blog",
+    "author": "MIROZA Editorial",
+    "date": "2025-06-21",
+    "link": "/blogs/home-coffee-brewing-techniques.html",
+    "image": "/assets/placeholder.jpg"
+  },
+  {
+    "id": 1764418621491,
+    "title": "Legacy Planning for Creatives",
+    "slug": "legacy-planning-for-creatives",
+    "excerpt": "Legacy Planning for Creatives — A concise exploration of practical takeaways and real-world applications.",
+    "category": "Blog",
+    "author": "MIROZA Editorial",
+    "date": "2025-06-18",
+    "link": "/blogs/legacy-planning-for-creatives.html",
+    "image": "/assets/placeholder.jpg"
+  },
+  {
+    "id": 1764418620951,
+    "title": "Time Blocking for Deep Work",
+    "slug": "time-blocking-for-deep-work",
+    "excerpt": "Time Blocking for Deep Work — A concise exploration of practical takeaways and real-world applications.",
+    "category": "Blog",
+    "author": "MIROZA Editorial",
+    "date": "2025-06-14",
+    "link": "/blogs/time-blocking-for-deep-work.html",
+    "image": "/assets/placeholder.jpg"
+  },
+  {
+    "id": 1764418621377,
+    "title": "Ocean Conservation You Can Support Locally",
+    "slug": "ocean-conservation-you-can-support-locally",
+    "excerpt": "Ocean Conservation You Can Support Locally — A concise exploration of practical takeaways and real-world applications.",
+    "category": "Blog",
+    "author": "MIROZA Editorial",
+    "date": "2025-06-10",
+    "link": "/blogs/ocean-conservation-you-can-support-locally.html",
+    "image": "/assets/placeholder.jpg"
+  },
+  {
+    "id": 1764418621605,
+    "title": "Effective Meetings: Agenda and Follow-up",
+    "slug": "effective-meetings-agenda-and-follow-up",
+    "excerpt": "Effective Meetings: Agenda and Follow-up — A concise exploration of practical takeaways and real-world applications.",
+    "category": "Blog",
+    "author": "MIROZA Editorial",
+    "date": "2025-06-07",
+    "link": "/blogs/effective-meetings-agenda-and-follow-up.html",
+    "image": "/assets/placeholder.jpg"
+  },
+  {
+    "id": 1764418621463,
+    "title": "Low-Code Tools for Rapid Prototyping",
+    "slug": "low-code-tools-for-rapid-prototyping",
+    "excerpt": "Low-Code Tools for Rapid Prototyping — A concise exploration of practical takeaways and real-world applications.",
+    "category": "Blog",
+    "author": "MIROZA Editorial",
+    "date": "2025-06-03",
+    "link": "/blogs/low-code-tools-for-rapid-prototyping.html",
+    "image": "/assets/placeholder.jpg"
+  },
+  {
+    "id": 1764418621546,
+    "title": "Intro to Backyard Beekeeping",
+    "slug": "intro-to-backyard-beekeeping",
+    "excerpt": "Intro to Backyard Beekeeping — A concise exploration of practical takeaways and real-world applications.",
+    "category": "Blog",
+    "author": "MIROZA Editorial",
+    "date": "2025-05-30",
+    "link": "/blogs/intro-to-backyard-beekeeping.html",
+    "image": "/assets/placeholder.jpg"
+  },
+  {
+    "id": 1764418621296,
+    "title": "Healthy Meal Prep for Families",
+    "slug": "healthy-meal-prep-for-families",
+    "excerpt": "Healthy Meal Prep for Families — A concise exploration of practical takeaways and real-world applications.",
+    "category": "Blog",
+    "author": "MIROZA Editorial",
+    "date": "2025-05-27",
+    "link": "/blogs/healthy-meal-prep-for-families.html",
+    "image": "/assets/placeholder.jpg"
+  },
+  {
+    "id": 1764418621496,
+    "title": "Mindset Shifts for Long-Term Projects",
+    "slug": "mindset-shifts-for-long-term-projects",
+    "excerpt": "Mindset Shifts for Long-Term Projects — A concise exploration of practical takeaways and real-world applications.",
+    "category": "Blog",
+    "author": "MIROZA Editorial",
+    "date": "2025-05-23",
+    "link": "/blogs/mindset-shifts-for-long-term-projects.html",
+    "image": "/assets/placeholder.jpg"
+  },
+  {
+    "id": 1764418621147,
+    "title": "Electric Vehicles: Charging at Home",
+    "slug": "electric-vehicles-charging-at-home",
+    "excerpt": "Electric Vehicles: Charging at Home — A concise exploration of practical takeaways and real-world applications.",
+    "category": "Blog",
+    "author": "MIROZA Editorial",
+    "date": "2025-05-19",
+    "link": "/blogs/electric-vehicles-charging-at-home.html",
+    "image": "/assets/placeholder.jpg"
+  },
+  {
+    "id": 1764418621404,
+    "title": "The Rise of Micro-Communities Online",
+    "slug": "the-rise-of-micro-communities-online",
+    "excerpt": "The Rise of Micro-Communities Online — A concise exploration of practical takeaways and real-world applications.",
+    "category": "Blog",
+    "author": "MIROZA Editorial",
+    "date": "2025-05-16",
+    "link": "/blogs/the-rise-of-micro-communities-online.html",
+    "image": "/assets/placeholder.jpg"
+  },
+  {
+    "id": 1764418620944,
+    "title": "Creating Accessible Online Courses",
+    "slug": "creating-accessible-online-courses",
+    "excerpt": "Creating Accessible Online Courses — A concise exploration of practical takeaways and real-world applications.",
+    "category": "Blog",
+    "author": "MIROZA Editorial",
+    "date": "2025-05-12",
+    "link": "/blogs/creating-accessible-online-courses.html",
+    "image": "/assets/placeholder.jpg"
+  },
+  {
+    "id": 1764418621175,
+    "title": "Cold Exposure and Health: What Studies Say",
+    "slug": "cold-exposure-and-health-what-studies-say",
+    "excerpt": "Cold Exposure and Health: What Studies Say — A concise exploration of practical takeaways and real-world applications.",
+    "category": "Blog",
+    "author": "MIROZA Editorial",
+    "date": "2025-05-08",
+    "link": "/blogs/cold-exposure-and-health-what-studies-say.html",
+    "image": "/assets/placeholder.jpg"
+  },
+  {
+    "id": 1764418621194,
+    "title": "AI Tools for Small Business Automation",
+    "slug": "ai-tools-for-small-business-automation",
+    "excerpt": "AI Tools for Small Business Automation — A concise exploration of practical takeaways and real-world applications.",
+    "category": "Blog",
+    "author": "MIROZA Editorial",
+    "date": "2025-05-05",
+    "link": "/blogs/ai-tools-for-small-business-automation.html",
+    "image": "/assets/placeholder.jpg"
+  },
+  {
+    "id": 1764418621129,
+    "title": "Nutrition Timing for Athletes",
+    "slug": "nutrition-timing-for-athletes",
+    "excerpt": "Nutrition Timing for Athletes — A concise exploration of practical takeaways and real-world applications.",
+    "category": "Blog",
+    "author": "MIROZA Editorial",
+    "date": "2025-05-01",
+    "link": "/blogs/nutrition-timing-for-athletes.html",
+    "image": "/assets/placeholder.jpg"
+  },
+  {
+    "id": 1764418621751,
+    "title": "Affordable Travel Photography Tips",
+    "slug": "affordable-travel-photography-tips",
+    "excerpt": "Affordable Travel Photography Tips — A concise exploration of practical takeaways and real-world applications.",
+    "category": "Blog",
+    "author": "MIROZA Editorial",
+    "date": "2025-04-27",
+    "link": "/blogs/affordable-travel-photography-tips.html",
+    "image": "/assets/placeholder.jpg"
+  },
+  {
+    "id": 1764418621721,
+    "title": "Running a Podcast: Tools and Workflow",
+    "slug": "running-a-podcast-tools-and-workflow",
+    "excerpt": "Running a Podcast: Tools and Workflow — A concise exploration of practical takeaways and real-world applications.",
+    "category": "Blog",
+    "author": "MIROZA Editorial",
+    "date": "2025-04-24",
+    "link": "/blogs/running-a-podcast-tools-and-workflow.html",
+    "image": "/assets/placeholder.jpg"
+  },
+  {
+    "id": 1764418621580,
+    "title": "The Science of Habit Formation",
+    "slug": "the-science-of-habit-formation",
+    "excerpt": "The Science of Habit Formation — A concise exploration of practical takeaways and real-world applications.",
+    "category": "Blog",
+    "author": "MIROZA Editorial",
+    "date": "2025-04-20",
+    "link": "/blogs/the-science-of-habit-formation.html",
+    "image": "/assets/placeholder.jpg"
+  },
+  {
+    "id": 1764418620867,
+    "title": "Urban Gardening in Small Spaces",
+    "slug": "urban-gardening-in-small-spaces",
+    "excerpt": "Urban Gardening in Small Spaces — A concise exploration of practical takeaways and real-world applications.",
+    "category": "Blog",
+    "author": "MIROZA Editorial",
+    "date": "2025-04-17",
+    "link": "/blogs/urban-gardening-in-small-spaces.html",
+    "image": "/assets/placeholder.jpg"
+  },
+  {
+    "id": 1764418621655,
+    "title": "Breathing Techniques for Stress Resilience",
+    "slug": "breathing-techniques-for-stress-resilience",
+    "excerpt": "Breathing Techniques for Stress Resilience — A concise exploration of practical takeaways and real-world applications.",
+    "category": "Blog",
+    "author": "MIROZA Editorial",
+    "date": "2025-04-13",
+    "link": "/blogs/breathing-techniques-for-stress-resilience.html",
+    "image": "/assets/placeholder.jpg"
+  },
+  {
+    "id": 1764418620922,
+    "title": "Understanding Central Bank Digital Currencies",
+    "slug": "understanding-central-bank-digital-currencies",
+    "excerpt": "Understanding Central Bank Digital Currencies — A concise exploration of practical takeaways and real-world applications.",
+    "category": "Blog",
+    "author": "MIROZA Editorial",
+    "date": "2025-04-09",
+    "link": "/blogs/understanding-central-bank-digital-currencies.html",
+    "image": "/assets/placeholder.jpg"
+  },
+  {
+    "id": 1764418620894,
+    "title": "Fermentation: Kombucha vs. Kefir",
+    "slug": "fermentation-kombucha-vs-kefir",
+    "excerpt": "Fermentation: Kombucha vs. Kefir — A concise exploration of practical takeaways and real-world applications.",
+    "category": "Blog",
+    "author": "MIROZA Editorial",
+    "date": "2025-04-06",
+    "link": "/blogs/fermentation-kombucha-vs-kefir.html",
+    "image": "/assets/placeholder.jpg"
+  },
+  {
+    "id": 1764418621588,
+    "title": "How to Plan a Solo Road Trip Safely",
+    "slug": "how-to-plan-a-solo-road-trip-safely",
+    "excerpt": "How to Plan a Solo Road Trip Safely — A concise exploration of practical takeaways and real-world applications.",
+    "category": "Blog",
+    "author": "MIROZA Editorial",
+    "date": "2025-04-02",
+    "link": "/blogs/how-to-plan-a-solo-road-trip-safely.html",
+    "image": "/assets/placeholder.jpg"
+  },
+  {
+    "id": 1764418621430,
+    "title": "Learning a Language Fast: Evidence-Based Methods",
+    "slug": "learning-a-language-fast-evidence-based-methods",
+    "excerpt": "Learning a Language Fast: Evidence-Based Methods — A concise exploration of practical takeaways and real-world applications.",
+    "category": "Blog",
+    "author": "MIROZA Editorial",
+    "date": "2025-03-29",
+    "link": "/blogs/learning-a-language-fast-evidence-based-methods.html",
+    "image": "/assets/placeholder.jpg"
+  },
+  {
+    "id": 1764418621571,
+    "title": "Home Energy Efficiency on a Budget",
+    "slug": "home-energy-efficiency-on-a-budget",
+    "excerpt": "Home Energy Efficiency on a Budget — A concise exploration of practical takeaways and real-world applications.",
+    "category": "Blog",
+    "author": "MIROZA Editorial",
+    "date": "2025-03-26",
+    "link": "/blogs/home-energy-efficiency-on-a-budget.html",
+    "image": "/assets/placeholder.jpg"
+  },
+  {
+    "id": 1764418621732,
+    "title": "A Beginner Guide to Sustainable Investing",
+    "slug": "a-beginner-guide-to-sustainable-investing",
+    "excerpt": "A Beginner Guide to Sustainable Investing — A concise exploration of practical takeaways and real-world applications.",
+    "category": "Blog",
+    "author": "MIROZA Editorial",
+    "date": "2025-03-22",
+    "link": "/blogs/a-beginner-guide-to-sustainable-investing.html",
+    "image": "/assets/placeholder.jpg"
+  },
+  {
+    "id": 1764418620934,
+    "title": "Public Speaking Tips for Remote Presentations",
+    "slug": "public-speaking-tips-for-remote-presentations",
+    "excerpt": "Public Speaking Tips for Remote Presentations — A concise exploration of practical takeaways and real-world applications.",
+    "category": "Blog",
+    "author": "MIROZA Editorial",
+    "date": "2025-03-18",
+    "link": "/blogs/public-speaking-tips-for-remote-presentations.html",
+    "image": "/assets/placeholder.jpg"
+  },
+  {
+    "id": 1764418620909,
+    "title": "Passive Income Strategies for Creatives",
+    "slug": "passive-income-strategies-for-creatives",
+    "excerpt": "Passive Income Strategies for Creatives — A concise exploration of practical takeaways and real-world applications.",
+    "category": "Blog",
+    "author": "MIROZA Editorial",
+    "date": "2025-03-15",
+    "link": "/blogs/passive-income-strategies-for-creatives.html",
+    "image": "/assets/placeholder.jpg"
+  },
+  {
+    "id": 1764418621222,
+    "title": "Sourdough Science: Gluten and Texture",
+    "slug": "sourdough-science-gluten-and-texture",
+    "excerpt": "Sourdough Science: Gluten and Texture — A concise exploration of practical takeaways and real-world applications.",
+    "category": "Blog",
+    "author": "MIROZA Editorial",
+    "date": "2025-03-11",
+    "link": "/blogs/sourdough-science-gluten-and-texture.html",
+    "image": "/assets/placeholder.jpg"
+  },
+  {
+    "id": 1764418621233,
+    "title": "DIY Bike Maintenance for Urban Riders",
+    "slug": "diy-bike-maintenance-for-urban-riders",
+    "excerpt": "DIY Bike Maintenance for Urban Riders — A concise exploration of practical takeaways and real-world applications.",
+    "category": "Blog",
+    "author": "MIROZA Editorial",
+    "date": "2025-03-07",
+    "link": "/blogs/diy-bike-maintenance-for-urban-riders.html",
+    "image": "/assets/placeholder.jpg"
+  },
+  {
+    "id": 1764418621390,
+    "title": "Career Ladders in Small Startups",
+    "slug": "career-ladders-in-small-startups",
+    "excerpt": "Career Ladders in Small Startups — A concise exploration of practical takeaways and real-world applications.",
+    "category": "Blog",
+    "author": "MIROZA Editorial",
+    "date": "2025-03-04",
+    "link": "/blogs/career-ladders-in-small-startups.html",
+    "image": "/assets/placeholder.jpg"
+  },
+  {
+    "id": 1764418620892,
+    "title": "Optimizing Sleep with Light and Temperature",
+    "slug": "optimizing-sleep-with-light-and-temperature",
+    "excerpt": "Optimizing Sleep with Light and Temperature — A concise exploration of practical takeaways and real-world applications.",
+    "category": "Blog",
+    "author": "MIROZA Editorial",
+    "date": "2025-02-28",
+    "link": "/blogs/optimizing-sleep-with-light-and-temperature.html",
+    "image": "/assets/placeholder.jpg"
+  },
+  {
+    "id": 1764418621230,
+    "title": "Fermented Foods and Gut Health: Evidence Review",
+    "slug": "fermented-foods-and-gut-health-evidence-review",
+    "excerpt": "Fermented Foods and Gut Health: Evidence Review — A concise exploration of practical takeaways and real-world applications.",
+    "category": "Blog",
+    "author": "MIROZA Editorial",
+    "date": "2025-02-24",
+    "link": "/blogs/fermented-foods-and-gut-health-evidence-review.html",
+    "image": "/assets/placeholder.jpg"
+  },
+  {
+    "id": 1764418621668,
+    "title": "Ferroelectric RAM and Next-Gen Memory",
+    "slug": "ferroelectric-ram-and-next-gen-memory",
+    "excerpt": "Ferroelectric RAM and Next-Gen Memory — A concise exploration of practical takeaways and real-world applications.",
+    "category": "Blog",
+    "author": "MIROZA Editorial",
+    "date": "2025-02-21",
+    "link": "/blogs/ferroelectric-ram-and-next-gen-memory.html",
+    "image": "/assets/placeholder.jpg"
+  },
+  {
+    "id": 1764418621728,
+    "title": "Hybrid Event Planning: Mixing Virtual and Physical",
+    "slug": "hybrid-event-planning-mixing-virtual-and-physical",
+    "excerpt": "Hybrid Event Planning: Mixing Virtual and Physical — A concise exploration of practical takeaways and real-world applications.",
+    "category": "Blog",
+    "author": "MIROZA Editorial",
+    "date": "2025-02-17",
+    "link": "/blogs/hybrid-event-planning-mixing-virtual-and-physical.html",
+    "image": "/assets/placeholder.jpg"
+  },
+  {
+    "id": 1764418621005,
+    "title": "The Role of Satellites in Climate Monitoring",
+    "slug": "the-role-of-satellites-in-climate-monitoring",
+    "excerpt": "The Role of Satellites in Climate Monitoring — A concise exploration of practical takeaways and real-world applications.",
+    "category": "Blog",
+    "author": "MIROZA Editorial",
+    "date": "2025-02-13",
+    "link": "/blogs/the-role-of-satellites-in-climate-monitoring.html",
+    "image": "/assets/placeholder.jpg"
+  },
+  {
+    "id": 1764418621192,
+    "title": "Creative Writing Prompts to Unlock a Novel",
+    "slug": "creative-writing-prompts-to-unlock-a-novel",
+    "excerpt": "Creative Writing Prompts to Unlock a Novel — A concise exploration of practical takeaways and real-world applications.",
+    "category": "Blog",
+    "author": "MIROZA Editorial",
+    "date": "2025-02-10",
+    "link": "/blogs/creative-writing-prompts-to-unlock-a-novel.html",
+    "image": "/assets/placeholder.jpg"
+  },
+  {
+    "id": 1764418621750,
+    "title": "Starting a Side Hustle While Working Full Time",
+    "slug": "starting-a-side-hustle-while-working-full-time",
+    "excerpt": "Starting a Side Hustle While Working Full Time — A concise exploration of practical takeaways and real-world applications.",
+    "category": "Blog",
+    "author": "MIROZA Editorial",
+    "date": "2025-02-06",
+    "link": "/blogs/starting-a-side-hustle-while-working-full-time.html",
+    "image": "/assets/placeholder.jpg"
+  },
+  {
+    "id": 1764418620987,
+    "title": "Recovery Protocols for Amateur Athletes",
+    "slug": "recovery-protocols-for-amateur-athletes",
+    "excerpt": "Recovery Protocols for Amateur Athletes — A concise exploration of practical takeaways and real-world applications.",
+    "category": "Blog",
+    "author": "MIROZA Editorial",
+    "date": "2025-02-03",
+    "link": "/blogs/recovery-protocols-for-amateur-athletes.html",
+    "image": "/assets/placeholder.jpg"
+  },
+  {
+    "id": 1764418621540,
+    "title": "Minimalist Home Office Setup for Peak Focus",
+    "slug": "minimalist-home-office-setup-for-peak-focus",
+    "excerpt": "Minimalist Home Office Setup for Peak Focus — A concise exploration of practical takeaways and real-world applications.",
+    "category": "Blog",
+    "author": "MIROZA Editorial",
+    "date": "2025-01-30",
+    "link": "/blogs/minimalist-home-office-setup-for-peak-focus.html",
+    "image": "/assets/placeholder.jpg"
+  },
+  {
+    "id": 1764418620946,
+    "title": "Citizen Science: How Anyone Can Contribute to Research",
+    "slug": "citizen-science-how-anyone-can-contribute-to-research",
+    "excerpt": "Citizen Science: How Anyone Can Contribute to Research — A concise exploration of practical takeaways and real-world applications.",
+    "category": "Blog",
+    "author": "MIROZA Editorial",
+    "date": "2025-01-26",
+    "link": "/blogs/citizen-science-how-anyone-can-contribute-to-research.html",
+    "image": "/assets/placeholder.jpg"
+  },
+  {
+    "id": 1764418621452,
+    "title": "How to Build a Reading Habit That Sticks",
+    "slug": "how-to-build-a-reading-habit-that-sticks",
+    "excerpt": "How to Build a Reading Habit That Sticks — A concise exploration of practical takeaways and real-world applications.",
+    "category": "Blog",
+    "author": "MIROZA Editorial",
+    "date": "2025-01-23",
+    "link": "/blogs/how-to-build-a-reading-habit-that-sticks.html",
+    "image": "/assets/placeholder.jpg"
+  },
+  {
+    "id": 1764418620932,
+    "title": "Crypto Tax Basics for Casual Investors",
+    "slug": "crypto-tax-basics-for-casual-investors",
+    "excerpt": "Crypto Tax Basics for Casual Investors — A concise exploration of practical takeaways and real-world applications.",
+    "category": "Blog",
+    "author": "MIROZA Editorial",
+    "date": "2025-01-19",
+    "link": "/blogs/crypto-tax-basics-for-casual-investors.html",
+    "image": "/assets/placeholder.jpg"
+  },
+  {
+    "id": 1764418621398,
+    "title": "Fermentation at Home: Safety and Flavor Tips",
+    "slug": "fermentation-at-home-safety-and-flavor-tips",
+    "excerpt": "Fermentation at Home: Safety and Flavor Tips — A concise exploration of practical takeaways and real-world applications.",
+    "category": "Blog",
+    "author": "MIROZA Editorial",
+    "date": "2025-01-15",
+    "link": "/blogs/fermentation-at-home-safety-and-flavor-tips.html",
+    "image": "/assets/placeholder.jpg"
+  },
+  {
+    "id": 14,
     "title": "Global Markets Rally as Tech Stocks Surge",
     "slug": "global-markets-tech-surge",
-    "date": "2025-01-12",
-    "category": "World",
     "excerpt": "World markets experienced a strong upward surge today as major technology companies reported better-than-expected growth for Q4 2024.",
-    "image": "https://images.unsplash.com/photo-1559526324-593bc073d938?auto=format&fit=crop&w=1200&q=80",
+    "category": "World",
+    "author": "MIROZA News Desk",
+    "date": "2025-01-12",
+    "views": 2280,
     "link": "/articles/global-markets-tech-surge.html",
-    "contentFile": "/articles/global-markets-tech-surge.html"
+    "image": {
+      "src": "https://images.unsplash.com/photo-1559526324-593bc073d938?auto=format&fit=crop&w=800&q=80",
+      "srcset": "https://images.unsplash.com/photo-1559526324-593bc073d938?auto=format&fit=crop&w=400&q=80 400w, https://images.unsplash.com/photo-1559526324-593bc073d938?auto=format&fit=crop&w=800&q=80 800w, https://images.unsplash.com/photo-1559526324-593bc073d938?auto=format&fit=crop&w=1200&q=80 1200w",
+      "sizes": "(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px",
+      "alt": "Traders analyze market data on digital displays"
+    }
   },
   {
-    "title": "10 Morning Habits of Highly Successful People",
-    "slug": "morning-habits-successful-people",
-    "date": "2025-01-11",
-    "category": "Lifestyle",
-    "excerpt": "Success is not built overnight — it is crafted through daily discipline. Here are the top morning habits that shape high achievers.",
-    "image": "https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?auto=format&fit=crop&w=1200&q=80",
-    "link": "/articles/morning-habits-successful-people.html",
-    "contentFile": "/articles/morning-habits-successful-people.html"
+    "id": 17,
+    "title": "AI-Powered Medical Scanner Detects Diseases in Seconds",
+    "slug": "ai-medical-scanner",
+    "excerpt": "A new AI-powered scanning device is capable of identifying early-stage diseases with near-instant precision.",
+    "category": "Health",
+    "author": "MIROZA Health Team",
+    "date": "2025-01-12",
+    "views": 1760,
+    "link": "/articles/ai-medical-scanner.html",
+    "image": {
+      "src": "https://images.unsplash.com/photo-1581091012184-5c17f1e5eabf?auto=format&fit=crop&w=800&q=80",
+      "srcset": "https://images.unsplash.com/photo-1581091012184-5c17f1e5eabf?auto=format&fit=crop&w=400&q=80 400w, https://images.unsplash.com/photo-1581091012184-5c17f1e5eabf?auto=format&fit=crop&w=800&q=80 800w, https://images.unsplash.com/photo-1581091012184-5c17f1e5eabf?auto=format&fit=crop&w=1200&q=80 1200w",
+      "sizes": "(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px",
+      "alt": "Advanced medical scanner in a clinical lab"
+    }
   },
   {
+    "id": 24,
+    "title": "Why 2025 Is Becoming the Golden Year of Artificial Intelligence",
+    "slug": "2025-golden-year-of-ai",
+    "excerpt": "Artificial Intelligence is reaching a historical turning point in 2025, reshaping industries like healthcare, finance, and manufacturing.",
+    "category": "Technology",
+    "author": "MIROZA Editorial",
+    "date": "2025-01-12",
+    "views": 1500,
+    "link": "/articles/2025-golden-year-of-ai.html",
+    "keywords": "AI 2025, machine learning, future technology, automation",
+    "image": {
+      "src": "https://images.unsplash.com/photo-1508385082359-f38ae991e8f2?auto=format&fit=crop&w=800&q=80",
+      "srcset": "https://images.unsplash.com/photo-1508385082359-f38ae991e8f2?auto=format&fit=crop&w=400&q=80 400w, https://images.unsplash.com/photo-1508385082359-f38ae991e8f2?auto=format&fit=crop&w=800&q=80 800w, https://images.unsplash.com/photo-1508385082359-f38ae991e8f2?auto=format&fit=crop&w=1200&q=80 1200w",
+      "sizes": "(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px",
+      "alt": "Robotic hand reaching toward a glowing neural interface"
+    }
+  },
+  {
+    "id": 27,
+    "title": "How to Build a Strong Personal Brand in 2025",
+    "slug": "build-personal-brand-2025",
+    "excerpt": "A powerful personal brand sets you apart from the noise. Here’s how to build influence in the modern digital landscape.",
+    "category": "Career",
+    "author": "MIROZA Career Hub",
+    "date": "2025-01-12",
+    "views": 1680,
+    "link": "/articles/build-personal-brand-2025.html",
+    "keywords": "personal branding, career growth, digital identity",
+    "image": {
+      "src": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=800&q=80",
+      "srcset": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=400&q=80 400w, https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=800&q=80 800w, https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80 1200w",
+      "sizes": "(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px",
+      "alt": "Professional presenting ideas on a glass wall during a workshop"
+    }
+  },
+  {
+    "id": 1764418621746,
+    "title": "Underrated European Destinations for 2026",
+    "slug": "underrated-european-destinations-for-2026",
+    "excerpt": "Underrated European Destinations for 2026 — A concise exploration of practical takeaways and real-world applications.",
+    "category": "Blog",
+    "author": "MIROZA Editorial",
+    "date": "2025-01-12",
+    "link": "/blogs/underrated-european-destinations-for-2026.html",
+    "image": "/assets/placeholder.jpg"
+  },
+  {
+    "id": 15,
     "title": "UN Confirms New Climate Accord Signed by 194 Nations",
     "slug": "un-new-climate-accord",
-    "date": "2025-01-11",
-    "category": "World",
     "excerpt": "A historic new climate accord has been signed, uniting 194 nations in a coordinated effort to reduce global carbon emissions.",
-    "image": "https://images.unsplash.com/photo-1502303756788-0e6a56f68e96?auto=format&fit=crop&w=1200&q=80",
+    "category": "World",
+    "author": "MIROZA International",
+    "date": "2025-01-11",
+    "views": 2155,
     "link": "/articles/un-new-climate-accord.html",
-    "contentFile": "/articles/un-new-climate-accord.html"
+    "image": {
+      "src": "https://images.unsplash.com/photo-1502303756788-0e6a56f68e96?auto=format&fit=crop&w=800&q=80",
+      "srcset": "https://images.unsplash.com/photo-1502303756788-0e6a56f68e96?auto=format&fit=crop&w=400&q=80 400w, https://images.unsplash.com/photo-1502303756788-0e6a56f68e96?auto=format&fit=crop&w=800&q=80 800w, https://images.unsplash.com/photo-1502303756788-0e6a56f68e96?auto=format&fit=crop&w=1200&q=80 1200w",
+      "sizes": "(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px",
+      "alt": "Delegates applaud during an international summit"
+    }
   },
   {
+    "id": 25,
+    "title": "10 Morning Habits of Highly Successful People",
+    "slug": "morning-habits-successful-people",
+    "excerpt": "Success is not built overnight — it is crafted through daily discipline. Here are the top morning habits that shape high achievers.",
+    "category": "Lifestyle",
+    "author": "MIROZA Life",
+    "date": "2025-01-11",
+    "views": 1560,
+    "link": "/articles/morning-habits-successful-people.html",
+    "keywords": "morning habits, productivity, lifestyle improvement",
+    "image": {
+      "src": "https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?auto=format&fit=crop&w=800&q=80",
+      "srcset": "https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?auto=format&fit=crop&w=400&q=80 400w, https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?auto=format&fit=crop&w=800&q=80 800w, https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?auto=format&fit=crop&w=1200&q=80 1200w",
+      "sizes": "(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px",
+      "alt": "Sunlight pouring over a breakfast table with a journal and coffee"
+    }
+  },
+  {
+    "id": 16,
     "title": "Major Breakthrough Achieved in Fusion Energy Reactor",
     "slug": "fusion-reactor-breakthrough",
-    "date": "2025-01-10",
-    "category": "Science",
     "excerpt": "Scientists achieved a new milestone in fusion energy production, surpassing global expectations.",
-    "image": "https://images.unsplash.com/photo-1526406915894-6a7a5e66f7e3?auto=format&fit=crop&w=1200&q=80",
+    "category": "Science",
+    "author": "MIROZA Science Bureau",
+    "date": "2025-01-10",
+    "views": 1890,
     "link": "/articles/fusion-reactor-breakthrough.html",
-    "contentFile": "/articles/fusion-reactor-breakthrough.html"
+    "image": {
+      "src": "https://images.unsplash.com/photo-1526406915894-6a7a5e66f7e3?auto=format&fit=crop&w=800&q=80",
+      "srcset": "https://images.unsplash.com/photo-1526406915894-6a7a5e66f7e3?auto=format&fit=crop&w=400&q=80 400w, https://images.unsplash.com/photo-1526406915894-6a7a5e66f7e3?auto=format&fit=crop&w=800&q=80 800w, https://images.unsplash.com/photo-1526406915894-6a7a5e66f7e3?auto=format&fit=crop&w=1200&q=80 1200w",
+      "sizes": "(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px",
+      "alt": "Fusion reactor interior illuminated in blue"
+    }
   },
   {
+    "id": 26,
     "title": "The Future of Electric Cars: What to Expect by 2030",
     "slug": "future-of-electric-cars-2030",
-    "date": "2025-01-10",
-    "category": "Automobiles",
     "excerpt": "Electric cars are entering their exponential growth phase, driven by technology, sustainability, and global policies.",
-    "image": "https://images.unsplash.com/photo-1549921296-3c8b5b7a6450?auto=format&fit=crop&w=1200&q=80",
+    "category": "Automobiles",
+    "author": "MIROZA Auto",
+    "date": "2025-01-10",
+    "views": 1620,
     "link": "/articles/future-of-electric-cars-2030.html",
-    "contentFile": "/articles/future-of-electric-cars-2030.html"
+    "keywords": "electric cars 2030, EV future, sustainable transport",
+    "image": {
+      "src": "https://images.unsplash.com/photo-1549921296-3c8b5b7a6450?auto=format&fit=crop&w=800&q=80",
+      "srcset": "https://images.unsplash.com/photo-1549921296-3c8b5b7a6450?auto=format&fit=crop&w=400&q=80 400w, https://images.unsplash.com/photo-1549921296-3c8b5b7a6450?auto=format&fit=crop&w=800&q=80 800w, https://images.unsplash.com/photo-1549921296-3c8b5b7a6450?auto=format&fit=crop&w=1200&q=80 1200w",
+      "sizes": "(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px",
+      "alt": "Futuristic electric car charging at night under neon lights"
+    }
   },
   {
+    "id": 18,
     "title": "Astronomers Discover Earth-Sized Exoplanet in Goldilocks Zone",
     "slug": "earth-sized-exoplanet-discovered",
-    "date": "2025-01-09",
-    "category": "Space",
     "excerpt": "Astronomers have discovered an Earth-sized planet orbiting within the habitable zone of a nearby star.",
-    "image": "https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?auto=format&fit=crop&w=1200&q=80",
+    "category": "Space",
+    "author": "MIROZA Space Research",
+    "date": "2025-01-09",
+    "views": 1685,
     "link": "/articles/earth-sized-exoplanet-discovered.html",
-    "contentFile": "/articles/earth-sized-exoplanet-discovered.html"
+    "image": {
+      "src": "https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?auto=format&fit=crop&w=800&q=80",
+      "srcset": "https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?auto=format&fit=crop&w=400&q=80 400w, https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?auto=format&fit=crop&w=800&q=80 800w, https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?auto=format&fit=crop&w=1200&q=80 1200w",
+      "sizes": "(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px",
+      "alt": "Illustration of a distant exoplanet against stars"
+    }
   },
   {
+    "id": 28,
     "title": "Top 15 Travel Destinations You Must Visit in 2025",
     "slug": "top-travel-destinations-2025",
-    "date": "2025-01-09",
+    "excerpt": "From crystal beaches to futuristic cities — 2025 brings an unforgettable travel list.",
     "category": "Travel",
-    "excerpt": "From crystal beaches to futuristic cities ₹2025 brings an unforgettable travel list.",
-    "image": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80",
+    "author": "MIROZA Travel Desk",
+    "date": "2025-01-09",
+    "views": 1740,
     "link": "/articles/top-travel-destinations-2025.html",
-    "contentFile": "/articles/top-travel-destinations-2025.html"
+    "keywords": "travel 2025, holiday destinations, tourism",
+    "image": {
+      "src": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=80",
+      "srcset": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=400&q=80 400w, https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=80 800w, https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80 1200w",
+      "sizes": "(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px",
+      "alt": "Traveler overlooking a tropical cliffside ocean view"
+    }
   },
   {
+    "id": 8,
+    "title": "Newsletter Strategy: Measuring Real Engagement",
+    "slug": "newsletter-strategy-engagement",
+    "excerpt": "Metrics and approaches for meaningful subscriber retention.",
+    "category": "Blog",
+    "author": "Growth Team",
+    "date": "2025-01-08",
+    "views": 560,
+    "image": {
+      "src": "/assets/images/posts/newsletter-growth-800.svg",
+      "srcset": "/assets/images/posts/newsletter-growth-400.svg 400w, /assets/images/posts/newsletter-growth-800.svg 800w, /assets/images/posts/newsletter-growth-1200.svg 1200w",
+      "sizes": "(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px",
+      "alt": "Newsletter analytics board"
+    },
+    "link": "/articles/newsletter-strategy-engagement.html"
+  },
+  {
+    "id": 19,
     "title": "Global Food Prices Stabilize After Five Months of Volatility",
     "slug": "global-food-prices-stabilize",
-    "date": "2025-01-08",
-    "category": "Economy",
     "excerpt": "International food markets show signs of stability after five months of unpredictable price surges.",
-    "image": "https://images.unsplash.com/photo-1506806732259-39c2d0268443?auto=format&fit=crop&w=1200&q=80",
+    "category": "Economy",
+    "author": "MIROZA Economic Desk",
+    "date": "2025-01-08",
+    "views": 1595,
     "link": "/articles/global-food-prices-stabilize.html",
-    "contentFile": "/articles/global-food-prices-stabilize.html"
+    "image": {
+      "src": "https://images.unsplash.com/photo-1506806732259-39c2d0268443?auto=format&fit=crop&w=800&q=80",
+      "srcset": "https://images.unsplash.com/photo-1506806732259-39c2d0268443?auto=format&fit=crop&w=400&q=80 400w, https://images.unsplash.com/photo-1506806732259-39c2d0268443?auto=format&fit=crop&w=800&q=80 800w, https://images.unsplash.com/photo-1506806732259-39c2d0268443?auto=format&fit=crop&w=1200&q=80 1200w",
+      "sizes": "(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px",
+      "alt": "Fresh produce displayed in a busy market"
+    }
   },
   {
+    "id": 29,
     "title": "How to Master Personal Finance in Your 20s",
     "slug": "master-personal-finance-20s",
-    "date": "2025-01-08",
-    "category": "Finance",
     "excerpt": "Your 20s define your financial future — learning money skills early pays lifelong dividends.",
-    "image": "https://images.unsplash.com/photo-1580519542036-c47de6196ba5?auto=format&fit=crop&w=1200&q=80",
+    "category": "Finance",
+    "author": "MIROZA Money",
+    "date": "2025-01-08",
+    "views": 1800,
     "link": "/articles/master-personal-finance-20s.html",
-    "contentFile": "/articles/master-personal-finance-20s.html"
+    "keywords": "finance tips, budgeting, savings strategy",
+    "image": {
+      "src": "https://images.unsplash.com/photo-1580519542036-c47de6196ba5?auto=format&fit=crop&w=800&q=80",
+      "srcset": "https://images.unsplash.com/photo-1580519542036-c47de6196ba5?auto=format&fit=crop&w=400&q=80 400w, https://images.unsplash.com/photo-1580519542036-c47de6196ba5?auto=format&fit=crop&w=800&q=80 800w, https://images.unsplash.com/photo-1580519542036-c47de6196ba5?auto=format&fit=crop&w=1200&q=80 1200w",
+      "sizes": "(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px",
+      "alt": "Young professional reviewing budgets on a laptop"
+    }
   },
   {
+    "id": 1764418621366,
+    "title": "The Future of Remote Education Platforms",
+    "slug": "the-future-of-remote-education-platforms",
+    "excerpt": "The Future of Remote Education Platforms — A concise exploration of practical takeaways and real-world applications.",
+    "category": "Blog",
+    "author": "MIROZA Editorial",
+    "date": "2025-01-08",
+    "link": "/blogs/the-future-of-remote-education-platforms.html",
+    "image": "/assets/placeholder.jpg"
+  },
+  {
+    "id": 7,
+    "title": "Security Headers: Practical Defaults",
+    "slug": "security-headers-practical-defaults",
+    "excerpt": "A review of headers balancing protection with maintainability.",
+    "category": "Article",
+    "author": "Security Analyst",
+    "date": "2025-01-07",
+    "views": 640,
+    "image": {
+      "src": "/assets/images/posts/security-headers-800.svg",
+      "srcset": "/assets/images/posts/security-headers-400.svg 400w, /assets/images/posts/security-headers-800.svg 800w, /assets/images/posts/security-headers-1200.svg 1200w",
+      "sizes": "(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px",
+      "alt": "Security shield illustration"
+    },
+    "link": "/articles/security-headers-practical-defaults.html"
+  },
+  {
+    "id": 20,
     "title": "Breakthrough Drone Network Begins Delivering Medicines in Rural Areas",
     "slug": "drone-delivery-medicine",
-    "date": "2025-01-07",
-    "category": "Technology",
     "excerpt": "A fully-autonomous drone network has begun delivering essential medicines to remote villages.",
-    "image": "https://images.unsplash.com/photo-1587502536263-5df8f8a262b9?auto=format&fit=crop&w=1200&q=80",
+    "category": "Technology",
+    "author": "MIROZA Tech Watch",
+    "date": "2025-01-07",
+    "views": 1520,
     "link": "/articles/drone-delivery-medicine.html",
-    "contentFile": "/articles/drone-delivery-medicine.html"
+    "image": {
+      "src": "https://images.unsplash.com/photo-1587502536263-5df8f8a262b9?auto=format&fit=crop&w=800&q=80",
+      "srcset": "https://images.unsplash.com/photo-1587502536263-5df8f8a262b9?auto=format&fit=crop&w=400&q=80 400w, https://images.unsplash.com/photo-1587502536263-5df8f8a262b9?auto=format&fit=crop&w=800&q=80 800w, https://images.unsplash.com/photo-1587502536263-5df8f8a262b9?auto=format&fit=crop&w=1200&q=80 1200w",
+      "sizes": "(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px",
+      "alt": "Medical delivery drone preparing for flight"
+    }
   },
   {
+    "id": 30,
     "title": "The Rise of Remote Work: What Has Changed Forever?",
     "slug": "rise-of-remote-work-2025",
-    "date": "2025-01-07",
-    "category": "Business",
     "excerpt": "Remote work is no longer a trend — it is the new professional standard.",
-    "image": "https://images.unsplash.com/photo-1593642532973-d31b6557fa68?auto=format&fit=crop&w=1200&q=80",
+    "category": "Business",
+    "author": "MIROZA Business",
+    "date": "2025-01-07",
+    "views": 1860,
     "link": "/articles/rise-of-remote-work-2025.html",
-    "contentFile": "/articles/rise-of-remote-work-2025.html"
+    "keywords": "remote work, future of work, business transformation",
+    "image": {
+      "src": "https://images.unsplash.com/photo-1593642532973-d31b6557fa68?auto=format&fit=crop&w=800&q=80",
+      "srcset": "https://images.unsplash.com/photo-1593642532973-d31b6557fa68?auto=format&fit=crop&w=400&q=80 400w, https://images.unsplash.com/photo-1593642532973-d31b6557fa68?auto=format&fit=crop&w=800&q=80 800w, https://images.unsplash.com/photo-1593642532973-d31b6557fa68?auto=format&fit=crop&w=1200&q=80 1200w",
+      "sizes": "(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px",
+      "alt": "Open laptop on a remote worker’s minimalist desk setup"
+    }
   },
   {
-    "title": "Battery Tech Breakthrough Extends EV Range by 40%",
-    "slug": "battery-tech-breakthrough",
+    "id": 6,
+    "title": "Designing Robust Offline Experiences",
+    "slug": "robust-offline-experiences",
+    "excerpt": "Patterns for resilient functionality when the network degrades.",
+    "category": "Article",
+    "author": "UX Research",
     "date": "2025-01-06",
-    "category": "Technology",
-    "excerpt": "Solid-state cells leveraging silicon-dominant anodes promise longer EV range and faster charging for commercial fleets.",
-    "image": "https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1200&q=80",
-    "link": "/articles/battery-tech-breakthrough.html",
-    "contentFile": "/articles/battery-tech-breakthrough.html"
+    "views": 810,
+    "image": {
+      "src": "/assets/images/posts/offline-grid-800.svg",
+      "srcset": "/assets/images/posts/offline-grid-400.svg 400w, /assets/images/posts/offline-grid-800.svg 800w, /assets/images/posts/offline-grid-1200.svg 1200w",
+      "sizes": "(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px",
+      "alt": "Offline mesh nodes connected"
+    },
+    "link": "/articles/robust-offline-experiences.html"
   },
   {
-    "title": "How Blockchain Is Changing Global Banking",
-    "slug": "blockchain-global-banking",
-    "date": "2025-01-06",
-    "category": "Technology",
-    "excerpt": "Blockchain–larr;‚¬—„¢s potential goes far beyond cryptocurrency.",
-    "image": "https://images.unsplash.com/photo-1518546305927-5a555bb7020e?auto=format&fit=crop&w=1200&q=80",
-    "link": "/articles/blockchain-global-banking.html",
-    "contentFile": "/articles/blockchain-global-banking.html"
-  },
-  {
-    "title": "Cybersecurity Shield 2025 Protects Global Infrastructure",
-    "slug": "cybersecurity-shield-2025",
-    "date": "2025-01-06",
-    "category": "Security",
-    "excerpt": "A new international defense framework coordinates AI-driven monitoring systems to protect critical infrastructure in 45 countries.",
-    "image": "https://images.unsplash.com/photo-1510511459019-5dda7724fd87?auto=format&fit=crop&w=1200&q=80",
-    "link": "/articles/cybersecurity-shield-2025.html",
-    "contentFile": "/articles/cybersecurity-shield-2025.html"
-  },
-  {
-    "title": "The Science Behind Better Sleep: 2025 Update",
-    "slug": "science-behind-better-sleep",
-    "date": "2025-01-06",
-    "category": "Health",
-    "excerpt": "Better sleep equals better life. Modern research reveals new insights.",
-    "image": "https://images.unsplash.com/photo-1542332213-8e94d0e53a28?auto=format&fit=crop&w=1200&q=80",
-    "link": "/articles/science-behind-better-sleep.html",
-    "contentFile": "/articles/science-behind-better-sleep.html"
-  },
-  {
+    "id": 21,
     "title": "Record-Breaking Winter Storm Sweeps Across Northern Hemisphere",
     "slug": "winter-storm-record-2025",
-    "date": "2025-01-06",
-    "category": "Weather",
     "excerpt": "A massive winter storm has shattered temperature and snowfall records across the Northern Hemisphere.",
-    "image": "https://images.unsplash.com/photo-1608889175120-2445da84aab0?auto=format&fit=crop&w=1200&q=80",
+    "category": "Weather",
+    "author": "MIROZA Climate Desk",
+    "date": "2025-01-06",
+    "views": 1705,
     "link": "/articles/winter-storm-record-2025.html",
-    "contentFile": "/articles/winter-storm-record-2025.html"
+    "image": {
+      "src": "https://images.unsplash.com/photo-1608889175120-2445da84aab0?auto=format&fit=crop&w=800&q=80",
+      "srcset": "https://images.unsplash.com/photo-1608889175120-2445da84aab0?auto=format&fit=crop&w=400&q=80 400w, https://images.unsplash.com/photo-1608889175120-2445da84aab0?auto=format&fit=crop&w=800&q=80 800w, https://images.unsplash.com/photo-1608889175120-2445da84aab0?auto=format&fit=crop&w=1200&q=80 1200w",
+      "sizes": "(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px",
+      "alt": "Snow-covered trees during a blizzard"
+    }
   },
   {
+    "id": 31,
+    "title": "The Science Behind Better Sleep: 2025 Update",
+    "slug": "science-behind-better-sleep",
+    "excerpt": "Better sleep equals better life. Modern research reveals new insights.",
+    "category": "Health",
+    "author": "MIROZA Health",
+    "date": "2025-01-06",
+    "views": 1920,
+    "link": "/articles/science-behind-better-sleep.html",
+    "keywords": "sleep science, health tips, well-being",
+    "image": {
+      "src": "https://images.unsplash.com/photo-1542332213-8e94d0e53a28?auto=format&fit=crop&w=800&q=80",
+      "srcset": "https://images.unsplash.com/photo-1542332213-8e94d0e53a28?auto=format&fit=crop&w=400&q=80 400w, https://images.unsplash.com/photo-1542332213-8e94d0e53a28?auto=format&fit=crop&w=800&q=80 800w, https://images.unsplash.com/photo-1542332213-8e94d0e53a28?auto=format&fit=crop&w=1200&q=80 1200w",
+      "sizes": "(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px",
+      "alt": "Peaceful bedroom with soft lighting and plants"
+    }
+  },
+  {
+    "id": 32,
+    "title": "How Blockchain Is Changing Global Banking",
+    "slug": "blockchain-global-banking",
+    "excerpt": "Blockchain’s potential goes far beyond cryptocurrency.",
+    "category": "Technology",
+    "author": "MIROZA Tech",
+    "date": "2025-01-06",
+    "views": 1980,
+    "link": "/articles/blockchain-global-banking.html",
+    "keywords": "blockchain banking, fintech, crypto",
+    "image": {
+      "src": "https://images.unsplash.com/photo-1518546305927-5a555bb7020e?auto=format&fit=crop&w=800&q=80",
+      "srcset": "https://images.unsplash.com/photo-1518546305927-5a555bb7020e?auto=format&fit=crop&w=400&q=80 400w, https://images.unsplash.com/photo-1518546305927-5a555bb7020e?auto=format&fit=crop&w=800&q=80 800w, https://images.unsplash.com/photo-1518546305927-5a555bb7020e?auto=format&fit=crop&w=1200&q=80 1200w",
+      "sizes": "(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px",
+      "alt": "Abstract blockchain network rendered in blue light"
+    }
+  },
+  {
+    "id": 5,
     "title": "Edge Caching Strategies for Content Platforms",
     "slug": "edge-caching-strategies",
-    "date": "2025-01-05",
-    "category": "Articles",
     "excerpt": "Reducing latency through optimized distribution and smart invalidation.",
-    "image": "https://miroza.online/assets/images/posts/edge-cache-1200.svg",
-    "link": "/articles/edge-caching-strategies.html",
-    "contentFile": "/articles/edge-caching-strategies.html"
+    "category": "Article",
+    "author": "Performance Lab",
+    "date": "2025-01-05",
+    "views": 870,
+    "image": {
+      "src": "/assets/images/posts/edge-cache-800.svg",
+      "srcset": "/assets/images/posts/edge-cache-400.svg 400w, /assets/images/posts/edge-cache-800.svg 800w, /assets/images/posts/edge-cache-1200.svg 1200w",
+      "sizes": "(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px",
+      "alt": "Edge cache network visualization"
+    },
+    "link": "/articles/edge-caching-strategies.html"
   },
   {
+    "id": 22,
+    "title": "New Cybersecurity Shield Launched to Protect Global Infrastructure",
+    "slug": "cybersecurity-shield-2025",
+    "excerpt": "A next-generation cybersecurity system aims to safeguard critical infrastructure from advanced threats.",
+    "category": "Security",
+    "author": "MIROZA Security Bureau",
+    "date": "2025-01-05",
+    "views": 1610,
+    "link": "/articles/cybersecurity-shield-2025.html",
+    "image": {
+      "src": "https://images.unsplash.com/photo-1550376029-d79a3f9e6984?auto=format&fit=crop&w=800&q=80",
+      "srcset": "https://images.unsplash.com/photo-1550376029-d79a3f9e6984?auto=format&fit=crop&w=400&q=80 400w, https://images.unsplash.com/photo-1550376029-d79a3f9e6984?auto=format&fit=crop&w=800&q=80 800w, https://images.unsplash.com/photo-1550376029-d79a3f9e6984?auto=format&fit=crop&w=1200&q=80 1200w",
+      "sizes": "(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px",
+      "alt": "Cybersecurity professional monitoring data feeds"
+    }
+  },
+  {
+    "id": 33,
     "title": "Simple Ways to Improve Mental Health in Busy Life",
     "slug": "improve-mental-health-tips",
-    "date": "2025-01-05",
-    "category": "Health",
     "excerpt": "Your mental health matters. Small daily actions create powerful changes.",
-    "image": "https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?auto=format&fit=crop&w=1200&q=80",
+    "category": "Health",
+    "author": "MIROZA Wellness",
+    "date": "2025-01-05",
+    "views": 2040,
     "link": "/articles/improve-mental-health-tips.html",
-    "contentFile": "/articles/improve-mental-health-tips.html"
+    "keywords": "mental health, stress management",
+    "image": {
+      "src": "https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?auto=format&fit=crop&w=800&q=80",
+      "srcset": "https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?auto=format&fit=crop&w=400&q=80 400w, https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?auto=format&fit=crop&w=800&q=80 800w, https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?auto=format&fit=crop&w=1200&q=80 1200w",
+      "sizes": "(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px",
+      "alt": "Calm woman meditating near a sunlit window"
+    }
   },
   {
+    "id": 4,
     "title": "Accessible Color Systems That Scale",
     "slug": "accessible-color-systems",
-    "date": "2025-01-04",
-    "category": "Blog",
     "excerpt": "Building a palette that satisfies contrast while enabling brand expression.",
-    "image": "https://miroza.online/assets/images/posts/accessible-palette-1200.svg",
-    "link": "/articles/accessible-color-systems.html",
-    "contentFile": "/articles/accessible-color-systems.html"
+    "category": "Blog",
+    "author": "Design Desk",
+    "date": "2025-01-04",
+    "views": 650,
+    "image": {
+      "src": "/assets/images/posts/accessible-palette-800.svg",
+      "srcset": "/assets/images/posts/accessible-palette-400.svg 400w, /assets/images/posts/accessible-palette-800.svg 800w, /assets/images/posts/accessible-palette-1200.svg 1200w",
+      "sizes": "(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px",
+      "alt": "Contrasting accessible color swatches"
+    },
+    "link": "/articles/accessible-color-systems.html"
   },
   {
+    "id": 23,
+    "title": "Breakthrough in Battery Tech Promises 4× Faster Charging",
+    "slug": "battery-tech-breakthrough",
+    "excerpt": "A new battery technology delivers up to four times faster charging with double the lifespan.",
+    "category": "Technology",
+    "author": "MIROZA Tech Research",
+    "date": "2025-01-04",
+    "views": 1580,
+    "link": "/articles/battery-tech-breakthrough.html",
+    "image": {
+      "src": "https://images.unsplash.com/photo-1581091012184-5c17f1e5eabf?auto=format&fit=crop&w=800&q=80",
+      "srcset": "https://images.unsplash.com/photo-1581091012184-5c17f1e5eabf?auto=format&fit=crop&w=400&q=80 400w, https://images.unsplash.com/photo-1581091012184-5c17f1e5eabf?auto=format&fit=crop&w=800&q=80 800w, https://images.unsplash.com/photo-1581091012184-5c17f1e5eabf?auto=format&fit=crop&w=1200&q=80 1200w",
+      "sizes": "(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px",
+      "alt": "Engineer testing next-generation battery cells"
+    }
+  },
+  {
+    "id": 34,
     "title": "The Future of Smartphones: Foldable Tech and Beyond",
     "slug": "future-smartphones-foldable-tech",
-    "date": "2025-01-04",
-    "category": "Technology",
     "excerpt": "2025 marks a new era for smartphone innovation.",
-    "image": "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=1200&q=80",
+    "category": "Technology",
+    "author": "MIROZA Tech Lab",
+    "date": "2025-01-04",
+    "views": 2100,
     "link": "/articles/future-smartphones-foldable-tech.html",
-    "contentFile": "/articles/future-smartphones-foldable-tech.html"
+    "keywords": "smartphones, foldable phones, mobile tech",
+    "image": {
+      "src": "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=800&q=80",
+      "srcset": "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=400&q=80 400w, https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=800&q=80 800w, https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=1200&q=80 1200w",
+      "sizes": "(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px",
+      "alt": "Foldable smartphone glowing on a futuristic table"
+    }
   },
   {
+    "id": 1764418620929,
+    "title": "Mindful Running: Techniques for Sustainable Endurance",
+    "slug": "mindful-running-techniques-for-sustainable-endurance",
+    "excerpt": "Mindful Running: Techniques for Sustainable Endurance — A concise exploration of practical takeaways and real-world applications.",
+    "category": "Blog",
+    "author": "MIROZA Editorial",
+    "date": "2025-01-04",
+    "link": "/blogs/mindful-running-techniques-for-sustainable-endurance.html",
+    "image": "/assets/placeholder.jpg"
+  },
+  {
+    "id": 3,
     "title": "Developer Productivity Hacks for Focus",
     "slug": "developer-productivity-hacks",
-    "date": "2025-01-03",
-    "category": "Blog",
     "excerpt": "Lightweight techniques to reduce cognitive load and stay in flow.",
-    "image": "https://miroza.online/assets/images/posts/focus-hacks-1200.svg",
-    "link": "/articles/developer-productivity-hacks.html",
-    "contentFile": "/articles/developer-productivity-hacks.html"
+    "category": "Blog",
+    "author": "Editorial Team",
+    "date": "2025-01-03",
+    "views": 730,
+    "image": {
+      "src": "/assets/images/posts/focus-hacks-800.svg",
+      "srcset": "/assets/images/posts/focus-hacks-400.svg 400w, /assets/images/posts/focus-hacks-800.svg 800w, /assets/images/posts/focus-hacks-1200.svg 1200w",
+      "sizes": "(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px",
+      "alt": "Illustration of deep work focus bubbles"
+    },
+    "link": "/articles/developer-productivity-hacks.html"
   },
   {
+    "id": 35,
     "title": "Minimalism: Living Better With Less",
     "slug": "minimalism-living-better-with-less",
-    "date": "2025-01-03",
+    "excerpt": "Minimalism is more than aesthetics — it’s a lifestyle revolution.",
     "category": "Lifestyle",
-    "excerpt": "Minimalism is more than aesthetics — it–larr;‚¬—„¢s a lifestyle revolution.",
-    "image": "https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&w=1200&q=80",
-    "link": "/articles/minimalism-living-better-with-less.html",
-    "contentFile": "/articles/minimalism-living-better-with-less.html"
-  },
-  {
-    "title": "How to Start Investing in 2025: A Beginner",
-    "slug": "start-investing-2025",
+    "author": "MIROZA Life",
     "date": "2025-01-03",
-    "category": "Finance",
+    "views": 2160,
+    "link": "/articles/minimalism-living-better-with-less.html",
+    "keywords": "minimalism lifestyle, declutter, simple living",
+    "image": {
+      "src": "https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&w=800&q=80",
+      "srcset": "https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&w=400&q=80 400w, https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&w=800&q=80 800w, https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&w=1200&q=80 1200w",
+      "sizes": "(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px",
+      "alt": "Minimal living room with clean lines and natural light"
+    }
+  },
+  {
+    "id": 36,
+    "title": "How to Start Investing in 2025: A Beginner’s Guide",
+    "slug": "start-investing-2025",
     "excerpt": "Investing early builds long-term wealth. Here's a simple guide.",
-    "image": "https://images.unsplash.com/photo-1553729459-efe14ef6055d?auto=format&fit=crop&w=1200&q=80",
+    "category": "Finance",
+    "author": "MIROZA Finance",
+    "date": "2025-01-03",
+    "views": 2220,
     "link": "/articles/start-investing-2025.html",
-    "contentFile": "/articles/start-investing-2025.html"
+    "keywords": "investing 2025, beginner finance, stock market",
+    "image": {
+      "src": "https://images.unsplash.com/photo-1553729459-efe14ef6055d?auto=format&fit=crop&w=800&q=80",
+      "srcset": "https://images.unsplash.com/photo-1553729459-efe14ef6055d?auto=format&fit=crop&w=400&q=80 400w, https://images.unsplash.com/photo-1553729459-efe14ef6055d?auto=format&fit=crop&w=800&q=80 800w, https://images.unsplash.com/photo-1553729459-efe14ef6055d?auto=format&fit=crop&w=1200&q=80 1200w",
+      "sizes": "(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px",
+      "alt": "Investor reviewing stock charts on a tablet"
+    }
   },
   {
-    "title": "How",
-    "slug": "article-1",
-    "date": "2025-01-02",
-    "category": "Articles",
-    "excerpt": "An overview of— MIROZA's architecture for delivering fast, accessible, and secure content.",
-    "image": "https://miroza.online/assets/images/posts/edge-cache-1200.svg",
-    "link": "/articles/article-1.html",
-    "contentFile": "/articles/article-1.html"
-  },
-  {
-    "title": "How Green Hydrogen Is Transforming Clean Energy",
-    "slug": "green-hydrogen-clean-energy",
-    "date": "2025-01-02",
-    "category": "Energy",
-    "excerpt": "Green hydrogen is emerging as a top clean-energy solution.",
-    "image": "https://images.unsplash.com/photo-1526401485004-2fda9f7f6f59?auto=format&fit=crop&w=1200&q=80",
-    "link": "/articles/green-hydrogen-clean-energy.html",
-    "contentFile": "/articles/green-hydrogen-clean-energy.html"
-  },
-  {
-    "title": "Why Reading Books Is the Ultimate Superpower",
-    "slug": "reading-books-superpower",
-    "date": "2025-01-02",
-    "category": "Education",
-    "excerpt": "Reading strengthens the mind like nothing else.",
-    "image": "https://images.unsplash.com/photo-1495446815901-a7297e633e8d?auto=format&fit=crop&w=1200&q=80",
-    "link": "/articles/reading-books-superpower.html",
-    "contentFile": "/articles/reading-books-superpower.html"
-  },
-  {
+    "id": 2,
     "title": "Weekly Roundup: Trends Shaping 2025",
     "slug": "weekly-roundup-2025",
-    "date": "2025-01-02",
-    "category": "News",
     "excerpt": "A curated selection of developments across tech, society, and design.",
-    "image": "https://miroza.online/assets/images/posts/weekly-intel-1200.svg",
-    "link": "/articles/weekly-roundup-2025.html",
-    "contentFile": "/articles/weekly-roundup-2025.html"
+    "category": "News",
+    "author": "Staff Writer",
+    "date": "2025-01-02",
+    "views": 980,
+    "image": {
+      "src": "/assets/images/posts/weekly-intel-800.svg",
+      "srcset": "/assets/images/posts/weekly-intel-400.svg 400w, /assets/images/posts/weekly-intel-800.svg 800w, /assets/images/posts/weekly-intel-1200.svg 1200w",
+      "sizes": "(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px",
+      "alt": "Weekly briefing cards with highlights"
+    },
+    "link": "/articles/weekly-roundup-2025.html"
   },
   {
-    "title": "The Rise of Digital Nomads in 2025",
-    "slug": "digital-nomads-rise-2025",
-    "date": "2025-01-01",
-    "category": "Lifestyle",
-    "excerpt": "More people than ever are choosing a location-independent life.",
-    "image": "https://images.unsplash.com/photo-1506784365847-bbad939e9335?auto=format&fit=crop&w=1200&q=80",
-    "link": "/articles/digital-nomads-rise-2025.html",
-    "contentFile": "/articles/digital-nomads-rise-2025.html"
+    "id": 37,
+    "title": "Why Reading Books Is the Ultimate Superpower",
+    "slug": "reading-books-superpower",
+    "excerpt": "Reading strengthens the mind like nothing else.",
+    "category": "Education",
+    "author": "MIROZA Education",
+    "date": "2025-01-02",
+    "views": 2280,
+    "link": "/articles/reading-books-superpower.html",
+    "keywords": "reading benefits, education, learning",
+    "image": {
+      "src": "https://images.unsplash.com/photo-1495446815901-a7297e633e8d?auto=format&fit=crop&w=800&q=80",
+      "srcset": "https://images.unsplash.com/photo-1495446815901-a7297e633e8d?auto=format&fit=crop&w=400&q=80 400w, https://images.unsplash.com/photo-1495446815901-a7297e633e8d?auto=format&fit=crop&w=800&q=80 800w, https://images.unsplash.com/photo-1495446815901-a7297e633e8d?auto=format&fit=crop&w=1200&q=80 1200w",
+      "sizes": "(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px",
+      "alt": "Stack of books beside a glowing lamp"
+    }
   },
   {
-    "title": "10 Easy Ways to Eat Healthier Without Dieting",
-    "slug": "eat-healthier-no-diet",
-    "date": "2025-01-01",
-    "category": "Health",
-    "excerpt": "Eating healthy doesn–larr;‚¬—„¢t have to be complicated or restrictive.",
-    "image": "https://images.unsplash.com/photo-1506084868230-bb9d95c24759?auto=format&fit=crop&w=1200&q=80",
-    "link": "/articles/eat-healthier-no-diet.html",
-    "contentFile": "/articles/eat-healthier-no-diet.html"
+    "id": 38,
+    "title": "How Green Hydrogen Is Transforming Clean Energy",
+    "slug": "green-hydrogen-clean-energy",
+    "excerpt": "Green hydrogen is emerging as a top clean-energy solution.",
+    "category": "Energy",
+    "author": "MIROZA Energy Desk",
+    "date": "2025-01-02",
+    "views": 2340,
+    "link": "/articles/green-hydrogen-clean-energy.html",
+    "keywords": "green hydrogen, clean energy, sustainability",
+    "image": {
+      "src": "https://images.unsplash.com/photo-1526401485004-2fda9f7f6f59?auto=format&fit=crop&w=800&q=80",
+      "srcset": "https://images.unsplash.com/photo-1526401485004-2fda9f7f6f59?auto=format&fit=crop&w=400&q=80 400w, https://images.unsplash.com/photo-1526401485004-2fda9f7f6f59?auto=format&fit=crop&w=800&q=80 800w, https://images.unsplash.com/photo-1526401485004-2fda9f7f6f59?auto=format&fit=crop&w=1200&q=80 1200w",
+      "sizes": "(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px",
+      "alt": "Industrial tanks with green energy lighting"
+    }
   },
   {
+    "id": 1,
     "title": "Global Tech Markets React to New Policy",
     "slug": "global-tech-markets",
-    "date": "2025-01-01",
-    "category": "News",
     "excerpt": "Major indices shift as regulators outline a new framework for cross-border innovation.",
-    "image": "https://miroza.online/assets/images/posts/market-radar-1200.svg",
-    "link": "/articles/global-tech-markets.html",
-    "contentFile": "/articles/global-tech-markets.html"
+    "category": "News",
+    "author": "Staff Writer",
+    "date": "2025-01-01",
+    "views": 1240,
+    "image": {
+      "src": "/assets/images/posts/market-radar-800.svg",
+      "srcset": "/assets/images/posts/market-radar-400.svg 400w, /assets/images/posts/market-radar-800.svg 800w, /assets/images/posts/market-radar-1200.svg 1200w",
+      "sizes": "(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px",
+      "alt": "Traders analyzing digital market dashboards"
+    },
+    "link": "/articles/global-tech-markets.html"
   },
   {
+    "id": 39,
+    "title": "The Rise of Digital Nomads in 2025",
+    "slug": "digital-nomads-rise-2025",
+    "excerpt": "More people than ever are choosing a location-independent life.",
+    "category": "Lifestyle",
+    "author": "MIROZA Global Life",
+    "date": "2025-01-01",
+    "views": 2400,
+    "link": "/articles/digital-nomads-rise-2025.html",
+    "keywords": "digital nomads, remote lifestyle",
+    "image": {
+      "src": "https://images.unsplash.com/photo-1506784365847-bbad939e9335?auto=format&fit=crop&w=800&q=80",
+      "srcset": "https://images.unsplash.com/photo-1506784365847-bbad939e9335?auto=format&fit=crop&w=400&q=80 400w, https://images.unsplash.com/photo-1506784365847-bbad939e9335?auto=format&fit=crop&w=800&q=80 800w, https://images.unsplash.com/photo-1506784365847-bbad939e9335?auto=format&fit=crop&w=1200&q=80 1200w",
+      "sizes": "(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px",
+      "alt": "Remote worker using a laptop overlooking the ocean"
+    }
+  },
+  {
+    "id": 40,
+    "title": "10 Easy Ways to Eat Healthier Without Dieting",
+    "slug": "eat-healthier-no-diet",
+    "excerpt": "Eating healthy doesn’t have to be complicated or restrictive.",
+    "category": "Health",
+    "author": "MIROZA Food & Health",
+    "date": "2025-01-01",
+    "views": 2460,
+    "link": "/articles/eat-healthier-no-diet.html",
+    "keywords": "healthy eating, nutrition tips",
+    "image": {
+      "src": "https://images.unsplash.com/photo-1506084868230-bb9d95c24759?auto=format&fit=crop&w=800&q=80",
+      "srcset": "https://images.unsplash.com/photo-1506084868230-bb9d95c24759?auto=format&fit=crop&w=400&q=80 400w, https://images.unsplash.com/photo-1506084868230-bb9d95c24759?auto=format&fit=crop&w=800&q=80 800w, https://images.unsplash.com/photo-1506084868230-bb9d95c24759?auto=format&fit=crop&w=1200&q=80 1200w",
+      "sizes": "(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px",
+      "alt": "Fresh colorful vegetables prepared on a kitchen counter"
+    }
+  },
+  {
+    "id": 1764418620986,
+    "title": "Designing a Morning Routine that Scales",
+    "slug": "designing-a-morning-routine-that-scales",
+    "excerpt": "Designing a Morning Routine that Scales — A concise exploration of practical takeaways and real-world applications.",
+    "category": "Blog",
+    "author": "MIROZA Editorial",
+    "date": "2025-01-01",
+    "link": "/blogs/designing-a-morning-routine-that-scales.html",
+    "image": "/assets/placeholder.jpg"
+  },
+  {
+    "id": 41,
     "title": "Why Cybersecurity Skills Are in Highest Demand",
     "slug": "cybersecurity-skills-demand",
-    "date": "2024-12-30",
-    "category": "Security",
     "excerpt": "Cybersecurity roles are exploding as global threats rise.",
-    "image": "https://images.unsplash.com/photo-1526378722484-bd91ca387e72?auto=format&fit=crop&w=1200&q=80",
+    "category": "Security",
+    "author": "MIROZA Security Desk",
+    "date": "2024-12-30",
+    "views": 2520,
     "link": "/articles/cybersecurity-skills-demand.html",
-    "contentFile": "/articles/cybersecurity-skills-demand.html"
+    "keywords": "cybersecurity jobs, IT security, digital safety",
+    "image": {
+      "src": "https://images.unsplash.com/photo-1526378722484-bd91ca387e72?auto=format&fit=crop&w=800&q=80",
+      "srcset": "https://images.unsplash.com/photo-1526378722484-bd91ca387e72?auto=format&fit=crop&w=400&q=80 400w, https://images.unsplash.com/photo-1526378722484-bd91ca387e72?auto=format&fit=crop&w=800&q=80 800w, https://images.unsplash.com/photo-1526378722484-bd91ca387e72?auto=format&fit=crop&w=1200&q=80 1200w",
+      "sizes": "(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px",
+      "alt": "Security analyst monitoring threat dashboards"
+    }
   },
   {
+    "id": 42,
     "title": "The History and Future of Space Exploration",
     "slug": "history-future-space-exploration",
-    "date": "2024-12-29",
-    "category": "Space",
     "excerpt": "Space exploration is entering a revolutionary new phase.",
-    "image": "https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&w=1200&q=80",
+    "category": "Space",
+    "author": "MIROZA Space Bureau",
+    "date": "2024-12-29",
+    "views": 2580,
     "link": "/articles/history-future-space-exploration.html",
-    "contentFile": "/articles/history-future-space-exploration.html"
+    "keywords": "space exploration, astronomy",
+    "image": {
+      "src": "https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&w=800&q=80",
+      "srcset": "https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&w=400&q=80 400w, https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&w=800&q=80 800w, https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&w=1200&q=80 1200w",
+      "sizes": "(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px",
+      "alt": "Rocket launch illuminating night sky"
+    }
   },
   {
+    "id": 43,
     "title": "What Makes a Great Leader? Insights for 2025",
     "slug": "great-leadership-insights-2025",
-    "date": "2024-12-28",
-    "category": "Career",
     "excerpt": "Leadership is evolving — here are the qualities that matter most.",
-    "image": "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80",
+    "category": "Career",
+    "author": "MIROZA Leadership",
+    "date": "2024-12-28",
+    "views": 2640,
     "link": "/articles/great-leadership-insights-2025.html",
-    "contentFile": "/articles/great-leadership-insights-2025.html"
+    "keywords": "leadership skills, career growth",
+    "image": {
+      "src": "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80",
+      "srcset": "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=400&q=80 400w, https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80 800w, https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80 1200w",
+      "sizes": "(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px",
+      "alt": "Team leader addressing colleagues in a modern office"
+    }
+  },
+  {
+    "id": 1764418621591,
+    "title": "Breakthroughs in Quantum Computing Explained",
+    "slug": "breakthroughs-in-quantum-computing-explained",
+    "excerpt": "Breakthroughs in Quantum Computing Explained — A concise exploration of practical takeaways and real-world applications.",
+    "category": "Blog",
+    "author": "MIROZA Editorial",
+    "date": "2024-12-28",
+    "link": "/blogs/breakthroughs-in-quantum-computing-explained.html",
+    "image": "/assets/placeholder.jpg"
+  },
+  {
+    "id": 1764418621198,
+    "title": "Daily Habits that Improve Focus and Creativity",
+    "slug": "daily-habits-that-improve-focus-and-creativity",
+    "excerpt": "Daily Habits that Improve Focus and Creativity — A concise exploration of practical takeaways and real-world applications.",
+    "category": "Blog",
+    "author": "MIROZA Editorial",
+    "date": "2024-12-24",
+    "link": "/blogs/daily-habits-that-improve-focus-and-creativity.html",
+    "image": "/assets/placeholder.jpg"
+  },
+  {
+    "id": 1764418621275,
+    "title": "Budgeting for Early-Career Professionals in 2026",
+    "slug": "budgeting-for-early-career-professionals-in-2026",
+    "excerpt": "Budgeting for Early-Career Professionals in 2026 — A concise exploration of practical takeaways and real-world applications.",
+    "category": "Blog",
+    "author": "MIROZA Editorial",
+    "date": "2024-12-21",
+    "link": "/blogs/budgeting-for-early-career-professionals-in-2026.html",
+    "image": "/assets/placeholder.jpg"
+  },
+  {
+    "id": 1764418621761,
+    "title": "Plant-Based Recipes for Busy Weeknights",
+    "slug": "plant-based-recipes-for-busy-weeknights",
+    "excerpt": "Plant-Based Recipes for Busy Weeknights — A concise exploration of practical takeaways and real-world applications.",
+    "category": "Blog",
+    "author": "MIROZA Editorial",
+    "date": "2024-12-17",
+    "link": "/blogs/plant-based-recipes-for-busy-weeknights.html",
+    "image": "/assets/placeholder.jpg"
+  },
+  {
+    "id": 1764418620878,
+    "title": "Slow Travel Essentials for Deeper Cultural Immersion",
+    "slug": "slow-travel-essentials-for-deeper-cultural-immersion",
+    "excerpt": "Slow Travel Essentials for Deeper Cultural Immersion — A concise exploration of practical takeaways and real-world applications.",
+    "category": "Blog",
+    "author": "MIROZA Editorial",
+    "date": "2024-12-13",
+    "link": "/blogs/slow-travel-essentials-for-deeper-cultural-immersion.html",
+    "image": "/assets/placeholder.jpg"
+  },
+  {
+    "id": 1764418621360,
+    "title": "Microlearning: Short Lessons that Boost Retention",
+    "slug": "microlearning-short-lessons-that-boost-retention",
+    "excerpt": "Microlearning: Short Lessons that Boost Retention — A concise exploration of practical takeaways and real-world applications.",
+    "category": "Blog",
+    "author": "MIROZA Editorial",
+    "date": "2024-12-10",
+    "link": "/blogs/microlearning-short-lessons-that-boost-retention.html",
+    "image": "/assets/placeholder.jpg"
+  },
+  {
+    "id": 1764418621175,
+    "title": "Home Workouts that Build Strength Without Equipment",
+    "slug": "home-workouts-that-build-strength-without-equipment",
+    "excerpt": "Home Workouts that Build Strength Without Equipment — A concise exploration of practical takeaways and real-world applications.",
+    "category": "Blog",
+    "author": "MIROZA Editorial",
+    "date": "2024-12-06",
+    "link": "/blogs/home-workouts-that-build-strength-without-equipment.html",
+    "image": "/assets/placeholder.jpg"
+  },
+  {
+    "id": 1764418621712,
+    "title": "Nutrition Strategies for Sustainable Energy",
+    "slug": "nutrition-strategies-for-sustainable-energy",
+    "excerpt": "Nutrition Strategies for Sustainable Energy — A concise exploration of practical takeaways and real-world applications.",
+    "category": "Blog",
+    "author": "MIROZA Editorial",
+    "date": "2024-12-02",
+    "link": "/blogs/nutrition-strategies-for-sustainable-energy.html",
+    "image": "/assets/placeholder.jpg"
+  },
+  {
+    "id": 1764418620807,
+    "title": "AI-Powered Productivity Hacks for Hybrid Teams",
+    "slug": "ai-powered-productivity-hacks-for-hybrid-teams",
+    "excerpt": "AI-Powered Productivity Hacks for Hybrid Teams — A concise exploration of practical takeaways and real-world applications.",
+    "category": "Blog",
+    "author": "MIROZA Editorial",
+    "date": "2024-11-29",
+    "link": "/blogs/ai-powered-productivity-hacks-for-hybrid-teams.html",
+    "image": "/assets/placeholder.jpg"
   }
 ]
