@@ -1,0 +1,6 @@
+<svg width="800" height="450" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="450" fill="#1a1a1a" />
+  <text x="400" y="100" font-family="Arial" font-size="80" fill="rgba(255,255,255,0.1)" text-anchor="middle" font-weight="bold">HARLEY-DAVIDSON</text>
+  <path d="M200,300 L300,200 L400,300 L500,200 L600,300" fill="none" stroke="hsl(95.83970468546934, 60%, 40%)" stroke-width="5" transform="translate(50, 50)" />
+  <text x="400" y="400" font-family="Arial" font-size="40" fill="hsl(95.83970468546934, 60%, 40%)" text-anchor="middle">BIKE SERIES</text>
+</svg>

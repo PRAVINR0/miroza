@@ -1,0 +1,6 @@
+<svg width="800" height="450" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="450" fill="#1a1a1a" />
+  <text x="400" y="100" font-family="Arial" font-size="80" fill="rgba(255,255,255,0.1)" text-anchor="middle" font-weight="bold">AUDI</text>
+  <path d="M100,300 L150,250 L250,250 L300,200 L500,200 L550,250 L650,250 L700,300 Z" fill="none" stroke="hsl(176.14962794460448, 60%, 40%)" stroke-width="5" transform="translate(50, 50)" />
+  <text x="400" y="400" font-family="Arial" font-size="40" fill="hsl(176.14962794460448, 60%, 40%)" text-anchor="middle">CAR SERIES</text>
+</svg>
