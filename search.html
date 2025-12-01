@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Search Results — MIROZA</title>
+  <link rel="icon" type="image/svg+xml" href="/assets/icons/logo.svg" />
+  <meta name="description" content="Search results for MIROZA articles, news, and blogs." />
+  <meta name="robots" content="noindex" />
+  <link rel="stylesheet" href="/styles/main.min.css" />
+  <style>
+    .search-results-header { padding: 3rem 0; text-align: center; background: var(--bg-alt); margin-bottom: 2rem; }
+    .search-query-display { font-size: 2rem; font-weight: 800; color: var(--accent); }
+    .results-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 2rem; padding-bottom: 4rem; }
+    .result-card { background: var(--bg-main); border: 1px solid var(--border); border-radius: 8px; padding: 1.5rem; transition: transform 0.2s; }
+    .result-card:hover { transform: translateY(-2px); border-color: var(--primary); }
+    .result-meta { font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase; margin-bottom: 0.5rem; }
+    .result-title { font-size: 1.25rem; margin: 0 0 1rem 0; line-height: 1.4; }
+    .result-title a { color: var(--text-main); text-decoration: none; }
+    .result-title a:hover { color: var(--primary); }
+    .loading-spinner { text-align: center; padding: 4rem; font-size: 1.2rem; color: var(--text-muted); }
+    .no-results { text-align: center; padding: 4rem; }
+    .load-more-container { text-align: center; margin-top: 2rem; }
+  </style>
+</head>
+<body data-page="search">
+  <a href="#content" class="skip-link">Skip to content</a>
+  
+  <header class="site-header" aria-label="Site header">
+    <div class="header-inner">
+      <a class="logo" href="/" aria-label="MIROZA Home">
+        <img src="/assets/icons/logo.svg" alt="MIROZA" width="32" height="32" />
+        <span class="logo-text">MIROZA</span>
+      </a>
+      <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <img src="/assets/icons/menu.svg" alt="Menu" width="24" height="24" />
+      </button>
+      <nav class="main-nav" aria-label="Primary navigation">
+        <ul>
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="/news/news.html">News</a></li>
+          <li><a href="/articles/articles.html">Articles</a></li>
+          <li><a href="/blogs/blogs.html">Blogs</a></li>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <form class="search-form" role="search" action="/search.html" method="GET">
+        <label for="search" class="visually-hidden">Search</label>
+        <input id="search" name="q" type="search" placeholder="Search..." autocomplete="off" />
+        <div class="search-suggestions" id="search-suggestions" hidden></div>
+      </form>
+      <button class="theme-toggle" aria-label="Toggle dark mode">
+        <img src="/assets/icons/moon.svg" alt="Enable dark mode" width="24" height="24" />
+      </button>
+    </div>
+  </header>
+
+  <main id="content">
+    <div class="search-results-header">
+        <div class="container">
+            <h1>Search Results for <span class="search-query-display" id="query-display">...</span></h1>
+            <p id="result-count">Searching...</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div id="results-container" class="results-grid">
+            <!-- Results injected here -->
+        </div>
+        <div id="loading" class="loading-spinner">Loading search index...</div>
+        <div id="no-results" class="no-results" hidden>
+            <h3>No matches found</h3>
+            <p>Try adjusting your search terms or browse our <a href="/index.html">latest posts</a>.</p>
+        </div>
+        <div class="load-more-container" id="pagination" hidden>
+            <button class="button" id="load-more-btn">Load More</button>
+        </div>
+    </div>
+  </main>
+  
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div>
+        <h3>MIROZA</h3>
+        <p>Modern news & articles hub. Fast, accessible, secure.</p>
+      </div>
+      <div>
+        <h3>Explore</h3>
+        <ul>
+          <li><a href="/news/news.html">News</a></li>
+          <li><a href="/articles/articles.html">Articles</a></li>
+          <li><a href="/blogs/blogs.html">Blogs</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Connect</h3>
+        <ul>
+          <li><a href="#" target="_blank" rel="noopener noreferrer">Twitter</a></li>
+          <li><a href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+          <li><a href="/contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Legal</h3>
+        <ul>
+          <li><a href="/privacy.html">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="copyright">
+      &copy; <span id="year">2025</span> MIROZA. All rights reserved.
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.11/dist/purify.min.js" defer crossorigin="anonymous"></script>
+  <script src="/scripts/app.min.js" defer></script>
+  <script>
+    // Specific logic for search page
+    document.addEventListener('DOMContentLoaded', async () => {
+        const params = new URLSearchParams(window.location.search);
+        const query = (params.get('q') || '').trim().toLowerCase();
+        
+        const displayEl = document.getElementById('query-display');
+        const countEl = document.getElementById('result-count');
+        const container = document.getElementById('results-container');
+        const loading = document.getElementById('loading');
+        const noResults = document.getElementById('no-results');
+        const pagination = document.getElementById('pagination');
+        const loadMoreBtn = document.getElementById('load-more-btn');
+
+        if(displayEl) displayEl.textContent = query || 'All';
+
+        if (!query) {
+            loading.hidden = true;
+            countEl.textContent = 'Please enter a search term.';
+            return;
+        }
+
+        // Load index
+        try {
+            const res = await fetch('/data/search.json');
+            if(!res.ok) throw new Error('Failed to load index');
+            const index = await res.json();
+            
+            // Filter
+            const matches = index.filter(item => 
+                (item.t || '').toLowerCase().includes(query) || 
+                (item.c || '').toLowerCase().includes(query)
+            );
+
+            loading.hidden = true;
+            countEl.textContent = `${matches.length} results found`;
+
+            if (matches.length === 0) {
+                noResults.hidden = false;
+                return;
+            }
+
+            // Render with pagination
+            let page = 1;
+            const pageSize = 24;
+            
+            function renderPage() {
+                const start = (page - 1) * pageSize;
+                const end = start + pageSize;
+                const slice = matches.slice(start, end);
+                
+                slice.forEach(item => {
+                    const card = document.createElement('div');
+                    card.className = 'result-card';
+                    card.innerHTML = `
+                        <div class="result-meta">${item.c || 'Post'}</div>
+                        <h3 class="result-title"><a href="${item.u}">${item.t}</a></h3>
+                    `;
+                    container.appendChild(card);
+                });
+
+                if (end >= matches.length) {
+                    pagination.hidden = true;
+                } else {
+                    pagination.hidden = false;
+                }
+            }
+
+            renderPage();
+
+            loadMoreBtn.addEventListener('click', () => {
+                page++;
+                renderPage();
+            });
+
+        } catch (err) {
+            console.error(err);
+            loading.textContent = 'Error loading search results. Please try again.';
+        }
+    });
+  </script>
+</body>
+</html>
