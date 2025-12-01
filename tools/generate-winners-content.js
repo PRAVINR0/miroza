@@ -169,7 +169,7 @@ function generateHTML(post) {
             <div class="winner-stats">
                 <div class="stat-box">
                     <span class="stat-label">Category</span>
-                    <span class="stat-value">${post.category}</span>
+                    <span class="stat-value">${post.awardCategory}</span>
                 </div>
                 <div class="stat-box">
                     <span class="stat-label">Year</span>
@@ -182,7 +182,7 @@ function generateHTML(post) {
             </div>
 
             <p class="lead">${post.title} is a celebrated figure from ${post.country}, ${contextText}</p>
-            <p>Their achievement in ${post.year} marked a significant milestone in the history of ${post.category}. Recognized globally, they continue to inspire future generations.</p>
+            <p>Their achievement in ${post.year} marked a significant milestone in the history of ${post.awardCategory}. Recognized globally, they continue to inspire future generations.</p>
         </div>
       </div>
 
@@ -196,7 +196,7 @@ function generateHTML(post) {
         <p>Success did not come overnight for ${post.title}. Years of rigorous preparation, research, and training preceded their monumental win. The path was fraught with challenges, but their resilience shone through.</p>
         
         <h2>Impact and Legacy</h2>
-        <p>Winning the ${post.type} is not just a personal victory but a testament to human potential. ${post.title}'s work in ${post.category} has left an indelible mark, influencing peers and setting new standards of excellence.</p>
+        <p>Winning the ${post.type} is not just a personal victory but a testament to human potential. ${post.title}'s work in ${post.awardCategory} has left an indelible mark, influencing peers and setting new standards of excellence.</p>
         
         <h2>Global Recognition</h2>
         <p>Hailing from ${post.country}, ${post.title} has become a national icon. Their story is taught in schools and cited in academic journals, proving that dedication and passion can indeed change the world.</p>
@@ -333,4 +333,7 @@ async function main() {
 
     const duration = (Date.now() - startTime) / 1000;
     console.log(`Completed! Generated ${TOTAL_POSTS} winner blogs in ${duration}s.`);
-    console.log(`Total posts in database: ${allPosts.length
+    console.log(`Total posts in database: ${allPosts.length}`);
+}
+
+main();
