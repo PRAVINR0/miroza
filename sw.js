@@ -1,6 +1,6 @@
-/* MIROZA Service Worker v5: optimized assets */
-const STATIC_CACHE = 'miroza-static-v5';
-const RUNTIME_CACHE = 'miroza-runtime-v5';
+/* MIROZA Service Worker v6: optimized assets */
+const STATIC_CACHE = 'miroza-static-v6';
+const RUNTIME_CACHE = 'miroza-runtime-v6';
 const CORE_ASSETS = [
   '/',
   '/index.html',
@@ -10,8 +10,7 @@ const CORE_ASSETS = [
   '/manifest.json',
   '/assets/icons/logo.svg',
   '/assets/images/hero-insight-800.svg',
-  '/assets/images/placeholder.svg',
-  '/data/posts.json'
+  '/assets/images/placeholder.svg'
 ];
 
 self.addEventListener('install', event => {

@@ -1,0 +1,902 @@
+[
+  {
+    "id": "movie-329",
+    "title": "The Whisper's Dream Reborn",
+    "excerpt": "Movie Review: The Whisper's Dream Reborn. A gripping Thriller story that you cannot miss.",
+    "category": "Movies",
+    "date": "2025-12-27T18:30:00.000Z",
+    "image": "/assets/images/movies/movie-329.svg",
+    "url": "/blogs/movie-329-the-whisper-s-dream-reborn.html"
+  },
+  {
+    "id": "movie-548",
+    "title": "Silent Samurai of Mumbai",
+    "excerpt": "Movie Review: Silent Samurai of Mumbai. A gripping Mystery story that you cannot miss.",
+    "category": "Movies",
+    "date": "2025-12-27T18:30:00.000Z",
+    "image": "/assets/images/movies/movie-548.svg",
+    "url": "/blogs/movie-548-silent-samurai-of-mumbai.html"
+  },
+  {
+    "id": "movie-999",
+    "title": "The Samurai's Journey III",
+    "excerpt": "Movie Review: The Samurai's Journey III. A gripping Sci-Fi story that you cannot miss.",
+    "category": "Movies",
+    "date": "2025-12-27T18:30:00.000Z",
+    "image": "/assets/images/movies/movie-999.svg",
+    "url": "/blogs/movie-999-the-samurai-s-journey-iii.html"
+  },
+  {
+    "id": "movie-1016",
+    "title": "Crimson Avenger II",
+    "excerpt": "Movie Review: Crimson Avenger II. A gripping Thriller story that you cannot miss.",
+    "category": "Movies",
+    "date": "2025-12-27T18:30:00.000Z",
+    "image": "/assets/images/movies/movie-1016.svg",
+    "url": "/blogs/movie-1016-crimson-avenger-ii.html"
+  },
+  {
+    "id": "movie-1095",
+    "title": "The Great War Under the Sun",
+    "excerpt": "Movie Review: The Great War Under the Sun. A gripping Romance story that you cannot miss.",
+    "category": "Movies",
+    "date": "2025-12-27T18:30:00.000Z",
+    "image": "/assets/images/movies/movie-1095.svg",
+    "url": "/blogs/movie-1095-the-great-war-under-the-sun.html"
+  },
+  {
+    "id": "movie-1273",
+    "title": "The Whisper's Empire II",
+    "excerpt": "Movie Review: The Whisper's Empire II. A gripping Action story that you cannot miss.",
+    "category": "Movies",
+    "date": "2025-12-27T18:30:00.000Z",
+    "image": "/assets/images/movies/movie-1273.svg",
+    "url": "/blogs/movie-1273-the-whisper-s-empire-ii.html"
+  },
+  {
+    "id": "movie-1277",
+    "title": "Golden Dream Reborn",
+    "excerpt": "Movie Review: Golden Dream Reborn. A gripping Fantasy story that you cannot miss.",
+    "category": "Movies",
+    "date": "2025-12-27T18:30:00.000Z",
+    "image": "/assets/images/movies/movie-1277.svg",
+    "url": "/blogs/movie-1277-golden-dream-reborn.html"
+  },
+  {
+    "id": "movie-1425",
+    "title": "Falling Dream The Beginning",
+    "excerpt": "Movie Review: Falling Dream The Beginning. A gripping Romance story that you cannot miss.",
+    "category": "Movies",
+    "date": "2025-12-27T18:30:00.000Z",
+    "image": "/assets/images/movies/movie-1425.svg",
+    "url": "/blogs/movie-1425-falling-dream-the-beginning.html"
+  },
+  {
+    "id": "movie-1580",
+    "title": "Velvet Star Beyond the Stars",
+    "excerpt": "Movie Review: Velvet Star Beyond the Stars. A gripping Animation story that you cannot miss.",
+    "category": "Movies",
+    "date": "2025-12-27T18:30:00.000Z",
+    "image": "/assets/images/movies/movie-1580.svg",
+    "url": "/blogs/movie-1580-velvet-star-beyond-the-stars.html"
+  },
+  {
+    "id": "movie-1718",
+    "title": "Shattered Empire of the North",
+    "excerpt": "Movie Review: Shattered Empire of the North. A gripping Fantasy story that you cannot miss.",
+    "category": "Movies",
+    "date": "2025-12-27T18:30:00.000Z",
+    "image": "/assets/images/movies/movie-1718.svg",
+    "url": "/blogs/movie-1718-shattered-empire-of-the-north.html"
+  },
+  {
+    "id": "movie-1742",
+    "title": "Velvet Star III",
+    "excerpt": "Movie Review: Velvet Star III. A gripping Horror story that you cannot miss.",
+    "category": "Movies",
+    "date": "2025-12-27T18:30:00.000Z",
+    "image": "/assets/images/movies/movie-1742.svg",
+    "url": "/blogs/movie-1742-velvet-star-iii.html"
+  },
+  {
+    "id": "movie-1912",
+    "title": "Lost War Beyond the Stars",
+    "excerpt": "Movie Review: Lost War Beyond the Stars. A gripping Drama story that you cannot miss.",
+    "category": "Movies",
+    "date": "2025-12-27T18:30:00.000Z",
+    "image": "/assets/images/movies/movie-1912.svg",
+    "url": "/blogs/movie-1912-lost-war-beyond-the-stars.html"
+  },
+  {
+    "id": "movie-2016",
+    "title": "Infinite Journey in the Rain",
+    "excerpt": "Movie Review: Infinite Journey in the Rain. A gripping Romance story that you cannot miss.",
+    "category": "Movies",
+    "date": "2025-12-27T18:30:00.000Z",
+    "image": "/assets/images/movies/movie-2016.svg",
+    "url": "/blogs/movie-2016-infinite-journey-in-the-rain.html"
+  },
+  {
+    "id": "movie-2089",
+    "title": "Golden Samurai The Beginning",
+    "excerpt": "Movie Review: Golden Samurai The Beginning. A gripping Action story that you cannot miss.",
+    "category": "Movies",
+    "date": "2025-12-27T18:30:00.000Z",
+    "image": "/assets/images/movies/movie-2089.svg",
+    "url": "/blogs/movie-2089-golden-samurai-the-beginning.html"
+  },
+  {
+    "id": "movie-2338",
+    "title": "The War's Legend Returns",
+    "excerpt": "Movie Review: The War's Legend Returns. A gripping Sci-Fi story that you cannot miss.",
+    "category": "Movies",
+    "date": "2025-12-27T18:30:00.000Z",
+    "image": "/assets/images/movies/movie-2338.svg",
+    "url": "/blogs/movie-2338-the-war-s-legend-returns.html"
+  },
+  {
+    "id": "movie-2665",
+    "title": "Infinite Empire Returns",
+    "excerpt": "Movie Review: Infinite Empire Returns. A gripping Sci-Fi story that you cannot miss.",
+    "category": "Movies",
+    "date": "2025-12-27T18:30:00.000Z",
+    "image": "/assets/images/movies/movie-2665.svg",
+    "url": "/blogs/movie-2665-infinite-empire-returns.html"
+  },
+  {
+    "id": "movie-3182",
+    "title": "Crimson Shadow II",
+    "excerpt": "Movie Review: Crimson Shadow II. A gripping Mystery story that you cannot miss.",
+    "category": "Movies",
+    "date": "2025-12-27T18:30:00.000Z",
+    "image": "/assets/images/movies/movie-3182.svg",
+    "url": "/blogs/movie-3182-crimson-shadow-ii.html"
+  },
+  {
+    "id": "movie-3488",
+    "title": "Golden Day Reborn",
+    "excerpt": "Movie Review: Golden Day Reborn. A gripping Action story that you cannot miss.",
+    "category": "Movies",
+    "date": "2025-12-27T18:30:00.000Z",
+    "image": "/assets/images/movies/movie-3488.svg",
+    "url": "/blogs/movie-3488-golden-day-reborn.html"
+  },
+  {
+    "id": "movie-3826",
+    "title": "The Dream's Journey Reborn",
+    "excerpt": "Movie Review: The Dream's Journey Reborn. A gripping Thriller story that you cannot miss.",
+    "category": "Movies",
+    "date": "2025-12-27T18:30:00.000Z",
+    "image": "/assets/images/movies/movie-3826.svg",
+    "url": "/blogs/movie-3826-the-dream-s-journey-reborn.html"
+  },
+  {
+    "id": "movie-4293",
+    "title": "Lost Shadow Under the Sun",
+    "excerpt": "Movie Review: Lost Shadow Under the Sun. A gripping Fantasy story that you cannot miss.",
+    "category": "Movies",
+    "date": "2025-12-27T18:30:00.000Z",
+    "image": "/assets/images/movies/movie-4293.svg",
+    "url": "/blogs/movie-4293-lost-shadow-under-the-sun.html"
+  },
+  {
+    "id": "movie-4361",
+    "title": "Shattered Journey Returns",
+    "excerpt": "Movie Review: Shattered Journey Returns. A gripping Comedy story that you cannot miss.",
+    "category": "Movies",
+    "date": "2025-12-27T18:30:00.000Z",
+    "image": "/assets/images/movies/movie-4361.svg",
+    "url": "/blogs/movie-4361-shattered-journey-returns.html"
+  },
+  {
+    "id": "movie-4392",
+    "title": "Silent Avenger Returns",
+    "excerpt": "Movie Review: Silent Avenger Returns. A gripping Sci-Fi story that you cannot miss.",
+    "category": "Movies",
+    "date": "2025-12-27T18:30:00.000Z",
+    "image": "/assets/images/movies/movie-4392.svg",
+    "url": "/blogs/movie-4392-silent-avenger-returns.html"
+  },
+  {
+    "id": "movie-4506",
+    "title": "The Whisper's Shadow Reborn",
+    "excerpt": "Movie Review: The Whisper's Shadow Reborn. A gripping Action story that you cannot miss.",
+    "category": "Movies",
+    "date": "2025-12-27T18:30:00.000Z",
+    "image": "/assets/images/movies/movie-4506.svg",
+    "url": "/blogs/movie-4506-the-whisper-s-shadow-reborn.html"
+  },
+  {
+    "id": "movie-5122",
+    "title": "The Detective's Dream Reborn",
+    "excerpt": "Movie Review: The Detective's Dream Reborn. A gripping Comedy story that you cannot miss.",
+    "category": "Movies",
+    "date": "2025-12-27T18:30:00.000Z",
+    "image": "/assets/images/movies/movie-5122.svg",
+    "url": "/blogs/movie-5122-the-detective-s-dream-reborn.html"
+  },
+  {
+    "id": "movie-5272",
+    "title": "The Shadow's Empire The Beginning",
+    "excerpt": "Movie Review: The Shadow's Empire The Beginning. A gripping Horror story that you cannot miss.",
+    "category": "Movies",
+    "date": "2025-12-27T18:30:00.000Z",
+    "image": "/assets/images/movies/movie-5272.svg",
+    "url": "/blogs/movie-5272-the-shadow-s-empire-the-beginning.html"
+  },
+  {
+    "id": "movie-5818",
+    "title": "Dark Whisper III",
+    "excerpt": "Movie Review: Dark Whisper III. A gripping Sci-Fi story that you cannot miss.",
+    "category": "Movies",
+    "date": "2025-12-27T18:30:00.000Z",
+    "image": "/assets/images/movies/movie-5818.svg",
+    "url": "/blogs/movie-5818-dark-whisper-iii.html"
+  },
+  {
+    "id": "movie-5977",
+    "title": "The Samurai's Day II",
+    "excerpt": "Movie Review: The Samurai's Day II. A gripping Fantasy story that you cannot miss.",
+    "category": "Movies",
+    "date": "2025-12-27T18:30:00.000Z",
+    "image": "/assets/images/movies/movie-5977.svg",
+    "url": "/blogs/movie-5977-the-samurai-s-day-ii.html"
+  },
+  {
+    "id": "movie-6399",
+    "title": "Dark Empire III",
+    "excerpt": "Movie Review: Dark Empire III. A gripping Horror story that you cannot miss.",
+    "category": "Movies",
+    "date": "2025-12-27T18:30:00.000Z",
+    "image": "/assets/images/movies/movie-6399.svg",
+    "url": "/blogs/movie-6399-dark-empire-iii.html"
+  },
+  {
+    "id": "movie-6746",
+    "title": "Lost Empire of Paris Reborn",
+    "excerpt": "Movie Review: Lost Empire of Paris Reborn. A gripping Sci-Fi story that you cannot miss.",
+    "category": "Movies",
+    "date": "2025-12-27T18:30:00.000Z",
+    "image": "/assets/images/movies/movie-6746.svg",
+    "url": "/blogs/movie-6746-lost-empire-of-paris-reborn.html"
+  },
+  {
+    "id": "movie-6880",
+    "title": "The War's Journey Reborn",
+    "excerpt": "Movie Review: The War's Journey Reborn. A gripping Drama story that you cannot miss.",
+    "category": "Movies",
+    "date": "2025-12-27T18:30:00.000Z",
+    "image": "/assets/images/movies/movie-6880.svg",
+    "url": "/blogs/movie-6880-the-war-s-journey-reborn.html"
+  },
+  {
+    "id": "movie-8358",
+    "title": "The Samurai's Shadow III",
+    "excerpt": "Movie Review: The Samurai's Shadow III. A gripping Thriller story that you cannot miss.",
+    "category": "Movies",
+    "date": "2025-12-27T18:30:00.000Z",
+    "image": "/assets/images/movies/movie-8358.svg",
+    "url": "/blogs/movie-8358-the-samurai-s-shadow-iii.html"
+  },
+  {
+    "id": "movie-8428",
+    "title": "Silent Samurai of Tomorrow III",
+    "excerpt": "Movie Review: Silent Samurai of Tomorrow III. A gripping Fantasy story that you cannot miss.",
+    "category": "Movies",
+    "date": "2025-12-27T18:30:00.000Z",
+    "image": "/assets/images/movies/movie-8428.svg",
+    "url": "/blogs/movie-8428-silent-samurai-of-tomorrow-iii.html"
+  },
+  {
+    "id": "movie-8456",
+    "title": "The Day's Detective II",
+    "excerpt": "Movie Review: The Day's Detective II. A gripping Sci-Fi story that you cannot miss.",
+    "category": "Movies",
+    "date": "2025-12-27T18:30:00.000Z",
+    "image": "/assets/images/movies/movie-8456.svg",
+    "url": "/blogs/movie-8456-the-day-s-detective-ii.html"
+  },
+  {
+    "id": "movie-8598",
+    "title": "Hidden Dream II",
+    "excerpt": "Movie Review: Hidden Dream II. A gripping Action story that you cannot miss.",
+    "category": "Movies",
+    "date": "2025-12-27T18:30:00.000Z",
+    "image": "/assets/images/movies/movie-8598.svg",
+    "url": "/blogs/movie-8598-hidden-dream-ii.html"
+  },
+  {
+    "id": "movie-9647",
+    "title": "Hidden Shadow of Tomorrow",
+    "excerpt": "Movie Review: Hidden Shadow of Tomorrow. A gripping Mystery story that you cannot miss.",
+    "category": "Movies",
+    "date": "2025-12-27T18:30:00.000Z",
+    "image": "/assets/images/movies/movie-9647.svg",
+    "url": "/blogs/movie-9647-hidden-shadow-of-tomorrow.html"
+  },
+  {
+    "id": "movie-10500",
+    "title": "Hidden Journey in the Rain Reborn",
+    "excerpt": "Movie Review: Hidden Journey in the Rain Reborn. A gripping Comedy story that you cannot miss.",
+    "category": "Movies",
+    "date": "2025-12-27T18:30:00.000Z",
+    "image": "/assets/images/movies/movie-10500.svg",
+    "url": "/blogs/movie-10500-hidden-journey-in-the-rain-reborn.html"
+  },
+  {
+    "id": "movie-10675",
+    "title": "The Samurai's War II",
+    "excerpt": "Movie Review: The Samurai's War II. A gripping Thriller story that you cannot miss.",
+    "category": "Movies",
+    "date": "2025-12-27T18:30:00.000Z",
+    "image": "/assets/images/movies/movie-10675.svg",
+    "url": "/blogs/movie-10675-the-samurai-s-war-ii.html"
+  },
+  {
+    "id": "movie-11003",
+    "title": "The Journey's Legend Returns",
+    "excerpt": "Movie Review: The Journey's Legend Returns. A gripping Action story that you cannot miss.",
+    "category": "Movies",
+    "date": "2025-12-27T18:30:00.000Z",
+    "image": "/assets/images/movies/movie-11003.svg",
+    "url": "/blogs/movie-11003-the-journey-s-legend-returns.html"
+  },
+  {
+    "id": "movie-11467",
+    "title": "The War's Avenger The Beginning",
+    "excerpt": "Movie Review: The War's Avenger The Beginning. A gripping Mystery story that you cannot miss.",
+    "category": "Movies",
+    "date": "2025-12-27T18:30:00.000Z",
+    "image": "/assets/images/movies/movie-11467.svg",
+    "url": "/blogs/movie-11467-the-war-s-avenger-the-beginning.html"
+  },
+  {
+    "id": "movie-11786",
+    "title": "Shattered Samurai of Tokyo",
+    "excerpt": "Movie Review: Shattered Samurai of Tokyo. A gripping Horror story that you cannot miss.",
+    "category": "Movies",
+    "date": "2025-12-27T18:30:00.000Z",
+    "image": "/assets/images/movies/movie-11786.svg",
+    "url": "/blogs/movie-11786-shattered-samurai-of-tokyo.html"
+  },
+  {
+    "id": "movie-12110",
+    "title": "Crimson Avenger The Beginning",
+    "excerpt": "Movie Review: Crimson Avenger The Beginning. A gripping Thriller story that you cannot miss.",
+    "category": "Movies",
+    "date": "2025-12-27T18:30:00.000Z",
+    "image": "/assets/images/movies/movie-12110.svg",
+    "url": "/blogs/movie-12110-crimson-avenger-the-beginning.html"
+  },
+  {
+    "id": "movie-12330",
+    "title": "Silent Ghost The Beginning",
+    "excerpt": "Movie Review: Silent Ghost The Beginning. A gripping Comedy story that you cannot miss.",
+    "category": "Movies",
+    "date": "2025-12-27T18:30:00.000Z",
+    "image": "/assets/images/movies/movie-12330.svg",
+    "url": "/blogs/movie-12330-silent-ghost-the-beginning.html"
+  },
+  {
+    "id": "movie-12481",
+    "title": "Shattered Samurai Returns",
+    "excerpt": "Movie Review: Shattered Samurai Returns. A gripping Animation story that you cannot miss.",
+    "category": "Movies",
+    "date": "2025-12-27T18:30:00.000Z",
+    "image": "/assets/images/movies/movie-12481.svg",
+    "url": "/blogs/movie-12481-shattered-samurai-returns.html"
+  },
+  {
+    "id": "movie-12741",
+    "title": "The Whisper's Journey Returns",
+    "excerpt": "Movie Review: The Whisper's Journey Returns. A gripping Thriller story that you cannot miss.",
+    "category": "Movies",
+    "date": "2025-12-27T18:30:00.000Z",
+    "image": "/assets/images/movies/movie-12741.svg",
+    "url": "/blogs/movie-12741-the-whisper-s-journey-returns.html"
+  },
+  {
+    "id": "movie-12922",
+    "title": "The Samurai's Samurai Reborn",
+    "excerpt": "Movie Review: The Samurai's Samurai Reborn. A gripping Animation story that you cannot miss.",
+    "category": "Movies",
+    "date": "2025-12-27T18:30:00.000Z",
+    "image": "/assets/images/movies/movie-12922.svg",
+    "url": "/blogs/movie-12922-the-samurai-s-samurai-reborn.html"
+  },
+  {
+    "id": "movie-12949",
+    "title": "The War's Empire Reborn",
+    "excerpt": "Movie Review: The War's Empire Reborn. A gripping Drama story that you cannot miss.",
+    "category": "Movies",
+    "date": "2025-12-27T18:30:00.000Z",
+    "image": "/assets/images/movies/movie-12949.svg",
+    "url": "/blogs/movie-12949-the-war-s-empire-reborn.html"
+  },
+  {
+    "id": "movie-13015",
+    "title": "The Avenger's Legend The Beginning",
+    "excerpt": "Movie Review: The Avenger's Legend The Beginning. A gripping Mystery story that you cannot miss.",
+    "category": "Movies",
+    "date": "2025-12-27T18:30:00.000Z",
+    "image": "/assets/images/movies/movie-13015.svg",
+    "url": "/blogs/movie-13015-the-avenger-s-legend-the-beginning.html"
+  },
+  {
+    "id": "movie-13842",
+    "title": "The Last Lover Forever Reborn",
+    "excerpt": "Movie Review: The Last Lover Forever Reborn. A gripping Fantasy story that you cannot miss.",
+    "category": "Movies",
+    "date": "2025-12-27T18:30:00.000Z",
+    "image": "/assets/images/movies/movie-13842.svg",
+    "url": "/blogs/movie-13842-the-last-lover-forever-reborn.html"
+  },
+  {
+    "id": "movie-14189",
+    "title": "The Avenger's War III",
+    "excerpt": "Movie Review: The Avenger's War III. A gripping Horror story that you cannot miss.",
+    "category": "Movies",
+    "date": "2025-12-27T18:30:00.000Z",
+    "image": "/assets/images/movies/movie-14189.svg",
+    "url": "/blogs/movie-14189-the-avenger-s-war-iii.html"
+  },
+  {
+    "id": "movie-14250",
+    "title": "The Dream's Detective III",
+    "excerpt": "Movie Review: The Dream's Detective III. A gripping Comedy story that you cannot miss.",
+    "category": "Movies",
+    "date": "2025-12-27T18:30:00.000Z",
+    "image": "/assets/images/movies/movie-14250.svg",
+    "url": "/blogs/movie-14250-the-dream-s-detective-iii.html"
+  },
+  {
+    "id": "movie-14256",
+    "title": "The Night's Samurai II",
+    "excerpt": "Movie Review: The Night's Samurai II. A gripping Comedy story that you cannot miss.",
+    "category": "Movies",
+    "date": "2025-12-27T18:30:00.000Z",
+    "image": "/assets/images/movies/movie-14256.svg",
+    "url": "/blogs/movie-14256-the-night-s-samurai-ii.html"
+  },
+  {
+    "id": "movie-14724",
+    "title": "Lost Ghost in the Rain III",
+    "excerpt": "Movie Review: Lost Ghost in the Rain III. A gripping Drama story that you cannot miss.",
+    "category": "Movies",
+    "date": "2025-12-27T18:30:00.000Z",
+    "image": "/assets/images/movies/movie-14724.svg",
+    "url": "/blogs/movie-14724-lost-ghost-in-the-rain-iii.html"
+  },
+  {
+    "id": "movie-14754",
+    "title": "Falling Shadow Returns",
+    "excerpt": "Movie Review: Falling Shadow Returns. A gripping Drama story that you cannot miss.",
+    "category": "Movies",
+    "date": "2025-12-27T18:30:00.000Z",
+    "image": "/assets/images/movies/movie-14754.svg",
+    "url": "/blogs/movie-14754-falling-shadow-returns.html"
+  },
+  {
+    "id": "movie-15035",
+    "title": "Dark Detective Beyond the Stars III",
+    "excerpt": "Movie Review: Dark Detective Beyond the Stars III. A gripping Comedy story that you cannot miss.",
+    "category": "Movies",
+    "date": "2025-12-27T18:30:00.000Z",
+    "image": "/assets/images/movies/movie-15035.svg",
+    "url": "/blogs/movie-15035-dark-detective-beyond-the-stars-iii.html"
+  },
+  {
+    "id": "movie-15340",
+    "title": "Rising Avenger of Mumbai The Beginning",
+    "excerpt": "Movie Review: Rising Avenger of Mumbai The Beginning. A gripping Horror story that you cannot miss.",
+    "category": "Movies",
+    "date": "2025-12-27T18:30:00.000Z",
+    "image": "/assets/images/movies/movie-15340.svg",
+    "url": "/blogs/movie-15340-rising-avenger-of-mumbai-the-beginning.html"
+  },
+  {
+    "id": "movie-15767",
+    "title": "Infinite Ghost Beyond the Stars II",
+    "excerpt": "Movie Review: Infinite Ghost Beyond the Stars II. A gripping Romance story that you cannot miss.",
+    "category": "Movies",
+    "date": "2025-12-27T18:30:00.000Z",
+    "image": "/assets/images/movies/movie-15767.svg",
+    "url": "/blogs/movie-15767-infinite-ghost-beyond-the-stars-ii.html"
+  },
+  {
+    "id": "movie-15821",
+    "title": "The Shadow's Ghost Reborn",
+    "excerpt": "Movie Review: The Shadow's Ghost Reborn. A gripping Action story that you cannot miss.",
+    "category": "Movies",
+    "date": "2025-12-27T18:30:00.000Z",
+    "image": "/assets/images/movies/movie-15821.svg",
+    "url": "/blogs/movie-15821-the-shadow-s-ghost-reborn.html"
+  },
+  {
+    "id": "movie-15850",
+    "title": "Broken Lover The Beginning",
+    "excerpt": "Movie Review: Broken Lover The Beginning. A gripping Mystery story that you cannot miss.",
+    "category": "Movies",
+    "date": "2025-12-27T18:30:00.000Z",
+    "image": "/assets/images/movies/movie-15850.svg",
+    "url": "/blogs/movie-15850-broken-lover-the-beginning.html"
+  },
+  {
+    "id": "movie-15949",
+    "title": "Dark War of Tomorrow Reborn",
+    "excerpt": "Movie Review: Dark War of Tomorrow Reborn. A gripping Horror story that you cannot miss.",
+    "category": "Movies",
+    "date": "2025-12-27T18:30:00.000Z",
+    "image": "/assets/images/movies/movie-15949.svg",
+    "url": "/blogs/movie-15949-dark-war-of-tomorrow-reborn.html"
+  },
+  {
+    "id": "movie-16205",
+    "title": "The Empire's Whisper II",
+    "excerpt": "Movie Review: The Empire's Whisper II. A gripping Mystery story that you cannot miss.",
+    "category": "Movies",
+    "date": "2025-12-27T18:30:00.000Z",
+    "image": "/assets/images/movies/movie-16205.svg",
+    "url": "/blogs/movie-16205-the-empire-s-whisper-ii.html"
+  },
+  {
+    "id": "movie-16279",
+    "title": "Lost Avenger in the Rain Returns",
+    "excerpt": "Movie Review: Lost Avenger in the Rain Returns. A gripping Romance story that you cannot miss.",
+    "category": "Movies",
+    "date": "2025-12-27T18:30:00.000Z",
+    "image": "/assets/images/movies/movie-16279.svg",
+    "url": "/blogs/movie-16279-lost-avenger-in-the-rain-returns.html"
+  },
+  {
+    "id": "movie-17726",
+    "title": "Hidden Detective The Beginning",
+    "excerpt": "Movie Review: Hidden Detective The Beginning. A gripping Mystery story that you cannot miss.",
+    "category": "Movies",
+    "date": "2025-12-27T18:30:00.000Z",
+    "image": "/assets/images/movies/movie-17726.svg",
+    "url": "/blogs/movie-17726-hidden-detective-the-beginning.html"
+  },
+  {
+    "id": "movie-18225",
+    "title": "The Star's Whisper Returns",
+    "excerpt": "Movie Review: The Star's Whisper Returns. A gripping Fantasy story that you cannot miss.",
+    "category": "Movies",
+    "date": "2025-12-27T18:30:00.000Z",
+    "image": "/assets/images/movies/movie-18225.svg",
+    "url": "/blogs/movie-18225-the-star-s-whisper-returns.html"
+  },
+  {
+    "id": "movie-18406",
+    "title": "The Star's Day The Beginning",
+    "excerpt": "Movie Review: The Star's Day The Beginning. A gripping Drama story that you cannot miss.",
+    "category": "Movies",
+    "date": "2025-12-27T18:30:00.000Z",
+    "image": "/assets/images/movies/movie-18406.svg",
+    "url": "/blogs/movie-18406-the-star-s-day-the-beginning.html"
+  },
+  {
+    "id": "movie-19162",
+    "title": "Lost Whisper Returns",
+    "excerpt": "Movie Review: Lost Whisper Returns. A gripping Sci-Fi story that you cannot miss.",
+    "category": "Movies",
+    "date": "2025-12-27T18:30:00.000Z",
+    "image": "/assets/images/movies/movie-19162.svg",
+    "url": "/blogs/movie-19162-lost-whisper-returns.html"
+  },
+  {
+    "id": "movie-19570",
+    "title": "The Journey's Empire Returns",
+    "excerpt": "Movie Review: The Journey's Empire Returns. A gripping Mystery story that you cannot miss.",
+    "category": "Movies",
+    "date": "2025-12-27T18:30:00.000Z",
+    "image": "/assets/images/movies/movie-19570.svg",
+    "url": "/blogs/movie-19570-the-journey-s-empire-returns.html"
+  },
+  {
+    "id": "movie-19682",
+    "title": "Rising Ghost Beyond the Stars II",
+    "excerpt": "Movie Review: Rising Ghost Beyond the Stars II. A gripping Action story that you cannot miss.",
+    "category": "Movies",
+    "date": "2025-12-27T18:30:00.000Z",
+    "image": "/assets/images/movies/movie-19682.svg",
+    "url": "/blogs/movie-19682-rising-ghost-beyond-the-stars-ii.html"
+  },
+  {
+    "id": "movie-19690",
+    "title": "The Legend's Journey II",
+    "excerpt": "Movie Review: The Legend's Journey II. A gripping Romance story that you cannot miss.",
+    "category": "Movies",
+    "date": "2025-12-27T18:30:00.000Z",
+    "image": "/assets/images/movies/movie-19690.svg",
+    "url": "/blogs/movie-19690-the-legend-s-journey-ii.html"
+  },
+  {
+    "id": "movie-19987",
+    "title": "Dark Samurai of Mumbai The Beginning",
+    "excerpt": "Movie Review: Dark Samurai of Mumbai The Beginning. A gripping Animation story that you cannot miss.",
+    "category": "Movies",
+    "date": "2025-12-27T18:30:00.000Z",
+    "image": "/assets/images/movies/movie-19987.svg",
+    "url": "/blogs/movie-19987-dark-samurai-of-mumbai-the-beginning.html"
+  },
+  {
+    "id": "blog-inv-1070",
+    "title": "The Dark History of the Bicycle",
+    "excerpt": "Discover the story behind the Bicycle. The Dark History of the Bicycle reveals the fascinating journey of this breakthrough.",
+    "category": "Blog",
+    "date": "2025-12-27T18:30:00.000Z",
+    "image": "/assets/images/inventions/invention-bicycle.svg",
+    "url": "/blogs/blog-invention-1070-the-dark-history-of-the-bicycle.html"
+  },
+  {
+    "id": "blog-inv-2233",
+    "title": "Why the James Webb Telescope is the Most Important Discovery (Part 26)",
+    "excerpt": "Discover the story behind the James Webb Telescope. Why the James Webb Telescope is the Most Important Discovery (Part 26) reveals the fascinating journey of this breakthrough.",
+    "category": "Blog",
+    "date": "2025-12-27T18:30:00.000Z",
+    "image": "/assets/images/inventions/invention-james-webb-telescope.svg",
+    "url": "/blogs/blog-invention-2233-why-the-james-webb-telescope-is-the-most-important-discovery-part-26.html"
+  },
+  {
+    "id": "blog-inv-3232",
+    "title": "The Impact of the Pacemaker on Modern Society (Part 24)",
+    "excerpt": "Discover the story behind the Pacemaker. The Impact of the Pacemaker on Modern Society (Part 24) reveals the fascinating journey of this breakthrough.",
+    "category": "Blog",
+    "date": "2025-12-27T18:30:00.000Z",
+    "image": "/assets/images/inventions/invention-pacemaker.svg",
+    "url": "/blogs/blog-invention-3232-the-impact-of-the-pacemaker-on-modern-society-part-24.html"
+  },
+  {
+    "id": "blog-inv-3813",
+    "title": "How the Hubble Telescope Changed the World Forever",
+    "excerpt": "Discover the story behind the Hubble Telescope. How the Hubble Telescope Changed the World Forever reveals the fascinating journey of this breakthrough.",
+    "category": "Blog",
+    "date": "2025-12-27T18:30:00.000Z",
+    "image": "/assets/images/inventions/invention-hubble-telescope.svg",
+    "url": "/blogs/blog-invention-3813-how-the-hubble-telescope-changed-the-world-forever.html"
+  },
+  {
+    "id": "blog-inv-5275",
+    "title": "The Television Paradox: Blessing or Curse? (Part 60)",
+    "excerpt": "Discover the story behind the Television. The Television Paradox: Blessing or Curse? (Part 60) reveals the fascinating journey of this breakthrough.",
+    "category": "Blog",
+    "date": "2025-12-27T18:30:00.000Z",
+    "image": "/assets/images/inventions/invention-television.svg",
+    "url": "/blogs/blog-invention-5275-the-television-paradox-blessing-or-curse-part-60.html"
+  },
+  {
+    "id": "blog-inv-7240",
+    "title": "Understanding the Mechanics of the Submarine (Part 66)",
+    "excerpt": "Discover the story behind the Submarine. Understanding the Mechanics of the Submarine (Part 66) reveals the fascinating journey of this breakthrough.",
+    "category": "Blog",
+    "date": "2025-12-27T18:30:00.000Z",
+    "image": "/assets/images/inventions/invention-submarine.svg",
+    "url": "/blogs/blog-invention-7240-understanding-the-mechanics-of-the-submarine-part-66.html"
+  },
+  {
+    "id": "movie-306",
+    "title": "The Last Whisper in the Rain",
+    "excerpt": "Movie Review: The Last Whisper in the Rain. A gripping Thriller story that you cannot miss.",
+    "category": "Movies",
+    "date": "2025-12-26T18:30:00.000Z",
+    "image": "/assets/images/movies/movie-306.svg",
+    "url": "/blogs/movie-306-the-last-whisper-in-the-rain.html"
+  },
+  {
+    "id": "movie-406",
+    "title": "Infinite Night of Paris",
+    "excerpt": "Movie Review: Infinite Night of Paris. A gripping Sci-Fi story that you cannot miss.",
+    "category": "Movies",
+    "date": "2025-12-26T18:30:00.000Z",
+    "image": "/assets/images/movies/movie-406.svg",
+    "url": "/blogs/movie-406-infinite-night-of-paris.html"
+  },
+  {
+    "id": "movie-570",
+    "title": "Infinite Whisper III",
+    "excerpt": "Movie Review: Infinite Whisper III. A gripping Fantasy story that you cannot miss.",
+    "category": "Movies",
+    "date": "2025-12-26T18:30:00.000Z",
+    "image": "/assets/images/movies/movie-570.svg",
+    "url": "/blogs/movie-570-infinite-whisper-iii.html"
+  },
+  {
+    "id": "movie-672",
+    "title": "The Whisper's Night",
+    "excerpt": "Movie Review: The Whisper's Night. A gripping Comedy story that you cannot miss.",
+    "category": "Movies",
+    "date": "2025-12-26T18:30:00.000Z",
+    "image": "/assets/images/movies/movie-672.svg",
+    "url": "/blogs/movie-672-the-whisper-s-night.html"
+  },
+  {
+    "id": "movie-996",
+    "title": "The Avenger's Avenger II",
+    "excerpt": "Movie Review: The Avenger's Avenger II. A gripping Action story that you cannot miss.",
+    "category": "Movies",
+    "date": "2025-12-26T18:30:00.000Z",
+    "image": "/assets/images/movies/movie-996.svg",
+    "url": "/blogs/movie-996-the-avenger-s-avenger-ii.html"
+  },
+  {
+    "id": "movie-1563",
+    "title": "Broken Star The Beginning",
+    "excerpt": "Movie Review: Broken Star The Beginning. A gripping Thriller story that you cannot miss.",
+    "category": "Movies",
+    "date": "2025-12-26T18:30:00.000Z",
+    "image": "/assets/images/movies/movie-1563.svg",
+    "url": "/blogs/movie-1563-broken-star-the-beginning.html"
+  },
+  {
+    "id": "movie-2407",
+    "title": "Golden Ghost Beyond the Stars",
+    "excerpt": "Movie Review: Golden Ghost Beyond the Stars. A gripping Thriller story that you cannot miss.",
+    "category": "Movies",
+    "date": "2025-12-26T18:30:00.000Z",
+    "image": "/assets/images/movies/movie-2407.svg",
+    "url": "/blogs/movie-2407-golden-ghost-beyond-the-stars.html"
+  },
+  {
+    "id": "movie-2797",
+    "title": "The Night's Shadow The Beginning",
+    "excerpt": "Movie Review: The Night's Shadow The Beginning. A gripping Comedy story that you cannot miss.",
+    "category": "Movies",
+    "date": "2025-12-26T18:30:00.000Z",
+    "image": "/assets/images/movies/movie-2797.svg",
+    "url": "/blogs/movie-2797-the-night-s-shadow-the-beginning.html"
+  },
+  {
+    "id": "movie-2869",
+    "title": "The War's War III",
+    "excerpt": "Movie Review: The War's War III. A gripping Thriller story that you cannot miss.",
+    "category": "Movies",
+    "date": "2025-12-26T18:30:00.000Z",
+    "image": "/assets/images/movies/movie-2869.svg",
+    "url": "/blogs/movie-2869-the-war-s-war-iii.html"
+  },
+  {
+    "id": "movie-2988",
+    "title": "The Day's Ghost III",
+    "excerpt": "Movie Review: The Day's Ghost III. A gripping Animation story that you cannot miss.",
+    "category": "Movies",
+    "date": "2025-12-26T18:30:00.000Z",
+    "image": "/assets/images/movies/movie-2988.svg",
+    "url": "/blogs/movie-2988-the-day-s-ghost-iii.html"
+  },
+  {
+    "id": "movie-3009",
+    "title": "Lost Lover of Tokyo Returns",
+    "excerpt": "Movie Review: Lost Lover of Tokyo Returns. A gripping Thriller story that you cannot miss.",
+    "category": "Movies",
+    "date": "2025-12-26T18:30:00.000Z",
+    "image": "/assets/images/movies/movie-3009.svg",
+    "url": "/blogs/movie-3009-lost-lover-of-tokyo-returns.html"
+  },
+  {
+    "id": "movie-3392",
+    "title": "Falling War of Tomorrow Reborn",
+    "excerpt": "Movie Review: Falling War of Tomorrow Reborn. A gripping Fantasy story that you cannot miss.",
+    "category": "Movies",
+    "date": "2025-12-26T18:30:00.000Z",
+    "image": "/assets/images/movies/movie-3392.svg",
+    "url": "/blogs/movie-3392-falling-war-of-tomorrow-reborn.html"
+  },
+  {
+    "id": "movie-4140",
+    "title": "Infinite Legend Forever The Beginning",
+    "excerpt": "Movie Review: Infinite Legend Forever The Beginning. A gripping Fantasy story that you cannot miss.",
+    "category": "Movies",
+    "date": "2025-12-26T18:30:00.000Z",
+    "image": "/assets/images/movies/movie-4140.svg",
+    "url": "/blogs/movie-4140-infinite-legend-forever-the-beginning.html"
+  },
+  {
+    "id": "movie-4569",
+    "title": "The Great Night of Mumbai The Beginning",
+    "excerpt": "Movie Review: The Great Night of Mumbai The Beginning. A gripping Action story that you cannot miss.",
+    "category": "Movies",
+    "date": "2025-12-26T18:30:00.000Z",
+    "image": "/assets/images/movies/movie-4569.svg",
+    "url": "/blogs/movie-4569-the-great-night-of-mumbai-the-beginning.html"
+  },
+  {
+    "id": "movie-5232",
+    "title": "Shattered Whisper The Beginning",
+    "excerpt": "Movie Review: Shattered Whisper The Beginning. A gripping Comedy story that you cannot miss.",
+    "category": "Movies",
+    "date": "2025-12-26T18:30:00.000Z",
+    "image": "/assets/images/movies/movie-5232.svg",
+    "url": "/blogs/movie-5232-shattered-whisper-the-beginning.html"
+  },
+  {
+    "id": "movie-5264",
+    "title": "The Last War Returns",
+    "excerpt": "Movie Review: The Last War Returns. A gripping Mystery story that you cannot miss.",
+    "category": "Movies",
+    "date": "2025-12-26T18:30:00.000Z",
+    "image": "/assets/images/movies/movie-5264.svg",
+    "url": "/blogs/movie-5264-the-last-war-returns.html"
+  },
+  {
+    "id": "movie-5711",
+    "title": "Rising Empire The Beginning",
+    "excerpt": "Movie Review: Rising Empire The Beginning. A gripping Fantasy story that you cannot miss.",
+    "category": "Movies",
+    "date": "2025-12-26T18:30:00.000Z",
+    "image": "/assets/images/movies/movie-5711.svg",
+    "url": "/blogs/movie-5711-rising-empire-the-beginning.html"
+  },
+  {
+    "id": "movie-6161",
+    "title": "Velvet War of Tomorrow",
+    "excerpt": "Movie Review: Velvet War of Tomorrow. A gripping Sci-Fi story that you cannot miss.",
+    "category": "Movies",
+    "date": "2025-12-26T18:30:00.000Z",
+    "image": "/assets/images/movies/movie-6161.svg",
+    "url": "/blogs/movie-6161-velvet-war-of-tomorrow.html"
+  },
+  {
+    "id": "movie-6322",
+    "title": "The Empire's Star Returns",
+    "excerpt": "Movie Review: The Empire's Star Returns. A gripping Animation story that you cannot miss.",
+    "category": "Movies",
+    "date": "2025-12-26T18:30:00.000Z",
+    "image": "/assets/images/movies/movie-6322.svg",
+    "url": "/blogs/movie-6322-the-empire-s-star-returns.html"
+  },
+  {
+    "id": "movie-6731",
+    "title": "Silent Shadow Returns",
+    "excerpt": "Movie Review: Silent Shadow Returns. A gripping Romance story that you cannot miss.",
+    "category": "Movies",
+    "date": "2025-12-26T18:30:00.000Z",
+    "image": "/assets/images/movies/movie-6731.svg",
+    "url": "/blogs/movie-6731-silent-shadow-returns.html"
+  },
+  {
+    "id": "movie-6774",
+    "title": "The Empire's Detective II",
+    "excerpt": "Movie Review: The Empire's Detective II. A gripping Romance story that you cannot miss.",
+    "category": "Movies",
+    "date": "2025-12-26T18:30:00.000Z",
+    "image": "/assets/images/movies/movie-6774.svg",
+    "url": "/blogs/movie-6774-the-empire-s-detective-ii.html"
+  },
+  {
+    "id": "movie-7146",
+    "title": "Dark Legend The Beginning",
+    "excerpt": "Movie Review: Dark Legend The Beginning. A gripping Horror story that you cannot miss.",
+    "category": "Movies",
+    "date": "2025-12-26T18:30:00.000Z",
+    "image": "/assets/images/movies/movie-7146.svg",
+    "url": "/blogs/movie-7146-dark-legend-the-beginning.html"
+  },
+  {
+    "id": "movie-7831",
+    "title": "The Ghost's Samurai The Beginning",
+    "excerpt": "Movie Review: The Ghost's Samurai The Beginning. A gripping Animation story that you cannot miss.",
+    "category": "Movies",
+    "date": "2025-12-26T18:30:00.000Z",
+    "image": "/assets/images/movies/movie-7831.svg",
+    "url": "/blogs/movie-7831-the-ghost-s-samurai-the-beginning.html"
+  },
+  {
+    "id": "movie-8008",
+    "title": "The War's Avenger The Beginning",
+    "excerpt": "Movie Review: The War's Avenger The Beginning. A gripping Romance story that you cannot miss.",
+    "category": "Movies",
+    "date": "2025-12-26T18:30:00.000Z",
+    "image": "/assets/images/movies/movie-8008.svg",
+    "url": "/blogs/movie-8008-the-war-s-avenger-the-beginning.html"
+  },
+  {
+    "id": "movie-8647",
+    "title": "Crimson Day of the North Returns",
+    "excerpt": "Movie Review: Crimson Day of the North Returns. A gripping Romance story that you cannot miss.",
+    "category": "Movies",
+    "date": "2025-12-26T18:30:00.000Z",
+    "image": "/assets/images/movies/movie-8647.svg",
+    "url": "/blogs/movie-8647-crimson-day-of-the-north-returns.html"
+  }
+]
