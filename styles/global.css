@@ -5,3 +5,45 @@
 :root{--site-max-width:1200px}
 body{max-width:var(--site-max-width);margin:0 auto}
 
+/* Back Button Styles */
+.content-navigation {
+  margin: 1rem 0;
+  padding: 0 1rem;
+}
+
+.btn-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  font-weight: 500;
+  color: var(--text);
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--muted); /* Fallback if var not defined */
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 8px;
+  background-color: var(--card-bg);
+  transition: all 0.2s ease;
+  width: fit-content;
+  font-size: 0.95rem;
+}
+
+.btn-back:hover {
+  background-color: var(--bg);
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateX(-2px);
+}
+
+.icon-arrow-left {
+  font-size: 1.2em;
+  line-height: 1;
+  display: inline-block;
+}
+
+@media (max-width: 600px) {
+  .content-navigation {
+    margin: 0.5rem 0;
+  }
+}
+
