@@ -1,5 +1,105 @@
 [
   {
+    "title": "India Achieves $5 Trillion Economy Milestone Ahead of Schedule",
+    "slug": "india-achieves-5-trillion-economy-milestone-2025",
+    "category": "India",
+    "date": "2025-11-15T09:00:00Z",
+    "image": "/assets/images/india-news/india-news-1.svg",
+    "id": "news-india-1",
+    "excerpt": "Breaking: India Achieves $5 Trillion Economy Milestone Ahead of Schedule. A detailed look at this major development in India.",
+    "contentFile": "/news/india-achieves-5-trillion-economy-milestone-2025.html"
+  },
+  {
+    "title": "Gaganyaan Mission Success: India Sends Humans to Space",
+    "slug": "gaganyaan-mission-success-india-humans-space-2025",
+    "category": "India",
+    "date": "2025-11-20T14:30:00Z",
+    "image": "/assets/images/india-news/india-news-2.svg",
+    "id": "news-india-2",
+    "excerpt": "Breaking: Gaganyaan Mission Success: India Sends Humans to Space. A detailed look at this major development in India.",
+    "contentFile": "/news/gaganyaan-mission-success-india-humans-space-2025.html"
+  },
+  {
+    "title": "Mumbai-Ahmedabad Bullet Train Inaugurated by PM",
+    "slug": "mumbai-ahmedabad-bullet-train-inaugurated-2025",
+    "category": "India",
+    "date": "2025-11-25T11:00:00Z",
+    "image": "/assets/images/india-news/india-news-3.svg",
+    "id": "news-india-3",
+    "excerpt": "Breaking: Mumbai-Ahmedabad Bullet Train Inaugurated by PM. A detailed look at this major development in India.",
+    "contentFile": "/news/mumbai-ahmedabad-bullet-train-inaugurated-2025.html"
+  },
+  {
+    "title": "Bangalore Tech Summit 2025: India Leads in AI Innovation",
+    "slug": "bangalore-tech-summit-2025-india-ai-leader",
+    "category": "India",
+    "date": "2025-11-28T10:00:00Z",
+    "image": "/assets/images/india-news/india-news-4.svg",
+    "id": "news-india-4",
+    "excerpt": "Breaking: Bangalore Tech Summit 2025: India Leads in AI Innovation. A detailed look at this major development in India.",
+    "contentFile": "/news/bangalore-tech-summit-2025-india-ai-leader.html"
+  },
+  {
+    "title": "India Surpasses 500GW Renewable Energy Target",
+    "slug": "india-surpasses-500gw-renewable-energy-target-2025",
+    "category": "India",
+    "date": "2025-11-10T08:45:00Z",
+    "image": "/assets/images/india-news/india-news-5.svg",
+    "id": "news-india-5",
+    "excerpt": "Breaking: India Surpasses 500GW Renewable Energy Target. A detailed look at this major development in India.",
+    "contentFile": "/news/india-surpasses-500gw-renewable-energy-target-2025.html"
+  },
+  {
+    "title": "Digital Rupee Now Accepted in 100% of Districts",
+    "slug": "digital-rupee-mass-adoption-100-percent-districts",
+    "category": "India",
+    "date": "2025-11-05T16:20:00Z",
+    "image": "/assets/images/india-news/india-news-6.svg",
+    "id": "news-india-6",
+    "excerpt": "Breaking: Digital Rupee Now Accepted in 100% of Districts. A detailed look at this major development in India.",
+    "contentFile": "/news/digital-rupee-mass-adoption-100-percent-districts.html"
+  },
+  {
+    "title": "India Wins 2025 Cricket Championship in Thrilling Final",
+    "slug": "india-wins-2025-cricket-championship-final",
+    "category": "India",
+    "date": "2025-11-30T22:00:00Z",
+    "image": "/assets/images/india-news/india-news-7.svg",
+    "id": "news-india-7",
+    "excerpt": "Breaking: India Wins 2025 Cricket Championship in Thrilling Final. A detailed look at this major development in India.",
+    "contentFile": "/news/india-wins-2025-cricket-championship-final.html"
+  },
+  {
+    "title": "Smart Cities Mission: 50 Cities Declared Fully Smart",
+    "slug": "smart-cities-mission-50-cities-fully-smart-2025",
+    "category": "India",
+    "date": "2025-11-12T13:15:00Z",
+    "image": "/assets/images/india-news/india-news-8.svg",
+    "id": "news-india-8",
+    "excerpt": "Breaking: Smart Cities Mission: 50 Cities Declared Fully Smart. A detailed look at this major development in India.",
+    "contentFile": "/news/smart-cities-mission-50-cities-fully-smart-2025.html"
+  },
+  {
+    "title": "Revolutionary Rural Telemedicine Network Launched",
+    "slug": "revolutionary-rural-telemedicine-network-launched-2025",
+    "category": "India",
+    "date": "2025-11-18T09:30:00Z",
+    "image": "/assets/images/india-news/india-news-9.svg",
+    "id": "news-india-9",
+    "excerpt": "Breaking: Revolutionary Rural Telemedicine Network Launched. A detailed look at this major development in India.",
+    "contentFile": "/news/revolutionary-rural-telemedicine-network-launched-2025.html"
+  },
+  {
+    "title": "New Education Policy Yields 98% Literacy Rate in Youth",
+    "slug": "new-education-policy-98-percent-literacy-youth-2025",
+    "category": "India",
+    "date": "2025-11-22T15:00:00Z",
+    "image": "/assets/images/india-news/india-news-10.svg",
+    "id": "news-india-10",
+    "excerpt": "Breaking: New Education Policy Yields 98% Literacy Rate in Youth. A detailed look at this major development in India.",
+    "contentFile": "/news/new-education-policy-98-percent-literacy-youth-2025.html"
+  },
+  {
     "title": "India’s GDP Expected to Grow 7.3% in Q2",
     "slug": "india-gdp-expected-73-q2",
     "date": "2025-11-25",

@@ -1,0 +1,12 @@
+<svg width="800" height="450" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#008080;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#40E0D0;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#grad)" />
+  <rect x="0" y="350" width="800" height="100" fill="rgba(0,0,0,0.7)" />
+  <text x="400" y="225" font-family="Arial, sans-serif" font-size="60" font-weight="bold" fill="white" text-anchor="middle" dy=".3em" style="text-shadow: 2px 2px 4px #000000;">Digital Rupee</text>
+  <text x="400" y="410" font-family="Arial, sans-serif" font-size="30" fill="white" text-anchor="middle">MIROZA INDIA NEWS</text>
+</svg>
