@@ -124,6 +124,25 @@
   /* Navigation */
   window.MIROZA.nav = (function(){
     let isOpen = false;
+    
+    function handleResize() {
+        const width = window.innerWidth;
+        const nav = window.MIROZA.utils.qs('.main-nav');
+        const search = window.MIROZA.utils.qs('.search-form');
+        const theme = window.MIROZA.utils.qs('.theme-toggle');
+        const headerInner = window.MIROZA.utils.qs('.header-inner');
+        
+        if (!nav || !search || !theme || !headerInner) return;
+        
+        if (width <= 768) {
+          if (!nav.contains(search)) nav.insertBefore(search, nav.firstChild);
+          if (!nav.contains(theme)) nav.appendChild(theme);
+        } else {
+          if (!headerInner.contains(search)) headerInner.appendChild(search);
+          if (!headerInner.contains(theme)) headerInner.appendChild(theme);
+        }
+    }
+
     function highlightActive(){
       const path = window.location.pathname;
       const links = window.MIROZA.utils.qsa('.main-nav a');
@@ -143,6 +162,7 @@
       const toggleBtn = window.MIROZA.utils.qs('.menu-toggle');
       const nav = window.MIROZA.utils.qs('.main-nav');
       if(!toggleBtn || !nav) return;
+      
       toggleBtn.addEventListener('click', () => {
         isOpen = !isOpen;
         nav.classList.toggle('open', isOpen);
@@ -151,6 +171,9 @@
           ? '<img src="/assets/icons/close.svg" alt="Close" width="24" height="24" />'
           : '<img src="/assets/icons/menu.svg" alt="Menu" width="24" height="24" />';
       });
+
+      window.addEventListener('resize', window.MIROZA.utils.debounce(handleResize, 200));
+      handleResize();
     }
     return { init };
   })();
@@ -237,22 +260,43 @@
     function init(){
       const input = document.getElementById('search');
       const suggestions = document.getElementById('search-suggestions');
+      const form = input ? input.closest('form') : null;
+      
       if(!input || !suggestions) return;
 
-      let allPosts = null;
+      // Handle form submit manually to bypass onsubmit="return false"
+      if(form) {
+          form.removeAttribute('onsubmit'); // Remove inline handler if possible
+          form.addEventListener('submit', (e) => {
+              e.preventDefault();
+              const q = input.value.trim();
+              if(q) window.location.href = `/search.html?q=${encodeURIComponent(q)}`;
+          });
+      }
+
+      let searchIndex = null;
 
       input.addEventListener('input', window.MIROZA.utils.debounce(async (e) => {
         const q = e.target.value.toLowerCase();
         if(q.length < 2) { suggestions.hidden = true; return; }
 
-        if(!allPosts) {
-            // Lazy load the full index only when searching
+        if(!searchIndex) {
+            // Lazy load the optimized search index
             suggestions.innerHTML = '<div class="search-loading">Loading index...</div>';
             suggestions.hidden = false;
-            allPosts = await window.MIROZA.store.getAll();
+            try {
+                const res = await fetch('/data/search.json');
+                if(!res.ok) throw new Error('Failed to load search index');
+                searchIndex = await res.json();
+            } catch(err) {
+                console.error(err);
+                suggestions.innerHTML = '<div class="search-error">Error loading search</div>';
+                return;
+            }
         }
 
-        const matches = allPosts.filter(p => (p.title || '').toLowerCase().includes(q)).slice(0, 5);
+        // Filter using short keys: t=title, c=category, u=url
+        const matches = searchIndex.filter(p => (p.t || '').toLowerCase().includes(q)).slice(0, 5);
         suggestions.innerHTML = '';
         
         if(matches.length){
@@ -260,8 +304,8 @@
           matches.forEach(p => {
             const btn = document.createElement('button');
             btn.className = 'search-suggestion';
-            btn.innerHTML = `<strong>${window.MIROZA.utils.safeHTML(p.title)}</strong><br><span>${window.MIROZA.utils.safeHTML(p.category || '')}</span>`;
-            btn.onclick = () => window.location.href = p.link || p.url || '#';
+            btn.innerHTML = `<strong>${window.MIROZA.utils.safeHTML(p.t)}</strong><br><span>${window.MIROZA.utils.safeHTML(p.c || '')}</span>`;
+            btn.onclick = () => window.location.href = p.u || '#';
             suggestions.appendChild(btn);
           });
         } else {
