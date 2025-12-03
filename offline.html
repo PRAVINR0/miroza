@@ -3,31 +3,114 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="MIROZA — modern news and articles.">
-    <link rel="canonical" href="https://miroza.online/offline.html">
-  <title>MIROZA — Offline</title>
-    <link rel="icon" type="image/svg+xml" href="/assets/icons/logo.svg" />
-    <script src="/scripts/app.min.js" defer></script>
-    
-  <style>
-    body { display:flex; align-items:center; justify-content:center; min-height:100vh; text-align:center; padding:2rem; }
-    .offline-card { max-width:420px; border:1px solid var(--border, #cbd5f5); border-radius:12px; padding:2.5rem; background:var(--bg, #fff); box-shadow:0 10px 30px rgba(15,23,42,0.15); }
-    h1 { font-family:var(--font-serif, 'Georgia'); margin-bottom:1rem; }
-    p { color:var(--text-alt, #475569); }
-    a { display:inline-flex; margin-top:1.5rem; }
-  </style>
-  <link rel="stylesheet" href="/styles/main.min.css" />
+  <title>Offline - MIROZA</title>
+  <link rel="stylesheet" href="/styles/main.css" />
+  <link rel="icon" type="image/svg+xml" href="/assets/icons/logo.svg" />
 </head>
-<body>
-  <main class="offline-card" aria-labelledby="offline-title">
-    <h1 id="offline-title">You are offline</h1>
-    <p>It looks like your connection is taking a pause. Core— MIROZA stories stay cached for fast access, and everything will sync once you are back online.</p>
-    <p>Meanwhile you can revisit any pages you opened before, or jump back to the homepage when connectivity returns.</p>
-    <a class="cta" href="/">Reload— MIROZA ?</a>
+<body data-page="offline">
+
+  <!-- Top Strip -->
+  <div class="top-strip">
+    <div class="container">
+      <div class="ts-left">
+        <span>Tuesday, Nov 25, 2025</span>
+        <span class="separator">|</span>
+        <span>28°C New Delhi</span>
+      </div>
+      <div class="ts-right">
+        <a href="#">E-Paper</a>
+        <span class="separator">|</span>
+        <a href="#">Sign In</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-grid">
+      <button class="menu-toggle" aria-label="Menu">
+        <img src="/assets/icons/menu.svg" alt="Menu" width="24">
+      </button>
+      
+      <a href="/" class="logo">
+        <img src="/assets/icons/logo.svg" alt="M">
+        MIROZA
+      </a>
+
+      <div class="header-search">
+        <form action="/search.html">
+          <input type="text" placeholder="Search News, Articles...">
+          <button type="submit" class="search-btn">
+            <img src="/assets/icons/search.svg" alt="Search" width="16" style="filter: invert(1);">
+          </button>
+        </form>
+      </div>
+
+      <button class="mobile-search-toggle">
+        <img src="/assets/icons/search.svg" alt="Search" width="20">
+      </button>
+    </div>
+  </header>
+
+  <!-- Nav Bar -->
+  <nav class="main-nav-bar">
+    <div class="container">
+      <ul class="nav-list">
+        <li><a href="/index.html">Home</a></li>
+        <li><a href="/news.html">News</a></li>
+        <li><a href="/articles.html">Articles</a></li>
+        <li><a href="/blog.html">Blogs</a></li>
+        <li><a href="/about.html">About Us</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="container main-layout">
+    <div class="col-center" style="grid-column: 1 / span 2; text-align: center; padding: 50px 0;">
+      <div class="section-heading-sm">
+        <h3>You are Offline</h3>
+      </div>
+      <p>It seems you have lost your internet connection. Please check your settings and try again.</p>
+      <button onclick="window.location.reload()" style="margin-top: 20px; padding: 10px 20px; background: var(--toi-red); color: #fff; border: none; cursor: pointer;">Retry</button>
+    </div>
+
+    <aside class="col-right">
+      <div class="ad-box-lg">ADVERTISEMENT</div>
+    </aside>
   </main>
 
-  <button class="back-to-top" aria-label="Back to top">↑</button>
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-links">
+        <div class="fl-col">
+          <h4>News</h4>
+          <a href="/news.html">India</a>
+          <a href="/news.html">World</a>
+          <a href="/news.html">Business</a>
+        </div>
+        <div class="fl-col">
+          <h4>Opinion</h4>
+          <a href="/blog.html">Blogs</a>
+          <a href="/articles.html">Editorials</a>
+          <a href="/articles.html">Columns</a>
+        </div>
+        <div class="fl-col">
+          <h4>More</h4>
+          <a href="/about.html">About Us</a>
+          <a href="/contact.html">Contact</a>
+          <a href="/privacy.html">Privacy</a>
+        </div>
+      </div>
+      <div class="copyright">
+        Copyright © 2025 MIROZA. All rights reserved.
+      </div>
+    </div>
+  </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.11/dist/purify.min.js"></script>
+  <script src="/scripts/app.js"></script>
 </body>
 </html>
 
