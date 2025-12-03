@@ -94,122 +94,108 @@
   </header>
 
   <main id="main">
-    <section class="hero" aria-labelledby="hero-heading">
-      <div class="hero-content">
-        <div class="hero-text">
-          <span class="hero-tag" id="hero-tag">Featured</span>
-          <h1 id="hero-heading">The signal behind tomorrow's headlines</h1>
-          <p class="hero-excerpt" id="hero-excerpt">Expert analysis and deep dives into technology, global markets, and cultural shifts.— MIROZA brings you clarity in a noisy world.</p>
-          <a class="cta" id="hero-link" href="/articles/articles.html">Start Reading</a>
-          <div class="hero-rotator">
-            <button class="hero-advance" type="button">Next Featured Story &rarr;</button>
-          </div>
-        </div>
-        <div class="hero-image-wrapper">
-          <img id="hero-image" src="/assets/images/hero-insight-800.svg" alt="Featured Story" width="800" height="450" loading="eager" />
-        </div>
-      </div>
-    </section>
-
-    <!-- Latest News -->
-    <section class="category-block" aria-labelledby="news-heading">
-      <div class="section-header">
-        <span class="hero-tag">News Desk</span>
-        <h2 id="news-heading">Latest News</h2>
-      </div>
-      <div class="cards" id="news-cards">
-        <div class="card skeleton"></div>
-        <div class="card skeleton"></div>
-        <div class="card skeleton"></div>
-        <div class="card skeleton"></div>
-      </div>
-    </section>
-
-    <!-- Ad Slot: Home Middle -->
-    <div class="ad-slot" data-slot="home-middle" style="margin: 2rem auto; max-width: 728px; text-align: center; min-height: 90px; background: var(--bg-alt); display: flex; align-items: center; justify-content: center; border: 1px dashed var(--border);">
-      <span style="color: var(--text-alt); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px;">Advertisement</span>
-    </div>
-
-    <!-- Latest Articles -->
-    <section class="category-block" aria-labelledby="articles-heading">
-      <div class="section-header">
-        <span class="hero-tag">In-Depth</span>
-        <h2 id="articles-heading">Latest Articles</h2>
-      </div>
-      <div class="cards" id="articles-cards">
-        <div class="card skeleton"></div>
-        <div class="card skeleton"></div>
-        <div class="card skeleton"></div>
-        <div class="card skeleton"></div>
-      </div>
-    </section>
-
-    <!-- Latest Blogs -->
-    <section class="category-block" aria-labelledby="blogs-heading">
-      <div class="section-header">
-        <span class="hero-tag">Editorial</span>
-        <h2 id="blogs-heading">Latest Blogs</h2>
-      </div>
-      <div class="cards" id="blog-cards">
-        <div class="card skeleton"></div>
-        <div class="card skeleton"></div>
-        <div class="card skeleton"></div>
-        <div class="card skeleton"></div>
-      </div>
-    </section>
-
-    <!-- Mixed Stream & Trending Grid -->
-    <div class="content-grid">
-      <section class="latest" aria-labelledby="stream-heading">
-        <div class="section-header">
-          <span class="hero-tag">The Stream</span>
-          <h2 id="stream-heading">Mixed Coverage</h2>
-        </div>
+    <!-- Top Stories Section -->
+    <section class="page-hero" aria-labelledby="top-stories-heading">
+      <div class="container">
+        <h1 id="top-stories-heading">Top Stories</h1>
         <div class="cards" id="latest-cards">
            <div class="card skeleton"></div>
            <div class="card skeleton"></div>
            <div class="card skeleton"></div>
            <div class="card skeleton"></div>
         </div>
-        <!-- Pagination controls handled by JS -->
-        <div class="pagination" id="latest-pagination"></div>
-      </section>
+      </div>
+    </section>
 
-      <aside class="sidebar">
-        <h3 id="trending-heading">Trending Now</h3>
-        <ul class="trending-list" id="trending-list">
-          <li class="skeleton" style="height: 3rem;"></li>
-          <li class="skeleton" style="height: 3rem;"></li>
-          <li class="skeleton" style="height: 3rem;"></li>
-          <li class="skeleton" style="height: 3rem;"></li>
-          <li class="skeleton" style="height: 3rem;"></li>
-        </ul>
+    <div class="container">
+      <div class="content-grid" style="display: grid; grid-template-columns: 1fr 300px; gap: 2rem;">
+        <div class="main-content">
+            <!-- Latest News -->
+            <section class="category-block" aria-labelledby="news-heading">
+              <div class="section-header">
+                <span class="hero-tag">News Desk</span>
+                <h2 id="news-heading">Latest News</h2>
+              </div>
+              <div class="cards" id="news-cards">
+                <div class="card skeleton"></div>
+                <div class="card skeleton"></div>
+              </div>
+            </section>
 
-        <div class="newsletter">
-          <h3>Stay Updated</h3>
-          <p>Get the latest stories delivered to your inbox weekly.</p>
-          <form id="newsletter-form" novalidate>
-            <input
-              type="email"
-              name="email"
-              autocomplete="email"
-              required
-              placeholder="you@example.com"
-              aria-label="Email address"
-            />
-            <button type="submit">Subscribe</button>
-          </form>
-          <p class="form-feedback" aria-live="polite"></p>
+            <!-- Ad Slot -->
+            <div class="ad-slot" data-slot="home-middle" style="margin: 2rem 0; text-align: center; min-height: 90px; background: var(--bg-alt); display: flex; align-items: center; justify-content: center; border: 1px dashed var(--border);">
+              <span style="color: var(--text-muted); font-size: 0.8rem; text-transform: uppercase;">Advertisement</span>
+            </div>
+
+            <!-- Latest Articles -->
+            <section class="category-block" aria-labelledby="articles-heading">
+              <div class="section-header">
+                <span class="hero-tag">In-Depth</span>
+                <h2 id="articles-heading">Latest Articles</h2>
+              </div>
+              <div class="cards" id="articles-cards">
+                <div class="card skeleton"></div>
+                <div class="card skeleton"></div>
+              </div>
+            </section>
+
+            <!-- Latest Blogs -->
+            <section class="category-block" aria-labelledby="blogs-heading">
+              <div class="section-header">
+                <span class="hero-tag">Editorial</span>
+                <h2 id="blogs-heading">Latest Blogs</h2>
+              </div>
+              <div class="cards" id="blog-cards">
+                <div class="card skeleton"></div>
+                <div class="card skeleton"></div>
+              </div>
+            </section>
         </div>
-      </aside>
+
+        <aside class="sidebar">
+            <h3 style="font-family: var(--font-heading); border-bottom: 2px solid var(--text-accent); padding-bottom: 0.5rem; margin-bottom: 1rem;">Trending</h3>
+            <ul class="trending-list" id="trending-list">
+              <!-- Populated by JS or static for now -->
+              <li>
+                  <h4><a href="#">Global Markets Rally as Tech Stocks Surge</a></h4>
+                  <span>Finance • 2h ago</span>
+              </li>
+              <li>
+                  <h4><a href="#">New AI Regulations Proposed by EU Commission</a></h4>
+                  <span>Tech • 4h ago</span>
+              </li>
+              <li>
+                  <h4><a href="#">Sustainable Energy: The Hydrogen Breakthrough</a></h4>
+                  <span>Science • 5h ago</span>
+              </li>
+              <li>
+                  <h4><a href="#">Remote Work Trends for 2026</a></h4>
+                  <span>Lifestyle • 1d ago</span>
+              </li>
+              <li>
+                  <h4><a href="#">SpaceX Launches New Starship Mission</a></h4>
+                  <span>Space • 1d ago</span>
+              </li>
+            </ul>
+
+            <div class="newsletter" style="background: var(--bg-alt); padding: 1.5rem; margin-top: 2rem; border: 1px solid var(--border);">
+              <h3 style="font-family: var(--font-heading); margin-bottom: 0.5rem;">Newsletter</h3>
+              <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem;">Get the top stories in your inbox.</p>
+              <form id="newsletter-form" novalidate>
+                <input
+                  type="email"
+                  name="email"
+                  required
+                  placeholder="Email address"
+                  style="width: 100%; padding: 0.5rem; margin-bottom: 0.5rem; border: 1px solid var(--border);"
+                />
+                <button type="submit" style="width: 100%; padding: 0.5rem; background: var(--text-accent); color: white; border: none; font-weight: bold; cursor: pointer;">Subscribe</button>
+              </form>
+            </div>
+        </aside>
+      </div>
     </div>
 
-    <!-- About Section -->
-    <section id="about" class="about-section">
-      <h2>About— MIROZA</h2>
-      <p>MIROZA is a modern publishing platform focusing on performance, accessibility, and user experience. We aim to deliver high-quality journalism and insightful analysis without the clutter. Our mission is to empower readers with accurate information and diverse perspectives.</p>
-    </section>
-  </main>
 
   <footer class="site-footer">
     <div class="footer-grid">

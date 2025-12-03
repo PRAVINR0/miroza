@@ -1,4 +1,4 @@
-/* MIROZA Main JS - Optimized for Performance */
+/* MIROZA Main JS - Optimized for Performance & TOI Style */
 (function(){
   'use strict';
   const THEME_STORAGE_KEY = 'theme';
@@ -21,7 +21,7 @@
     }
   };
 
-  /* Data Store Module - Optimized to use segmented feeds */
+  /* Data Store Module */
   window.MIROZA.store = (function(){
     let _cache = {};
 
@@ -44,7 +44,7 @@
         getNews: () => fetchFeed('news-feed'),
         getBlogs: () => fetchFeed('blogs-feed'),
         getArticles: () => fetchFeed('articles-feed'),
-        getAll: () => fetchFeed('posts') // Only load full dataset if absolutely needed (e.g. global search)
+        getAll: () => fetchFeed('posts')
     };
   })();
 
@@ -83,7 +83,6 @@
               ${window.MIROZA.utils.safeHTML(post.title || '')}
             </h3>
             <p class="card-excerpt">${window.MIROZA.utils.safeHTML(post.excerpt || '')}</p>
-            <span class="read-more" aria-hidden="true">Read Article</span>
           </div>
         </a>
       `;
@@ -102,6 +101,9 @@
         document.documentElement.dataset.theme = 'dark';
       }
       updateIcon();
+      
+      const btn = window.MIROZA.utils.qs('.theme-toggle');
+      if(btn) btn.addEventListener('click', toggle);
     }
     function toggle(){
       const current = document.documentElement.dataset.theme || 'light';
@@ -111,35 +113,90 @@
       updateIcon();
     }
     function updateIcon(){
-      const btn = window.MIROZA.utils.qs('.theme-toggle img');
-      if(btn){
+      const btnImg = window.MIROZA.utils.qs('.theme-toggle img');
+      if(btnImg){
         const isDark = document.documentElement.dataset.theme === 'dark';
-        btn.src = isDark ? '/assets/icons/sun.svg' : '/assets/icons/moon.svg';
-        btn.alt = isDark ? 'Switch to light mode' : 'Switch to dark mode';
+        btnImg.src = isDark ? '/assets/icons/sun.svg' : '/assets/icons/moon.svg';
+        btnImg.alt = isDark ? 'Switch to light mode' : 'Switch to dark mode';
       }
     }
     return { init, toggle };
   })();
 
-  /* Navigation */
+  /* Navigation (Mobile Drawer Logic) */
   window.MIROZA.nav = (function(){
     let isOpen = false;
+    let overlay;
     
+    function createOverlay() {
+        overlay = document.createElement('div');
+        overlay.className = 'nav-overlay';
+        document.body.appendChild(overlay);
+        overlay.addEventListener('click', closeMenu);
+    }
+
+    function closeMenu() {
+        isOpen = false;
+        const nav = window.MIROZA.utils.qs('.main-nav');
+        const toggleBtn = window.MIROZA.utils.qs('.menu-toggle');
+        if(nav) nav.classList.remove('open');
+        if(overlay) overlay.classList.remove('active');
+        if(toggleBtn) {
+            toggleBtn.setAttribute('aria-expanded', 'false');
+            toggleBtn.innerHTML = '<img src="/assets/icons/menu.svg" alt="Menu" width="24" height="24" />';
+        }
+        document.body.style.overflow = '';
+    }
+
+    function openMenu() {
+        isOpen = true;
+        const nav = window.MIROZA.utils.qs('.main-nav');
+        const toggleBtn = window.MIROZA.utils.qs('.menu-toggle');
+        if(nav) nav.classList.add('open');
+        if(overlay) overlay.classList.add('active');
+        if(toggleBtn) {
+            toggleBtn.setAttribute('aria-expanded', 'true');
+            toggleBtn.innerHTML = '<img src="/assets/icons/close.svg" alt="Close" width="24" height="24" />';
+        }
+        document.body.style.overflow = 'hidden';
+    }
+
     function handleResize() {
         const width = window.innerWidth;
         const nav = window.MIROZA.utils.qs('.main-nav');
-        const search = window.MIROZA.utils.qs('.search-form');
-        const theme = window.MIROZA.utils.qs('.theme-toggle');
+        const searchForm = window.MIROZA.utils.qs('.search-form');
         const headerInner = window.MIROZA.utils.qs('.header-inner');
         
-        if (!nav || !search || !theme || !headerInner) return;
+        if (!nav || !searchForm || !headerInner) return;
         
-        if (width <= 768) {
-          if (!nav.contains(search)) nav.insertBefore(search, nav.firstChild);
-          if (!nav.contains(theme)) nav.appendChild(theme);
+        // Mobile Logic (< 992px)
+        if (width < 992) {
+            // Ensure search is in the drawer
+            let mobileSearch = nav.querySelector('.mobile-search-container');
+            if (!mobileSearch) {
+                mobileSearch = document.createElement('div');
+                mobileSearch.className = 'mobile-search-container';
+                nav.insertBefore(mobileSearch, nav.firstChild);
+            }
+            if (!mobileSearch.contains(searchForm)) {
+                mobileSearch.appendChild(searchForm);
+            }
         } else {
-          if (!headerInner.contains(search)) headerInner.appendChild(search);
-          if (!headerInner.contains(theme)) headerInner.appendChild(theme);
+            // Desktop Logic: Move search back to header
+            if (isOpen) closeMenu();
+            if (!headerInner.contains(searchForm)) {
+                // Insert before theme toggle if possible, or append
+                const themeToggle = window.MIROZA.utils.qs('.theme-toggle');
+                if(themeToggle) headerInner.insertBefore(searchForm, themeToggle.parentNode); // theme toggle is usually in header-tools
+                else headerInner.appendChild(searchForm);
+                
+                // Actually, in my HTML structure, search-form is a direct child of header-inner usually
+                // Let's just append to header-inner and let CSS Grid handle placement.
+                headerInner.appendChild(searchForm);
+            }
+            // Remove mobile search container if empty
+            const mobileSearch = nav.querySelector('.mobile-search-container');
+            if (mobileSearch) mobileSearch.remove();
         }
     }
 
@@ -157,23 +214,18 @@
         }
       });
     }
+
     function init(){
+      createOverlay();
       highlightActive();
-      const toggleBtn = window.MIROZA.utils.qs('.menu-toggle');
-      const nav = window.MIROZA.utils.qs('.main-nav');
-      if(!toggleBtn || !nav) return;
       
-      toggleBtn.addEventListener('click', () => {
-        isOpen = !isOpen;
-        nav.classList.toggle('open', isOpen);
-        toggleBtn.setAttribute('aria-expanded', isOpen);
-        toggleBtn.innerHTML = isOpen
-          ? '<img src="/assets/icons/close.svg" alt="Close" width="24" height="24" />'
-          : '<img src="/assets/icons/menu.svg" alt="Menu" width="24" height="24" />';
-      });
+      const toggleBtn = window.MIROZA.utils.qs('.menu-toggle');
+      if(toggleBtn) {
+          toggleBtn.addEventListener('click', () => isOpen ? closeMenu() : openMenu());
+      }
 
       window.addEventListener('resize', window.MIROZA.utils.debounce(handleResize, 200));
-      handleResize();
+      handleResize(); // Initial check
     }
     return { init };
   })();
@@ -181,7 +233,6 @@
   /* Home Page Logic */
   window.MIROZA.home = (function(){
     async function init(){
-      // Load feeds in parallel
       const [latest, news, blogs, articles] = await Promise.all([
           window.MIROZA.store.getLatest(),
           window.MIROZA.store.getNews(),
@@ -189,7 +240,7 @@
           window.MIROZA.store.getArticles()
       ]);
 
-      renderList('latest-cards', latest.slice(0, 12)); // Show top 12 latest
+      renderList('latest-cards', latest.slice(0, 12));
       renderList('news-cards', news.slice(0, 4));
       renderList('blog-cards', blogs.slice(0, 4));
       renderList('articles-cards', articles.slice(0, 4));
@@ -205,18 +256,28 @@
     return { init };
   })();
 
-  /* Listing Pages (Articles/Blogs) */
+  /* Listing Pages */
   window.MIROZA.listing = (function(){
     async function init(type){
-        const containerId = type === 'blog' ? 'posts-grid' : 'articles-list';
+        let containerId, items, paginationId;
+        
+        if (type === 'blog') {
+            containerId = 'posts-grid';
+            items = await window.MIROZA.store.getBlogs();
+            paginationId = 'blogs-pagination';
+        } else if (type === 'article') {
+            containerId = 'articles-list';
+            items = await window.MIROZA.store.getArticles();
+            paginationId = 'articles-pagination';
+        } else if (type === 'news') {
+            containerId = 'india-news-list';
+            items = await window.MIROZA.store.getNews();
+            paginationId = 'india-news-pagination';
+        }
+
         const container = document.getElementById(containerId);
         if(!container) return;
 
-        let items = [];
-        if(type === 'blog') items = await window.MIROZA.store.getBlogs();
-        else items = await window.MIROZA.store.getArticles();
-
-        // Simple pagination
         const pageSize = 12;
         let currentPage = 1;
         
@@ -228,8 +289,6 @@
             if(currentPage === 1) container.innerHTML = '';
             slice.forEach(item => container.appendChild(window.MIROZA.builder.build(item)));
 
-            // Handle "Load More"
-            const paginationId = type === 'blog' ? 'blogs-pagination' : 'articles-pagination';
             let pagination = document.getElementById(paginationId);
             if(!pagination) {
                 pagination = document.createElement('div');
@@ -251,11 +310,12 @@
     }
     return { 
         initArticles: () => init('article'),
-        initBlogs: () => init('blog')
+        initBlogs: () => init('blog'),
+        initNews: () => init('news')
     };
   })();
 
-  /* Search - Lazy Load Full Data */
+  /* Search */
   window.MIROZA.search = (function(){
     function init(){
       const input = document.getElementById('search');
@@ -264,9 +324,8 @@
       
       if(!input || !suggestions) return;
 
-      // Handle form submit manually to bypass onsubmit="return false"
       if(form) {
-          form.removeAttribute('onsubmit'); // Remove inline handler if possible
+          form.removeAttribute('onsubmit');
           form.addEventListener('submit', (e) => {
               e.preventDefault();
               const q = input.value.trim();
@@ -281,8 +340,7 @@
         if(q.length < 2) { suggestions.hidden = true; return; }
 
         if(!searchIndex) {
-            // Lazy load the optimized search index
-            suggestions.innerHTML = '<div class="search-loading">Loading index...</div>';
+            suggestions.innerHTML = '<div class="search-loading">Loading...</div>';
             suggestions.hidden = false;
             try {
                 const res = await fetch('/data/search.json');
@@ -290,12 +348,11 @@
                 searchIndex = await res.json();
             } catch(err) {
                 console.error(err);
-                suggestions.innerHTML = '<div class="search-error">Error loading search</div>';
+                suggestions.innerHTML = '<div class="search-error">Error</div>';
                 return;
             }
         }
 
-        // Filter using short keys: t=title, c=category, u=url
         const matches = searchIndex.filter(p => (p.t || '').toLowerCase().includes(q)).slice(0, 5);
         suggestions.innerHTML = '';
         
@@ -330,8 +387,8 @@
     if(page === 'home') window.MIROZA.home.init();
     else if(page === 'articles') window.MIROZA.listing.initArticles();
     else if(page === 'blog') window.MIROZA.listing.initBlogs();
+    else if(page === 'india-news') window.MIROZA.listing.initNews();
     
-    // Service Worker
     if ('serviceWorker' in navigator) {
         navigator.serviceWorker.register('/sw.js').catch(() => {});
     }
