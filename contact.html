@@ -2,129 +2,126 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact — MIROZA</title>
-    <link rel="icon" type="image/svg+xml" href="/assets/icons/logo.svg" />
-  <meta name="description" content="Contact — MIROZA editorial team." />
-    <link rel="canonical" href="https://miroza.online/contact.html">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; frame-ancestors 'none';" />
-  
-  <link rel="stylesheet" href="/styles/main.min.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact Us - MIROZA</title>
+  <link rel="stylesheet" href="/styles/main.css" />
+  <link rel="icon" type="image/svg+xml" href="/assets/icons/logo.svg" />
 </head>
 <body data-page="contact">
-  <a href="#main" class="skip-link">Skip to content</a>
-  
-  <header class="site-header" aria-label="Site header">
-    <div class="header-inner">
-      <a class="logo" href="/" aria-label="MIROZA Home">
-        <img src="/assets/icons/logo.svg" alt="MIROZA" width="32" height="32" />
-        <span class="logo-text">MIROZA</span>
+
+  <!-- Top Strip -->
+  <div class="top-strip">
+    <div class="container">
+      <div class="ts-left">
+        <span>Tuesday, Nov 25, 2025</span>
+        <span class="separator">|</span>
+        <span>28°C New Delhi</span>
+      </div>
+      <div class="ts-right">
+        <a href="#">E-Paper</a>
+        <span class="separator">|</span>
+        <a href="#">Sign In</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-grid">
+      <button class="menu-toggle" aria-label="Menu">
+        <img src="/assets/icons/menu.svg" alt="Menu" width="24">
+      </button>
+      
+      <a href="/" class="logo">
+        <img src="/assets/icons/logo.svg" alt="M">
+        MIROZA
       </a>
 
-      <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
-        <img src="/assets/icons/menu.svg" alt="Menu" width="24" height="24" />
-      </button>
+      <div class="header-search">
+        <form action="/search.html">
+          <input type="text" placeholder="Search News, Articles...">
+          <button type="submit" class="search-btn">
+            <img src="/assets/icons/search.svg" alt="Search" width="16" style="filter: invert(1);">
+          </button>
+        </form>
+      </div>
 
-      <nav class="main-nav" aria-label="Primary navigation">
-        <ul>
-          <li><a href="/index.html">Home</a></li>
-          <li><a href="/news/news.html">News</a></li>
-          <li><a href="/articles/articles.html">Articles</a></li>
-          <li><a href="/blogs/blogs.html">Blogs</a></li>
-          <li><a href="/about.html">About</a></li>
-          <li><a href="/contact.html">Contact</a></li>
-        </ul>
-      </nav>
-
-      <form class="search-form" role="search" onsubmit="return false;">
-        <label for="search" class="visually-hidden">Search</label>
-        <input id="search" name="q" type="search" placeholder="Search..." autocomplete="off" />
-        <div class="search-suggestions" id="search-suggestions" hidden></div>
-      </form>
-
-      <button class="theme-toggle" aria-label="Toggle dark mode">
-        <img src="/assets/icons/moon.svg" alt="Enable dark mode" width="24" height="24" />
+      <button class="mobile-search-toggle">
+        <img src="/assets/icons/search.svg" alt="Search" width="20">
       </button>
     </div>
   </header>
 
-  <main id="main" tabindex="-1">
-    <section class="page-hero">
-      <h1>Contact — MIROZA</h1>
-      <p>We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
-    </section>
-    
-    <section>
-      <form class="contact-form" action="https://formspree.io/f/xoqgjvjd" method="POST" onsubmit="alert('Thank you! This is a demo form. In a real site, this would send an email.'); return false;">
-        <div class="form-group">
-          <label for="name">Name</label>
-          <input type="text" id="name" name="name" required placeholder="Your Name">
-        </div>
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" required placeholder="you@example.com">
-        </div>
-        <div class="form-group">
-          <label for="subject">Subject</label>
-          <input type="text" id="subject" name="subject" required placeholder="What is this regarding?">
-        </div>
-        <div class="form-group">
-          <label for="message">Message</label>
-          <textarea id="message" name="message" required placeholder="Your message here..."></textarea>
-        </div>
-        <button type="submit" class="btn-submit">Send Message</button>
-      </form>
-    </section>
+  <!-- Nav Bar -->
+  <nav class="main-nav-bar">
+    <div class="container">
+      <ul class="nav-list">
+        <li><a href="/index.html">Home</a></li>
+        <li><a href="/news.html">News</a></li>
+        <li><a href="/articles.html">Articles</a></li>
+        <li><a href="/blog.html">Blogs</a></li>
+        <li><a href="/about.html">About Us</a></li>
+      </ul>
+    </div>
+  </nav>
 
-    <section>
-      <h2>Other ways to reach us</h2>
-      <p><strong>Editorial:</strong> <a href="mailto:hello@miroza.online">hello@miroza.online</a></p>
-      <p><strong>Advertising:</strong> <a href="mailto:ads@miroza.online">ads@miroza.online</a></p>
-    </section>
-  </main>
-  
-  <footer class="site-footer">
-    <div class="footer-grid">
-      <div>
-        <h3>MIROZA</h3>
-        <p>Modern news & articles hub. Fast, accessible, secure.</p>
+  <!-- Main Content -->
+  <main class="container main-layout">
+    <div class="col-center" style="grid-column: 1 / span 2;">
+      <div class="section-heading-sm">
+        <h3>Contact Us</h3>
       </div>
-      <div>
-        <h3>Explore</h3>
-        <ul>
-          <li><a href="/news/news.html">News</a></li>
-          <li><a href="/articles/articles.html">Articles</a></li>
-          <li><a href="/blogs/blogs.html">Blogs</a></li>
-        </ul>
-      </div>
-      <div>
-        <h3>Connect</h3>
-        <ul>
-          <li><a href="#" target="_blank" rel="noopener noreferrer">Twitter</a></li>
-          <li><a href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-          <li><a href="/contact.html">Contact Us</a></li>
-          <li><a href="/contact.html#advertise">Advertise with us</a></li>
-        </ul>
-      </div>
-      <div>
-        <h3>Legal</h3>
-        <ul>
-          <li><a href="/privacy.html">Privacy Policy</a></li>
-          <li><a href="#">Terms of Service</a></li>
-        </ul>
+      <div style="padding: 20px 0; font-size: 16px; line-height: 1.6;">
+        <p style="margin-bottom: 15px;">We'd love to hear from you. Please reach out to us using the contact details below.</p>
+        
+        <div style="margin-bottom: 20px;">
+            <strong>Email:</strong><br>
+            <a href="mailto:contact@miroza.online" style="color: var(--toi-red);">contact@miroza.online</a>
+        </div>
+
+        <div style="margin-bottom: 20px;">
+            <strong>Address:</strong><br>
+            MIROZA Media Pvt Ltd.<br>
+            New Delhi, India
+        </div>
       </div>
     </div>
-    <div class="copyright">
-      &copy; <span id="year">2025</span> MIROZA. All rights reserved.
+
+    <aside class="col-right">
+      <div class="ad-box-lg">ADVERTISEMENT</div>
+    </aside>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-links">
+        <div class="fl-col">
+          <h4>News</h4>
+          <a href="/news.html">India</a>
+          <a href="/news.html">World</a>
+          <a href="/news.html">Business</a>
+        </div>
+        <div class="fl-col">
+          <h4>Opinion</h4>
+          <a href="/blog.html">Blogs</a>
+          <a href="/articles.html">Editorials</a>
+          <a href="/articles.html">Columns</a>
+        </div>
+        <div class="fl-col">
+          <h4>More</h4>
+          <a href="/about.html">About Us</a>
+          <a href="/contact.html">Contact</a>
+          <a href="/privacy.html">Privacy</a>
+        </div>
+      </div>
+      <div class="copyright">
+        Copyright © 2025 MIROZA. All rights reserved.
+      </div>
     </div>
   </footer>
 
-  
-  <script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.11/dist/purify.min.js" defer crossorigin="anonymous"></script>
-  <script src="/scripts/app.min.js" defer></script>
-
-  <button class="back-to-top" aria-label="Back to top">↑</button>
-
+  <script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.11/dist/purify.min.js"></script>
+  <script src="/scripts/app.js"></script>
 </body>
 </html>

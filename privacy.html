@@ -1,132 +1,122 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MIROZA Privacy Memo</title>
-    <link rel="icon" type="image/svg+xml" href="/assets/icons/logo.svg" />
-  <meta name="description" content="MIROZA outlines how reader telemetry stays private and compliant." />
-    <link rel="canonical" href="https://miroza.online/privacy.html">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; frame-ancestors 'none';" />
-  
-  <link rel="stylesheet" href="/styles/main.min.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Privacy Policy - MIROZA</title>
+  <link rel="stylesheet" href="/styles/main.css" />
+  <link rel="icon" type="image/svg+xml" href="/assets/icons/logo.svg" />
 </head>
-<body data-page="policy" data-policy="privacy">
-  <a href="#main" class="skip-link">Skip to content</a>
-  
-  <header class="site-header" aria-label="Site header">
-    <div class="header-inner">
-      <a class="logo" href="/" aria-label="MIROZA Home">
-        <img src="/assets/icons/logo.svg" alt="MIROZA" width="32" height="32" />
-        <span class="logo-text">MIROZA</span>
+<body data-page="privacy">
+
+  <!-- Top Strip -->
+  <div class="top-strip">
+    <div class="container">
+      <div class="ts-left">
+        <span>Tuesday, Nov 25, 2025</span>
+        <span class="separator">|</span>
+        <span>28°C New Delhi</span>
+      </div>
+      <div class="ts-right">
+        <a href="#">E-Paper</a>
+        <span class="separator">|</span>
+        <a href="#">Sign In</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-grid">
+      <button class="menu-toggle" aria-label="Menu">
+        <img src="/assets/icons/menu.svg" alt="Menu" width="24">
+      </button>
+      
+      <a href="/" class="logo">
+        <img src="/assets/icons/logo.svg" alt="M">
+        MIROZA
       </a>
 
-      <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
-        <img src="/assets/icons/menu.svg" alt="Menu" width="24" height="24" />
-      </button>
+      <div class="header-search">
+        <form action="/search.html">
+          <input type="text" placeholder="Search News, Articles...">
+          <button type="submit" class="search-btn">
+            <img src="/assets/icons/search.svg" alt="Search" width="16" style="filter: invert(1);">
+          </button>
+        </form>
+      </div>
 
-      <nav class="main-nav" aria-label="Primary navigation">
-        <ul>
-          <li><a href="/index.html">Home</a></li>
-          <li><a href="/news/news.html">News</a></li>
-          <li><a href="/articles/articles.html">Articles</a></li>
-          <li><a href="/blogs/blogs.html">Blogs</a></li>
-          <li><a href="/about.html">About</a></li>
-          <li><a href="/contact.html">Contact</a></li>
-        </ul>
-      </nav>
-
-      <form class="search-form" role="search" onsubmit="return false;">
-        <label for="search" class="visually-hidden">Search</label>
-        <input id="search" name="q" type="search" placeholder="Search..." autocomplete="off" />
-        <div class="search-suggestions" id="search-suggestions" hidden></div>
-      </form>
-
-      <button class="theme-toggle" aria-label="Toggle dark mode">
-        <img src="/assets/icons/moon.svg" alt="Enable dark mode" width="24" height="24" />
+      <button class="mobile-search-toggle">
+        <img src="/assets/icons/search.svg" alt="Search" width="20">
       </button>
     </div>
   </header>
 
-  <main id="main" tabindex="-1">
-    <section class="policy-doc" aria-labelledby="privacy-heading">
-      <p class="hero-tag">Privacy memo</p>
-      <h1 id="privacy-heading">Reader privacy stays default-on</h1>
-      <p>These notes summarize how— MIROZA treats audience insights, telemetry, and contact data across newsletters, quick-find interactions, and article engagement.</p>
-      <div class="policy-doc__grid">
-        <article>
-          <h2>Collection</h2>
-          <ul>
-            <li>Only aggregated analytics are stored; IPs are truncated before leaving the edge.</li>
-            <li>No third-party pixels outside of self-hosted analytics and error tracking.</li>
-            <li>Newsletter opt-ins persist under <code>miroza_newsletter_optin</code> solely for rate-limiting.</li>
-          </ul>
-        </article>
-        <article>
-          <h2>Usage</h2>
-          <ul>
-            <li>Signals inform editorial prioritization and never resell user profiles.</li>
-            <li>Quick-find recents/saves remain inside the browser via localStorage keys.</li>
-            <li>Deletion requests are honored within 5 business days via <a href="mailto:privacy@miroza.online">privacy@miroza.online</a>.</li>
-          </ul>
-        </article>
-        <article>
-          <h2>Compliance</h2>
-          <ul>
-            <li>DPIA templates mirror this memo for EU/UK regimes.</li>
-            <li>Regional partners receive change logs before policy updates go live.</li>
-            <li>We document vendors and retention schedules for SOC 2 / ISO mapping.</li>
-          </ul>
-        </article>
+  <!-- Nav Bar -->
+  <nav class="main-nav-bar">
+    <div class="container">
+      <ul class="nav-list">
+        <li><a href="/index.html">Home</a></li>
+        <li><a href="/news.html">News</a></li>
+        <li><a href="/articles.html">Articles</a></li>
+        <li><a href="/blog.html">Blogs</a></li>
+        <li><a href="/about.html">About Us</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="container main-layout">
+    <div class="col-center" style="grid-column: 1 / span 2;">
+      <div class="section-heading-sm">
+        <h3>Privacy Policy</h3>
       </div>
-    </section>
-  </main>
-  
-  <footer class="site-footer">
-    <div class="footer-grid">
-      <div>
-        <h3>MIROZA</h3>
-        <p>Modern news & articles hub. Fast, accessible, secure.</p>
-      </div>
-      <div>
-        <h3>Explore</h3>
-        <ul>
-          <li><a href="/news/news.html">News</a></li>
-          <li><a href="/articles/articles.html">Articles</a></li>
-          <li><a href="/blogs/blogs.html">Blogs</a></li>
-        </ul>
-      </div>
-      <div>
-        <h3>Connect</h3>
-        <ul>
-          <li><a href="#" target="_blank" rel="noopener noreferrer">Twitter</a></li>
-          <li><a href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-          <li><a href="/contact.html">Contact Us</a></li>
-          <li><a href="/contact.html#advertise">Advertise with us</a></li>
-        </ul>
-      </div>
-      <div>
-        <h3>Legal</h3>
-        <ul>
-          <li><a href="/privacy.html">Privacy Policy</a></li>
-          <li><a href="#">Terms of Service</a></li>
-        </ul>
+      <div style="padding: 20px 0; font-size: 16px; line-height: 1.6;">
+        <p style="margin-bottom: 15px;">At MIROZA, we take your privacy seriously. This policy outlines how we collect, use, and protect your personal information.</p>
+        
+        <h4 style="font-size: 18px; font-weight: bold; margin-bottom: 10px;">Information Collection</h4>
+        <p style="margin-bottom: 15px;">We collect information you provide directly to us, such as when you subscribe to our newsletter or contact us.</p>
+
+        <h4 style="font-size: 18px; font-weight: bold; margin-bottom: 10px;">Use of Information</h4>
+        <p>We use the information we collect to provide, maintain, and improve our services, and to communicate with you.</p>
       </div>
     </div>
-    <div class="copyright">
-      &copy; <span id="year">2025</span> MIROZA. All rights reserved.
+
+    <aside class="col-right">
+      <div class="ad-box-lg">ADVERTISEMENT</div>
+    </aside>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-links">
+        <div class="fl-col">
+          <h4>News</h4>
+          <a href="/news.html">India</a>
+          <a href="/news.html">World</a>
+          <a href="/news.html">Business</a>
+        </div>
+        <div class="fl-col">
+          <h4>Opinion</h4>
+          <a href="/blog.html">Blogs</a>
+          <a href="/articles.html">Editorials</a>
+          <a href="/articles.html">Columns</a>
+        </div>
+        <div class="fl-col">
+          <h4>More</h4>
+          <a href="/about.html">About Us</a>
+          <a href="/contact.html">Contact</a>
+          <a href="/privacy.html">Privacy</a>
+        </div>
+      </div>
+      <div class="copyright">
+        Copyright © 2025 MIROZA. All rights reserved.
+      </div>
     </div>
   </footer>
 
-  
-  <script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.11/dist/purify.min.js" defer crossorigin="anonymous"></script>
-  <script src="/scripts/app.min.js" defer></script>
-
-
-  <button class="back-to-top" aria-label="Back to top">↑</button>
-
+  <script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.11/dist/purify.min.js"></script>
+  <script src="/scripts/app.js"></script>
 </body>
 </html>
-
-

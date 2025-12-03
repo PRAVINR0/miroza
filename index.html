@@ -2,242 +2,209 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MIROZA &ndash; Modern News & Articles Hub</title>
-
-  <!-- SEO Meta Tags -->
-  <meta name="description" content="MIROZA is a modern, responsive news and articles platform delivering curated stories across categories with exceptional UX." />
-  <meta name="keywords" content="news, blog, articles, technology, lifestyle, updates, world, science, health" />
-  <meta name="author" content="MIROZA Editorial Team" />
-  <link rel="canonical" href="https://miroza.online/" />
-
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://miroza.online/" />
-  <meta property="og:title" content="MIROZA &ndash; Modern News & Articles Hub" />
-  <meta property="og:description" content="Discover curated news, blogs, and articles with— MIROZA's clean, fast experience." />
-  <meta property="og:image" content="https://miroza.online/assets/images/hero-insight-1200.svg" />
-
-  <!-- Twitter -->
-  <meta property="twitter:card" content="summary_large_image" />
-  <meta property="twitter:url" content="https://miroza.online/" />
-  <meta property="twitter:title" content="MIROZA &ndash; Modern News & Articles Hub" />
-  <meta property="twitter:description" content="Discover curated news, blogs, and articles with— MIROZA's clean, fast experience." />
-  <meta property="twitter:image" content="https://miroza.online/assets/images/hero-insight-1200.svg" />
-
-  <!-- Theme & PWA -->
-  <meta name="color-scheme" content="light dark" />
-  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
-  <meta name="theme-color" content="#0f172a" media="(prefers-color-scheme: dark)" />
+  <title>MIROZA - Latest News, India, World, Cricket, Business & Opinion</title>
+  <meta name="description" content="MIROZA - Breaking news, views and analysis on India, World, Sports, Technology, Business, Entertainment and more." />
   <link rel="icon" type="image/svg+xml" href="/assets/icons/logo.svg" />
-  <link rel="manifest" href="/manifest.json" />
-
-  <!-- Styles & Security -->
-  <link rel="preload" href="/styles/main.min.css" as="style" />
-  
-  
-  
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net https://plausible.io; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self' https://plausible.io; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests;" />
-
-  <!-- Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "MIROZA",
-    "url": "https://miroza.online/",
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "https://miroza.online/?q={search_term_string}",
-      "query-input": "required name=search_term_string"
-    }
-  }
-  </script>
   <link rel="stylesheet" href="/styles/main.min.css" />
+  <link rel="manifest" href="/manifest.json" />
 </head>
 <body data-page="home">
-  <a href="#main" class="skip-link">Skip to content</a>
 
-  <header class="site-header" aria-label="Site header">
-    <div class="header-inner">
-      <a class="logo" href="/" aria-label="MIROZA Home">
-        <img src="/assets/icons/logo.svg" alt="MIROZA" width="32" height="32" />
-        <span class="logo-text">MIROZA</span>
-      </a>
+  <!-- 1. TOP STRIP (Desktop Only) -->
+  <div class="top-strip">
+    <div class="container">
+      <div class="ts-left">
+        <span id="current-date">Tuesday, Dec 03, 2025</span>
+        <span class="separator">|</span>
+        <span class="weather">28°C New Delhi</span>
+      </div>
+      <div class="ts-right">
+        <a href="#">E-Paper</a>
+        <a href="#">App</a>
+        <a href="#">Sign In</a>
+      </div>
+    </div>
+  </div>
 
-      <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
-        <img src="/assets/icons/menu.svg" alt="Menu" width="24" height="24" />
+  <!-- 2. MAIN HEADER -->
+  <header class="site-header">
+    <div class="container header-grid">
+      <!-- Mobile: Hamburger -->
+      <button class="menu-toggle" aria-label="Menu">
+        <span class="hamburger-icon">☰</span>
       </button>
 
-      <nav class="main-nav" aria-label="Primary navigation">
-        <ul>
-          <li><a href="/index.html" aria-current="page">Home</a></li>
-          <li><a href="/news/news.html">News</a></li>
-          <li><a href="/articles/articles.html">Articles</a></li>
-          <li><a href="/blogs/blogs.html">Blogs</a></li>
-          <li><a href="/about.html">About</a></li>
-          <li><a href="/contact.html">Contact</a></li>
-        </ul>
-      </nav>
+      <!-- Logo -->
+      <a href="/" class="logo">
+        <img src="/assets/icons/logo.svg" alt="MIROZA" />
+        <span>MIROZA</span>
+      </a>
 
-      <form class="search-form" role="search" onsubmit="return false;">
-        <label for="search" class="visually-hidden">Search</label>
-        <input id="search" name="q" type="search" placeholder="Search..." autocomplete="off" />
-        <div class="search-suggestions" id="search-suggestions" hidden></div>
-      </form>
+      <!-- Desktop: Search Bar -->
+      <div class="header-search">
+        <form role="search" onsubmit="return false;">
+          <input type="text" id="search-input" placeholder="Search News, Stocks, & more..." />
+          <button type="submit" class="search-btn">
+            <img src="/assets/icons/search.svg" alt="Search" width="16" />
+          </button>
+        </form>
+      </div>
 
-      <button class="theme-toggle" aria-label="Toggle dark mode">
-        <img src="/assets/icons/moon.svg" alt="Enable dark mode" width="24" height="24" />
+      <!-- Mobile: Search Icon -->
+      <button class="mobile-search-toggle" aria-label="Search">
+        <img src="/assets/icons/search.svg" alt="Search" width="20" />
       </button>
     </div>
   </header>
 
-  <main id="main">
-    <!-- Top Stories Section -->
-    <section class="page-hero" aria-labelledby="top-stories-heading">
-      <div class="container">
-        <h1 id="top-stories-heading">Top Stories</h1>
-        <div class="cards" id="latest-cards">
-           <div class="card skeleton"></div>
-           <div class="card skeleton"></div>
-           <div class="card skeleton"></div>
-           <div class="card skeleton"></div>
-        </div>
+  <!-- 3. NAVIGATION BAR (Sticky) -->
+  <nav class="main-nav-bar">
+    <div class="container">
+      <ul class="nav-list">
+        <li><a href="/" class="active">Home</a></li>
+        <li><a href="/news/news.html">India</a></li>
+        <li><a href="/articles/articles.html">World</a></li>
+        <li><a href="/blogs/blogs.html">Business</a></li>
+        <li><a href="#">Tech</a></li>
+        <li><a href="#">Cricket</a></li>
+        <li><a href="#">Sports</a></li>
+        <li><a href="#">Entertainment</a></li>
+        <li><a href="#">TV</a></li>
+        <li><a href="#">Web Series</a></li>
+        <li><a href="#">Life & Style</a></li>
+        <li><a href="#">Education</a></li>
+        <li><a href="#">Photos</a></li>
+        <li><a href="#">Videos</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- 4. BREAKING NEWS TICKER -->
+  <div class="breaking-ticker">
+    <div class="container">
+      <span class="ticker-label">BREAKING:</span>
+      <div class="ticker-content">
+        <span id="ticker-text">Sensex jumps 500 points as global markets rally...</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. MAIN CONTENT GRID (3 Columns) -->
+  <main class="container main-layout">
+    
+    <!-- COLUMN 1: TOP NEWS LIST (Left) -->
+    <aside class="col-left">
+      <div class="section-heading-sm">
+        <h3>Top News</h3>
+      </div>
+      <ul class="compact-list" id="top-news-list">
+        <!-- JS Injected -->
+        <li class="skeleton-text"></li>
+        <li class="skeleton-text"></li>
+        <li class="skeleton-text"></li>
+        <li class="skeleton-text"></li>
+        <li class="skeleton-text"></li>
+      </ul>
+      
+      <div class="ad-box-sm">
+        <span>Advertisement</span>
+      </div>
+    </aside>
+
+    <!-- COLUMN 2: LEAD STORY (Center) -->
+    <section class="col-center">
+      <!-- Lead Story -->
+      <div id="lead-story-container">
+        <div class="lead-story skeleton-block"></div>
+      </div>
+
+      <!-- Sub Stories Grid -->
+      <div class="sub-stories-grid" id="center-news-grid">
+        <!-- JS Injected -->
+        <div class="card-sm skeleton-block"></div>
+        <div class="card-sm skeleton-block"></div>
+        <div class="card-sm skeleton-block"></div>
+        <div class="card-sm skeleton-block"></div>
       </div>
     </section>
 
+    <!-- COLUMN 3: SIDEBAR (Right) -->
+    <aside class="col-right">
+      <div class="section-heading-sm">
+        <h3>Most Read</h3>
+      </div>
+      <ul class="numbered-list" id="most-read-list">
+        <!-- JS Injected -->
+        <li class="skeleton-text"></li>
+        <li class="skeleton-text"></li>
+        <li class="skeleton-text"></li>
+      </ul>
+
+      <div class="ad-box-lg">
+        <span>Advertisement</span>
+      </div>
+
+      <div class="section-heading-sm">
+        <h3>Trending Topics</h3>
+      </div>
+      <div class="tags-cloud">
+        <a href="#">Budget 2025</a>
+        <a href="#">IPL Auction</a>
+        <a href="#">Crypto Bill</a>
+        <a href="#">Election Results</a>
+        <a href="#">Gold Price</a>
+      </div>
+    </aside>
+
+  </main>
+
+  <!-- 6. VISUAL STORIES (Horizontal Scroll) -->
+  <section class="visual-stories-section">
     <div class="container">
-      <div class="content-grid" style="display: grid; grid-template-columns: 1fr 300px; gap: 2rem;">
-        <div class="main-content">
-            <!-- Latest News -->
-            <section class="category-block" aria-labelledby="news-heading">
-              <div class="section-header">
-                <span class="hero-tag">News Desk</span>
-                <h2 id="news-heading">Latest News</h2>
-              </div>
-              <div class="cards" id="news-cards">
-                <div class="card skeleton"></div>
-                <div class="card skeleton"></div>
-              </div>
-            </section>
-
-            <!-- Ad Slot -->
-            <div class="ad-slot" data-slot="home-middle" style="margin: 2rem 0; text-align: center; min-height: 90px; background: var(--bg-alt); display: flex; align-items: center; justify-content: center; border: 1px dashed var(--border);">
-              <span style="color: var(--text-muted); font-size: 0.8rem; text-transform: uppercase;">Advertisement</span>
-            </div>
-
-            <!-- Latest Articles -->
-            <section class="category-block" aria-labelledby="articles-heading">
-              <div class="section-header">
-                <span class="hero-tag">In-Depth</span>
-                <h2 id="articles-heading">Latest Articles</h2>
-              </div>
-              <div class="cards" id="articles-cards">
-                <div class="card skeleton"></div>
-                <div class="card skeleton"></div>
-              </div>
-            </section>
-
-            <!-- Latest Blogs -->
-            <section class="category-block" aria-labelledby="blogs-heading">
-              <div class="section-header">
-                <span class="hero-tag">Editorial</span>
-                <h2 id="blogs-heading">Latest Blogs</h2>
-              </div>
-              <div class="cards" id="blog-cards">
-                <div class="card skeleton"></div>
-                <div class="card skeleton"></div>
-              </div>
-            </section>
-        </div>
-
-        <aside class="sidebar">
-            <h3 style="font-family: var(--font-heading); border-bottom: 2px solid var(--text-accent); padding-bottom: 0.5rem; margin-bottom: 1rem;">Trending</h3>
-            <ul class="trending-list" id="trending-list">
-              <!-- Populated by JS or static for now -->
-              <li>
-                  <h4><a href="#">Global Markets Rally as Tech Stocks Surge</a></h4>
-                  <span>Finance • 2h ago</span>
-              </li>
-              <li>
-                  <h4><a href="#">New AI Regulations Proposed by EU Commission</a></h4>
-                  <span>Tech • 4h ago</span>
-              </li>
-              <li>
-                  <h4><a href="#">Sustainable Energy: The Hydrogen Breakthrough</a></h4>
-                  <span>Science • 5h ago</span>
-              </li>
-              <li>
-                  <h4><a href="#">Remote Work Trends for 2026</a></h4>
-                  <span>Lifestyle • 1d ago</span>
-              </li>
-              <li>
-                  <h4><a href="#">SpaceX Launches New Starship Mission</a></h4>
-                  <span>Space • 1d ago</span>
-              </li>
-            </ul>
-
-            <div class="newsletter" style="background: var(--bg-alt); padding: 1.5rem; margin-top: 2rem; border: 1px solid var(--border);">
-              <h3 style="font-family: var(--font-heading); margin-bottom: 0.5rem;">Newsletter</h3>
-              <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem;">Get the top stories in your inbox.</p>
-              <form id="newsletter-form" novalidate>
-                <input
-                  type="email"
-                  name="email"
-                  required
-                  placeholder="Email address"
-                  style="width: 100%; padding: 0.5rem; margin-bottom: 0.5rem; border: 1px solid var(--border);"
-                />
-                <button type="submit" style="width: 100%; padding: 0.5rem; background: var(--text-accent); color: white; border: none; font-weight: bold; cursor: pointer;">Subscribe</button>
-              </form>
-            </div>
-        </aside>
+      <div class="section-heading">
+        <h2>Visual Stories</h2>
+        <a href="#">View All &rarr;</a>
+      </div>
+      <div class="visual-stories-scroll" id="visual-stories">
+        <!-- JS Injected -->
+        <div class="vs-card skeleton-block"></div>
+        <div class="vs-card skeleton-block"></div>
+        <div class="vs-card skeleton-block"></div>
+        <div class="vs-card skeleton-block"></div>
+        <div class="vs-card skeleton-block"></div>
       </div>
     </div>
+  </section>
 
-
+  <!-- 7. FOOTER -->
   <footer class="site-footer">
-    <div class="footer-grid">
-      <div>
-        <h3>MIROZA</h3>
-        <p>Modern news & articles hub. Fast, accessible, secure.</p>
+    <div class="container">
+      <div class="footer-links">
+        <div class="fl-col">
+          <h4>About Us</h4>
+          <a href="#">Terms of Use</a>
+          <a href="#">Privacy Policy</a>
+        </div>
+        <div class="fl-col">
+          <h4>Connect</h4>
+          <a href="#">Facebook</a>
+          <a href="#">Twitter</a>
+        </div>
+        <div class="fl-col">
+          <h4>Popular</h4>
+          <a href="#">Headlines</a>
+          <a href="#">Sports News</a>
+        </div>
       </div>
-      <div>
-        <h3>Explore</h3>
-        <ul>
-          <li><a href="/news/news.html">News</a></li>
-          <li><a href="/articles/articles.html">Articles</a></li>
-          <li><a href="/blogs/blogs.html">Blogs</a></li>
-        </ul>
+      <div class="copyright">
+        Copyright © 2025 Bennett, Coleman & Co. Ltd. All rights reserved. For reprint rights: Times Syndication Service
       </div>
-      <div>
-        <h3>Connect</h3>
-        <ul>
-          <li><a href="#" target="_blank" rel="noopener noreferrer">Twitter</a></li>
-          <li><a href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-          <li><a href="/contact.html">Contact Us</a></li>
-          <li><a href="/contact.html#advertise">Advertise with us</a></li>
-        </ul>
-      </div>
-      <div>
-        <h3>Legal</h3>
-        <ul>
-          <li><a href="/privacy.html">Privacy Policy</a></li>
-          <li><a href="#">Terms of Service</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="copyright">
-      &copy; <span id="year">2025</span> MIROZA. All rights reserved.
     </div>
   </footer>
 
-  <button class="back-to-top" aria-label="Back to top">↑</button>
-
-  <!-- External Libs -->
-  <script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.11/dist/purify.min.js" crossorigin="anonymous"></script>
-  <!-- Main Application Script -->
-  <script src="/scripts/app.min.js" defer></script>
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.11/dist/purify.min.js"></script>
+  <script src="/scripts/app.min.js"></script>
 </body>
 </html>

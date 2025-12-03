@@ -3,142 +3,132 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>MIROZA Blog Library</title>
-    <link rel="icon" type="image/svg+xml" href="/assets/icons/logo.svg" />
-  <meta name="description" content="Dive into commentary, frameworks, and playbooks from the— MIROZA editorial team." />
-  <link rel="canonical" href="https://miroza.online/blog.html" />
-  <meta property="og:title" content="MIROZA Blog Library" />
-  <meta property="og:description" content="Fresh thinking on policy, product, capital, and culture from— MIROZA." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://miroza.online/blog.html" />
-  <meta property="og:image" content="https://miroza.online/assets/images/posts/focus-hacks-1200.svg" />
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://images.unsplash.com; font-src 'self'; connect-src 'self'; object-src 'none'; frame-ancestors 'none';" />
-  
-  
-  
-  <link rel="stylesheet" href="/styles/main.min.css" />
+  <title>Blogs - MIROZA</title>
+  <link rel="stylesheet" href="/styles/main.css" />
+  <link rel="icon" type="image/svg+xml" href="/assets/icons/logo.svg" />
 </head>
-<body data-page="blog" data-category="Blog">
-  <a href="#content" class="skip-link">Skip to content</a>
-  
-  <header class="site-header" aria-label="Site header">
-    <div class="header-inner">
-      <a class="logo" href="/" aria-label="MIROZA Home">
-        <img src="/assets/icons/logo.svg" alt="MIROZA" width="32" height="32" />
-        <span class="logo-text">MIROZA</span>
+<body data-page="blog">
+
+  <!-- Top Strip -->
+  <div class="top-strip">
+    <div class="container">
+      <div class="ts-left">
+        <span>Tuesday, Nov 25, 2025</span>
+        <span class="separator">|</span>
+        <span>28°C New Delhi</span>
+      </div>
+      <div class="ts-right">
+        <a href="#">E-Paper</a>
+        <span class="separator">|</span>
+        <a href="#">Sign In</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-grid">
+      <button class="menu-toggle" aria-label="Menu">
+        <img src="/assets/icons/menu.svg" alt="Menu" width="24">
+      </button>
+      
+      <a href="/" class="logo">
+        <img src="/assets/icons/logo.svg" alt="M">
+        MIROZA
       </a>
 
-      <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
-        <img src="/assets/icons/menu.svg" alt="Menu" width="24" height="24" />
-      </button>
+      <div class="header-search">
+        <form action="/search.html">
+          <input type="text" placeholder="Search News, Articles...">
+          <button type="submit" class="search-btn">
+            <img src="/assets/icons/search.svg" alt="Search" width="16" style="filter: invert(1);">
+          </button>
+        </form>
+      </div>
 
-      <nav class="main-nav" aria-label="Primary navigation">
-        <ul>
-          <li><a href="/index.html">Home</a></li>
-          <li><a href="/news/news.html">News</a></li>
-          <li><a href="/articles/articles.html">Articles</a></li>
-          <li><a href="/blogs/blogs.html">Blogs</a></li>
-          <li><a href="/about.html">About</a></li>
-          <li><a href="/contact.html">Contact</a></li>
-        </ul>
-      </nav>
-
-      <form class="search-form" role="search" onsubmit="return false;">
-        <label for="search" class="visually-hidden">Search</label>
-        <input id="search" name="q" type="search" placeholder="Search..." autocomplete="off" />
-        <div class="search-suggestions" id="search-suggestions" hidden></div>
-      </form>
-
-      <button class="theme-toggle" aria-label="Toggle dark mode">
-        <img src="/assets/icons/moon.svg" alt="Enable dark mode" width="24" height="24" />
+      <button class="mobile-search-toggle">
+        <img src="/assets/icons/search.svg" alt="Search" width="20">
       </button>
     </div>
   </header>
 
-  <main id="content" tabindex="-1">
-    <section class="page-hero" aria-labelledby="blog-hero">
-      <p class="hero-tag">Playbooks & Opinions</p>
-      <h1 id="blog-hero">MIROZA Blog Library</h1>
-      <p class="intro">Signals, strategies, and operating notes from the— MIROZA editorial desks. Always practical, always shippable.</p>
-      <div class="hero-actions">
-        <a class="button" href="/index.html#blog" data-prefetch>See homepage highlights</a>
-        <a class="ghost-button" href="/newsletter.html">Subscribe for weekly digests</a>
-      </div>
-    </section>
-
-    <section class="page-section" aria-labelledby="blog-promises">
-      <h2 id="blog-promises">What to expect</h2>
-      <div class="feature-grid">
-        <article>
-          <h3>Frameworks first</h3>
-          <p>Every post ends with takeaways you can plug into roadmaps, board updates, or customer ops.</p>
-        </article>
-        <article>
-          <h3>Fresh every week</h3>
-          <p>New essays land each weekday across AI, infrastructure, capital, society, and wellbeing.</p>
-        </article>
-        <article>
-          <h3>Actionable tags</h3>
-          <p>Use Quick Find or the topic chips inside each post to filter insights by sector.</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="category-block" aria-labelledby="blog-feed-heading">
-      <div class="section-heading">
-        <h2 id="blog-feed-heading">Latest posts</h2>
-        <p class="intro">Sorted newest to oldest. Toggle filters or scroll to auto-load more.</p>
-      </div>
-      <div class="cards" id="posts-grid" aria-live="polite">
-        <div class="card skeleton" aria-hidden="true"></div>
-        <div class="card skeleton" aria-hidden="true"></div>
-        <div class="card skeleton" aria-hidden="true"></div>
-      </div>
-      <div class="pagination" id="blogs-pagination" aria-label="Blog pagination"></div>
-    </section>
-  </main>
-  
-  <footer class="site-footer">
-    <div class="footer-grid">
-      <div>
-        <h3>MIROZA</h3>
-        <p>Modern news & articles hub. Fast, accessible, secure.</p>
-      </div>
-      <div>
-        <h3>Explore</h3>
-        <ul>
-          <li><a href="/news/news.html">News</a></li>
-          <li><a href="/articles/articles.html">Articles</a></li>
-          <li><a href="/blogs/blogs.html">Blogs</a></li>
-        </ul>
-      </div>
-      <div>
-        <h3>Connect</h3>
-        <ul>
-          <li><a href="#" target="_blank" rel="noopener noreferrer">Twitter</a></li>
-          <li><a href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-          <li><a href="/contact.html">Contact Us</a></li>
-          <li><a href="/contact.html#advertise">Advertise with us</a></li>
-        </ul>
-      </div>
-      <div>
-        <h3>Legal</h3>
-        <ul>
-          <li><a href="/privacy.html">Privacy Policy</a></li>
-          <li><a href="#">Terms of Service</a></li>
-        </ul>
-      </div>
+  <!-- Nav Bar -->
+  <nav class="main-nav-bar">
+    <div class="container">
+      <ul class="nav-list">
+        <li><a href="/index.html">Home</a></li>
+        <li><a href="/news.html">News</a></li>
+        <li><a href="/articles.html">Articles</a></li>
+        <li><a href="/blog.html" class="active">Blogs</a></li>
+        <li><a href="/about.html">About Us</a></li>
+      </ul>
     </div>
-    <div class="copyright">
-      &copy; <span id="year">2025</span> MIROZA. All rights reserved.
+  </nav>
+
+  <!-- Main Content -->
+  <main class="container main-layout">
+    <!-- Left Column: Blog List -->
+    <div class="col-center" style="grid-column: 1 / span 2;">
+      <div class="section-heading-sm">
+        <h3>Latest Blogs</h3>
+      </div>
+      <div id="posts-grid" class="sub-stories-grid">
+        <!-- Populated by JS -->
+        <div class="skeleton-block"></div>
+        <div class="skeleton-block"></div>
+        <div class="skeleton-block"></div>
+        <div class="skeleton-block"></div>
+      </div>
+      <div id="blogs-pagination" style="margin-top: 20px; text-align: center;"></div>
+    </div>
+
+    <!-- Right Column: Sidebar -->
+    <aside class="col-right">
+      <div class="section-heading-sm">
+        <h3>Trending</h3>
+      </div>
+      <ol class="numbered-list" id="trending-list">
+        <!-- Populated by JS -->
+        <li><div class="skeleton-text"></div></li>
+        <li><div class="skeleton-text"></div></li>
+        <li><div class="skeleton-text"></div></li>
+      </ol>
+      
+      <div class="ad-box-lg">ADVERTISEMENT</div>
+    </aside>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-links">
+        <div class="fl-col">
+          <h4>News</h4>
+          <a href="/news.html">India</a>
+          <a href="/news.html">World</a>
+          <a href="/news.html">Business</a>
+        </div>
+        <div class="fl-col">
+          <h4>Opinion</h4>
+          <a href="/blog.html">Blogs</a>
+          <a href="/articles.html">Editorials</a>
+          <a href="/articles.html">Columns</a>
+        </div>
+        <div class="fl-col">
+          <h4>More</h4>
+          <a href="/about.html">About Us</a>
+          <a href="/contact.html">Contact</a>
+          <a href="/privacy.html">Privacy</a>
+        </div>
+      </div>
+      <div class="copyright">
+        Copyright © 2025 MIROZA. All rights reserved.
+      </div>
     </div>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.11/dist/purify.min.js" defer crossorigin="anonymous"></script>
-  <script src="/scripts/app.min.js" defer></script>
-
-  <button class="back-to-top" aria-label="Back to top">↑</button>
-
+  <script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.11/dist/purify.min.js"></script>
+  <script src="/scripts/app.js"></script>
 </body>
 </html>
 

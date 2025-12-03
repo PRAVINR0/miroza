@@ -1,12 +1,12 @@
-/* MIROZA Service Worker v6: optimized assets */
-const STATIC_CACHE = 'miroza-static-v6';
-const RUNTIME_CACHE = 'miroza-runtime-v6';
+/* MIROZA Service Worker v7: TOI Layout */
+const STATIC_CACHE = 'miroza-static-v7';
+const RUNTIME_CACHE = 'miroza-runtime-v7';
 const CORE_ASSETS = [
   '/',
   '/index.html',
   '/offline.html',
-  '/styles/main.min.css',
-  '/scripts/app.min.js',
+  '/styles/main.css',
+  '/scripts/app.js',
   '/manifest.json',
   '/assets/icons/logo.svg',
   '/assets/images/hero-insight-800.svg',

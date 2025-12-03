@@ -1,7 +1,6 @@
-/* MIROZA Main JS - Optimized for Performance & TOI Style */
+/* MIROZA Main JS - TOI Style Edition */
 (function(){
   'use strict';
-  const THEME_STORAGE_KEY = 'theme';
   
   /* Utilities */
   window.MIROZA = window.MIROZA || {};
@@ -12,19 +11,27 @@
       if (window.DOMPurify) return DOMPurify.sanitize(str, {USE_PROFILES:{html:true}});
       const div=document.createElement('div'); div.textContent=str; return div.innerHTML;
     },
-    debounce(func, wait) {
-      let timeout;
-      return function(...args) {
-        clearTimeout(timeout);
-        timeout = setTimeout(() => func.apply(this, args), wait);
-      };
+    getLink(post) {
+        if(post.link || post.url) return post.link || post.url;
+        if(post.slug) {
+            const cat = (post.category || '').toLowerCase();
+            if(cat === 'blog') return `/blogs/${post.slug}.html`;
+            if(cat === 'news' || cat === 'india') return `/news/${post.slug}.html`;
+            return `/articles/${post.slug}.html`;
+        }
+        return '#';
+    },
+    getImage(post) {
+        const raw = post.image;
+        return raw 
+            ? (typeof raw === 'string' ? raw : (raw.src || '/assets/images/hero-insight-800.svg'))
+            : '/assets/images/hero-insight-800.svg';
     }
   };
 
-  /* Data Store Module */
+  /* Data Store */
   window.MIROZA.store = (function(){
     let _cache = {};
-
     async function fetchFeed(name) {
         if (_cache[name]) return _cache[name];
         try {
@@ -38,92 +45,65 @@
             return [];
         }
     }
-
     return {
         getLatest: () => fetchFeed('latest'),
         getNews: () => fetchFeed('news-feed'),
         getBlogs: () => fetchFeed('blogs-feed'),
-        getArticles: () => fetchFeed('articles-feed'),
-        getAll: () => fetchFeed('posts')
+        getArticles: () => fetchFeed('articles-feed')
     };
   })();
 
-  /* UI Builder Module */
+  /* UI Builder - TOI Specific Components */
   window.MIROZA.builder = (function(){
-    function build(post) {
-      const article = document.createElement('article');
-      article.className = 'card post-card';
+    const U = window.MIROZA.utils;
 
-      const rawImage = post.image;
-      const imgUrl = rawImage
-        ? (typeof rawImage === 'string' ? rawImage : (rawImage.src || '/assets/images/hero-insight-800.svg'))
-        : '/assets/images/hero-insight-800.svg';
-      const imgAlt = (rawImage && typeof rawImage === 'object' && rawImage.alt) ? rawImage.alt : post.title || '';
-
-      let link = post.link || post.url || '';
-      if(!link && post.slug) {
-          const cat = (post.category || '').toLowerCase();
-          if(cat === 'blog') link = `/blogs/${post.slug}.html`;
-          else if(cat === 'news' || cat === 'india') link = `/news/${post.slug}.html`;
-          else link = `/articles/${post.slug}.html`;
-      }
-      if (!link) link = '#';
-
-      const html = `
-        <a href="${link}" class="card-link" aria-label="Read ${window.MIROZA.utils.safeHTML(post.title || '')}">
-          <div class="card-image-wrap">
-             <img src="${imgUrl}" alt="${window.MIROZA.utils.safeHTML(imgAlt)}" loading="lazy" decoding="async" width="400" height="225" onerror="this.onerror=null;this.src='/assets/images/hero-insight-800.svg'" />
-          </div>
-          <div class="card-content card-body">
-            <div class="card-meta">
-              <span class="category">${window.MIROZA.utils.safeHTML(post.category || 'Story')}</span> •
-              <span class="date">${post.date ? new Date(post.date).toLocaleDateString() : ''}</span>
-            </div>
-            <h3 class="card-title">
-              ${window.MIROZA.utils.safeHTML(post.title || '')}
-            </h3>
-            <p class="card-excerpt">${window.MIROZA.utils.safeHTML(post.excerpt || '')}</p>
-          </div>
-        </a>
-      `;
-      article.innerHTML = html;
-      return article;
+    function buildCompact(post) {
+        const li = document.createElement('li');
+        li.innerHTML = `<a href="${U.getLink(post)}">${U.safeHTML(post.title)}</a>`;
+        return li;
     }
-    return { build };
+
+    function buildLead(post) {
+        const div = document.createElement('div');
+        div.className = 'lead-story-content';
+        div.innerHTML = `
+            <a href="${U.getLink(post)}">
+                <img src="${U.getImage(post)}" alt="${U.safeHTML(post.title)}" loading="lazy">
+                <h1>${U.safeHTML(post.title)}</h1>
+                <p>${U.safeHTML(post.excerpt || '')}</p>
+            </a>
+        `;
+        return div;
+    }
+
+    function buildCardSm(post) {
+        const div = document.createElement('div');
+        div.className = 'card-sm';
+        div.innerHTML = `
+            <a href="${U.getLink(post)}" style="display:contents">
+                <img src="${U.getImage(post)}" alt="${U.safeHTML(post.title)}" loading="lazy">
+                <h3>${U.safeHTML(post.title)}</h3>
+            </a>
+        `;
+        return div;
+    }
+
+    function buildVisual(post) {
+        const div = document.createElement('div');
+        div.className = 'vs-card';
+        div.innerHTML = `
+            <a href="${U.getLink(post)}">
+                <img src="${U.getImage(post)}" alt="${U.safeHTML(post.title)}" loading="lazy">
+                <h4>${U.safeHTML(post.title)}</h4>
+            </a>
+        `;
+        return div;
+    }
+
+    return { buildCompact, buildLead, buildCardSm, buildVisual };
   })();
 
-  /* Theme Manager */
-  window.MIROZA.theme = (function(){
-    function init(){
-      const stored = localStorage.getItem(THEME_STORAGE_KEY);
-      if(stored){ document.documentElement.dataset.theme = stored; }
-      else if(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches){
-        document.documentElement.dataset.theme = 'dark';
-      }
-      updateIcon();
-      
-      const btn = window.MIROZA.utils.qs('.theme-toggle');
-      if(btn) btn.addEventListener('click', toggle);
-    }
-    function toggle(){
-      const current = document.documentElement.dataset.theme || 'light';
-      const next = current === 'dark' ? 'light' : 'dark';
-      document.documentElement.dataset.theme = next;
-      localStorage.setItem(THEME_STORAGE_KEY, next);
-      updateIcon();
-    }
-    function updateIcon(){
-      const btnImg = window.MIROZA.utils.qs('.theme-toggle img');
-      if(btnImg){
-        const isDark = document.documentElement.dataset.theme === 'dark';
-        btnImg.src = isDark ? '/assets/icons/sun.svg' : '/assets/icons/moon.svg';
-        btnImg.alt = isDark ? 'Switch to light mode' : 'Switch to dark mode';
-      }
-    }
-    return { init, toggle };
-  })();
-
-  /* Navigation (Mobile Drawer Logic) */
+  /* Navigation & Mobile Drawer */
   window.MIROZA.nav = (function(){
     let isOpen = false;
     let overlay;
@@ -131,107 +111,69 @@
     function createOverlay() {
         overlay = document.createElement('div');
         overlay.className = 'nav-overlay';
+        // Basic overlay styles if not in CSS
+        overlay.style.cssText = 'position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.5);z-index:1900;display:none;';
         document.body.appendChild(overlay);
         overlay.addEventListener('click', closeMenu);
     }
 
     function closeMenu() {
         isOpen = false;
-        const nav = window.MIROZA.utils.qs('.main-nav');
-        const toggleBtn = window.MIROZA.utils.qs('.menu-toggle');
+        const nav = U.qs('.main-nav-bar');
         if(nav) nav.classList.remove('open');
-        if(overlay) overlay.classList.remove('active');
-        if(toggleBtn) {
-            toggleBtn.setAttribute('aria-expanded', 'false');
-            toggleBtn.innerHTML = '<img src="/assets/icons/menu.svg" alt="Menu" width="24" height="24" />';
-        }
+        if(overlay) overlay.style.display = 'none';
         document.body.style.overflow = '';
     }
 
     function openMenu() {
         isOpen = true;
-        const nav = window.MIROZA.utils.qs('.main-nav');
-        const toggleBtn = window.MIROZA.utils.qs('.menu-toggle');
+        const nav = U.qs('.main-nav-bar');
         if(nav) nav.classList.add('open');
-        if(overlay) overlay.classList.add('active');
-        if(toggleBtn) {
-            toggleBtn.setAttribute('aria-expanded', 'true');
-            toggleBtn.innerHTML = '<img src="/assets/icons/close.svg" alt="Close" width="24" height="24" />';
-        }
+        if(overlay) overlay.style.display = 'block';
         document.body.style.overflow = 'hidden';
     }
 
-    function handleResize() {
-        const width = window.innerWidth;
-        const nav = window.MIROZA.utils.qs('.main-nav');
-        const searchForm = window.MIROZA.utils.qs('.search-form');
-        const headerInner = window.MIROZA.utils.qs('.header-inner');
-        
-        if (!nav || !searchForm || !headerInner) return;
-        
-        // Mobile Logic (< 992px)
-        if (width < 992) {
-            // Ensure search is in the drawer
-            let mobileSearch = nav.querySelector('.mobile-search-container');
-            if (!mobileSearch) {
-                mobileSearch = document.createElement('div');
-                mobileSearch.className = 'mobile-search-container';
-                nav.insertBefore(mobileSearch, nav.firstChild);
-            }
-            if (!mobileSearch.contains(searchForm)) {
-                mobileSearch.appendChild(searchForm);
-            }
-        } else {
-            // Desktop Logic: Move search back to header
-            if (isOpen) closeMenu();
-            if (!headerInner.contains(searchForm)) {
-                // Insert before theme toggle if possible, or append
-                const themeToggle = window.MIROZA.utils.qs('.theme-toggle');
-                if(themeToggle) headerInner.insertBefore(searchForm, themeToggle.parentNode); // theme toggle is usually in header-tools
-                else headerInner.appendChild(searchForm);
-                
-                // Actually, in my HTML structure, search-form is a direct child of header-inner usually
-                // Let's just append to header-inner and let CSS Grid handle placement.
-                headerInner.appendChild(searchForm);
-            }
-            // Remove mobile search container if empty
-            const mobileSearch = nav.querySelector('.mobile-search-container');
-            if (mobileSearch) mobileSearch.remove();
-        }
-    }
-
-    function highlightActive(){
-      const path = window.location.pathname;
-      const links = window.MIROZA.utils.qsa('.main-nav a');
-      links.forEach(link => {
-        const href = link.getAttribute('href');
-        if (path === href || (path === '/' && href === '/index.html') || (path === '/index.html' && href === '/')) {
-          link.setAttribute('aria-current', 'page');
-        } else if (href !== '/' && href !== '/index.html' && path.includes(href)) {
-           link.setAttribute('aria-current', 'page');
-        } else {
-          link.removeAttribute('aria-current');
-        }
-      });
-    }
+    const U = window.MIROZA.utils;
 
     function init(){
       createOverlay();
-      highlightActive();
-      
-      const toggleBtn = window.MIROZA.utils.qs('.menu-toggle');
+      const toggleBtn = U.qs('.menu-toggle');
       if(toggleBtn) {
-          toggleBtn.addEventListener('click', () => isOpen ? closeMenu() : openMenu());
+          toggleBtn.addEventListener('click', (e) => {
+              e.stopPropagation();
+              isOpen ? closeMenu() : openMenu();
+          });
       }
-
-      window.addEventListener('resize', window.MIROZA.utils.debounce(handleResize, 200));
-      handleResize(); // Initial check
+      
+      // Mobile Search Toggle
+      const searchToggle = U.qs('.mobile-search-toggle');
+      const searchContainer = U.qs('.header-search');
+      if(searchToggle && searchContainer) {
+          searchToggle.addEventListener('click', () => {
+              const isVisible = searchContainer.style.display === 'block';
+              searchContainer.style.display = isVisible ? '' : 'block';
+              // If opening search, ensure it's positioned absolutely on mobile if needed
+              if(!isVisible && window.innerWidth < 992) {
+                  searchContainer.style.position = 'absolute';
+                  searchContainer.style.top = '60px';
+                  searchContainer.style.left = '0';
+                  searchContainer.style.right = '0';
+                  searchContainer.style.background = '#fff';
+                  searchContainer.style.padding = '10px';
+                  searchContainer.style.zIndex = '1001';
+                  searchContainer.style.boxShadow = '0 2px 5px rgba(0,0,0,0.1)';
+              }
+          });
+      }
     }
     return { init };
   })();
 
   /* Home Page Logic */
   window.MIROZA.home = (function(){
+    const B = window.MIROZA.builder;
+    const U = window.MIROZA.utils;
+
     async function init(){
       const [latest, news, blogs, articles] = await Promise.all([
           window.MIROZA.store.getLatest(),
@@ -240,154 +182,73 @@
           window.MIROZA.store.getArticles()
       ]);
 
-      renderList('latest-cards', latest.slice(0, 12));
-      renderList('news-cards', news.slice(0, 4));
-      renderList('blog-cards', blogs.slice(0, 4));
-      renderList('articles-cards', articles.slice(0, 4));
-    }
-
-    function renderList(id, items){
-        const container = document.getElementById(id);
-        if(!container) return;
-        container.innerHTML = '';
-        if(!items.length) { container.innerHTML = '<p>No content available.</p>'; return; }
-        items.forEach(item => container.appendChild(window.MIROZA.builder.build(item)));
-    }
-    return { init };
-  })();
-
-  /* Listing Pages */
-  window.MIROZA.listing = (function(){
-    async function init(type){
-        let containerId, items, paginationId;
-        
-        if (type === 'blog') {
-            containerId = 'posts-grid';
-            items = await window.MIROZA.store.getBlogs();
-            paginationId = 'blogs-pagination';
-        } else if (type === 'article') {
-            containerId = 'articles-list';
-            items = await window.MIROZA.store.getArticles();
-            paginationId = 'articles-pagination';
-        } else if (type === 'news') {
-            containerId = 'india-news-list';
-            items = await window.MIROZA.store.getNews();
-            paginationId = 'india-news-pagination';
-        }
-
-        const container = document.getElementById(containerId);
-        if(!container) return;
-
-        const pageSize = 12;
-        let currentPage = 1;
-        
-        function render(){
-            const start = (currentPage - 1) * pageSize;
-            const end = start + pageSize;
-            const slice = items.slice(start, end);
-            
-            if(currentPage === 1) container.innerHTML = '';
-            slice.forEach(item => container.appendChild(window.MIROZA.builder.build(item)));
-
-            let pagination = document.getElementById(paginationId);
-            if(!pagination) {
-                pagination = document.createElement('div');
-                pagination.id = paginationId;
-                pagination.className = 'pagination';
-                container.parentNode.appendChild(pagination);
-            }
-            pagination.innerHTML = '';
-            
-            if(end < items.length){
-                const btn = document.createElement('button');
-                btn.className = 'load-more';
-                btn.textContent = 'Load More';
-                btn.onclick = () => { currentPage++; render(); };
-                pagination.appendChild(btn);
-            }
-        }
-        render();
-    }
-    return { 
-        initArticles: () => init('article'),
-        initBlogs: () => init('blog'),
-        initNews: () => init('news')
-    };
-  })();
-
-  /* Search */
-  window.MIROZA.search = (function(){
-    function init(){
-      const input = document.getElementById('search');
-      const suggestions = document.getElementById('search-suggestions');
-      const form = input ? input.closest('form') : null;
-      
-      if(!input || !suggestions) return;
-
-      if(form) {
-          form.removeAttribute('onsubmit');
-          form.addEventListener('submit', (e) => {
-              e.preventDefault();
-              const q = input.value.trim();
-              if(q) window.location.href = `/search.html?q=${encodeURIComponent(q)}`;
-          });
+      // 1. Top News List (Left) - Mix of latest
+      const topList = U.qs('#top-news-list');
+      if(topList && latest.length) {
+          topList.innerHTML = '';
+          latest.slice(0, 10).forEach(p => topList.appendChild(B.buildCompact(p)));
       }
 
-      let searchIndex = null;
+      // 2. Lead Story (Center) - First item from News or Latest
+      const leadContainer = U.qs('#lead-story-container');
+      const leadPost = news[0] || latest[0];
+      if(leadContainer && leadPost) {
+          leadContainer.innerHTML = '';
+          leadContainer.appendChild(B.buildLead(leadPost));
+      }
 
-      input.addEventListener('input', window.MIROZA.utils.debounce(async (e) => {
-        const q = e.target.value.toLowerCase();
-        if(q.length < 2) { suggestions.hidden = true; return; }
+      // 3. Sub Stories (Center Grid) - Next 4 items
+      const subContainer = U.qs('#sub-stories-container');
+      const subPosts = (news.length > 1 ? news.slice(1, 5) : latest.slice(1, 5));
+      if(subContainer && subPosts.length) {
+          subContainer.innerHTML = '';
+          subPosts.forEach(p => subContainer.appendChild(B.buildCardSm(p)));
+      }
 
-        if(!searchIndex) {
-            suggestions.innerHTML = '<div class="search-loading">Loading...</div>';
-            suggestions.hidden = false;
-            try {
-                const res = await fetch('/data/search.json');
-                if(!res.ok) throw new Error('Failed to load search index');
-                searchIndex = await res.json();
-            } catch(err) {
-                console.error(err);
-                suggestions.innerHTML = '<div class="search-error">Error</div>';
-                return;
-            }
-        }
+      // 4. Trending/Sidebar (Right) - Blogs/Articles
+      const trendingList = U.qs('#trending-list');
+      const trendingPosts = [...blogs, ...articles].sort(() => 0.5 - Math.random()).slice(0, 8);
+      if(trendingList && trendingPosts.length) {
+          trendingList.innerHTML = '';
+          trendingPosts.forEach(p => trendingList.appendChild(B.buildCompact(p)));
+      }
 
-        const matches = searchIndex.filter(p => (p.t || '').toLowerCase().includes(q)).slice(0, 5);
-        suggestions.innerHTML = '';
-        
-        if(matches.length){
-          suggestions.hidden = false;
-          matches.forEach(p => {
-            const btn = document.createElement('button');
-            btn.className = 'search-suggestion';
-            btn.innerHTML = `<strong>${window.MIROZA.utils.safeHTML(p.t)}</strong><br><span>${window.MIROZA.utils.safeHTML(p.c || '')}</span>`;
-            btn.onclick = () => window.location.href = p.u || '#';
-            suggestions.appendChild(btn);
-          });
-        } else {
-            suggestions.innerHTML = '<div class="search-no-results">No matches found</div>';
-        }
-      }, 300));
-
-      document.addEventListener('click', (e) => {
-        if(!input.contains(e.target) && !suggestions.contains(e.target)) suggestions.hidden = true;
-      });
+      // 5. Visual Stories (Bottom) - Image heavy items
+      const vsScroll = U.qs('#visual-stories-scroll');
+      const vsPosts = [...articles, ...latest].slice(0, 10);
+      if(vsScroll && vsPosts.length) {
+          vsScroll.innerHTML = '';
+          vsPosts.forEach(p => vsScroll.appendChild(B.buildVisual(p)));
+      }
     }
     return { init };
   })();
 
-  /* Init */
+  /* Search Logic */
+  window.MIROZA.search = (function(){
+      function init() {
+          const form = document.querySelector('.header-search form');
+          const input = document.querySelector('.header-search input');
+          if(form && input) {
+              form.addEventListener('submit', (e) => {
+                  e.preventDefault();
+                  const q = input.value.trim();
+                  if(q) window.location.href = `/search.html?q=${encodeURIComponent(q)}`;
+              });
+          }
+      }
+      return { init };
+  })();
+
+  /* Initialization */
   document.addEventListener('DOMContentLoaded', () => {
-    window.MIROZA.theme.init();
     window.MIROZA.nav.init();
     window.MIROZA.search.init();
-
-    const page = document.body.dataset.page;
-    if(page === 'home') window.MIROZA.home.init();
-    else if(page === 'articles') window.MIROZA.listing.initArticles();
-    else if(page === 'blog') window.MIROZA.listing.initBlogs();
-    else if(page === 'india-news') window.MIROZA.listing.initNews();
+    
+    // Simple page detection
+    if(document.querySelector('.main-layout')) {
+        window.MIROZA.home.init();
+    }
     
     if ('serviceWorker' in navigator) {
         navigator.serviceWorker.register('/sw.js').catch(() => {});
