@@ -1,118 +1,99 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>About Us - MIROZA</title>
-  <link rel="stylesheet" href="/styles/main.css" />
-  <link rel="icon" type="image/svg+xml" href="/assets/icons/logo.svg" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Miroza</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Georgia:wght@400;700&family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
 </head>
-<body data-page="about">
+<body>
 
-  <!-- Top Strip -->
-  <div class="top-strip">
-    <div class="container">
-      <div class="ts-left">
-        <span>Tuesday, Nov 25, 2025</span>
-        <span class="separator">|</span>
-        <span>28°C New Delhi</span>
-      </div>
-      <div class="ts-right">
-        <a href="#">E-Paper</a>
-        <span class="separator">|</span>
-        <a href="#">Sign In</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- Header -->
-  <header class="site-header">
-    <div class="container header-grid">
-      <button class="menu-toggle" aria-label="Menu">
-        <img src="/assets/icons/menu.svg" alt="Menu" width="24">
-      </button>
-      
-      <a href="/" class="logo">
-        <img src="/assets/icons/logo.svg" alt="M">
-        MIROZA
-      </a>
-
-      <div class="header-search">
-        <form action="/search.html">
-          <input type="text" placeholder="Search News, Articles...">
-          <button type="submit" class="search-btn">
-            <img src="/assets/icons/search.svg" alt="Search" width="16" style="filter: invert(1);">
-          </button>
-        </form>
-      </div>
-
-      <button class="mobile-search-toggle">
-        <img src="/assets/icons/search.svg" alt="Search" width="20">
-      </button>
-    </div>
-  </header>
-
-  <!-- Nav Bar -->
-  <nav class="main-nav-bar">
-    <div class="container">
-      <ul class="nav-list">
-        <li><a href="/index.html">Home</a></li>
-        <li><a href="/news.html">News</a></li>
-        <li><a href="/articles.html">Articles</a></li>
-        <li><a href="/blog.html">Blogs</a></li>
-        <li><a href="/about.html" class="active">About Us</a></li>
-      </ul>
-    </div>
-  </nav>
-
-  <!-- Main Content -->
-  <main class="container main-layout">
-    <div class="col-center" style="grid-column: 1 / span 2;">
-      <div class="section-heading-sm">
-        <h3>About MIROZA</h3>
-      </div>
-      <div style="padding: 20px 0; font-size: 16px; line-height: 1.6;">
-        <p style="margin-bottom: 15px;">MIROZA publishes concise, clear coverage on news, trends and analysis.</p>
-        <h4 style="font-size: 18px; font-weight: bold; margin-bottom: 10px;">Our Mission</h4>
-        <p>To provide high-quality reporting and explainers with a focus on clarity and utility. We strive to bring you the most accurate and timely information from around the globe.</p>
-      </div>
-    </div>
-
-    <aside class="col-right">
-      <div class="ad-box-lg">ADVERTISEMENT</div>
-    </aside>
-  </main>
-
-  <!-- Footer -->
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-links">
-        <div class="fl-col">
-          <h4>News</h4>
-          <a href="/news.html">India</a>
-          <a href="/news.html">World</a>
-          <a href="/news.html">Business</a>
+    <!-- Top Strip -->
+    <div class="top-strip">
+        <div class="container flex justify-between">
+            <div>Tuesday, Dec 06, 2025</div>
+            <div class="flex" style="gap: 15px;">
+                <a href="#">EPAPER</a>
+                <a href="#">SIGN IN</a>
+            </div>
         </div>
-        <div class="fl-col">
-          <h4>Opinion</h4>
-          <a href="/blog.html">Blogs</a>
-          <a href="/articles.html">Editorials</a>
-          <a href="/articles.html">Columns</a>
-        </div>
-        <div class="fl-col">
-          <h4>More</h4>
-          <a href="/about.html">About Us</a>
-          <a href="/contact.html">Contact</a>
-          <a href="/privacy.html">Privacy</a>
-        </div>
-      </div>
-      <div class="copyright">
-        Copyright © 2025 MIROZA. All rights reserved.
-      </div>
     </div>
-  </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.11/dist/purify.min.js"></script>
-  <script src="/scripts/app.js"></script>
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="index.html" class="logo">MIROZA<span>.</span></a>
+            <div class="header-ads">ADVERTISEMENT SPACE (728x90)</div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="container">
+            <ul class="nav-list">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="news.html">NEWS</a></li>
+                <li><a href="articles.html">ARTICLES</a></li>
+                <li><a href="blog.html">BLOGS</a></li>
+                <li><a href="#">BUSINESS</a></li>
+                <li><a href="#">TECH</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container main-layout">
+        
+        <!-- Left Sidebar -->
+        <aside class="left-sidebar">
+            <h3>Company</h3>
+            <ul class="quick-links">
+                <li><a href="about.html" class="text-red bold">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="#">Careers</a></li>
+                <li><a href="#">Press</a></li>
+            </ul>
+        </aside>
+
+        <!-- Center Content -->
+        <section class="center-content">
+            <h1 style="font-family: var(--font-serif); font-size: 36px; margin-bottom: 20px;">About Miroza</h1>
+            <img src="https://placehold.co/800x400?text=Our+Office" alt="Office" style="width: 100%; margin-bottom: 25px; border-radius: 4px;">
+            
+            <div style="font-size: 16px; line-height: 1.6; color: #333;">
+                <p style="margin-bottom: 20px;">
+                    <strong>Miroza</strong> is a leading digital media platform dedicated to delivering world-class news, in-depth analysis, and thought-provoking articles. Established in 2025, we have quickly grown to become a trusted source of information for millions of readers worldwide.
+                </p>
+                <p style="margin-bottom: 20px;">
+                    Our mission is simple: to empower our audience with the truth. We believe in journalism that is fearless, unbiased, and deeply researched. From breaking news in technology to cultural shifts in society, Miroza covers it all.
+                </p>
+                
+                <h3 style="font-size: 24px; margin: 30px 0 15px;">Our Values</h3>
+                <ul style="list-style: disc; padding-left: 20px; margin-bottom: 20px;">
+                    <li><strong>Integrity:</strong> We stand by every story we publish.</li>
+                    <li><strong>Innovation:</strong> We embrace new technologies to tell stories better.</li>
+                    <li><strong>Inclusivity:</strong> We believe diverse voices make for better news.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Right Sidebar -->
+        <aside class="right-sidebar">
+            <div class="ad-box">ADVERTISEMENT</div>
+        </aside>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div style="text-align: center;">
+                Copyright &copy; 2025 Miroza Media Ltd. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts/app.js"></script>
 </body>
 </html>

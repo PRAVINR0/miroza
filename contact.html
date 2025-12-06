@@ -1,127 +1,118 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Contact Us - MIROZA</title>
-  <link rel="stylesheet" href="/styles/main.css" />
-  <link rel="icon" type="image/svg+xml" href="/assets/icons/logo.svg" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Miroza</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Georgia:wght@400;700&family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
 </head>
-<body data-page="contact">
+<body>
 
-  <!-- Top Strip -->
-  <div class="top-strip">
-    <div class="container">
-      <div class="ts-left">
-        <span>Tuesday, Nov 25, 2025</span>
-        <span class="separator">|</span>
-        <span>28°C New Delhi</span>
-      </div>
-      <div class="ts-right">
-        <a href="#">E-Paper</a>
-        <span class="separator">|</span>
-        <a href="#">Sign In</a>
-      </div>
+    <!-- Top Strip -->
+    <div class="top-strip">
+        <div class="container flex justify-between">
+            <div>Tuesday, Dec 06, 2025</div>
+            <div class="flex" style="gap: 15px;">
+                <a href="#">EPAPER</a>
+                <a href="#">SIGN IN</a>
+            </div>
+        </div>
     </div>
-  </div>
 
-  <!-- Header -->
-  <header class="site-header">
-    <div class="container header-grid">
-      <button class="menu-toggle" aria-label="Menu">
-        <img src="/assets/icons/menu.svg" alt="Menu" width="24">
-      </button>
-      
-      <a href="/" class="logo">
-        <img src="/assets/icons/logo.svg" alt="M">
-        MIROZA
-      </a>
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="index.html" class="logo">MIROZA<span>.</span></a>
+            <div class="header-ads">ADVERTISEMENT SPACE (728x90)</div>
+        </div>
+    </header>
 
-      <div class="header-search">
-        <form action="/search.html">
-          <input type="text" placeholder="Search News, Articles...">
-          <button type="submit" class="search-btn">
-            <img src="/assets/icons/search.svg" alt="Search" width="16" style="filter: invert(1);">
-          </button>
-        </form>
-      </div>
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="container">
+            <ul class="nav-list">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="news.html">NEWS</a></li>
+                <li><a href="articles.html">ARTICLES</a></li>
+                <li><a href="blog.html">BLOGS</a></li>
+                <li><a href="#">BUSINESS</a></li>
+                <li><a href="#">TECH</a></li>
+            </ul>
+        </div>
+    </nav>
 
-      <button class="mobile-search-toggle">
-        <img src="/assets/icons/search.svg" alt="Search" width="20">
-      </button>
-    </div>
-  </header>
-
-  <!-- Nav Bar -->
-  <nav class="main-nav-bar">
-    <div class="container">
-      <ul class="nav-list">
-        <li><a href="/index.html">Home</a></li>
-        <li><a href="/news.html">News</a></li>
-        <li><a href="/articles.html">Articles</a></li>
-        <li><a href="/blog.html">Blogs</a></li>
-        <li><a href="/about.html">About Us</a></li>
-      </ul>
-    </div>
-  </nav>
-
-  <!-- Main Content -->
-  <main class="container main-layout">
-    <div class="col-center" style="grid-column: 1 / span 2;">
-      <div class="section-heading-sm">
-        <h3>Contact Us</h3>
-      </div>
-      <div style="padding: 20px 0; font-size: 16px; line-height: 1.6;">
-        <p style="margin-bottom: 15px;">We'd love to hear from you. Please reach out to us using the contact details below.</p>
+    <!-- Main Content -->
+    <main class="container main-layout">
         
-        <div style="margin-bottom: 20px;">
-            <strong>Email:</strong><br>
-            <a href="mailto:contact@miroza.online" style="color: var(--toi-red);">contact@miroza.online</a>
-        </div>
+        <!-- Left Sidebar -->
+        <aside class="left-sidebar">
+            <h3>Company</h3>
+            <ul class="quick-links">
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html" class="text-red bold">Contact</a></li>
+                <li><a href="#">Careers</a></li>
+                <li><a href="#">Press</a></li>
+            </ul>
+        </aside>
 
-        <div style="margin-bottom: 20px;">
-            <strong>Address:</strong><br>
-            MIROZA Media Pvt Ltd.<br>
-            New Delhi, India
-        </div>
-      </div>
-    </div>
+        <!-- Center Content -->
+        <section class="center-content">
+            <h1 style="font-family: var(--font-serif); font-size: 36px; margin-bottom: 20px;">Contact Us</h1>
+            
+            <div style="font-size: 16px; line-height: 1.6; color: #333;">
+                <p style="margin-bottom: 20px;">
+                    We would love to hear from you. Whether you have a news tip, feedback on our coverage, or a business inquiry, please reach out using the form below or the contact details provided.
+                </p>
 
-    <aside class="col-right">
-      <div class="ad-box-lg">ADVERTISEMENT</div>
-    </aside>
-  </main>
+                <div style="background: #f9f9f9; padding: 20px; border: 1px solid #eee; margin-bottom: 30px;">
+                    <h3 style="margin-bottom: 15px;">Send us a message</h3>
+                    <form>
+                        <div style="margin-bottom: 15px;">
+                            <label style="display: block; margin-bottom: 5px; font-weight: bold;">Name</label>
+                            <input type="text" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;">
+                        </div>
+                        <div style="margin-bottom: 15px;">
+                            <label style="display: block; margin-bottom: 5px; font-weight: bold;">Email</label>
+                            <input type="email" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;">
+                        </div>
+                        <div style="margin-bottom: 15px;">
+                            <label style="display: block; margin-bottom: 5px; font-weight: bold;">Message</label>
+                            <textarea style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; height: 100px;"></textarea>
+                        </div>
+                        <button type="button" style="background: var(--toi-red); color: white; border: none; padding: 10px 20px; font-weight: bold; cursor: pointer;">SUBMIT</button>
+                    </form>
+                </div>
 
-  <!-- Footer -->
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-links">
-        <div class="fl-col">
-          <h4>News</h4>
-          <a href="/news.html">India</a>
-          <a href="/news.html">World</a>
-          <a href="/news.html">Business</a>
-        </div>
-        <div class="fl-col">
-          <h4>Opinion</h4>
-          <a href="/blog.html">Blogs</a>
-          <a href="/articles.html">Editorials</a>
-          <a href="/articles.html">Columns</a>
-        </div>
-        <div class="fl-col">
-          <h4>More</h4>
-          <a href="/about.html">About Us</a>
-          <a href="/contact.html">Contact</a>
-          <a href="/privacy.html">Privacy</a>
-        </div>
-      </div>
-      <div class="copyright">
-        Copyright © 2025 MIROZA. All rights reserved.
-      </div>
-    </div>
-  </footer>
+                <h3 style="font-size: 20px; margin-bottom: 10px;">Miroza Media Headquarters</h3>
+                <p>
+                    123 Media Tower, Tech Park<br>
+                    Silicon Valley, CA 94025<br>
+                    USA
+                </p>
+                <p style="margin-top: 10px;">
+                    <strong>Email:</strong> contact@miroza.com<br>
+                    <strong>Phone:</strong> +1 (555) 123-4567
+                </p>
+            </div>
+        </section>
 
-  <script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.11/dist/purify.min.js"></script>
-  <script src="/scripts/app.js"></script>
+        <!-- Right Sidebar -->
+        <aside class="right-sidebar">
+            <div class="ad-box">ADVERTISEMENT</div>
+        </aside>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div style="text-align: center;">
+                Copyright &copy; 2025 Miroza Media Ltd. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts/app.js"></script>
 </body>
 </html>
