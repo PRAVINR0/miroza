@@ -3,10 +3,14 @@
   "short_name": "Miroza",
   "start_url": "/index.html",
   "display": "standalone",
-  "background_color": "#0f172a",
-  "theme_color": "#0f172a",
-  "description": "Modern news & articles hub.",
+  "background_color": "#ffffff",
+  "theme_color": "#cc0000",
+  "description": "World-class news and articles.",
   "icons": [
-    {"src": "/assets/icons/logo.svg", "sizes": "64x64", "type": "image/svg+xml"}
+    {
+      "src": "assets/icons/logo.svg",
+      "sizes": "64x64",
+      "type": "image/svg+xml"
+    }
   ]
 }

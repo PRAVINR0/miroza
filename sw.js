@@ -1,16 +1,13 @@
-/* MIROZA Service Worker v7: TOI Layout */
-const STATIC_CACHE = 'miroza-static-v7';
-const RUNTIME_CACHE = 'miroza-runtime-v7';
+/* MIROZA Service Worker v8: TOI Redesign */
+const STATIC_CACHE = 'miroza-static-v8';
+const RUNTIME_CACHE = 'miroza-runtime-v8';
 const CORE_ASSETS = [
   '/',
   '/index.html',
   '/offline.html',
   '/styles/main.css',
   '/scripts/app.js',
-  '/manifest.json',
-  '/assets/icons/logo.svg',
-  '/assets/images/hero-insight-800.svg',
-  '/assets/images/placeholder.svg'
+  '/manifest.json'
 ];
 
 self.addEventListener('install', event => {
@@ -46,11 +43,6 @@ self.addEventListener('fetch', event => {
 
   if(isCoreAsset(url.pathname)){
     event.respondWith(cacheFirst(req));
-    return;
-  }
-
-  if(req.destination === 'image' || url.pathname.endsWith('.json')){
-    event.respondWith(staleWhileRevalidate(req));
     return;
   }
 

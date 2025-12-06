@@ -1,139 +1,86 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Page Not Found — MIROZA</title>
-  <meta name="description" content="The page you are looking for does not exist." />
-  <link rel="icon" type="image/svg+xml" href="/assets/icons/logo.svg" />
-  
-  
-  <style>
-    .error-page {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 60vh;
-      text-align: center;
-      padding: 2rem;
-    }
-    .error-code {
-      font-size: 6rem;
-      font-weight: 700;
-      color: var(--accent);
-      line-height: 1;
-      margin-bottom: 1rem;
-    }
-    .error-message {
-      font-size: 1.5rem;
-      margin-bottom: 2rem;
-      color: var(--text-alt);
-    }
-    .home-btn {
-      display: inline-block;
-      padding: 0.75rem 1.5rem;
-      background: var(--accent);
-      color: white;
-      border-radius: 4px;
-      font-weight: 600;
-      text-decoration: none;
-      transition: background 0.3s ease;
-    }
-    .home-btn:hover {
-      background: var(--accent-alt);
-    }
-  </style>
-  <link rel="stylesheet" href="/styles/main.min.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found - Miroza</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Georgia:wght@400;700&family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
-  
-  <header class="site-header" aria-label="Site header">
-    <div class="header-inner">
-      <a class="logo" href="/" aria-label="MIROZA Home">
-        <img src="/assets/icons/logo.svg" alt="MIROZA" width="32" height="32" />
-        <span class="logo-text">MIROZA</span>
-      </a>
 
-      <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
-        <img src="/assets/icons/menu.svg" alt="Menu" width="24" height="24" />
-      </button>
-
-      <nav class="main-nav" aria-label="Primary navigation">
-        <ul>
-          <li><a href="/index.html">Home</a></li>
-          <li><a href="/news/news.html">News</a></li>
-          <li><a href="/articles/articles.html">Articles</a></li>
-          <li><a href="/blogs/blogs.html">Blogs</a></li>
-          <li><a href="/about.html">About</a></li>
-          <li><a href="/contact.html">Contact</a></li>
-        </ul>
-      </nav>
-
-      <form class="search-form" role="search" onsubmit="return false;">
-        <label for="search" class="visually-hidden">Search</label>
-        <input id="search" name="q" type="search" placeholder="Search..." autocomplete="off" />
-        <div class="search-suggestions" id="search-suggestions" hidden></div>
-      </form>
-
-      <button class="theme-toggle" aria-label="Toggle dark mode">
-        <img src="/assets/icons/moon.svg" alt="Enable dark mode" width="24" height="24" />
-      </button>
+    <!-- Top Strip -->
+    <div class="top-strip">
+        <div class="container flex justify-between">
+            <div>Tuesday, Dec 06, 2025</div>
+            <div class="flex" style="gap: 15px;">
+                <a href="#">EPAPER</a>
+                <a href="#">SIGN IN</a>
+            </div>
+        </div>
     </div>
-  </header>
 
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="index.html" class="logo">MIROZA<span>.</span></a>
+            <div class="header-ads">ADVERTISEMENT SPACE (728x90)</div>
+        </div>
+    </header>
 
-  <main class="error-page">
-    <div class="error-code">404</div>
-    <h1 class="error-message">Oops! Page not found.</h1>
-    <p>The article or page you are looking for might have been moved or deleted.</p>
-    <a href="/" class="home-btn">Go Back Home</a>
-  </main>
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="container">
+            <ul class="nav-list">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="news.html">NEWS</a></li>
+                <li><a href="articles.html">ARTICLES</a></li>
+                <li><a href="blog.html">BLOGS</a></li>
+                <li><a href="#">BUSINESS</a></li>
+                <li><a href="#">TECH</a></li>
+            </ul>
+        </div>
+    </nav>
 
-  
-  <footer class="site-footer">
-    <div class="footer-grid">
-      <div>
-        <h3>MIROZA</h3>
-        <p>Modern news & articles hub. Fast, accessible, secure.</p>
-      </div>
-      <div>
-        <h3>Explore</h3>
-        <ul>
-          <li><a href="/news/news.html">News</a></li>
-          <li><a href="/articles/articles.html">Articles</a></li>
-          <li><a href="/blogs/blogs.html">Blogs</a></li>
-        </ul>
-      </div>
-      <div>
-        <h3>Connect</h3>
-        <ul>
-          <li><a href="#" target="_blank" rel="noopener noreferrer">Twitter</a></li>
-          <li><a href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-          <li><a href="/contact.html">Contact Us</a></li>
-          <li><a href="/contact.html#advertise">Advertise with us</a></li>
-        </ul>
-      </div>
-      <div>
-        <h3>Legal</h3>
-        <ul>
-          <li><a href="/privacy.html">Privacy Policy</a></li>
-          <li><a href="#">Terms of Service</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="copyright">
-      &copy; <span id="year">2025</span> MIROZA. All rights reserved.
-    </div>
-  </footer>
+    <!-- Main Content -->
+    <main class="container main-layout">
+        
+        <!-- Left Sidebar -->
+        <aside class="left-sidebar">
+            <h3>Quick Links</h3>
+            <ul class="quick-links">
+                <li><a href="index.html" class="text-red bold">Home</a></li>
+                <li><a href="news.html">Latest News</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </aside>
 
+        <!-- Center Content -->
+        <section class="center-content" style="text-align: center; padding: 50px 0;">
+            <h1 style="font-family: var(--font-serif); font-size: 72px; margin-bottom: 20px; color: var(--toi-red);">404</h1>
+            <h2 style="font-size: 24px; margin-bottom: 20px;">Page Not Found</h2>
+            <p style="font-size: 16px; color: #555; margin-bottom: 30px;">
+                We are sorry, but the page you are looking for does not exist or has been moved.
+            </p>
+            <a href="index.html" style="display: inline-block; background: var(--toi-red); color: white; padding: 10px 20px; text-decoration: none; font-weight: bold; text-transform: uppercase;">Go to Homepage</a>
+        </section>
 
-  <script src="/scripts/app.min.js"></script>
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+        <!-- Right Sidebar -->
+        <aside class="right-sidebar">
+            <div class="ad-box">ADVERTISEMENT</div>
+        </aside>
 
-  <button class="back-to-top" aria-label="Back to top">↑</button>
+    </main>
 
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div style="text-align: center;">
+                Copyright &copy; 2025 Miroza Media Ltd. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts/app.js"></script>
 </body>
 </html>

@@ -1,116 +1,84 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Offline - MIROZA</title>
-  <link rel="stylesheet" href="/styles/main.css" />
-  <link rel="icon" type="image/svg+xml" href="/assets/icons/logo.svg" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offline - Miroza</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Georgia:wght@400;700&family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
 </head>
-<body data-page="offline">
+<body>
 
-  <!-- Top Strip -->
-  <div class="top-strip">
-    <div class="container">
-      <div class="ts-left">
-        <span>Tuesday, Nov 25, 2025</span>
-        <span class="separator">|</span>
-        <span>28°C New Delhi</span>
-      </div>
-      <div class="ts-right">
-        <a href="#">E-Paper</a>
-        <span class="separator">|</span>
-        <a href="#">Sign In</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- Header -->
-  <header class="site-header">
-    <div class="container header-grid">
-      <button class="menu-toggle" aria-label="Menu">
-        <img src="/assets/icons/menu.svg" alt="Menu" width="24">
-      </button>
-      
-      <a href="/" class="logo">
-        <img src="/assets/icons/logo.svg" alt="M">
-        MIROZA
-      </a>
-
-      <div class="header-search">
-        <form action="/search.html">
-          <input type="text" placeholder="Search News, Articles...">
-          <button type="submit" class="search-btn">
-            <img src="/assets/icons/search.svg" alt="Search" width="16" style="filter: invert(1);">
-          </button>
-        </form>
-      </div>
-
-      <button class="mobile-search-toggle">
-        <img src="/assets/icons/search.svg" alt="Search" width="20">
-      </button>
-    </div>
-  </header>
-
-  <!-- Nav Bar -->
-  <nav class="main-nav-bar">
-    <div class="container">
-      <ul class="nav-list">
-        <li><a href="/index.html">Home</a></li>
-        <li><a href="/news.html">News</a></li>
-        <li><a href="/articles.html">Articles</a></li>
-        <li><a href="/blog.html">Blogs</a></li>
-        <li><a href="/about.html">About Us</a></li>
-      </ul>
-    </div>
-  </nav>
-
-  <!-- Main Content -->
-  <main class="container main-layout">
-    <div class="col-center" style="grid-column: 1 / span 2; text-align: center; padding: 50px 0;">
-      <div class="section-heading-sm">
-        <h3>You are Offline</h3>
-      </div>
-      <p>It seems you have lost your internet connection. Please check your settings and try again.</p>
-      <button onclick="window.location.reload()" style="margin-top: 20px; padding: 10px 20px; background: var(--toi-red); color: #fff; border: none; cursor: pointer;">Retry</button>
-    </div>
-
-    <aside class="col-right">
-      <div class="ad-box-lg">ADVERTISEMENT</div>
-    </aside>
-  </main>
-
-  <!-- Footer -->
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-links">
-        <div class="fl-col">
-          <h4>News</h4>
-          <a href="/news.html">India</a>
-          <a href="/news.html">World</a>
-          <a href="/news.html">Business</a>
+    <!-- Top Strip -->
+    <div class="top-strip">
+        <div class="container flex justify-between">
+            <div>Tuesday, Dec 06, 2025</div>
+            <div class="flex" style="gap: 15px;">
+                <a href="#">EPAPER</a>
+                <a href="#">SIGN IN</a>
+            </div>
         </div>
-        <div class="fl-col">
-          <h4>Opinion</h4>
-          <a href="/blog.html">Blogs</a>
-          <a href="/articles.html">Editorials</a>
-          <a href="/articles.html">Columns</a>
-        </div>
-        <div class="fl-col">
-          <h4>More</h4>
-          <a href="/about.html">About Us</a>
-          <a href="/contact.html">Contact</a>
-          <a href="/privacy.html">Privacy</a>
-        </div>
-      </div>
-      <div class="copyright">
-        Copyright © 2025 MIROZA. All rights reserved.
-      </div>
     </div>
-  </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.11/dist/purify.min.js"></script>
-  <script src="/scripts/app.js"></script>
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="index.html" class="logo">MIROZA<span>.</span></a>
+            <div class="header-ads">ADVERTISEMENT SPACE (728x90)</div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="container">
+            <ul class="nav-list">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="news.html">NEWS</a></li>
+                <li><a href="articles.html">ARTICLES</a></li>
+                <li><a href="blog.html">BLOGS</a></li>
+                <li><a href="#">BUSINESS</a></li>
+                <li><a href="#">TECH</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container main-layout">
+        
+        <!-- Left Sidebar -->
+        <aside class="left-sidebar">
+            <h3>Quick Links</h3>
+            <ul class="quick-links">
+                <li><a href="index.html" class="text-red bold">Home</a></li>
+                <li><a href="news.html">Latest News</a></li>
+            </ul>
+        </aside>
+
+        <!-- Center Content -->
+        <section class="center-content" style="text-align: center; padding: 50px 0;">
+            <h1 style="font-family: var(--font-serif); font-size: 36px; margin-bottom: 20px;">You are Offline</h1>
+            <p style="font-size: 16px; color: #555; margin-bottom: 30px;">
+                It seems you have lost your internet connection. Please check your network settings and try again.
+            </p>
+            <button onclick="window.location.reload()" style="background: var(--toi-red); color: white; border: none; padding: 10px 20px; font-weight: bold; cursor: pointer; text-transform: uppercase;">Retry</button>
+        </section>
+
+        <!-- Right Sidebar -->
+        <aside class="right-sidebar">
+            <div class="ad-box">ADVERTISEMENT</div>
+        </aside>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div style="text-align: center;">
+                Copyright &copy; 2025 Miroza Media Ltd. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts/app.js"></script>
 </body>
 </html>
-

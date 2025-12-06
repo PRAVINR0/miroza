@@ -1,134 +1,135 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Articles - MIROZA</title>
-  <link rel="stylesheet" href="/styles/main.css" />
-  <link rel="icon" type="image/svg+xml" href="/assets/icons/logo.svg" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Articles - Miroza</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Georgia:wght@400;700&family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
 </head>
-<body data-page="articles">
+<body>
 
-  <!-- Top Strip -->
-  <div class="top-strip">
-    <div class="container">
-      <div class="ts-left">
-        <span>Tuesday, Nov 25, 2025</span>
-        <span class="separator">|</span>
-        <span>28°C New Delhi</span>
-      </div>
-      <div class="ts-right">
-        <a href="#">E-Paper</a>
-        <span class="separator">|</span>
-        <a href="#">Sign In</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- Header -->
-  <header class="site-header">
-    <div class="container header-grid">
-      <button class="menu-toggle" aria-label="Menu">
-        <img src="/assets/icons/menu.svg" alt="Menu" width="24">
-      </button>
-      
-      <a href="/" class="logo">
-        <img src="/assets/icons/logo.svg" alt="M">
-        MIROZA
-      </a>
-
-      <div class="header-search">
-        <form action="/search.html">
-          <input type="text" placeholder="Search News, Articles...">
-          <button type="submit" class="search-btn">
-            <img src="/assets/icons/search.svg" alt="Search" width="16" style="filter: invert(1);">
-          </button>
-        </form>
-      </div>
-
-      <button class="mobile-search-toggle">
-        <img src="/assets/icons/search.svg" alt="Search" width="20">
-      </button>
-    </div>
-  </header>
-
-  <!-- Nav Bar -->
-  <nav class="main-nav-bar">
-    <div class="container">
-      <ul class="nav-list">
-        <li><a href="/index.html">Home</a></li>
-        <li><a href="/news.html">News</a></li>
-        <li><a href="/articles.html" class="active">Articles</a></li>
-        <li><a href="/blog.html">Blogs</a></li>
-        <li><a href="/about.html">About Us</a></li>
-      </ul>
-    </div>
-  </nav>
-
-  <!-- Main Content -->
-  <main class="container main-layout">
-    <!-- Left Column: Article List -->
-    <div class="col-center" style="grid-column: 1 / span 2;">
-      <div class="section-heading-sm">
-        <h3>Latest Articles</h3>
-      </div>
-      <div id="articles-list" class="sub-stories-grid">
-        <!-- Populated by JS -->
-        <div class="skeleton-block"></div>
-        <div class="skeleton-block"></div>
-        <div class="skeleton-block"></div>
-        <div class="skeleton-block"></div>
-      </div>
-      <div id="articles-pagination" style="margin-top: 20px; text-align: center;"></div>
-    </div>
-
-    <!-- Right Column: Sidebar -->
-    <aside class="col-right">
-      <div class="section-heading-sm">
-        <h3>Trending</h3>
-      </div>
-      <ol class="numbered-list" id="trending-list">
-        <!-- Populated by JS -->
-        <li><div class="skeleton-text"></div></li>
-        <li><div class="skeleton-text"></div></li>
-        <li><div class="skeleton-text"></div></li>
-      </ol>
-      
-      <div class="ad-box-lg">ADVERTISEMENT</div>
-    </aside>
-  </main>
-
-  <!-- Footer -->
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-links">
-        <div class="fl-col">
-          <h4>News</h4>
-          <a href="/news.html">India</a>
-          <a href="/news.html">World</a>
-          <a href="/news.html">Business</a>
+    <!-- Top Strip -->
+    <div class="top-strip">
+        <div class="container flex justify-between">
+            <div>Tuesday, Dec 06, 2025</div>
+            <div class="flex" style="gap: 15px;">
+                <a href="#">EPAPER</a>
+                <a href="#">SIGN IN</a>
+            </div>
         </div>
-        <div class="fl-col">
-          <h4>Opinion</h4>
-          <a href="/blog.html">Blogs</a>
-          <a href="/articles.html">Editorials</a>
-          <a href="/articles.html">Columns</a>
-        </div>
-        <div class="fl-col">
-          <h4>More</h4>
-          <a href="/about.html">About Us</a>
-          <a href="/contact.html">Contact</a>
-          <a href="/privacy.html">Privacy</a>
-        </div>
-      </div>
-      <div class="copyright">
-        Copyright © 2025 MIROZA. All rights reserved.
-      </div>
     </div>
-  </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.11/dist/purify.min.js"></script>
-  <script src="/scripts/app.js"></script>
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="index.html" class="logo">MIROZA<span>.</span></a>
+            <div class="header-ads">ADVERTISEMENT SPACE (728x90)</div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="container">
+            <ul class="nav-list">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="news.html">NEWS</a></li>
+                <li><a href="articles.html" class="active">ARTICLES</a></li>
+                <li><a href="blog.html">BLOGS</a></li>
+                <li><a href="#">BUSINESS</a></li>
+                <li><a href="#">TECH</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container main-layout">
+        
+        <!-- Left Sidebar -->
+        <aside class="left-sidebar">
+            <h3>Topics</h3>
+            <ul class="quick-links">
+                <li><a href="#" class="text-red bold">All Articles</a></li>
+                <li><a href="#">Technology</a></li>
+                <li><a href="#">Health</a></li>
+                <li><a href="#">Environment</a></li>
+                <li><a href="#">Lifestyle</a></li>
+            </ul>
+        </aside>
+
+        <!-- Center Content -->
+        <section class="center-content">
+            <h1 style="font-family: var(--font-serif); font-size: 36px; margin-bottom: 20px; border-bottom: 1px solid #ddd; padding-bottom: 10px;">Featured Articles</h1>
+            
+            <!-- Article Item 1 -->
+            <div class="article-card" style="display: flex; gap: 20px; margin-bottom: 30px; padding-bottom: 20px; border-bottom: 1px solid #eee;">
+                <div style="flex: 1;">
+                    <h2 style="font-size: 22px; margin-bottom: 10px;"><a href="articles/ai-revolution-2025.html" class="hover-red">The AI Revolution of 2025: How It Changed Everything</a></h2>
+                    <p style="font-size: 14px; color: #555; margin-bottom: 10px;">
+                        From healthcare to transportation, artificial intelligence has reshaped our world in ways we could only imagine a decade ago.
+                    </p>
+                    <span style="font-size: 12px; color: #888;">BY SARAH JENKINS</span>
+                </div>
+            </div>
+
+            <!-- Article Item 2 -->
+            <div class="article-card" style="display: flex; gap: 20px; margin-bottom: 30px; padding-bottom: 20px; border-bottom: 1px solid #eee;">
+                <div style="flex: 1;">
+                    <h2 style="font-size: 22px; margin-bottom: 10px;"><a href="articles/2025-golden-year-of-ai.html" class="hover-red">2025: The Golden Year of AI Advancement</a></h2>
+                    <p style="font-size: 14px; color: #555; margin-bottom: 10px;">
+                        A deep dive into the technological breakthroughs that made 2025 a pivotal year in the history of computing.
+                    </p>
+                    <span style="font-size: 12px; color: #888;">BY TECH EDITORIAL</span>
+                </div>
+            </div>
+
+             <!-- Article Item 3 -->
+            <div class="article-card" style="display: flex; gap: 20px; margin-bottom: 30px; padding-bottom: 20px; border-bottom: 1px solid #eee;">
+                <div style="flex: 1;">
+                    <h2 style="font-size: 22px; margin-bottom: 10px;"><a href="articles/accessible-color-systems.html" class="hover-red">Designing Accessible Color Systems for the Modern Web</a></h2>
+                    <p style="font-size: 14px; color: #555; margin-bottom: 10px;">
+                        Why inclusive design matters more than ever and how to implement color systems that work for everyone.
+                    </p>
+                    <span style="font-size: 12px; color: #888;">BY DESIGN TEAM</span>
+                </div>
+            </div>
+
+            <!-- Article Item 4 -->
+            <div class="article-card" style="display: flex; gap: 20px; margin-bottom: 30px; padding-bottom: 20px; border-bottom: 1px solid #eee;">
+                <div style="flex: 1;">
+                    <h2 style="font-size: 22px; margin-bottom: 10px;"><a href="articles/ai-medical-scanner.html" class="hover-red">New AI Medical Scanner Detects Diseases Early</a></h2>
+                    <p style="font-size: 14px; color: #555; margin-bottom: 10px;">
+                        A breakthrough in medical imaging technology promises to revolutionize early detection of critical illnesses.
+                    </p>
+                    <span style="font-size: 12px; color: #888;">BY HEALTH CORRESPONDENT</span>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Right Sidebar -->
+        <aside class="right-sidebar">
+            <div class="ad-box">ADVERTISEMENT</div>
+            
+            <h3 style="margin-top: 30px;">Most Read</h3>
+            <ul class="quick-links">
+                <li><a href="articles/asia-pacific-ports-reopen.html">Asia Pacific Ports Reopen</a></li>
+                <li><a href="#">Future of Work</a></li>
+                <li><a href="#">Sustainable Living</a></li>
+            </ul>
+        </aside>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div style="text-align: center;">
+                Copyright &copy; 2025 Miroza Media Ltd. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts/app.js"></script>
 </body>
 </html>
-

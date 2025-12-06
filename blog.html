@@ -1,134 +1,133 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Blogs - MIROZA</title>
-  <link rel="stylesheet" href="/styles/main.css" />
-  <link rel="icon" type="image/svg+xml" href="/assets/icons/logo.svg" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogs - Miroza</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Georgia:wght@400;700&family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
 </head>
-<body data-page="blog">
+<body>
 
-  <!-- Top Strip -->
-  <div class="top-strip">
-    <div class="container">
-      <div class="ts-left">
-        <span>Tuesday, Nov 25, 2025</span>
-        <span class="separator">|</span>
-        <span>28°C New Delhi</span>
-      </div>
-      <div class="ts-right">
-        <a href="#">E-Paper</a>
-        <span class="separator">|</span>
-        <a href="#">Sign In</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- Header -->
-  <header class="site-header">
-    <div class="container header-grid">
-      <button class="menu-toggle" aria-label="Menu">
-        <img src="/assets/icons/menu.svg" alt="Menu" width="24">
-      </button>
-      
-      <a href="/" class="logo">
-        <img src="/assets/icons/logo.svg" alt="M">
-        MIROZA
-      </a>
-
-      <div class="header-search">
-        <form action="/search.html">
-          <input type="text" placeholder="Search News, Articles...">
-          <button type="submit" class="search-btn">
-            <img src="/assets/icons/search.svg" alt="Search" width="16" style="filter: invert(1);">
-          </button>
-        </form>
-      </div>
-
-      <button class="mobile-search-toggle">
-        <img src="/assets/icons/search.svg" alt="Search" width="20">
-      </button>
-    </div>
-  </header>
-
-  <!-- Nav Bar -->
-  <nav class="main-nav-bar">
-    <div class="container">
-      <ul class="nav-list">
-        <li><a href="/index.html">Home</a></li>
-        <li><a href="/news.html">News</a></li>
-        <li><a href="/articles.html">Articles</a></li>
-        <li><a href="/blog.html" class="active">Blogs</a></li>
-        <li><a href="/about.html">About Us</a></li>
-      </ul>
-    </div>
-  </nav>
-
-  <!-- Main Content -->
-  <main class="container main-layout">
-    <!-- Left Column: Blog List -->
-    <div class="col-center" style="grid-column: 1 / span 2;">
-      <div class="section-heading-sm">
-        <h3>Latest Blogs</h3>
-      </div>
-      <div id="posts-grid" class="sub-stories-grid">
-        <!-- Populated by JS -->
-        <div class="skeleton-block"></div>
-        <div class="skeleton-block"></div>
-        <div class="skeleton-block"></div>
-        <div class="skeleton-block"></div>
-      </div>
-      <div id="blogs-pagination" style="margin-top: 20px; text-align: center;"></div>
-    </div>
-
-    <!-- Right Column: Sidebar -->
-    <aside class="col-right">
-      <div class="section-heading-sm">
-        <h3>Trending</h3>
-      </div>
-      <ol class="numbered-list" id="trending-list">
-        <!-- Populated by JS -->
-        <li><div class="skeleton-text"></div></li>
-        <li><div class="skeleton-text"></div></li>
-        <li><div class="skeleton-text"></div></li>
-      </ol>
-      
-      <div class="ad-box-lg">ADVERTISEMENT</div>
-    </aside>
-  </main>
-
-  <!-- Footer -->
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-links">
-        <div class="fl-col">
-          <h4>News</h4>
-          <a href="/news.html">India</a>
-          <a href="/news.html">World</a>
-          <a href="/news.html">Business</a>
+    <!-- Top Strip -->
+    <div class="top-strip">
+        <div class="container flex justify-between">
+            <div>Tuesday, Dec 06, 2025</div>
+            <div class="flex" style="gap: 15px;">
+                <a href="#">EPAPER</a>
+                <a href="#">SIGN IN</a>
+            </div>
         </div>
-        <div class="fl-col">
-          <h4>Opinion</h4>
-          <a href="/blog.html">Blogs</a>
-          <a href="/articles.html">Editorials</a>
-          <a href="/articles.html">Columns</a>
-        </div>
-        <div class="fl-col">
-          <h4>More</h4>
-          <a href="/about.html">About Us</a>
-          <a href="/contact.html">Contact</a>
-          <a href="/privacy.html">Privacy</a>
-        </div>
-      </div>
-      <div class="copyright">
-        Copyright © 2025 MIROZA. All rights reserved.
-      </div>
     </div>
-  </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.11/dist/purify.min.js"></script>
-  <script src="/scripts/app.js"></script>
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="index.html" class="logo">MIROZA<span>.</span></a>
+            <div class="header-ads">ADVERTISEMENT SPACE (728x90)</div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="container">
+            <ul class="nav-list">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="news.html">NEWS</a></li>
+                <li><a href="articles.html">ARTICLES</a></li>
+                <li><a href="blog.html" class="active">BLOGS</a></li>
+                <li><a href="#">BUSINESS</a></li>
+                <li><a href="#">TECH</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container main-layout">
+        
+        <!-- Left Sidebar -->
+        <aside class="left-sidebar">
+            <h3>Bloggers</h3>
+            <ul class="quick-links">
+                <li><a href="#" class="text-red bold">All Blogs</a></li>
+                <li><a href="#">Tech Insights</a></li>
+                <li><a href="#">Personal Finance</a></li>
+                <li><a href="#">Travel Diaries</a></li>
+                <li><a href="#">Food & Culture</a></li>
+            </ul>
+        </aside>
+
+        <!-- Center Content -->
+        <section class="center-content">
+            <h1 style="font-family: var(--font-serif); font-size: 36px; margin-bottom: 20px; border-bottom: 1px solid #ddd; padding-bottom: 10px;">Expert Voices</h1>
+            
+            <!-- Blog Item 1 -->
+            <div class="article-card" style="display: flex; gap: 20px; margin-bottom: 30px; padding-bottom: 20px; border-bottom: 1px solid #eee;">
+                <div style="flex: 1;">
+                    <h2 style="font-size: 22px; margin-bottom: 10px;"><a href="blogs/developer-productivity.html" class="hover-red">10 Hacks to Boost Developer Productivity in 2025</a></h2>
+                    <p style="font-size: 14px; color: #555; margin-bottom: 10px;">
+                        In a world of constant distractions, mastering your workflow is essential. Here are my top tips for staying focused and shipping code faster.
+                    </p>
+                    <div style="display: flex; align-items: center; gap: 10px; margin-top: 10px;">
+                        <div style="width: 30px; height: 30px; background: #ddd; border-radius: 50%;"></div>
+                        <span style="font-size: 12px; color: #888; font-weight: bold;">ALEX RIVERA</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Blog Item 2 (Placeholder) -->
+            <div class="article-card" style="display: flex; gap: 20px; margin-bottom: 30px; padding-bottom: 20px; border-bottom: 1px solid #eee;">
+                <div style="flex: 1;">
+                    <h2 style="font-size: 22px; margin-bottom: 10px;"><a href="#" class="hover-red">Why Remote Work is Here to Stay</a></h2>
+                    <p style="font-size: 14px; color: #555; margin-bottom: 10px;">
+                        Despite the push for return-to-office mandates, the data shows that remote work offers undeniable benefits for both employers and employees.
+                    </p>
+                    <div style="display: flex; align-items: center; gap: 10px; margin-top: 10px;">
+                        <div style="width: 30px; height: 30px; background: #ddd; border-radius: 50%;"></div>
+                        <span style="font-size: 12px; color: #888; font-weight: bold;">JESSICA CHEN</span>
+                    </div>
+                </div>
+            </div>
+
+             <!-- Blog Item 3 (Placeholder) -->
+            <div class="article-card" style="display: flex; gap: 20px; margin-bottom: 30px; padding-bottom: 20px; border-bottom: 1px solid #eee;">
+                <div style="flex: 1;">
+                    <h2 style="font-size: 22px; margin-bottom: 10px;"><a href="#" class="hover-red">Investing in Crypto: A Beginner Guide</a></h2>
+                    <p style="font-size: 14px; color: #555; margin-bottom: 10px;">
+                        Navigating the volatile world of cryptocurrency can be daunting. This guide breaks down the basics for first-time investors.
+                    </p>
+                    <div style="display: flex; align-items: center; gap: 10px; margin-top: 10px;">
+                        <div style="width: 30px; height: 30px; background: #ddd; border-radius: 50%;"></div>
+                        <span style="font-size: 12px; color: #888; font-weight: bold;">MICHAEL SCOTT</span>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Right Sidebar -->
+        <aside class="right-sidebar">
+            <div class="ad-box">ADVERTISEMENT</div>
+            
+            <h3 style="margin-top: 30px;">Popular Blogs</h3>
+            <ul class="quick-links">
+                <li><a href="#">Tech Trends</a></li>
+                <li><a href="#">Healthy Living</a></li>
+                <li><a href="#">Startup Life</a></li>
+            </ul>
+        </aside>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div style="text-align: center;">
+                Copyright &copy; 2025 Miroza Media Ltd. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts/app.js"></script>
 </body>
 </html>
-
