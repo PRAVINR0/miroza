@@ -1,6 +1,3 @@
 User-agent: *
 Allow: /
-Disallow: /_dev/
-Disallow: /tools/
-Disallow: /backup/
 Sitemap: https://miroza.online/sitemap.xml

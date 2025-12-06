@@ -1,153 +1,67 @@
 # MIROZA
 
-MIROZA is a modern, performant, accessible news / articles / blog platform scaffold. All content provided here is placeholder material for development and design iteration.
+Miroza is a modern, world-class news and articles website featuring a responsive 3-column layout inspired by leading global publications like The Times of India.
 
 ## Features
-- Semantic HTML5 structure for improved SEO & accessibility
-- Responsive layout using CSS Grid + Flexbox
-- Dark / Light mode with CSS variables and localStorage persistence (`theme`)
-- Modular JavaScript under `window.MIROZA` namespace (theme, nav, posts, pagination, prefetch, a11y, PWA)
-- Skeleton loaders while content (JSON) fetches
-- Prefetch on link hover / touch for perceived performance
-- Service Worker caches core shell + offline page with runtime strategies for data/images
-- Live search suggestions powered by cached post JSON
-- Quick-find drawer (⌘/Ctrl+K) for recent reads, saved stories, and category jumps
-- Category filter chips for the home feed (news, blog, articles, world)
-- Hero tagline rotation plus inline trust badges linking to privacy/security blurbs
-- Polished hero + navigation micro-animations for a richer UX feel
-- SEO: meta tags, OpenGraph, Twitter Card, JSON-LD for site & articles
-- Security: strict CSP example, external links use `rel="noopener noreferrer"`
-- Performance: lazy-loaded images, minimal critical CSS inline, transform/opacity animations
-- Responsive art-directed SVG bundles with `srcset` + `sizes`
-- DOMPurify ready for safe user-generated content ingestion (sample usage documented in `scripts/app.js`)
-- RSS feed (`rss.xml`) advertised in `<head>` for subscribers
-- Client-side pagination module for home & category listings (10 posts per page)
 
-## Structure
+- **Responsive Design:** A robust 3-column grid layout (Left Sidebar, Center Content, Right Sidebar) that adapts seamlessly to mobile devices.
+- **Clean Typography:** Uses a combination of Georgia (Serif) for headings and Roboto (Sans-Serif) for body text for optimal readability.
+- **Navigation:** Sticky header with a comprehensive navigation menu and a mobile-friendly hamburger menu.
+- **Performance:** Lightweight static HTML, CSS, and JS with no heavy framework dependencies.
+- **PWA Ready:** Includes a Service Worker (`sw.js`) and Web App Manifest (`manifest.json`) for offline capabilities and installability.
+
+## Project Structure
+
 ```
-index.html
-articles/
-category/
-styles/styles.css
-scripts/app.js
-assets/images/
-assets/icons/
-data/articles.json
-data/news.json
-data/blogs.json
-manifest.json
-sw.js
-sitemap.xml
-robots.txt
-rss.xml
-.htaccess.example
+miroza/
+ index.html          # Homepage
+ news.html           # News section landing page
+ articles.html       # Articles section landing page
+ blog.html           # Blogs section landing page
+ about.html          # About Us page
+ contact.html        # Contact Us page
+ privacy.html        # Privacy Policy
+ terms.html          # Terms of Use
+ security.html       # Security Policy
+ newsletter.html     # Newsletter subscription page
+ 404.html            # Custom 404 Error page
+ offline.html        # Offline fallback page
+ styles/
+    main.css        # Main stylesheet containing all styles and variables
+ scripts/
+    app.js          # Main JavaScript for navigation and UI interactions
+ articles/           # Directory for article content pages
+ news/               # Directory for news content pages
+ blogs/              # Directory for blog content pages
+ assets/             # Images and icons
+ sw.js               # Service Worker
+ manifest.json       # Web App Manifest
+ robots.txt          # SEO configuration
+ sitemap.xml         # Sitemap
 ```
 
 ## Getting Started
-1. Serve the root directory with any static server (examples below).
-2. Ensure `manifest.json`, `sw.js`, and `rss.xml` stay at the project root for proper scope.
-3. Update `canonical` + OpenGraph URLs to your production domain.
 
-### Quick Dev Server (Node)
+Since this is a static website, you can serve it using any static file server.
+
+### Using Python
+```bash
+python -m http.server 8000
+```
+Then open `http://localhost:8000` in your browser.
+
+### Using Node.js (serve)
 ```bash
 npx serve .
 ```
 
-### Python (if available)
-```bash
-python -m http.server 8080
-```
+## Customization
 
-### Build notes for Windows / platform mismatches
-
-If `npm run build` fails with an `esbuild` native binary error (common when node_modules was copied from another OS), you can either reinstall dependencies on your platform or use the wasm fallback build:
-
-PowerShell (recommended):
-
-```powershell
-cd "c:\Users\pk341\Downloads\miroza"
-rm -Recurse -Force node_modules
-npm install
-npm run build
-```
-
-If you cannot rebuild native modules, use the slower `esbuild-wasm` fallback to generate the minified bundle:
-
-```powershell
-npm install
-npm run build:js-wasm
-```
-
-`build:js-wasm` will download a small WebAssembly binary and produce `scripts/app.min.js` without requiring a platform-specific native executable.
-
-Visit `http://localhost:8080` and inspect the Network tab: the service worker should register.
-
-### Quick UX Smoke Test
-1. Toggle the navigation (desktop + mobile widths) to see the underline/focus animation.
-2. Hover the hero image/cards to confirm the parallax glow and depth transitions.
-3. Scroll past the hero ensuring sticky header blur and back-to-top button behave smoothly.
-
-## Quick Find Drawer
-- Keyboard shortcut: press `⌘K` (macOS) or `Ctrl+K` (Windows/Linux) anywhere to open.
-- Tracks clicks on any element with `data-track-story` to populate recents via `localStorage` key `miroza_recent_reads_v1`.
-- Saved stories combine manual pins (from the drawer) and article “Appreciate” hearts, stored under `miroza_saved_stories_v1`.
-- Category chips map directly to the latest feed filters when available; otherwise they deep-link to `/news.html`, `/blog.html`, or `/articles.html`.
-- Drawer focus returns to the original trigger for accessibility, and opening the panel locks body scroll to avoid background jumps.
-
-## Content Pipeline Workflow
-1. Draft the long-form article under `articles/<slug>.html` with correct meta/JSON-LD and assign a unique `id` in `data/articles.json`.
-2. Export responsive imagery (400/800/1200) and, when available, include AVIF/WebP sources by adding an `image.sources` array (see `buildCard` in `scripts/app.js`).
-3. Update `data/articles.json` with the new entry, ensuring `category`, `date`, `views`, and `link`/`slug` are set. The home page now hydrates three feeds: `/data/articles.json` (long-form + world coverage), `/data/news.json` (India + quick desk notes), and `/data/blogs.json` (playbooks/analysis). Keep categories accurate so filters remain in sync.
-4. Rebuild the home hero queue (top views automatically fill) or manually tag hero CTA by calling `window.MIROZA.hero.setItems([...])` in `app.js` if bespoke ordering is required.
-5. Run a quick pass: open the site locally, interact with the new card, verify it appears in quick-find recents, and confirm Lighthouse/CLS metrics in `localStorage` (`miroza_vitals_snapshot`).
-
-
-## Theming
-- Variables defined for light & dark palettes in `styles.css`.
-- Theme persistence stored in `localStorage` (`theme`).
-- Toggle updates icons and labels for assistive tech.
-
-## Posts Data
-- Located in `data/articles.json` (legacy `data/posts.json` remains as a fallback for tooling).
-- Each post entry contains `{ id, title, slug, excerpt, category, author, date, image }`.
-- `image` is an object with `src`, `srcset`, `sizes`, `alt` for responsive rendering.
-- Extend by adding new JSON entries and corresponding HTML article pages. Use `data/news.json` for India desk updates and `data/blogs.json` for playbooks/blog posts so the JS pipeline can stream everything to the homepage grid without gaps.
-
-## Adding Articles
-1. Create a new HTML file under `articles/` named `<slug>.html`.
-2. Include proper meta tags + JSON-LD schema.
-3. Ensure `slug` matches the JSON entry for deep linking.
-4. Reuse the art-directed SVG sets or add your own responsive sources (400 / 800 / 1200) and update the JSON entry.
-
-## Accessibility
-- Skip link for keyboard users.
-- Focus management when mobile nav toggles.
-- Sufficient contrast maintained (verify via tooling).
-- Pagination controls expose current state via text (`Page X of Y`).
-
-## Security Notes
-- `.htaccess.example` includes CSP, HSTS, Permissions-Policy, and caching best practices.
-- DOMPurify CDN + inline example show where to sanitize user submissions.
-
-## Performance Considerations
-- Responsive SVG sets reduce payload without sacrificing quality.
-- Prefetched links + paginated DOM operations keep bundle small.
-- Additional optimization: inline font preload once custom fonts are selected.
-- `window.MIROZA.vitals` samples LCP/FID/CLS via `PerformanceObserver` and persists snapshots to `localStorage` (`miroza_vitals_snapshot`) for Lighthouse parity checks.
-- Picture components accept optional `image.sources` entries so you can ship AVIF/WebP alongside existing SVG/PNG assets without touching layout code.
-- Dedicated `/privacy.html` and `/security.html` outlines capture the policies you can share with stakeholders; the hero trust badges and assurance cards link directly to them.
-
-## PWA
-- Simplified `manifest.json` with base icon.
-- Service worker precaches the app shell, `offline.html`, and auto-updates caches with stale-while-revalidate for JSON/images.
-- Navigation requests fall back to the offline card when the network is unreachable.
-- Extend by adding push notifications or background sync once APIs are wired up.
-
-## Roadmap Ideas
-- Pagination & dynamic search results
-- CMS or static site generator integration
-- Tag-based filtering & related posts
-- Author profile pages & newsletter automation
+- **Styles:** Edit `styles/main.css` to change colors (e.g., `--toi-red`), fonts, or layout dimensions.
+- **Scripts:** Edit `scripts/app.js` to modify behavior like the sticky header or mobile menu.
+- **Content:** Add new HTML files to `articles/`, `news/`, or `blogs/` using the existing files as templates.
 
 ## License
-Placeholder scaffold – integrate into your existing project with appropriate licensing considerations for fonts/images you add later.
+
+Copyright  2025 Miroza Media Ltd. All rights reserved.
+
