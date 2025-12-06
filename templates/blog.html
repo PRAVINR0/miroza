@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- AI_INSTRUCTION: Replace {{TITLE}} with the blog post title -->
+    <title>{{TITLE}} - Miroza Blogs</title>
+    <link rel="stylesheet" href="../styles/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Georgia:wght@400;700&family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Top Strip -->
+    <div class="top-strip">
+        <div class="container flex justify-between">
+            <div>Tuesday, Dec 06, 2025</div>
+            <div class="flex" style="gap: 15px;">
+                <a href="#">EPAPER</a>
+                <a href="#">SIGN IN</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="../index.html" class="logo">MIROZA<span>.</span></a>
+            <div class="header-ads">ADVERTISEMENT SPACE (728x90)</div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="container">
+            <ul class="nav-list">
+                <li><a href="../index.html">HOME</a></li>
+                <li><a href="../news.html">NEWS</a></li>
+                <li><a href="../articles.html">ARTICLES</a></li>
+                <li><a href="../blog.html">BLOGS</a></li>
+                <li><a href="#">BUSINESS</a></li>
+                <li><a href="#">TECH</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container main-layout">
+        
+        <!-- Left Sidebar (Author Bio) -->
+        <aside class="left-sidebar">
+            <h3>About the Author</h3>
+            <div style="background: #f9f9f9; padding: 15px; border-radius: 4px; text-align: center;">
+                <img src="https://placehold.co/100x100?text=Author" alt="Author" style="border-radius: 50%; margin-bottom: 10px;">
+                <!-- AI_INSTRUCTION: Replace {{AUTHOR}} and {{AUTHOR_BIO}} -->
+                <h4 style="margin-bottom: 5px;">{{AUTHOR}}</h4>
+                <p style="font-size: 13px; color: #666;">{{AUTHOR_BIO}}</p>
+            </div>
+        </aside>
+
+        <!-- Blog Body -->
+        <section class="center-content">
+            <article>
+                <!-- AI_INSTRUCTION: Replace {{TITLE}} -->
+                <h1 style="font-family: var(--font-serif); font-size: 38px; line-height: 1.2; margin-bottom: 15px;">{{TITLE}}</h1>
+                
+                <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px; font-size: 12px; color: #666; border-bottom: 1px solid #eee; padding-bottom: 15px;">
+                    <span>{{DATE}}</span>
+                    <span>|</span>
+                    <span>5 min read</span>
+                </div>
+
+                <!-- AI_INSTRUCTION: Replace {{IMAGE_URL}} and {{IMAGE_ALT}} -->
+                <img src="{{IMAGE_URL}}" alt="{{IMAGE_ALT}}" style="width: 100%; margin-bottom: 25px; border-radius: 4px;">
+
+                <div style="font-size: 18px; line-height: 1.8; color: #333;">
+                    <!-- AI_INSTRUCTION: Insert content paragraphs here. Use <p> tags. -->
+                    {{CONTENT}}
+                </div>
+            </article>
+        </section>
+
+        <!-- Right Sidebar -->
+        <aside class="right-sidebar">
+            <div class="ad-box">ADVERTISEMENT</div>
+            <h3>More Blogs</h3>
+            <ul class="trending-list">
+                <li><a href="#">Coding Tips 2025</a></li>
+                <li><a href="#">Remote Work Life</a></li>
+            </ul>
+        </aside>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div style="text-align: center;">
+                Copyright &copy; 2025 Miroza Media Ltd. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="../scripts/app.js"></script>
+</body>
+</html>

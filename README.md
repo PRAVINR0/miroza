@@ -56,11 +56,18 @@ Then open `http://localhost:8000` in your browser.
 npx serve .
 ```
 
+## Content Management
+
+We have set up a simplified workflow for adding new content.
+
+- **Guide:** Read `AI_MANAGEMENT.md` for step-by-step instructions on how to post new stories.
+- **Templates:** Use the files in the `templates/` directory as blueprints for new posts.
+- **Content:** Add new HTML files to `articles/`, `news/`, or `blogs/`.
+
 ## Customization
 
 - **Styles:** Edit `styles/main.css` to change colors (e.g., `--toi-red`), fonts, or layout dimensions.
 - **Scripts:** Edit `scripts/app.js` to modify behavior like the sticky header.
-- **Content:** Add new HTML files to `articles/`, `news/`, or `blogs/` using the existing files as templates.
 - **Images:** Place images in `assets/` or use external hosting.
 
 ## License
