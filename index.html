@@ -1,210 +1,179 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MIROZA - Latest News, India, World, Cricket, Business & Opinion</title>
-  <meta name="description" content="MIROZA - Breaking news, views and analysis on India, World, Sports, Technology, Business, Entertainment and more." />
-  <link rel="icon" type="image/svg+xml" href="/assets/icons/logo.svg" />
-  <link rel="stylesheet" href="/styles/main.css" />
-  <link rel="manifest" href="/manifest.json" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miroza - World Class News & Articles</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Georgia:wght@400;700&family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
 </head>
-<body data-page="home">
+<body>
 
-  <!-- 1. TOP STRIP (Desktop Only) -->
-  <div class="top-strip">
-    <div class="container">
-      <div class="ts-left">
-        <span id="current-date">Tuesday, Dec 03, 2025</span>
-        <span class="separator">|</span>
-        <span class="weather">28°C New Delhi</span>
-      </div>
-      <div class="ts-right">
-        <a href="#">E-Paper</a>
-        <a href="#">App</a>
-        <a href="#">Sign In</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- 2. MAIN HEADER -->
-  <header class="site-header">
-    <div class="container header-grid">
-      <!-- Mobile: Hamburger -->
-      <button class="menu-toggle" aria-label="Menu">
-        <span class="hamburger-icon">☰</span>
-      </button>
-
-      <!-- Logo -->
-      <a href="/" class="logo">
-        <img src="/assets/icons/logo.svg" alt="MIROZA" />
-        <span>MIROZA</span>
-      </a>
-
-      <!-- Desktop: Search Bar -->
-      <div class="header-search">
-        <form role="search" onsubmit="return false;">
-          <input type="text" id="search-input" placeholder="Search News, Stocks, & more..." />
-          <button type="submit" class="search-btn">
-            <img src="/assets/icons/search.svg" alt="Search" width="16" />
-          </button>
-        </form>
-      </div>
-
-      <!-- Mobile: Search Icon -->
-      <button class="mobile-search-toggle" aria-label="Search">
-        <img src="/assets/icons/search.svg" alt="Search" width="20" />
-      </button>
-    </div>
-  </header>
-
-  <!-- 3. NAVIGATION BAR (Sticky) -->
-  <nav class="main-nav-bar">
-    <div class="container">
-      <ul class="nav-list">
-        <li><a href="/" class="active">Home</a></li>
-        <li><a href="/news/news.html">India</a></li>
-        <li><a href="/articles/articles.html">World</a></li>
-        <li><a href="/blogs/blogs.html">Business</a></li>
-        <li><a href="#">Tech</a></li>
-        <li><a href="#">Cricket</a></li>
-        <li><a href="#">Sports</a></li>
-        <li><a href="#">Entertainment</a></li>
-        <li><a href="#">TV</a></li>
-        <li><a href="#">Web Series</a></li>
-        <li><a href="#">Life & Style</a></li>
-        <li><a href="#">Education</a></li>
-        <li><a href="#">Photos</a></li>
-        <li><a href="#">Videos</a></li>
-      </ul>
-    </div>
-  </nav>
-
-  <!-- 4. BREAKING NEWS TICKER -->
-  <div class="breaking-ticker">
-    <div class="container">
-      <span class="ticker-label">BREAKING:</span>
-      <div class="ticker-content">
-        <span id="ticker-text">Sensex jumps 500 points as global markets rally...</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- 5. MAIN CONTENT GRID (3 Columns) -->
-  <main class="container main-layout">
-    
-    <!-- COLUMN 1: TOP NEWS LIST (Left) -->
-    <aside class="col-left">
-      <div class="section-heading-sm">
-        <h3>Top News</h3>
-      </div>
-      <ul class="compact-list" id="top-news-list">
-        <!-- JS Injected -->
-        <li class="skeleton-text"></li>
-        <li class="skeleton-text"></li>
-        <li class="skeleton-text"></li>
-        <li class="skeleton-text"></li>
-        <li class="skeleton-text"></li>
-      </ul>
-      
-      <div class="ad-box-sm">
-        <span>Advertisement</span>
-      </div>
-    </aside>
-
-    <!-- COLUMN 2: LEAD STORY (Center) -->
-    <section class="col-center">
-      <!-- Lead Story -->
-      <div id="lead-story-container">
-        <div class="lead-story skeleton-block"></div>
-      </div>
-
-      <!-- Sub Stories Grid -->
-      <div class="sub-stories-grid" id="sub-stories-container">
-        <!-- JS Injected -->
-        <div class="card-sm skeleton-block"></div>
-        <div class="card-sm skeleton-block"></div>
-        <div class="card-sm skeleton-block"></div>
-        <div class="card-sm skeleton-block"></div>
-      </div>
-    </section>
-
-    <!-- COLUMN 3: SIDEBAR (Right) -->
-    <aside class="col-right">
-      <div class="section-heading-sm">
-        <h3>Most Read</h3>
-      </div>
-      <ul class="numbered-list" id="trending-list">
-        <!-- JS Injected -->
-        <li class="skeleton-text"></li>
-        <li class="skeleton-text"></li>
-        <li class="skeleton-text"></li>
-      </ul>
-
-      <div class="ad-box-lg">
-        <span>Advertisement</span>
-      </div>
-
-      <div class="section-heading-sm">
-        <h3>Trending Topics</h3>
-      </div>
-      <div class="tags-cloud">
-        <a href="#">Budget 2025</a>
-        <a href="#">IPL Auction</a>
-        <a href="#">Crypto Bill</a>
-        <a href="#">Election Results</a>
-        <a href="#">Gold Price</a>
-      </div>
-    </aside>
-
-  </main>
-
-  <!-- 6. VISUAL STORIES (Horizontal Scroll) -->
-  <section class="visual-stories-section">
-    <div class="container">
-      <div class="section-heading">
-        <h2>Visual Stories</h2>
-        <a href="#">View All &rarr;</a>
-      </div>
-      <div class="visual-stories-scroll" id="visual-stories-scroll">
-        <!-- JS Injected -->
-        <div class="vs-card skeleton-block"></div>
-        <div class="vs-card skeleton-block"></div>
-        <div class="vs-card skeleton-block"></div>
-        <div class="vs-card skeleton-block"></div>
-        <div class="vs-card skeleton-block"></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 7. FOOTER -->
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-links">
-        <div class="fl-col">
-          <h4>About Us</h4>
-          <a href="#">Terms of Use</a>
-          <a href="#">Privacy Policy</a>
+    <!-- 1. Top Strip -->
+    <div class="top-strip">
+        <div class="container flex justify-between">
+            <div>Tuesday, Dec 06, 2025 | Updated 09:30 AM IST</div>
+            <div class="flex" style="gap: 15px;">
+                <a href="#">EPAPER</a>
+                <a href="#">SIGN IN</a>
+            </div>
         </div>
-        <div class="fl-col">
-          <h4>Connect</h4>
-          <a href="#">Facebook</a>
-          <a href="#">Twitter</a>
-        </div>
-        <div class="fl-col">
-          <h4>Popular</h4>
-          <a href="#">Headlines</a>
-          <a href="#">Sports News</a>
-        </div>
-      </div>
-      <div class="copyright">
-        Copyright © 2025 Bennett, Coleman & Co. Ltd. All rights reserved. For reprint rights: Times Syndication Service
-      </div>
     </div>
-  </footer>
 
-  <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.11/dist/purify.min.js"></script>
-  <script src="/scripts/app.js"></script>
+    <!-- 2. Header -->
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="index.html" class="logo">MIROZA<span>.</span></a>
+            <div class="header-ads">
+                ADVERTISEMENT SPACE (728x90)
+            </div>
+        </div>
+    </header>
+
+    <!-- 3. Navigation -->
+    <nav class="main-nav">
+        <div class="container">
+            <ul class="nav-list">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="news/tech-summit-highlights.html">NEWS</a></li>
+                <li><a href="articles/ai-revolution-2025.html">ARTICLES</a></li>
+                <li><a href="blogs/developer-productivity.html">BLOGS</a></li>
+                <li><a href="#">BUSINESS</a></li>
+                <li><a href="#">TECH</a></li>
+                <li><a href="#">CRICKET</a></li>
+                <li><a href="#">ENTERTAINMENT</a></li>
+                <li><a href="#">WEB STORIES</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 4. Ticker -->
+    <div class="ticker-wrap">
+        <div class="ticker-heading">BREAKING NEWS</div>
+        <div class="ticker-content">
+            Global Tech Summit 2025 announces major AI breakthroughs... &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp; 
+            SpaceX successfully lands Starship on Mars... &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp; 
+            New renewable energy policies to take effect from January...
+        </div>
+    </div>
+
+    <!-- 5. Main Layout -->
+    <main class="container main-layout">
+        
+        <!-- Left Sidebar -->
+        <aside class="left-sidebar">
+            <h3>Quick Links</h3>
+            <ul class="quick-links">
+                <li><a href="#">Latest Headlines</a></li>
+                <li><a href="#">Most Read</a></li>
+                <li><a href="#">Editors Pick</a></li>
+                <li><a href="#">Market Data</a></li>
+                <li><a href="#">Tech Reviews</a></li>
+                <li><a href="#">Health Tips</a></li>
+                <li><a href="#">Travel Guides</a></li>
+                <li><a href="#">Education</a></li>
+            </ul>
+            
+            <div style="margin-top: 30px;">
+                <h3>In Focus</h3>
+                <img src="https://placehold.co/200x150?text=Focus" alt="Focus" style="border-radius: 4px;">
+                <p style="font-size: 12px; margin-top: 5px;">Special report on the future of digital currency.</p>
+            </div>
+        </aside>
+
+        <!-- Center Content -->
+        <section class="center-content">
+            <article class="lead-story">
+                <div class="meta">TECHNOLOGY / AI</div>
+                <h1>The Dawn of AGI: How 2025 Changed Everything</h1>
+                <img src="https://placehold.co/800x450?text=AI+Revolution" alt="AI Revolution">
+                <p class="excerpt">
+                    Artificial General Intelligence is no longer a distant dream. With the latest models released this week, experts say we have crossed the threshold. Here is what this means for the global economy, job markets, and the future of humanity.
+                    <a href="articles/ai-revolution-2025.html" class="text-red bold">Read Full Story &rarr;</a>
+                </p>
+            </article>
+
+            <div class="news-grid">
+                <article class="news-card">
+                    <img src="https://placehold.co/400x250?text=Tech+Summit" alt="Tech Summit">
+                    <h3><a href="news/tech-summit-highlights.html">Global Tech Summit: Key Takeaways</a></h3>
+                    <p>Leaders from 50 nations gathered to discuss the digital future.</p>
+                </article>
+                <article class="news-card">
+                    <img src="https://placehold.co/400x250?text=Coding" alt="Coding">
+                    <h3><a href="blogs/developer-productivity.html">10 Tips for Developer Productivity</a></h3>
+                    <p>Boost your coding efficiency with these proven strategies.</p>
+                </article>
+                <article class="news-card">
+                    <img src="https://placehold.co/400x250?text=Space" alt="Space">
+                    <h3><a href="#">Mars Mission: The First 100 Days</a></h3>
+                    <p>An exclusive look at the life of the first colonists.</p>
+                </article>
+                <article class="news-card">
+                    <img src="https://placehold.co/400x250?text=EVs" alt="EVs">
+                    <h3><a href="#">Electric Vehicles Overtake Gas Cars</a></h3>
+                    <p>A historic milestone in the automotive industry.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- Right Sidebar -->
+        <aside class="right-sidebar">
+            <div class="ad-box">ADVERTISEMENT</div>
+            
+            <h3>Trending Now</h3>
+            <ol class="trending-list">
+                <li><a href="#">AI Regulations 2025</a></li>
+                <li><a href="#">Crypto Market Surge</a></li>
+                <li><a href="#">New iPhone 17 Leaks</a></li>
+                <li><a href="#">Global Warming Report</a></li>
+                <li><a href="#">Best Movies of the Year</a></li>
+            </ol>
+
+            <div class="ad-box" style="height: 600px; margin-top: 30px;">ADVERTISEMENT</div>
+        </aside>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-cols">
+                <div>
+                    <h4>Miroza</h4>
+                    <a href="#">About Us</a>
+                    <a href="#">Contact</a>
+                    <a href="#">Careers</a>
+                    <a href="#">Privacy Policy</a>
+                </div>
+                <div>
+                    <h4>News</h4>
+                    <a href="#">India</a>
+                    <a href="#">World</a>
+                    <a href="#">Business</a>
+                    <a href="#">Tech</a>
+                </div>
+                <div>
+                    <h4>Lifestyle</h4>
+                    <a href="#">Health</a>
+                    <a href="#">Travel</a>
+                    <a href="#">Food</a>
+                    <a href="#">Fashion</a>
+                </div>
+                <div>
+                    <h4>Follow Us</h4>
+                    <a href="#">Facebook</a>
+                    <a href="#">Twitter</a>
+                    <a href="#">Instagram</a>
+                    <a href="#">LinkedIn</a>
+                </div>
+            </div>
+            <div style="text-align: center; border-top: 1px solid #333; padding-top: 20px;">
+                Copyright &copy; 2025 Miroza Media Ltd. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts/app.js"></script>
 </body>
 </html>
