@@ -91,7 +91,27 @@ img { max-width: 100%; height: auto; display: block; }
 .search-submit { padding: 8px 15px; background: var(--toi-red); color: white; border: none; cursor: pointer; }
 
 /* Mobile Menu Toggle */
-.menu-toggle { display: none; font-size: 24px; background: none; border: none; color: white; cursor: pointer; }
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1001;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
 
 /* 1. Top Strip */
 .top-strip {
@@ -169,7 +189,7 @@ img { max-width: 100%; height: auto; display: block; }
     .right-sidebar { display: none; } /* Hide right sidebar on mobile */
     .news-grid { grid-template-columns: 1fr; }
     
-    .menu-toggle { display: block; }
+    .menu-toggle { display: flex; }
     .nav-list { 
         display: none; 
         flex-direction: column; 
