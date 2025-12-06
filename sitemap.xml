@@ -1,67 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://miroza.online/index.html</loc>
+    <loc>https://miroza.online/404.html</loc>
     <lastmod>2025-12-06</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://miroza.online/news.html</loc>
-    <lastmod>2025-12-06</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://miroza.online/articles.html</loc>
-    <lastmod>2025-12-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://miroza.online/blog.html</loc>
-    <lastmod>2025-12-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://miroza.online/about.html</loc>
     <lastmod>2025-12-06</lastmod>
-    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://miroza.online/articles.html</loc>
+    <lastmod>2025-12-06</lastmod>
+  </url>
+  <url>
+    <loc>https://miroza.online/blog.html</loc>
+    <lastmod>2025-12-06</lastmod>
   </url>
   <url>
     <loc>https://miroza.online/contact.html</loc>
     <lastmod>2025-12-06</lastmod>
-    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://miroza.online/index.html</loc>
+    <lastmod>2025-12-06</lastmod>
+  </url>
+  <url>
+    <loc>https://miroza.online/news.html</loc>
+    <lastmod>2025-12-06</lastmod>
+  </url>
+  <url>
+    <loc>https://miroza.online/newsletter.html</loc>
+    <lastmod>2025-12-06</lastmod>
+  </url>
+  <url>
+    <loc>https://miroza.online/offline.html</loc>
+    <lastmod>2025-12-06</lastmod>
   </url>
   <url>
     <loc>https://miroza.online/privacy.html</loc>
     <lastmod>2025-12-06</lastmod>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://miroza.online/terms.html</loc>
-    <lastmod>2025-12-06</lastmod>
-    <priority>0.3</priority>
   </url>
   <url>
     <loc>https://miroza.online/security.html</loc>
     <lastmod>2025-12-06</lastmod>
-    <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://miroza.online/news/tech-summit-highlights.html</loc>
+    <loc>https://miroza.online/terms.html</loc>
     <lastmod>2025-12-06</lastmod>
-    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://miroza.online/articles/ai-revolution-2025.html</loc>
     <lastmod>2025-12-06</lastmod>
-    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://miroza.online/blogs/developer-productivity.html</loc>
     <lastmod>2025-12-06</lastmod>
-    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://miroza.online/news/tech-summit-highlights.html</loc>
+    <lastmod>2025-12-06</lastmod>
   </url>
 </urlset>
