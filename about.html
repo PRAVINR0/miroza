@@ -23,13 +23,38 @@
     <header class="site-header">
         <div class="container header-inner">
             <a href="index.html" class="logo">MIROZA<span>.</span></a>
-            <div class="header-ads">ADVERTISEMENT SPACE (728x90)</div>
+            
+            <!-- UI Controls -->
+            <div class="ui-controls">
+                <button id="darkModeBtn" class="icon-btn" title="Toggle Dark Mode">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+                <button id="searchBtn" class="icon-btn" title="Search">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Search Container -->
+            <div id="searchContainer" class="search-bar-container">
+                <input type="text" class="search-input" placeholder="Search...">
+                <button class="search-submit">Go</button>
+            </div>
         </div>
     </header>
 
     <!-- Navigation -->
     <nav class="main-nav">
         <div class="container">
+            <button class="menu-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
             <ul class="nav-list">
                 <li><a href="index.html">HOME</a></li>
                 <li><a href="news.html">NEWS</a></li>
