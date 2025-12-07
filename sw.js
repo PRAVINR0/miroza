@@ -2,12 +2,12 @@
 const STATIC_CACHE = 'miroza-static-v8';
 const RUNTIME_CACHE = 'miroza-runtime-v8';
 const CORE_ASSETS = [
-  '/',
-  '/index.html',
-  '/offline.html',
-  '/styles/main.css',
-  '/scripts/app.js',
-  '/manifest.json'
+  './',
+  './index.html',
+  './offline.html',
+  './styles/main.css',
+  './scripts/app.js',
+  './manifest.json'
 ];
 
 self.addEventListener('install', event => {

@@ -14,7 +14,7 @@
         <div class="container flex justify-between">
             <div>Tuesday, Dec 06, 2025</div>
             <div class="flex" style="gap: 15px;">
-                <a href="#">EPAPER</a>
+                <!-- EPAPER Removed -->
             </div>
         </div>
     </div>
@@ -91,13 +91,22 @@
 
                 <div style="background: #f9f9f9; padding: 20px; border: 1px solid #eee; margin-bottom: 30px;">
                     <h3 style="margin-bottom: 15px;">Send us a message</h3>
-                    <form>
+                    <form id="contactForm" onsubmit="event.preventDefault(); alert('Thank you for your message! This is a demo site, so no email was sent.');">
                         <div style="margin-bottom: 15px;">
                             <label style="display: block; margin-bottom: 5px; font-weight: bold;">Name</label>
-                            <input type="text" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;">
+                            <input type="text" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;">
                         </div>
                         <div style="margin-bottom: 15px;">
                             <label style="display: block; margin-bottom: 5px; font-weight: bold;">Email</label>
+                            <input type="email" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;">
+                        </div>
+                        <div style="margin-bottom: 15px;">
+                            <label style="display: block; margin-bottom: 5px; font-weight: bold;">Message</label>
+                            <textarea rows="5" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;"></textarea>
+                        </div>
+                        <button type="submit" style="background: #cc0000; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; font-weight: bold;">Send Message</button>
+                    </form>
+                </div>
                             <input type="email" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;">
                         </div>
                         <div style="margin-bottom: 15px;">

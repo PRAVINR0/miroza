@@ -58,7 +58,8 @@ document.addEventListener('DOMContentLoaded', () => {
             searchSubmit.addEventListener('click', () => {
                 const query = searchInput.value;
                 if (query) {
-                    window.open(`https://www.google.com/search?q=site:miroza.online+${encodeURIComponent(query)}`, '_blank');
+                    const site = window.location.hostname;
+                    window.open(`https://www.google.com/search?q=site:${site}+${encodeURIComponent(query)}`, '_blank');
                 }
             });
 
@@ -66,7 +67,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (e.key === 'Enter') {
                     const query = searchInput.value;
                     if (query) {
-                        window.open(`https://www.google.com/search?q=site:miroza.online+${encodeURIComponent(query)}`, '_blank');
+                        const site = window.location.hostname;
+                        window.open(`https://www.google.com/search?q=site:${site}+${encodeURIComponent(query)}`, '_blank');
                     }
                 }
             });
