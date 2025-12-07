@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results - Miroza</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Georgia:wght@400;700&family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="top-strip">
+        <div class="container flex justify-between">
+            <div>Search Results</div>
+            <div class="flex" style="gap: 15px;"></div>
+        </div>
+    </div>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="index.html" class="logo">MIROZA<span>.</span></a>
+            <div class="ui-controls">
+                <button id="darkModeBtn" class="icon-btn"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></button>
+                <button id="searchBtn" class="icon-btn"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></button>
+            </div>
+            <div id="searchContainer" class="search-bar-container">
+                <input type="text" class="search-input" placeholder="Search...">
+                <button class="search-submit">Go</button>
+            </div>
+        </div>
+    </header>
+    <nav class="main-nav">
+        <div class="container">
+            <button class="menu-toggle"><span></span><span></span><span></span></button>
+            <ul class="nav-list">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="news.html">NEWS</a></li>
+                <li><a href="articles.html">ARTICLES</a></li>
+                <li><a href="blog.html">BLOGS</a></li>
+            </ul>
+        </div>
+    </nav>
+    <main class="container main-layout">
+        <section class="center-content" style="width: 100%;">
+            <h1 style="font-family: var(--font-serif); font-size: 36px; margin-bottom: 20px; border-bottom: 1px solid #ddd; padding-bottom: 10px;">Search Results</h1>
+            <div id="searchResults"></div>
+        </section>
+    </main>
+    <footer class="site-footer">
+        <div class="container">
+            <div style="text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid #333;">&copy; 2025 Miroza Inc.</div>
+        </div>
+    </footer>
+    <script src="scripts/app.js"></script>
+    <script src="scripts/search.js"></script>
+</body>
+</html>

@@ -53,23 +53,39 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        // Simple Search Functionality (Google Site Search)
+        // Simple Search Functionality (Local)
         if (searchSubmit && searchInput) {
-            searchSubmit.addEventListener('click', () => {
+            const performSearch = () => {
                 const query = searchInput.value;
                 if (query) {
-                    const site = window.location.hostname;
-                    window.open(`https://www.google.com/search?q=site:${site}+${encodeURIComponent(query)}`, '_blank');
+                    // Check if we are in a subdirectory
+                    const path = window.location.pathname;
+                    const depth = (path.match(/\//g) || []).length;
+                    let prefix = '';
+                    if (depth >= 2 && !path.endsWith('index.html') && !path.endsWith('/')) {
+                         prefix = '../';
+                    }
+                    
+                    // Handle specific case for root files vs subdir files
+                    // If we are in /news/something.html, we need ../search.html
+                    // If we are in /index.html, we need search.html
+                    
+                    // A safer way is to use absolute path if hosted at root, but relative is safer for local file opening
+                    // Let's try to determine relative path based on current location
+                    
+                    if (window.location.href.includes('/news/') || window.location.href.includes('/articles/') || window.location.href.includes('/blogs/')) {
+                        window.location.href = `../search.html?q=${encodeURIComponent(query)}`;
+                    } else {
+                        window.location.href = `search.html?q=${encodeURIComponent(query)}`;
+                    }
                 }
-            });
+            };
+
+            searchSubmit.addEventListener('click', performSearch);
 
             searchInput.addEventListener('keypress', (e) => {
                 if (e.key === 'Enter') {
-                    const query = searchInput.value;
-                    if (query) {
-                        const site = window.location.hostname;
-                        window.open(`https://www.google.com/search?q=site:${site}+${encodeURIComponent(query)}`, '_blank');
-                    }
+                    performSearch();
                 }
             });
         }
